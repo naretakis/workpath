@@ -24,8 +24,7 @@ Each task produces working, integrated code. No orphaned implementations.
 
 ---
 
-## 1. Project Scaffolding and Infrastructure
-
+- [ ] 1. Project Scaffolding and Infrastructure
 - [ ] 1.1 Initialize Next.js project with TypeScript
   - Create Next.js 14+ project with App Router and TypeScript strict mode
   - Configure tsconfig.json with strict mode enabled
@@ -88,8 +87,7 @@ Each task produces working, integrated code. No orphaned implementations.
 
 ---
 
-## 2. Core Data Layer and Type Definitions
-
+- [ ] 2. Core Data Layer and Type Definitions
 - [ ] 2.1 Define TypeScript interfaces for all data models
   - Create types/profile.ts with UserProfile interface
   - Create types/exemptions.ts with ExemptionScreening, ExemptionResponse, and ExemptionCategory types
