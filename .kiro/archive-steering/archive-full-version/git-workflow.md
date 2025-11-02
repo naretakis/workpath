@@ -155,6 +155,7 @@ Refs: #23.2
 ### Creating a Pull Request
 
 1. **Ensure branch is up to date** with target branch (usually `develop`)
+
    ```bash
    git checkout develop
    git pull origin develop
@@ -163,6 +164,7 @@ Refs: #23.2
    ```
 
 2. **Run tests and linting**
+
    ```bash
    npm run lint
    npm run test
@@ -170,6 +172,7 @@ Refs: #23.2
    ```
 
 3. **Push branch to remote**
+
    ```bash
    git push origin feature/1.7-steering-documents
    ```
@@ -192,13 +195,16 @@ feat(tracking): Add batch activity entry component
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Related Issues
+
 Closes #123
 Refs #456
 
 ## Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
@@ -206,6 +212,7 @@ Refs #456
 - [ ] PWA functionality update
 
 ## Testing
+
 - [ ] Unit tests added/updated
 - [ ] Integration tests added/updated
 - [ ] E2E tests added/updated
@@ -213,12 +220,14 @@ Refs #456
 - [ ] Tested offline functionality (if applicable)
 
 ## Accessibility
+
 - [ ] Keyboard navigation tested
 - [ ] Screen reader tested
 - [ ] Color contrast verified
 - [ ] Touch targets meet 44px minimum
 
 ## PWA Compliance (if applicable)
+
 - [ ] Service worker updated correctly
 - [ ] Offline functionality works
 - [ ] Manifest updated (if needed)
@@ -227,14 +236,17 @@ Refs #456
 - [ ] Works on iOS Safari and Chrome Android
 
 ## Performance
+
 - [ ] No performance regressions
 - [ ] Bundle size impact acceptable
 - [ ] Lighthouse score maintained (>90)
 
 ## Screenshots
+
 (if applicable)
 
 ## Checklist
+
 - [ ] Code follows project style guidelines
 - [ ] Self-review completed
 - [ ] Comments added for complex logic
@@ -251,12 +263,14 @@ Refs #456
 ### Code Review Guidelines
 
 **For Authors:**
+
 - Keep PRs small and focused (< 400 lines changed)
 - Provide context in description
 - Respond to feedback promptly
 - Don't take feedback personally
 
 **For Reviewers:**
+
 - Review within 24 hours
 - Be constructive and specific
 - Ask questions, don't make demands
@@ -347,6 +361,7 @@ git stash save "WIP: implementing batch entry"
 ### Pre-commit Hook (Husky + lint-staged)
 
 Automatically runs on `git commit`:
+
 - ESLint on staged files
 - Prettier formatting on staged files
 - TypeScript type checking
@@ -354,6 +369,7 @@ Automatically runs on `git commit`:
 - PWA manifest validation
 
 **Configuration (`.husky/pre-commit`):**
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -363,6 +379,7 @@ npm run type-check
 ```
 
 **lint-staged configuration (`package.json`):**
+
 ```json
 {
   "lint-staged": {
@@ -371,12 +388,8 @@ npm run type-check
       "prettier --write",
       "jest --findRelatedTests --passWithNoTests"
     ],
-    "*.{json,md,yml,yaml}": [
-      "prettier --write"
-    ],
-    "public/manifest.json": [
-      "node scripts/validate-manifest.js"
-    ]
+    "*.{json,md,yml,yaml}": ["prettier --write"],
+    "public/manifest.json": ["node scripts/validate-manifest.js"]
   }
 }
 ```
@@ -384,11 +397,13 @@ npm run type-check
 ### Pre-push Hook
 
 Automatically runs on `git push`:
+
 - Run all tests with coverage
 - Build check
 - Lighthouse PWA audit (optional)
 
 **Configuration (`.husky/pre-push`):**
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -402,43 +417,49 @@ npm run build
 Additional checks for PWA functionality:
 
 **Manifest Validation Script (`scripts/validate-manifest.js`):**
+
 ```javascript
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const manifestPath = path.join(__dirname, '../public/manifest.json');
-const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+const manifestPath = path.join(__dirname, "../public/manifest.json");
+const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 
-const requiredFields = ['name', 'short_name', 'start_url', 'display', 'icons'];
-const missingFields = requiredFields.filter(field => !manifest[field]);
+const requiredFields = ["name", "short_name", "start_url", "display", "icons"];
+const missingFields = requiredFields.filter((field) => !manifest[field]);
 
 if (missingFields.length > 0) {
-  console.error(`❌ Manifest validation failed. Missing fields: ${missingFields.join(', ')}`);
+  console.error(
+    `❌ Manifest validation failed. Missing fields: ${missingFields.join(", ")}`,
+  );
   process.exit(1);
 }
 
 // Validate icons
 if (!manifest.icons || manifest.icons.length === 0) {
-  console.error('❌ Manifest must include at least one icon');
+  console.error("❌ Manifest must include at least one icon");
   process.exit(1);
 }
 
-const requiredSizes = ['192x192', '512x512'];
-const iconSizes = manifest.icons.map(icon => icon.sizes);
-const missingIcons = requiredSizes.filter(size => !iconSizes.includes(size));
+const requiredSizes = ["192x192", "512x512"];
+const iconSizes = manifest.icons.map((icon) => icon.sizes);
+const missingIcons = requiredSizes.filter((size) => !iconSizes.includes(size));
 
 if (missingIcons.length > 0) {
-  console.error(`❌ Manifest missing required icon sizes: ${missingIcons.join(', ')}`);
+  console.error(
+    `❌ Manifest missing required icon sizes: ${missingIcons.join(", ")}`,
+  );
   process.exit(1);
 }
 
-console.log('✅ Manifest validation passed');
+console.log("✅ Manifest validation passed");
 ```
 
 ### Bypassing Hooks
 
 Only in emergencies:
+
 ```bash
 git commit --no-verify
 git push --no-verify
@@ -565,6 +586,7 @@ All PRs must pass these automated checks:
 See `.github/workflows/deploy.yml` for complete CI/CD configuration.
 
 **Key stages:**
+
 - **Test**: Run all quality checks
 - **Build**: Create production build
 - **Deploy**: Deploy to GitHub Pages (main branch only)
@@ -578,6 +600,7 @@ npm run quality:check
 ```
 
 This runs:
+
 - TypeScript type checking
 - ESLint
 - Prettier

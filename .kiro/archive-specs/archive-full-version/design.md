@@ -2,7 +2,7 @@
 
 **Your Work Requirements Assistant**
 
-*Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits*
+_Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits_
 
 ---
 
@@ -27,7 +27,7 @@ graph TB
         Storage[IndexedDB via Dexie]
         SW[Service Worker]
     end
-    
+
     subgraph "Data Layer"
         Config[State Config JSON]
         UserData[User Profile]
@@ -35,7 +35,7 @@ graph TB
         Docs[Documents]
         Exports[Export Utilities]
     end
-    
+
     UI --> Router
     Router --> State
     State --> Storage
@@ -212,7 +212,6 @@ medicaid-compliance-assistant/
 
 ### TypeScript Interfaces
 
-
 ```typescript
 // types/profile.ts
 export interface UserProfile {
@@ -220,7 +219,7 @@ export interface UserProfile {
   name: string;
   dateOfBirth: string;
   state: string;
-  medicaidStatus: 'enrolled' | 'applying' | 'not-enrolled';
+  medicaidStatus: "enrolled" | "applying" | "not-enrolled";
   createdAt: string;
   updatedAt: string;
 }
@@ -235,23 +234,23 @@ export interface ExemptionScreening {
   responses: ExemptionResponse[];
 }
 
-export type ExemptionCategory = 
-  | 'age'
-  | 'family-caregiving'
-  | 'health-disability'
-  | 'program-participation'
-  | 'other';
+export type ExemptionCategory =
+  | "age"
+  | "family-caregiving"
+  | "health-disability"
+  | "program-participation"
+  | "other";
 
 // types/activities.ts
 export interface WorkActivity {
   id: string;
   userId: string;
   date: string;
-  type: 'work' | 'volunteer' | 'education';
+  type: "work" | "volunteer" | "education";
   hours: number;
   organization: string;
   income?: number;
-  payPeriod?: 'hourly' | 'daily' | 'weekly' | 'monthly';
+  payPeriod?: "hourly" | "daily" | "weekly" | "monthly";
   notes?: string;
   documentIds: string[];
   createdAt: string;
@@ -273,12 +272,12 @@ export interface Document {
   createdAt: string;
 }
 
-export type DocumentType = 
-  | 'pay-stub'
-  | 'volunteer-verification'
-  | 'school-enrollment'
-  | 'medical-documentation'
-  | 'other';
+export type DocumentType =
+  | "pay-stub"
+  | "volunteer-verification"
+  | "school-enrollment"
+  | "medical-documentation"
+  | "other";
 
 // types/compliance.ts
 export interface MonthlyCompliance {
@@ -300,7 +299,7 @@ export interface MonthlyCompliance {
 
 ```typescript
 // lib/storage/db.ts
-import Dexie, { Table } from 'dexie';
+import Dexie, { Table } from "dexie";
 
 export class MedicaidComplianceDB extends Dexie {
   profiles!: Table<UserProfile>;
@@ -311,14 +310,14 @@ export class MedicaidComplianceDB extends Dexie {
   compliance!: Table<MonthlyCompliance>;
 
   constructor() {
-    super('MedicaidComplianceDB');
+    super("MedicaidComplianceDB");
     this.version(1).stores({
-      profiles: 'id, createdAt',
-      exemptions: 'id, userId, screeningDate',
-      activities: 'id, userId, date, type',
-      documents: 'id, userId, date, type, isSubmitted',
-      documentBlobs: 'id',
-      compliance: 'id, userId, month'
+      profiles: "id, createdAt",
+      exemptions: "id, userId, screeningDate",
+      activities: "id, userId, date, type",
+      documents: "id, userId, date, type, isSubmitted",
+      documentBlobs: "id",
+      compliance: "id, userId, month",
     });
   }
 }
@@ -333,6 +332,7 @@ export class MedicaidComplianceDB extends Dexie {
 **Component**: `BatchActivityEntry.tsx`
 
 **UI Layout**:
+
 - Multi-date selector (calendar with checkboxes)
 - Activity type dropdown (work/volunteer/education)
 - Hours input (applies to all selected dates)
@@ -342,6 +342,7 @@ export class MedicaidComplianceDB extends Dexie {
 - Bulk save button
 
 **User Flow**:
+
 1. User clicks "Batch Entry" button from calendar
 2. Multi-date picker opens
 3. User selects multiple dates (checkboxes on calendar)
@@ -352,10 +353,11 @@ export class MedicaidComplianceDB extends Dexie {
 8. Success message shows "5 activities created"
 
 **TypeScript Interface**:
+
 ```typescript
 interface BatchActivityInput {
   dates: string[];
-  type: 'work' | 'volunteer' | 'education';
+  type: "work" | "volunteer" | "education";
   hours: number;
   organization: string;
   income?: number;
@@ -364,12 +366,11 @@ interface BatchActivityInput {
 ```
 
 **Validation**:
+
 - At least one date must be selected
 - Hours must be 0-24
 - Organization name required
 - Warn if creating duplicate entries for existing dates
-
-
 
 ### 2. Income Tracking Component
 
@@ -378,6 +379,7 @@ interface BatchActivityInput {
 **Component**: `IncomeTracker.tsx`
 
 **UI Layout**:
+
 - Income summary card showing monthly total
 - Threshold indicator ($580/month)
 - Compliance status badge
@@ -385,20 +387,22 @@ interface BatchActivityInput {
 - "Add Income" button for activities
 
 **Integration with WorkActivity**:
+
 - When logging work hours, optional income field appears
 - Pay period selector (hourly, daily, weekly, monthly)
 - Automatic calculation to monthly equivalent
 - Income displayed in activity list
 
 **Calculations**:
+
 ```typescript
 function calculateMonthlyIncome(activities: WorkActivity[]): number {
   return activities
-    .filter(a => a.type === 'work' && a.income)
+    .filter((a) => a.type === "work" && a.income)
     .reduce((total, activity) => {
       const monthlyIncome = convertToMonthly(
         activity.income!,
-        activity.payPeriod || 'monthly'
+        activity.payPeriod || "monthly",
       );
       return total + monthlyIncome;
     }, 0);
@@ -406,15 +410,20 @@ function calculateMonthlyIncome(activities: WorkActivity[]): number {
 
 function convertToMonthly(income: number, period: PayPeriod): number {
   switch (period) {
-    case 'hourly': return income * 160; // ~40hrs/week * 4 weeks
-    case 'daily': return income * 22; // ~22 workdays/month
-    case 'weekly': return income * 4.33; // ~4.33 weeks/month
-    case 'monthly': return income;
+    case "hourly":
+      return income * 160; // ~40hrs/week * 4 weeks
+    case "daily":
+      return income * 22; // ~22 workdays/month
+    case "weekly":
+      return income * 4.33; // ~4.33 weeks/month
+    case "monthly":
+      return income;
   }
 }
 ```
 
 **Display**:
+
 - Progress bar toward $580 threshold
 - Green checkmark if >= $580
 - Warning if < $580 and < 80 hours
@@ -427,6 +436,7 @@ function convertToMonthly(income: number, period: PayPeriod): number {
 **Component**: `DocumentFilter.tsx`
 
 **UI Layout**:
+
 - Filter button with badge showing active filter count
 - Filter panel (drawer on mobile, popover on desktop)
 - Document type multi-select checkboxes
@@ -435,6 +445,7 @@ function convertToMonthly(income: number, period: PayPeriod): number {
 - "Apply" button
 
 **Filter State**:
+
 ```typescript
 interface DocumentFilters {
   types: DocumentType[];
@@ -444,6 +455,7 @@ interface DocumentFilters {
 ```
 
 **Behavior**:
+
 - Filters applied on "Apply" click
 - Active filters shown as chips below filter button
 - Click chip to remove individual filter
@@ -451,12 +463,13 @@ interface DocumentFilters {
 - Persists filters in component state (not IndexedDB)
 
 **Implementation**:
+
 ```typescript
 function filterDocuments(
   documents: Document[],
-  filters: DocumentFilters
+  filters: DocumentFilters,
 ): Document[] {
-  return documents.filter(doc => {
+  return documents.filter((doc) => {
     if (filters.types.length > 0 && !filters.types.includes(doc.type)) {
       return false;
     }
@@ -478,6 +491,7 @@ function filterDocuments(
 **Component**: `ExportPreview.tsx`
 
 **UI Layout**:
+
 - Modal dialog (full-screen on mobile)
 - Tab switcher (JSON / Markdown)
 - Preview area with syntax highlighting
@@ -487,35 +501,37 @@ function filterDocuments(
 - "Cancel" button
 
 **JSON Preview**:
+
 - Syntax-highlighted JSON
 - Collapsible sections
 - Copy to clipboard button
 - File size indicator
 
 **Markdown Preview**:
+
 - Rendered markdown with styling
 - Table of contents
 - Print-friendly formatting
 - Copy to clipboard button
 
 **Implementation**:
+
 ```typescript
 interface ExportPreviewProps {
   open: boolean;
   onClose: () => void;
-  onDownload: (format: 'json' | 'markdown') => void;
+  onDownload: (format: "json" | "markdown") => void;
   data: ExportData;
   dateRange?: { from: string; to: string };
 }
 ```
 
 **Features**:
+
 - Real-time preview updates when date range changes
 - Format toggle without closing modal
 - Keyboard shortcuts (Cmd/Ctrl+D to download, Esc to close)
 - Loading state while generating preview
-
-
 
 ### 5. Import Merge Strategy Component
 
@@ -524,6 +540,7 @@ interface ExportPreviewProps {
 **Component**: `ImportMergeDialog.tsx`
 
 **UI Layout**:
+
 - Step 1: File upload and validation
 - Step 2: Import preview (record counts)
 - Step 3: Merge strategy selection
@@ -545,23 +562,26 @@ interface ExportPreviewProps {
    - Updates records if ID exists and import is newer
 
 **UI Flow**:
+
 ```typescript
 interface ImportStep {
   step: 1 | 2 | 3 | 4;
   file?: File;
   data?: ImportData;
-  strategy?: 'replace' | 'merge';
+  strategy?: "replace" | "merge";
   confirmed: boolean;
 }
 ```
 
 **Step 1 - Upload**:
+
 - Drag-and-drop zone
 - File input button
 - Validates JSON structure
 - Shows error if invalid
 
 **Step 2 - Preview**:
+
 - Display counts:
   - X activities
   - X documents (metadata only)
@@ -570,12 +590,14 @@ interface ImportStep {
 - "Next" button
 
 **Step 3 - Strategy**:
+
 - Radio buttons for replace/merge
 - Detailed explanation of each option
 - Warning for replace option
 - "Next" button
 
 **Step 4 - Confirm**:
+
 - Summary of action
 - For replace: text input requiring "DELETE"
 - For merge: simple confirmation
@@ -583,6 +605,7 @@ interface ImportStep {
 - Progress bar during import
 
 **Error Handling**:
+
 - Rollback on failure
 - Display specific error message
 - Option to retry or cancel
@@ -596,6 +619,7 @@ interface ImportStep {
 **UI Contexts**:
 
 **From Document View**:
+
 - "Link to Activity" button
 - Opens modal with activity list
 - Filter activities by date (near document date)
@@ -603,6 +627,7 @@ interface ImportStep {
 - Save links
 
 **From Activity View**:
+
 - "Attach Document" button
 - Opens document picker
 - Shows thumbnails of documents
@@ -611,6 +636,7 @@ interface ImportStep {
 - Save links
 
 **Modal Layout**:
+
 - Search/filter bar
 - List of items (activities or documents)
 - Checkbox selection
@@ -619,23 +645,25 @@ interface ImportStep {
 - "Cancel" button
 
 **Visual Indicators**:
+
 - Document card shows "Linked to 2 activities" badge
 - Activity entry shows document thumbnails
 - Click thumbnail to view document
 - Unlink button (X icon) on each link
 
 **Implementation**:
+
 ```typescript
 async function linkDocumentToActivity(
   documentId: string,
-  activityId: string
+  activityId: string,
 ): Promise<void> {
   const doc = await db.documents.get(documentId);
   if (doc && !doc.linkedActivityIds.includes(activityId)) {
     doc.linkedActivityIds.push(activityId);
     await db.documents.put(doc);
   }
-  
+
   const activity = await db.activities.get(activityId);
   if (activity && !activity.documentIds.includes(documentId)) {
     activity.documentIds.push(documentId);
@@ -651,6 +679,7 @@ async function linkDocumentToActivity(
 **Component**: `FileUpload.tsx`
 
 **UI Layout**:
+
 - Drag-and-drop zone
 - "Choose File" button
 - Accepted formats displayed
@@ -659,6 +688,7 @@ async function linkDocumentToActivity(
 - Same metadata form as camera capture
 
 **Features**:
+
 - Accept: JPEG, PNG, HEIC
 - Max size: 10MB (configurable)
 - Image preview before saving
@@ -666,6 +696,7 @@ async function linkDocumentToActivity(
 - Same flow as camera capture after file selected
 
 **Implementation**:
+
 ```typescript
 interface FileUploadProps {
   onFileSelected: (file: File) => void;
@@ -675,12 +706,11 @@ interface FileUploadProps {
 ```
 
 **Validation**:
+
 - Check file type
 - Check file size
 - Display error if invalid
 - Offer compression for large files
-
-
 
 ### 8. Storage Quota Warning Component
 
@@ -701,26 +731,26 @@ export function useStorageQuota(): StorageQuota {
     used: 0,
     total: 0,
     percentUsed: 0,
-    shouldWarn: false
+    shouldWarn: false,
   });
 
   useEffect(() => {
     async function checkQuota() {
-      if ('storage' in navigator && 'estimate' in navigator.storage) {
+      if ("storage" in navigator && "estimate" in navigator.storage) {
         const estimate = await navigator.storage.estimate();
         const used = estimate.usage || 0;
         const total = estimate.quota || 0;
         const percentUsed = (used / total) * 100;
-        
+
         setQuota({
           used,
           total,
           percentUsed,
-          shouldWarn: percentUsed >= 80
+          shouldWarn: percentUsed >= 80,
         });
       }
     }
-    
+
     checkQuota();
     const interval = setInterval(checkQuota, 60000); // Check every minute
     return () => clearInterval(interval);
@@ -733,12 +763,14 @@ export function useStorageQuota(): StorageQuota {
 **Component**: `StorageWarning.tsx`
 
 **UI Layout**:
+
 - Warning banner (appears at 80% capacity)
 - Storage usage bar
 - "Manage Storage" button
 - Dismissible (but reappears on next session if still over 80%)
 
 **Storage Management Page**:
+
 - Total storage used / available
 - Breakdown by type:
   - Documents: X MB (Y photos)
@@ -755,6 +787,7 @@ export function useStorageQuota(): StorageQuota {
 **Component**: `ExemptionRescreen.tsx`
 
 **UI Flow**:
+
 1. User clicks "Re-screen for Exemptions" in settings
 2. Warning dialog: "This will update your exemption status. Your previous screening will be saved for reference."
 3. User confirms
@@ -764,6 +797,7 @@ export function useStorageQuota(): StorageQuota {
 **Comparison View**: `ExemptionComparison.tsx`
 
 **Layout**:
+
 - Side-by-side comparison (stacked on mobile)
 - Previous screening results (left/top)
 - New screening results (right/bottom)
@@ -772,6 +806,7 @@ export function useStorageQuota(): StorageQuota {
 - "Revert to Previous" button
 
 **Data Storage**:
+
 - New screening creates new ExemptionScreening record
 - Previous screening remains in database
 - User profile references current screening ID
@@ -833,6 +868,7 @@ export function useStorageQuota(): StorageQuota {
    - Storage quota
 
 **Implementation**:
+
 ```typescript
 // contexts/AppContext.tsx
 interface AppState {
@@ -863,53 +899,61 @@ export function AppProvider({ children }: { children: ReactNode }) {
 ```
 
 **Why Context over Redux/Zustand**:
+
 - Simpler for this app size
 - No complex state updates
 - Most state is in IndexedDB
 - Context sufficient for UI state
-
-
 
 ## Form Validation Strategy
 
 ### Zod Schemas
 
 **Profile Validation**:
+
 ```typescript
 // lib/validation/profile.ts
-import { z } from 'zod';
+import { z } from "zod";
 
 export const profileSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(100),
-  dateOfBirth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format'),
-  state: z.string().min(1, 'State is required'),
-  medicaidStatus: z.enum(['enrolled', 'applying', 'not-enrolled'])
+  name: z.string().min(1, "Name is required").max(100),
+  dateOfBirth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid date format"),
+  state: z.string().min(1, "State is required"),
+  medicaidStatus: z.enum(["enrolled", "applying", "not-enrolled"]),
 });
 
 export type ProfileFormData = z.infer<typeof profileSchema>;
 ```
 
 **Activity Validation**:
+
 ```typescript
 // lib/validation/activities.ts
 export const activitySchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  type: z.enum(['work', 'volunteer', 'education']),
+  type: z.enum(["work", "volunteer", "education"]),
   hours: z.number().min(0).max(24),
-  organization: z.string().min(1, 'Organization is required').max(200),
+  organization: z.string().min(1, "Organization is required").max(200),
   income: z.number().min(0).optional(),
-  payPeriod: z.enum(['hourly', 'daily', 'weekly', 'monthly']).optional(),
-  notes: z.string().max(500).optional()
+  payPeriod: z.enum(["hourly", "daily", "weekly", "monthly"]).optional(),
+  notes: z.string().max(500).optional(),
 });
 ```
 
 **Document Validation**:
+
 ```typescript
 // lib/validation/documents.ts
 export const documentSchema = z.object({
-  type: z.enum(['pay-stub', 'volunteer-verification', 'school-enrollment', 'medical-documentation', 'other']),
+  type: z.enum([
+    "pay-stub",
+    "volunteer-verification",
+    "school-enrollment",
+    "medical-documentation",
+    "other",
+  ]),
   description: z.string().min(1).max(200),
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/)
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 ```
 
@@ -941,6 +985,7 @@ function ActivityEntryForm() {
 ### Loading States
 
 **Component-Level Loading**:
+
 ```typescript
 function ComplianceDashboard() {
   const [loading, setLoading] = useState(true);
@@ -965,6 +1010,7 @@ function ComplianceDashboard() {
 ```
 
 **Skeleton Screens**:
+
 - Use MUI Skeleton components
 - Match layout of loaded content
 - Smooth transition to actual content
@@ -972,6 +1018,7 @@ function ComplianceDashboard() {
 ### Empty States
 
 **No Activities Logged**:
+
 ```typescript
 <EmptyState
   icon={<CalendarIcon />}
@@ -986,6 +1033,7 @@ function ComplianceDashboard() {
 ```
 
 **No Documents**:
+
 ```typescript
 <EmptyState
   icon={<CameraIcon />}
@@ -1000,6 +1048,7 @@ function ComplianceDashboard() {
 ```
 
 **No Exemptions Found**:
+
 ```typescript
 <EmptyState
   icon={<InfoIcon />}
@@ -1020,30 +1069,43 @@ function ComplianceDashboard() {
 ```typescript
 // types/errors.ts
 export class DatabaseError extends Error {
-  constructor(message: string, public originalError?: Error) {
+  constructor(
+    message: string,
+    public originalError?: Error,
+  ) {
     super(message);
-    this.name = 'DatabaseError';
+    this.name = "DatabaseError";
   }
 }
 
 export class ValidationError extends Error {
-  constructor(message: string, public field?: string) {
+  constructor(
+    message: string,
+    public field?: string,
+  ) {
     super(message);
-    this.name = 'ValidationError';
+    this.name = "ValidationError";
   }
 }
 
 export class StorageQuotaError extends Error {
-  constructor(message: string, public usedMB: number, public totalMB: number) {
+  constructor(
+    message: string,
+    public usedMB: number,
+    public totalMB: number,
+  ) {
     super(message);
-    this.name = 'StorageQuotaError';
+    this.name = "StorageQuotaError";
   }
 }
 
 export class CameraError extends Error {
-  constructor(message: string, public reason: 'permission' | 'not-available' | 'unknown') {
+  constructor(
+    message: string,
+    public reason: "permission" | "not-available" | "unknown",
+  ) {
     super(message);
-    this.name = 'CameraError';
+    this.name = "CameraError";
   }
 }
 ```
@@ -1090,30 +1152,31 @@ export class ErrorBoundary extends React.Component<Props, State> {
 export function handleError(error: Error): void {
   if (error instanceof ValidationError) {
     // Show inline validation error
-    showSnackbar(error.message, 'warning');
+    showSnackbar(error.message, "warning");
   } else if (error instanceof StorageQuotaError) {
     // Show storage warning
     showStorageWarning(error.usedMB, error.totalMB);
   } else if (error instanceof CameraError) {
     // Handle camera-specific errors
-    if (error.reason === 'permission') {
-      showSnackbar('Camera permission denied. Please enable in settings.', 'error');
+    if (error.reason === "permission") {
+      showSnackbar(
+        "Camera permission denied. Please enable in settings.",
+        "error",
+      );
     } else {
-      showSnackbar('Camera not available. Use file upload instead.', 'info');
+      showSnackbar("Camera not available. Use file upload instead.", "info");
     }
   } else if (error instanceof DatabaseError) {
     // Show database error
-    showSnackbar('Failed to save data. Please try again.', 'error');
-    console.error('Database error:', error.originalError);
+    showSnackbar("Failed to save data. Please try again.", "error");
+    console.error("Database error:", error.originalError);
   } else {
     // Generic error
-    showSnackbar('An unexpected error occurred', 'error');
-    console.error('Unhandled error:', error);
+    showSnackbar("An unexpected error occurred", "error");
+    console.error("Unhandled error:", error);
   }
 }
 ```
-
-
 
 ## PWA Configuration
 
@@ -1121,112 +1184,112 @@ export function handleError(error: Error): void {
 
 ```javascript
 // next.config.js
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
+const withPWA = require("next-pwa")({
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
   register: true,
   skipWaiting: true,
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
-      handler: 'CacheFirst',
+      handler: "CacheFirst",
       options: {
-        cacheName: 'google-fonts-webfonts',
+        cacheName: "google-fonts-webfonts",
         expiration: {
           maxEntries: 4,
-          maxAgeSeconds: 365 * 24 * 60 * 60 // 1 year
-        }
-      }
+          maxAgeSeconds: 365 * 24 * 60 * 60, // 1 year
+        },
+      },
     },
     {
       urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-      handler: 'StaleWhileRevalidate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: 'static-font-assets',
+        cacheName: "static-font-assets",
         expiration: {
           maxEntries: 4,
-          maxAgeSeconds: 7 * 24 * 60 * 60 // 1 week
-        }
-      }
+          maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
+        },
+      },
     },
     {
       urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-      handler: 'StaleWhileRevalidate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: 'static-image-assets',
+        cacheName: "static-image-assets",
         expiration: {
           maxEntries: 64,
-          maxAgeSeconds: 24 * 60 * 60 // 1 day
-        }
-      }
+          maxAgeSeconds: 24 * 60 * 60, // 1 day
+        },
+      },
     },
     {
       urlPattern: /\/_next\/image\?url=.+$/i,
-      handler: 'StaleWhileRevalidate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: 'next-image',
+        cacheName: "next-image",
         expiration: {
           maxEntries: 64,
-          maxAgeSeconds: 24 * 60 * 60 // 1 day
-        }
-      }
+          maxAgeSeconds: 24 * 60 * 60, // 1 day
+        },
+      },
     },
     {
       urlPattern: /\.(?:js)$/i,
-      handler: 'StaleWhileRevalidate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: 'static-js-assets',
+        cacheName: "static-js-assets",
         expiration: {
           maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60 // 1 day
-        }
-      }
+          maxAgeSeconds: 24 * 60 * 60, // 1 day
+        },
+      },
     },
     {
       urlPattern: /\.(?:css|less)$/i,
-      handler: 'StaleWhileRevalidate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: 'static-style-assets',
+        cacheName: "static-style-assets",
         expiration: {
           maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60 // 1 day
-        }
-      }
+          maxAgeSeconds: 24 * 60 * 60, // 1 day
+        },
+      },
     },
     {
       urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
-      handler: 'StaleWhileRevalidate',
+      handler: "StaleWhileRevalidate",
       options: {
-        cacheName: 'next-data',
+        cacheName: "next-data",
         expiration: {
           maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60 // 1 day
-        }
-      }
+          maxAgeSeconds: 24 * 60 * 60, // 1 day
+        },
+      },
     },
     {
       urlPattern: /\.(?:json|xml|csv)$/i,
-      handler: 'NetworkFirst',
+      handler: "NetworkFirst",
       options: {
-        cacheName: 'static-data-assets',
+        cacheName: "static-data-assets",
         expiration: {
           maxEntries: 32,
-          maxAgeSeconds: 24 * 60 * 60 // 1 day
-        }
-      }
-    }
-  ]
+          maxAgeSeconds: 24 * 60 * 60, // 1 day
+        },
+      },
+    },
+  ],
 });
 
 module.exports = withPWA({
-  output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/medicaid-compliance' : '',
+  output: "export",
+  basePath: process.env.NODE_ENV === "production" ? "/medicaid-compliance" : "",
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   typescript: {
-    strict: true
-  }
+    strict: true,
+  },
 });
 ```
 
@@ -1365,23 +1428,23 @@ describe('calculateMonthlyCompliance', () => {
 describe('Activity Entry Flow', () => {
   it('saves activity and updates compliance', async () => {
     const { user } = renderWithProviders(<TrackingPage />);
-    
+
     // Click on a date
     await user.click(screen.getByLabelText('January 15, 2027'));
-    
+
     // Fill form
     await user.selectOptions(screen.getByLabelText('Activity Type'), 'work');
     await user.type(screen.getByLabelText('Hours'), '8');
     await user.type(screen.getByLabelText('Organization'), 'ABC Company');
-    
+
     // Submit
     await user.click(screen.getByRole('button', { name: /save/i }));
-    
+
     // Verify saved to IndexedDB
     const activities = await db.activities.toArray();
     expect(activities).toHaveLength(1);
     expect(activities[0].hours).toBe(8);
-    
+
     // Verify compliance updated
     expect(screen.getByText(/8 hours logged/i)).toBeInTheDocument();
   });
@@ -1392,37 +1455,37 @@ describe('Activity Entry Flow', () => {
 
 ```typescript
 // tests/e2e/complete-journey.spec.ts
-test('complete user journey', async ({ page }) => {
+test("complete user journey", async ({ page }) => {
   // Open app
-  await page.goto('/');
-  
+  await page.goto("/");
+
   // Complete onboarding
-  await page.fill('[name="name"]', 'Test User');
-  await page.fill('[name="dateOfBirth"]', '1985-06-15');
-  await page.selectOption('[name="state"]', 'federal-baseline');
+  await page.fill('[name="name"]', "Test User");
+  await page.fill('[name="dateOfBirth"]', "1985-06-15");
+  await page.selectOption('[name="state"]', "federal-baseline");
   await page.click('button:has-text("Next")');
-  
+
   // Complete exemption screening
-  await page.fill('[name="age"]', '38');
+  await page.fill('[name="age"]', "38");
   await page.click('button:has-text("Next")');
   await page.click('input[value="no"]'); // Not pregnant
   await page.click('button:has-text("Complete Screening")');
-  
+
   // Verify not exempt
-  await expect(page.locator('text=Not Exempt')).toBeVisible();
-  
+  await expect(page.locator("text=Not Exempt")).toBeVisible();
+
   // Go to tracking
-  await page.click('text=Start Tracking Hours');
-  
+  await page.click("text=Start Tracking Hours");
+
   // Log activity
   await page.click('[aria-label="January 15, 2027"]');
-  await page.selectOption('[name="type"]', 'work');
-  await page.fill('[name="hours"]', '8');
-  await page.fill('[name="organization"]', 'Test Company');
+  await page.selectOption('[name="type"]', "work");
+  await page.fill('[name="hours"]', "8");
+  await page.fill('[name="organization"]', "Test Company");
   await page.click('button:has-text("Save")');
-  
+
   // Verify compliance
-  await expect(page.locator('text=8 hours logged')).toBeVisible();
+  await expect(page.locator("text=8 hours logged")).toBeVisible();
 });
 ```
 
@@ -1431,6 +1494,7 @@ test('complete user journey', async ({ page }) => {
 ### Phase 1: Foundation (Week 1-2)
 
 **Tasks**:
+
 1. Project setup (Next.js, TypeScript, MUI)
 2. IndexedDB schema with Dexie
 3. PWA configuration
@@ -1440,6 +1504,7 @@ test('complete user journey', async ({ page }) => {
 7. Error boundary and error handling
 
 **Deliverables**:
+
 - Working Next.js app with MUI
 - IndexedDB connected
 - PWA installable
@@ -1448,6 +1513,7 @@ test('complete user journey', async ({ page }) => {
 ### Phase 2: Core Features (Week 3-5)
 
 **Tasks**:
+
 1. User profile and onboarding
 2. State configuration system
 3. Exemption screening logic and UI
@@ -1460,6 +1526,7 @@ test('complete user journey', async ({ page }) => {
 10. Compliance dashboard
 
 **Deliverables**:
+
 - Complete onboarding flow
 - Exemption screening working
 - Activity tracking functional
@@ -1468,6 +1535,7 @@ test('complete user journey', async ({ page }) => {
 ### Phase 3: Document Management (Week 6-7)
 
 **Tasks**:
+
 1. Camera integration
 2. File upload fallback
 3. Photo capture and storage
@@ -1478,6 +1546,7 @@ test('complete user journey', async ({ page }) => {
 8. Storage management page
 
 **Deliverables**:
+
 - Document capture working
 - Document organization functional
 - Storage management implemented
@@ -1485,6 +1554,7 @@ test('complete user journey', async ({ page }) => {
 ### Phase 4: Export/Import and Polish (Week 8-9)
 
 **Tasks**:
+
 1. JSON export with preview
 2. Markdown export with preview
 3. Data import with validation
@@ -1497,6 +1567,7 @@ test('complete user journey', async ({ page }) => {
 10. Loading states for all async operations
 
 **Deliverables**:
+
 - Export/import fully functional
 - All accessibility issues resolved
 - Performance targets met
@@ -1505,6 +1576,7 @@ test('complete user journey', async ({ page }) => {
 ### Phase 5: Testing and Deployment (Week 10)
 
 **Tasks**:
+
 1. Comprehensive unit tests
 2. Integration tests for all workflows
 3. E2E test scenarios
@@ -1515,6 +1587,7 @@ test('complete user journey', async ({ page }) => {
 8. Final QA and bug fixes
 
 **Deliverables**:
+
 - 80%+ test coverage
 - All tests passing
 - Deployed to GitHub Pages
@@ -1588,6 +1661,7 @@ test('complete user journey', async ({ page }) => {
 This design document provides a complete, gap-free specification for the Medicaid Work Requirements Compliance Assistant MVP. All 15 requirements are addressed with detailed component specifications, data models, and implementation guidance.
 
 **Key Strengths**:
+
 - Comprehensive component specifications for all identified gaps
 - Clear data models with income tracking support
 - Detailed user flows for complex features

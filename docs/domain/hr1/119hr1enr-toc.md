@@ -4,7 +4,6 @@
 
 H.R.1
 
-
 AT THE FIRST SESSION
 Begun and held at the City of Washington on Friday,
 the third day of January, two thousand and twenty-five
@@ -13,10 +12,8 @@ To provide for reconciliation pursuant to title II of H. Con. Res. 14.
 
 Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,
 
-
 SECTION 1. Table of contents.
 The table of contents of this Act is as follows:
-
 
 Sec. 1. Table of contents.
 TITLE I—COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY

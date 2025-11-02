@@ -19,7 +19,6 @@ SEC. 70101. Extension and enhancement of reduced rates.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70102. Extension and enhancement of increased standard deduction.
 (a) In general.—Section 63(c)(7) is amended—
 
@@ -39,7 +38,6 @@ SEC. 70102. Extension and enhancement of increased standard deduction.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
-
 SEC. 70103. Termination of deduction for personal exemptions other than temporary senior deduction.
 (a) In general.—Section 151(d)(5) is amended—
 
@@ -48,7 +46,6 @@ SEC. 70103. Termination of deduction for personal exemptions other than temporar
 (2) by striking “, and before January 1, 2026”, and
 
 (3) by adding at the end the following new subparagraph:
-
 
 “(C) DEDUCTION FOR SENIORS.—
 
@@ -76,11 +73,9 @@ SEC. 70103. Termination of deduction for personal exemptions other than temporar
 
 (b) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2) is amended by striking “and” at the end of subparagraph (U), by striking the period at the end of subparagraph (V) and inserting “, and”, and by inserting after subparagraph (V) the following new subparagraph:
 
-
 “(W) an omission of a correct social security number required under section 151(d)(5)(C) (relating to deduction for seniors).”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
-
 
 SEC. 70104. Extension and enhancement of increased child tax credit.
 (a) Extension and increase of expanded child tax credit.—Section 24(h) is amended—
@@ -92,7 +87,6 @@ SEC. 70104. Extension and enhancement of increased child tax credit.
 (3) by striking “2018 through 2025” in the heading and inserting “beginning after 2017”.
 
 (b) Social security number required.—Section 24(h)(7) is amended to read as follows:
-
 
 “(7) SOCIAL SECURITY NUMBER REQUIRED.—
 
@@ -109,7 +103,6 @@ SEC. 70104. Extension and enhancement of increased child tax credit.
 “(ii) before the due date for such return.”.
 
 (c) Inflation adjustments.—Section 24(i) is amended to read as follows:
-
 
 “(i) Inflation adjustments.—
 
@@ -129,13 +122,11 @@ SEC. 70104. Extension and enhancement of increased child tax credit.
 
 (d) Conforming amendment.—Section 24(h)(5) is amended to read as follows:
 
-
 “(5) MAXIMUM AMOUNT OF REFUNDABLE CREDIT.—The amount determined under subsection (d)(1)(A) with respect to any qualifying child shall not exceed $1,400, and such subsection shall be applied without regard to paragraph (4) of this subsection.”.
 
 (e) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2)(I) is amended by striking “section 24(e)” and inserting “section 24”.
 
 (f) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
-
 
 SEC. 70105. Extension and enhancement of deduction for qualified business income.
 (a) Increase in taxable income limitation phase-in amounts.—
@@ -147,7 +138,6 @@ SEC. 70105. Extension and enhancement of deduction for qualified business income
 (b) Minimum deduction for active qualified business income.—
 
 (1) IN GENERAL.—Subsection (i) of section 199A is amended to read as follows:
-
 
 “(i) Minimum deduction for active qualified business income.—
 
@@ -175,7 +165,6 @@ If any increase under this paragraph is not a multiple of $5, such increase shal
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70106. Extension and enhancement of increased estate and gift tax exemption amounts.
 (a) In general.—Section 2010(c)(3) is amended—
 
@@ -191,7 +180,6 @@ SEC. 70106. Extension and enhancement of increased estate and gift tax exemption
 
 (b) Effective date.—The amendments made by this section shall apply to estates of decedents dying and gifts made after December 31, 2025.
 
-
 SEC. 70107. Extension of increased alternative minimum tax exemption amounts and modification of phaseout thresholds.
 (a) In general.—Section 55(d)(4) is amended—
 
@@ -205,18 +193,15 @@ SEC. 70107. Extension of increased alternative minimum tax exemption amounts and
 
 (2) by striking “determined by substituting ‘calendar year 2017’ for ‘calendar year 2016’ in subparagraph (A)(ii) thereof.” and inserting “determined by substituting for ‘calendar year 2016’ in subparagraph (A)(ii) thereof—
 
-
 “(1) ‘calendar year 2017’, in the case of the $109,400 amount in subparagraph (A)(i)(I) and the $70,300 amount in subparagraph (A)(i)(II), and
 
 “(2) ‘calendar year 2025’, in the case of the $1,000,000 amount in subparagraph (A)(ii)(I).”.
 
 (c) Modification of phaseout amount.—Section 55(d)(4)(A)(ii) is amended by striking “and” at the end of subclause (II), and by adding at the end the following new subclause:
 
-
 “(IV) by substituting ‘50 percent’ for ‘25 percent’, and”.
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70108. Extension and modification of limitation on deduction for qualified residence interest.
 (a) In general.—Section 163(h)(3)(F) is amended—
@@ -231,7 +216,6 @@ SEC. 70108. Extension and modification of limitation on deduction for qualified 
 
 (D) by inserting after subclause (II) the following new subclause:
 
-
 “(III) MORTGAGE INSURANCE PREMIUMS TREATED AS INTEREST.—Clause (iv) of subparagraph (E) shall not apply.”,
 
 (2) by striking clause (ii) and redesignating clauses (iii) and (iv) as clauses (ii) and (iii), respectively, and
@@ -239,7 +223,6 @@ SEC. 70108. Extension and modification of limitation on deduction for qualified 
 (3) by striking “2018 through 2025” in the heading and inserting “beginning after 2017”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70109. Extension and modification of limitation on casualty loss deduction.
 (a) In general.—Section 165(h)(5) is amended—
@@ -256,7 +239,6 @@ SEC. 70109. Extension and modification of limitation on casualty loss deduction.
 
 (3) STATE DECLARED DISASTER.—Paragraph (5) of section 165(h) is amended by adding at the end the following new subparagraph:
 
-
 “(C) STATE DECLARED DISASTER.—For purposes of this paragraph—
 
 “(i) IN GENERAL.—The term ‘State declared disaster’ means, with respect to any State, any natural catastrophe (including any hurricane, tornado, storm, high water, wind-driven water, tidal wave, tsunami, earthquake, volcanic eruption, landslide, mudslide, snowstorm, or drought), or, regardless of cause, any fire, flood, or explosion, in any part of the State, which in the determination of the Governor of such State (or the Mayor, in the case of the District of Columbia) and the Secretary causes damage of sufficient severity and magnitude to warrant the application of the rules of this section.
@@ -264,7 +246,6 @@ SEC. 70109. Extension and modification of limitation on casualty loss deduction.
 “(ii) STATE.—The term ‘State’ includes the District of Columbia, the Commonwealth of Puerto Rico, the Virgin Islands, Guam, American Samoa, and the Commonwealth of the Northern Mariana Islands.”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70110. Termination of miscellaneous itemized deductions other than educator expenses.
 (a) In general.—Section 67(g) is amended—
@@ -277,11 +258,9 @@ SEC. 70110. Termination of miscellaneous itemized deductions other than educator
 
 (1) IN GENERAL.—Section 67(b) is amended by striking “and” at the end of paragraph (11), by striking the period at the end of paragraph (12) and inserting “, and”, and by adding at the end the following new paragraph:
 
-
 “(13) the deductions allowed by section 162 for educator expenses (as defined in subsection (g)).”.
 
 (2) INCLUSION OF COACHES AND CERTAIN NONATHLETIC INSTRUCTIONAL EQUIPMENT.—Section 67 is amended by redesignating subsection (g), as amended by this section, as subsection (h), and by inserting after subsection (f) the following new section:
-
 
 “(g) Educator expenses.—For purposes of subsection (b)(13), the term ‘educator expenses’ means expenses of a type which would be described in section 62(a)(2)(D) if—
 
@@ -297,10 +276,8 @@ SEC. 70110. Termination of miscellaneous itemized deductions other than educator
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70111. Limitation on tax benefit of itemized deductions.
 (a) In general.—Section 68 is amended to read as follows:
-
 
 “(a) In general.—In the case of an individual, the amount of the itemized deductions otherwise allowable for the taxable year (determined without regard to this section) shall be reduced by 2⁄37 of the lesser of—
 
@@ -317,7 +294,6 @@ SEC. 70111. Limitation on tax benefit of itemized deductions.
 (2) PATRONS OF SPECIFIED AGRICULTURAL AND HORTICULTURAL COOPERATIVES.—Section 199A(g)(2)(B) is amended by inserting “section 68 or” after “without regard to”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70112. Extension and modification of qualified transportation fringe benefits.
 (a) In general.—Section 132(f) is amended—
@@ -342,7 +318,6 @@ SEC. 70112. Extension and modification of qualified transportation fringe benefi
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70113. Extension and modification of limitation on deduction and exclusion for moving expenses.
 (a) Extension of limitation on deduction.—Section 217(k) is amended—
 
@@ -354,11 +329,9 @@ SEC. 70113. Extension and modification of limitation on deduction and exclusion 
 
 (1) by striking “2017.—Except in the case” and inserting “2017.—
 
-
 “(1) IN GENERAL.—Except in the case”, and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(2) MEMBERS OF THE INTELLIGENCE COMMUNITY.—An employee or new appointee of the intelligence community (as defined in section 3 of the National Security Act of 1947 (50 U.S.C. 3003)) (other than a member of the Armed Forces of the United States) who moves pursuant to a change in assignment which requires relocation shall be treated for purposes of this section in the same manner as an individual to whom subsection (g) applies.”.
 
@@ -372,10 +345,8 @@ SEC. 70113. Extension and modification of limitation on deduction and exclusion 
 
 (e) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70114. Extension and modification of limitation on wagering losses.
 (a) In general.—Section 165 is amended by striking subsection (d) and inserting the following:
-
 
 “(d) Wagering losses.—
 
@@ -388,7 +359,6 @@ SEC. 70114. Extension and modification of limitation on wagering losses.
 “(2) SPECIAL RULE.—For purposes of paragraph (1), the term ‘losses from wagering transactions’ includes any deduction otherwise allowable under this chapter incurred in carrying on any wagering transaction.”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70115. Extension and enhancement of increased limitation on contributions to ABLE accounts.
 (a) In general.—Section 529A(b)(2)(B) is amended—
@@ -403,12 +373,10 @@ SEC. 70115. Extension and enhancement of increased limitation on contributions t
 
 (2) MODIFIED INFLATION ADJUSTMENT.—The amendment made by subsection (a)(1) shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70116. Extension and enhancement of savers credit allowed for ABLE contributions.
 (a) Extension.—
 
 (1) IN GENERAL.—Section 25B(d)(1) is amended to read as follows:
-
 
 “(1) IN GENERAL.—The term ‘qualified retirement savings contributions’ means, with respect to any taxable year, the sum of—
 
@@ -436,18 +404,15 @@ SEC. 70116. Extension and enhancement of savers credit allowed for ABLE contribu
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after December 31, 2026.
 
-
 SEC. 70117. Extension of rollovers from qualified tuition programs to ABLE accounts permitted.
 (a) In general.—Section 529(c)(3)(C)(i)(III) is amended by striking “before January 1, 2026,”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70118. Extension of treatment of certain individuals performing services in the Sinai Peninsula and enhancement to include additional areas.
 (a) Treatment made permanent.—Section 11026(a) of Public Law 115–97 is amended by striking “, with respect to the applicable period”.
 
 (b) Kenya, Mali, Burkina Faso, and Chad included as hazardous duty areas.—Section 11026(b) of Public Law 115–97 is amended to read as follows:
-
 
 “(b) Qualified hazardous duty area.—For purposes of this section, the term ‘qualified hazardous duty area’ means each of the following locations, but only during the period for which any member of the Armed Forces of the United States is entitled to special pay under section 310 of title 37, United States Code (relating to special pay; duty subject to hostile fire or imminent danger), for services performed in such location:
 
@@ -465,10 +430,8 @@ SEC. 70118. Extension of treatment of certain individuals performing services in
 
 (d) Effective date.—The amendments made by this section shall take effect on January 1, 2026.
 
-
 SEC. 70119. Extension and modification of exclusion from gross income of student loans discharged on account of death or disability.
 (a) In general.—Section 108(f)(5) is amended to read as follows:
-
 
 “(5) DISCHARGES ON ACCOUNT OF DEATH OR DISABILITY.—
 
@@ -494,11 +457,9 @@ SEC. 70119. Extension and modification of exclusion from gross income of student
 
 (b) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2), as amended by this Act, is further amended by striking “and” at the end of subparagraph (V), by striking the period at the end of subparagraph (W) and inserting “, and”, and by inserting after subparagraph (W) the following new subparagraph:
 
-
 “(X) an omission of a correct social security number required under section 108(f)(5)(C) (relating to discharges on account of death or disability).”.
 
 (c) Effective date.—The amendments made by this section shall apply to discharges after December 31, 2025.
-
 
 SEC. 70120. Limitation on individual deductions for certain state and local taxes, etc.
 (a) In general.—Section 164(b)(6) is amended—
@@ -508,7 +469,6 @@ SEC. 70120. Limitation on individual deductions for certain state and local taxe
 (2) by striking “$10,000 ($5,000 in the case of a married individual filing a separate return)” and inserting “the applicable limitation amount (half the applicable limitation amount in the case of a married individual filing a separate return)”.
 
 (b) Applicable limitation amount.—Section 164(b) is amended by adding at the end the following new paragraph:
-
 
 “(7) APPLICABLE LIMITATION AMOUNT.—
 
@@ -591,23 +551,19 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (b) Deduction allowed to non-itemizers.—Section 63(b) is amended by striking “and” at the end of paragraph (3), by striking the period at the end of paragraph (4) and inserting “, and”, and by adding at the end the following new paragraph:
 
-
 “(5) the deduction provided in section 224.”.
 
 (c) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of subparagraph (W), by striking the period at the end of subparagraph (X) and inserting “, and”, and by inserting after subparagraph (X) the following new subparagraph:
 
-
 “(Y) an omission of a correct social security number required under section 224(e) (relating to deduction for qualified tips).”.
 
 (d) Exclusion from qualified business income.—Section 199A(c)(4) is amended by striking “and” at the end of subparagraph (B), by striking the period at the end of subparagraph (C) and inserting “, and”, and by adding at the end the following new subparagraph:
-
 
 “(D) any amount with respect to which a deduction is allowable to the taxpayer under section 224(a) for the taxable year.”.
 
 (e) Extension of tip credit to beauty service business.—
 
 (1) IN GENERAL.—Section 45B(b)(2) is amended to read as follows:
-
 
 “(2) APPLICATION ONLY TO CERTAIN LINES OF BUSINESS.—In applying paragraph (1) there shall be taken into account only tips received from customers or clients in connection with the following services:
 
@@ -637,7 +593,6 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (B) STATEMENT FURNISHED TO PAYEE.—Section 6041(d) is amended by striking “and” at the end of paragraph (1), by striking the period at the end of paragraph (2) and inserting “, and”, and by inserting after paragraph (2) the following new paragraph:
 
-
 “(3) in the case of compensation to non-employees, the portion of payments that have been reasonably designated as cash tips and the occupation described in section 224(d)(1) of the person receiving such tips.”.
 
 (2) RETURNS FOR PAYMENTS MADE FOR SERVICES AND DIRECT SALES.—
@@ -646,13 +601,11 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (B) STATEMENT FURNISHED TO PAYEE.—Section 6041A(e) is amended by striking “and” at the end of paragraph (1), by striking the period at the end of paragraph (2) and inserting “, and”, and by inserting after paragraph (2) the following new paragraph:
 
-
 “(3) in the case of subsection (a), the portion of payments that have been reasonably designated as cash tips and the occupation described in section 224(d)(1) of the person receiving such tips.”.
 
 (3) RETURNS RELATING TO THIRD PARTY SETTLEMENT ORGANIZATIONS.—
 
 (A) STATEMENT FURNISHED TO SECRETARY.—Section 6050W(a) is amended by striking “and” at the end of paragraph (1), by striking the period at the end of paragraph (2) and inserting “and”, and by adding at the end the following new paragraph:
-
 
 “(3) in the case of a third party settlement organization, the portion of reportable payment transactions that have been reasonably designated by payors as cash tips and the occupation described in section 224(d)(1) of the person receiving such tips.”.
 
@@ -660,11 +613,9 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (4) RETURNS RELATED TO WAGES.—Section 6051(a) is amended by striking “and” at the end of paragraph (16), by striking the period at the end of paragraph (17) and inserting “, and”, and by inserting after paragraph (17) the following new paragraph:
 
-
 “(18) the total amount of cash tips reported by the employee under section 6053(a) and the occupation described in section 224(d)(1) such person.”.
 
 (g) Clerical amendment.—The table of sections for part VII of subchapter B of chapter 1 is amended by redesignating the item relating to section 224 as relating to section 225 and by inserting after the item relating to section 223 the following new item:
-
 
 “Sec. 224. Qualified tips. ”.
 (h) Published list of occupations traditionally receiving tips.—Not later than 90 days after the date of the enactment of this Act, the Secretary of the Treasury (or the Secretary's delegate) shall publish a list of occupations which customarily and regularly received tips on or before December 31, 2024, for purposes of section 224(d)(1) of the Internal Revenue Code of 1986 (as added by subsection (a)).
@@ -674,7 +625,6 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 (j) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
 (k) Transition rule.—In the case of any cash tips required to be reported for periods before January 1, 2026, persons required to file returns or statements under section 6041(a), 6041(d)(3), 6041A(a), 6041A(e)(3), 6050W(a), or 6050W(f)(2) of the Internal Revenue Code of 1986 (as amended by this section) may approximate a separate accounting of amounts designated as cash tips by any reasonable method specified by the Secretary.
-
 
 SEC. 70202. No tax on overtime.
 (a) Deduction allowed.—Part VII of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by redesignating section 225 as section 226 and by inserting after section 224 the following new section:
@@ -713,13 +663,11 @@ SEC. 70202. No tax on overtime.
 
 (b) Deduction allowed to non-itemizers.—Section 63(b), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of paragraph (4), by striking the period at the end of paragraph (5) and inserting “, and”, and by adding at the end the following new paragraph:
 
-
 “(6) the deduction provided in section 225.”.
 
 (c) Reporting.—
 
 (1) REQUIREMENT TO INCLUDE OVERTIME COMPENSATION ON W-2.—Section 6051(a), as amended by the preceding provision of this Act, is amended by striking “and” at the end of paragraph (17), by striking the period at the end of paragraph (18) and inserting “, and”, and by inserting after paragraph (18) the following new paragraph:
-
 
 “(19) the total amount of qualified overtime compensation (as defined in section 225(c)).”.
 
@@ -729,16 +677,13 @@ SEC. 70202. No tax on overtime.
 
 (B) STATEMENT FURNISHED TO PAYEE.—Section 6041(d), as amended by section 70201(e)(1)(B), is amended by striking “and” at the end of paragraph (2), by striking the period at the end of paragraph (3) and inserting “, and”, and by inserting after paragraph (3) the following new paragraph:
 
-
 “(4) the portion of payments that are qualified overtime compensation (as defined in section 225(c)).”.
 
 (d) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of subparagraph (X), by striking the period at the end of subparagraph (Y) and inserting “, and”, and by inserting after subparagraph (Y) the following new subparagraph:
 
-
 “(Z) an omission of a correct social security number required under section 225(d) (relating to deduction for qualified overtime).”.
 
 (e) Clerical amendment.—The table of sections for part VII of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by redesignating the item relating to section 225 as an item relating to section 226 and by inserting after the item relating to section 224 the following new item:
-
 
 “Sec. 225. Qualified overtime compensation. ”.
 (f) Withholding.—The Secretary of the Treasury (or the Secretary's delegate) shall modify the procedures prescribed under section 3402(a) of the Internal Revenue Code of 1986 for taxable years beginning after December 31, 2025, to take into account the deduction allowed under section 225 of such Code (as added by this Act).
@@ -747,10 +692,8 @@ SEC. 70202. No tax on overtime.
 
 (h) Transition rule.—In the case of qualified overtime compensation required to be reported for periods before January 1, 2026, persons required to file returns or statements under section 6051(a)(19), 6041(a), or 6041(d)(4) of the Internal Revenue Code of 1986 (as amended by this section) may approximate a separate accounting of amounts designated as qualified overtime compensation by any reasonable method specified by the Secretary.
 
-
 SEC. 70203. No tax on car loan interest.
 (a) In general.—Section 163(h) is amended by redesignating paragraph (4) as paragraph (5) and by inserting after paragraph (3) the following new paragraph:
-
 
 “(4) SPECIAL RULES FOR TAXABLE YEARS 2025 THROUGH 2028 RELATING TO QUALIFIED PASSENGER VEHICLE LOAN INTEREST.—
 
@@ -810,7 +753,6 @@ Such term shall not include any vehicle the final assembly of which did not occu
 
 (b) Deduction allowed to non-itemizers.—Section 63(b), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of paragraph (5), by striking the period at the end of paragraph (6) and inserting “and”, and by adding at the end the following new paragraph:
 
-
 “(7) so much of the deduction allowed by section 163(a) as is attributable to the exception under section 163(h)(4)(A).”.
 
 (c) Reporting.—
@@ -865,11 +807,9 @@ The written statement required under the preceding sentence shall be furnished o
 
 (A) in paragraph (1)(B), by striking “or” at the end of clause (xxvii), by striking “and” at the end of clause (xxviii) and inserting “or”, and by adding at the end the following new clause:
 
-
 “(xxix) section 6050AA(a) (relating to returns relating to applicable passenger vehicle loan interest received in trade or business from individuals),”, and
 
 (B) in paragraph (2), by striking “or” at the end of subparagraph (KK), by striking the period at the end of subparagraph (LL) and inserting “, or”, and by inserting after subparagraph (LL) the following new subparagraph:
-
 
 “(MM) section 6050AA(c) (relating to statements relating to applicable passenger vehicle loan interest received in trade or business from individuals).”.
 
@@ -879,16 +819,13 @@ The written statement required under the preceding sentence shall be furnished o
 
 (2) The table of sections for subpart B of part III of subchapter A of chapter 61 is amended by adding at the end the following new item:
 
-
 “Sec. 6050AA. Returns relating to applicable passenger vehicle loan interest received in trade or business from individuals. ”.
 (e) Effective date.—The amendments made by this section shall apply to indebtedness incurred after December 31, 2024.
-
 
 SEC. 70204. Trump accounts and contribution pilot program.
 (a) Trump accounts.—
 
 (1) IN GENERAL.—Subchapter F of chapter 1 is amended by adding at the end the following new part:
-
 
 “PART IX—Trump accounts
 
@@ -1133,7 +1070,6 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 
 (3) FAILURE TO PROVIDE REPORTS ON TRUMP ACCOUNTS.—Section 6693(a)(2) is amended by striking “and” at the end of subparagraph (E), by striking the period at the end of subparagraph (F) and inserting “, and”, and by inserting after subparagraph (F) the following new subparagraph:
 
-
 “(G) section 530A(i) (relating to Trump accounts).”.
 
 (4) CLERICAL AMENDMENT.—
@@ -1144,7 +1080,6 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 (b) Employer contributions.—
 
 (1) IN GENERAL.—Part III of subchapter B of chapter 1 is amended by inserting after section 127 the following new section:
-
 
 “SEC. 128. Employer contributions to Trump accounts.
 “(a) In general.—Gross income of an employee does not include amounts paid by the employer as a contribution to the Trump account of such employee or of any dependent of such employee if the amounts are paid or incurred pursuant to a program which is described in subsection (c).
@@ -1167,12 +1102,10 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 
 (2) CLERICAL AMENDMENT.—The table of sections for part III of subchapter B of chapter 1 is amended by inserting after the item relating to section 127 the following new item:
 
-
 “Sec. 128. Employer contributions to Trump accounts.”.
 (c) Certain contributions excluded from gross income.—
 
 (1) IN GENERAL.—Part III of subchapter B of chapter 1 is amended by inserting before section 140 the following new section:
-
 
 “SEC. 139J. Certain contributions to Trump accounts.
 “(a) In general.—Gross income of an account beneficiary shall not include any qualified general contribution to a Trump account of the account beneficiary.
@@ -1180,7 +1113,6 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 “(b) Definitions.—Any term used in this section which is used in section 530A shall have the meaning given such term under section 530A.”.
 
 (2) CLERICAL AMENDMENT.—The table of sections for part III of subchapter B is amended by inserting before the item relating to section 140 the following new item:
-
 
 “Sec. 139J. Certain contributions to Trump accounts.”.
 (d) Trump accounts contribution pilot program.—
@@ -1239,17 +1171,14 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 
 (3) OMISSION OF CORRECT SOCIAL SECURITY NUMBER TREATED AS MATHEMATICAL OR CLERICAL ERROR.—Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of subparagraph (Y), by striking the period at the end of subparagraph (Z) and inserting “, and”, and by inserting after subparagraph (Z) the following new subparagraph:
 
-
 “(AA) an omission of a correct social security number required under section 6434(e)(1) (relating to the Trump accounts contribution pilot program).”.
 
 (4) CONFORMING AMENDMENTS.—
 
 (A) The table of sections for subchapter B of chapter 65 is amended by adding at the end the following new item:
 
-
 “Sec. 6434. Trump accounts contribution pilot program.”.
 (B) The table of sections for part I of subchapter A of chapter 68 is amended by inserting after the item relating to section 6658 the following new item:
-
 
 “Sec. 6659. Improper claim for Trump account contribution pilot program credit.”.
 (e) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
@@ -1296,7 +1225,6 @@ SEC. 70301. Full expensing for certain business property.
 
 (3) TRANSITIONAL ELECTION OF REDUCED PERCENTAGE.—Section 168(k)(10) is amended by striking subparagraph (A), by redesignating subparagraph (B) as subparagraph (C), and by inserting before subparagraph (C) (as so redesignated) the following new subparagraphs:
 
-
 “(A) IN GENERAL.—In the case of qualified property placed in service by the taxpayer during the first taxable year ending after January 19, 2025, if the taxpayer elects to have this paragraph apply for such taxable year, paragraph (1)(A) shall be applied—
 
 “(i) in the case of property which is not described in clause (ii), by substituting ‘40 percent’ for ‘100 percent’, or
@@ -1315,10 +1243,8 @@ SEC. 70301. Full expensing for certain business property.
 
 (4) ACQUISITION DATE DETERMINATION.—For purposes of paragraph (1), property shall not be treated as acquired after the date on which a written binding contract is entered into for such acquisition.
 
-
 SEC. 70302. Full expensing of domestic research and experimental expenditures.
 (a) In general.—Part VI of subchapter B of chapter 1 is amended by inserting after section 174 the following new section:
-
 
 “SEC. 174A. Domestic research or experimental expenditures.
 “(a) Treatment as expenses.—Notwithstanding section 263, there shall be allowed as a deduction any domestic research or experimental expenditures which are paid or incurred by the taxpayer during the taxable year.
@@ -1371,11 +1297,9 @@ SEC. 70302. Full expensing of domestic research and experimental expenditures.
 
 (A) Section 41(d)(1)(A) is amended to read as follows:
 
-
 “(A) with respect to which expenditures are treated as domestic research or experimental expenditures under section 174A,”.
 
 (B) Section 280C(c)(1) is amended to read as follows:
-
 
 “(1) IN GENERAL.—The domestic research or experimental expenditures (as defined in section 174A(b)) otherwise taken into account as a deduction or charged to capital account under this chapter shall be reduced by the amount of the credit allowed under section 41(a).”.
 
@@ -1435,7 +1359,6 @@ SEC. 70302. Full expensing of domestic research and experimental expenditures.
 
 (d) Clerical amendment.—The table of sections for part VI of subchapter B of chapter 1 is amended by inserting after the item relating to section 174 the following new item:
 
-
 “Sec. 174A. Domestic research or experimental expenditures.”.
 (e) Effective date.—
 
@@ -1489,7 +1412,6 @@ SEC. 70302. Full expensing of domestic research and experimental expenditures.
 
 (C) REGULATIONS.—The Secretary of the Treasury (or the Secretary’s delegate) shall publish such guidance or regulations as may be necessary to carry out the purposes of this paragraph, including regulations or guidance allowing for the deduction allowed under subparagraph (A) in the case of taxpayers with taxable years beginning after December 31, 2024, and ending before the date of the enactment of this Act.
 
-
 SEC. 70303. Modification of limitation on business interest.
 (a) In general.—Section 163(j)(8)(A)(v) is amended by striking “in the case of taxable years beginning before January 1, 2022,”.
 
@@ -1503,14 +1425,12 @@ SEC. 70303. Modification of limitation on business interest.
 
 (2) SPECIAL RULE FOR SHORT TAXABLE YEARS.—The Secretary of the Treasury (or the Secretary's delegate) may prescribe such rules as are necessary or appropriate to provide for the application of the amendments made by this section in the case of any taxable year of less than 12 months that begins after December 31, 2024, and ends before the date of the enactment of this Act.
 
-
 SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 (a) In general.—Section 45S is amended—
 
 (1) in subsection (a)—
 
 (A) by striking paragraph (1) and inserting the following:
-
 
 “(1) IN GENERAL.—For purposes of section 38, in the case of an eligible employer, the paid family and medical leave credit is an amount equal to either of the following (as elected by such employer):
 
@@ -1520,13 +1440,11 @@ SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 
 (B) by adding at the end the following:
 
-
 “(3) RATE OF PAYMENT DETERMINED WITHOUT REGARD TO WHETHER LEAVE IS TAKEN.—For purposes of determining the applicable percentage with respect to paragraph (1)(B), the rate of payment under the insurance policy shall be determined without regard to whether any qualifying employees were on family and medical leave during the taxable year.”,
 
 (2) in subsection (b)(1), by striking “credit allowed” and inserting “wages taken into account”,
 
 (3) in subsection (c), by striking paragraphs (3) and (4) and inserting the following:
-
 
 “(3) AGGREGATION RULE.—
 
@@ -1556,7 +1474,6 @@ SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 
 (C) by adding at the end the following:
 
-
 “(3) is customarily employed for not less than 20 hours per week.”, and
 
 (5) by striking subsection (i).
@@ -1569,12 +1486,10 @@ SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70305. Exceptions from limitations on deduction for business meals.
 (a) Exception to denial of deduction for business meals.—Section 274(o), as added by section 13304 of Public Law 115–97, is amended by striking “No deduction” and inserting “Except in the case of an expense described in subsection (e)(8) or (n)(2)(C), no deduction”.
 
 (b) Meals provided on certain fishing boats and at certain fish processing facilities not subject to 50 percent limitation.—Section 274(n)(2)(C) of the Internal Revenue Code of 1986 is amended by striking “or” at the end of clause (iii) and by adding at the end the following new clause:
-
 
 “(v) provided—
 
@@ -1587,7 +1502,6 @@ SEC. 70305. Exceptions from limitations on deduction for business meals.
 “(bb) is not located in a metropolitan statistical area (within the meaning of section 143(k)(2)(B)), or”.
 
 (c) Effective date.—The amendments made by this section shall apply to amounts paid or incurred after December 31, 2025.
-
 
 SEC. 70306. Increased dollar limitations for expensing of certain depreciable business assets.
 (a) In general.—Section 179(b) is amended—
@@ -1608,10 +1522,8 @@ SEC. 70306. Increased dollar limitations for expensing of certain depreciable bu
 
 (c) Effective date.—The amendments made by this section shall apply to property placed in service in taxable years beginning after December 31, 2024.
 
-
 SEC. 70307. Special depreciation allowance for qualified production property.
 (a) In general.—Section 168 is amended by adding at the end the following new subsection:
-
 
 “(n) Special allowance for qualified production property.—
 
@@ -1711,31 +1623,25 @@ Such election shall be made in such manner as the Secretary may prescribe by reg
 
 (b) Treatment of qualified production property as section 1245 property.—Section 1245(a)(3) is amended by striking “or” at the end of subparagraph (E), by striking the period at the end of subparagraph (F) and inserting “, or”, and by adding at the end the following new subparagraph:
 
-
 “(G) any qualified production property (as defined in section 168(n)(2)).”.
 
 (c) Effective date.—The amendments made by this section shall apply to property placed in service after the date of the enactment of this Act.
-
 
 SEC. 70308. Enhancement of advanced manufacturing investment credit.
 (a) In general.—Section 48D(a) is amended by striking “25 percent” and inserting “35 percent”.
 
 (b) Effective date.—The amendments made by this section shall apply to property placed in service after December 31, 2025.
 
-
 SEC. 70309. Spaceports are treated like airports under exempt facility bond rules.
 (a) In general.—Section 142(a)(1) is amended to read as follows:
-
 
 “(1) airports and spaceports,”.
 
 (b) Treatment of ground leases.—Section 142(b)(1) is amended by adding at the end the following new subparagraph:
 
-
 “(C) SPECIAL RULE FOR SPACEPORT GROUND LEASES.—For purposes of subparagraph (A), spaceport property located on land leased by a governmental unit from the United States shall not fail to be treated as owned by a governmental unit if the requirements of this paragraph are met by the lease and any subleases of the property.”.
 
 (c) Definition of spaceport.—Section 142 is amended by adding at the end the following new subsection:
-
 
 “(p) Spaceport.—
 
@@ -1763,7 +1669,6 @@ SEC. 70309. Spaceports are treated like airports under exempt facility bond rule
 
 (d) Exception from federally guaranteed bond prohibition.—Section 149(b)(3) is amended by adding at the end the following new subparagraph:
 
-
 “(F) EXCEPTION FOR SPACEPORTS.—A bond shall not be treated as federally guaranteed merely because of the payment of rent, user fees, or other charges by the United States (or any agency or instrumentality thereof) in exchange for the use of the spaceport by the United States (or any agency or instrumentality thereof).”.
 
 (e) Conforming amendment.—The heading for section 142(c) is amended by inserting “Spaceports,” after “Airports,”.
@@ -1775,7 +1680,6 @@ PART I—Foreign tax credit
 
 SEC. 70311. Modifications related to foreign tax credit limitation.
 (a) Rules for allocation of certain deductions to foreign source net CFC tested income for purposes of foreign tax credit limitation.—Section 904(b) is amended by adding at the end the following new paragraph:
-
 
 “(5) DEDUCTIONS TREATED AS ALLOCABLE TO FOREIGN SOURCE NET CFC TESTED INCOME.—Solely for purposes of the application of subsection (a) with respect to amounts described in subsection (d)(1)(A), the taxpayer’s taxable income from sources without the United States shall be determined by allocating and apportioning—
 
@@ -1797,7 +1701,6 @@ Any amount or deduction which would (but for subparagraphs (B) and (C)) have bee
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70312. Modifications to determination of deemed paid credit for taxes properly attributable to tested income.
 (a) Increase in deemed paid credit.—
 
@@ -1811,7 +1714,6 @@ SEC. 70312. Modifications to determination of deemed paid credit for taxes prope
 
 (b) Disallowance of foreign tax credit with respect to distributions of previously taxed net CFC tested income.—Section 960(d) is amended by adding at the end the following new paragraph:
 
-
 “(4) DISALLOWANCE OF FOREIGN TAX CREDIT WITH RESPECT TO DISTRIBUTIONS OF PREVIOUSLY TAXED NET CFC TESTED INCOME.—No credit shall be allowed under section 901 for 10 percent of any foreign income taxes paid or accrued (or deemed paid under subsection (b)(1)) with respect to any amount excluded from gross income under section 959(a) by reason of an inclusion in gross income under section 951A(a).”.
 
 (c) Effective dates.—
@@ -1820,10 +1722,8 @@ SEC. 70312. Modifications to determination of deemed paid credit for taxes prope
 
 (2) DISALLOWANCE.—The amendment made by subsection (b) shall apply to foreign income taxes paid or accrued (or deemed paid under section 960(b)(1) of the Internal Revenue Code of 1986) with respect to any amount excluded from gross income under section 959(a) of such Code by reason of an inclusion in gross income under section 951A(a) of such Code after June 28, 2025.
 
-
 SEC. 70313. Sourcing certain income from the sale of inventory produced in the United States.
 (a) In general.—Section 904(b), as amended by section 70311, is amended by adding at the end the following new paragraph:
-
 
 “(6) SOURCE RULES FOR CERTAIN INVENTORY PRODUCED IN THE UNITED STATES AND SOLD THROUGH FOREIGN BRANCHES.—For purposes of this section, if a United States person maintains an office or other fixed place of business in a foreign country (determined under rules similar to the rules of section 864(c)(5)), the portion of income which—
 
@@ -1854,7 +1754,6 @@ SEC. 70321. Modification of deduction for foreign-derived deduction eligible inc
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70322. Determination of deduction eligible income.
 (a) Sales or other dispositions of certain property.—
 
@@ -1865,7 +1764,6 @@ SEC. 70322. Determination of deduction eligible income.
 (B) by striking “over” at the end of subclause (VI) and inserting “and”, and
 
 (C) by adding at the end the following new subclause:
-
 
 “(VII) except as otherwise provided by the Secretary, any income and gain from the sale or other disposition (including pursuant to the deemed sale or other deemed disposition or a transaction subject to section 367(d)) of—
 
@@ -1881,11 +1779,9 @@ SEC. 70322. Determination of deduction eligible income.
 
 (1) IN GENERAL.—Section 250(b)(3)(A)(ii) is amended to read as follows:
 
-
 “(ii) expenses and deductions (including taxes), other than interest expense and research or experimental expenditures, properly allocable to such gross income.”.
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70323. Rules related to deemed intangible income.
 (a) Taxation of net CFC tested income.—
@@ -1982,7 +1878,6 @@ PART IV—Business interest limitation
 SEC. 70341. Coordination of business interest limitation with interest capitalization provisions.
 (a) In general.—Section 163(j) is amended by redesignating paragraphs (10) and (11) as paragraphs (11) and (12) and by inserting after paragraph (9) the following:
 
-
 “(10) COORDINATION WITH INTEREST CAPITALIZATION PROVISIONS.—
 
 “(A) IN GENERAL.—In applying this subsection—
@@ -2009,11 +1904,9 @@ SEC. 70341. Coordination of business interest limitation with interest capitaliz
 
 (c) Regulatory authority.—Section 163(j), as amended by subsection (a), is amended by redesignating paragraphs (11) and (12) as paragraphs (12) and (13) and by inserting after paragraph (10) the following:
 
-
 “(11) REGULATORY AUTHORITY.—The Secretary shall issue such regulations or guidance as may be necessary or appropriate to carry out the purposes of this subsection, including regulations or guidance to determine which business interest is taken into account under this subsection and section 59A(c)(3).”.
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70342. Definition of adjusted taxable income for business interest limitation.
 (a) In general.—Subparagraph (A) of section 163(j)(8) is amended—
@@ -2021,7 +1914,6 @@ SEC. 70342. Definition of adjusted taxable income for business interest limitati
 (1) by striking “and” at the end of clause (iv), and
 
 (2) by adding at the end the following new clause:
-
 
 “(vi) the amounts included in gross income under sections 951(a), 951A(a), and 78 (and the portion of the deductions allowed under sections 245A(a) (by reason of section 964(e)(4)) and 250(a)(1)(B) by reason of such inclusions), and”.
 
@@ -2033,7 +1925,6 @@ SEC. 70351. Permanent extension of look-thru rule for related controlled foreign
 (a) In general.—Section 954(c)(6)(C) is amended by striking “and before January 1, 2026,”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years of foreign corporations beginning after December 31, 2025.
-
 
 SEC. 70352. Repeal of election for 1-month deferral in determination of taxable year of specified foreign corporations.
 (a) In general.—Section 898(c) is amended by striking paragraph (2) and redesignating paragraph (3) as paragraph (2).
@@ -2052,12 +1943,10 @@ SEC. 70352. Repeal of election for 1-month deferral in determination of taxable 
 
 (2) SECRETARY.—For purposes of this subsection, the term “Secretary” means the Secretary of the Treasury or the Secretary's delegate.
 
-
 SEC. 70353. Restoration of limitation on downward attribution of stock ownership in applying constructive ownership rules.
 (a) In general.—Section 958(b) is amended—
 
 (1) by inserting after paragraph (3) the following:
-
 
 “(4) Subparagraphs (A), (B), and (C) of section 318(a)(3) shall not be applied so as to consider a United States person as owning stock which is owned by a person who is not a United States person.”, and
 
@@ -2101,7 +1990,6 @@ SEC. 70353. Restoration of limitation on downward attribution of stock ownership
 
 (c) Clerical amendment.—The table of sections for subpart F of part III of subchapter N of chapter 1 is amended by inserting after the item relating to section 951A the following new item:
 
-
 “Sec. 951B. Amounts included in gross income of foreign controlled United States shareholders.”.
 (d) Effective date.—The amendments made by this section shall apply to taxable years of foreign corporations beginning after December 31, 2025.
 
@@ -2113,10 +2001,8 @@ SEC. 70353. Restoration of limitation on downward attribution of stock ownership
 
 (f) No inference.—The amendments made by this section shall not be construed to create any inference with respect to the proper application of any provision of the Internal Revenue Code of 1986 with respect to taxable years beginning before the taxable years to which such amendments apply.
 
-
 SEC. 70354. Modifications to pro rata share rules.
 (a) In general.—Subsection (a) of section 951 is amended to read as follows:
-
 
 “(a) Amounts included.—
 
@@ -2178,7 +2064,6 @@ SEC. 70401. Enhancement of employer-provided child care credit.
 
 (b) Increase of maximum credit amount.—Subsection (b) of section 45F is amended to read as follows:
 
-
 “(b) Dollar limitation.—
 
 “(1) IN GENERAL.—The credit allowable under subsection (a) for any taxable year shall not exceed $500,000 ($600,000 in the case of an eligible small business).
@@ -2191,7 +2076,6 @@ SEC. 70401. Enhancement of employer-provided child care credit.
 
 (c) Eligible small business.—Section 45F(c) is amended by adding at the end the following new paragraph:
 
-
 “(4) ELIGIBLE SMALL BUSINESS.—The term ‘eligible small business’ means a business that meets the gross receipts test of section 448(c), determined—
 
 “(A) by substituting ‘5-taxable-year’ for ‘3-taxable-year’ in paragraph (1) thereof, and
@@ -2202,25 +2086,20 @@ SEC. 70401. Enhancement of employer-provided child care credit.
 
 (e) Treatment of jointly owned or operated child care facility.—Section 45F(c)(2) is amended by adding at the end the following new subparagraph:
 
-
 “(C) TREATMENT OF JOINTLY OWNED OR OPERATED CHILD CARE FACILITY.—A facility shall not fail to be treated as a qualified child care facility of the taxpayer merely because such facility is jointly owned or operated by the taxpayer and other persons.”.
 
 (f) Regulations and guidance.—Section 45F is amended by adding at the end the following new subsection:
-
 
 “(g) Regulations and guidance.—The Secretary shall issue such regulations or other guidance as may be necessary to carry out the purposes of this section, including guidance to carry out the purposes of paragraphs (1)(A)(iii) and (2)(C) of subsection (c).”.
 
 (g) Effective date.—The amendments made by this section shall apply to amounts paid or incurred after December 31, 2025.
 
-
 SEC. 70402. Enhancement of adoption credit.
 (a) In general.—Section 23(a) is amended by adding at the end the following new paragraph:
-
 
 “(4) PORTION OF CREDIT REFUNDABLE.—So much of the credit allowed under paragraph (1) as does not exceed $5,000 shall be treated as a credit allowed under subpart C and not as a credit allowed under this subpart.”.
 
 (b) Adjustments for inflation.—Section 23(h) is amended to read as follows:
-
 
 “(h) Adjustments for inflation.—
 
@@ -2242,7 +2121,6 @@ SEC. 70402. Enhancement of adoption credit.
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
-
 SEC. 70403. Recognizing Indian tribal governments for purposes of determining whether a child has special needs for purposes of the adoption credit.
 (a) In general.—Section 23(d)(3) is amended—
 
@@ -2252,16 +2130,13 @@ SEC. 70403. Recognizing Indian tribal governments for purposes of determining wh
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
-
 SEC. 70404. Enhancement of the dependent care assistance program.
 (a) In general.—Section 129(a)(2)(A) is amended by striking “$5,000 ($2,500” and inserting “$7,500 ($3,750”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70405. Enhancement of child and dependent care tax credit.
 (a) In general.—Paragraph (2) of section 21(a) is amended to read as follows:
-
 
 “(2) APPLICABLE PERCENTAGE DEFINED.—For purposes of paragraph (1), the term ‘applicable percentage’ means 50 percent—
 
@@ -2376,7 +2251,6 @@ SEC. 70411. Tax credit for contributions of individuals to scholarship granting 
 
 (B) The table of sections for subpart A of part IV of subchapter A of chapter 1 is amended by inserting after the item relating to section 25E the following new item:
 
-
 “Sec. 25F. Qualified elementary and secondary education scholarships. ”.
 (b) Exclusion from gross income for scholarships for qualified elementary or secondary education expenses of eligible students.—
 
@@ -2390,14 +2264,12 @@ SEC. 70411. Tax credit for contributions of individuals to scholarship granting 
 
 (2) CONFORMING AMENDMENT.—The table of sections for part III of subchapter B of chapter 1 is amended by inserting before the item relating to section 140 the following new item:
 
-
 “Sec. 139K. Scholarships for qualified elementary or secondary education expenses of eligible students. ”.
 (c) Effective date.—
 
 (1) IN GENERAL.—Except as otherwise provided in this subsection, the amendments made by this section shall apply to taxable years ending after December 31, 2026.
 
 (2) EXCLUSION FROM GROSS INCOME.—The amendments made by subsection (b) shall apply to amounts received after December 31, 2026, in taxable years ending after such date.
-
 
 SEC. 70412. Exclusion for employer payments of student loans.
 (a) In general.—Section 127(c)(1)(B) is amended by striking “in the case of payments made before January 1, 2026,”.
@@ -2407,7 +2279,6 @@ SEC. 70412. Exclusion for employer payments of student loans.
 (1) by redesignating subsection (d) as subsection (e), and
 
 (2) by inserting after subsection (c) the following new subsection:
-
 
 “(d) Inflation adjustment.—
 
@@ -2421,12 +2292,10 @@ SEC. 70412. Exclusion for employer payments of student loans.
 
 (c) Effective date.—The amendment made by this section shall apply to payments made after December 31, 2025.
 
-
 SEC. 70413. Additional expenses treated as qualified higher education expenses for purposes of 529 accounts.
 (a) In general.—
 
 (1) IN GENERAL.—Section 529(c)(7) is amended to read as follows:
-
 
 “(7) TREATMENT OF ELEMENTARY AND SECONDARY TUITION.—Any reference in this section to the term ‘qualified higher education expense’ shall include a reference to the following expenses in connection with enrollment or attendance at, or for students enrolled at or attending, an elementary or secondary public, private, or religious school:
 
@@ -2460,15 +2329,12 @@ SEC. 70413. Additional expenses treated as qualified higher education expenses f
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70414. Certain postsecondary credentialing expenses treated as qualified higher education expenses for purposes of 529 accounts.
 (a) In general.—Section 529(e)(3) is amended by adding at the end the following new subparagraph:
-
 
 “(C) CERTAIN POSTSECONDARY CREDENTIALING EXPENSES.—The term ‘qualified higher education expenses’ includes qualified postsecondary credentialing expenses (as defined in subsection (f)).”.
 
 (b) Qualified postsecondary credentialing expenses.—Section 529 is amended by redesignating subsection (f) as subsection (g) and by inserting after subsection (e) the following new subsection:
-
 
 “(f) Qualified postsecondary credentialing expenses.—For purposes of this section—
 
@@ -2507,7 +2373,6 @@ SEC. 70414. Certain postsecondary credentialing expenses treated as qualified hi
 “(D) any recognized postsecondary credential as defined in section 3(52) of the Workforce Innovation and Opportunity Act (29 U.S.C. 3102(52)), provided through a program described in paragraph (2)(A).”.
 
 (c) Effective date.—The amendments made by this section shall apply to distributions made after the date of the enactment of this Act.
-
 
 SEC. 70415. Modification of excise tax on investment income of certain private colleges and universities.
 (a) In general.—Section 4968 is amended to read as follows:
@@ -2582,7 +2447,6 @@ SEC. 70415. Modification of excise tax on investment income of certain private c
 
 (b) Requirement to report certain information with respect to application of excise tax based on investment income of private colleges and universities.—Section 6033 is amended by redesignating subsection (o) as subsection (p) and by inserting after subsection (n) the following new subsection:
 
-
 “(o) Requirement to report certain information with respect to excise tax based on investment income of private colleges and universities.—Each applicable educational institution described in section 4968(c) which is subject to the requirements of subsection (a) shall include on the return required under subsection (a)—
 
 “(1) the number of tuition-paying students taken into account under section 4968(c), and
@@ -2591,10 +2455,8 @@ SEC. 70415. Modification of excise tax on investment income of certain private c
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70416. Expanding application of tax on excess compensation within tax-exempt organizations.
 (a) In general.—Section 4960(c)(2) is amended to read as follows:
-
 
 “(2) COVERED EMPLOYEE.—For purposes of this section, the term ‘covered employee’ means any employee of an applicable tax-exempt organization (or any predecessor of such an organization) and any former employee of such an organization (or predecessor) who was such an employee during any taxable year beginning after December 31, 2016.”.
 

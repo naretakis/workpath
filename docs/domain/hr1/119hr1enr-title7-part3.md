@@ -17,7 +17,6 @@ SEC. 71101. Moratorium on implementation of rule relating to eligibility and enr
 
 (b) Implementation funding.—For the purposes of carrying out the provisions of this section and section 71102, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $1,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71102. Moratorium on implementation of rule relating to eligibility and enrollment for Medicaid, CHIP, and the Basic Health Program.
 The Secretary of Health and Human Services shall not, during the period beginning on the date of the enactment of this section and ending September 30, 2034, implement, administer, or enforce the amendments made by the provisions of the final rule published by the Centers for Medicare & Medicaid Services on April 2, 2024, and titled “Medicaid Program; Streamlining the Medicaid, Children's Health Insurance Program, and Basic Health Program Application, Eligibility Determination, Enrollment, and Renewal Processes” (89 Fed. Reg. 22780) to the following sections of title 42, Code of Federal Regulations:
 
@@ -61,7 +60,6 @@ The Secretary of Health and Human Services shall not, during the period beginnin
 
 (E) Section 457.1180.
 
-
 SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 (a) Medicaid.—
 
@@ -74,7 +72,6 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 (ii) in paragraph (87), by striking the period and inserting “; and”; and
 
 (iii) by inserting after paragraph (87) the following new paragraph:
-
 
 “(88) provide—
 
@@ -93,7 +90,6 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 “(iii) in the case that such system indicates that an individual enrolled or seeking to enroll under such plan (or waiver of such plan) is enrolled under a State plan (or waiver of such a plan) of another State, for the taking of appropriate action (as determined by the Secretary) to identify whether such an individual resides in the State and disenroll an individual from the State plan of such State if such individual does not reside in such State (unless such individual meets such an exception as the Secretary may specify).”; and
 
 (B) by adding at the end the following new subsections:
-
 
 “(uu) Prevention of enrollment under multiple State plans.—
 
@@ -141,11 +137,9 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 
 (iv) by adding at the end the following new subparagraph:
 
-
 “(B) Beginning October 1, 2029, the Secretary may determine that a State is not required to have in operation an eligibility determination system which provides for data matching (for purposes of address verification under section 1902(vv)) through the system described in subparagraph (A)(i) to meet the requirements of this paragraph.”.
 
 (B) MANAGED CARE.—Section 1932 of the Social Security Act (42 U.S.C. 1396u–2) is amended by adding at the end the following new subsection:
-
 
 “(j) Transmission of address information.—Beginning January 1, 2027, each contract under a State plan with a managed care entity (as defined in section 1932(a)(1)(B)) or with a prepaid inpatient health plan or prepaid ambulatory health plan (as such terms are defined in section 1903(m)(9)(D)), shall provide that such entity or plan shall promptly transmit to the State any address information for an individual enrolled with such entity or plan that is provided to such entity or plan directly from, or verified by such entity or plan directly with, such individual.”.
 
@@ -157,11 +151,9 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 
 (B) by inserting after subparagraph (G) the following new subparagraph:
 
-
 “(H) Section 1902(a)(88) (relating to address information for enrollees and prevention of simultaneous enrollments).”.
 
 (2) MANAGED CARE.—Section 2103(f)(3) of the Social Security Act (42 U.S.C. 1397cc(f)(3)) is amended by striking “and (e)” and inserting “(e), and (j)”.
-
 
 SEC. 71104. Ensuring deceased individuals do not remain enrolled.
 Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by section 71103, is further amended—
@@ -173,7 +165,6 @@ Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by section
 (B) in paragraph (88), by striking the period at the end and inserting “; and”; and
 
 (C) by inserting after paragraph (88) the following new paragraph:
-
 
 “(89) provide that the State shall comply with the eligibility verification requirements under subsection (ww), except that this paragraph shall apply only in the case of the 50 States and the District of Columbia.”; and
 
@@ -197,7 +188,6 @@ Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by section
 
 “(2) RULE OF CONSTRUCTION.—Nothing under this subsection shall be construed to preclude the ability of a State to use other electronic data sources to timely identify potentially deceased beneficiaries, so long as the State is also in compliance with the requirements of this subsection (and all other requirements under this title relating to Medicaid eligibility determination and redetermination).”.
 
-
 SEC. 71105. Ensuring deceased providers do not remain enrolled.
 Section 1902(kk)(1) of the Social Security Act (42 U.S.C. 1396a(kk)(1)) is amended—
 
@@ -208,7 +198,6 @@ Section 1902(kk)(1) of the Social Security Act (42 U.S.C. 1396a(kk)(1)) is amend
 (2) by adding at the end the following new subparagraph:
 
 “(B) PROVIDER SCREENING AGAINST DEATH MASTER FILE.—Beginning January 1, 2028, as part of the enrollment (or reenrollment or revalidation of enrollment) of a provider or supplier under this title, and not less frequently than quarterly during the period that such provider or supplier is so enrolled, the State conducts a check of the Death Master File (as such term is defined in section 203(d) of the Bipartisan Budget Act of 2013) to determine whether such provider or supplier is deceased.”.
-
 
 SEC. 71106. Payment reduction related to certain erroneous excess payments under Medicaid.
 (a) In general.—Section 1903(u)(1) of the Social Security Act (42 U.S.C. 1396b(u)(1)) is amended—
@@ -225,7 +214,6 @@ SEC. 71106. Payment reduction related to certain erroneous excess payments under
 
 (B) by adding at the end the following new clause:
 
-
 “(ii) The amount waived under clause (i) for a fiscal year may not exceed an amount equal to the erroneous excess payments for medical assistance described in subparagraph (D)(i)(II) made for such fiscal year that exceed the allowable error rate of 0.03.”.
 
 (3) in subparagraph (C), by striking “he” in each place it appears and inserting “the Secretary” in each such place; and
@@ -238,15 +226,12 @@ SEC. 71106. Payment reduction related to certain erroneous excess payments under
 
 (C) by adding at the end the following new subclause:
 
-
 “(III) payments (other than payments described in subclause (I)) for items and services furnished to an individual who is not eligible for medical assistance under the State plan (or a waiver of such plan) with respect to such items and services, or payments where insufficient information is available to confirm eligibility.”.
 
 (b) Effective date.—The amendments made by subsection (a) shall apply beginning with respect to fiscal year 2030.
 
-
 SEC. 71107. Eligibility redeterminations.
 (a) In general.—Section 1902(e)(14) of the Social Security Act (42 U.S.C. 1396a(e)(14)) is amended by adding at the end the following new subparagraph:
-
 
 “(L) FREQUENCY OF ELIGIBILITY REDETERMINATIONS FOR CERTAIN INDIVIDUALS.—
 
@@ -264,7 +249,6 @@ SEC. 71107. Eligibility redeterminations.
 
 (c) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $75,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71108. Revising home equity limit for determining eligibility for long-term care services under the Medicaid program.
 (a) Revising home equity limit.—Section 1917(f)(1) of the Social Security Act (42 U.S.C. 1396p(f)(1)) is amended—
 
@@ -280,7 +264,6 @@ SEC. 71108. Revising home equity limit for determining eligibility for long-term
 
 (C) by adding at the end the following new clause:
 
-
 “(ii) A State may elect, without regard to the requirements of section 1902(a)(1) (relating to statewideness) and section 1902(a)(10)(B) (relating to comparability), to apply subparagraph (A), in the case of an individual’s home that is not described in clause (i), by substituting for the amount specified in such subparagraph, an amount that exceeds such amount, but does not exceed $1,000,000.”; and
 
 (2) in subparagraph (C)—
@@ -293,23 +276,19 @@ SEC. 71108. Revising home equity limit for determining eligibility for long-term
 
 (1) in subsection (r)(2), by adding at the end the following new subparagraph:
 
-
 “(C) This paragraph shall not be construed as permitting a State to determine the eligibility of an individual for medical assistance with respect to nursing facility services or other long-term care services without application of the limit under section 1917(f)(1).”; and
 
 (2) in subsection (e)(14)(D)(iv)—
 
 (A) by striking “Subparagraphs” and inserting
 
-
 “(I) IN GENERAL.—Subparagraphs”; and
 
 (B) by adding at the end the following new subclause:
 
-
 “(II) APPLICATION OF HOME EQUITY INTEREST LIMIT.—Section 1917(f) shall apply for purposes of determining the eligibility of an individual for medical assistance with respect to nursing facility services or other long-term care services.”.
 
 (c) Effective date.—The amendments made by subsection (a) shall apply beginning on January 1, 2028.
-
 
 SEC. 71109. Alien Medicaid eligibility.
 (a) Medicaid.—Section 1903(v) of the Social Security Act (42 U.S.C. 1396b(v)) is amended—
@@ -317,7 +296,6 @@ SEC. 71109. Alien Medicaid eligibility.
 (1) in paragraph (1), by striking “and (4)”and inserting “, (4), and (5)”; and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(5) Notwithstanding the preceding paragraphs of this subsection, beginning on October 1, 2026, except as provided in paragraphs (2) and (4), in no event shall payment be made to a State under this section for medical assistance furnished to an individual unless such individual is—
 
@@ -339,15 +317,12 @@ SEC. 71109. Alien Medicaid eligibility.
 
 (2) by inserting after paragraph (Q) the following:
 
-
 “(R) Section 1903(v)(5) (relating to payments for medical assistance furnished to aliens), except in relation to payments for services provided under section 2105(a)(1)(D)(ii).”.
 
 (c) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $15,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71110. Expansion FMAP for emergency Medicaid.
 (a) In general.—Section 1905 of the Social Security Act (42 U.S.C. 1396d) is amended by adding at the end the following new subsection:
-
 
 “(kk) FMAP for treatment of an emergency Medical condition.—Notwithstanding subsection (y) and (z), beginning on October 1, 2026, the Federal medical assistance percentage for payments for care and services described in paragraph (2) of subsection 1903(v) furnished to an alien described in paragraph (1) of such subsection shall not exceed the Federal medical assistance percentage determined under subsection (b) for such State.”.
 
@@ -362,10 +337,8 @@ The Secretary of Health and Human Services shall not, during the period beginnin
 
 (2) Section 483.35.
 
-
 SEC. 71112. Reducing State Medicaid costs.
 (a) In general.—Section 1902(a)(34) of the Social Security Act (42 U.S.C. 1396a(a)(34)) is amended to read as follows:
-
 
 “(34) provide that in the case of any individual who has been determined to be eligible for medical assistance under the plan and—
 
@@ -383,13 +356,11 @@ SEC. 71112. Reducing State Medicaid costs.
 
 (3) by adding at the end the following new clause:
 
-
 “(vi) shall, in the case that the State elects to provide child health or pregnancy-related assistance to an individual for any period prior to the month in which the individual made application for such assistance (or application was made on behalf of the individual), provide that such assistance is not made available to such individual for items and services included under the State child health plan (or waiver of such plan) that are furnished before the second month preceding the month in which such individual made application (or application was made on behalf of such individual) for assistance.”.
 
 (d) Effective date.—The amendments made by this section shall apply to medical assistance, child health assistance, and pregnancy-related assistance with respect to individuals whose eligibility for such medical assistance, child health assistance, or pregnancy-related assistance is based on an application made on or after the first day of the first quarter that begins after December 31, 2026.
 
 (e) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $10,000,000 for fiscal year 2026, to remain available until expended.
-
 
 SEC. 71113. Federal payments to prohibited entities.
 (a) In general.—No Federal funds that are considered direct spending and provided to carry out a State plan under title XIX of the Social Security Act or a waiver of such a plan shall be used to make payments to a prohibited entity for items and services furnished during the 1-year period beginning on the date of the enactment of this Act, including any payments made directly to the prohibited entity or under a contract or other arrangement between a State and a covered organization.
@@ -435,14 +406,12 @@ Section 1905(ii)(3) of the Social Security Act (42 U.S.C. 1396d(ii)(3)) is amend
 
 “(B) begins to expend amounts for all such individuals prior to January 1, 2026.”.
 
-
 SEC. 71115. Provider taxes.
 (a) Change in threshold for hold harmless provision of broad-based health care related taxes.—Section 1903(w)(4) of the Social Security Act (42 U.S.C. 1396b(w)(4)) is amended—
 
 (1) in subparagraph (C)(ii), by inserting “, and for fiscal years beginning on or after October 1, 2026, the applicable percent determined under subparagraph (D) shall be substituted for ‘6 percent’ each place it appears” after “each place it appears”; and
 
 (2) by inserting after subparagraph (C)(ii), the following new subparagraph:
-
 
 “(D) (i) For purposes of subparagraph (C)(ii), the applicable percent determined under this subparagraph is—
 
@@ -485,7 +454,6 @@ SEC. 71115. Provider taxes.
 (b) Non-application to territories.—The amendments made by this section shall only apply with respect to a State that is 1 of the 50 States or the District of Columbia.
 
 (c) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $20,000,000 for fiscal year 2026, to remain available until expended.
-
 
 SEC. 71116. State directed payments.
 (a) In general.—Subject to subsection (b), the Secretary of Health and Human Services (in this section referred to as the Secretary) shall revise section 438.6(c)(2)(iii) of title 42, Code of Federal Regulations (or a successor regulation) such that, with respect to a payment described in such section made for a service furnished during a rating period beginning on or after the date of the enactment of this Act, the total payment rate for such service is limited to—
@@ -530,12 +498,10 @@ SEC. 71116. State directed payments.
 
 (e) Funding.—There are appropriated out of any monies in the Treasury not otherwise appropriated $7,000,000 for each of fiscal years 2026 through 2033 for purposes of carrying out this section, to remain available until expended.
 
-
 SEC. 71117. Requirements regarding waiver of uniform tax requirement for Medicaid provider tax.
 (a) In general.—Section 1903(w) of the Social Security Act (42 U.S.C. 1396b(w)) is amended—
 
 (1) in paragraph (3)(E), by inserting after clause (ii)(II) the following new clause:
-
 
 “(iii) For purposes of clause (ii)(I), a tax is not considered to be generally redistributive if any of the following conditions apply:
 
@@ -550,7 +516,6 @@ SEC. 71117. Requirements regarding waiver of uniform tax requirement for Medicai
 “(bb) that closely approximates a taxpayer or tax rate group under the program under this title, to the same effect as described in subclause (I) or (II).”; and
 
 (2) in paragraph (7), by adding at the end the following new subparagraphs:
-
 
 “(H) The term ‘Medicaid taxable unit’ means a unit that is being taxed within a health care related tax that is applicable to the program under this title. Such term includes a unit that is used as the basis for—
 
@@ -578,10 +543,8 @@ SEC. 71117. Requirements regarding waiver of uniform tax requirement for Medicai
 
 (c) Effective date.—The amendments made by this section shall take effect upon the date of enactment of this Act, subject to any applicable transition period determined appropriate by the Secretary of Health and Human Services, not to exceed 3 fiscal years.
 
-
 SEC. 71118. Requiring budget neutrality for Medicaid demonstration projects under section 1115.
 (a) In general.—Section 1115 of the Social Security Act (42 U.S.C. 1315) is amended by adding at the end the following new subsection:
-
 
 “(g) Requirement of budget neutrality for Medicaid demonstration projects.—
 
@@ -595,7 +558,6 @@ subchapter D—Increasing personal accountability
 
 SEC. 71119. Requirement for States to establish Medicaid community engagement requirements for certain individuals.
 (a) In general.—Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by sections 71103 and 71104, is further amended by adding at the end the following new subsection:
-
 
 “(xx) Community engagement requirement for applicable individuals.—
 
@@ -845,14 +807,12 @@ SEC. 71119. Requirement for States to establish Medicaid community engagement re
 
 (f) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $200,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71120. Modifying cost sharing requirements for certain expansion individuals under the Medicaid program.
 (a) In general.—Section 1916 of the Social Security Act (42 U.S.C. 1396o) is amended—
 
 (1) in subsection (a), in the matter preceding paragraph (1), by inserting “(other than, beginning October 1, 2028, specified individuals (as defined in subsection (k)(3)))” after “individuals”; and
 
 (2) by adding at the end the following new subsection:
-
 
 “(k) Special rules for certain expansion individuals.—
 
@@ -900,7 +860,6 @@ SEC. 71121. Making certain adjustments to coverage of home or community-based se
 (1) in paragraph (3), by inserting “paragraph (11) or” before “subsection (h)(2)”; and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(11) Expanding coverage for home or community-based services.—
 
@@ -987,7 +946,6 @@ SEC. 71202. Temporary payment increase under the medicare physician fee schedule
 
 (D) by adding at the end the following new subparagraph:
 
-
 “(F) such services furnished on or after January 1, 2026, and before January 1, 2027, by 2.5 percent.”; and
 
 (3) in paragraph (2)(C)—
@@ -997,7 +955,6 @@ SEC. 71202. Temporary payment increase under the medicare physician fee schedule
 (B) by striking “or 2024” each place it appears and inserting “2024, or 2026”.
 
 (b) Conforming amendment.—Section 1848(c)(2)(B)(iv)(V) of the Social Security Act (42 U.S.C. 1395w–4(c)(2)(B)(iv)(V)) is amended by striking “or 2024” and inserting “2024, or 2026”.
-
 
 SEC. 71203. Expanding and clarifying the exclusion for orphan drugs under the Drug Price Negotiation Program.
 (a) In general.—Section 1192(e) of the Social Security Act (42 U.S.C. 1320f–1(e)) is amended—
@@ -1011,7 +968,6 @@ SEC. 71203. Expanding and clarifying the exclusion for orphan drugs under the Dr
 (B) by striking “such disease or condition” and inserting “one or more such rare diseases or conditions (as such term is defined in section 526(a)(2) of the Federal Food, Drug, and Cosmetic Act)”; and
 
 (3) by adding at the end the following new paragraph:
-
 
 “(4) TREATMENT OF FORMER ORPHAN DRUGS.—In the case of a drug or biological product that, as of the date of the approval or licensure of such drug or biological product, is a drug or biological product described in paragraph (3)(A), paragraph (1)(A)(ii) or (1)(B)(ii) (as applicable) shall apply as if the reference to ‘the date of such approval’ or ‘the date of such licensure’, respectively, were instead a reference to ‘the first day after the date of such approval for which such drug is not a drug described in paragraph (3)(A)’ or ‘the first day after the date of such licensure for which such biological product is not a biological product described in paragraph (3)(A)’, respectively.”.
 
@@ -1027,11 +983,9 @@ SEC. 71301. Permitting premium tax credit only for certain individuals.
 
 (1) by striking “For purposes of this section, an individual” and inserting “For purposes of this section—
 
-
 “(A) IN GENERAL.—An individual”, and
 
 (2) by adding at the end the following new subparagraph:
-
 
 “(B) ELIGIBLE ALIENS.—An individual who is an alien and lawfully present shall be treated as an eligible alien if such individual is, and is reasonably expected to be for the entire period of enrollment for which the credit under this section is being claimed—
 
@@ -1057,16 +1011,13 @@ SEC. 71301. Permitting premium tax credit only for certain individuals.
 
 (III) by adding at the end the following new subparagraph:
 
-
 “(C) in the case such individual is an alien lawfully present in the United States, whether such individual is an eligible alien (within the meaning of section 36B(e)(2) of such Code);”;
 
 (B) in subsection (b)(3), by adding at the end the following new subparagraph:
 
-
 “(D) IMMIGRATION STATUS.—In the case the individual's eligibility is based on an attestation of the enrollee's immigration status, an attestation that such individual is an eligible alien (within the meaning of 36B(e)(2) of the Internal Revenue Code of 1986).”; and
 
 (C) in subsection (c)(2)(B)(ii), by adding at the end the following new subclause:
-
 
 “(III) In the case of an individual described in clause (i)(I) with respect to whom a premium tax credit under section 36B of the Internal Revenue Code of 1986 is being claimed, the attestation that the individual is an eligible alien (within the meaning of section 36B(e)(2) of such Code).”.
 
@@ -1078,7 +1029,6 @@ SEC. 71301. Permitting premium tax credit only for certain individuals.
 
 (e) Effective date.—The amendments made by this section (other than the amendments made by subsection (c)) shall apply to taxable years beginning after December 31, 2026.
 
-
 SEC. 71302. Disallowing premium tax credit during periods of medicaid ineligibility due to alien status.
 (a) In general.—Section 36B(c)(1) is amended by striking subparagraph (B).
 
@@ -1088,7 +1038,6 @@ subchapter B—Preventing waste, fraud, and abuse
 
 SEC. 71303. Requiring verification of eligibility for premium tax credit.
 (a) In general.—Section 36B(c) is amended by adding at the end the following new paragraphs:
-
 
 “(5) EXCHANGE ENROLLMENT VERIFICATION REQUIREMENT.—
 
@@ -1128,15 +1077,12 @@ SEC. 71303. Requiring verification of eligibility for premium tax credit.
 
 (2) by adding at the end the following new clause:
 
-
 “(ii) PRE-ENROLLMENT VERIFICATION PROCESS REQUIRED.—Such term shall not include any plan enrolled in through an Exchange, unless such Exchange provides a process for pre-enrollment verification through which any applicant may, beginning not later than August 1, verify with the Exchange the applicant's household income and eligibility for enrollment in such plan for plan years beginning in the subsequent year.”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2027.
 
-
 SEC. 71304. Disallowing premium tax credit in case of certain coverage enrolled in during special enrollment period.
 (a) In general.—Section 36B(c)(3)(A), as amended by the preceding provisions of this Act, is amended by adding at the end the following new clause:
-
 
 “(iii) EXCEPTION IN CASE OF CERTAIN SPECIAL ENROLLMENT PERIODS.—Such term shall not include any plan enrolled in during a special enrollment period provided for by an Exchange—
 
@@ -1145,7 +1091,6 @@ SEC. 71304. Disallowing premium tax credit in case of certain coverage enrolled 
 “(II) not in connection with the occurrence of an event or change in circumstances specified by the Secretary of Health and Human Services for such purposes.”.
 
 (b) Effective date.—The amendments made by this section shall apply with respect to plan years beginning after December 31, 2025.
-
 
 SEC. 71305. Eliminating limitation on recapture of advance payment of premium tax credit.
 (a) In general.—Section 36B(f)(2) is amended by striking subparagraph (B).
@@ -1163,17 +1108,14 @@ subchapter C—Enhancing choice for patients
 SEC. 71306. Permanent extension of safe harbor for absence of deductible for telehealth services.
 (a) In general.—Subparagraph (E) of section 223(c)(2) is amended to read as follows:
 
-
 “(E) SAFE HARBOR FOR ABSENCE OF DEDUCTIBLE FOR TELEHEALTH.—A plan shall not fail to be treated as a high deductible health plan by reason of failing to have a deductible for telehealth and other remote care services.”.
 
 (b) Certain coverage disregarded.—Clause (ii) of section 223(c)(1)(B) is amended by striking “(in the case of months or plan years to which paragraph (2)(E) applies)”.
 
 (c) Effective date.—The amendments made by this section shall apply to plan years beginning after December 31, 2024.
 
-
 SEC. 71307. Allowance of bronze and catastrophic plans in connection with health savings accounts.
 (a) In general.—Section 223(c)(2) is amended by adding at the end the following new subparagraph:
-
 
 “(H) BRONZE AND CATASTROPHIC PLANS TREATED AS HIGH DEDUCTIBLE HEALTH PLANS.—The term ‘high deductible health plan’ shall include any plan which is—
 
@@ -1183,10 +1125,8 @@ SEC. 71307. Allowance of bronze and catastrophic plans in connection with health
 
 (b) Effective date.—The amendment made by this section shall apply to months beginning after December 31, 2025.
 
-
 SEC. 71308. Treatment of direct primary care service arrangements.
 (a) In general.—Section 223(c)(1) is amended by adding at the end the following new subparagraph:
-
 
 “(E) TREATMENT OF DIRECT PRIMARY CARE SERVICE ARRANGEMENTS.—
 
@@ -1210,7 +1150,6 @@ The Secretary, after consultation with the Secretary of Health and Human Service
 
 (b) Direct primary care service arrangement fees treated as medical expenses.—Section 223(d)(2)(C) is amended by striking “or” at the end of clause (iii), by striking the period at the end of clause (iv) and inserting “, or”, and by adding at the end the following new clause:
 
-
 “(v) any direct primary care service arrangement.”.
 
 (c) Inflation adjustment.—Section 223(g)(1) is amended—
@@ -1218,7 +1157,6 @@ The Secretary, after consultation with the Secretary of Health and Human Service
 (1) by striking “in subsections (b)(2) and (c)(2)(A)” and inserting “in subsections (b)(2), (c)(2)(A), and in the case of taxable years beginning after 2026, (c)(1)(E)(ii)(II)”,
 
 (2) in subparagraph (B), by striking “clause (ii)” in clause (i) and inserting “clauses (ii) and (iii)”, by striking “and” at the end of clause (i), by striking the period at the end of clause (ii) and inserting “, and”, and by inserting after clause (ii) the following new clause:
-
 
 “(iii) in the case of the dollar amount in subsection (c)(1)(E)(ii)(II), ‘calendar year 2025’.”, and
 
@@ -1230,7 +1168,6 @@ CHAPTER 4—PROTECTING RURAL HOSPITALS AND PROVIDERS
 
 SEC. 71401. Rural Health Transformation Program.
 (a) In general.—Section 2105 of the Social Security Act (42 U.S.C. 1397ee) is amended by adding at the end the following new subsection:
-
 
 “(h) Rural health transformation program.—
 

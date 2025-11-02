@@ -2,7 +2,7 @@
 
 **Your Work Requirements Assistant**
 
-*Track your work hours to maintain your Medicaid benefits*
+_Track your work hours to maintain your Medicaid benefits_
 
 ---
 
@@ -11,12 +11,14 @@
 WorkPath is a simple Progressive Web Application (PWA) that helps you track work, volunteer, and education hours to meet Medicaid work requirements (80 hours/month or $580/month income).
 
 **Core Principles:**
+
 - **Simple first**: Get it working, then make it better
 - **Local storage**: All data stays on your device
 - **Mobile-friendly**: Works on your phone
 - **Offline-capable**: Works without internet
 
 **What This MVP Does:**
+
 - Track daily work/volunteer/education hours
 - Calculate monthly totals
 - Show if you're meeting the 80-hour requirement
@@ -24,6 +26,7 @@ WorkPath is a simple Progressive Web Application (PWA) that helps you track work
 - Work offline
 
 **What This MVP Doesn't Do (Yet):**
+
 - Exemption screening (future)
 - Document management (future)
 - Complex reporting (future)
@@ -147,6 +150,7 @@ These features are documented in the full spec (archived) but NOT included in th
 ## Success Criteria
 
 The MVP is successful when:
+
 - ✅ You can log hours for any day
 - ✅ You can see your monthly total
 - ✅ You can tell if you're meeting the 80-hour requirement
@@ -170,6 +174,7 @@ The MVP is successful when:
 ## Notes for Future Phases
 
 The archived full spec contains detailed requirements for:
+
 - 15 comprehensive requirements
 - Complete exemption screening system
 - Document management with camera

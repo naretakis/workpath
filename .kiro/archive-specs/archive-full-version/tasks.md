@@ -2,7 +2,7 @@
 
 **Your Work Requirements Assistant**
 
-*Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits*
+_Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits_
 
 ---
 
@@ -11,6 +11,7 @@ This implementation plan breaks down the development of WorkPath into discrete, 
 ## Task Organization
 
 Tasks are organized following industry best practices for greenfield project development:
+
 1. **Project scaffolding and infrastructure** - Set up foundation, CI/CD, and documentation early
 2. **Core data layer** - Build the persistence and state management
 3. **UI foundation** - Create reusable components and layouts
@@ -121,6 +122,7 @@ Each task produces working, integrated code. No orphaned implementations.
   - _Requirements: 2.3, 4.6, 6.4_
 
 ---
+
 - [ ] 3. Theme, Layout, and UI Foundation
 - [ ] 3.1 Configure Material-UI theme with mobile-first approach
   - Create theme/theme.ts with mobile-first breakpoints (320px, 768px, 1024px)
@@ -800,7 +802,7 @@ Each task produces working, integrated code. No orphaned implementations.
   - Configure Jest with TypeScript support in jest.config.js
   - Set up React Testing Library
   - Create tests/setup.ts with test utilities
-  - Create mocks for IndexedDB in tests/__mocks__
+  - Create mocks for IndexedDB in tests/**mocks**
   - Configure coverage reporting (80% threshold)
   - Add test scripts to package.json
   - _Requirements: Testing strategy_
@@ -915,6 +917,7 @@ Each task produces working, integrated code. No orphaned implementations.
 # Implementation Notes
 
 ### Task Execution Guidelines
+
 - **Complete tasks in order** - Each task builds on previous work
 - **Integrate immediately** - All code should be functional and integrated by task completion
 - **Test as you go** - Verify each feature works before moving to the next
@@ -922,6 +925,7 @@ Each task produces working, integrated code. No orphaned implementations.
 - **Accessibility from the start** - Don't bolt on accessibility later
 
 ### Task Organization Rationale
+
 The tasks follow industry best practices for greenfield development:
 
 1. **Scaffolding (1.x)** - Set up project structure, dependencies, and build pipeline
@@ -936,6 +940,7 @@ The tasks follow industry best practices for greenfield development:
 9. **Deployment (24.x-25.x)** - Optimize, document, and ship
 
 ### Critical Dependencies
+
 - **Must complete in order:**
   - 1.x (Scaffolding) → 2.x (Data Layer) → 3.x (UI Foundation) → 4.x (State Management)
   - 5.x (Onboarding) before 6.x (Exemptions) before 8.x (Tracking)
@@ -950,12 +955,14 @@ The tasks follow industry best practices for greenfield development:
   - Enhancement tasks (16-19) can be done in any order after core features are complete
 
 ### Testing Approach
-- **Optional test tasks (marked with *)** - Focus on comprehensive test coverage
+
+- **Optional test tasks (marked with \*)** - Focus on comprehensive test coverage
 - **Recommended approach:** Write basic tests alongside implementation, comprehensive tests later
 - **E2E tests** validate complete user workflows
 - **Accessibility tests** ensure WCAG 2.1 AA compliance
 
 ### Quality Standards
+
 - **TypeScript strict mode** enforced throughout
 - **ESLint and Prettier** for code quality and consistency
 - **80% minimum code coverage** (if tests are implemented)
@@ -967,6 +974,7 @@ The tasks follow industry best practices for greenfield development:
   - <5MB total bundle size
 
 ### Development Tips
+
 - **Mobile-first is mandatory** - Build for 320px width first, then enhance for larger screens
 - **Test on real devices** early and often (iOS Safari, Android Chrome) - don't rely only on browser DevTools
 - **44px minimum touch targets** - All interactive elements must be at least 44px for touch

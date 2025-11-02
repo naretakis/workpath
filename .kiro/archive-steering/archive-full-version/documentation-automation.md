@@ -9,6 +9,7 @@ This document provides a comprehensive guide to automating documentation updates
 ## Overview
 
 Documentation automation ensures that:
+
 - ✅ CHANGELOG is updated with every release
 - ✅ Version numbers are consistent across all files
 - ✅ README reflects current features and setup
@@ -23,12 +24,14 @@ Documentation automation ensures that:
 Use conventional commits to automatically determine version bumps and generate changelogs.
 
 **Install dependencies:**
+
 ```bash
 npm install --save-dev @commitlint/cli @commitlint/config-conventional
 npm install --save-dev standard-version
 ```
 
 **Configure commitlint (`.commitlintrc.json`):**
+
 ```json
 {
   "extends": ["@commitlint/config-conventional"],
@@ -75,6 +78,7 @@ npm install --save-dev standard-version
 ```
 
 **Add commit-msg hook (`.husky/commit-msg`):**
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -83,6 +87,7 @@ npx --no -- commitlint --edit $1
 ```
 
 Make it executable:
+
 ```bash
 chmod +x .husky/commit-msg
 ```
@@ -90,6 +95,7 @@ chmod +x .husky/commit-msg
 ### 2. Automatic CHANGELOG Generation
 
 **Configure standard-version (`.versionrc.json`):**
+
 ```json
 {
   "types": [
@@ -114,6 +120,7 @@ chmod +x .husky/commit-msg
 ```
 
 **Add scripts to package.json:**
+
 ```json
 {
   "scripts": {
@@ -127,6 +134,7 @@ chmod +x .husky/commit-msg
 ```
 
 **Usage:**
+
 ```bash
 # Automatic version bump based on commits
 npm run release
@@ -143,21 +151,19 @@ npm run release:dry-run
 ### 3. API Documentation with TypeDoc
 
 **Install TypeDoc:**
+
 ```bash
 npm install --save-dev typedoc
 ```
 
 **Configure TypeDoc (`typedoc.json`):**
+
 ```json
 {
   "entryPoints": ["src"],
   "entryPointStrategy": "expand",
   "out": "docs/api",
-  "exclude": [
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/node_modules/**"
-  ],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/node_modules/**"],
   "excludePrivate": true,
   "excludeProtected": false,
   "excludeExternals": true,
@@ -167,18 +173,13 @@ npm install --save-dev typedoc
   "sort": ["source-order"],
   "categorizeByGroup": true,
   "defaultCategory": "Other",
-  "categoryOrder": [
-    "Components",
-    "Hooks",
-    "Utilities",
-    "Types",
-    "*"
-  ],
+  "categoryOrder": ["Components", "Hooks", "Utilities", "Types", "*"],
   "plugin": ["typedoc-plugin-markdown"]
 }
 ```
 
 **Add scripts to package.json:**
+
 ```json
 {
   "scripts": {
@@ -189,6 +190,7 @@ npm install --save-dev typedoc
 ```
 
 **Usage:**
+
 ```bash
 # Generate API documentation
 npm run docs:api
@@ -202,11 +204,13 @@ npm run docs:api:watch
 For visual component documentation:
 
 **Install Storybook:**
+
 ```bash
 npx storybook@latest init
 ```
 
 **Add scripts (automatically added by Storybook):**
+
 ```json
 {
   "scripts": {
@@ -219,6 +223,7 @@ npx storybook@latest init
 ### 5. README Automation
 
 **Create README template (`docs/templates/README.template.md`):**
+
 ```markdown
 # WorkPath
 
@@ -247,17 +252,22 @@ WorkPath is a Progressive Web Application (PWA) that helps Medicaid beneficiarie
 ### Installation
 
 \`\`\`bash
+
 # Clone the repository
+
 git clone https://github.com/{{REPO_OWNER}}/{{REPO_NAME}}.git
 cd {{REPO_NAME}}
 
 # Install dependencies
+
 npm install
 
 # Setup Git hooks
+
 npx husky install
 
 # Start development server
+
 npm run dev
 \`\`\`
 
@@ -268,21 +278,25 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 ### Available Commands
 
 \`\`\`bash
+
 # Development
-npm run dev              # Start dev server
-npm run build            # Production build
-npm run start            # Start production server
+
+npm run dev # Start dev server
+npm run build # Production build
+npm run start # Start production server
 
 # Quality Checks
-npm run quality:check    # Run all checks
-npm run quality:fix      # Auto-fix issues
-npm run type-check       # TypeScript check
-npm run lint             # ESLint check
-npm run test:coverage    # Tests with coverage
+
+npm run quality:check # Run all checks
+npm run quality:fix # Auto-fix issues
+npm run type-check # TypeScript check
+npm run lint # ESLint check
+npm run test:coverage # Tests with coverage
 
 # Documentation
-npm run docs:api         # Generate API docs
-npm run release          # Create new release
+
+npm run docs:api # Generate API docs
+npm run release # Create new release
 \`\`\`
 
 ### Project Structure
@@ -294,16 +308,21 @@ npm run release          # Create new release
 ## Testing
 
 \`\`\`bash
+
 # Run all tests
+
 npm test
 
 # Run tests in watch mode
+
 npm run test:watch
 
 # Run tests with coverage
+
 npm run test:coverage
 
 # Run E2E tests
+
 npm run test:e2e
 \`\`\`
 
@@ -314,10 +333,13 @@ The application automatically deploys to GitHub Pages when changes are merged to
 ### Manual Deployment
 
 \`\`\`bash
+
 # Build for production
+
 npm run build
 
 # Deploy to GitHub Pages
+
 npm run deploy
 \`\`\`
 
@@ -348,6 +370,7 @@ See [CHANGELOG.md](CHANGELOG.md) for release history.
 ## Support
 
 For questions or issues:
+
 - Create an [issue](https://github.com/{{REPO_OWNER}}/{{REPO_NAME}}/issues)
 - Check the [documentation](docs/)
 - Review [troubleshooting guide](docs/development/Troubleshooting-Guide.md)
@@ -358,33 +381,36 @@ Built with ❤️ using Next.js, TypeScript, and Material-UI
 ```
 
 **Create README update script (`scripts/update-readme.js`):**
+
 ```javascript
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-console.log('📝 Updating README...');
+console.log("📝 Updating README...");
 
 // Read package.json for version and repo info
 const packageJson = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
+  fs.readFileSync(path.join(__dirname, "../package.json"), "utf8"),
 );
 
 // Read template
 const template = fs.readFileSync(
-  path.join(__dirname, '../docs/templates/README.template.md'),
-  'utf8'
+  path.join(__dirname, "../docs/templates/README.template.md"),
+  "utf8",
 );
 
 // Extract repo info from package.json
-const repoUrl = packageJson.repository?.url || '';
+const repoUrl = packageJson.repository?.url || "";
 const repoMatch = repoUrl.match(/github\.com[:/](.+?)\/(.+?)(\.git)?$/);
-const repoOwner = repoMatch ? repoMatch[1] : 'your-org';
-const repoName = repoMatch ? repoMatch[2] : 'workpath';
+const repoOwner = repoMatch ? repoMatch[1] : "your-org";
+const repoName = repoMatch ? repoMatch[2] : "workpath";
 
 // Generate features list from package.json keywords or default
 const features = packageJson.keywords
-  ? packageJson.keywords.map(k => `- ${k.charAt(0).toUpperCase() + k.slice(1)}`).join('\n')
+  ? packageJson.keywords
+      .map((k) => `- ${k.charAt(0).toUpperCase() + k.slice(1)}`)
+      .join("\n")
   : `- Track work, volunteer, education, and work program activities
 - Screen for exemptions from work requirements
 - Calculate monthly compliance automatically
@@ -413,17 +439,18 @@ let readme = template
   .replace(/\{\{REPO_NAME\}\}/g, repoName)
   .replace(/\{\{FEATURES\}\}/g, features)
   .replace(/\{\{PROJECT_STRUCTURE\}\}/g, projectStructure)
-  .replace(/\{\{LICENSE\}\}/g, packageJson.license || 'MIT');
+  .replace(/\{\{LICENSE\}\}/g, packageJson.license || "MIT");
 
 // Write README
-fs.writeFileSync(path.join(__dirname, '../README.md'), readme);
+fs.writeFileSync(path.join(__dirname, "../README.md"), readme);
 
-console.log('✅ README updated successfully!');
+console.log("✅ README updated successfully!");
 console.log(`   Version: ${packageJson.version}`);
 console.log(`   Repository: ${repoOwner}/${repoName}`);
 ```
 
 Make it executable:
+
 ```bash
 chmod +x scripts/update-readme.js
 ```
@@ -431,27 +458,28 @@ chmod +x scripts/update-readme.js
 ### 6. Version Consistency Check
 
 **Create version check script (`scripts/check-version-consistency.js`):**
+
 ```javascript
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-console.log('🔍 Checking version consistency...');
+console.log("🔍 Checking version consistency...");
 
 // Read package.json version
 const packageJson = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
+  fs.readFileSync(path.join(__dirname, "../package.json"), "utf8"),
 );
 const packageVersion = packageJson.version;
 
 // Files that should contain version
 const versionFiles = [
   {
-    path: 'public/manifest.json',
+    path: "public/manifest.json",
     extract: (content) => JSON.parse(content).version,
   },
   {
-    path: 'README.md',
+    path: "README.md",
     extract: (content) => {
       const match = content.match(/Version.*?(\d+\.\d+\.\d+)/);
       return match ? match[1] : null;
@@ -462,20 +490,20 @@ const versionFiles = [
 let hasError = false;
 
 for (const file of versionFiles) {
-  const filePath = path.join(__dirname, '..', file.path);
-  
+  const filePath = path.join(__dirname, "..", file.path);
+
   if (!fs.existsSync(filePath)) {
     console.warn(`⚠️  File not found: ${file.path}`);
     continue;
   }
-  
-  const content = fs.readFileSync(filePath, 'utf8');
+
+  const content = fs.readFileSync(filePath, "utf8");
   const version = file.extract(content);
-  
+
   if (version !== packageVersion) {
     console.error(`❌ Version mismatch in ${file.path}`);
     console.error(`   Expected: ${packageVersion}`);
-    console.error(`   Found: ${version || 'not found'}`);
+    console.error(`   Found: ${version || "not found"}`);
     hasError = true;
   } else {
     console.log(`✅ ${file.path}: ${version}`);
@@ -483,55 +511,54 @@ for (const file of versionFiles) {
 }
 
 if (hasError) {
-  console.error('\n❌ Version consistency check failed!');
-  console.error('   Run: npm run version:sync');
+  console.error("\n❌ Version consistency check failed!");
+  console.error("   Run: npm run version:sync");
   process.exit(1);
 }
 
-console.log('\n✅ All versions are consistent!');
+console.log("\n✅ All versions are consistent!");
 ```
 
 **Create version sync script (`scripts/sync-versions.js`):**
+
 ```javascript
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-console.log('🔄 Syncing versions...');
+console.log("🔄 Syncing versions...");
 
 // Read package.json version
 const packageJson = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
+  fs.readFileSync(path.join(__dirname, "../package.json"), "utf8"),
 );
 const version = packageJson.version;
 
 console.log(`   Target version: ${version}`);
 
 // Update manifest.json
-const manifestPath = path.join(__dirname, '../public/manifest.json');
+const manifestPath = path.join(__dirname, "../public/manifest.json");
 if (fs.existsSync(manifestPath)) {
-  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
   manifest.version = version;
-  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
   console.log(`✅ Updated public/manifest.json`);
 }
 
 // Update README.md (if it has version badge)
-const readmePath = path.join(__dirname, '../README.md');
+const readmePath = path.join(__dirname, "../README.md");
 if (fs.existsSync(readmePath)) {
-  let readme = fs.readFileSync(readmePath, 'utf8');
-  readme = readme.replace(
-    /Version.*?\d+\.\d+\.\d+/g,
-    `Version ${version}`
-  );
+  let readme = fs.readFileSync(readmePath, "utf8");
+  readme = readme.replace(/Version.*?\d+\.\d+\.\d+/g, `Version ${version}`);
   fs.writeFileSync(readmePath, readme);
   console.log(`✅ Updated README.md`);
 }
 
-console.log('\n✅ Version sync complete!');
+console.log("\n✅ Version sync complete!");
 ```
 
 Make them executable:
+
 ```bash
 chmod +x scripts/check-version-consistency.js
 chmod +x scripts/sync-versions.js
@@ -686,15 +713,15 @@ npm run release:major
 
 All public functions, classes, and interfaces must have JSDoc comments:
 
-```typescript
+````typescript
 /**
  * Calculates monthly compliance based on activities and exemptions.
- * 
+ *
  * @param activities - Array of activities for the month
  * @param exemptions - Array of active exemptions
  * @param month - Month to calculate (YYYY-MM format)
  * @returns Compliance result with hours, income, and status
- * 
+ *
  * @example
  * ```typescript
  * const result = calculateMonthlyCompliance(
@@ -708,20 +735,20 @@ All public functions, classes, and interfaces must have JSDoc comments:
 export function calculateMonthlyCompliance(
   activities: Activity[],
   exemptions: Exemption[],
-  month: string
+  month: string,
 ): ComplianceResult {
   // Implementation
 }
-```
+````
 
 ### Component Documentation
 
 React components should have prop documentation:
 
-```typescript
+````typescript
 /**
  * Displays monthly compliance status with visual indicators.
- * 
+ *
  * @component
  * @example
  * ```tsx
@@ -748,7 +775,7 @@ export function ComplianceDashboard({
 }: ComplianceDashboardProps): JSX.Element {
   // Implementation
 }
-```
+````
 
 ### Commit Message Format
 
@@ -763,18 +790,21 @@ Follow conventional commits for automatic changelog generation:
 ```
 
 **Types that appear in CHANGELOG:**
+
 - `feat`: New features
 - `fix`: Bug fixes
 - `perf`: Performance improvements
 - `docs`: Documentation changes (if significant)
 
 **Types hidden from CHANGELOG:**
+
 - `style`: Code style changes
 - `refactor`: Code refactoring
 - `test`: Test changes
 - `chore`: Build/tooling changes
 
 **Examples:**
+
 ```
 feat(tracking): add batch activity entry
 
@@ -804,26 +834,26 @@ jobs:
   documentation:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Generate API documentation
         run: npm run docs:api
-      
+
       - name: Check version consistency
         run: npm run version:check
-      
+
       - name: Deploy documentation
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -891,4 +921,3 @@ chmod +x scripts/update-readme.js
 - **TypeDoc**: https://typedoc.org/
 - **standard-version**: https://github.com/conventional-changelog/standard-version
 - **commitlint**: https://commitlint.js.org/
-

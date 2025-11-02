@@ -20,7 +20,7 @@ Use this format for official materials, app stores, and marketing:
 WorkPath
 Your Work Requirements Assistant
 
-Track your work, volunteer, and education hours to maintain 
+Track your work, volunteer, and education hours to maintain
 your Medicaid and SNAP benefits
 ```
 
@@ -48,7 +48,7 @@ For app store listings, marketing materials, and detailed descriptions:
 ```
 WorkPath - Your Work Requirements Assistant
 
-Track your work, volunteer, and education hours to maintain your 
+Track your work, volunteer, and education hours to maintain your
 Medicaid and SNAP benefits. All your data stays private on your device.
 ```
 
@@ -70,9 +70,18 @@ Medicaid and SNAP benefits. All your data stays private on your device.
 
 ```html
 <title>WorkPath - Your Work Requirements Assistant</title>
-<meta name="description" content="Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits">
-<meta property="og:title" content="WorkPath - Your Work Requirements Assistant">
-<meta property="og:description" content="Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits">
+<meta
+  name="description"
+  content="Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits"
+/>
+<meta
+  property="og:title"
+  content="WorkPath - Your Work Requirements Assistant"
+/>
+<meta
+  property="og:description"
+  content="Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits"
+/>
 ```
 
 ### README.md Header
@@ -102,7 +111,7 @@ Track your work, volunteer, and education hours to maintain your Medicaid and SN
 ```markdown
 # About WorkPath
 
-WorkPath is your work requirements assistant, helping you track work, 
+WorkPath is your work requirements assistant, helping you track work,
 volunteer, and education hours to maintain your Medicaid and SNAP benefits.
 
 ## What We Do
@@ -115,7 +124,7 @@ volunteer, and education hours to maintain your Medicaid and SNAP benefits.
 
 ## Privacy First
 
-All your data stays on your device. We never send your information 
+All your data stays on your device. We never send your information
 to any server. You control when and how to export your data.
 ```
 
@@ -153,15 +162,18 @@ to any server. You control when and how to export your data.
 ### Color Palette (Suggested)
 
 **Primary Colors:**
+
 - Path Blue: #1976d2 (trust, guidance)
 - Success Green: #2e7d32 (achievement, compliance)
 
 **Secondary Colors:**
+
 - Warm Gray: #757575 (neutral, professional)
 - Alert Orange: #f57c00 (attention, warnings)
 - Error Red: #d32f2f (issues, non-compliance)
 
 **Background:**
+
 - White: #ffffff
 - Light Gray: #f5f5f5
 
@@ -187,7 +199,7 @@ to any server. You control when and how to export your data.
 ```
 WorkPath - Your Work Requirements Assistant
 
-Track your work, volunteer, and education hours to maintain your 
+Track your work, volunteer, and education hours to maintain your
 Medicaid and SNAP benefits.
 
 FEATURES:
@@ -200,11 +212,11 @@ FEATURES:
 • 100% offline - all data stays on your device
 
 PRIVACY FIRST:
-Your data never leaves your device. No account required. 
+Your data never leaves your device. No account required.
 No cloud sync. You control everything.
 
 EASY TO USE:
-Mobile-first design with large touch targets and simple navigation. 
+Mobile-first design with large touch targets and simple navigation.
 Works offline, anytime, anywhere.
 
 FREE AND OPEN:
@@ -234,7 +246,7 @@ Let's get started!
 ```
 How WorkPath Helps You
 
-WorkPath makes it easy to track the hours you need to maintain 
+WorkPath makes it easy to track the hours you need to maintain
 your Medicaid and SNAP benefits.
 
 What You Can Track:
@@ -257,16 +269,19 @@ Everything stays on your phone. We never send your data anywhere.
 ## File Naming Conventions
 
 ### Project Files
+
 - Repository: `workpath`
 - Package name: `workpath`
 - App ID: `com.workpath.app` or `org.workpath.app`
 
 ### Documentation
+
 - User guide: `WorkPath-User-Guide.pdf`
 - Privacy policy: `WorkPath-Privacy-Policy.pdf`
 - Technical docs: `WorkPath-Technical-Documentation.pdf`
 
 ### Export Files
+
 - JSON: `workpath-data-YYYY-MM-DD.json`
 - Markdown: `workpath-report-YYYY-MM-DD.md`
 
@@ -275,12 +290,14 @@ Everything stays on your phone. We never send your data anywhere.
 ## Social Media (Future)
 
 ### Hashtags
+
 - #WorkPath
 - #WorkRequirements
 - #BenefitsAssistance
 - #MedicaidCompliance
 
 ### Social Handles (if needed)
+
 - Twitter: @WorkPathApp
 - GitHub: github.com/[org]/workpath
 
@@ -289,20 +306,23 @@ Everything stays on your phone. We never send your data anywhere.
 ## Legal and Compliance
 
 ### Copyright Notice
+
 ```
 © 2025 WorkPath. All rights reserved.
 ```
 
 ### Disclaimer
+
 ```
-WorkPath is an independent tool to help you track work requirements. 
-It is not affiliated with any government agency. Always verify 
+WorkPath is an independent tool to help you track work requirements.
+It is not affiliated with any government agency. Always verify
 requirements with your state Medicaid or SNAP office.
 ```
 
 ### Privacy Statement
+
 ```
-WorkPath stores all data locally on your device. We do not collect, 
+WorkPath stores all data locally on your device. We do not collect,
 transmit, or store any personal information on external servers.
 ```
 

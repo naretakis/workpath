@@ -5,7 +5,6 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (2) DECENNIAL DETERMINATION DATE.—Section 1400Z-1(c)(2) is amended by adding at the end the following new subparagraph:
 
-
 “(C) DECENNIAL DETERMINATION DATE.—The term ‘decennial determination date’ means—
 
 “(i) July 1, 2026, and
@@ -34,7 +33,6 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (1) DETERMINATION OF LOW-INCOME COMMUNITIES.—Section 1400Z-1(c) is amended by striking all that precedes paragraph (2) and inserting the following:
 
-
 “(c) Other definitions.—For purposes of this section—
 
 “(1) LOW-INCOME COMMUNITIES.—The term ‘low-income community’ means any population census tract if—
@@ -59,7 +57,6 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (3) PERIOD FOR WHICH DESIGNATION IS IN EFFECT.—Section 1400Z-1(e), as redesignated by paragraph (2), is amended to read as follows:
 
-
 “(e) Period for which designation is in effect.—
 
 “(1) IN GENERAL.—A designation as a qualified opportunity zone shall remain in effect for the period beginning on the applicable start date and ending on the day before the date that is 10 years after the applicable start date.
@@ -72,11 +69,9 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (1) REPEAL OF SUNSET ON ELECTION.—Section 1400Z-2(a)(2) is amended to read as follows:
 
-
 “(2) ELECTION.—No election may be made under paragraph (1) with respect to a sale or exchange if an election previously made with respect to such sale or exchange is in effect.”.
 
 (2) MODIFICATION OF RULES FOR DEFERRAL OF GAIN.—Section 1400Z-2(b) is amended to read as follows:
-
 
 “(b) Deferral of gain invested in opportunity zone property.—
 
@@ -137,7 +132,6 @@ For purposes of the preceding sentence, property held in the fund shall be measu
 (i) by striking “December 31, 2017,” each place it appears in subparagraphs (B)(i)(I) and (C)(i) and inserting “the applicable date”, and
 
 (ii) by adding at the end the following new subparagraph:
-
 
 “(E) APPLICABLE DATE.—For purposes of this subparagraph, the term ‘applicable date’ means, with respect to any corporation or partnership which is a qualified opportunity zone business, the earliest date described in subparagraph (D)(i)(I) with respect to the qualified opportunity zone business property held by such qualified opportunity zone business.”.
 
@@ -307,18 +301,15 @@ For purposes of the preceding sentence, property held in the fund shall be measu
 
 (3) ELECTRONIC FILING.—Section 6011(e) is amended by adding at the end the following new paragraph:
 
-
 “(8) QUALIFIED OPPORTUNITY FUNDS AND QUALIFIED RURAL OPPORTUNITY FUNDS.—Notwithstanding paragraphs (1) and (2), any return filed by a qualified opportunity fund or qualified rural opportunity fund under section 6039K shall be filed on magnetic media or other machine-readable form.”.
 
 (4) CLERICAL AMENDMENTS.—
 
 (A) The table of sections for subpart A of part III of subchapter A of chapter 61 is amended by inserting after the item relating to section 6039J the following new items:
 
-
 “Sec. 6039K. Returns with respect to qualified opportunity funds and qualified rural opportunity funds.
 “Sec. 6039L. Information required from qualified opportunity zone businesses and qualified rural opportunity zone businesses.”.
 (B) The table of sections for part II of subchapter B of chapter 68 is amended by inserting after the item relating to section 6725 the following new item:
-
 
 “Sec. 6726. Failure to comply with information reporting requirements relating to qualified opportunity funds and qualified rural opportunity funds.”.
 (5) EFFECTIVE DATE.—The amendments made by this subsection shall apply to taxable years beginning after the date of the enactment of this Act.
@@ -407,7 +398,6 @@ For purposes of the preceding sentence, property held in the fund shall be measu
 
 (C) by treating any reference (after the application of subparagraph (A)) to qualified rural opportunity zone stock, qualified rural opportunity zone partnership interest, qualified rural opportunity zone business, or qualified opportunity zone business property as stock, interest, business, or property, respectively, described in subclause (I) or (II), as the case may be, of section 1400Z–2(b)(2)(C)(i) of the Internal Revenue Code of 1986.
 
-
 SEC. 70422. Permanent enhancement of low-income housing tax credit.
 (a) Permanent State housing credit ceiling increase for low-income housing credit.—
 
@@ -424,7 +414,6 @@ SEC. 70422. Permanent enhancement of low-income housing tax credit.
 (b) Tax-exempt bond financing requirement.—
 
 (1) IN GENERAL.—Section 42(h)(4) is amended by striking subparagraph (B) and inserting the following:
-
 
 “(B) SPECIAL RULE WHERE MINIMUM PERCENT OF BUILDINGS IS FINANCED WITH TAX-EXEMPT BONDS SUBJECT TO VOLUME CAP.—For purposes of subparagraph (A), paragraph (1) shall not apply to any portion of the credit allowable under subsection (a) with respect to a building if—
 
@@ -444,7 +433,6 @@ SEC. 70422. Permanent enhancement of low-income housing tax credit.
 
 (B) REHABILITATION EXPENDITURES TREATED AS SEPARATE NEW BUILDING.—In the case of any building with respect to which any expenditures are treated as a separate new building under section 42(e) of the Internal Revenue Code of 1986, for purposes of subparagraph (A), both the existing building and the separate new building shall be treated as having been placed in service on the date such expenditures are treated as placed in service under section 42(e)(4) of such Code.
 
-
 SEC. 70423. Permanent extension of new markets tax credit.
 (a) In general.—Section 45D(f)(1)(H) is amended by striking “for for each of calendar years 2020 through 2025” and inserting “ for each calendar year after 2019”.
 
@@ -452,16 +440,13 @@ SEC. 70423. Permanent extension of new markets tax credit.
 
 (1) by striking “If the” and inserting the following:
 
-
 “(A) IN GENERAL.—If the”, and
 
 (2) by striking the second sentence and inserting the following:
 
-
 “(B) LIMITATION.—No amount may be carried under subparagraph (A) to any calendar year afer the fifth calendar year after the calendar year in which the excess described in such subparagraph occurred. For purposes of this subparagraph, any excess described in subparagraph (A) with respect to any calendar year before 2026 shall be treated as occurring in calendar year 2025.”.
 
 (c) Effective date.—The amendments made by this section shall apply to calendar years beginning after December 31, 2025.
-
 
 SEC. 70424. Permanent and expanded reinstatement of partial deduction for charitable contributions of individuals who do not elect to itemize.
 (a) In general.—Section 170(p) is amended—
@@ -472,12 +457,10 @@ SEC. 70424. Permanent and expanded reinstatement of partial deduction for charit
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 (a) In general.—
 
 (1) IN GENERAL.—Paragraph (1) of section 170(b) is amended by adding at the end the following new subparagraph:
-
 
 “(I) 0.5-PERCENT FLOOR.—Any charitable contribution otherwise allowable (without regard to this subparagraph) as a deduction under this section shall be allowed only to the extent that the aggregate of such contributions exceeds 0.5 percent of the taxpayer's contribution base for the taxable year. The preceding sentence shall be applied—
 
@@ -494,7 +477,6 @@ SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 “(vi) sixth, by taking into account charitable contributions to which subparagraph (G) applies to the extent thereof.”.
 
 (2) APPLICATION OF CARRYFORWARD.—Paragraph (1) of section 170(d) is amended by adding at the end the following new subparagraph:
-
 
 “(C) CONTRIBUTIONS DISALLOWED BY 0.5-PERCENT FLOOR CARRIED FORWARD ONLY FROM YEARS IN WHICH LIMITATION IS EXCEEDED.—
 
@@ -516,7 +498,6 @@ SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 
 (1) IN GENERAL.—Clause (i) of section 170(b)(1)(G) is amended to read as follows:
 
-
 “(i) IN GENERAL.—For taxable years beginning after December 31, 2017, any contribution of cash to an organization described in subparagraph (A) shall be allowed as a deduction under subsection (a) to the extent that the aggregate of such contributions does not exceed the excess of—
 
 “(I) 60 percent of the taxpayer’s contribution base for the taxable year, over
@@ -537,17 +518,14 @@ SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 
 (ii) in clause (ii), by striking “over the amount” and all that follows through “subparagraph (C)).” and inserting “over—
 
-
 “(I) the amount of charitable contributions allowable under subparagraph (A) (determined without regard to subparagraph (C)) and subparagraph (G), reduced by
 
 “(II) so much of the contributions taken into account under subparagraph (G) as does not exceed 10 percent of the taxpayer’s contribution base.”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70426. 1-percent floor on deduction of charitable contributions made by corporations.
 (a) In general.—Section 170(b)(2)(A) is amended to read as follows:
-
 
 “(A) IN GENERAL.—Any charitable contribution otherwise allowable (without regard to this subparagraph) as a deduction under this section for any taxable year, other than any contribution to which subparagraph (B) or (C) applies, shall be allowed only to the extent that the aggregate of such contributions—
 
@@ -556,7 +534,6 @@ SEC. 70426. 1-percent floor on deduction of charitable contributions made by cor
 “(ii) does not exceed 10 percent of the taxpayer's taxable income for the taxable year.”.
 
 (b) Application of carryforward.—Section 170(d)(2) is amended to read as follows:
-
 
 “(2) CORPORATIONS.—
 
@@ -572,15 +549,12 @@ SEC. 70426. 1-percent floor on deduction of charitable contributions made by cor
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70427. Permanent increase in limitation on cover over of tax on distilled spirits.
 (a) In general.—Paragraph (1) of section 7652(f) is amended to read as follows:
-
 
 “(1) $13.25, or”.
 
 (b) Effective date.—The amendment made by this section shall apply to distilled spirits brought into the United States after December 31, 2025.
-
 
 SEC. 70428. Nonprofit community development activities in remote native villages.
 (a) In general.—For purposes of subchapter F of chapter 1 of the Internal Revenue Code of 1986, any activity substantially related to participation or investment in fisheries in the Bering Sea and Aleutian Islands statistical and reporting areas (as described in Figure 1 of section 679 of title 50, Code of Federal Regulations) carried on by an entity identified in section 305(i)(1)(D) of the Magnuson-Stevens Fishery Conservation and Management Act (16 U.S.C. 1855(i)(1)(D)) (as in effect on the date of enactment of this section) shall be considered substantially related to the exercise or performance of the purpose constituting the basis of such entity's exemption under section 501(a) of such Code if the conduct of such activity is in furtherance of 1 or more of the purposes specified in section 305(i)(1)(A) of such Act (as so in effect). For purposes of this paragraph, activities substantially related to participation or investment in fisheries include the harvesting, processing, transportation, sales, and marketing of fish and fish products of the Bering Sea and Aleutian Islands statistical and reporting areas.
@@ -593,12 +567,10 @@ SEC. 70428. Nonprofit community development activities in remote native villages
 
 (c) Effective date.—This section shall take effect on the date of the enactment of this Act and shall remain effective during the existence of the western Alaska community development quota program established by Section 305(i)(1) of the Magnuson-Stevens Fishery Conservation and Management Act (16 U.S.C. 1855(i)(1)), as amended.
 
-
 SEC. 70429. Adjustment of charitable deduction for certain expenses incurred in support of Native Alaskan subsistence whaling.
 (a) In general.—Section 170(n)(1) of the Internal Revenue Code of 1986 is amended by striking “$10,000” and inserting “$50,000”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70430. Exception to percentage of completion method of accounting for certain residential construction contracts.
 (a) In general.—Section 460(e) is amended—
@@ -624,7 +596,6 @@ SEC. 70431. Expansion of qualified small business stock gain exclusion.
 
 (1) IN GENERAL.—Section 1202(a)(1) is amended to read as follows:
 
-
 “(1) IN GENERAL.— In the case of a taxpayer other than a corporation, gross income shall not include—
 
 “(A) except as provided in paragraphs (3) and (4), 50 percent of any gain from the sale or exchange of qualified small business stock acquired on or before the applicable date and held for more than 5 years, and
@@ -633,17 +604,13 @@ SEC. 70431. Expansion of qualified small business stock gain exclusion.
 
 (2) APPLICABLE PERCENTAGE.—Section 1202(a) is amended by adding at the end the following new paragraph:
 
-
 “(5) APPLICABLE PERCENTAGE.—The applicable percentage under paragraph (1) shall be determined under the following table:
 
-
-
-“Years stock held:	Applicable percentage:
-3 years	50%
-4 years	75%
-5 years or more	100%”.
+“Years stock held: Applicable percentage:
+3 years 50%
+4 years 75%
+5 years or more 100%”.
 (3) APPLICABLE DATE; ACQUISITION DATE.—Section 1202(a), as amended by paragraph (2), is amended by adding at the end the following new paragraph:
-
 
 “(6) APPLICABLE DATE; ACQUISITION DATE.—For purposes of this section—
 
@@ -679,11 +646,9 @@ SEC. 70431. Expansion of qualified small business stock gain exclusion.
 
 (1) IN GENERAL.—Subparagraph (A) of section 1202(b)(1) is amended to read as follows:
 
-
 “(A) the applicable dollar limit for the taxable year, or”.
 
 (2) APPLICABLE DOLLAR LIMIT.—Section 1202 (b) is amended by adding at the end the following:
-
 
 “(4) APPLICABLE DOLLAR LIMIT.—For purposes of paragraph (1)(A), the applicable dollar limit for any taxable year with respect to eligible gain from 1 or more dispositions by a taxpayer of qualified business stock of a corporation is—
 
@@ -709,7 +674,6 @@ If any increase under this subparagraph is not a multiple of $10,000, such incre
 
 (3) SEPARATE RETURNS.—Subparagraph (A) of section 1202(b)(3) is amended to read as follows:
 
-
 “(A) SEPARATE RETURNS.—In the case of a separate return by a married individual for any taxable year—
 
 “(i) paragraph (4)(A) shall be applied by substituting ‘$5,000,000’ for ‘$10,000,000’, and
@@ -724,7 +688,6 @@ If any increase under this subparagraph is not a multiple of $10,000, such incre
 
 (2) INFLATION ADJUSTMENT.—Section 1202(b) is amended by adding at the end the following:
 
-
 “(4) INFLATION ADJUSTMENT.—In the case of any taxable year beginning after 2026, the $75,000,000 amounts in paragraphs (1)(A) and (1)(B) shall each be increased by an amount equal to—
 
 “(A) such dollar amount, multiplied by
@@ -735,12 +698,10 @@ If any increase under this paragraph is not a multiple of $10,000, such increase
 
 (3) EFFECTIVE DATE.—The amendments made by this subsection shall apply to stock issued after the date of the enactment of this Act.
 
-
 SEC. 70432. Repeal of revision to de minimis rules for third party network transactions.
 (a) Reinstatement of exception for de minimis payments as in effect prior to enactment of American Rescue Plan Act of 2021.—
 
 (1) IN GENERAL.—Section 6050W(e) is amended to read as follows:
-
 
 “(e) Exception for de minimis payments by third party settlement organizations.—A third party settlement organization shall be required to report any information under subsection (a) with respect to third party network transactions of any participating payee only if—
 
@@ -754,7 +715,6 @@ SEC. 70432. Repeal of revision to de minimis rules for third party network trans
 
 (1) IN GENERAL.—Section 3406(b) is amended by adding at the end the following new paragraph:
 
-
 “(8) OTHER REPORTABLE PAYMENTS INCLUDE PAYMENTS IN SETTLEMENT OF THIRD PARTY NETWORK TRANSACTIONS ONLY WHERE AGGREGATE TRANSACTIONS EXCEED REPORTING THRESHOLD FOR THE CALENDAR YEAR.—
 
 “(A) IN GENERAL.—Any payment in settlement of a third party network transaction required to be shown on a return required under section 6050W which is made during any calendar year shall be treated as a reportable payment only if—
@@ -767,12 +727,10 @@ SEC. 70432. Repeal of revision to de minimis rules for third party network trans
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to calendar years beginning after December 31, 2024.
 
-
 SEC. 70433. Increase in threshold for requiring information reporting with respect to certain payees.
 (a) In general.—Section 6041(a) is amended by striking “$600” and inserting “$2,000”.
 
 (b) Inflation adjustment.—Section 6041 is amended by adding at the end the following new subsection:
-
 
 “(h) Inflation adjustment.—In the case of any calendar year after 2026, the dollar amount in subsection (a) shall be increased by an amount equal to—
 
@@ -797,12 +755,10 @@ If any increase under the preceding sentence is not a multiple of $100, such inc
 
 (f) Effective date.—The amendments made by this section shall apply with respect to payments made after December 31, 2025.
 
-
 SEC. 70434. Treatment of certain qualified sound recording productions.
 (a) Election to treat costs as expenses.—Section 181(a)(1) is amended by striking “qualified film or television production, and any qualified live theatrical production,” and inserting “qualified film or television production, any qualified live theatrical production, and any qualified sound recording production”.
 
 (b) Dollar limitation.—Section 181(a)(2) is amended by adding at the end the following new subparagraph:
-
 
 “(C) QUALIFIED SOUND RECORDING PRODUCTION.—Paragraph (1) shall not apply to so much of the aggregate cost of any qualified sound recording production, or to so much of the aggregate, cumulative cost of all such qualified sound recording productions in the taxable year, as exceeds $150,000.”.
 
@@ -811,7 +767,6 @@ SEC. 70434. Treatment of certain qualified sound recording productions.
 (d) Election.—Section 181(c)(1) is amended by striking “qualified film or television production or any qualified live theatrical production” and inserting “qualified film or television production, any qualified live theatrical production, or any qualified sound recording production”.
 
 (e) Qualified sound recording production defined.—Section 181 is amended by redesignating subsections (f) and (g) as subsections (g) and (h), respectively, and by inserting after subsection (e) the following new subsection:
-
 
 “(f) Qualified sound recording production.—For purposes of this section, the term ‘qualified sound recording production’ means a sound recording (as defined in section 101 of title 17, United States Code) produced and recorded in the United States.”.
 
@@ -823,13 +778,11 @@ SEC. 70434. Treatment of certain qualified sound recording productions.
 
 (A) by striking “or” at the end of subclause (IV), by inserting “or” at the end of subclause (V), and by inserting after subclause (V) the following:
 
-
 “(VI) which is a qualified sound recording production (as defined in subsection (f) of section 181) for which a deduction would have been allowable under section 181 without regard to subsections (a)(2) and (h) of such section or this subsection, and”, and
 
 (B) in subclauses (IV) and (V) (as so amended) by striking “without regard to subsections (a)(2) and (g)” both places it appears and inserting “without regard to subsections (a)(2) and (h)”.
 
 (2) PRODUCTION PLACED IN SERVICE.—Section 168(k)(2)(H) is amended by striking “and” at the end of clause (i), by striking the period at the end of clause (ii) and inserting “, and”, and by adding after clause (ii) the following:
-
 
 “(iii) a qualified sound recording production shall be considered to be placed in service at the time of initial release or broadcast.”.
 
@@ -839,10 +792,8 @@ SEC. 70434. Treatment of certain qualified sound recording productions.
 
 (2) The table of sections for part VI of subchapter B of chapter 1 is amended by striking the item relating to section 181 and inserting the following new item:
 
-
 “Sec. 181. Treatment of certain qualified productions. ”.
 (i) Effective date.—The amendments made by this section shall apply to productions commencing in taxable years ending after the date of the enactment of this Act.
-
 
 SEC. 70435. Exclusion of interest on loans secured by rural or agricultural real property.
 (a) In general.—Part III of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by inserting after section 139K the following new section:
@@ -909,14 +860,11 @@ Such term shall not include any property which is not located in a State or a po
 
 (b) Clerical amendment.—The table of sections for part III of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by inserting after the item relating to section 139K the following new item:
 
-
 “Sec. 139L. Interest on loans secured by rural or agricultural real property. ”.
 (c) Effective date.—The amendments made by this section shall apply to taxable years ending after the date of the enactment of this Act.
 
-
 SEC. 70436. Reduction of transfer and manufacturing taxes for certain devices.
 (a) Transfer tax.—Section 5811(a) is amended to read as follows:
-
 
 “(a) Rate.—There shall be levied, collected, and paid on firearms transferred a tax at the rate of—
 
@@ -925,7 +873,6 @@ SEC. 70436. Reduction of transfer and manufacturing taxes for certain devices.
 “(2) $0 for any firearm transferred which is not described in paragraph (1).”.
 
 (b) Making tax.—Section 5821(a) is amended to read as follows:
-
 
 “(a) Rate.—There shall be levied, collected, and paid upon the making of a firearm a tax at the rate of—
 
@@ -937,10 +884,8 @@ SEC. 70436. Reduction of transfer and manufacturing taxes for certain devices.
 
 (d) Effective date.—The amendments made by this section shall apply to calendar quarters beginning more than 90 days after the date of the enactment of this Act.
 
-
 SEC. 70437. Treatment of capital gains from the sale of certain farmland property.
 (a) In general.—Part IV of subchapter O of chapter 1 is amended by redesignating section 1062 as section 1063 and by inserting after section 1061 the following new section:
-
 
 “SEC. 1062. Gain from the sale or exchange of qualified farmland property to qualified farmers.
 “(a) Election to pay tax in installments.—In the case of gain from the sale or exchange of qualified farmland property to a qualified farmer, at the election of the taxpayer, the portion of the net income tax of such taxpayer for the taxable year of the sale or exchange which is equal to the applicable net tax liability shall be paid in 4 equal installments.
@@ -1001,14 +946,11 @@ For purposes of clause (i), property which is used or leased by a partnership or
 
 (b) Clerical amendment.—The table of sections for part IV of subchapter O of chapter 1 is amended by redesignating the item relating to section 1062 as relating to section 1063 and by inserting after the item relating to section 1061 the following new item:
 
-
 “Sec. 1062. Gain from the sale or exchange of qualified farmland property to qualified farmers.”.
 (c) Effective date.—The amendments made by this section shall apply to sales or exchanges in taxable years beginning after the date of the enactment of this Act.
 
-
 SEC. 70438. Extension of rules for treatment of certain disaster-related personal casualty losses.
 For purposes of applying section 304(b) of the Taxpayer Certainty and Disaster Tax Relief Act of 2020 (division EE of Public Law 116–260), section 301 of such Act shall be applied by substituting the date of the enactment of this section for “the date of the enactment of this Act” each place it appears.
-
 
 SEC. 70439. Restoration of taxable REIT subsidiary asset test.
 (a) In general.—Section 856(c)(4)(B)(ii) is amended by striking “20 percent” and inserting “25 percent”.
@@ -1020,7 +962,6 @@ subchapter A—Termination of Green New Deal subsidies
 
 SEC. 70501. Termination of previously-owned clean vehicle credit.
 Section 25E(g) is amended by striking “December 31, 2032” and inserting “September 30, 2025”.
-
 
 SEC. 70502. Termination of clean vehicle credit.
 (a) In general.—Section 30D(h) is amended by striking “placed in service after December 31, 2032” and inserting “acquired after September 30, 2025”.
@@ -1043,27 +984,22 @@ SEC. 70502. Termination of clean vehicle credit.
 
 (C) by striking clauses (iv) through (vi).
 
-
 SEC. 70503. Termination of qualified commercial clean vehicles credit.
 Section 45W(g) is amended by striking “December 31, 2032” and inserting “September 30, 2025”.
 
-
 SEC. 70504. Termination of alternative fuel vehicle refueling property credit.
 Section 30C(i) is amended by striking “December 31, 2032” and inserting “June 30, 2026”.
-
 
 SEC. 70505. Termination of energy efficient home improvement credit.
 (a) In general.—Section 25C(h) is amended by striking “placed in service” and all that follows through “December 31, 2032” and inserting “placed in service after December 31, 2025”.
 
 (b) Conforming amendment.—Section 25C(d)(2)(C) is amended to read as follows:
 
-
 “(C) Any oil furnace or hot water boiler which—
 
 “(i) meets or exceeds 2021 Energy Star efficiency criteria, and
 
 “(ii) is rated by the manufacturer for use with fuel blends at least 20 percent of the volume of which consists of an eligible fuel.”.
-
 
 SEC. 70506. Termination of residential clean energy credit.
 (a) In general.—Section 25D(h) is amended by striking “to property placed in service after December 31, 2034” and inserting “with respect to any expenditures made after December 31, 2025”.
@@ -1076,17 +1012,13 @@ SEC. 70506. Termination of residential clean energy credit.
 
 (3) by striking paragraphs (4) and (5).
 
-
 SEC. 70507. Termination of energy efficient commercial buildings deduction.
 Section 179D is amended by adding at the end the following new subsection:
 
-
 “(i) Termination.—This section shall not apply with respect to property the construction of which begins after June 30, 2026.”.
-
 
 SEC. 70508. Termination of new energy efficient home credit.
 Section 45L(h) is amended by striking “December 31, 2032” and inserting “June 30, 2026”.
-
 
 SEC. 70509. Termination of cost recovery for energy property.
 (a) Energy property.—Section 168(e)(3)(B)(vi), as amended by section 13703 of Public Law 117–169, is amended—
@@ -1097,10 +1029,8 @@ SEC. 70509. Termination of cost recovery for energy property.
 
 (b) Effective date.—The amendments made by subsection (a) shall apply to property the construction of which begins after December 31, 2024.
 
-
 SEC. 70510. Modifications of zero-emission nuclear power production credit.
 (a) Restrictions relating to prohibited foreign entities.—Section 45U(c) is amended by adding at the end the following new paragraph:
-
 
 “(3) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -1110,10 +1040,8 @@ SEC. 70510. Modifications of zero-emission nuclear power production credit.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after the date of enactment of this Act.
 
-
 SEC. 70511. Termination of clean hydrogen production credit.
 Section 45V(c)(3)(C) is amended by striking “January 1, 2033” and inserting “January 1, 2028”.
-
 
 SEC. 70512. Termination and restrictions on clean electricity production credit.
 (a) Termination for wind and solar facilities.—Section 45Y(d) is amended—
@@ -1121,7 +1049,6 @@ SEC. 70512. Termination and restrictions on clean electricity production credit.
 (1) in paragraph (1), by striking “The amount of” and inserting “Subject to paragraph (4), the amount of”, and
 
 (2) by striking paragraph (3) and inserting the following new paragraphs:
-
 
 “(3) APPLICABLE YEAR.—For purposes of this subsection, the term ‘applicable year’ means calendar year 2032.
 
@@ -1139,11 +1066,9 @@ SEC. 70512. Termination and restrictions on clean electricity production credit.
 
 (1) in subsection (b)(1), by adding at the end the following new subparagraph:
 
-
 “(E) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—The term ‘qualified facility’ shall not include any facility for which construction begins after December 31, 2025, if the construction of such facility includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52)).”, and
 
 (2) in subsection (g), by adding at the end the following new paragraph:
-
 
 “(13) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -1156,7 +1081,6 @@ SEC. 70512. Termination and restrictions on clean electricity production credit.
 “(B) EFFECTIVE CONTROL.—In the case of a taxpayer for which section 7701(a)(51)(D)(i)(II) is determined to apply for any taxable year, no credit shall be determined under subsection (a) for such taxable year if such determination relates to a qualified facility described in subsection (b)(1).”.
 
 (c) Definitions relating to prohibited foreign entities.—Section 7701(a) is amended by adding at the end the following new paragraphs:
-
 
 “(51) PROHIBITED FOREIGN ENTITY.—
 
@@ -1580,11 +1504,9 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (d) Denial of credit for certain wind and solar leasing arrangements.—Section 45Y is amended by adding at the end the following new subsection:
 
-
 “(h) Denial of credit for wind and solar leasing arrangements.—No credit shall be determined under this section with respect to any production of electricity during the taxable year with respect to property described in paragraph (1) or (4) of section 25D(d) (as applied by substituting ‘lessee’ for ‘taxpayer’) if the taxpayer rents or leases such property to a third party during such taxable year.”.
 
 (e) Emissions rates tables.—Section 45Y(b)(2)(C) is amended by adding at the end the following new clause:
-
 
 “(iii) EXISTING STUDIES.—For purposes of clause (i), in determining greenhouse gas emissions rates for types or categories of facilities for the purpose of determining whether a facility satisfies the requirements under paragraph (1), the Secretary shall consider studies published on or before the date of enactment of this clause which demonstrate a net lifecycle greenhouse gas emissions rate which is not greater than zero using widely accepted lifecycle assessment concepts, such as concepts described in standards developed by the International Organization for Standardization.”.
 
@@ -1600,7 +1522,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (iii) by adding at the end the following new clause:
 
-
 “(iv) for purposes of any qualified facility which is an advanced nuclear facility, a metropolitan statistical area which has (or, at any time during the period beginning after December 31, 2009, had) 0.17 percent or greater direct employment related to the advancement of nuclear power, including employment related to—
 
 “(I) an advanced nuclear facility,
@@ -1612,7 +1533,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 “(IV) the manufacturing or assembly of components used in an advanced nuclear facility.”, and
 
 (B) by adding at the end the following new subparagraph:
-
 
 “(C) ADVANCED NUCLEAR FACILITIES.—
 
@@ -1628,7 +1548,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (2) by inserting after subparagraph (C) the following new subparagraph:
 
-
 “(D) DETERMINATION OF CAPACITY.—For purposes of subparagraph (C), additions of capacity of a facility shall be determined in any reasonable manner, including based on—
 
 “(i) determinations by, or reports to, the Federal Energy Regulatory Commission (including interconnection agreements), the Nuclear Regulatory Commission, or any similar entity, reflecting additions of capacity,
@@ -1641,7 +1560,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (h) Prohibition on transfer of credits to specified foreign entities.—Section 6418(g) is amended by adding at the end the following new paragraph:
 
-
 “(5) PROHIBITION ON TRANSFER OF CREDITS TO SPECIFIED FOREIGN ENTITIES.—With respect to any eligible credit described in clause (iii), (iv), (vi), (vii), (viii), or (xi) of subsection (f)(1)(A), an eligible taxpayer may not elect to transfer any portion of such credit to a taxpayer that is a specified foreign entity (as defined in section 7701(a)(51)(B)).”.
 
 (i) Extension of period of limitations for errors relating to determining of material assistance from a prohibited foreign entity.—Section 6501 is amended—
@@ -1650,13 +1568,11 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (2) by inserting after subsection (n) the following new subsection:
 
-
 “(o) Material assistance from a prohibited foreign entity.—In the case of a deficiency attributable to an error with respect to the determination under section 7701(a)(52) for any taxable year, such deficiency may be assessed at any time within 6 years after the return for such year was filed.”.
 
 (j) Imposition of accuracy-related penalties.—
 
 (1) IN GENERAL.—Section 6662 is amended by adding at the end the following new subsection:
-
 
 “(m) Substantial understatement of income tax due to disallowance of applicable energy credits.—
 
@@ -1670,13 +1586,11 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (2) CONFORMING AMENDMENT.—Section 6417(d)(6) is amended by adding at the end the following new subparagraph:
 
-
 “(D) DISALLOWANCE OF AN APPLICABLE ENERGY CREDIT.—In the case of an applicable entity which made an election under subsection (a) with respect to an applicable credit for which there is a disallowance described in section 6662(m)(2), subparagraph (A) shall apply with respect to any excessive payment resulting from such disallowance.”.
 
 (k) Penalty for substantial misstatements on certification provided by supplier.—
 
 (1) IN GENERAL.—Part I of subchapter B of chapter 68 is amended by inserting after section 6695A the following new section:
-
 
 “SEC. 6695B. Penalty for substantial misstatements on certification provided by supplier.
 “(a) Imposition of penalty.—If—
@@ -1729,7 +1643,6 @@ then such person shall pay a penalty in the amount determined under subsection (
 
 (B) The table of sections for part I of subchapter B of chapter 68 is amended by inserting after item relating to section 6695A the following new item:
 
-
 “Sec. 6695B. Penalty for substantial misstatements on certification provided by supplier.”.
 (l) Effective dates.—
 
@@ -1741,14 +1654,12 @@ then such person shall pay a penalty in the amount determined under subsection (
 
 (4) TERMINATION FOR WIND AND SOLAR FACILITIES.—The amendments made by subsection (a) shall apply to facilities the construction of which begins after the date which is 12 months after the date of enactment of this Act.
 
-
 SEC. 70513. Termination and restrictions on clean electricity investment credit.
 (a) Termination for wind and solar facilities.—Section 48E(e) is amended—
 
 (1) in paragraph (1), by striking “The amount of” and inserting “Subject to paragraph (4), the amount of”, and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(4) TERMINATION FOR WIND AND SOLAR FACILITIES.—
 
@@ -1772,16 +1683,13 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (ii) by inserting after paragraph (5) the following new paragraph:
 
-
 “(6) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—The terms ‘qualified facility’ and ‘qualified interconnection property’ shall not include any facility or property the construction, reconstruction, or erection of which begins after December 31, 2025, if the construction, reconstruction, or erection of such facility or property includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52)).”, and
 
 (B) in subsection (c), by adding at the end the following new paragraph:
 
-
 “(3) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—The term ‘energy storage technology’ shall not include any property the construction of which begins after December 31, 2025, if the construction of such property includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52)).”.
 
 (2) ADDITIONAL RESTRICTIONS.—Section 48E(d) is amended by adding at the end the following new paragraph:
-
 
 “(6) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -1800,7 +1708,6 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 (i) by redesignating paragraphs (4) through (6) as paragraphs (5) through (7), respectively,
 
 (ii) by inserting after paragraph (3) the following new paragraph:
-
 
 “(4) PAYMENTS TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -1828,16 +1735,13 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (B) by inserting after subsection (h) the following new subsection:
 
-
 “(i) Denial of credit for expenditures for wind and solar leasing arrangements.—No credit shall be determined under this section for any qualified investment during the taxable year with respect to property described in paragraph (1) or (4) of section 25D(d) (as applied by substituting ‘lessee’ for ‘taxpayer’) if the taxpayer rents or leases such property to a third party during such taxable year.”.
 
 (2) CONFORMING RULES.—Section 50 is amended by adding at the end the following new subsection:
 
-
 “(e) Rules for geothermal heat pumps.—For purposes of this section and section 168, the ownership of energy property described in section 48(a)(3)(A)(vii) shall be determined without regard to whether such property is readily usable by a person other than the lessee or service recipient.”.
 
 (d) Domestic content rules.—Subparagraph (B) of section 48E(a)(3) is amended to read as follows:
-
 
 “(B) DOMESTIC CONTENT.—Rules similar to the rules of section 48(a)(12) shall apply, except that, for purposes of subparagraph (B) of such section and the application of rules similar to the rules of section 45(b)(9)(B), the adjusted percentage (as determined under section 45(b)(9)(C)) shall be determined as follows:
 
@@ -1855,7 +1759,6 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (2) by adding at the end the following new subparagraph:
 
-
 “(C) NONAPPLICATION OF INCREASES TO ENERGY PERCENTAGE.—For purposes of energy property described in subparagraph (A)(ii), the energy percentage applicable to such property pursuant to such subparagraph shall not be increased or otherwise adjusted by any provision of this section.”.
 
 (f) Application of clean electricity investment credit to qualified fuel cell property.—Section 48E, as amended by subsection (c), is amended—
@@ -1863,7 +1766,6 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 (1) by redesignating subsection (j) as subsection (k), and
 
 (2) by inserting after subsection (i) the following new subsection:
-
 
 “(j) Application to qualified fuel cell property.—For purposes of this section, in the case of any qualified fuel cell property (as defined in section 48(c)(1), as applied without regard to subparagraph (E) thereof)—
 
@@ -1885,10 +1787,8 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (5) TERMINATION FOR WIND AND SOLAR FACILITIES.—The amendments made by subsection (a) shall apply to facilities the construction of which begins after the date which is 12 months after the date of enactment of this Act.
 
-
 SEC. 70514. Phase-out and restrictions on advanced manufacturing production credit.
 (a) Modification of provision relating to sale of integrated components.—Paragraph (4) of section 45X(d) is amended to read as follows:
-
 
 “(4) SALE OF INTEGRATED COMPONENTS.—
 
@@ -1907,7 +1807,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 (2) in subparagraph (A), in the matter preceding clause (i), by striking “subparagraph (C)” and inserting “subparagraphs (C) and (D)”, and
 
 (3) by striking subparagraph (C) and inserting the following:
-
 
 “(C) PHASE OUT FOR APPLICABLE CRITICAL MINERALS OTHER THAN METALLURGICAL COAL.—
 
@@ -1935,11 +1834,9 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 
 (1) in subsection (c)(1), by adding at the end the following new subparagraph:
 
-
 “(C) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—In the case of taxable years beginning after the date of enactment of this subparagraph, the term ‘eligible component’ shall not include any property which includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52), as applied by substituting ‘used in a product sold before January 1, 2027’ for ‘used in a product sold before January 1, 2030’ in subparagraph (D)(iv)(II)(bb) thereof).”, and
 
 (2) in subsection (d), as amended by subsection (a) of this section, by adding at the end the following new paragraph:
-
 
 “(4) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -1959,7 +1856,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 
 (3) by adding at the end the following new subclause:
 
-
 “(III) which is comprised of all other essential equipment needed for battery functionality, such as current collector assemblies and voltage sense harnesses, or any other essential energy collection equipment.”.
 
 (e) Inclusion of metallurgical coal as an applicable critical mineral for purposes of the advanced manufacturing production credit.—
@@ -1970,7 +1866,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 
 (B) by inserting after subparagraph (Q) the following new subparagraph:
 
-
 “(R) METALLURGICAL COAL.—Metallurgical coal which is suitable for use in the production of steel (within the meaning of the notice published by the Department of Energy entitled ‘Critical Material List; Addition of Metallurgical Coal Used for Steelmaking’ (90 Fed. Reg. 22711 (May 29, 2025))), regardless of whether such production occurs inside or outside of the United States.”.
 
 (2) CREDIT AMOUNT.—Section 45X(b)(1)(M) is amended by inserting “(2.5 percent in the case of metallurgical coal)” after “10 percent”.
@@ -1980,7 +1875,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 (1) IN GENERAL.—Except as provided in paragraph (2), the amendments made by this section shall apply to taxable years beginning after the date of enactment of this Act.
 
 (2) MODIFICATION OF PROVISION RELATING TO SALE OF INTEGRATED COMPONENTS.—The amendment made by subsection (a) shall apply to components sold during taxable years beginning after December 31, 2026.
-
 
 SEC. 70515. Restriction on the extension of advanced energy project credit program.
 (a) In general.—Section 48C(e)(3)(C) is amended by striking “shall be increased” and inserting “shall not be increased”.
@@ -2000,7 +1894,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (C) by adding at the end the following new clause:
 
-
 “(iii) such fuel is exclusively derived from a feedstock which was produced or grown in the United States, Mexico, or Canada.”.
 
 (2) EFFECTIVE DATE.—The amendments made by this subsection shall apply to transportation fuel produced after December 31, 2025.
@@ -2011,11 +1904,9 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (A) by striking subparagraph (C) and inserting the following:
 
-
 “(C) ROUNDING OF EMISSIONS RATE.—The Secretary may round the emissions rates under subparagraph (B) to the nearest multiple of 5 kilograms of CO2e per mmBTU.”, and
 
 (B) by adding at the end the following new subparagraph:
-
 
 “(E) PROHIBITION ON NEGATIVE EMISSION RATES.—For purposes of this section, the emissions rate for a transportation fuel may not be less than zero.”.
 
@@ -2024,7 +1915,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (c) Determination of emissions rate.—
 
 (1) IN GENERAL.—Section 45Z(b)(1)(B) is amended by adding at the end the following new clauses:
-
 
 “(iv) EXCLUSION OF INDIRECT LAND USE CHANGES.—Notwithstanding clauses (i), (ii), and (iii), the emissions rate shall be adjusted as necessary to exclude any emissions attributed to indirect land use change. Any such adjustment shall be based on regulations or methodologies determined by the Secretary.
 
@@ -2050,11 +1940,9 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (C) by adding at the end the following new clause:
 
-
 “(iv) is not produced from a fuel for which a credit under this section is allowable.”, and
 
 (2) by adding at the end the following new subparagraph:
-
 
 “(C) REGULATIONS AND GUIDANCE.—The Secretary shall issue such regulations or other guidance as the Secretary determines necessary to carry out the purposes of subparagraph (A)(iv).”.
 
@@ -2065,7 +1953,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (1) COORDINATION OF CREDITS.—
 
 (A) IN GENERAL.—Section 6426(k) is amended by adding at the end the following new paragraph:
-
 
 “(4) COORDINATION OF CREDITS.—With respect to any gallon of sustainable aviation fuel in a qualified mixture, this subsection shall not apply to any such gallon for which a credit under section 45Z is allowable (as determined without regard to subsection (a)(1)(A) of such section).”.
 
@@ -2078,7 +1965,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (2) ELIMINATION OF SPECIAL RATE.—
 
 (A) IN GENERAL.—Paragraph (3) of section 45Z(a) is amended to read as follows:
-
 
 “(3) DEFINITION OF SUSTAINABLE AVIATION FUEL.—For purposes of this section, the term ‘sustainable aviation fuel’ means liquid fuel, the portion of which is not kerosene, which is sold for use in an aircraft and which—
 
@@ -2095,7 +1981,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (C) EFFECTIVE DATE.—The amendments made by this paragraph shall apply to fuel produced after December 31, 2025.
 
 (h) Sustainable aviation fuel credit.—Section 6426(k), as amended by the preceding provisions of this Act, is amended by adding at the end the following new paragraph:
-
 
 “(5) TERMINATION.—This subsection shall not apply to any sale or use for any period after September 30, 2025.”.
 
@@ -2117,13 +2002,11 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (iii) by adding at the end the following new subparagraph:
 
-
 “(D) COORDINATION WITH CLEAN FUEL PRODUCTION CREDIT.—The credit determined under this paragraph with respect to any gallon of fuel shall be in addition to any credit determined under section 45Z with respect to such gallon of fuel.”, and
 
 (B) in subsection (g), by inserting “(or, in the case of the small agri-biodiesel producer credit, any sale or use after December 31, 2026)” after “December 31, 2024”.
 
 (2) TRANSFER OF CREDIT.—Section 6418(f)(1)(A) is amended by adding at the end the following new clause:
-
 
 “(xii) So much of the biodiesel fuels credit determined under section 40A which consists of the small agri-biodiesel producer credit determined under subsection (b)(4) of such section.”.
 
@@ -2133,7 +2016,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (1) IN GENERAL.—Section 45Z(f) is amended by adding at the end the following new paragraph:
 
-
 “(8) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
 “(A) IN GENERAL.—No credit shall be determined under subsection (a) for any taxable year beginning after the date of enactment of this paragraph if the taxpayer is a specified foreign entity (as defined in section 7701(a)(51)(B)).
@@ -2142,10 +2024,8 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after the date of enactment of this Act.
 
-
 SEC. 70522. Restrictions on carbon oxide sequestration credit.
 (a) Restrictions relating to prohibited foreign entities.—Section 45Q(f) is amended by adding at the end the following new paragraph:
-
 
 “(10) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—No credit shall be determined under subsection (a) for any taxable year beginning after the date of enactment of this paragraph if the taxpayer is—
 
@@ -2161,7 +2041,6 @@ SEC. 70522. Restrictions on carbon oxide sequestration credit.
 
 (B) in paragraph (3), by striking subparagraph (B) and inserting the following:
 
-
 “(B) (i) disposed of by the taxpayer in secure geological storage and not used by the taxpayer as described in clause (ii) or (iii),
 
 “(ii) used by the taxpayer as a tertiary injectant in a qualified enhanced oil or natural gas recovery project and disposed of by the taxpayer in secure geological storage, or
@@ -2175,7 +2054,6 @@ SEC. 70522. Restrictions on carbon oxide sequestration credit.
 (A) in paragraph (1)—
 
 (i) by striking subparagraph (A) and inserting the following:
-
 
 “(A) IN GENERAL.—Except as provided in subparagraph (B) or (C), the applicable dollar amount shall be an amount equal to—
 
@@ -2205,12 +2083,10 @@ SEC. 70522. Restrictions on carbon oxide sequestration credit.
 
 (2) PARITY FOR DIFFERENT USES AND UTILIZATIONS OF QUALIFIED CARBON OXIDE.—The amendments made subsections (b) and (c) shall apply to facilities or equipment placed in service after the date of enactment of this Act.
 
-
 SEC. 70523. Intangible drilling and development costs taken into account for purposes of computing adjusted financial statement income.
 (a) In general.—Section 56A(c)(13) is amended—
 
 (1) by striking subparagraph (A) and inserting the following:
-
 
 “(A) reduced by—
 
@@ -2220,7 +2096,6 @@ SEC. 70523. Intangible drilling and development costs taken into account for pur
 
 (2) by striking subparagraph (B)(i) and inserting the following:
 
-
 “(i) to disregard any amount of—
 
 “(I) depreciation expense that is taken into account on the taxpayer's applicable financial statement with respect to such property, and
@@ -2228,7 +2103,6 @@ SEC. 70523. Intangible drilling and development costs taken into account for pur
 “(II) depletion expense that is taken into account on the taxpayer’s applicable financial statement with respect to the intangible drilling and development costs of such property, and”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70524. Income from hydrogen storage, carbon capture, advanced nuclear, hydropower, and geothermal energy added to qualifying income of certain publicly traded partnerships.
 (a) In general.—Section 7704(d)(1)(E) is amended—
@@ -2240,7 +2114,6 @@ SEC. 70524. Income from hydrogen storage, carbon capture, advanced nuclear, hydr
 (2) by inserting “or” before “industrial source”, and
 
 (3) by striking “or the transportation or storage” and all that follows and inserting the following:
-
 
 “(ii) the transportation or storage of—
 
@@ -2261,7 +2134,6 @@ SEC. 70524. Income from hydrogen storage, carbon capture, advanced nuclear, hydr
 “(vi) the operation of energy property described in clause (iii) or (vii) of section 48(a)(3)(A) (determined without regard to any requirement under such section with respect to the date on which construction of property begins).”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70525. Allow for payments to certain individuals who dye fuel.
 (a) In general.—Subchapter B of chapter 65, as amended by the preceding provisions of this Act, is amended by adding at the end the following new section:
@@ -2294,7 +2166,6 @@ SEC. 70525. Allow for payments to certain individuals who dye fuel.
 
 (A) by striking “or” at the end of paragraph (2), by striking the period at the end of paragraph (3) and inserting “, or”, and by adding at the end the following new paragraph:
 
-
 “(4) which are removed as eligible indelibly dyed diesel fuel or kerosene under section 6435.”.
 
 (3) Section 6675 is amended—
@@ -2305,7 +2176,6 @@ SEC. 70525. Allow for payments to certain individuals who dye fuel.
 
 (4) The table of sections for subchapter B of chapter 65, as amended by the preceding provisions of this Act, is amended by adding at the end the following new item:
 
-
 “Sec. 6435. Dyed fuel.”.
 (c) Effective date.—The amendments made by this section shall apply to eligible indelibly dyed diesel fuel or kerosene removed on or after the date that is 180 days after the date of the enactment of this section.
 
@@ -2315,7 +2185,6 @@ SEC. 70531. Modifications to de minimis entry privilege for commercial shipments
 (a) Civil penalty.—
 
 (1) ADDITIONAL PENALTY IMPOSED.—Section 321 of the Tariff Act of 1930 (19 U.S.C. 1321) is amended by adding at the end the following new subsection:
-
 
 “(c) Any person who enters, introduces, facilitates, or attempts to introduce an article into the United States using the privilege of this section, the importation of which violates any other provision of United States customs law, shall be assessed, in addition to any other penalty permitted by law, a civil penalty of up to $5,000 for the first violation and up to $10,000 for each subsequent violation.”.
 
@@ -2346,7 +2215,6 @@ SEC. 70601. Modification and extension of limitation on excess business losses o
 
 (2) ADJUSTMENT OF AMOUNTS FOR CALCULATION OF EXCESS BUSINESS LOSS.—The amendments made by subsection (b) shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70602. Treatment of payments from partnerships to partners for property or services.
 (a) In general.—Section 707(a)(2) is amended by striking “Under regulations prescribed” and inserting “Except as provided”.
 
@@ -2354,10 +2222,8 @@ SEC. 70602. Treatment of payments from partnerships to partners for property or 
 
 (c) Rule of construction.—Nothing in this section, or the amendments made by this section, shall be construed to create any inference with respect to the proper treatment under section 707(a) of the Internal Revenue Code of 1986 with respect to payments from a partnership to a partner for services performed, or property transferred, on or before the date of the enactment of this Act.
 
-
 SEC. 70603. Excessive employee remuneration from controlled group members and allocation of deduction.
 (a) Application of aggregation rules.—Section 162(m) is amended by adding at the end the following new paragraph:
-
 
 “(7) REMUNERATION FROM CONTROLLED GROUP MEMBERS.—
 
@@ -2387,10 +2253,8 @@ SEC. 70603. Excessive employee remuneration from controlled group members and al
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70604. Excise tax on certain remittance transfers.
 (a) In general.—Chapter 36 is amended by inserting after subchapter B the following new subchapter:
-
 
 “subchapter C—Remittance transfers
 
@@ -2434,7 +2298,6 @@ SEC. 70604. Excise tax on certain remittance transfers.
 “SUBCHAPTER C—REMITTANCE TRANSFERS”.
 (c) Effective date.—The amendments made by this section shall apply to transfers made after December 31, 2025.
 
-
 SEC. 70605. Enforcement provisions with respect to COVID-related employee retention credits.
 (a) Assessable penalty for failure to comply with due diligence requirements.—
 
@@ -2476,7 +2339,6 @@ SEC. 70605. Enforcement provisions with respect to COVID-related employee retent
 
 (e) Extension of limitation on assessment.—Section 3134(l) is amended to read as follows:
 
-
 “(l) Extension of limitation on assessment.—
 
 “(1) IN GENERAL.—Notwithstanding section 6501, the limitation on the time period for the assessment of any amount attributable to a credit claimed under this section shall not expire before the date that is 6 years after the latest of—
@@ -2507,10 +2369,8 @@ SEC. 70605. Enforcement provisions with respect to COVID-related employee retent
 
 (h) Regulations.—The Secretary (as defined in subsection (a)(5)) shall issue such regulations or other guidance as may be necessary or appropriate to carry out the purposes of this section (and the amendments made by this section).
 
-
 SEC. 70606. Social security number requirement for American Opportunity and Lifetime Learning credits.
 (a) Social security number of taxpayer required.—Section 25A(g)(1) is amended to read as follows:
-
 
 “(1) IDENTIFICATION REQUIREMENT.—
 
@@ -2527,7 +2387,6 @@ SEC. 70606. Social security number requirement for American Opportunity and Life
 (b) Omission treated as mathematical or clerical error.—Section 6213(g)(2)(J) is amended by striking “TIN” and inserting “social security number or employer identification number”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70607. Task force on the replacement of Direct File.
 Out of any money in the Treasury not otherwise appropriated, there is hereby appropriated for the fiscal year ending September 30, 2026, $15,000,000, to remain available until September 30, 2026, for necessary expenses of the Department of the Treasury to deliver to Congress, within 90 days following the date of the enactment of this Act, a report on—

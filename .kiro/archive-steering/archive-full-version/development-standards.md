@@ -35,11 +35,11 @@ Ensure proper typing for PWA APIs:
 
 // Type guards for PWA features
 export function isServiceWorkerSupported(): boolean {
-  return 'serviceWorker' in navigator;
+  return "serviceWorker" in navigator;
 }
 
 export function isIndexedDBSupported(): boolean {
-  return 'indexedDB' in window;
+  return "indexedDB" in window;
 }
 
 // Typed event handlers
@@ -47,8 +47,8 @@ export function registerServiceWorker(): Promise<ServiceWorkerRegistration | nul
   if (!isServiceWorkerSupported()) {
     return Promise.resolve(null);
   }
-  
-  return navigator.serviceWorker.register('/sw.js');
+
+  return navigator.serviceWorker.register("/sw.js");
 }
 ```
 
@@ -87,6 +87,7 @@ function getUserProfile(userId: any): any {
 All quality checks are automated via Git hooks and CI/CD. See `.kiro/steering/quality-automation.md` for complete setup and troubleshooting.
 
 **Quick commands:**
+
 ```bash
 npm run quality:check    # Run all checks
 npm run quality:fix      # Auto-fix issues
@@ -128,13 +129,13 @@ interface ComplianceDashboardProps {
   onViewDetails: () => void;
 }
 
-export function ComplianceDashboard({ 
-  totalHours, 
-  requiredHours, 
-  onViewDetails 
+export function ComplianceDashboard({
+  totalHours,
+  requiredHours,
+  onViewDetails
 }: ComplianceDashboardProps): JSX.Element {
   const isCompliant = totalHours >= requiredHours;
-  
+
   return (
     <Box>
       {/* component implementation */}
@@ -178,16 +179,22 @@ Use custom error classes for different error types:
 
 ```typescript
 export class DatabaseError extends Error {
-  constructor(message: string, public originalError?: Error) {
+  constructor(
+    message: string,
+    public originalError?: Error,
+  ) {
     super(message);
-    this.name = 'DatabaseError';
+    this.name = "DatabaseError";
   }
 }
 
 export class ValidationError extends Error {
-  constructor(message: string, public field?: string) {
+  constructor(
+    message: string,
+    public field?: string,
+  ) {
     super(message);
-    this.name = 'ValidationError';
+    this.name = "ValidationError";
   }
 }
 ```
@@ -197,16 +204,16 @@ export class ValidationError extends Error {
 ```typescript
 try {
   await saveActivity(activityData);
-  showSnackbar('Activity saved successfully', 'success');
+  showSnackbar("Activity saved successfully", "success");
 } catch (error) {
   if (error instanceof ValidationError) {
-    showSnackbar(error.message, 'warning');
+    showSnackbar(error.message, "warning");
   } else if (error instanceof DatabaseError) {
-    showSnackbar('Failed to save activity. Please try again.', 'error');
-    console.error('Database error:', error.originalError);
+    showSnackbar("Failed to save activity. Please try again.", "error");
+    console.error("Database error:", error.originalError);
   } else {
-    showSnackbar('An unexpected error occurred', 'error');
-    console.error('Unhandled error:', error);
+    showSnackbar("An unexpected error occurred", "error");
+    console.error("Unhandled error:", error);
   }
 }
 ```
@@ -231,16 +238,16 @@ try {
 ### Test Naming
 
 ```typescript
-describe('ComplianceDashboard', () => {
-  it('displays compliant status when hours >= required', () => {
+describe("ComplianceDashboard", () => {
+  it("displays compliant status when hours >= required", () => {
     // test implementation
   });
-  
-  it('displays non-compliant status when hours < required', () => {
+
+  it("displays non-compliant status when hours < required", () => {
     // test implementation
   });
-  
-  it('is accessible to screen readers', async () => {
+
+  it("is accessible to screen readers", async () => {
     // accessibility test
   });
 });
@@ -319,14 +326,14 @@ import Image from 'next/image';
 
 ```typescript
 // ✅ Good - Tree-shakeable import
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
 // ❌ Bad - Imports entire library
-import * as dateFns from 'date-fns';
+import * as dateFns from "date-fns";
 
 // ✅ Good - Dynamic import for heavy library
 const loadPDF = async () => {
-  const { jsPDF } = await import('jspdf');
+  const { jsPDF } = await import("jspdf");
   return new jsPDF();
 };
 ```
@@ -378,23 +385,25 @@ export function ActivityList({ activities }: Props): JSX.Element {
 
 ```typescript
 // Debounce search input
-import { debounce } from 'lodash-es';
+import { debounce } from "lodash-es";
 
 const debouncedSearch = useMemo(
-  () => debounce((query: string) => {
-    performSearch(query);
-  }, 300),
-  []
+  () =>
+    debounce((query: string) => {
+      performSearch(query);
+    }, 300),
+  [],
 );
 
 // Throttle scroll handler
-import { throttle } from 'lodash-es';
+import { throttle } from "lodash-es";
 
 const throttledScroll = useMemo(
-  () => throttle(() => {
-    handleScroll();
-  }, 100),
-  []
+  () =>
+    throttle(() => {
+      handleScroll();
+    }, 100),
+  [],
 );
 ```
 
@@ -434,10 +443,10 @@ const throttledScroll = useMemo(
 Use Zod schemas for all user inputs:
 
 ```typescript
-import { z } from 'zod';
+import { z } from "zod";
 
 const ActivitySchema = z.object({
-  type: z.enum(['work', 'volunteer', 'education', 'work_program']),
+  type: z.enum(["work", "volunteer", "education", "work_program"]),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   hours: z.number().min(0).max(24),
   organization: z.string().min(1).max(200),
@@ -479,7 +488,7 @@ Configure in `next.config.js`:
 ```javascript
 const securityHeaders = [
   {
-    key: 'Content-Security-Policy',
+    key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
       "script-src 'self' 'unsafe-eval' 'unsafe-inline'", // Next.js requires unsafe-eval
@@ -490,23 +499,23 @@ const securityHeaders = [
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
-    ].join('; '),
+    ].join("; "),
   },
   {
-    key: 'X-Frame-Options',
-    value: 'DENY',
+    key: "X-Frame-Options",
+    value: "DENY",
   },
   {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff',
+    key: "X-Content-Type-Options",
+    value: "nosniff",
   },
   {
-    key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin',
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
   },
   {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()',
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=()",
   },
 ];
 
@@ -514,7 +523,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         headers: securityHeaders,
       },
     ];
@@ -527,9 +536,9 @@ module.exports = {
 Encrypt sensitive data before storing:
 
 ```typescript
-import { AES, enc } from 'crypto-js';
+import { AES, enc } from "crypto-js";
 
-const ENCRYPTION_KEY = 'user-specific-key'; // Derive from user input or device
+const ENCRYPTION_KEY = "user-specific-key"; // Derive from user input or device
 
 export function encryptSensitiveData(data: string): string {
   return AES.encrypt(data, ENCRYPTION_KEY).toString();
@@ -555,7 +564,7 @@ export async function saveProfile(profile: UserProfile): Promise<void> {
     dateOfBirth: encryptSensitiveData(profile.dateOfBirth),
     email: encryptSensitiveData(profile.email),
   };
-  
+
   await db.profiles.put(encrypted);
 }
 ```
@@ -564,18 +573,18 @@ export async function saveProfile(profile: UserProfile): Promise<void> {
 
 ```typescript
 // Service worker should only cache same-origin resources
-self.addEventListener('fetch', (event: FetchEvent) => {
+self.addEventListener("fetch", (event: FetchEvent) => {
   const url = new URL(event.request.url);
-  
+
   // Only cache same-origin requests
   if (url.origin !== self.location.origin) {
     return;
   }
-  
+
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request).then((response) => {
       return response || fetch(event.request);
-    })
+    }),
   );
 });
 ```
@@ -606,27 +615,27 @@ All features must work offline:
 // Check online status
 export function useOnlineStatus(): boolean {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  
+
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
-    
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
-    
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+
     return () => {
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
     };
   }, []);
-  
+
   return isOnline;
 }
 
 // Queue operations when offline
 export class OfflineQueue {
   private queue: Array<() => Promise<void>> = [];
-  
+
   async add(operation: () => Promise<void>): Promise<void> {
     if (navigator.onLine) {
       await operation();
@@ -634,7 +643,7 @@ export class OfflineQueue {
       this.queue.push(operation);
     }
   }
-  
+
   async processQueue(): Promise<void> {
     while (this.queue.length > 0) {
       const operation = this.queue.shift();
@@ -651,7 +660,7 @@ export class OfflineQueue {
 Use Dexie.js for IndexedDB operations:
 
 ```typescript
-import Dexie, { Table } from 'dexie';
+import Dexie, { Table } from "dexie";
 
 export interface Activity {
   id?: number;
@@ -665,12 +674,12 @@ export interface Activity {
 
 export class WorkPathDatabase extends Dexie {
   activities!: Table<Activity>;
-  
+
   constructor() {
-    super('WorkPathDB');
-    
+    super("WorkPathDB");
+
     this.version(1).stores({
-      activities: '++id, type, date, createdAt',
+      activities: "++id, type, date, createdAt",
     });
   }
 }
@@ -681,13 +690,13 @@ export const db = new WorkPathDatabase();
 export function useAutoSave<T>(
   data: T,
   saveFunction: (data: T) => Promise<void>,
-  delay: number = 1000
+  delay: number = 1000,
 ): void {
   useEffect(() => {
     const timer = setTimeout(() => {
       saveFunction(data);
     }, delay);
-    
+
     return () => clearTimeout(timer);
   }, [data, saveFunction, delay]);
 }
@@ -698,17 +707,20 @@ export function useAutoSave<T>(
 ```typescript
 // Register service worker
 export async function registerServiceWorker(): Promise<void> {
-  if ('serviceWorker' in navigator) {
+  if ("serviceWorker" in navigator) {
     try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker registered:', registration);
-      
+      const registration = await navigator.serviceWorker.register("/sw.js");
+      console.log("Service Worker registered:", registration);
+
       // Listen for updates
-      registration.addEventListener('updatefound', () => {
+      registration.addEventListener("updatefound", () => {
         const newWorker = registration.installing;
         if (newWorker) {
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+          newWorker.addEventListener("statechange", () => {
+            if (
+              newWorker.state === "installed" &&
+              navigator.serviceWorker.controller
+            ) {
               // New version available
               showUpdateNotification();
             }
@@ -716,7 +728,7 @@ export async function registerServiceWorker(): Promise<void> {
         }
       });
     } catch (error) {
-      console.error('Service Worker registration failed:', error);
+      console.error("Service Worker registration failed:", error);
     }
   }
 }
@@ -736,34 +748,35 @@ export async function updateServiceWorker(): Promise<void> {
 ```typescript
 // Handle install prompt
 export function useInstallPrompt() {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [deferredPrompt, setDeferredPrompt] =
+    useState<BeforeInstallPromptEvent | null>(null);
   const [isInstallable, setIsInstallable] = useState(false);
-  
+
   useEffect(() => {
     const handler = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
       setIsInstallable(true);
     };
-    
-    window.addEventListener('beforeinstallprompt', handler);
-    
-    return () => window.removeEventListener('beforeinstallprompt', handler);
+
+    window.addEventListener("beforeinstallprompt", handler);
+
+    return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
-  
+
   const promptInstall = async () => {
     if (!deferredPrompt) return;
-    
+
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
+
+    if (outcome === "accepted") {
       setIsInstallable(false);
     }
-    
+
     setDeferredPrompt(null);
   };
-  
+
   return { isInstallable, promptInstall };
 }
 ```
@@ -773,15 +786,18 @@ export function useInstallPrompt() {
 ```typescript
 // Register background sync
 export async function registerBackgroundSync(tag: string): Promise<void> {
-  if ('serviceWorker' in navigator && 'sync' in ServiceWorkerRegistration.prototype) {
+  if (
+    "serviceWorker" in navigator &&
+    "sync" in ServiceWorkerRegistration.prototype
+  ) {
     const registration = await navigator.serviceWorker.ready;
     await registration.sync.register(tag);
   }
 }
 
 // In service worker (sw.js)
-self.addEventListener('sync', (event: SyncEvent) => {
-  if (event.tag === 'sync-activities') {
+self.addEventListener("sync", (event: SyncEvent) => {
+  if (event.tag === "sync-activities") {
     event.waitUntil(syncActivities());
   }
 });

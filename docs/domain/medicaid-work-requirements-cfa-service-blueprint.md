@@ -21,16 +21,19 @@ This service blueprint documents the complete process flow for implementing Medi
 To be eligible for Medicaid, clients must be either exempt or already complying with work requirements for at least 1 month (up to 3 months) before applying.
 
 **Compliance Requirements:**
+
 - At least 80 hours per month of "community engagement", OR
 - Earning more than $580 per month
 
 **Community Engagement Activities Include:**
+
 - Working
 - Volunteering
 - Participating in a work program
 - Enrolled in school half-time or more
 
 **Income Requirements:**
+
 - Monthly income of at least 80x the federal minimum wage (currently $580), OR
 - $580 per month averaged across previous 6 months (for seasonal workers)
 
@@ -74,6 +77,7 @@ People are exempt from work requirements if they are:
 #### 1. Client Applies for Medicaid
 
 **Client Action:** Application can be submitted:
+
 - Online
 - Paper
 - Phone
@@ -95,6 +99,7 @@ People are exempt from work requirements if they are:
 **Staff Action:** Staff use application information to see if each member of the household qualifies for any exemptions.
 
 Age and household member exemptions can often be assessed just from the application:
+
 - 18 or younger or 65 or older
 - Living in a household with someone 13 or younger
 - Parent or guardian of someone with a disability
@@ -103,6 +108,7 @@ Age and household member exemptions can often be assessed just from the applicat
 **Staff Action:** Staff use databases to see if any exemptions apply to each person in the household.
 
 Databases can demonstrate exemptions such as:
+
 - Enrolled in Medicare/non-MAGI Medicaid
 - Current/recently released inmate (if connected to state department of corrections)
 - Currently enrolled in SNAP and not exempt from those work requirements
@@ -122,6 +128,7 @@ Databases can demonstrate exemptions such as:
 **Staff Action:** If the client has listed they are working on their application, databases can verify if each household member is meeting the income or hourly requirements.
 
 Common databases showing employment and income information include:
+
 - Quarterly Wage Data (if allowable via policy)
 - The Work Number
 - Other income data sources
@@ -143,12 +150,14 @@ Common databases showing employment and income information include:
 **Policy:** States can choose to allow "short-term hardship" to count as meeting work requirements. Not all states will implement this.
 
 Qualifying short-term hardship events include:
+
 - Receiving inpatient hospital or nursing services, or services of similar acuity
 - Must travel outside of their community for an extended period of time for medical services for a serious or complex medical condition
 
 **Client Action:** A client can request short-term hardship. Hardship (outside of disaster and unemployment) must be requested in order to be granted. Ideally this comes through on the application. If not, the client should be told that they can report this during the request for verifications or at eligibility determination.
 
 > ⚠️ **Pain Point:** States will need to implement hardship request methods. States will need multiple methods of requesting hardship, including some or all of:
+>
 > - Mail
 > - Fax
 > - In person
@@ -157,6 +166,7 @@ Qualifying short-term hardship events include:
 > - Phone
 
 > 💡 **Opportunity:** Make the process of requesting hardship human-centered. Make it:
+>
 > 1. Easy to understand which life events qualify as hardship
 > 2. Clear what options are available to report hardship
 > 3. Easy to actually report hardship
@@ -168,6 +178,7 @@ Qualifying short-term hardship events include:
 **Policy:** A state can preemptively grant short-term hardship to all Medicaid applicants in a region for disaster + unemployment rates. This is an option states can choose to take on, and would temporarily exempt everyone in that region from work requirements.
 
 Qualifying events include:
+
 - Living in a county with a federally declared disaster
 - Living in a county with an unemployment rate of 8% or 1.5 times the national average
 
@@ -182,6 +193,7 @@ Qualifying events include:
 **Staff Action:** If needed, staff will request verifications. The request should be sent to the household, but should list each individual and their required verification, as well as examples of potential documents that could be used. The request should also detail how a client can claim short-term hardship if they can't meet the requirements.
 
 Some exemptions likely require the client to submit verification documents, such as:
+
 - Medically frail
 - Drug/alcohol rehab participant
 
@@ -202,12 +214,14 @@ Some exemptions likely require the client to submit verification documents, such
 **Client Action:** Client submits verification to the agency. States must accept paper copies of verifications, and may optionally accept documents online or faxed.
 
 > ⚠️ **Pain Point:** Verification submission is a known challenge for benefits access. Some known issues include:
+>
 > - The notice may be unclear, or the client doesn't get the notice
 > - Clients may submit verification insufficient to prove exemption or work status
 > - The way that clients can submit verification may not be very usable
 > - Clients working in informal or gig economy may have limited documentation of work
 
 > 💡 **Opportunity:** Ease document submission. Ideas include:
+>
 > - Chatbots or checklists to ensure clients are providing the correct documents
 > - Functionality to take a photo with one's phone to submit documents
 
@@ -218,6 +232,7 @@ Some exemptions likely require the client to submit verification documents, such
 **Staff Action:** Staff process verifications submitted by the client. If needed, request additional verifications or clarify if a verification was insufficient.
 
 > 💡 **Opportunity:** Automate parts of document validation. Ideas include tools that:
+>
 > - Screen for common errors with document uploads
 > - Validate documents being uploaded
 > - Extract data, such as for tagging document types or entering data into eligibility systems that caseworkers can easily review
@@ -241,6 +256,7 @@ Some exemptions likely require the client to submit verification documents, such
 **Client Action:** Client gets notified of their eligibility determination and if they have work requirements.
 
 > 💡 **Opportunity:** Improve the eligibility determination notice to help set expectations for work requirements to recertify. The eligibility determination notice is a critical opportunity to communicate the expectations for work requirement compliance. Make it easy to understand:
+>
 > 1. Which members of the household have to meet Medicaid work requirements for eligibility
 > 2. The changed certification period for those individuals
 > 3. What the lookback period will be when they renew benefits
@@ -277,6 +293,7 @@ Some exemptions likely require the client to submit verification documents, such
 ### Notice of Non-Compliance
 
 **Staff Action:** If a client's work status cannot be verified with databases, the staff sends a client a notice of "non-compliance." The notice of non-compliance is essentially a request for more information from the client to either prove that they:
+
 1. Have been meeting the work requirements
 2. Have an exemption
 3. Have a valid hardship reason why they could not meet the requirements
@@ -286,6 +303,7 @@ Some exemptions likely require the client to submit verification documents, such
 **Client Action:** Clients receive the "notice of noncompliance" and have to respond to the notice within 30 days, or they will lose coverage.
 
 Clients may respond with:
+
 - Evidence of work activity
 - Evidence of an exemption
 - Hardship request
@@ -317,6 +335,7 @@ Clients may respond with:
 **Client Action:** Clients must return the renewal form.
 
 Clients will need to return their renewal form with either:
+
 - Evidence of work activity
 - Evidence of an exemption
 - Hardship request
@@ -353,4 +372,4 @@ Clients will need to return their renewal form with either:
 
 ---
 
-*This document represents the complete service blueprint for implementing Medicaid work requirements as of September 10, 2025. States should consult with CMS for the most current regulatory guidance and implementation requirements.*
+_This document represents the complete service blueprint for implementing Medicaid work requirements as of September 10, 2025. States should consult with CMS for the most current regulatory guidance and implementation requirements._

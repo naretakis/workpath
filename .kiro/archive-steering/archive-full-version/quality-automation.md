@@ -9,6 +9,7 @@ This document provides a comprehensive guide to automated quality checks that pr
 ## Overview
 
 Quality automation ensures that:
+
 - ✅ TypeScript compiles without errors (strict mode)
 - ✅ ESLint passes with zero warnings
 - ✅ Prettier formatting is applied consistently
@@ -22,6 +23,7 @@ Quality automation ensures that:
 ### 1. Pre-Commit Hook (Runs on `git commit`)
 
 **What it does:**
+
 - Runs ESLint with auto-fix on staged TypeScript files
 - Applies Prettier formatting to staged files
 - Runs tests related to changed files
@@ -32,6 +34,7 @@ Quality automation ensures that:
 ### 2. Pre-Push Hook (Runs on `git push`)
 
 **What it does:**
+
 - Runs TypeScript type checking (strict mode)
 - Runs full test suite with coverage check
 - Runs production build
@@ -41,6 +44,7 @@ Quality automation ensures that:
 ### 3. CI/CD Pipeline (Runs on Pull Requests and Main Branch)
 
 **What it does:**
+
 - All pre-push checks
 - E2E tests with Playwright
 - Lighthouse PWA audit (main branch only)
@@ -86,6 +90,7 @@ echo "✅ Pre-commit checks passed!"
 ```
 
 Make it executable:
+
 ```bash
 chmod +x .husky/pre-commit
 ```
@@ -128,6 +133,7 @@ echo "✅ All pre-push checks passed!"
 ```
 
 Make it executable:
+
 ```bash
 chmod +x .husky/pre-push
 ```
@@ -144,12 +150,8 @@ Add to your `package.json`:
       "prettier --write",
       "jest --bail --findRelatedTests --passWithNoTests"
     ],
-    "*.{json,md,yml,yaml}": [
-      "prettier --write"
-    ],
-    "public/manifest.json": [
-      "node scripts/validate-manifest.js"
-    ]
+    "*.{json,md,yml,yaml}": ["prettier --write"],
+    "public/manifest.json": ["node scripts/validate-manifest.js"]
   }
 }
 ```
@@ -186,67 +188,71 @@ Create `scripts/validate-manifest.js`:
 
 ```javascript
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-console.log('🔍 Validating PWA manifest...');
+console.log("🔍 Validating PWA manifest...");
 
-const manifestPath = path.join(__dirname, '../public/manifest.json');
+const manifestPath = path.join(__dirname, "../public/manifest.json");
 
 // Check if manifest exists
 if (!fs.existsSync(manifestPath)) {
-  console.error('❌ Manifest file not found at public/manifest.json');
+  console.error("❌ Manifest file not found at public/manifest.json");
   process.exit(1);
 }
 
 let manifest;
 try {
-  manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 } catch (error) {
-  console.error('❌ Manifest is not valid JSON:', error.message);
+  console.error("❌ Manifest is not valid JSON:", error.message);
   process.exit(1);
 }
 
 // Required fields
-const requiredFields = ['name', 'short_name', 'start_url', 'display', 'icons'];
-const missingFields = requiredFields.filter(field => !manifest[field]);
+const requiredFields = ["name", "short_name", "start_url", "display", "icons"];
+const missingFields = requiredFields.filter((field) => !manifest[field]);
 
 if (missingFields.length > 0) {
-  console.error(`❌ Manifest validation failed. Missing required fields: ${missingFields.join(', ')}`);
+  console.error(
+    `❌ Manifest validation failed. Missing required fields: ${missingFields.join(", ")}`,
+  );
   process.exit(1);
 }
 
 // Validate icons
 if (!manifest.icons || manifest.icons.length === 0) {
-  console.error('❌ Manifest must include at least one icon');
+  console.error("❌ Manifest must include at least one icon");
   process.exit(1);
 }
 
-const requiredSizes = ['192x192', '512x512'];
-const iconSizes = manifest.icons.map(icon => icon.sizes);
-const missingIcons = requiredSizes.filter(size => !iconSizes.includes(size));
+const requiredSizes = ["192x192", "512x512"];
+const iconSizes = manifest.icons.map((icon) => icon.sizes);
+const missingIcons = requiredSizes.filter((size) => !iconSizes.includes(size));
 
 if (missingIcons.length > 0) {
-  console.error(`❌ Manifest missing required icon sizes: ${missingIcons.join(', ')}`);
-  console.error('   PWA requires icons at 192x192 and 512x512');
+  console.error(
+    `❌ Manifest missing required icon sizes: ${missingIcons.join(", ")}`,
+  );
+  console.error("   PWA requires icons at 192x192 and 512x512");
   process.exit(1);
 }
 
 // Validate display mode
-const validDisplayModes = ['fullscreen', 'standalone', 'minimal-ui', 'browser'];
+const validDisplayModes = ["fullscreen", "standalone", "minimal-ui", "browser"];
 if (!validDisplayModes.includes(manifest.display)) {
   console.error(`❌ Invalid display mode: ${manifest.display}`);
-  console.error(`   Must be one of: ${validDisplayModes.join(', ')}`);
+  console.error(`   Must be one of: ${validDisplayModes.join(", ")}`);
   process.exit(1);
 }
 
 // Validate start_url
-if (!manifest.start_url.startsWith('/')) {
-  console.error('❌ start_url must be a relative path starting with /');
+if (!manifest.start_url.startsWith("/")) {
+  console.error("❌ start_url must be a relative path starting with /");
   process.exit(1);
 }
 
-console.log('✅ Manifest validation passed!');
+console.log("✅ Manifest validation passed!");
 console.log(`   Name: ${manifest.name}`);
 console.log(`   Short name: ${manifest.short_name}`);
 console.log(`   Icons: ${manifest.icons.length} icon(s)`);
@@ -254,6 +260,7 @@ console.log(`   Display: ${manifest.display}`);
 ```
 
 Make it executable:
+
 ```bash
 chmod +x scripts/validate-manifest.js
 ```
@@ -267,54 +274,54 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   quality-checks:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: TypeScript type checking
         run: npm run type-check
-      
+
       - name: ESLint
         run: npm run lint
-      
+
       - name: Prettier format check
         run: npm run format:check
-      
+
       - name: Run tests with coverage
         run: npm run test:coverage
-      
+
       - name: Upload coverage reports
         uses: codecov/codecov-action@v3
         with:
           files: ./coverage/coverage-final.json
           flags: unittests
           name: codecov-umbrella
-      
+
       - name: Build application
         run: npm run build
         env:
           NEXT_PUBLIC_VERSION: ${{ github.sha }}
-      
+
       - name: Run E2E tests
         run: npm run test:e2e
-      
+
       - name: Upload E2E test results
         if: failure()
         uses: actions/upload-artifact@v3
@@ -327,25 +334,25 @@ jobs:
     runs-on: ubuntu-latest
     needs: quality-checks
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build application
         run: npm run build
         env:
           NEXT_PUBLIC_VERSION: ${{ github.sha }}
-      
+
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v10
         with:
@@ -358,31 +365,31 @@ jobs:
     runs-on: ubuntu-latest
     needs: [quality-checks, lighthouse-audit]
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build application
         run: npm run build
         env:
           NEXT_PUBLIC_VERSION: ${{ github.sha }}
-      
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          cname: your-custom-domain.com  # Optional: remove if not using custom domain
+          cname: your-custom-domain.com # Optional: remove if not using custom domain
 ```
 
 ## Manual Quality Checks
@@ -396,6 +403,7 @@ npm run quality:check
 ```
 
 This runs:
+
 1. TypeScript type checking
 2. ESLint
 3. Prettier format check
@@ -409,6 +417,7 @@ npm run quality:fix
 ```
 
 This runs:
+
 1. ESLint with auto-fix
 2. Prettier formatting
 
@@ -620,6 +629,7 @@ Documentation is automatically maintained through:
 See [Documentation Automation Guide](./documentation-automation.md) for complete setup.
 
 **Quick commands:**
+
 ```bash
 npm run release          # Create release with auto-generated changelog
 npm run docs:api         # Generate API documentation

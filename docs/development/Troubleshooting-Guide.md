@@ -58,12 +58,14 @@ FAIL src/components/MyComponent.test.tsx
 ### Issue 1: "Cannot commit - ESLint errors"
 
 **Symptoms**:
+
 ```
 ❌ Pre-commit checks failed
    ESLint found errors
 ```
 
 **Solution**:
+
 ```bash
 # Step 1: See what's wrong
 npm run lint
@@ -82,21 +84,23 @@ git commit -m "your message"
 **Common ESLint issues**:
 
 1. **Unused variables**
+
    ```typescript
    // ❌ Bad
-   const myVar = 'hello';  // Declared but never used
-   
+   const myVar = "hello"; // Declared but never used
+
    // ✅ Good - Remove it
    // (or use it somewhere)
    ```
 
 2. **Missing dependencies in useEffect**
+
    ```typescript
    // ❌ Bad
    useEffect(() => {
      doSomething(myProp);
-   }, []);  // Missing myProp in dependencies
-   
+   }, []); // Missing myProp in dependencies
+
    // ✅ Good
    useEffect(() => {
      doSomething(myProp);
@@ -104,10 +108,11 @@ git commit -m "your message"
    ```
 
 3. **Console.log statements**
+
    ```typescript
    // ❌ Bad (in production code)
-   console.log('debug info');
-   
+   console.log("debug info");
+
    // ✅ Good - Remove or use proper logging
    // (or add eslint-disable comment if needed for debugging)
    ```
@@ -115,12 +120,14 @@ git commit -m "your message"
 ### Issue 2: "Cannot commit - Prettier formatting"
 
 **Symptoms**:
+
 ```
 ❌ Pre-commit checks failed
    Prettier found formatting issues
 ```
 
 **Solution**:
+
 ```bash
 # Auto-format all files
 npm run format
@@ -135,12 +142,14 @@ git commit -m "your message"
 ### Issue 3: "Cannot push - TypeScript errors"
 
 **Symptoms**:
+
 ```
 ❌ TypeScript check failed
    Found 3 errors
 ```
 
 **Solution**:
+
 ```bash
 # Step 1: See all TypeScript errors
 npm run type-check
@@ -160,21 +169,24 @@ git push
 **Common TypeScript issues**:
 
 1. **Type mismatch**
+
    ```typescript
    // ❌ Bad
-   const age: number = "25";  // String assigned to number
-   
+   const age: number = "25"; // String assigned to number
+
    // ✅ Good
    const age: number = 25;
    ```
 
 2. **Missing type annotation**
+
    ```typescript
    // ❌ Bad
-   function greet(name) {  // Parameter 'name' implicitly has 'any' type
+   function greet(name) {
+     // Parameter 'name' implicitly has 'any' type
      return `Hello ${name}`;
    }
-   
+
    // ✅ Good
    function greet(name: string): string {
      return `Hello ${name}`;
@@ -182,13 +194,14 @@ git push
    ```
 
 3. **Possibly undefined**
+
    ```typescript
    // ❌ Bad
-   const user = users.find(u => u.id === id);
-   console.log(user.name);  // user might be undefined
-   
+   const user = users.find((u) => u.id === id);
+   console.log(user.name); // user might be undefined
+
    // ✅ Good
-   const user = users.find(u => u.id === id);
+   const user = users.find((u) => u.id === id);
    if (user) {
      console.log(user.name);
    }
@@ -197,17 +210,19 @@ git push
    ```
 
 4. **Missing return type**
+
    ```typescript
    // ❌ Bad
-   function calculateTotal(items) {  // Missing types
+   function calculateTotal(items) {
+     // Missing types
      return items.reduce((sum, item) => sum + item.price, 0);
    }
-   
+
    // ✅ Good
    interface Item {
      price: number;
    }
-   
+
    function calculateTotal(items: Item[]): number {
      return items.reduce((sum, item) => sum + item.price, 0);
    }
@@ -216,6 +231,7 @@ git push
 ### Issue 4: "Cannot push - Tests failing"
 
 **Symptoms**:
+
 ```
 ❌ Tests failed or coverage below threshold
    3 tests failed
@@ -223,6 +239,7 @@ git push
 ```
 
 **Solution**:
+
 ```bash
 # Step 1: Run tests to see failures
 npm run test
@@ -246,48 +263,53 @@ git push
 **Common test issues**:
 
 1. **Test expects wrong value**
+
    ```typescript
    // ❌ Test is wrong
-   expect(result).toBe('Hello');  // But code returns 'Hi'
-   
+   expect(result).toBe("Hello"); // But code returns 'Hi'
+
    // ✅ Fix the test or the code
-   expect(result).toBe('Hi');  // If code is correct
+   expect(result).toBe("Hi"); // If code is correct
    // OR fix the code to return 'Hello'
    ```
 
 2. **Async test not waiting**
+
    ```typescript
    // ❌ Bad - Not waiting for async operation
-   it('should fetch data', () => {
+   it("should fetch data", () => {
      fetchData();
-     expect(data).toBeDefined();  // Runs before fetch completes
+     expect(data).toBeDefined(); // Runs before fetch completes
    });
-   
+
    // ✅ Good - Wait for async operation
-   it('should fetch data', async () => {
+   it("should fetch data", async () => {
      await fetchData();
      expect(data).toBeDefined();
    });
    ```
 
 3. **Missing test coverage**
+
    ```bash
    # See what's not covered
    npm run test:coverage
    open coverage/lcov-report/index.html
-   
+
    # Write tests for uncovered lines
    ```
 
 ### Issue 5: "Cannot push - Build failing"
 
 **Symptoms**:
+
 ```
 ❌ Build failed
    Module not found: Can't resolve '@/components/MyComponent'
 ```
 
 **Solution**:
+
 ```bash
 # Step 1: Try building locally
 npm run build
@@ -318,10 +340,12 @@ git push
 ### Issue 6: "Hooks not running"
 
 **Symptoms**:
+
 - You commit but no checks run
 - You push but no checks run
 
 **Solution**:
+
 ```bash
 # Reinstall Husky
 rm -rf .husky
@@ -338,11 +362,13 @@ git commit -m "test commit"
 ### Issue 7: "Coverage below threshold"
 
 **Symptoms**:
+
 ```
 ❌ Coverage: 75% (threshold: 80%)
 ```
 
 **Solution**:
+
 ```bash
 # Step 1: See coverage report
 npm run test:coverage
@@ -402,6 +428,7 @@ npm run build -- --verbose
 #### Step 4: Search for the Error
 
 Copy the error message and search:
+
 1. In the codebase (might be a common issue)
 2. In the steering documents
 3. On Google/Stack Overflow
@@ -416,6 +443,7 @@ Copy the error message and search:
 #### Step 6: Ask for Help
 
 If stuck for more than 30 minutes:
+
 1. Document what you've tried
 2. Share the error message
 3. Ask in team chat
@@ -450,26 +478,31 @@ node --version  # Should be 18+
 ### Understanding the Tools
 
 #### TypeScript
+
 - **What it does**: Checks types to prevent runtime errors
 - **When it runs**: Pre-push hook, CI/CD
 - **How to fix**: Add type annotations, fix type mismatches
 
 #### ESLint
+
 - **What it does**: Checks code quality and style
 - **When it runs**: Pre-commit hook (auto-fix), CI/CD
 - **How to fix**: Run `npm run lint:fix`, manually fix remaining
 
 #### Prettier
+
 - **What it does**: Formats code consistently
 - **When it runs**: Pre-commit hook (auto-format)
 - **How to fix**: Run `npm run format`
 
 #### Jest
+
 - **What it does**: Runs tests and checks coverage
 - **When it runs**: Pre-commit (changed files), pre-push (all), CI/CD
 - **How to fix**: Fix failing tests, add missing tests
 
 #### Build
+
 - **What it does**: Creates production bundle
 - **When it runs**: Pre-push hook, CI/CD
 - **How to fix**: Fix import errors, TypeScript errors, missing dependencies

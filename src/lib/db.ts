@@ -1,5 +1,5 @@
-import Dexie, { Table } from 'dexie';
-import { UserProfile, Activity } from '@/types';
+import Dexie, { Table } from "dexie";
+import { UserProfile, Activity } from "@/types";
 
 // Database class
 class WorkPathDB extends Dexie {
@@ -7,12 +7,12 @@ class WorkPathDB extends Dexie {
   activities!: Table<Activity>;
 
   constructor() {
-    super('WorkPathDB');
-    
+    super("WorkPathDB");
+
     // Define database schema
     this.version(1).stores({
-      profiles: 'id',
-      activities: '++id, date, type'
+      profiles: "id",
+      activities: "++id, date, type",
     });
   }
 }

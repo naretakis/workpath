@@ -9,7 +9,6 @@ SEC. 100001. Applicability of the immigration laws.
 
 (c) References to Immigration and Nationality Act.—Except as otherwise expressly provided, any reference in this subtitle to a section or other provision shall be considered to be to a section or other provision of the Immigration and Nationality Act (8 U.S.C. 1101 et seq.).
 
-
 SEC. 100002. Asylum fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security or the Attorney General, as applicable, shall require the payment of a fee, equal to the amount specified in this section, by any alien who files an application for asylum under section 208 (8 U.S.C. 1158) at the time such application is filed.
 
@@ -44,7 +43,6 @@ SEC. 100002. Asylum fee.
 (3) any amounts received in fees required under this section that were not credited to the Executive Office for Immigration Review pursuant to paragraph (1) or to U.S. Citizenship and Immigration Services pursuant to paragraph (2) shall be deposited into the general fund of the Treasury.
 
 (e) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100003. Employment authorization document fees.
 (a) Asylum applicants.—
@@ -116,7 +114,6 @@ SEC. 100003. Employment authorization document fees.
 (4) DISPOSITION OF EMPLOYMENT AUTHORIZATION APPLICATION FEES COLLECTED FROM ALIENS GRANTED TEMPORARY PROTECTED STATUS.—All of the fees collected pursuant to this subsection shall be deposited into the general fund of the Treasury.
 
 (5) NO FEE WAIVER.—Fees required to be paid under this subsection shall not be waived or reduced.
-
 
 SEC. 100004. Immigration parole fee.
 (a) In general.—Except as provided under subsection (b), the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in this section and in addition to any other fee authorized by law, by any alien who is paroled into the United States.
@@ -193,7 +190,6 @@ SEC. 100004. Immigration parole fee.
 
 (f) No fee waiver.—Except as provided in subsection (b), fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100005. Special immigrant juvenile fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in this section, by any alien, parent, or legal guardian of an alien applying for special immigrant juvenile status under section 101(a)(27)(J) (8 U.S.C. 1101(a)(27)(J)).
 
@@ -210,7 +206,6 @@ SEC. 100005. Special immigrant juvenile fee.
 (2) the product resulting from the multiplication of the amount referred to in paragraph (1) by the percentage (if any) by which the Consumer Price Index for All Urban Consumers for the month of July preceding the date on which such adjustment takes effect exceeds the Consumer Price Index for All Urban Consumers for the same month of the preceding calendar year, rounded to the next lowest multiple of $10.
 
 (d) Disposition of special immigrant juvenile fees.—All of the fees collected pursuant to this section shall be deposited into the general fund of the Treasury.
-
 
 SEC. 100006. Temporary protected status fee.
 Section 244(c)(1)(B) of the Immigration and Nationality Act (8 U.S.C. 1254a(c)(1)(B)) is amended—
@@ -232,7 +227,6 @@ Section 244(c)(1)(B) of the Immigration and Nationality Act (8 U.S.C. 1254a(c)(1
 “(iii) DISPOSITION OF TEMPORARY PROTECTED STATUS FEES.—All of the fees collected pursuant to this subparagraph shall be deposited into the general fund of the Treasury.
 
 “(iv) NO FEE WAIVER.—Fees required to be paid under this subparagraph shall not be waived or reduced.”.
-
 
 SEC. 100007. Visa integrity fee.
 (a) Visa integrity fee.—
@@ -263,7 +257,6 @@ SEC. 100007. Visa integrity fee.
 
 (B) during such period of validity, was granted an extension of such nonimmigrant status or an adjustment to the status of a lawful permanent resident.
 
-
 SEC. 100008. Form I–94 fee.
 (a) Fee authorized.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), by any alien who submits an application for a Form I–94 Arrival/Departure Record.
 
@@ -293,7 +286,6 @@ SEC. 100008. Form I–94 fee.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100009. Annual asylum fee.
 (a) Fee authorized.—In addition to any other fee authorized by law, for each calendar year that an alien’s application for asylum remains pending, the Secretary of Homeland Security or the Attorney General, as applicable, shall require the payment of a fee, equal to the amount specified in subsection (b), by such alien.
 
@@ -314,7 +306,6 @@ SEC. 100009. Annual asylum fee.
 (c) Disposition of annual asylum fees.—All of the fees collected pursuant to this section shall be deposited into the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100010. Fee relating to renewal and extension of employment authorization for parolees.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), for any parolee who seeks a renewal or extension of employment authorization based on a grant of parole. The employment authorization for each alien paroled into the United States, or any renewal or extension of such parole, shall be valid for a period of 1 year or for the duration of the alien’s parole, whichever is shorter.
@@ -347,7 +338,6 @@ SEC. 100010. Fee relating to renewal and extension of employment authorization f
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100011. Fee relating to renewal or extension of employment authorization for asylum applicants.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee of not less than $275 by any alien who has applied for asylum for each renewal or extension of employment authorization based on such application.
 
@@ -372,7 +362,6 @@ SEC. 100011. Fee relating to renewal or extension of employment authorization fo
 (2) any amounts collected pursuant to this section that are not credited to U.S. Citizenship and Immigration Services pursuant to subparagraph (A) shall be deposited into the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100012. Fee relating to renewal and extension of employment authorization for aliens granted temporary protected status.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), by any alien at the time such alien seeks a renewal or extension of employment authorization based on a grant of temporary protected status. Any employment authorization for an alien granted temporary protected status, or any renewal or extension of such employment authorization, shall be valid for a period of 1 year or for the duration of the designation of temporary protected status, whichever is shorter.
@@ -404,7 +393,6 @@ SEC. 100012. Fee relating to renewal and extension of employment authorization f
 (2) any amounts collected pursuant to this section that are not credited to U.S. Citizenship and Immigration Services pursuant to subparagraph (A) shall be deposited into the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100013. Fees relating to applications for adjustment of status.
 (a) Fee for filing an application to adjust status to that of a lawful permanent resident.—
@@ -697,7 +685,6 @@ SEC. 100013. Fees relating to applications for adjustment of status.
 
 (k) Limitation on use of funds.—No fees collected pursuant to this section may be expended by the Executive Office for Immigration Review for the Legal Orientation Program, or for any successor program.
 
-
 SEC. 100014. Electronic System for Travel Authorization fee.
 Section 217(h)(3)(B) (8 U.S.C. 1187(h)(3)(B)) is amended—
 
@@ -713,7 +700,6 @@ Section 217(h)(3)(B) (8 U.S.C. 1187(h)(3)(B)) is amended—
 
 (C) by adding at the end the following:
 
-
 “(III) not less than $13 per travel authorization.”;
 
 (2) in clause (iii), by striking “October 31, 2028” and inserting “October 31, 2034”; and
@@ -725,7 +711,6 @@ Section 217(h)(3)(B) (8 U.S.C. 1187(h)(3)(B)) is amended—
 “(I) the amount of the fee required under this subparagraph during the most recently concluded fiscal year; and
 
 “(II) the product of the amount referred to in subclause (I) multiplied by the percentage (if any) by which the Consumer Price Index for All Urban Consumers for the month of July preceding the date on which such adjustment takes effect exceeds the Consumer Price Index for All Urban Consumers for the same month of the preceding calendar year.”.
-
 
 SEC. 100015. Electronic Visa Update System fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, in the amount specified in subsection (b), by any alien subject to the Electronic Visa Update System at the time of such alien’s enrollment in such system.
@@ -748,7 +733,6 @@ SEC. 100015. Electronic Visa Update System fee.
 
 (1) IN GENERAL.—Section 286 (8 U.S.C. 1356) is amended by adding at the end the following:
 
-
 “(w) CBP electronic visa update system account.—
 
 “(1) ESTABLISHMENT.—There is established in the general fund of the Treasury a separate account, which shall be known as the ‘CBP Electronic Visa Update System Account’ (referred to in this subsection as the ‘Account’).
@@ -768,7 +752,6 @@ SEC. 100015. Electronic Visa Update System fee.
 (2) REMAINING FEES.—Of the fees collected pursuant to this section, an amount equal to $5 multiplied by the number of payments collected pursuant to this section shall be deposited to the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100016. Fee for aliens ordered removed in absentia.
 (a) In general.—As partial reimbursement for the cost of arresting an alien described in this section, the Secretary of Homeland Security, except as provided in subsection (c), shall require the payment of a fee, equal to the amount specified in subsection (b) on any alien who—
@@ -807,7 +790,6 @@ SEC. 100016. Fee for aliens ordered removed in absentia.
 
 (e) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100017. Inadmissible alien apprehension fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), by any inadmissible alien at the time such alien is apprehended between ports of entry.
 
@@ -838,7 +820,6 @@ SEC. 100017. Inadmissible alien apprehension fee.
 (2) any amounts collected pursuant to this section that are not credited to U.S. Immigration and Customs Enforcement pursuant to paragraph (1) shall be deposited into the general fund of the Treasury.
 
 (d) Disposition of inadmissible alien apprehension fees.—All of the fees collected pursuant to this section shall be deposited into the general fund of the Treasury.
-
 
 SEC. 100018. Amendment to authority to apply for asylum.
 Section 208(d)(3) (8 U.S.C. 1158(d)(3)) is amended—
@@ -906,7 +887,6 @@ In addition to amounts otherwise available, there is appropriated to the Secreta
 
 (12) INFORMATION TECHNOLOGY.—Information technology investments to support immigration purposes, including improvements to fee and revenue collections.
 
-
 SEC. 100052. Appropriation for U.S. Immigration and Customs Enforcement.
 In addition to amounts otherwise available, there is appropriated to the Secretary of Homeland Security for U.S. Immigration and Customs Enforcement for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $29,850,000,000, to remain available through September 30, 2029, for the following purposes:
 
@@ -968,14 +948,12 @@ In addition to amounts otherwise available, there is appropriated to the Secreta
 
 (11) OFFICE OF THE PRINCIPAL LEGAL ADVISOR.—Hiring additional attorneys and the necessary support staff within the Office of the Principal Legal Advisor to represent the Department of Homeland Security in immigration enforcement and removal proceedings.
 
-
 SEC. 100053. Appropriation for Federal Law Enforcement Training Centers.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Secretary of Homeland Security for the Federal Law Enforcement Training Centers for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $750,000,000, to remain available until September 30, 2029, for the purposes described in subsections (b) and (c).
 
 (b) Training.—Not less than $285,000,000 of the amounts available under subsection (a) shall be for supporting the training of newly hired Federal law enforcement personnel employed by the Department of Homeland Security and State and local law enforcement agencies operating in support of the Department of Homeland Security.
 
 (c) Facilities.—Not more than $465,000,000 of the amounts available under subsection (a) shall be for procurement, construction and maintenance of, improvements to, training equipment for, and related expenses, of facilities of the Federal Law Enforcement Training Centers.
-
 
 SEC. 100054. Appropriation for the Department of Justice.
 In addition to amounts otherwise available, there is appropriated to the Attorney General for the Department of Justice for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $3,330,000,000, to remain available through September 30, 2029, for the following purposes:
@@ -1036,7 +1014,6 @@ In addition to amounts otherwise available, there is appropriated to the Attorne
 
 (III) Complying with requests for such information from Federal law enforcement entities, officials, or other personnel.
 
-
 SEC. 100055. Bridging Immigration-related Deficits Experienced Nationwide Reimbursement Fund.
 (a) Establishment.—There is established within the Department of Justice a fund, to be known as the “Bridging Immigration-related Deficits Experienced Nationwide (BIDEN) Reimbursement Fund” (referred to in this section as the “Fund”).
 
@@ -1068,14 +1045,12 @@ SEC. 100055. Bridging Immigration-related Deficits Experienced Nationwide Reimbu
 
 (d) Grant eligibility of completed, ongoing, or new activities.—The Attorney General may provide grants under this section to State agencies and units of local government for expenditures made by State agencies or units of local government for completed, ongoing, or new activities determined to be eligible for such grant funding that occurred on or after January 20, 2021. Amounts made available under this section shall be distributed to more than 1 State.
 
-
 SEC. 100056. Appropriation for the Bureau of Prisons.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Director of the Bureau of Prisons for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $5,000,000,000, to remain available through September 30, 2029, for the purposes described in subsections (b) and (c).
 
 (b) Salaries and benefits.—Not less than $3,000,000,000 of the amounts made available under subsection (a) shall be for hiring and training of new employees, including correctional officers, medical professionals, and facilities and maintenance employees, the necessary support staff, and for additional funding for salaries and benefits for the current workforce of the Bureau of Prisons.
 
 (c) Facilities.—Not more than $2,000,000,000 of the amounts made available under subsection (a) shall be for addressing maintenance and repairs to facilities maintained or operated by the Bureau of Prisons.
-
 
 SEC. 100057. Appropriation for the United States Secret Service.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Director of the United States Secret Service (referred to in this section as the “Director”) for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $1,170,000,000, to remain available through September 30, 2029, for the purposes described in subsection (b).
@@ -1115,7 +1090,6 @@ subtitle B—Judiciary Matters
 SEC. 100101. Appropriation to the Administrative Office of the United States Courts.
 In addition to amounts otherwise available, there is appropriated to the Director of the Administrative Office of the United States Courts, out of amounts in the Treasury not otherwise appropriated, $1,250,000 for each of fiscal years 2025 through 2028, for the purpose of continuing analyses and reporting pursuant to section 604(a)(2) of title 28, United States Code, to examine the state of the dockets of the courts and to prepare and transmit statistical data and reports as to the business of the courts, including an assessment of the number, frequency, and related metrics of judicial orders issuing non-party relief against the Federal Government and their aggregate cost impact on the taxpayers of the United States, as determined by each court when imposing securities for the issuance of preliminary injunctions or temporary restraining orders against the Federal Government pursuant to rule 65(c) of the Federal Rules of Civil Procedure.
 
-
 SEC. 100102. Appropriation to the Federal Judicial Center.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Director of the Federal Judicial Center, out of amounts in the Treasury not otherwise appropriated, $1,000,000 for each of fiscal years 2025 through 2028, for the purpose described in subsection (b).
 
@@ -1129,7 +1103,6 @@ Section 3(d) of the Radiation Exposure Compensation Act (Public Law 101–426; 4
 (1) by striking the first sentence and inserting “The Fund shall terminate on December 31, 2028.”; and
 
 (2) by striking “the end of that 2-year period” and inserting “such date”.
-
 
 SEC. 100202. Claims relating to atmospheric testing.
 (a) Leukemia claims relating to trinity test in New Mexico and tests at the Nevada site.—Section 4(a)(1)(A) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended—
@@ -1148,7 +1121,6 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (D) by inserting after subclause (II) the following:
 
-
 “(III) was physically present in an affected area for a period of at least 1 year during the period beginning on September 24, 1944, and ending on November 6, 1962; or”; and
 
 (2) in clause (ii)(I), by striking “physical presence described in subclause (I) or (II) of clause (i) or onsite participation described in clause (i)(III)” and inserting “physical presence described in subclause (I), (II), or (III) of clause (i) or onsite participation described in clause (i)(IV)”.
@@ -1159,11 +1131,9 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (2) by striking subparagraph (B) and inserting the following:
 
-
 “(B) AMOUNT.—If the conditions described in subparagraph (C) are met, an individual who is described in subparagraph (A) shall receive $100,000.”; and
 
 (3) in subparagraph (C), by adding at the end the following:
-
 
 “(iv) No payment under this paragraph previously has been made to the individual, on behalf of the individual, or to a survivor of the individual.”.
 
@@ -1193,7 +1163,6 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (4) by inserting after subparagraph (B) the following:
 
-
 “(C) was physically present in an affected area for a period of at least 1 year during the period beginning on September 24, 1944, and ending on November 6, 1962; or”.
 
 (e) Amounts for claims related to specified diseases.—Section 4(a)(2) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended in the matter following subparagraph (D) (as redesignated by subsection (d) of this section)—
@@ -1206,11 +1175,9 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (4) by adding at the end the following:
 
-
 “(iii) no payment under this paragraph previously has been made to the individual, on behalf of the individual, or to a survivor of the individual.”.
 
 (f) Downwind states.—Section 4(b)(1) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended to read as follows:
-
 
 “(1) ‘affected area’ means—
 
@@ -1224,10 +1191,8 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 “(B) with respect to a claim by an individual under subsection (a)(1)(A)(i)(III) or subsection (a)(2)(C), only New Mexico; and”.
 
-
 SEC. 100203. Claims relating to uranium mining.
 (a) Employees of mines and mills.—Section 5(a)(1)(A)(i) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended to read as follows:
-
 
 “(i) (I) was employed in a uranium mine or uranium mill (including any individual who was employed in the transport of uranium ore or vanadium-uranium ore from such mine or mill) located in Colorado, New Mexico, Arizona, Wyoming, South Dakota, Washington, Utah, Idaho, North Dakota, Oregon, or Texas at any time during the period beginning on January 1, 1942, and ending on December 31, 1990; or
 
@@ -1251,7 +1216,6 @@ SEC. 100203. Claims relating to uranium mining.
 
 (2) by adding at the end the following:
 
-
 “(III) (aa) does not meet the conditions of subclause (I) or (II);
 
 “(bb) worked, during the period described in clause (i)(I), in 2 or more of the following positions: miner, miller, core driller, and ore transporter;
@@ -1261,7 +1225,6 @@ SEC. 100203. Claims relating to uranium mining.
 “(dd) submits written medical documentation that the individual developed lung cancer, a nonmalignant respiratory disease, renal cancer, or any other chronic renal disease, including nephritis and kidney tubal tissue injury after exposure to radiation through work in one or more of the positions referred to in item (bb);”.
 
 (e) Special rules relating to combined work histories.—Section 5(a) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended by adding at the end the following:
-
 
 “(4) SPECIAL RULE RELATING TO COMBINED WORK HISTORIES FOR INDIVIDUALS WITH AT LEAST ONE YEAR OF EXPERIENCE.—An individual meets the requirements under this paragraph if the individual worked in one or more of the positions referred to in paragraph (1)(A)(ii)(III)(bb) for a period of at least one year during the period described in paragraph (1)(A)(i)(I).
 
@@ -1275,9 +1238,7 @@ SEC. 100203. Claims relating to uranium mining.
 
 (3) by adding at the end the following:
 
-
 “(9) the term ‘core driller’ means any individual employed to engage in the act or process of obtaining cylindrical rock samples of uranium or vanadium by means of a borehole drilling machine for the purpose of mining uranium or vanadium.”.
-
 
 SEC. 100204. Claims relating to Manhattan Project waste.
 The Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended by inserting after section 5 the following:
@@ -1408,24 +1369,14 @@ The Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 no
 
 “(2) other documentation determined by the Attorney General to demonstrate that the claimant contracted a specified disease after a period of physical presence in an affected area.”.
 
-
 SEC. 100205. Limitations on claims.
 Section 8(a) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended by striking “2 years after the date of enactment of the RECA Extension Act of 2022” and inserting “December 31, 2027”.
 
 Attest:
 
-
-
-
-
-Speaker of the House of Representatives.  
+Speaker of the House of Representatives.
 
 Attest:
 
-
-
-
-
-Vice President of the United States and   
+Vice President of the United States and  
 President of the Senate.
-

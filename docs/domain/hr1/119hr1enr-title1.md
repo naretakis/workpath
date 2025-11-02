@@ -4,7 +4,6 @@ subtitle A—Nutrition
 SEC. 10101. Re-evaluation of thrifty food plan.
 (a) In general.—Section 3 of the Food and Nutrition Act of 2008 (7 U.S.C. 2012) is amended by striking subsection (u) and inserting the following:
 
-
 “(u) Thrifty food plan.—
 
 “(1) IN GENERAL.—The term ‘thrifty food plan’ means the diet required to feed a family of 4 persons consisting of a man and a woman ages 20 through 50, a child ages 6 through 8, and a child ages 9 through 11 using the items and quantities of food described in the report of the Department of Agriculture entitled ‘Thrifty Food Plan, 2021’, and each successor report updated pursuant to this subsection, subject to the conditions that—
@@ -57,10 +56,8 @@ SEC. 10101. Re-evaluation of thrifty food plan.
 
 (3) Section 27(a)(2) of the Food and Nutrition Act of 2008 (7 U.S.C. 2036(a)(2))) is amended by striking “section 3(u)(4)” each place it appears and inserting “section 3(u)(3)”.
 
-
 SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 (a) Exceptions.—Section 6(o) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(o)) is amended by striking paragraph (3) and inserting the following:
-
 
 “(3) EXCEPTIONS.—Paragraph (2) shall not apply to an individual if the individual is—
 
@@ -82,11 +79,9 @@ SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 
 (1) in subparagraph (A), by striking clause (ii) and inserting the following:
 
-
 “(ii) is in a noncontiguous State and has an unemployment rate that is at or above 1.5 times the national unemployment rate.”; and
 
 (2) by adding at the end the following:
-
 
 “(C) DEFINITION OF NONCONTIGUOUS STATE.—
 
@@ -99,7 +94,6 @@ SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 (1) by redesignating paragraph (7) as paragraph (8); and
 
 (2) by inserting after paragraph (6) the following:
-
 
 “(7) EXEMPTION FOR NONCONTIGUOUS STATES.—
 
@@ -141,7 +135,6 @@ SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 
 “(ii) information on specific risks or newly identified barriers or challenges to full compliance, including the plan of the State agency to mitigate those risks, barriers, or challenges.”.
 
-
 SEC. 10103. Availability of standard utility allowances based on receipt of energy assistance.
 (a) Standard utility allowance.—Section 5(e)(6)(C)(iv)(I) of the Food and Nutrition Act of 2008 (7 U.S.C. 2014(e)(6)(C)(iv)(I)) is amended by inserting “with an elderly or disabled member” after “households”.
 
@@ -151,26 +144,21 @@ SEC. 10103. Availability of standard utility allowances based on receipt of ener
 
 (2) in subparagraph (B), by inserting “with an elderly or disabled member” before “under a State law”.
 
-
 SEC. 10104. Restrictions on internet expenses.
 Section 5(e)(6) of the Food and Nutrition Act of 2008 (7 U.S.C. 2014(e)(6)) is amended by adding at the end the following:
 
-
 “(E) RESTRICTIONS ON INTERNET EXPENSES.—Any service fee associated with internet connection shall not be used in computing the excess shelter expense deduction under this paragraph.”.
-
 
 SEC. 10105. Matching funds requirements.
 (a) In general.—Section 4(a) of the Food and Nutrition Act of 2008 (7 U.S.C. 2013(a)) is amended—
 
 (1) by striking “(a) Subject to” and inserting the following:
 
-
 “(a) Program.—
 
 “(1) ESTABLISHMENT.—Subject to”; and
 
 (2) by adding at the end the following:
-
 
 “(2) STATE QUALITY CONTROL INCENTIVE.—
 
@@ -204,18 +192,14 @@ SEC. 10105. Matching funds requirements.
 
 (b) Limitation on authority.—Section 13(a)(1) of the Food and Nutrition Act of 2008 (7 U.S.C. 2022(a)(1)) is amended in the first sentence by inserting “or the payment or disposition of a State share under section 4(a)(2)” after “16(c)(1)(D)(i)(II)”.
 
-
 SEC. 10106. Administrative cost sharing.
 Section 16(a) of the Food and Nutrition Act of 2008 (7 U.S.C. 2025(a)) is amended in the matter preceding paragraph (1) by striking “agency an amount equal to 50 per centum” and inserting “agency, through fiscal year 2026, 50 percent, and for fiscal year 2027 and each fiscal year thereafter, 25 percent,”.
-
 
 SEC. 10107. National education and obesity prevention grant program.
 Section 28(d)(1)(F) of the Food and Nutrition Act of 2008 (7 U.S.C. 2036a(d)(1)(F)) is amended by striking “for fiscal year 2016 and each subsequent fiscal year” and inserting “for each of fiscal years 2016 through 2025”.
 
-
 SEC. 10108. Alien SNAP eligibility.
 Section 6(f) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(f)) is amended to read as follows:
-
 
 “(f) No individual who is a member of a household otherwise eligible to participate in the supplemental nutrition assistance program under this section shall be eligible to participate in the supplemental nutrition assistance program as a member of that or any other household unless he or she is—
 
@@ -252,7 +236,6 @@ SEC. 10301. Effective reference price; reference price.
 (a) Effective reference price.—Section 1111(8)(B)(ii) of the Agricultural Act of 2014 (7 U.S.C. 9011(8)(B)(ii)) is amended by striking “85” and inserting “beginning with the crop year 2025, 88”.
 
 (b) Reference price.—Section 1111 of the Agricultural Act of 2014 (7 U.S.C. 9011) is amended by striking paragraph (19) and inserting the following:
-
 
 “(19) REFERENCE PRICE.—
 
@@ -292,14 +275,12 @@ SEC. 10301. Effective reference price; reference price.
 
 “(C) LIMITATION.—In no case shall a reference price for a covered commodity exceed 113 percent of the reference price for such covered commodity listed in subparagraph (A).”.
 
-
 SEC. 10302. Base acres.
 Section 1112 of the Agricultural Act of 2014 (7 U.S.C. 9012) is amended—
 
 (1) in subsection (d)(3)(A), by striking “2023” and inserting “2031”; and
 
 (2) by adding at the end the following:
-
 
 “(e) Additional base acres.—
 
@@ -387,7 +368,6 @@ Section 1112 of the Agricultural Act of 2014 (7 U.S.C. 9012) is amended—
 
 “(C) the allocation of acres under paragraph (5).”.
 
-
 SEC. 10303. Producer election.
 (a) In general.—Section 1115 of the Agricultural Act of 2014 (7 U.S.C. 9015) is amended—
 
@@ -415,16 +395,13 @@ SEC. 10303. Producer election.
 
 (iii) by adding at the end the following:
 
-
 “(C) the same coverage for each covered commodity on the farm for the 2027 through 2031 crop years as was applicable for the 2025 crop year.”; and
 
 (3) by adding at the end the following:
 
-
 “(i) Higher of price loss coverage payments and agriculture risk coverage payments.—For the 2025 crop year, the Secretary shall, on a covered commodity-by-covered commodity basis, make the higher of price loss coverage payments under section 1116 and agriculture risk coverage county coverage payments under section 1117 to the producers on a farm for the payment acres for each covered commodity on the farm.”.
 
 (b) Federal crop insurance supplemental coverage option.—Section 508(c)(4)(C)(iv) of the Federal Crop Insurance Act (7 U.S.C. 1508(c)(4)(C)(iv)) is amended by striking “Crops for which the producer has elected under section 1116 of the Agricultural Act of 2014 to receive agriculture risk coverage and acres” and inserting “Acres” .
-
 
 SEC. 10304. Price loss coverage.
 Section 1116 of the Agricultural Act of 2014 (7 U.S.C. 9016) is amended—
@@ -444,7 +421,6 @@ Section 1116 of the Agricultural Act of 2014 (7 U.S.C. 9016) is amended—
 (A) by striking “subparagraph (F) of section 1111(19)” and inserting “paragraph (19)(A)(vi) of section 1111”; and
 
 (B) by striking “2012 through 2016” each place it appears and inserting “2017 through 2021”.
-
 
 SEC. 10305. Agriculture risk coverage.
 Section 1117 of the Agricultural Act of 2014 (7 U.S.C. 9017) is amended—
@@ -467,7 +443,6 @@ Section 1117 of the Agricultural Act of 2014 (7 U.S.C. 9017) is amended—
 
 (4) in subsections (e), (g)(5), and (i)(5), by striking “2023” each place it appears and inserting “2031”.
 
-
 SEC. 10306. Equitable treatment of certain entities.
 (a) In general.—Section 1001 of the Food Security Act of 1985 (7 U.S.C. 1308) is amended—
 
@@ -476,7 +451,6 @@ SEC. 10306. Equitable treatment of certain entities.
 (A) by redesignating paragraph (5) as paragraph (6); and
 
 (B) by inserting after paragraph (4) the following:
-
 
 “(5) QUALIFIED PASS-THROUGH ENTITY.—The term ‘qualified pass-through entity’ means—
 
@@ -512,7 +486,6 @@ SEC. 10306. Equitable treatment of certain entities.
 
 (e) Exclusion from AGI calculation.—Section 1001D(d) of the Food Security Act of 1985 (7 U.S.C. 1308–3a(d)) is amended by striking “, general partnership, or joint venture” each place it appears.
 
-
 SEC. 10307. Payment limitations.
 Section 1001 of the Food Security Act of 1985 (7 U.S.C. 1308) is amended—
 
@@ -531,7 +504,6 @@ Section 1001 of the Food Security Act of 1985 (7 U.S.C. 1308) is amended—
 (3) by adding at the end the following:
 
 “(i) Adjustment.—For the 2025 crop year and each crop year thereafter, the Secretary shall annually adjust the amounts described in subsections (b) and (c) for inflation based on the Consumer Price Index for All Urban Consumers published by the Bureau of Labor Statistics of the Department of Labor.”.
-
 
 SEC. 10308. Adjusted gross income limitation.
 Section 1001D(b) of the Food Security Act of 1985 (7 U.S.C. 1308–3a(b)) is amended—
@@ -556,7 +528,6 @@ Section 1001D(b) of the Food Security Act of 1985 (7 U.S.C. 1308–3a(b)) is ame
 
 “(B) EXCEPTION.—In the case of an excepted payment or benefit, the limitation established by paragraph (1) shall not apply to a person or legal entity during a crop, fiscal, or program year, as appropriate, if greater than or equal to 75 percent of the average gross income of the person or legal entity derives from farming, ranching, or silviculture activities.”.
 
-
 SEC. 10309. Marketing loans.
 (a) Availability of nonrecourse marketing assistance loans for loan commodities.—Section 1201(b)(1) of the Agricultural Act of 2014 (7 U.S.C. 9031(b)(1)) is amended by striking “2023” and inserting “2031”.
 
@@ -571,7 +542,6 @@ SEC. 10309. Marketing loans.
 (2) by redesignating subsections (c) and (d) as subsections (d) and (e), respectively;
 
 (3) by inserting after subsection (b) the following:
-
 
 “(c) 2026 through 2031 crop years.—For purposes of each of the 2026 through 2031 crop years, the loan rate for a marketing assistance loan under section 1201 for a loan commodity shall be equal to the following:
 
@@ -641,13 +611,11 @@ SEC. 10309. Marketing loans.
 
 (1) by striking “Effective” and inserting the following:
 
-
 “(1) CROP YEARS 2014 THROUGH 2025.—Effective”;
 
 (2) in paragraph (1) (as so designated), by striking “2023” and inserting “2025”; and
 
 (3) by adding at the end the following:
-
 
 “(2) PAYMENT OF COTTON STORAGE COSTS.—Effective for each of the 2026 through 2031 crop years, the Secretary shall make cotton storage payments for upland cotton and extra long staple cotton available in the same manner as the Secretary provided storage payments for the 2006 crop of upland cotton, except that the payment rate shall be equal to the lesser of—
 
@@ -669,7 +637,6 @@ SEC. 10309. Marketing loans.
 
 (f) Availability of recourse loans.—Section 1209 of the Agricultural Act of 2014 (7 U.S.C. 9039) is amended, in subsections (a)(2), (b), and (c), by striking “2023” each place it appears and inserting “2031”.
 
-
 SEC. 10310. Repayment of marketing loans.
 Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
@@ -679,11 +646,9 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 (B) in the matter preceding subparagraph (A) (as so redesignated), by striking “The Secretary” and inserting the following:
 
-
 “(1) IN GENERAL.—The Secretary”; and
 
 (C) by striking paragraph (2) and inserting the following:
-
 
 “(B) (i) in the case of long grain rice and medium grain rice, the prevailing world market price for the commodity, as determined and adjusted by the Secretary in accordance with this section; or
 
@@ -701,7 +666,6 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 (C) by adding at the end the following:
 
-
 “(2) the prevailing world market price for the commodity, as determined and adjusted by the Secretary in accordance with this section.”;
 
 (3) in subsection (d)—
@@ -712,11 +676,9 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 (C) in the matter preceding subparagraph (A) (as so redesignated), by striking “For purposes” and inserting the following:
 
-
 “(1) IN GENERAL.—For purposes”; and
 
 (D) by adding at the end the following:
-
 
 “(2) UPLAND COTTON.—In the case of upland cotton, for any period when price quotations for Middling (M) 13⁄32 -inch cotton are available, the formula under paragraph (1)(A) shall be based on the average of the 3 lowest-priced growths that are quoted.”; and
 
@@ -733,7 +695,6 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 (C) by redesignating paragraph (3) as paragraph (4); and
 
 (D) by inserting after paragraph (2) the following:
-
 
 “(3) EXTRA LONG STAPLE COTTON.—The prevailing world market price for extra long staple cotton determined under subsection (d)—
 
@@ -753,17 +714,14 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 “(II) the forward-crop price quotation is the lowest such quotation available.”.
 
-
 SEC. 10311. Economic adjustment assistance for textile mills.
 Section 1207(c) of the Agricultural Act of 2014 (7 U.S.C. 9037(c)) is amended by striking paragraph (2) and inserting the following:
-
 
 “(2) VALUE OF ASSISTANCE.—The value of the assistance provided under paragraph (1) shall be—
 
 “(A) for the period beginning on August 1, 2013, and ending on July 31, 2025, 3 cents per pound; and
 
 “(B) beginning on August 1, 2025, 5 cents per pound.”.
-
 
 SEC. 10312. Sugar program updates.
 (a) Loan rate modifications.—Section 156 of the Federal Agriculture Improvement and Reform Act of 1996 (7 U.S.C. 7272) is amended—
@@ -776,7 +734,6 @@ SEC. 10312. Sugar program updates.
 
 (C) by adding at the end the following:
 
-
 “(6) 24.00 cents per pound for raw cane sugar for each of the 2025 through 2031 crop years.”;
 
 (2) in subsection (b)—
@@ -787,7 +744,6 @@ SEC. 10312. Sugar program updates.
 
 (C) by adding at the end the following:
 
-
 “(3) a rate that is equal to 136.55 percent of the loan rate per pound of raw cane sugar under subsection (a)(6) for each of the 2025 through 2031 crop years.”; and
 
 (3) in subsection (i), by striking “2023” and inserting “2031”.
@@ -795,7 +751,6 @@ SEC. 10312. Sugar program updates.
 (b) Adjustments to Commodity Credit Corporation storage rates.—Section 167 of the Federal Agriculture Improvement and Reform Act of 1996 (7 U.S.C. 7287) is amended—
 
 (1) by striking subsection (a) and inserting the following:
-
 
 “(a) In general.—For the 2025 crop year and each subsequent crop year, the Commodity Credit Corporation shall establish rates for the storage of forfeited sugar in an amount that is not less than—
 
@@ -817,11 +772,9 @@ SEC. 10312. Sugar program updates.
 
 (A) by striking “In the case” and inserting the following:
 
-
 “(A) IN GENERAL.—Except as provided in subparagraph (B), in the case”; and
 
 (B) by adding at the end the following:
-
 
 “(B) EXCEPTION.—If the Secretary makes an upward adjustment under paragraph (1)(A), in adjusting allocations among beet sugar processors, the Secretary shall give priority to beet sugar processors with available sugar.”.
 
@@ -831,11 +784,9 @@ SEC. 10312. Sugar program updates.
 
 (B) in the matter preceding clause (i) (as so redesignated), by striking “If the Secretary” and inserting the following:
 
-
 “(A) IN GENERAL.—If the Secretary”; and
 
 (C) by adding at the end the following:
-
 
 “(B) TIMING.—In carrying out subparagraph (A), the Secretary shall—
 
@@ -844,7 +795,6 @@ SEC. 10312. Sugar program updates.
 “(ii) provide for an initial reassignment under subparagraph (A)(i) not later than 30 days after the date on which the World Agricultural Supply and Demand Estimates described in clause (i) is released.”.
 
 (d) Reallocations of tariff-rate quota shortfall.—Section 359k of the Agricultural Adjustment Act of 1938 (7 U.S.C. 1359kk) is amended by adding at the end the following:
-
 
 “(c) Reallocation.—
 
@@ -916,14 +866,12 @@ SEC. 10312. Sugar program updates.
 
 (f) Period of effectiveness.—Section 359l(a) of the Agricultural Adjustment Act of 1938 (7 U.S.C. 1359ll(a)) is amended by striking “2023” and inserting “2031”.
 
-
 SEC. 10313. Dairy policy updates.
 (a) Dairy margin coverage production history.—
 
 (1) DEFINITION.—Section 1401(8) of the Agricultural Act of 2014 (7 U.S.C. 9051(8)) is amended by striking “when the participating dairy operation first registers to participate in dairy margin coverage”.
 
 (2) PRODUCTION HISTORY OF PARTICIPATING DAIRY OPERATIONS.—Section 1405 of the Agricultural Act of 2014 (7 U.S.C. 9055) is amended by striking subsections (a) and (b) and inserting the following:
-
 
 “(a) Production history.—Except as provided in subsection (b), the production history of a dairy operation for dairy margin coverage is equal to the highest annual milk marketings of the participating dairy operation during any 1 of the 2021, 2022, or 2023 calendar years.
 
@@ -961,10 +909,8 @@ SEC. 10313. Dairy policy updates.
 
 (d) Duration.—Section 1409 of the Agricultural Act of 2014 (7 U.S.C. 9059) is amended by striking “2025” and inserting “2031”.
 
-
 SEC. 10314. Implementation.
 Section 1614(c) of the Agricultural Act of 2014 (7 U.S.C. 9097(c)) is amended by adding at the end the following:
-
 
 “(5) FURTHER FUNDING.—The Secretary shall make available to carry out subtitle C of title I of the Act entitled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’ (119th Congress) and the amendments made by that subtitle $50,000,000, to remain available until expended, of which—
 
@@ -989,7 +935,6 @@ SEC. 10401. Supplemental agricultural disaster assistance.
 
 (1) by striking paragraph (2) and inserting the following:
 
-
 “(2) PAYMENT RATES.—
 
 “(A) LOSSES DUE TO PREDATION.—Indemnity payments to an eligible producer on a farm under paragraph (1)(A) shall be made at a rate of 100 percent of the market value of the affected livestock on the applicable date, as determined by the Secretary.
@@ -1005,7 +950,6 @@ SEC. 10401. Supplemental agricultural disaster assistance.
 “(ii) the day before the date of the event that caused the harm to the livestock that resulted in a reduced sale price.”; and
 
 (2) by adding at the end the following:
-
 
 “(5) ADDITIONAL PAYMENT FOR UNBORN LIVESTOCK.—
 
@@ -1042,7 +986,6 @@ SEC. 10401. Supplemental agricultural disaster assistance.
 (c) Emergency assistance for livestock, honey bees, and farm-raised fish.—
 
 (1) IN GENERAL.—Section 1501(d) of the Agricultural Act of 2014 (7 U.S.C. 9081(d)) is amended by adding at the end the following:
-
 
 “(5) ASSISTANCE FOR LOSSES DUE TO BIRD DEPREDATION.—
 
@@ -1095,7 +1038,6 @@ SEC. 10501. Beginning farmer and rancher benefit.
 
 (b) Increase in assistance.—Section 508(e) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)) is amended by adding at the end the following:
 
-
 “(9) ADDITIONAL SUPPORT.—
 
 “(A) IN GENERAL.—In addition to any other provision of this subsection (except paragraph (2)(A)) regarding payment of a portion of premiums, a beginning farmer or rancher shall receive additional premium assistance that is the number of percentage points specified in subparagraph (B) greater than the premium assistance that would otherwise be available for the applicable policy, plan of insurance, and coverage level selected by the beginning farmer or rancher.
@@ -1108,12 +1050,10 @@ SEC. 10501. Beginning farmer and rancher benefit.
 
 “(iii) For the fourth reinsurance year that a beginning farmer or rancher participates as a beginning farmer or rancher in the applicable policy or plan of insurance, 1 percentage point.”.
 
-
 SEC. 10502. Area-based crop insurance coverage and affordability.
 (a) Coverage level.—Section 508(c)(4) of the Federal Crop Insurance Act (7 U.S.C. 1508(c)(4)) is amended—
 
 (1) in subparagraph (A), by striking clause (ii) and inserting the following:
-
 
 “(ii) may be purchased at any level not to exceed—
 
@@ -1131,10 +1071,8 @@ SEC. 10502. Area-based crop insurance coverage and affordability.
 
 (b) Premium subsidy.—Section 508(e)(2)(H)(i) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)(2)(H)(i)) is amended by striking “65” and inserting “80”.
 
-
 SEC. 10503. Administrative and operating expense adjustments.
 Section 508(k) of the Federal Crop Insurance Act (7 U.S.C. 1508(k)) is amended by adding at the end the following:
-
 
 “(10) ADDITIONAL EXPENSES.—
 
@@ -1182,7 +1120,6 @@ Section 508(k) of the Federal Crop Insurance Act (7 U.S.C. 1508(k)) is amended b
 
 “(ii) shall not be considered a renegotiation under paragraph (8)(A).”.
 
-
 SEC. 10504. Premium support.
 Section 508(e)(2) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)(2)) is amended—
 
@@ -1196,23 +1133,18 @@ Section 508(e)(2) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)(2)) is ame
 
 (5) in subparagraph (G)(i), by striking “38” and inserting “41”.
 
-
 SEC. 10505. Program compliance and integrity.
 Section 515(l)(2) of the Federal Crop Insurance Act (7 U.S.C. 1515(l)(2)) is amended by striking “than” and all that follows through the period at the end and inserting the following: “than—
-
 
 “(A) $4,000,000 for each of fiscal years 2009 through 2025; and
 
 “(B) $6,000,000 for fiscal year 2026 and each subsequent fiscal year.”.
 
-
 SEC. 10506. Reviews, compliance, and integrity.
 Section 516(b)(2)(C)(i) of the Federal Crop Insurance Act (7 U.S.C. 1516(b)(2)(C)(i)) is amended, in the matter preceding subclause (I), by striking “for each fiscal year” and inserting “for each of fiscal years 2014 through 2025 and $10,000,000 for fiscal year 2026 and each fiscal year thereafter”.
 
-
 SEC. 10507. Poultry insurance pilot program.
 Section 523 of the Federal Crop Insurance Act (7 U.S.C. 1523) is amended by adding at the end the following:
-
 
 “(j) Poultry insurance pilot program.—
 
@@ -1235,7 +1167,6 @@ SEC. 10601. Conservation.
 
 (1) in paragraph (2), by striking subparagraphs (A) through (F) and inserting the following:
 
-
 “(A) $625,000,000 for fiscal year 2026;
 
 “(B) $650,000,000 for fiscal year 2027;
@@ -1252,7 +1183,6 @@ SEC. 10601. Conservation.
 
 (A) in subparagraph (A), by striking clauses (i) through (v) and inserting the following:
 
-
 “(i) $2,655,000,000 for fiscal year 2026;
 
 “(ii) $2,855,000,000 for fiscal year 2027;
@@ -1267,7 +1197,6 @@ SEC. 10601. Conservation.
 
 (B) in subparagraph (B), by striking clauses (i) through (v) and inserting the following:
 
-
 “(i) $1,300,000,000 for fiscal year 2026;
 
 “(ii) $1,325,000,000 for fiscal year 2027;
@@ -1281,7 +1210,6 @@ SEC. 10601. Conservation.
 “(vi) $1,375,000,000 for fiscal year 2031.”.
 
 (b) Regional conservation partnership program.—Section 1271D of the Food Security Act of 1985 (16 U.S.C. 3871d) is amended by striking subsection (a) and inserting the following:
-
 
 “(a) Availability of funding.—Of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out the program, to the maximum extent practicable—
 
@@ -1309,7 +1237,6 @@ SEC. 10601. Conservation.
 
 (C) by adding at the end the following:
 
-
 “(C) $1,000,000 beginning in fiscal year 2026, to remain available until expended.”.
 
 (d) Voluntary public access and habitat incentive program.—Section 1240R(f)(1) of the Food Security Act of 1985 (16 U.S.C. 3839bb–5(f)(1)) is amended—
@@ -1328,27 +1255,22 @@ SEC. 10601. Conservation.
 
 (g) Rescission.—The unobligated balances of amounts appropriated by section 21001(a) of Public Law 117–169 (136 Stat. 2015) are rescinded.
 
-
 SEC. 10602. Supplemental agricultural trade promotion program.
 (a) In general.—The Secretary of Agriculture shall carry out a program to encourage the accessibility, development, maintenance, and expansion of commercial export markets for United States agricultural commodities.
 
 (b) Funding.—Of the funds of the Commodity Credit Corporation, the Secretary of Agriculture shall make available to carry out this section $285,000,000 for fiscal year 2027 and each fiscal year thereafter.
 
-
 SEC. 10603. Nutrition.
 Section 203D(d)(5) of the Emergency Food Assistance Act of 1983 (7 U.S.C. 7507(d)(5)) is amended by striking “2024” and inserting “2031”.
-
 
 SEC. 10604. Research.
 (a) Urban, indoor, and other emerging agricultural production research, education, and extension initiative.—Section 1672E(d)(1)(B) of the Food, Agriculture, Conservation, and Trade Act of 1990 (7 U.S.C. 5925g(d)(1)(B)) is amended by striking “fiscal year 2024, to remain available until expended” and inserting “each of fiscal years 2024 through 2031”.
 
 (b) Foundation for Food and Agriculture Research.—Section 7601(g)(1)(A) of the Agricultural Act of 2014 (7 U.S.C. 5939(g)(1)(A)) is amended by adding at the end the following:
 
-
 “(iv) FURTHER FUNDING.—Not later than 30 days after the date of enactment of this clause, of the funds of the Commodity Credit Corporation, the Secretary shall transfer to the Foundation to carry out this section $37,000,000, to remain available until expended.”.
 
 (c) Scholarships for students at 1890 Institutions.—Section 1446(b)(1) of the National Agricultural Research, Extension, and Teaching Policy Act of 1977 (7 U.S.C. 3222a(b)(1)) is amended by adding at the end the following:
-
 
 “(C) FURTHER FUNDING.—Of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out this section $60,000,000 for fiscal year 2026, to remain available until expended.”.
 
@@ -1358,11 +1280,9 @@ SEC. 10604. Research.
 
 (2) by adding at the end the following:
 
-
 “(d) Mandatory funding.—Subject to subsection (c)(2), of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out this section $8,000,000 for fiscal year 2026, to remain available until expended.”.
 
 (e) Specialty crop research initiative.—Section 412(k)(1)(B) of the Agricultural Research, Extension, and Education Reform Act of 1998 (7 U.S.C. 7632(k)(1)(B)) is amended by striking “section $80,000,000 for fiscal year 2014” and inserting the following: “section—
-
 
 “(i) $80,000,000 for each of fiscal years 2014 through 2025; and
 
@@ -1374,13 +1294,10 @@ SEC. 10604. Research.
 
 (2) by adding at the end the following:
 
-
 “(e) Mandatory funding.—Subject to subsections (b), (c), and (d), of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out the competitive grant program under section 4 $125,000,000 for fiscal year 2026 and each fiscal year thereafter.”.
-
 
 SEC. 10605. Energy.
 Section 9005(g)(1)(F) of the Farm Security and Rural Investment Act of 2002 (7 U.S.C. 8105(g)(1)(F)) is amended by striking “2024” and inserting “2031”.
-
 
 SEC. 10606. Horticulture.
 (a) Plant pest and disease management and disaster prevention.—Section 420(f) of the Plant Protection Act (7 U.S.C. 7721(f)) is amended—
@@ -1390,7 +1307,6 @@ SEC. 10606. Horticulture.
 (2) by redesignating paragraph (6) as paragraph (7);
 
 (3) by inserting after paragraph (5) the following:
-
 
 “(6) $75,000,000 for each of fiscal years 2018 through 2025; and”; and
 
@@ -1404,7 +1320,6 @@ SEC. 10606. Horticulture.
 
 (3) by inserting after subparagraph (D) the following:
 
-
 “(E) $85,000,000 for each of fiscal years 2018 through 2025; and”; and
 
 (4) in subparagraph (F) (as so redesignated), by striking “$85,000,000 for fiscal year 2018” and inserting “$100,000,000 for fiscal year 2026”.
@@ -1417,7 +1332,6 @@ SEC. 10606. Horticulture.
 
 (3) by adding at the end the following:
 
-
 “(D) $10,000,000 for the period of fiscal years 2026 through 2031.”.
 
 (d) Modernization and improvement of international trade technology systems and data collection.—Section 2123(c)(4) of the Organic Foods Production Act of 1990 (7 U.S.C. 6522(c)(4)) is amended, in the matter preceding subparagraph (A), by striking “and $1,000,000 for fiscal year 2024” and inserting “, $1,000,000 for fiscal years 2024 and 2025, and $5,000,000 for fiscal year 2026”.
@@ -1426,9 +1340,7 @@ SEC. 10606. Horticulture.
 
 (f) Multiple crop and pesticide use survey.—Section 10109(c) of the Agriculture Improvement Act of 2018 (Public Law 115–334; 132 Stat. 4907) is amended by adding at the end the following:
 
-
 “(3) FURTHER MANDATORY FUNDING.—Of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out this section $5,000,000 for fiscal year 2026, to remain available until expended.”.
-
 
 SEC. 10607. Miscellaneous.
 (a) Animal disease prevention and management.—Section 10409A(d)(1) of the Animal Health Protection Act (7 U.S.C. 8308a(d)(1)) is amended—
@@ -1440,7 +1352,6 @@ SEC. 10607. Miscellaneous.
 (B) by striking “fiscal year 2023 and each fiscal year thereafter” and inserting “each of fiscal years 2023 through 2025”; and
 
 (2) by adding at the end the following:
-
 
 “(C) FISCAL YEARS 2026 THROUGH 2030.—Of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out this section $233,000,000 for each of fiscal years 2026 through 2030, of which—
 

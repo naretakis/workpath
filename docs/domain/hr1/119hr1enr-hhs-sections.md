@@ -64,6 +64,7 @@ Sec. 71307. Allowance of bronze and catastrophic plans in connection with health
 Sec. 71308. Treatment of direct primary care service arrangements.
 
 ## Title VII-part3, Subtitle B—Health, CHAPTER 4—PROTECTING RURAL HOSPITALS AND PROVIDERS
+
 Sec. 71401. Rural Health Transformation Program.
 
 ---

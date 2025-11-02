@@ -2,7 +2,7 @@
 
 **Your Work Requirements Assistant**
 
-*Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits*
+_Track your work, volunteer, and education hours to maintain your Medicaid and SNAP benefits_
 
 ---
 
@@ -13,6 +13,7 @@ WorkPath is a Progressive Web Application (PWA) that helps Medicaid beneficiarie
 WorkPath provides intelligent exemption screening, monthly compliance tracking for work/volunteer/education hours, basic document management, and data export capabilities. It is designed mobile-first for smartphone users who need to track their compliance activities and generate reports for agency submission.
 
 **Key Principles:**
+
 - Privacy-focused: All data stored locally, no cloud sync
 - Offline-first: Complete functionality without internet
 - Mobile-first: Optimized for smartphone usage
@@ -267,30 +268,35 @@ WorkPath provides intelligent exemption screening, monthly compliance tracking f
 ## Future Considerations
 
 ### Multi-User Support (Future Phase)
+
 - Support for community organizations (churches, food banks) to manage multiple beneficiaries
 - Role-based access control for case workers
 - Bulk data entry and reporting capabilities
 - Organization-level dashboards and analytics
 
 ### SNAP Integration (Phase 2)
+
 - SNAP-specific exemption screening per HR1 Section 10102
 - SNAP work requirement tracking (80 hours/month, $217.50/week income threshold)
 - SNAP good cause reporting
 - Combined Medicaid/SNAP compliance tracking for dual beneficiaries
 
 ### Advanced Document Processing (Future Enhancement)
+
 - Optical Character Recognition (OCR) for document text extraction
 - Intelligent Document Processing (IDP) for automatic data extraction from pay stubs
 - Automatic validation of hours against pay stub data
 - Document categorization and tagging suggestions
 
 ### Enhanced Analytics (Future Enhancement)
+
 - Compliance predictions based on historical patterns
 - Proactive alerts for upcoming compliance deadlines
 - Trend analysis and visualizations
 - Recommendations for meeting requirements
 
 ### Multi-Language Support (Future Enhancement)
+
 - Spanish language interface
 - Additional language support based on state demographics
 - Culturally appropriate content and examples

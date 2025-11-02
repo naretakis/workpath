@@ -18,11 +18,11 @@ Quality gates are automated checkpoints that ensure code quality at every stage 
    ├─ Edit files in src/
    ├─ Make changes
    └─ Save files
-   
+
 2. GIT ADD
    │
    └─ git add .
-   
+
 3. GIT COMMIT ⚡ PRE-COMMIT HOOK RUNS
    │
    ├─ ✅ ESLint (auto-fix)
@@ -32,7 +32,7 @@ Quality gates are automated checkpoints that ensure code quality at every stage 
    │
    ├─ ❌ BLOCKED if any check fails
    └─ ✅ COMMIT SUCCEEDS if all pass
-   
+
 4. GIT PUSH ⚡ PRE-PUSH HOOK RUNS
    │
    ├─ ✅ TypeScript type check (strict mode)
@@ -41,7 +41,7 @@ Quality gates are automated checkpoints that ensure code quality at every stage 
    │
    ├─ ❌ BLOCKED if any check fails
    └─ ✅ PUSH SUCCEEDS if all pass
-   
+
 5. CREATE PULL REQUEST ⚡ CI/CD PIPELINE RUNS
    │
    ├─ ✅ All pre-push checks
@@ -51,13 +51,13 @@ Quality gates are automated checkpoints that ensure code quality at every stage 
    │
    ├─ ❌ PR CANNOT MERGE if checks fail
    └─ ✅ PR READY FOR REVIEW if all pass
-   
+
 6. CODE REVIEW
    │
    ├─ Reviewer checks code
    ├─ Reviewer approves or requests changes
    └─ Address feedback if needed
-   
+
 7. MERGE TO MAIN ⚡ DEPLOYMENT PIPELINE RUNS
    │
    ├─ ✅ All PR checks
@@ -76,6 +76,7 @@ Quality gates are automated checkpoints that ensure code quality at every stage 
 **Purpose**: Catch simple issues immediately
 
 **Checks**:
+
 - ESLint with auto-fix (code quality)
 - Prettier formatting (code style)
 - Tests for changed files only (fast feedback)
@@ -86,6 +87,7 @@ Quality gates are automated checkpoints that ensure code quality at every stage 
 **What happens if it fails**: Commit is blocked, fix issues and try again
 
 **How to fix**:
+
 ```bash
 npm run quality:fix  # Auto-fix most issues
 git add .
@@ -97,6 +99,7 @@ git commit -m "your message"
 **Purpose**: Ensure code compiles and tests pass before sharing
 
 **Checks**:
+
 - TypeScript type checking (no compilation errors)
 - Full test suite with coverage (80%+ required)
 - Production build (ensure it builds)
@@ -106,6 +109,7 @@ git commit -m "your message"
 **What happens if it fails**: Push is blocked, fix issues and try again
 
 **How to fix**:
+
 ```bash
 npm run type-check      # See TypeScript errors
 npm run test:coverage   # See test failures
@@ -118,6 +122,7 @@ npm run build           # See build errors
 **Purpose**: Comprehensive validation before merge and deployment
 
 **Checks**:
+
 - All pre-push checks
 - E2E tests (full user workflows)
 - Lighthouse audit (PWA, performance, accessibility)
@@ -157,6 +162,7 @@ npm run build           # See build errors
 ```
 
 **Solution**:
+
 ```bash
 npm run lint:fix     # Auto-fix
 git add .
@@ -171,6 +177,7 @@ git commit -m "your message"
 ```
 
 **Solution**:
+
 ```bash
 npm run type-check   # See all errors
 # Fix TypeScript errors in your code
@@ -187,6 +194,7 @@ git push
 ```
 
 **Solution**:
+
 ```bash
 npm run test:coverage   # See what's not covered
 # Write tests for uncovered code
@@ -203,6 +211,7 @@ git push
 ```
 
 **Solution**:
+
 ```bash
 npm run build        # Reproduce locally
 # Fix import errors
@@ -251,7 +260,8 @@ git commit --no-verify -m "emergency: critical production fix"
 git push --no-verify
 ```
 
-**⚠️ WARNING**: 
+**⚠️ WARNING**:
+
 - Only use in true emergencies
 - Document why in commit message
 - Fix issues immediately after
@@ -278,6 +288,7 @@ git push --no-verify
 ## Summary
 
 Quality gates ensure:
+
 - ✅ No broken code is committed
 - ✅ No failing tests are pushed
 - ✅ No build errors reach production

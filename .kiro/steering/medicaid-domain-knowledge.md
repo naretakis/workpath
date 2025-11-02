@@ -9,15 +9,18 @@ This document provides essential domain knowledge about Medicaid work requiremen
 ## Legislative Context: HR1 Legislation (Section 71119)
 
 ### Effective Date
+
 - **January 1, 2027** (or earlier if state chooses)
 - Work requirements apply to Medicaid expansion adults only
 - Not applicable in 10 states that did not expand Medicaid: TX, WY, KS, WI, TN, MS, AL, GA, SC, FL
 - States may request exemption until December 31, 2028 by demonstrating "good faith effort"
 
 ### Scope
+
 Medicaid expansion adults (those who receive Medicaid as a result of Medicaid expansion after the Affordable Care Act) must meet work requirements to maintain eligibility.
 
 **Applicable Individuals** (as defined in HR1 Section 71119):
+
 - Individuals eligible to enroll (or enrolled) under section 1902(a)(10)(A)(i)(VIII)
 - OR individuals otherwise eligible under a waiver providing equivalent minimum essential coverage
 - Must be age 19-64, not pregnant, not on Medicare, and not otherwise eligible under the state plan
@@ -48,15 +51,18 @@ To maintain Medicaid eligibility, beneficiaries must meet ONE of the following:
 People are exempt from work requirements if they fall into any of these categories:
 
 ### 1. Age-Based Exemptions
+
 - **18 or younger**
 - **65 or older**
 
 ### 2. Family/Caregiving Exemptions
+
 - **Pregnant or postpartum**
 - **Living in a household with a dependent 13 or younger**
 - **Parent or guardian of someone with a disability**
 
 ### 3. Health/Disability Exemptions
+
 - **On (or entitled to) Medicare**
 - **Eligible for non-MAGI Medicaid**
 - **Disabled veteran**
@@ -69,26 +75,31 @@ People are exempt from work requirements if they fall into any of these categori
   - Serious or complex medical condition
 
 ### 4. Program Participation Exemptions
+
 - **On SNAP or TANF** and meeting (not exempt from) those work requirements
 - **Participating in drug or alcohol rehabilitation**
 
 ### 5. Other Exemptions
+
 - **Current inmate** (or within last 3 months of release)
 - **Indian, Urban Indian, California Indian, or IHS-eligible Indian**
 
 ## Certification and Renewal Changes (HR1 Section 71107)
 
 ### Certification Period
+
 - **Medicaid expansion adults**: 6-month certification period (reduced from 12 months) - **Effective Q1 2027**
 - **Other Medicaid groups**: Retain 12-month certification period
 - Exemption: Individuals described in subsection (xx)(9)(A)(ii)(II) (specified excluded individuals) are exempt from 6-month redeterminations
 
 ### Lookback Period for Renewals
+
 - Must have been meeting work requirements for **at least one month** since last certification
 - States can choose to require verification for more months (e.g., monthly for past 6 months)
 - States may conduct more frequent compliance verifications (not just at renewal)
 
 ### Initial Application Lookback
+
 - Must be compliant for **1-3 months** (state choice) before approval
 - State specifies the number of consecutive months required
 
@@ -120,6 +131,7 @@ States can choose to allow "short-term hardship" to count as meeting work requir
 ### Mandatory State Outreach
 
 States must notify applicable individuals of work requirements:
+
 - **Timing**: Beginning 3+ months before implementation date, and periodically thereafter
 - **Content must include**:
   - How to comply with requirements
@@ -131,6 +143,7 @@ States must notify applicable individuals of work requirements:
 ### Delivery Methods (Multi-channel required)
 
 Notice must be delivered by:
+
 1. **Regular mail** (or electronic format if elected by individual)
 2. **One or more additional forms**, which may include:
    - Telephone
@@ -144,6 +157,7 @@ Notice must be delivered by:
 ### Client Reporting Obligations
 
 Clients must report changes in work status that could make them ineligible:
+
 - Doing less than 80 hours/month of community engagement
 - No longer meeting income requirements
 - Changes that affect exemption status
@@ -151,16 +165,19 @@ Clients must report changes in work status that could make them ineligible:
 ### Verification Methods
 
 **For Employment/Income:**
+
 - Quarterly Wage Data (QWD) - limited usefulness due to 3-month aggregation
 - The Work Number database
 - Other income data sources
 - Pay stubs (client-submitted)
 
 **For Volunteering:**
+
 - Verification letter from organization
 - Documentation requirements still being defined by regulation
 
 **For Exemptions:**
+
 - Age: Application data, birth certificate
 - Household composition: Application data
 - Medicare/non-MAGI: Database checks
@@ -171,6 +188,7 @@ Clients must report changes in work status that could make them ineligible:
 ### Notice of Non-Compliance (HR1 Section 71119)
 
 If work status cannot be verified through databases:
+
 - State sends "notice of non-compliance" with specific information requirements
 - Client has **30 calendar days** (beginning on date notice is received) to respond with:
   - Evidence of work activity, OR
@@ -218,6 +236,7 @@ Systems must support county-level blanket hardship designations for disaster and
 ### Integration Requirements
 
 Systems should integrate with:
+
 - Quarterly Wage Data (QWD)
 - The Work Number
 - Medicare enrollment data
@@ -291,12 +310,14 @@ Systems should integrate with:
 When writing user-facing content, use plain language:
 
 ### ✅ Good Examples
+
 - "Work, volunteer, or go to school for 80 hours per month"
 - "You may be exempt if you have a child under 13"
 - "Upload a photo of your pay stub"
 - "You're on track - 65 hours logged this month"
 
 ### ❌ Bad Examples
+
 - "Engage in community engagement activities for 80 hours monthly"
 - "Exemption criteria per HR1 Section 71119(a)(2)(B)"
 - "Submit verification documentation"
@@ -305,16 +326,19 @@ When writing user-facing content, use plain language:
 ## References
 
 ### Primary Sources
+
 - **HR1 Legislation**: `docs/domain/hr1/119hr1enr.md`
 - **HR1 HHS Sections**: `docs/domain/hr1/119hr1enr-hhs-sections.md`
 - **Service Blueprint**: `docs/domain/medicaid-work-requirements-cfa-service-blueprint.md`
 
 ### Project Documents
+
 - **Requirements**: `.kiro/specs/medicaid-compliance-mvp/requirements.md`
 - **Design**: `.kiro/specs/medicaid-compliance-mvp/design.md`
 - **Tasks**: `.kiro/specs/medicaid-compliance-mvp/tasks.md`
 
 ### Related Steering Documents
+
 - **Development Standards**: `.kiro/steering/development-standards.md`
 - **Material-UI Guidelines**: `.kiro/steering/material-ui-guidelines.md`
 - **Git Workflow**: `.kiro/steering/git-workflow.md`

@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Commit Message Generator",
+  "description": "Reviews all pending git changes and generates a commit message following industry best practices",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review all pending changes in the git repository (staged and unstaged files). Assess what feature or fix was built by examining the diffs. Then write a clear, concise commit message that follows these best practices:\n\n1. Use imperative mood (e.g., \"Add feature\" not \"Added feature\")\n2. Keep the subject line under 50 characters\n3. Capitalize the subject line\n4. Don't end the subject line with a period\n5. If needed, add a body that explains what and why (not how)\n6. Separate subject from body with a blank line\n7. Wrap body at 72 characters\n\nFormat your response as:\n- First, show a summary of what changed\n- Then provide the commit message in a code block\n- Explain why this message follows best practices\n\nBe specific about what was built based on the actual code changes."
+  }
+}

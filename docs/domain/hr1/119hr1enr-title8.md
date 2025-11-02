@@ -6,13 +6,11 @@ SEC. 80001. Exemption of certain assets.
 
 (1) by striking “net value of the” and inserting the following: “net value of—
 
-
 “(A) the”;
 
 (2) by striking the period at the end and inserting a semicolon; and
 
 (3) by adding at the end the following:
-
 
 “(B) a family farm on which the family resides;
 
@@ -33,7 +31,6 @@ Section 455(a) of the Higher Education Act of 1965 (20 U.S.C. 1087e(a)) is amend
 
 (B) by striking subparagraph (A) and inserting the following:
 
-
 “(A) TERMINATION OF AUTHORITY TO MAKE INTEREST SUBSIDIZED LOANS TO GRADUATE AND PROFESSIONAL STUDENTS.—Subject to subparagraph (B), and notwithstanding any provision of this part or part B—
 
 “(i) for any period of instruction beginning on or after July 1, 2012, a graduate or professional student shall not be eligible to receive a Federal Direct Stafford loan under this part; and
@@ -42,11 +39,9 @@ Section 455(a) of the Higher Education Act of 1965 (20 U.S.C. 1087e(a)) is amend
 
 (C) by adding at the end the following:
 
-
 “(C) TERMINATION OF AUTHORITY TO MAKE FEDERAL DIRECT PLUS LOANS TO GRADUATE AND PROFESSIONAL STUDENTS.—Subject to paragraph (8) and notwithstanding any provision of this part or part B, for any period of instruction beginning on or after July 1, 2026, a graduate or professional student shall not be eligible to receive a Federal Direct PLUS Loan under this part.”; and
 
 (2) by adding at the end the following:
-
 
 “(4) GRADUATE AND PROFESSIONAL ANNUAL AND AGGREGATE LIMITS FOR FEDERAL DIRECT UNSUBSIDIZED STAFFORD LOANS BEGINNING JULY 1, 2026.—
 
@@ -165,7 +160,6 @@ SEC. 82001. Loan repayment.
 
 (D) by adding at the end the following:
 
-
 “(F) beginning on July 1, 2026, the income-based Repayment Assistance Plan under subsection (q), provided that—
 
 “(i) such Plan shall not be available for the repayment of excepted loans (as defined in paragraph (7)(E)); and
@@ -174,11 +168,9 @@ SEC. 82001. Loan repayment.
 
 (2) in paragraph (5), by amending subparagraph (B) to read as follows:
 
-
 “(B) repay the loan pursuant to an income-based repayment plan under subsection (q) or section 493C, as applicable.”; and
 
 (3) by adding at the end the following:
-
 
 “(6) TERMINATION AND LIMITATION OF REPAYMENT AUTHORITY.—
 
@@ -250,7 +242,6 @@ SEC. 82001. Loan repayment.
 
 (II) by amending paragraph (1) to read as follows:
 
-
 “(1) AUTHORITY OF SECRETARY TO REQUIRE.—The Secretary may require borrowers who have defaulted on loans made under this part that are assigned to the Secretary under subsection (c)(8) to repay those loans pursuant to an income-based repayment plan under section 493C.”; and
 
 (III) in the heading of paragraph (2), by striking “income contingent or”.
@@ -282,7 +273,6 @@ SEC. 82001. Loan repayment.
 (3) EFFECTIVE DATE.—The amendments made by this subsection shall take effect on July 1, 2028.
 
 (d) Repayment assistance plan.—Section 455 of the Higher Education Act of 1965 (20 U.S.C. 1087e) is amended by adding at the end the following new subsection:
-
 
 “(q) Repayment assistance plan.—
 
@@ -392,7 +382,6 @@ SEC. 82001. Loan repayment.
 
 (e) Federal consolidation loans.—Section 455(g) of the Higher Education Act of 1965 (20 U.S.C. 1087e(g)) is amended by adding at the end the following new paragraph:
 
-
 “(3) CONSOLIDATION LOANS MADE ON OR AFTER JULY 1, 2026.—A Federal Direct Consolidation Loan offered to a borrower under this part on or after July 1, 2026, may only be repaid pursuant to a repayment plan described in clause (i) or (ii) of subsection (d)(7)(A) of this section, as applicable, and the repayment schedule of such a Consolidation Loan shall be determined in accordance with such repayment plan.”.
 
 (f) Income-Based repayment.—
@@ -400,7 +389,6 @@ SEC. 82001. Loan repayment.
 (1) AMENDMENTS.—
 
 (A) EXCEPTED CONSOLIDATION LOAN DEFINED.—Section 493C(a)(2) of the Higher Education Act of 1965 (20 U.S.C. 1098e(a)(2)) is amended to read as follows:
-
 
 “(2) EXCEPTED CONSOLIDATION LOAN.—
 
@@ -418,7 +406,6 @@ SEC. 82001. Loan repayment.
 
 (B) TERMINATION OF PARTIAL FINANCIAL HARDSHIP ELIGIBILITY.—Section 493C(a)(3) of the Higher Education Act of 1965 (20 U.S.C. 1098e(a)(3)) is amended to read as follows:
 
-
 “(3) APPLICABLE AMOUNT.—The term ‘applicable amount’ means 15 percent of the result obtained by calculating, on at least an annual basis, the amount by which—
 
 “(A) the borrower's, and the borrower's spouse's (if applicable), adjusted gross income; exceeds
@@ -429,11 +416,9 @@ SEC. 82001. Loan repayment.
 
 (i) by amending paragraph (1) to read as follows:
 
-
 “(1) a borrower of any loan made, insured, or guaranteed under part B or D (other than an excepted PLUS loan or excepted consolidation loan), may elect to have the borrower’s aggregate monthly payment for all such loans not exceed the applicable amount divided by 12;”;
 
 (ii) by striking paragraph (6) and inserting the following:
-
 
 “(6) if the monthly payment amount calculated under this section for all loans made to the borrower under part B or D (other than an excepted PLUS loan or excepted consolidation loan) exceeds the monthly amount calculated under section 428(b)(9)(A)(i) or 455(d)(1)(A), based on a 10-year repayment period, when the borrower first made the election described in this subsection (referred to in this paragraph as the ‘standard monthly repayment amount’), or if the borrower no longer wishes to continue the election under this subsection, then—
 
@@ -446,7 +431,6 @@ SEC. 82001. Loan repayment.
 (iv) in paragraph (8), by inserting “or the Repayment Assistance Program under section 455(q)” after “standard repayment plan”.
 
 (D) ELIGIBILITY DETERMINATIONS.—Section 493C(c) of the Higher Education Act of 1965 (20 U.S.C. 1098e(c)) is amended to read as follows:
-
 
 “(c) Eligibility determinations; automatic recertification.—
 
@@ -478,7 +462,6 @@ SEC. 82001. Loan repayment.
 
 (g) FFEL adjustment.—Section 428(b)(9)(A)(v) of the Higher Education Act of 1965 (20 U.S.C. 1078(b)(9)(A)(v)) is amended by striking “who has a partial financial hardship”.
 
-
 SEC. 82002. Deferment; forbearance.
 (a) Sunset of economic hardship and unemployment deferments.—Section 455(f) of the Higher Education Act of 1965 (20 U.S.C. 1087e(f)) is amended—
 
@@ -492,14 +475,11 @@ SEC. 82002. Deferment; forbearance.
 
 (3) by adding at the end the following:
 
-
 “(7) SUNSET OF UNEMPLOYMENT AND ECONOMIC HARDSHIP DEFERMENTS.—A borrower who receives a loan made under this part on or after July 1, 2027, shall not be eligible to defer such loan under subparagraph (B) or (D) of paragraph (2).”.
 
 (b) Forbearance on loans made under this part on or after July 1, 2027.—Section 455(f) of the Higher Education Act of 1965 (20 U.S.C. 1087e(f)) is amended by adding at the end the following:
 
-
 “(8) FORBEARANCE ON LOANS MADE UNDER THIS PART ON OR AFTER JULY 1, 2027.—A borrower who receives a loan made under this part on or after July 1, 2027, may only be eligible for a forbearance on such loan pursuant to section 428(c)(3)(B) that does not exceed 9 months during any 24-month period.”.
-
 
 SEC. 82003. Loan rehabilitation.
 (a) Updating loan rehabilitation limits.—
@@ -512,7 +492,6 @@ SEC. 82003. Loan rehabilitation.
 
 (b) Minimum monthly payment amount.—Section 428F(a)(1)(B) of the Higher Education Act of 1965 (20 U.S.C. 1078–6(a)(1)(B)) is amended by adding at the end the following: “With respect to a borrower who has 1 or more loans made under part D on or after July 1, 2027 that are described in subparagraph (A), the total monthly payment of the borrower for all such loans shall not be less than $10.”.
 
-
 SEC. 82004. Public service loan forgiveness.
 Section 455(m)(1)(A) of the Higher Education Act of 1965 (20 U.S.C. 1087e(m)(1)(A)) is amended—
 
@@ -524,10 +503,8 @@ Section 455(m)(1)(A) of the Higher Education Act of 1965 (20 U.S.C. 1087e(m)(1)(
 
 “(v) on-time payments under the Repayment Assistance Plan under subsection (q); and”.
 
-
 SEC. 82005. Student loan servicing.
 Paragraph (1) of section 458(a) of the Higher Education Act of 1965 (20 U.S.C. 1087h(a)(1)) is amended to read as follows:
-
 
 “(1) ADDITIONAL MANDATORY FUNDS FOR SERVICING.—There shall be available to the Secretary (in addition to any other amounts appropriated under any appropriations Act for administrative costs under this part and part B and out of any money in the Treasury not otherwise appropriated) $1,000,000,000 to be obligated for administrative costs under this part and part B, including the costs of servicing the direct student loan programs under this part, which shall remain available until expended.”.
 
@@ -537,7 +514,6 @@ SEC. 83001. Eligibility.
 (a) Foreign income and federal pell grant eligibility.—
 
 (1) ADJUSTED GROSS INCOME DEFINED.—Section 401(a)(2)(A) of the Higher Education Act of 1965 (20 U.S.C. 1070a(a)(2)(A)) is amended to read as follows:
-
 
 “(A) the term ‘adjusted gross income’ means—
 
@@ -573,15 +549,12 @@ SEC. 83001. Eligibility.
 
 (1) IN GENERAL.—Section 401(b)(1) of the Higher Education Act of 1965 (20 U.S.C. 1070a(b)(1)) is amended by adding at the end the following:
 
-
 “(F) INELIGIBILITY OF STUDENTS WITH A HIGH STUDENT AID INDEX.—Notwithstanding subparagraphs (A) through (E), a student shall not be eligible for a Federal Pell Grant under this subsection for an academic year in which the student has a student aid index that equals or exceeds twice the amount of the total maximum Federal Pell Grant for such academic year.”.
 
 (2) EFFECTIVE DATE.—The amendment made by paragraph (1) shall take effect on July 1, 2026.
 
-
 SEC. 83002. Workforce Pell Grants.
 (a) In general.—Section 401 of the Higher Education Act of 1965 (20 U.S.C. 1070a) is amended by adding at the end the following:
-
 
 “(k) Workforce pell grant program.—
 
@@ -618,7 +591,6 @@ SEC. 83002. Workforce Pell Grants.
 (1) by redesignating paragraphs (3) and (4) as paragraphs (4) and (5), respectively; and
 
 (2) by inserting after paragraph (2) the following:
-
 
 “(3) (A) A program is an eligible program for purposes of the Workforce Pell Grant program under section 401(k) only if—
 
@@ -672,14 +644,11 @@ SEC. 83002. Workforce Pell Grants.
 
 (c) Effective date; applicability.—The amendments made by this section shall take effect on July 1, 2026, and shall apply with respect to award year 2026–2027 and each succeeding award year.
 
-
 SEC. 83003. Pell shortfall.
 Section 401(b)(7)(A)(iii) of the Higher Education Act of 1965 (20 U.S.C. 1070a(b)(7)(A)(iii)) is amended by striking “$2,170,000,000” and inserting “$12,670,000,000”.
 
-
 SEC. 83004. Federal Pell Grant exclusion relating to other grant aid.
 Section 401(d) of the Higher Education Act of 1965 (20 U.S.C. 1070a(d)) is amended by adding at the end the following:
-
 
 “(6) EXCLUSION.—Beginning on July 1, 2026, and notwithstanding this subsection or subsection (b), a student shall not be eligible for a Federal Pell Grant under subsection (b) during any period for which the student receives grant aid from non-Federal sources, including States, institutions of higher education, or private sources, in an amount that equals or exceeds the student's cost of attendance for such period.”.
 
@@ -695,7 +664,6 @@ Section 454 of the Higher Education Act of 1965 (20 U.S.C. 1087d) is amended—
 (B) by redesignating paragraph (6) as paragraph (7); and
 
 (C) by inserting after paragraph (5) the following:
-
 
 “(6) provide assurances that, beginning July 1, 2026, the institution will comply with all requirements of subsection (c); and”;
 
@@ -769,7 +737,6 @@ SEC. 85001. Delay of rule relating to borrower defense to repayment.
 (a) Delay.—Beginning on the date of enactment of this section, for loans that first originate before July 1, 2035, the provisions of subpart D of part 685 of title 34, Code of Federal Regulations (relating to borrower defense to repayment), as added or amended by the final regulations published by the Department of Education on November 1, 2022, and titled “Institutional Eligibility Under the Higher Education Act of 1965, as Amended; Student Assistance General Provisions; Federal Perkins Loan Program; Federal Family Education Loan Program; and William D. Ford Federal Direct Loan Program” (87 Fed. Reg. 65904) shall not be in effect.
 
 (b) Effect.—Beginning on the date of enactment of this section, with respect to loans that first originate before July 1, 2035, any regulations relating to borrower defense to repayment that took effect on July 1, 2020, are restored and revived as such regulations were in effect on such date.
-
 
 SEC. 85002. Delay of rule relating to closed school discharges.
 (a) Delay.—Beginning on the date of enactment of this section, for loans that first originate before July 1, 2035, the provisions of sections 674.33(g), 682.402(d), and 685.214 of title 34, Code of Federal Regulations (relating to closed school discharges), as added or amended by the final regulations published by the Department of Education on November 1, 2022, and titled “Institutional Eligibility Under the Higher Education Act of 1965, as Amended; Student Assistance General Provisions; Federal Perkins Loan Program; Federal Family Education Loan Program; and William D. Ford Federal Direct Loan Program” (87 Fed. Reg. 65904), shall not be in effect.

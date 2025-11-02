@@ -76,14 +76,11 @@ SEC. 50101. Onshore oil and gas leasing.
 
 (2) in subsection (p), by adding at the end the following:
 
-
 “(4) TERM.—A permit to drill approved under this subsection shall be valid for a single, non-renewable 4-year period beginning on the date that the permit to drill is approved.”; and
 
 (3) by striking subsection (q) and inserting the following:
 
-
 “(q) Commingling of production.—The Secretary of the Interior shall approve applications allowing for the commingling of production from 2 or more sources (including the area of an oil and gas lease, the area included in a drilling spacing unit, a unit participating area, a communitized area, or non-Federal property) before production reaches the point of royalty measurement regardless of ownership, the royalty rates, and the number or percentage of acres for each source if the applicant agrees to install measurement devices for each source, utilize an allocation method that achieves volume measurement uncertainty levels within plus or minus 2 percent during the production phase reported on a monthly basis, or utilize an approved periodic well testing methodology. Production from multiple oil and gas leases, drilling spacing units, communitized areas, or participating areas from a single wellbore shall be considered a single source. Nothing in this subsection shall prevent the Secretary of the Interior from continuing the current practice of exercising discretion to authorize higher percentage volume measurement uncertainty levels if appropriate technical and economic justifications have been provided.”.
-
 
 SEC. 50102. Offshore oil and gas leasing.
 (a) Lease sales.—
@@ -170,15 +167,12 @@ SEC. 50102. Offshore oil and gas leasing.
 
 (3) by adding at the end the following:
 
-
 “(D) $650,000,000 for each of fiscal years 2025 through 2034; and
 
 “(E) $500,000,000 for each of fiscal years 2035 through 2055.”.
 
-
 SEC. 50103. Royalties on extracted methane.
 Section 50263 of Public Law 117–169 (30 U.S.C. 1727) is repealed.
-
 
 SEC. 50104. Alaska oil and gas leasing.
 (a) Definitions.—In this section:
@@ -225,7 +219,6 @@ SEC. 50104. Alaska oil and gas leasing.
 
 (2) the balance shall be deposited into the Treasury as miscellaneous receipts.
 
-
 SEC. 50105. National Petroleum Reserve–Alaska.
 (a) Definitions.—In this section:
 
@@ -259,11 +252,9 @@ SEC. 50105. National Petroleum Reserve–Alaska.
 
 (1) by striking “All receipts from” and inserting the following:
 
-
 “(1) IN GENERAL.—Except as provided in paragraph (2), all receipts from”; and
 
 (2) by adding at the end the following:
-
 
 “(2) PERCENT SHARE FOR FISCAL YEAR 2034 AND THEREAFTER.—Beginning in fiscal year 2034, of the receipts from sales, rentals, bonuses, and royalties on leases issued pursuant to this section after the date of enactment of the Act entitled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’ (119th Congress)—
 
@@ -300,7 +291,6 @@ SEC. 50201. Coal leasing.
 
 (B) after completing the actions required by clauses (i) through (iv) of paragraph (1)(A), grant the qualified application and issue the applicable lease to the person that submitted the qualified application if that person submitted the winning bid in the lease sale held under clause (iii) of paragraph (1)(A).
 
-
 SEC. 50202. Coal royalty.
 (a) Rate.—Section 7(a) of the Mineral Leasing Act (30 U.S.C. 207(a)) is amended, in the fourth sentence, by striking “121⁄2 per centum” and inserting “121⁄2 percent, except such amount shall be not more than 7 percent during the period that begins on the date of enactment of the Act entitled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’ (119th Congress) and ends September 30, 2034,”.
 
@@ -311,7 +301,6 @@ SEC. 50202. Coal royalty.
 (2) that has not been terminated.
 
 (c) Advance royalties.—With respect to a lease issued under section 2 of the Mineral Leasing Act (30 U.S.C. 201) for which the lessee has paid advance royalties under section 7(b) of that Act (30 U.S.C. 207(b)), the Secretary of the Interior shall provide to the lessee a credit for the difference between the amount paid by the lessee in advance royalties for the lease before the date of the enactment of this Act and the amount the lessee would have been required to pay if the amendment made by subsection (a) had been made before the lessee paid advance royalties for the lease.
-
 
 SEC. 50203. Leases for known recoverable coal resources.
 Notwithstanding section 2(a)(3)(A) of the Mineral Leasing Act (30 U.S.C. 201(a)(3)(A)) and section 202(a) of the Federal Land Policy and Management Act of 1976 (43 U.S.C. 1712(a)), not later than 90 days after the date of enactment of this Act, the Secretary of the Interior shall make available for lease known recoverable coal resources of not less than 4,000,000 additional acres on Federal land located in the 48 contiguous States and Alaska subject to the jurisdiction of the Secretary, but which shall not include any Federal land within—
@@ -333,7 +322,6 @@ Notwithstanding section 2(a)(3)(A) of the Mineral Leasing Act (30 U.S.C. 201(a)(
 (8) a unit of the National Fish Hatchery System; or
 
 (9) a unit of the National Park System.
-
 
 SEC. 50204. Authorization to mine Federal coal.
 (a) Authorization.—In order to provide access to coal reserves in adjacent State or private land that without an authorization could not be mined economically, Federal coal reserves located in Federal land subject to a mining plan previously approved by the Secretary of the Interior as of the date of enactment of this Act and adjacent to coal reserves in adjacent State or private land are authorized to be mined.
@@ -396,7 +384,6 @@ SEC. 50301. Timber sales and long-term contracting for the Forest Service and th
 (B) CONTRACT LENGTH.—The period of a contract entered into to meet the requirement under subparagraph (A) shall be not less than 20 years, with options for extensions or renewals, as determined by the Secretary.
 
 (C) RECEIPTS.—Any monies derived from a contract entered into to meet the requirements under subparagraphs (A) and (B) shall be deposited in the general fund of the Treasury.
-
 
 SEC. 50302. Renewable energy fees on Federal land.
 (a) Definitions.—In this section:
@@ -483,7 +470,6 @@ SEC. 50302. Renewable energy fees on Federal land.
 
 (2) TERMINATION OF RIGHT-OF-WAY.—The Secretary may terminate a right-of-way for a renewable energy project if the Secretary does not receive payment for the acreage rent under subsection (b) or the capacity fee under subsection (c) by the date that is 90 days after the date on which the payment was due.
 
-
 SEC. 50303. Renewable energy revenue sharing.
 (a) Definitions.—In this section:
 
@@ -539,7 +525,6 @@ SEC. 50303. Renewable energy revenue sharing.
 
 (C) TIMING.—The amounts required to be paid under paragraph (1)(B) for an applicable fiscal year shall be made available in the fiscal year that immediately follows the fiscal year for which the amounts were collected.
 
-
 SEC. 50304. Rescission of National Park Service and Bureau of Land Management funds.
 There are rescinded the unobligated balances of amounts made available by the following sections of Public Law 117–169 (commonly known as the “Inflation Reduction Act of 2022”) (136 Stat. 1818):
 
@@ -548,7 +533,6 @@ There are rescinded the unobligated balances of amounts made available by the fo
 (2) Section 50222 (136 Stat. 2052).
 
 (3) Section 50223 (136 Stat. 2052).
-
 
 SEC. 50305. Celebrating America's 250th anniversary.
 In addition to amounts otherwise available, there is appropriated to the Secretary of the Interior (acting through the Director of the National Park Service) for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $150,000,000 for events, celebrations, and activities surrounding the observance and commemoration of the 250th anniversary of the founding of the United States, to remain available through fiscal year 2028.
@@ -565,7 +549,6 @@ SEC. 50401. Strategic Petroleum Reserve.
 (2) $171,000,000 to acquire, by purchase, petroleum products for storage in the Strategic Petroleum Reserve.
 
 (c) Repeal of strategic petroleum reserve drawdown and sale mandate.—Section 20003 of Public Law 115–97 (42 U.S.C. 6241 note) is repealed.
-
 
 SEC. 50402. Repeals; rescissions.
 (a) Repeal and rescission.—Section 50142 of Public Law 117–169 (136 Stat. 2044) (commonly known as the “Inflation Reduction Act of 2022”) is repealed and the unobligated balance of amounts made available under that section (as in effect on the day before the date of enactment of this Act) is rescinded.
@@ -592,7 +575,6 @@ SEC. 50402. Repeals; rescissions.
 
 (H) Section 50161 (42 U.S.C. 17113b).
 
-
 SEC. 50403. Energy dominance financing.
 (a) In general.—Section 1706 of the Energy Policy Act of 2005 (42 U.S.C. 16517) is amended—
 
@@ -603,7 +585,6 @@ SEC. 50403. Energy dominance financing.
 (B) in paragraph (2), by striking “avoid” and all that follows through the period at the end and inserting “increase capacity or output; or”; and
 
 (C) by adding at the end the following:
-
 
 “(3) support or enable the provision of known or forecastable electric supply at time intervals necessary to maintain or enhance grid reliability or other system adequacy needs.”;
 
@@ -623,7 +604,6 @@ SEC. 50403. Energy dominance financing.
 
 (6) by adding at the end the following:
 
-
 “(f) Funding.—
 
 “(1) IN GENERAL.—In addition to amounts otherwise available, there is appropriated to the Secretary for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $1,000,000,000, to remain available through September 30, 2028, to carry out activities under this section.
@@ -631,7 +611,6 @@ SEC. 50403. Energy dominance financing.
 “(2) ADMINISTRATIVE COSTS.—Of the amount made available under paragraph (1), the Secretary shall use not more than 3 percent for administrative expenses.”.
 
 (b) Commitment authority.—Section 50144(b) of Public Law 117–169 (commonly known as the “Inflation Reduction Act of 2022”) (136 Stat. 2045) is amended by striking “2026” and inserting “2028”.
-
 
 SEC. 50404. Transformational artificial intelligence models.
 (a) Definitions.—In this section:

@@ -1,12 +1,12 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',  // Blue
+      main: "#1976d2", // Blue
     },
     secondary: {
-      main: '#dc004e',  // Pink
+      main: "#dc004e", // Pink
     },
   },
   breakpoints: {

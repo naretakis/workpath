@@ -18,9 +18,11 @@ This document provides a comprehensive guide for bootstrapping a new Progressive
 ## Project Overview
 
 ### Core Concept
+
 This new PWA will leverage a guided, multi-step user experience with stepper-like functionality, local-first data storage, and comprehensive validation. The application will guide users through a series of pages to complete a complex workflow.
 
 ### Key Similarities to eAPD-Next
+
 - **Guided Multi-Step Experience**: Users progress through structured steps with clear navigation
 - **Local-First Architecture**: All data stored locally using IndexedDB, no server dependencies
 - **Progressive Web App**: Offline-capable, installable PWA
@@ -30,6 +32,7 @@ This new PWA will leverage a guided, multi-step user experience with stepper-lik
 - **Export Capabilities**: Multiple output formats for completed workflows
 
 ### Key Differences
+
 - **No Rich Text Editing**: Simplified without Milkdown or complex text editing
 - **Domain-Specific Workflow**: Tailored to new business domain
 - **Testing-First Approach**: Comprehensive test coverage from project inception
@@ -38,6 +41,7 @@ This new PWA will leverage a guided, multi-step user experience with stepper-lik
 ## Technology Stack
 
 ### Core Technologies
+
 ```json
 {
   "framework": "Next.js 14+ (App Router)",
@@ -55,6 +59,7 @@ This new PWA will leverage a guided, multi-step user experience with stepper-lik
 ```
 
 ### Development Tools
+
 ```json
 {
   "package_manager": "npm",
@@ -69,6 +74,7 @@ This new PWA will leverage a guided, multi-step user experience with stepper-lik
 ## Project Structure
 
 ### Directory Layout
+
 ```
 [PROJECT_NAME]/
 ├── .github/
@@ -127,6 +133,7 @@ This new PWA will leverage a guided, multi-step user experience with stepper-lik
 ### Kiro Steering Documents Setup
 
 #### 1. Domain Knowledge Document Template
+
 Create `.kiro/steering/[domain]-knowledge.md`:
 
 ```markdown
@@ -135,30 +142,39 @@ Create `.kiro/steering/[domain]-knowledge.md`:
 ## [Domain] Overview
 
 ### What is [Core Concept]?
+
 [Detailed explanation of the business domain]
 
 ### [Domain] Types and Purposes
+
 [Different categories or types within the domain]
 
 ### Core [Domain] Concepts
+
 [Key concepts developers need to understand]
 
 ## Regulatory/Business Context
+
 [Any regulations, standards, or business rules that apply]
 
 ## User Pain Points
+
 [Common problems users face that the application solves]
 
 ## Workflow Structure
+
 [Description of the multi-step process users will follow]
 
 ## Data Management Requirements
+
 [How data should be structured and stored]
 
 ## Integration Requirements
+
 [Any external systems or data sources]
 
 ## Development Considerations
+
 [Technical implementation guidance specific to this domain]
 ```
 
@@ -167,21 +183,27 @@ Create `.kiro/steering/[domain]-knowledge.md`:
 Create example specs in `docs/development/kiro-spec-templates/`:
 
 **Feature Spec Template:**
+
 ```markdown
 # Feature Spec: [Feature Name]
 
 ## Overview
+
 Brief description of the feature and its purpose within the workflow.
 
 ## User Story
+
 As a [user type], I want to [action] so that [benefit].
 
 ## Requirements
+
 ### Functional Requirements
+
 - [ ] Requirement 1
 - [ ] Requirement 2
 
 ### Technical Requirements
+
 - [ ] TypeScript interfaces defined
 - [ ] Material-UI components used
 - [ ] IndexedDB storage implemented
@@ -189,32 +211,41 @@ As a [user type], I want to [action] so that [benefit].
 - [ ] Tests written (unit + integration)
 
 ## Design Specifications
+
 ### UI Components
+
 - Component 1: [Description]
 - Component 2: [Description]
 
 ### Data Flow
+
 [How data moves through the component]
 
 ### Validation Rules
+
 [What validation is required]
 
 ## Testing Requirements
+
 ### Unit Tests
+
 - [ ] Component rendering
 - [ ] User interactions
 - [ ] Validation logic
 - [ ] Data operations
 
 ### Integration Tests
+
 - [ ] Workflow integration
 - [ ] Data persistence
 - [ ] Navigation flow
 
 ## Implementation Notes
+
 [Any specific technical considerations]
 
 ## Acceptance Criteria
+
 - [ ] Criteria 1
 - [ ] Criteria 2
 ```
@@ -249,6 +280,7 @@ Create `.kiro/hooks/` directory with:
 **Purpose**: Ensure code quality and prevent build failures
 
 **Actions**:
+
 1. Run TypeScript type checking
 2. Execute ESLint with auto-fix
 3. Run Prettier formatting
@@ -264,37 +296,50 @@ Create `.kiro/hooks/` directory with:
 ### Core Documentation Files
 
 #### README.md Structure
+
 ```markdown
 # [Project Name]
 
 Brief description of the project and its purpose.
 
 ## Features
+
 - Feature 1
 - Feature 2
 
 ## Getting Started
+
 ### Prerequisites
+
 ### Installation
+
 ### Development
 
 ## Usage
+
 ### Basic Workflow
+
 ### Advanced Features
 
 ## Contributing
+
 ### Development Process
+
 ### Code Standards
+
 ### Testing Requirements
 
 ## Deployment
+
 ### GitHub Pages Setup
+
 ### CI/CD Pipeline
 
 ## License
 ```
 
 #### CHANGELOG.md Structure
+
 ```markdown
 # Changelog
 
@@ -306,18 +351,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.0.0] - YYYY-MM-DD
+
 ### Added
+
 - Initial release
 - Core workflow functionality
 - PWA capabilities
 
 ### Changed
+
 - N/A
 
 ### Fixed
+
 - N/A
 
 ### Security
+
 - N/A
 ```
 
@@ -351,6 +401,7 @@ docs/
 ## Testing Strategy (From Day One)
 
 ### Testing Philosophy
+
 - **Test-Driven Development**: Write tests before or alongside implementation
 - **Comprehensive Coverage**: Minimum 80% code coverage maintained
 - **Quality Gates**: Automated testing prevents deployment of broken code
@@ -359,45 +410,48 @@ docs/
 ### Testing Layers
 
 #### 1. Unit Tests (Jest + React Testing Library)
+
 ```typescript
 // Example component test structure
-describe('ComponentName', () => {
-  it('should render with default props', () => {
+describe("ComponentName", () => {
+  it("should render with default props", () => {
     // Test implementation
   });
 
-  it('should handle user interactions correctly', () => {
+  it("should handle user interactions correctly", () => {
     // Test implementation
   });
 
-  it('should validate form inputs properly', () => {
+  it("should validate form inputs properly", () => {
     // Test implementation
   });
 
-  it('should be accessible to screen readers', () => {
+  it("should be accessible to screen readers", () => {
     // Accessibility test
   });
 });
 ```
 
 #### 2. Integration Tests
+
 ```typescript
 // Example integration test
-describe('Workflow Integration', () => {
-  it('should complete full user workflow', () => {
+describe("Workflow Integration", () => {
+  it("should complete full user workflow", () => {
     // Multi-component integration test
   });
 
-  it('should persist data correctly', () => {
+  it("should persist data correctly", () => {
     // IndexedDB integration test
   });
 });
 ```
 
 #### 3. End-to-End Tests (Playwright)
+
 ```typescript
 // Example E2E test
-test('complete workflow end-to-end', async ({ page }) => {
+test("complete workflow end-to-end", async ({ page }) => {
   // Full user journey test
 });
 ```
@@ -405,14 +459,15 @@ test('complete workflow end-to-end', async ({ page }) => {
 ### Testing Configuration
 
 #### Jest Configuration (`jest.config.js`)
+
 ```javascript
 module.exports = {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/tests/setup.ts"],
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts',
-    '!src/**/*.stories.tsx',
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.d.ts",
+    "!src/**/*.stories.tsx",
   ],
   coverageThreshold: {
     global: {
@@ -423,12 +478,13 @@ module.exports = {
     },
   },
   moduleNameMapping: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 };
 ```
 
 #### Test Scripts (`package.json`)
+
 ```json
 {
   "scripts": {
@@ -446,42 +502,43 @@ module.exports = {
 ### GitHub Actions Configuration
 
 #### Deployment Workflow (`.github/workflows/deploy.yml`)
+
 ```yaml
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run type checking
         run: npm run type-check
-      
+
       - name: Run linting
         run: npm run lint
-      
+
       - name: Run tests with coverage
         run: npm run test:coverage
-      
+
       - name: Run E2E tests
         run: npm run test:e2e
-      
+
       - name: Build application
         run: npm run build
         env:
@@ -491,24 +548,24 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-      
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build application
         run: npm run build
         env:
           NEXT_PUBLIC_VERSION: ${{ github.sha }}
-      
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -521,6 +578,7 @@ jobs:
 #### Pre-commit Hooks (Husky + lint-staged)
 
 **`.husky/pre-commit`:**
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -531,6 +589,7 @@ npm run test:coverage
 ```
 
 **`package.json` lint-staged configuration:**
+
 ```json
 {
   "lint-staged": {
@@ -539,9 +598,7 @@ npm run test:coverage
       "prettier --write",
       "jest --findRelatedTests --passWithNoTests"
     ],
-    "*.{json,md,yml,yaml}": [
-      "prettier --write"
-    ]
+    "*.{json,md,yml,yaml}": ["prettier --write"]
   }
 }
 ```
@@ -549,22 +606,23 @@ npm run test:coverage
 #### Quality Gates Script
 
 Create `scripts/quality-check.js`:
+
 ```javascript
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
+const { execSync } = require("child_process");
 
 const checks = [
-  { name: 'Type Check', command: 'npm run type-check' },
-  { name: 'Linting', command: 'npm run lint' },
-  { name: 'Tests', command: 'npm run test:coverage' },
-  { name: 'Build', command: 'npm run build' },
+  { name: "Type Check", command: "npm run type-check" },
+  { name: "Linting", command: "npm run lint" },
+  { name: "Tests", command: "npm run test:coverage" },
+  { name: "Build", command: "npm run build" },
 ];
 
 for (const check of checks) {
   console.log(`Running ${check.name}...`);
   try {
-    execSync(check.command, { stdio: 'inherit' });
+    execSync(check.command, { stdio: "inherit" });
     console.log(`✅ ${check.name} passed`);
   } catch (error) {
     console.error(`❌ ${check.name} failed`);
@@ -572,12 +630,13 @@ for (const check of checks) {
   }
 }
 
-console.log('🎉 All quality checks passed!');
+console.log("🎉 All quality checks passed!");
 ```
 
 ## Development Standards and Best Practices
 
 ### Code Quality Standards
+
 - **TypeScript Strict Mode**: All strict flags enabled
 - **Component Standards**: Functional components with proper TypeScript interfaces
 - **Accessibility**: WCAG 2.1 AA compliance required
@@ -585,12 +644,14 @@ console.log('🎉 All quality checks passed!');
 - **Testing**: 80% minimum code coverage
 
 ### Material-UI Integration
+
 - **Component Selection**: Use appropriate MUI components for each use case
 - **Theme Consistency**: Follow established theme patterns
 - **Responsive Design**: Mobile-first approach with breakpoint usage
 - **Accessibility**: Proper ARIA labels and semantic HTML
 
 ### Git Workflow
+
 - **Branch Strategy**: Feature branches from main, direct merge to main
 - **Commit Messages**: Conventional commit format
 - **Code Review**: Required for all changes
@@ -601,6 +662,7 @@ console.log('🎉 All quality checks passed!');
 ### Automated Quality Checks
 
 #### 1. Pre-commit Validation
+
 - TypeScript compilation
 - ESLint with auto-fix
 - Prettier formatting
@@ -608,6 +670,7 @@ console.log('🎉 All quality checks passed!');
 - Coverage threshold validation
 
 #### 2. CI/CD Pipeline Validation
+
 - Full test suite execution
 - Build verification
 - E2E test validation
@@ -616,6 +679,7 @@ console.log('🎉 All quality checks passed!');
 #### 3. Kiro Hook Integration
 
 **Build Error Prevention Hook:**
+
 ```markdown
 # Build Error Prevention Hook
 
@@ -623,6 +687,7 @@ console.log('🎉 All quality checks passed!');
 **Purpose**: Catch and fix build errors immediately
 
 **Actions**:
+
 1. Run TypeScript check on changed files
 2. Auto-fix ESLint issues
 3. Run related tests
@@ -630,6 +695,7 @@ console.log('🎉 All quality checks passed!');
 5. Suggest fixes for common issues
 
 **Benefits**:
+
 - Prevents accumulation of build errors
 - Reduces deployment failures
 - Maintains development velocity
@@ -638,6 +704,7 @@ console.log('🎉 All quality checks passed!');
 ### Testing Automation
 
 #### Continuous Testing Strategy
+
 ```json
 {
   "scripts": {
@@ -654,6 +721,7 @@ console.log('🎉 All quality checks passed!');
 ### Phase 1: Project Initialization
 
 1. **Create New Repository**
+
    ```bash
    mkdir [project-name]
    cd [project-name]
@@ -661,6 +729,7 @@ console.log('🎉 All quality checks passed!');
    ```
 
 2. **Setup Next.js with TypeScript**
+
    ```bash
    npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir
    ```
@@ -678,6 +747,7 @@ console.log('🎉 All quality checks passed!');
 ### Phase 2: Project Structure Setup
 
 4. **Create Directory Structure**
+
    ```bash
    mkdir -p .kiro/steering docs/{domain,design,testing,development,tasks}
    mkdir -p src/{components/{common,forms,layout},hooks,lib/{storage,validation,export},theme,types}
@@ -759,6 +829,7 @@ console.log('🎉 All quality checks passed!');
 ## Success Metrics
 
 ### Quality Metrics
+
 - **Test Coverage**: Maintain 80%+ coverage
 - **Build Success Rate**: 95%+ successful deployments
 - **Code Quality**: Zero ESLint errors, consistent Prettier formatting
@@ -766,6 +837,7 @@ console.log('🎉 All quality checks passed!');
 - **Accessibility**: WCAG 2.1 AA compliance
 
 ### Development Velocity Metrics
+
 - **Feature Delivery**: Consistent sprint velocity
 - **Bug Rate**: <5% post-deployment bugs
 - **Technical Debt**: Minimal accumulation through quality gates

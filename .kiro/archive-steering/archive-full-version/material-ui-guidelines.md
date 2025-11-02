@@ -19,21 +19,21 @@ This document defines the standards and best practices for using Material-UI v5+
 
 ```typescript
 // src/theme/theme.ts
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
-      contrastText: '#ffffff',
+      main: "#1976d2",
+      light: "#42a5f5",
+      dark: "#1565c0",
+      contrastText: "#ffffff",
     },
     secondary: {
-      main: '#dc004e',
-      light: '#e33371',
-      dark: '#9a0036',
-      contrastText: '#ffffff',
+      main: "#dc004e",
+      light: "#e33371",
+      dark: "#9a0036",
+      contrastText: "#ffffff",
     },
     // Additional colors...
   },
@@ -44,8 +44,8 @@ export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 320,  // Mobile-first
-      md: 768,  // Tablet
+      sm: 320, // Mobile-first
+      md: 768, // Tablet
       lg: 1024, // Desktop
       xl: 1920, // Large desktop
     },
@@ -319,13 +319,13 @@ Always start with mobile styles and enhance for larger screens:
     display: 'flex',
     flexDirection: 'column',
     padding: 2,
-    
+
     // Tablet and up
     md: {
       flexDirection: 'row',
       padding: 3,
     },
-    
+
     // Desktop and up
     lg: {
       padding: 4,
@@ -422,9 +422,9 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none',  // Disable uppercase
+          textTransform: "none", // Disable uppercase
           borderRadius: 8,
-          minHeight: 44,  // Touch target
+          minHeight: 44, // Touch target
         },
       },
       defaultProps: {
@@ -433,7 +433,7 @@ export const theme = createTheme({
     },
     MuiTextField: {
       defaultProps: {
-        variant: 'outlined',
+        variant: "outlined",
         fullWidth: true,
       },
     },
@@ -529,7 +529,7 @@ import { useTheme, useMediaQuery } from '@mui/material';
 function MyComponent() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  
+
   return (
     <Dialog fullScreen={isMobile}>
       {/* content */}
@@ -631,8 +631,8 @@ export function InstallPrompt({ onInstall, onDismiss }: InstallPromptProps): JSX
       </DialogContent>
       <DialogActions>
         <Button onClick={onDismiss}>Not Now</Button>
-        <Button 
-          variant="contained" 
+        <Button
+          variant="contained"
           startIcon={<GetApp />}
           onClick={onInstall}
         >
@@ -654,23 +654,23 @@ import { WifiOff, Wifi } from '@mui/icons-material';
 
 export function OfflineIndicator(): JSX.Element {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  
+
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
-    
+
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
-    
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
     };
   }, []);
-  
+
   return (
-    <Snackbar 
-      open={!isOnline} 
+    <Snackbar
+      open={!isOnline}
       anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
     >
       <Alert severity="warning" icon={<WifiOff />}>
@@ -694,7 +694,7 @@ interface UpdateNotificationProps {
 
 export function UpdateNotification({ onUpdate }: UpdateNotificationProps): JSX.Element {
   const [showUpdate, setShowUpdate] = useState(false);
-  
+
   useEffect(() => {
     // Listen for service worker update
     if ('serviceWorker' in navigator) {
@@ -703,13 +703,13 @@ export function UpdateNotification({ onUpdate }: UpdateNotificationProps): JSX.E
       });
     }
   }, []);
-  
+
   return (
-    <Snackbar 
+    <Snackbar
       open={showUpdate}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
     >
-      <Alert 
+      <Alert
         severity="info"
         action={
           <Button color="inherit" size="small" onClick={onUpdate}>
@@ -772,27 +772,27 @@ import { Box, CircularProgress } from '@mui/material';
 export function PullToRefresh({ onRefresh, children }: PullToRefreshProps): JSX.Element {
   const [isPulling, setIsPulling] = useState(false);
   const [startY, setStartY] = useState(0);
-  
+
   const handleTouchStart = (e: TouchEvent) => {
     setStartY(e.touches[0].clientY);
   };
-  
+
   const handleTouchMove = (e: TouchEvent) => {
     const currentY = e.touches[0].clientY;
     const pullDistance = currentY - startY;
-    
+
     if (pullDistance > 80 && window.scrollY === 0) {
       setIsPulling(true);
     }
   };
-  
+
   const handleTouchEnd = async () => {
     if (isPulling) {
       await onRefresh();
       setIsPulling(false);
     }
   };
-  
+
   return (
     <Box
       onTouchStart={handleTouchStart}

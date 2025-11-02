@@ -32,6 +32,7 @@ npm run quality:check
 ## 📝 Common Commands
 
 ### Development
+
 ```bash
 npm run dev              # Start dev server
 npm run build            # Production build
@@ -39,6 +40,7 @@ npm run start            # Start production server
 ```
 
 ### Quality Checks
+
 ```bash
 npm run type-check       # TypeScript check
 npm run lint             # ESLint check
@@ -48,6 +50,7 @@ npm run format:check     # Prettier check
 ```
 
 ### Testing
+
 ```bash
 npm run test             # Run tests
 npm run test:watch       # Run tests in watch mode
@@ -56,12 +59,14 @@ npm run test:e2e         # Run E2E tests
 ```
 
 ### Combined
+
 ```bash
 npm run quality:check    # All checks (type, lint, format, test, build)
 npm run quality:fix      # Auto-fix lint and format issues
 ```
 
 ### Documentation
+
 ```bash
 npm run release          # Create release with changelog
 npm run docs:api         # Generate API documentation
@@ -89,22 +94,26 @@ git push origin feature/123-my-feature
 ## 🎯 What Runs When
 
 ### On `git commit`:
+
 - ✅ ESLint (auto-fix)
 - ✅ Prettier (auto-format)
 - ✅ Tests for changed files
 - ✅ Manifest validation (if changed)
 
 ### On `git push`:
+
 - ✅ TypeScript type check
 - ✅ Full test suite with coverage
 - ✅ Production build
 
 ### On Pull Request:
+
 - ✅ All pre-push checks
 - ✅ E2E tests
 - ✅ Code review required
 
 ### On Merge to Main:
+
 - ✅ All PR checks
 - ✅ Lighthouse audit
 - ✅ Deploy to GitHub Pages
@@ -112,6 +121,7 @@ git push origin feature/123-my-feature
 ## 🐛 Troubleshooting
 
 ### Commit Blocked?
+
 ```bash
 # See what's wrong
 npm run lint
@@ -125,6 +135,7 @@ git commit -m "your message"
 ```
 
 ### Push Blocked?
+
 ```bash
 # Run full check to see all issues
 npm run quality:check
@@ -136,6 +147,7 @@ npm run build           # Fix build errors
 ```
 
 ### Tests Failing?
+
 ```bash
 # Run in watch mode to debug
 npm run test:watch
@@ -148,6 +160,7 @@ npm test -- -u
 ```
 
 ### Build Failing?
+
 ```bash
 # Check TypeScript first
 npm run type-check

@@ -5,6 +5,7 @@ This document provides a quick guide to maintaining documentation in the WorkPat
 ## Overview
 
 Documentation is largely automated through:
+
 - ✅ **CHANGELOG**: Auto-generated from commit messages
 - ✅ **Versioning**: Synced across all files automatically
 - ✅ **API Docs**: Generated from TypeScript/JSDoc comments
@@ -16,14 +17,14 @@ Documentation is largely automated through:
 
 Add JSDoc comments to all public functions:
 
-```typescript
+````typescript
 /**
  * Calculates monthly compliance based on activities.
- * 
+ *
  * @param activities - Array of activities for the month
  * @param month - Month to calculate (YYYY-MM format)
  * @returns Compliance result with hours and status
- * 
+ *
  * @example
  * ```typescript
  * const result = calculateCompliance(activities, '2027-01');
@@ -32,11 +33,11 @@ Add JSDoc comments to all public functions:
  */
 export function calculateCompliance(
   activities: Activity[],
-  month: string
+  month: string,
 ): ComplianceResult {
   // Implementation
 }
-```
+````
 
 ### Writing Commit Messages
 
@@ -186,12 +187,14 @@ npm run version:sync
 ### Types
 
 **Appear in CHANGELOG:**
+
 - `feat`: New features
 - `fix`: Bug fixes
 - `perf`: Performance improvements
 - `docs`: Documentation (if significant)
 
 **Hidden from CHANGELOG:**
+
 - `style`: Code style changes
 - `refactor`: Code refactoring
 - `test`: Test changes
@@ -200,6 +203,7 @@ npm run version:sync
 ### Scopes
 
 Use these to categorize changes:
+
 - `onboarding`, `exemptions`, `tracking`, `documents`
 - `export`, `import`, `settings`
 - `db`, `ui`, `a11y`, `pwa`

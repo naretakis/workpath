@@ -11,6 +11,7 @@ This service blueprint documents the complete process flow for implementing SNAP
 ### Work Registration Requirement
 
 **Policy:** All SNAP applicants must "Register for work"
+
 - See federal regulations at 7 CFR 273.7(a)(1)(i)
 
 > ✅ **Best Practice:** States should integrate work registration as part of the SNAP application and renewal form, rather than requiring a separate form or process. Most states do this, though not all. This could look like a checkbox near the end of the form, or it may be included as a condition of the client's signature with submission.
@@ -20,8 +21,9 @@ This service blueprint documents the complete process flow for implementing SNAP
 #### Client Applies for SNAP
 
 **Client Action:** Submit application with minimum requirements:
+
 - Name
-- Address  
+- Address
 - Signature
 
 > ⚠️ **Pain Point:** Not all states' applications include questions that surface exemptions. The minimum SNAP application is name, address, and signature. Questions that would indicate possible exemptions may not be included, or the client may not complete them. Online applications tend to include more questions than paper applications.
@@ -45,10 +47,12 @@ The goal is to determine if the client is exempt from work requirements, and if 
 #### Exemption Categories
 
 **Age and Household Exemptions (No verification required):**
+
 - 18 or younger or 65 or older
 - Living in a household with someone 13 or younger
 
 **Work-Related Exemptions:**
+
 - Working 30+ hours per week or earning $217.50/week
 - Receiving/applied for Unemployment Insurance (UI)
 
@@ -71,10 +75,12 @@ Reasons like mental health needs, injuries, or lack of access to a shower can cl
 **Client Action:** Complete interview
 
 How this is done varies:
+
 - Some states offer interviews on the phone, others require an in-person office visit
 - Some states schedule a specific time, others allow clients to call-in "on demand"
 
 > ⚠️ **Pain Point:** Interview completion is a known challenge for benefits access. Some known issues include:
+>
 > - Client may learn about a scheduled interview too late, or not at all, especially if notice is only through mail
 > - Client may miss the call, or have to wait on the phone for a long time
 
@@ -85,6 +91,7 @@ How this is done varies:
 During the interview, staff should inform clients verbally of their responsibility to report certain changes plus how to maintain eligibility.
 
 How this is done varies:
+
 - Some may play a "Rights & Responsibilities" recording
 - Some may not consistently include this information
 - Staff may have a customized script to read based on the work requirements an individual is subject to
@@ -92,6 +99,7 @@ How this is done varies:
 > ⚠️ **Pain Point:** Guidelines around who is subject to work requirements change. It's hard for staff to keep track of the different layers of how work requirements apply. Staff must also use the interview time to follow-up on incomplete or vague information from applications.
 
 > 💡 **Opportunity:** Develop resources for supporting caseworkers in exemption screening during the interview. Ideas include:
+>
 > - Interactive interview guides: Some states have versions of this already, where the eligibility system checks for exemptions based on data entered and provides prompting questions for the interview
 > - Innovative training: including practice scenarios and roleplay
 
@@ -110,10 +118,12 @@ How this is done varies:
 **Staff Action:** Staff may check databases for information that can demonstrate exemptions or compliance.
 
 Different states and individual caseworkers check databases at different points:
+
 - In some states, databases are checked when applications are registered
 - Often databases are checked during the interview
 
 > ✅ **Best Practice:** Databases can reveal that a client is working enough hours, earning income, or other reasons that would make them exempt from general work requirements. Clients are exempt if they are:
+>
 > - Working 30+ hrs or earning $217.50/week
 > - Receiving/applied for Unemployment Insurance (UI)
 
@@ -126,6 +136,7 @@ Different states and individual caseworkers check databases at different points:
 **Policy:** Not all exemptions require a verification. The state agency is not required to verify an exemption or exception unless it determines the information is questionable or otherwise required by program rules (e.g. disability status).
 
 The following exemptions don't require verification submission:
+
 - Age (determined by birth date)
 - Pregnancy
 - Receiving Unemployment Insurance (determined by data match in state's UI system)
@@ -142,16 +153,19 @@ The following exemptions don't require verification submission:
 **Client Action:** Client submits verification to the SNAP agency. States must accept paper copies of verifications, and may optionally accept documents online or faxed.
 
 > ⚠️ **Pain Point:** Verification submission is a known challenge for benefits access. Some known issues include:
+>
 > - The notice may be unclear, or the client doesn't get the notice
 > - Clients may submit verification insufficient to prove exemption or work status
 > - The way that clients can submit verification may not be very usable
 > - Clients working in informal or gig economy jobs may have limited documentation of work
 
 > 💡 **Opportunity:** Ease document submission. Ideas include:
+>
 > - Chatbots or checklists to ensure clients are providing the correct documents
 > - Functionality so clients can take a photo with their phone to submit documents
 
 > 💡 **Opportunity:** Automate parts of document validation. Ideas include tools that:
+>
 > - Screen for common errors with document uploads
 > - Validate documents being uploaded
 > - Extract data, such as for tagging document types or entering data into eligibility systems that caseworkers can easily review
@@ -193,6 +207,7 @@ The following exemptions don't require verification submission:
 **Client Action:** Client gets notified of their eligibility determination and if they have work requirements.
 
 This will be a paper notice, sometimes an e-notice as well. The notice should include:
+
 - Benefit amount
 - Certification period
 - Work requirement details plus time limit details
@@ -202,6 +217,7 @@ This will be a paper notice, sometimes an e-notice as well. The notice should in
 > ⚠️ **Pain Point:** Notices explaining work requirements are often confusing or unclear. Clients commonly do not understand what work requirements mean, and what they have to do to be compliant. This leads clients to lose benefits unexpectedly, and has downstream impacts on staff time to help.
 
 > 💡 **Opportunity:** Improve notices and communications when work requirements are first communicated to clients. FNS has created several sample notices and communication scripts that can be a starting point:
+>
 > - Notice Review Tool (NRT) - Consolidated Work Requirements
 > - Model Notice - Consolidated Work Requirements
 > - Model Notice (Annotated) - Consolidated Work Requirements
@@ -257,6 +273,7 @@ This will be a paper notice, sometimes an e-notice as well. The notice should in
 **Staff Action:** E&T staff can report "unfitness for work" information about the client to eligibility staff.
 
 Different states implement this differently, some examples:
+
 - E&T staff email a dedicated inbox or liaison who will forward that information on to eligibility staff
 - E&T staff enter information into a shared system with eligibility staff who can then process it
 - E&T staff encourage client to submit documentation to eligibility staff themselves
@@ -278,6 +295,7 @@ E&T staff often learn about clients' personal circumstances in greater detail th
 **Policy:** Clients who have to meet work requirements must "work" for at least 80 hours each month to avoid having a time limit for getting SNAP benefits.
 
 "Work" can be any of the following:
+
 - Work for pay, for goods or services (for something other than money), unpaid, or as a volunteer
 - Participation in a work program (like SNAP Employment & Training) at least 80 hours a month
 - Participation in workfare for the number of hours assigned to you each month (the number of hours will depend on the amount of your SNAP benefit)
@@ -290,6 +308,7 @@ E&T staff often learn about clients' personal circumstances in greater detail th
 **Policy:** States have the option of how they want to implement the 36-month clock for clients who aren't meeting work requirements.
 
 The three options are:
+
 - Universal Fixed Clock
 - Individual Fixed Clock
 - Rolling Clock
@@ -303,6 +322,7 @@ The three options are:
 **Client Action:** Client reports challenges and emergencies that are "good cause" for not being able to meet work requirements that month.
 
 Such as:
+
 - Medical issues
 - Family emergencies
 - Their car broke down
@@ -375,6 +395,7 @@ A client would have to know to report this, and usually it gets reported either 
 **Policy:** If a client with work requirements is found re-eligible, they have up to 3 countable months of SNAP benefits, but they must be used consecutively.
 
 If a client stops meeting the work requirement again, they are entitled to an additional set of three countable months. However, these three additional months have strict limitations:
+
 - They always run consecutively, meaning they cannot be used piecemeal or saved for the future
 - They may only be received/used once in the 36-month period, even though there is no limit on how many times a time-limited participant could regain eligibility by again meeting the ABAWD work requirement and continuing to meet it on an ongoing basis
 
@@ -426,4 +447,4 @@ If a client stops meeting the work requirement again, they are entitled to an ad
 
 ---
 
-*This document represents the complete service blueprint for implementing SNAP work requirements as of September 10, 2025. States should consult with FNS for the most current regulatory guidance and implementation requirements.*
+_This document represents the complete service blueprint for implementing SNAP work requirements as of September 10, 2025. States should consult with FNS for the most current regulatory guidance and implementation requirements._

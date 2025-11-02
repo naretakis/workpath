@@ -117,13 +117,13 @@ npm run build           # Build
 
 ### Common Issues
 
-| Issue | Quick Fix |
-|-------|-----------|
-| Commit blocked | `npm run quality:fix` |
-| Push blocked | `npm run quality:check` |
-| TypeScript errors | `npm run type-check` |
-| Test failures | `npm run test:watch` |
-| Build errors | `npm run build` |
+| Issue             | Quick Fix                                |
+| ----------------- | ---------------------------------------- |
+| Commit blocked    | `npm run quality:fix`                    |
+| Push blocked      | `npm run quality:check`                  |
+| TypeScript errors | `npm run type-check`                     |
+| Test failures     | `npm run test:watch`                     |
+| Build errors      | `npm run build`                          |
 | Hooks not running | `npx husky install && chmod +x .husky/*` |
 
 See [Troubleshooting Guide](./Troubleshooting-Guide.md) for detailed solutions.

@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Quality Check Hook",
+  "description": "Monitors source code changes and automatically runs quality checks including TypeScript compilation, ESLint, Prettier formatting, build verification, and runtime error detection to ensure the codebase remains healthy",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Source code files have been modified. Please run the following quality checks and report any issues:\n\n1. **TypeScript Check**: Run `npx tsc --noEmit` to check for TypeScript errors\n2. **Linting Check**: Run `npm run lint` to check for ESLint errors\n3. **Format Check**: Run `npx prettier --check .` to verify code formatting\n4. **Build Check**: Run `npm run build` to ensure the project builds successfully\n5. **Runtime Check**: Look for any console errors or warnings in the build output\n\nFor each check:\n- Report if it passed or failed\n- If failed, provide a summary of the errors\n- Suggest fixes for any issues found\n- Prioritize errors by severity\n\nIf all checks pass, confirm that the code quality is good and the feature is working properly."
+  }
+}

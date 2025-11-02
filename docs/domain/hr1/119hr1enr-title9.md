@@ -12,7 +12,6 @@ In addition to amounts otherwise available, there is appropriated to the Commiss
 
 (4) Any work necessary to prepare the ground at or near the border to allow U.S. Customs and Border Protection to conduct its operations, including the construction and maintenance of the barrier system.
 
-
 SEC. 90002. U.S. Customs and Border Protection personnel, fleet vehicles, and facilities.
 (a) In general.—In addition to amounts otherwise available, there is appropriated to the Commissioner of U.S. Customs and Border Protection for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, the following:
 
@@ -26,14 +25,12 @@ SEC. 90002. U.S. Customs and Border Protection personnel, fleet vehicles, and fa
 
 (b) Restriction.—None of the funds made available by subsection (a) may be used to recruit, hire, or train personnel for the duties of processing coordinators after October 31, 2028.
 
-
 SEC. 90003. Detention capacity.
 (a) In general.—In addition to any amounts otherwise appropriated, there is appropriated to U.S. Immigration and Customs Enforcement for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029, $45,000,000,000, for single adult alien detention capacity and family residential center capacity.
 
 (b) Duration and standards.—Aliens may be detained at family residential centers, as described in subsection (a), pending a decision, under the Immigration and Nationality Act (8 U.S.C. 1101 et seq.), on whether the aliens are to be removed from the United States and, if such aliens are ordered removed from the United States, until such aliens are removed. The detention standards for the single adult detention capacity described in subsection (a) shall be set in the discretion of the Secretary of Homeland Security, consistent with applicable law.
 
 (c) Definition of family residential center.—In this section, the term “family residential center” means a facility used by the Department of Homeland Security to detain family units of aliens (including alien children who are not unaccompanied alien children (as defined in section 462(g) of the Homeland Security Act of 2002 (6 U.S.C. 279(g)))) who are encountered or apprehended by the Department of Homeland Security.
-
 
 SEC. 90004. Border security, technology, and screening.
 (a) In general.—In addition to amounts otherwise available, there is appropriated to the Commissioner of U.S. Customs and Border Protection for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029, $6,168,000,000 for the following:
@@ -57,7 +54,6 @@ SEC. 90004. Border security, technology, and screening.
 (b) Restrictions.—None of the funds made available under subsection (a) may be used for the procurement or deployment of surveillance towers along the southwest border and northern border that have not been tested and accepted by U.S. Customs and Border Protection to deliver autonomous capabilities.
 
 (c) Definition of autonomous.—In this section, with respect to capabilities, the term “autonomous” means a system designed to apply artificial intelligence, machine learning, computer vision, or other algorithms to accurately detect, identify, classify, and track items of interest in real time such that the system can make operational adjustments without the active engagement of personnel or continuous human command or control.
-
 
 SEC. 90005. State and local assistance.
 (a) State Homeland Security Grant Programs.—
@@ -96,7 +92,6 @@ SEC. 90005. State and local assistance.
 
 (6) TERMS AND CONDITIONS.—Nothing in this subsection shall authorize any State or local government to exercise immigration or border security authorities reserved exclusively to the Federal Government under the Immigration and Nationality Act (8 U.S.C. 1101 et seq.) or the Homeland Security Act of 2002 (6 U.S.C. 101 et seq.). The Federal Emergency Management Agency may use not more than 1 percent of the funds made available under this subsection for the purpose of administering grants provided for in this section.
 
-
 SEC. 90006. Presidential residence protection.
 (a) In general.—In addition to amounts otherwise available, there is appropriated to the Administrator of the Federal Emergency Management Agency for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $300,000,000, to remain available until September 30, 2029, for the reimbursement of extraordinary law enforcement personnel costs for protection activities directly and demonstrably associated with any residence of the President designated pursuant to section 3 or 4 of the Presidential Protection Assistance Act of 1976 (Public Law 94–524; 18 U.S.C. 3056 note) to be secured by the United States Secret Service.
 
@@ -115,7 +110,6 @@ SEC. 90006. Presidential residence protection.
 (3) certifies to the Administrator as compensating protection activities requested by the United States Secret Service.
 
 (c) Terms and conditions.—The Federal Emergency Management Agency may use not more than 3 percent of the funds made available under this section for the purpose of administering grants provided for in this section.
-
 
 SEC. 90007. Department of Homeland Security appropriations for border support.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Homeland Security for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $10,000,000,000, to remain available until September 30, 2029, for reimbursement of costs incurred in undertaking activities in support of the Department of Homeland Security’s mission to safeguard the borders of the United States.
@@ -163,9 +157,7 @@ SEC. 90101. FEHB improvements.
 
 (B) by inserting after paragraph (1) the following:
 
-
 “(2) In fiscal year 2026, $66,000,000, to be derived from all contributions, and to remain available until the end of fiscal year 2035, for the Director of the Office to carry out subsections (c) through (f) of the FEHB Protection Act of 2025.”.
-
 
 SEC. 90102. Pandemic Response Accountability Committee.
 (a) Pandemic response accountability committee funding availability.—In addition to amounts otherwise available, there is appropriated for fiscal year 2026, out of any money in the Treasury not otherwise appropriated, $88,000,000, to remain available until expended, for the Pandemic Response Accountability Committee to support oversight of the Coronavirus response and of funds provided in this Act or any other Act pertaining to the Coronavirus pandemic.
@@ -180,11 +172,9 @@ SEC. 90102. Pandemic Response Accountability Committee.
 
 (C) by adding at the end the following:
 
-
 “(G) the Act titled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’; and”; and
 
 (2) in subsection (k), by striking “2025” and inserting “2034”.
-
 
 SEC. 90103. Appropriation for the Office of Management and Budget.
 In addition to amounts otherwise available, there is appropriated to the Office of Management and Budget for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $100,000,000, to remain available until September 30, 2029, for purposes of finding budget and accounting efficiencies in the executive branch.

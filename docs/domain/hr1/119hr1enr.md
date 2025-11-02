@@ -4,7 +4,6 @@
 
 H.R.1
 
-
 AT THE FIRST SESSION
 Begun and held at the City of Washington on Friday,
 the third day of January, two thousand and twenty-five
@@ -13,10 +12,8 @@ To provide for reconciliation pursuant to title II of H. Con. Res. 14.
 
 Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,
 
-
 SECTION 1. Table of contents.
 The table of contents of this Act is as follows:
-
 
 Sec. 1. Table of contents.
 TITLE I—COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY
@@ -467,7 +464,6 @@ subtitle A—Nutrition
 SEC. 10101. Re-evaluation of thrifty food plan.
 (a) In general.—Section 3 of the Food and Nutrition Act of 2008 (7 U.S.C. 2012) is amended by striking subsection (u) and inserting the following:
 
-
 “(u) Thrifty food plan.—
 
 “(1) IN GENERAL.—The term ‘thrifty food plan’ means the diet required to feed a family of 4 persons consisting of a man and a woman ages 20 through 50, a child ages 6 through 8, and a child ages 9 through 11 using the items and quantities of food described in the report of the Department of Agriculture entitled ‘Thrifty Food Plan, 2021’, and each successor report updated pursuant to this subsection, subject to the conditions that—
@@ -520,10 +516,8 @@ SEC. 10101. Re-evaluation of thrifty food plan.
 
 (3) Section 27(a)(2) of the Food and Nutrition Act of 2008 (7 U.S.C. 2036(a)(2))) is amended by striking “section 3(u)(4)” each place it appears and inserting “section 3(u)(3)”.
 
-
 SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 (a) Exceptions.—Section 6(o) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(o)) is amended by striking paragraph (3) and inserting the following:
-
 
 “(3) EXCEPTIONS.—Paragraph (2) shall not apply to an individual if the individual is—
 
@@ -545,11 +539,9 @@ SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 
 (1) in subparagraph (A), by striking clause (ii) and inserting the following:
 
-
 “(ii) is in a noncontiguous State and has an unemployment rate that is at or above 1.5 times the national unemployment rate.”; and
 
 (2) by adding at the end the following:
-
 
 “(C) DEFINITION OF NONCONTIGUOUS STATE.—
 
@@ -562,7 +554,6 @@ SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 (1) by redesignating paragraph (7) as paragraph (8); and
 
 (2) by inserting after paragraph (6) the following:
-
 
 “(7) EXEMPTION FOR NONCONTIGUOUS STATES.—
 
@@ -604,7 +595,6 @@ SEC. 10102. Modifications to SNAP work requirements for able-bodied adults.
 
 “(ii) information on specific risks or newly identified barriers or challenges to full compliance, including the plan of the State agency to mitigate those risks, barriers, or challenges.”.
 
-
 SEC. 10103. Availability of standard utility allowances based on receipt of energy assistance.
 (a) Standard utility allowance.—Section 5(e)(6)(C)(iv)(I) of the Food and Nutrition Act of 2008 (7 U.S.C. 2014(e)(6)(C)(iv)(I)) is amended by inserting “with an elderly or disabled member” after “households”.
 
@@ -614,26 +604,21 @@ SEC. 10103. Availability of standard utility allowances based on receipt of ener
 
 (2) in subparagraph (B), by inserting “with an elderly or disabled member” before “under a State law”.
 
-
 SEC. 10104. Restrictions on internet expenses.
 Section 5(e)(6) of the Food and Nutrition Act of 2008 (7 U.S.C. 2014(e)(6)) is amended by adding at the end the following:
 
-
 “(E) RESTRICTIONS ON INTERNET EXPENSES.—Any service fee associated with internet connection shall not be used in computing the excess shelter expense deduction under this paragraph.”.
-
 
 SEC. 10105. Matching funds requirements.
 (a) In general.—Section 4(a) of the Food and Nutrition Act of 2008 (7 U.S.C. 2013(a)) is amended—
 
 (1) by striking “(a) Subject to” and inserting the following:
 
-
 “(a) Program.—
 
 “(1) ESTABLISHMENT.—Subject to”; and
 
 (2) by adding at the end the following:
-
 
 “(2) STATE QUALITY CONTROL INCENTIVE.—
 
@@ -667,18 +652,14 @@ SEC. 10105. Matching funds requirements.
 
 (b) Limitation on authority.—Section 13(a)(1) of the Food and Nutrition Act of 2008 (7 U.S.C. 2022(a)(1)) is amended in the first sentence by inserting “or the payment or disposition of a State share under section 4(a)(2)” after “16(c)(1)(D)(i)(II)”.
 
-
 SEC. 10106. Administrative cost sharing.
 Section 16(a) of the Food and Nutrition Act of 2008 (7 U.S.C. 2025(a)) is amended in the matter preceding paragraph (1) by striking “agency an amount equal to 50 per centum” and inserting “agency, through fiscal year 2026, 50 percent, and for fiscal year 2027 and each fiscal year thereafter, 25 percent,”.
-
 
 SEC. 10107. National education and obesity prevention grant program.
 Section 28(d)(1)(F) of the Food and Nutrition Act of 2008 (7 U.S.C. 2036a(d)(1)(F)) is amended by striking “for fiscal year 2016 and each subsequent fiscal year” and inserting “for each of fiscal years 2016 through 2025”.
 
-
 SEC. 10108. Alien SNAP eligibility.
 Section 6(f) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(f)) is amended to read as follows:
-
 
 “(f) No individual who is a member of a household otherwise eligible to participate in the supplemental nutrition assistance program under this section shall be eligible to participate in the supplemental nutrition assistance program as a member of that or any other household unless he or she is—
 
@@ -715,7 +696,6 @@ SEC. 10301. Effective reference price; reference price.
 (a) Effective reference price.—Section 1111(8)(B)(ii) of the Agricultural Act of 2014 (7 U.S.C. 9011(8)(B)(ii)) is amended by striking “85” and inserting “beginning with the crop year 2025, 88”.
 
 (b) Reference price.—Section 1111 of the Agricultural Act of 2014 (7 U.S.C. 9011) is amended by striking paragraph (19) and inserting the following:
-
 
 “(19) REFERENCE PRICE.—
 
@@ -755,14 +735,12 @@ SEC. 10301. Effective reference price; reference price.
 
 “(C) LIMITATION.—In no case shall a reference price for a covered commodity exceed 113 percent of the reference price for such covered commodity listed in subparagraph (A).”.
 
-
 SEC. 10302. Base acres.
 Section 1112 of the Agricultural Act of 2014 (7 U.S.C. 9012) is amended—
 
 (1) in subsection (d)(3)(A), by striking “2023” and inserting “2031”; and
 
 (2) by adding at the end the following:
-
 
 “(e) Additional base acres.—
 
@@ -850,7 +828,6 @@ Section 1112 of the Agricultural Act of 2014 (7 U.S.C. 9012) is amended—
 
 “(C) the allocation of acres under paragraph (5).”.
 
-
 SEC. 10303. Producer election.
 (a) In general.—Section 1115 of the Agricultural Act of 2014 (7 U.S.C. 9015) is amended—
 
@@ -878,16 +855,13 @@ SEC. 10303. Producer election.
 
 (iii) by adding at the end the following:
 
-
 “(C) the same coverage for each covered commodity on the farm for the 2027 through 2031 crop years as was applicable for the 2025 crop year.”; and
 
 (3) by adding at the end the following:
 
-
 “(i) Higher of price loss coverage payments and agriculture risk coverage payments.—For the 2025 crop year, the Secretary shall, on a covered commodity-by-covered commodity basis, make the higher of price loss coverage payments under section 1116 and agriculture risk coverage county coverage payments under section 1117 to the producers on a farm for the payment acres for each covered commodity on the farm.”.
 
 (b) Federal crop insurance supplemental coverage option.—Section 508(c)(4)(C)(iv) of the Federal Crop Insurance Act (7 U.S.C. 1508(c)(4)(C)(iv)) is amended by striking “Crops for which the producer has elected under section 1116 of the Agricultural Act of 2014 to receive agriculture risk coverage and acres” and inserting “Acres” .
-
 
 SEC. 10304. Price loss coverage.
 Section 1116 of the Agricultural Act of 2014 (7 U.S.C. 9016) is amended—
@@ -907,7 +881,6 @@ Section 1116 of the Agricultural Act of 2014 (7 U.S.C. 9016) is amended—
 (A) by striking “subparagraph (F) of section 1111(19)” and inserting “paragraph (19)(A)(vi) of section 1111”; and
 
 (B) by striking “2012 through 2016” each place it appears and inserting “2017 through 2021”.
-
 
 SEC. 10305. Agriculture risk coverage.
 Section 1117 of the Agricultural Act of 2014 (7 U.S.C. 9017) is amended—
@@ -930,7 +903,6 @@ Section 1117 of the Agricultural Act of 2014 (7 U.S.C. 9017) is amended—
 
 (4) in subsections (e), (g)(5), and (i)(5), by striking “2023” each place it appears and inserting “2031”.
 
-
 SEC. 10306. Equitable treatment of certain entities.
 (a) In general.—Section 1001 of the Food Security Act of 1985 (7 U.S.C. 1308) is amended—
 
@@ -939,7 +911,6 @@ SEC. 10306. Equitable treatment of certain entities.
 (A) by redesignating paragraph (5) as paragraph (6); and
 
 (B) by inserting after paragraph (4) the following:
-
 
 “(5) QUALIFIED PASS-THROUGH ENTITY.—The term ‘qualified pass-through entity’ means—
 
@@ -975,7 +946,6 @@ SEC. 10306. Equitable treatment of certain entities.
 
 (e) Exclusion from AGI calculation.—Section 1001D(d) of the Food Security Act of 1985 (7 U.S.C. 1308–3a(d)) is amended by striking “, general partnership, or joint venture” each place it appears.
 
-
 SEC. 10307. Payment limitations.
 Section 1001 of the Food Security Act of 1985 (7 U.S.C. 1308) is amended—
 
@@ -994,7 +964,6 @@ Section 1001 of the Food Security Act of 1985 (7 U.S.C. 1308) is amended—
 (3) by adding at the end the following:
 
 “(i) Adjustment.—For the 2025 crop year and each crop year thereafter, the Secretary shall annually adjust the amounts described in subsections (b) and (c) for inflation based on the Consumer Price Index for All Urban Consumers published by the Bureau of Labor Statistics of the Department of Labor.”.
-
 
 SEC. 10308. Adjusted gross income limitation.
 Section 1001D(b) of the Food Security Act of 1985 (7 U.S.C. 1308–3a(b)) is amended—
@@ -1019,7 +988,6 @@ Section 1001D(b) of the Food Security Act of 1985 (7 U.S.C. 1308–3a(b)) is ame
 
 “(B) EXCEPTION.—In the case of an excepted payment or benefit, the limitation established by paragraph (1) shall not apply to a person or legal entity during a crop, fiscal, or program year, as appropriate, if greater than or equal to 75 percent of the average gross income of the person or legal entity derives from farming, ranching, or silviculture activities.”.
 
-
 SEC. 10309. Marketing loans.
 (a) Availability of nonrecourse marketing assistance loans for loan commodities.—Section 1201(b)(1) of the Agricultural Act of 2014 (7 U.S.C. 9031(b)(1)) is amended by striking “2023” and inserting “2031”.
 
@@ -1034,7 +1002,6 @@ SEC. 10309. Marketing loans.
 (2) by redesignating subsections (c) and (d) as subsections (d) and (e), respectively;
 
 (3) by inserting after subsection (b) the following:
-
 
 “(c) 2026 through 2031 crop years.—For purposes of each of the 2026 through 2031 crop years, the loan rate for a marketing assistance loan under section 1201 for a loan commodity shall be equal to the following:
 
@@ -1104,13 +1071,11 @@ SEC. 10309. Marketing loans.
 
 (1) by striking “Effective” and inserting the following:
 
-
 “(1) CROP YEARS 2014 THROUGH 2025.—Effective”;
 
 (2) in paragraph (1) (as so designated), by striking “2023” and inserting “2025”; and
 
 (3) by adding at the end the following:
-
 
 “(2) PAYMENT OF COTTON STORAGE COSTS.—Effective for each of the 2026 through 2031 crop years, the Secretary shall make cotton storage payments for upland cotton and extra long staple cotton available in the same manner as the Secretary provided storage payments for the 2006 crop of upland cotton, except that the payment rate shall be equal to the lesser of—
 
@@ -1132,7 +1097,6 @@ SEC. 10309. Marketing loans.
 
 (f) Availability of recourse loans.—Section 1209 of the Agricultural Act of 2014 (7 U.S.C. 9039) is amended, in subsections (a)(2), (b), and (c), by striking “2023” each place it appears and inserting “2031”.
 
-
 SEC. 10310. Repayment of marketing loans.
 Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
@@ -1142,11 +1106,9 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 (B) in the matter preceding subparagraph (A) (as so redesignated), by striking “The Secretary” and inserting the following:
 
-
 “(1) IN GENERAL.—The Secretary”; and
 
 (C) by striking paragraph (2) and inserting the following:
-
 
 “(B) (i) in the case of long grain rice and medium grain rice, the prevailing world market price for the commodity, as determined and adjusted by the Secretary in accordance with this section; or
 
@@ -1164,7 +1126,6 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 (C) by adding at the end the following:
 
-
 “(2) the prevailing world market price for the commodity, as determined and adjusted by the Secretary in accordance with this section.”;
 
 (3) in subsection (d)—
@@ -1175,11 +1136,9 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 (C) in the matter preceding subparagraph (A) (as so redesignated), by striking “For purposes” and inserting the following:
 
-
 “(1) IN GENERAL.—For purposes”; and
 
 (D) by adding at the end the following:
-
 
 “(2) UPLAND COTTON.—In the case of upland cotton, for any period when price quotations for Middling (M) 13⁄32 -inch cotton are available, the formula under paragraph (1)(A) shall be based on the average of the 3 lowest-priced growths that are quoted.”; and
 
@@ -1196,7 +1155,6 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 (C) by redesignating paragraph (3) as paragraph (4); and
 
 (D) by inserting after paragraph (2) the following:
-
 
 “(3) EXTRA LONG STAPLE COTTON.—The prevailing world market price for extra long staple cotton determined under subsection (d)—
 
@@ -1216,17 +1174,14 @@ Section 1204 of the Agricultural Act of 2014 (7 U.S.C. 9034) is amended—
 
 “(II) the forward-crop price quotation is the lowest such quotation available.”.
 
-
 SEC. 10311. Economic adjustment assistance for textile mills.
 Section 1207(c) of the Agricultural Act of 2014 (7 U.S.C. 9037(c)) is amended by striking paragraph (2) and inserting the following:
-
 
 “(2) VALUE OF ASSISTANCE.—The value of the assistance provided under paragraph (1) shall be—
 
 “(A) for the period beginning on August 1, 2013, and ending on July 31, 2025, 3 cents per pound; and
 
 “(B) beginning on August 1, 2025, 5 cents per pound.”.
-
 
 SEC. 10312. Sugar program updates.
 (a) Loan rate modifications.—Section 156 of the Federal Agriculture Improvement and Reform Act of 1996 (7 U.S.C. 7272) is amended—
@@ -1239,7 +1194,6 @@ SEC. 10312. Sugar program updates.
 
 (C) by adding at the end the following:
 
-
 “(6) 24.00 cents per pound for raw cane sugar for each of the 2025 through 2031 crop years.”;
 
 (2) in subsection (b)—
@@ -1250,7 +1204,6 @@ SEC. 10312. Sugar program updates.
 
 (C) by adding at the end the following:
 
-
 “(3) a rate that is equal to 136.55 percent of the loan rate per pound of raw cane sugar under subsection (a)(6) for each of the 2025 through 2031 crop years.”; and
 
 (3) in subsection (i), by striking “2023” and inserting “2031”.
@@ -1258,7 +1211,6 @@ SEC. 10312. Sugar program updates.
 (b) Adjustments to Commodity Credit Corporation storage rates.—Section 167 of the Federal Agriculture Improvement and Reform Act of 1996 (7 U.S.C. 7287) is amended—
 
 (1) by striking subsection (a) and inserting the following:
-
 
 “(a) In general.—For the 2025 crop year and each subsequent crop year, the Commodity Credit Corporation shall establish rates for the storage of forfeited sugar in an amount that is not less than—
 
@@ -1280,11 +1232,9 @@ SEC. 10312. Sugar program updates.
 
 (A) by striking “In the case” and inserting the following:
 
-
 “(A) IN GENERAL.—Except as provided in subparagraph (B), in the case”; and
 
 (B) by adding at the end the following:
-
 
 “(B) EXCEPTION.—If the Secretary makes an upward adjustment under paragraph (1)(A), in adjusting allocations among beet sugar processors, the Secretary shall give priority to beet sugar processors with available sugar.”.
 
@@ -1294,11 +1244,9 @@ SEC. 10312. Sugar program updates.
 
 (B) in the matter preceding clause (i) (as so redesignated), by striking “If the Secretary” and inserting the following:
 
-
 “(A) IN GENERAL.—If the Secretary”; and
 
 (C) by adding at the end the following:
-
 
 “(B) TIMING.—In carrying out subparagraph (A), the Secretary shall—
 
@@ -1307,7 +1255,6 @@ SEC. 10312. Sugar program updates.
 “(ii) provide for an initial reassignment under subparagraph (A)(i) not later than 30 days after the date on which the World Agricultural Supply and Demand Estimates described in clause (i) is released.”.
 
 (d) Reallocations of tariff-rate quota shortfall.—Section 359k of the Agricultural Adjustment Act of 1938 (7 U.S.C. 1359kk) is amended by adding at the end the following:
-
 
 “(c) Reallocation.—
 
@@ -1379,14 +1326,12 @@ SEC. 10312. Sugar program updates.
 
 (f) Period of effectiveness.—Section 359l(a) of the Agricultural Adjustment Act of 1938 (7 U.S.C. 1359ll(a)) is amended by striking “2023” and inserting “2031”.
 
-
 SEC. 10313. Dairy policy updates.
 (a) Dairy margin coverage production history.—
 
 (1) DEFINITION.—Section 1401(8) of the Agricultural Act of 2014 (7 U.S.C. 9051(8)) is amended by striking “when the participating dairy operation first registers to participate in dairy margin coverage”.
 
 (2) PRODUCTION HISTORY OF PARTICIPATING DAIRY OPERATIONS.—Section 1405 of the Agricultural Act of 2014 (7 U.S.C. 9055) is amended by striking subsections (a) and (b) and inserting the following:
-
 
 “(a) Production history.—Except as provided in subsection (b), the production history of a dairy operation for dairy margin coverage is equal to the highest annual milk marketings of the participating dairy operation during any 1 of the 2021, 2022, or 2023 calendar years.
 
@@ -1424,10 +1369,8 @@ SEC. 10313. Dairy policy updates.
 
 (d) Duration.—Section 1409 of the Agricultural Act of 2014 (7 U.S.C. 9059) is amended by striking “2025” and inserting “2031”.
 
-
 SEC. 10314. Implementation.
 Section 1614(c) of the Agricultural Act of 2014 (7 U.S.C. 9097(c)) is amended by adding at the end the following:
-
 
 “(5) FURTHER FUNDING.—The Secretary shall make available to carry out subtitle C of title I of the Act entitled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’ (119th Congress) and the amendments made by that subtitle $50,000,000, to remain available until expended, of which—
 
@@ -1452,7 +1395,6 @@ SEC. 10401. Supplemental agricultural disaster assistance.
 
 (1) by striking paragraph (2) and inserting the following:
 
-
 “(2) PAYMENT RATES.—
 
 “(A) LOSSES DUE TO PREDATION.—Indemnity payments to an eligible producer on a farm under paragraph (1)(A) shall be made at a rate of 100 percent of the market value of the affected livestock on the applicable date, as determined by the Secretary.
@@ -1468,7 +1410,6 @@ SEC. 10401. Supplemental agricultural disaster assistance.
 “(ii) the day before the date of the event that caused the harm to the livestock that resulted in a reduced sale price.”; and
 
 (2) by adding at the end the following:
-
 
 “(5) ADDITIONAL PAYMENT FOR UNBORN LIVESTOCK.—
 
@@ -1505,7 +1446,6 @@ SEC. 10401. Supplemental agricultural disaster assistance.
 (c) Emergency assistance for livestock, honey bees, and farm-raised fish.—
 
 (1) IN GENERAL.—Section 1501(d) of the Agricultural Act of 2014 (7 U.S.C. 9081(d)) is amended by adding at the end the following:
-
 
 “(5) ASSISTANCE FOR LOSSES DUE TO BIRD DEPREDATION.—
 
@@ -1558,7 +1498,6 @@ SEC. 10501. Beginning farmer and rancher benefit.
 
 (b) Increase in assistance.—Section 508(e) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)) is amended by adding at the end the following:
 
-
 “(9) ADDITIONAL SUPPORT.—
 
 “(A) IN GENERAL.—In addition to any other provision of this subsection (except paragraph (2)(A)) regarding payment of a portion of premiums, a beginning farmer or rancher shall receive additional premium assistance that is the number of percentage points specified in subparagraph (B) greater than the premium assistance that would otherwise be available for the applicable policy, plan of insurance, and coverage level selected by the beginning farmer or rancher.
@@ -1571,12 +1510,10 @@ SEC. 10501. Beginning farmer and rancher benefit.
 
 “(iii) For the fourth reinsurance year that a beginning farmer or rancher participates as a beginning farmer or rancher in the applicable policy or plan of insurance, 1 percentage point.”.
 
-
 SEC. 10502. Area-based crop insurance coverage and affordability.
 (a) Coverage level.—Section 508(c)(4) of the Federal Crop Insurance Act (7 U.S.C. 1508(c)(4)) is amended—
 
 (1) in subparagraph (A), by striking clause (ii) and inserting the following:
-
 
 “(ii) may be purchased at any level not to exceed—
 
@@ -1594,10 +1531,8 @@ SEC. 10502. Area-based crop insurance coverage and affordability.
 
 (b) Premium subsidy.—Section 508(e)(2)(H)(i) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)(2)(H)(i)) is amended by striking “65” and inserting “80”.
 
-
 SEC. 10503. Administrative and operating expense adjustments.
 Section 508(k) of the Federal Crop Insurance Act (7 U.S.C. 1508(k)) is amended by adding at the end the following:
-
 
 “(10) ADDITIONAL EXPENSES.—
 
@@ -1645,7 +1580,6 @@ Section 508(k) of the Federal Crop Insurance Act (7 U.S.C. 1508(k)) is amended b
 
 “(ii) shall not be considered a renegotiation under paragraph (8)(A).”.
 
-
 SEC. 10504. Premium support.
 Section 508(e)(2) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)(2)) is amended—
 
@@ -1659,23 +1593,18 @@ Section 508(e)(2) of the Federal Crop Insurance Act (7 U.S.C. 1508(e)(2)) is ame
 
 (5) in subparagraph (G)(i), by striking “38” and inserting “41”.
 
-
 SEC. 10505. Program compliance and integrity.
 Section 515(l)(2) of the Federal Crop Insurance Act (7 U.S.C. 1515(l)(2)) is amended by striking “than” and all that follows through the period at the end and inserting the following: “than—
-
 
 “(A) $4,000,000 for each of fiscal years 2009 through 2025; and
 
 “(B) $6,000,000 for fiscal year 2026 and each subsequent fiscal year.”.
 
-
 SEC. 10506. Reviews, compliance, and integrity.
 Section 516(b)(2)(C)(i) of the Federal Crop Insurance Act (7 U.S.C. 1516(b)(2)(C)(i)) is amended, in the matter preceding subclause (I), by striking “for each fiscal year” and inserting “for each of fiscal years 2014 through 2025 and $10,000,000 for fiscal year 2026 and each fiscal year thereafter”.
 
-
 SEC. 10507. Poultry insurance pilot program.
 Section 523 of the Federal Crop Insurance Act (7 U.S.C. 1523) is amended by adding at the end the following:
-
 
 “(j) Poultry insurance pilot program.—
 
@@ -1698,7 +1627,6 @@ SEC. 10601. Conservation.
 
 (1) in paragraph (2), by striking subparagraphs (A) through (F) and inserting the following:
 
-
 “(A) $625,000,000 for fiscal year 2026;
 
 “(B) $650,000,000 for fiscal year 2027;
@@ -1715,7 +1643,6 @@ SEC. 10601. Conservation.
 
 (A) in subparagraph (A), by striking clauses (i) through (v) and inserting the following:
 
-
 “(i) $2,655,000,000 for fiscal year 2026;
 
 “(ii) $2,855,000,000 for fiscal year 2027;
@@ -1730,7 +1657,6 @@ SEC. 10601. Conservation.
 
 (B) in subparagraph (B), by striking clauses (i) through (v) and inserting the following:
 
-
 “(i) $1,300,000,000 for fiscal year 2026;
 
 “(ii) $1,325,000,000 for fiscal year 2027;
@@ -1744,7 +1670,6 @@ SEC. 10601. Conservation.
 “(vi) $1,375,000,000 for fiscal year 2031.”.
 
 (b) Regional conservation partnership program.—Section 1271D of the Food Security Act of 1985 (16 U.S.C. 3871d) is amended by striking subsection (a) and inserting the following:
-
 
 “(a) Availability of funding.—Of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out the program, to the maximum extent practicable—
 
@@ -1772,7 +1697,6 @@ SEC. 10601. Conservation.
 
 (C) by adding at the end the following:
 
-
 “(C) $1,000,000 beginning in fiscal year 2026, to remain available until expended.”.
 
 (d) Voluntary public access and habitat incentive program.—Section 1240R(f)(1) of the Food Security Act of 1985 (16 U.S.C. 3839bb–5(f)(1)) is amended—
@@ -1791,27 +1715,22 @@ SEC. 10601. Conservation.
 
 (g) Rescission.—The unobligated balances of amounts appropriated by section 21001(a) of Public Law 117–169 (136 Stat. 2015) are rescinded.
 
-
 SEC. 10602. Supplemental agricultural trade promotion program.
 (a) In general.—The Secretary of Agriculture shall carry out a program to encourage the accessibility, development, maintenance, and expansion of commercial export markets for United States agricultural commodities.
 
 (b) Funding.—Of the funds of the Commodity Credit Corporation, the Secretary of Agriculture shall make available to carry out this section $285,000,000 for fiscal year 2027 and each fiscal year thereafter.
 
-
 SEC. 10603. Nutrition.
 Section 203D(d)(5) of the Emergency Food Assistance Act of 1983 (7 U.S.C. 7507(d)(5)) is amended by striking “2024” and inserting “2031”.
-
 
 SEC. 10604. Research.
 (a) Urban, indoor, and other emerging agricultural production research, education, and extension initiative.—Section 1672E(d)(1)(B) of the Food, Agriculture, Conservation, and Trade Act of 1990 (7 U.S.C. 5925g(d)(1)(B)) is amended by striking “fiscal year 2024, to remain available until expended” and inserting “each of fiscal years 2024 through 2031”.
 
 (b) Foundation for Food and Agriculture Research.—Section 7601(g)(1)(A) of the Agricultural Act of 2014 (7 U.S.C. 5939(g)(1)(A)) is amended by adding at the end the following:
 
-
 “(iv) FURTHER FUNDING.—Not later than 30 days after the date of enactment of this clause, of the funds of the Commodity Credit Corporation, the Secretary shall transfer to the Foundation to carry out this section $37,000,000, to remain available until expended.”.
 
 (c) Scholarships for students at 1890 Institutions.—Section 1446(b)(1) of the National Agricultural Research, Extension, and Teaching Policy Act of 1977 (7 U.S.C. 3222a(b)(1)) is amended by adding at the end the following:
-
 
 “(C) FURTHER FUNDING.—Of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out this section $60,000,000 for fiscal year 2026, to remain available until expended.”.
 
@@ -1821,11 +1740,9 @@ SEC. 10604. Research.
 
 (2) by adding at the end the following:
 
-
 “(d) Mandatory funding.—Subject to subsection (c)(2), of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out this section $8,000,000 for fiscal year 2026, to remain available until expended.”.
 
 (e) Specialty crop research initiative.—Section 412(k)(1)(B) of the Agricultural Research, Extension, and Education Reform Act of 1998 (7 U.S.C. 7632(k)(1)(B)) is amended by striking “section $80,000,000 for fiscal year 2014” and inserting the following: “section—
-
 
 “(i) $80,000,000 for each of fiscal years 2014 through 2025; and
 
@@ -1837,13 +1754,10 @@ SEC. 10604. Research.
 
 (2) by adding at the end the following:
 
-
 “(e) Mandatory funding.—Subject to subsections (b), (c), and (d), of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out the competitive grant program under section 4 $125,000,000 for fiscal year 2026 and each fiscal year thereafter.”.
-
 
 SEC. 10605. Energy.
 Section 9005(g)(1)(F) of the Farm Security and Rural Investment Act of 2002 (7 U.S.C. 8105(g)(1)(F)) is amended by striking “2024” and inserting “2031”.
-
 
 SEC. 10606. Horticulture.
 (a) Plant pest and disease management and disaster prevention.—Section 420(f) of the Plant Protection Act (7 U.S.C. 7721(f)) is amended—
@@ -1853,7 +1767,6 @@ SEC. 10606. Horticulture.
 (2) by redesignating paragraph (6) as paragraph (7);
 
 (3) by inserting after paragraph (5) the following:
-
 
 “(6) $75,000,000 for each of fiscal years 2018 through 2025; and”; and
 
@@ -1867,7 +1780,6 @@ SEC. 10606. Horticulture.
 
 (3) by inserting after subparagraph (D) the following:
 
-
 “(E) $85,000,000 for each of fiscal years 2018 through 2025; and”; and
 
 (4) in subparagraph (F) (as so redesignated), by striking “$85,000,000 for fiscal year 2018” and inserting “$100,000,000 for fiscal year 2026”.
@@ -1880,7 +1792,6 @@ SEC. 10606. Horticulture.
 
 (3) by adding at the end the following:
 
-
 “(D) $10,000,000 for the period of fiscal years 2026 through 2031.”.
 
 (d) Modernization and improvement of international trade technology systems and data collection.—Section 2123(c)(4) of the Organic Foods Production Act of 1990 (7 U.S.C. 6522(c)(4)) is amended, in the matter preceding subparagraph (A), by striking “and $1,000,000 for fiscal year 2024” and inserting “, $1,000,000 for fiscal years 2024 and 2025, and $5,000,000 for fiscal year 2026”.
@@ -1889,9 +1800,7 @@ SEC. 10606. Horticulture.
 
 (f) Multiple crop and pesticide use survey.—Section 10109(c) of the Agriculture Improvement Act of 2018 (Public Law 115–334; 132 Stat. 4907) is amended by adding at the end the following:
 
-
 “(3) FURTHER MANDATORY FUNDING.—Of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out this section $5,000,000 for fiscal year 2026, to remain available until expended.”.
-
 
 SEC. 10607. Miscellaneous.
 (a) Animal disease prevention and management.—Section 10409A(d)(1) of the Animal Health Protection Act (7 U.S.C. 8308a(d)(1)) is amended—
@@ -1903,7 +1812,6 @@ SEC. 10607. Miscellaneous.
 (B) by striking “fiscal year 2023 and each fiscal year thereafter” and inserting “each of fiscal years 2023 through 2025”; and
 
 (2) by adding at the end the following:
-
 
 “(C) FISCAL YEARS 2026 THROUGH 2030.—Of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out this section $233,000,000 for each of fiscal years 2026 through 2030, of which—
 
@@ -2004,7 +1912,6 @@ SEC. 20001. Enhancement of Department of Defense resources for improving the qua
 
 (B) by striking “September 30, 2009” and inserting “September 30, 2029”.
 
-
 SEC. 20002. Enhancement of Department of Defense resources for shipbuilding.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -2080,7 +1987,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 
 (36) $150,000,000 for retention of inactive reserve fleet ships.
 
-
 SEC. 20003. Enhancement of Department of Defense resources for integrated air and missile defense.
 (a) Next generation missile defense technologies.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -2109,7 +2015,6 @@ SEC. 20003. Enhancement of Department of Defense resources for integrated air an
 (4) $1,975,000,000 for improved ground-based missile defense radars; and
 
 (5) $530,000,000 for the design and construction of Missile Defense Agency missile instrumentation range safety ship.
-
 
 SEC. 20004. Enhancement of Department of Defense resources for munitions and defense supply chain resiliency.
 (a) Appropriations.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -2258,7 +2163,6 @@ SEC. 20004. Enhancement of Department of Defense resources for munitions and def
 
 (2) such amounts are available to cover all costs and expenditures as provided under section 149(e)(5)(B) of title 10, United States Code.
 
-
 SEC. 20005. Enhancement of Department of Defense resources for scaling low-cost weapons into production.
 (a) Appropriations.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -2334,7 +2238,6 @@ SEC. 20005. Enhancement of Department of Defense resources for scaling low-cost 
 
 (2) such amounts are available to cover all costs and expenditures as provided under section 149(e)(5)(B) of title 10, United States Code.
 
-
 SEC. 20006. Enhancement of Department of Defense resources for improving the efficiency and cybersecurity of the Department of Defense.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -2345,7 +2248,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 (3) $10,000,000 for the improvement of the budgetary and programmatic infrastructure of the Office of the Secretary of Defense; and
 
 (4) $20,000,000 for defense cybersecurity programs of the Defense Advanced Research Projects Agency.
-
 
 SEC. 20007. Enhancement of Department of Defense resources for air superiority.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -2387,7 +2289,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 (18) $600,000,000 for the development, procurement, and integration of Air Force long-range strike aircraft; and
 
 (19) $500,000,000 for the development, procurement, and integration of Navy long-range strike aircraft.
-
 
 SEC. 20008. Enhancement of resources for nuclear forces.
 (a) DOD appropriations.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -2435,7 +2336,6 @@ SEC. 20008. Enhancement of resources for nuclear forces.
 (8) $10,000,000 for National Nuclear Security Administration evaluation of spent fuel reprocessing technology; and
 
 (9) $115,000,000 for accelerating nuclear national security missions through artificial intelligence.
-
 
 SEC. 20009. Enhancement of Department of Defense resources to improve capabilities of United States Indo-Pacific Command.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -2504,7 +2404,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 
 (32) $350,000,000 for the development, procurement, and integration of military space command and control systems.
 
-
 SEC. 20010. Enhancement of Department of Defense resources for improving the readiness of the Department of Defense.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -2554,10 +2453,8 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 
 (23) $320,000,000 for Joint Special Operations Command.
 
-
 SEC. 20011. Improving Department of Defense border support and counter-drug missions.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029, $1,000,000,000 for the deployment of military personnel in support of border operations, operations and maintenance activities in support of border operations, counter-narcotics and counter-transnational criminal organization mission support, the operation of national defense areas and construction in national defense areas, and the temporary detention of migrants on Department of Defense installations, in accordance with chapter 15 of title 10, United States Code.
-
 
 SEC. 20012. Department of Defense oversight.
 In addition to amounts otherwise available, there is appropriated to the Inspector General of the Department of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $10,000,000, to remain available through September 30, 2029, to monitor Department of Defense activities for which funding is appropriated in this title, including—
@@ -2567,7 +2464,6 @@ In addition to amounts otherwise available, there is appropriated to the Inspect
 (2) programs with related data management and data ownership considerations; and
 
 (3) programs particularly vulnerable to supply chain disruptions and long lead time components.
-
 
 SEC. 20013. Military construction projects authorized.
 (a) Authorization of appropriations.—Funds are hereby authorized to be appropriated for military construction, land acquisition, and military family housing functions of each military department (as defined in section 101(a) of title 10, United States Code) as specified in this title.
@@ -2579,10 +2475,8 @@ TITLE III—Committee on Banking, Housing, and Urban Affairs
 SEC. 30001. Funding cap for the Bureau of Consumer Financial Protection.
 Section 1017(a)(2)(A)(iii) of the Consumer Financial Protection Act of 2010 (12 U.S.C. 5497(a)(2)(A)(iii)) is amended by striking “12” and inserting “6.5”.
 
-
 SEC. 30002. Rescission of funds for Green and Resilient Retrofit Program for Multifamily Housing.
 The unobligated balances of amounts made available under section 30002(a) of the Act entitled “An Act to provide for reconciliation pursuant to title II of S. Con. Res. 14”, approved August 16, 2022 (Public Law 117–169; 136 Stat. 2027) are rescinded.
-
 
 SEC. 30003. Securities and Exchange Commission Reserve Fund.
 (a) In general.—Section 4 of the Securities Exchange Act of 1934 (15 U.S.C. 78d) is amended—
@@ -2593,7 +2487,6 @@ SEC. 30003. Securities and Exchange Commission Reserve Fund.
 
 (b) Technical and conforming amendment.—Section 21F(g)(2) of the Securities Exchange Act of 1934 (15 U.S.C. 78u–6(g)(2)) is amended to read as follows:
 
-
 “(a) Use of Fund.—The Fund shall be available to the Commission, without further appropriation or fiscal year limitation, for paying awards to whistleblowers as provided in subsection (b).”.
 
 (c) Transition provision.—During the period beginning on the date of enactment of this Act and ending on October 1, 2025, the Securities and Exchange Commission may expend amounts in the Securities and Exchange Commission Reserve Fund that were obligated before the date of enactment of this Act for any program, project, or activity that is ongoing (as of the day before the date of enactment of this Act) in accordance with subsection (i) of section 4 of the Securities Exchange Act of 1934 (15 U.S.C. 78d), as in effect on the day before the date of enactment of this Act.
@@ -2602,7 +2495,6 @@ SEC. 30003. Securities and Exchange Commission Reserve Fund.
 
 (e) Closing of account.—For the purposes of section 1555 of title 31, United States Code, the Securities and Exchange Commission Reserve Fund shall be considered closed, and thereafter shall not be available for obligation or expenditure for any purpose, upon execution of the transfer required under subsection (d).
 
-
 SEC. 30004. Appropriations for Defense Production Act.
 In addition to amounts otherwise available, there is appropriated for fiscal year 2025, out of amounts not otherwise appropriated, $1,000,000,000, to remain available until September 30, 2027, to carry out the Defense Production Act (50 U.S.C. 4501 et seq.).
 
@@ -2610,7 +2502,6 @@ TITLE IV—Committee on Commerce, Science, and Transportation
 
 SEC. 40001. Coast Guard mission readiness.
 (a) In general.—Chapter 11 of title 14, United States Code, is amended by adding at the end the following:
-
 
 “SUBCHAPTER V—COAST GUARD MISSION READINESS
 “§ 1181. Special appropriations
@@ -2734,7 +2625,6 @@ SEC. 40002. Spectrum auctions.
 
 (2) publish a biennial report, with the last report to be published not later than June 30, 2034, on the value of all spectrum used by Federal entities (as defined in section 113(l) of the National Telecommunications and Information Administration Organization Act (47 U.S.C. 923(l))), that assesses the value of bands of frequencies in increments of not more than 100 megahertz.
 
-
 SEC. 40003. Air traffic control improvements.
 (a) In general.—For the purpose of the acquisition, construction, sustainment, and improvement of facilities and equipment necessary to improve or maintain aviation safety, in addition to amounts otherwise made available, there is appropriated to the Administrator of the Federal Aviation Administration for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -2768,10 +2658,8 @@ SEC. 40003. Air traffic control improvements.
 
 (b) Quarterly reporting.—Not later than 180 days after the date of enactment of this Act, and every 90 days thereafter, the Administrator of the Federal Aviation Administration shall submit to Congress a report that describes any expenditures under this section.
 
-
 SEC. 40004. Space launch and reentry licensing and permitting user fees.
 (a) In general.—Chapter 509 of title 51, United States Code, is amended by adding at the end the following new section:
-
 
 “§ 50924. Space launch and reentry licensing and permitting user fees
 “(a) Fees.—
@@ -2825,7 +2713,6 @@ SEC. 40004. Space launch and reentry licensing and permitting user fees.
 “(b) Office of Commercial Space Transportation Launch and Reentry Licensing and Permitting Fund.—There is established in the Treasury of the United States a separate account, which shall be known as the ‘Office of Commercial Space Transportation Launch and Reentry Licensing and Permitting Fund’, for the purposes of expenses of the Office of Commercial Space Transportation of the Federal Aviation Administration and to carry out section 630(b) of the FAA Reauthorization Act of 2024. 70 percent of the amounts deposited into the fund shall be available for such purposes and shall be available without further appropriation and without fiscal year limitation.”.
 
 (b) Clerical amendment.—The table of sections for chapter 509 of title 51, United States Code, is amended by inserting after the item relating to section 50923 the following:
-
 
 “50924. Space launch and reentry licensing and permitting user fees.”.
 
@@ -2908,7 +2795,6 @@ SEC. 40005. Mars missions, Artemis missions, and Moon to Mars program.
 
 (b) Clerical amendment.—The table of sections for chapter 203 of title 51, United States Code, is amended by adding at the end the following:
 
-
 “20306. Special appropriations for Mars missions, Artemis missions, and Moon to Mars program.”.
 
 SEC. 40006. Corporate average fuel economy civil penalties.
@@ -2924,10 +2810,8 @@ SEC. 40006. Corporate average fuel economy civil penalties.
 
 (2) apply to all model years of a manufacturer for which the Secretary of Transportation has not provided a notification pursuant to section 32903(b)(2)(B) of title 49, United States Code, specifying the penalty due for the average fuel economy of that manufacturer being less than the applicable standard prescribed under section 32902 of that title.
 
-
 SEC. 40007. Payments for lease of Metropolitan Washington Airports.
 Section 49104(b) of title 49, United States Code, is amended to read as follows:
-
 
 “(b) Payments.—
 
@@ -2939,18 +2823,14 @@ Section 49104(b) of title 49, United States Code, is amended to read as follows:
 
 “(2) RENEGOTIATION.—The Secretary and the Airports Authority shall renegotiate the level of lease payments at least once every 10 years to ensure that in no year the amount specified in paragraph (1)(B) is less than $15,000,000 in 2027 dollars.”.
 
-
 SEC. 40008. Rescission of certain amounts for the National Oceanic and Atmospheric Administration.
 Any unobligated balances of amounts appropriated or otherwise made available by sections 40001, 40002, 40003, and 40004 of Public Law 117–169 (136 Stat. 2028) are hereby rescinded.
-
 
 SEC. 40009. Reduction in annual transfers to Travel Promotion Fund.
 Subsection (d)(2)(B) of the Travel Promotion Act of 2009 (22 U.S.C. 2131(d)(2)(B)) is amended by striking “$100,000,000” and inserting “$20,000,000”.
 
-
 SEC. 40010. Treatment of unobligated funds for alternative fuel and low-emission aviation technology.
 Out of the amounts made available by section 40007(a) of title IV of Public Law 117–169 (49 U.S.C. 44504 note), any unobligated balances of such amounts are hereby rescinded.
-
 
 SEC. 40011. Rescission of amounts appropriated to Public Wireless Supply Chain Innovation Fund.
 Of the unobligated balances of amounts made available under section 106(a) of the CHIPS Act of 2022 (Public Law 117–167; 136 Stat. 1392), $850,000,000 are permanently rescinded.
@@ -3033,14 +2913,11 @@ SEC. 50101. Onshore oil and gas leasing.
 
 (2) in subsection (p), by adding at the end the following:
 
-
 “(4) TERM.—A permit to drill approved under this subsection shall be valid for a single, non-renewable 4-year period beginning on the date that the permit to drill is approved.”; and
 
 (3) by striking subsection (q) and inserting the following:
 
-
 “(q) Commingling of production.—The Secretary of the Interior shall approve applications allowing for the commingling of production from 2 or more sources (including the area of an oil and gas lease, the area included in a drilling spacing unit, a unit participating area, a communitized area, or non-Federal property) before production reaches the point of royalty measurement regardless of ownership, the royalty rates, and the number or percentage of acres for each source if the applicant agrees to install measurement devices for each source, utilize an allocation method that achieves volume measurement uncertainty levels within plus or minus 2 percent during the production phase reported on a monthly basis, or utilize an approved periodic well testing methodology. Production from multiple oil and gas leases, drilling spacing units, communitized areas, or participating areas from a single wellbore shall be considered a single source. Nothing in this subsection shall prevent the Secretary of the Interior from continuing the current practice of exercising discretion to authorize higher percentage volume measurement uncertainty levels if appropriate technical and economic justifications have been provided.”.
-
 
 SEC. 50102. Offshore oil and gas leasing.
 (a) Lease sales.—
@@ -3127,15 +3004,12 @@ SEC. 50102. Offshore oil and gas leasing.
 
 (3) by adding at the end the following:
 
-
 “(D) $650,000,000 for each of fiscal years 2025 through 2034; and
 
 “(E) $500,000,000 for each of fiscal years 2035 through 2055.”.
 
-
 SEC. 50103. Royalties on extracted methane.
 Section 50263 of Public Law 117–169 (30 U.S.C. 1727) is repealed.
-
 
 SEC. 50104. Alaska oil and gas leasing.
 (a) Definitions.—In this section:
@@ -3182,7 +3056,6 @@ SEC. 50104. Alaska oil and gas leasing.
 
 (2) the balance shall be deposited into the Treasury as miscellaneous receipts.
 
-
 SEC. 50105. National Petroleum Reserve–Alaska.
 (a) Definitions.—In this section:
 
@@ -3216,11 +3089,9 @@ SEC. 50105. National Petroleum Reserve–Alaska.
 
 (1) by striking “All receipts from” and inserting the following:
 
-
 “(1) IN GENERAL.—Except as provided in paragraph (2), all receipts from”; and
 
 (2) by adding at the end the following:
-
 
 “(2) PERCENT SHARE FOR FISCAL YEAR 2034 AND THEREAFTER.—Beginning in fiscal year 2034, of the receipts from sales, rentals, bonuses, and royalties on leases issued pursuant to this section after the date of enactment of the Act entitled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’ (119th Congress)—
 
@@ -3257,7 +3128,6 @@ SEC. 50201. Coal leasing.
 
 (B) after completing the actions required by clauses (i) through (iv) of paragraph (1)(A), grant the qualified application and issue the applicable lease to the person that submitted the qualified application if that person submitted the winning bid in the lease sale held under clause (iii) of paragraph (1)(A).
 
-
 SEC. 50202. Coal royalty.
 (a) Rate.—Section 7(a) of the Mineral Leasing Act (30 U.S.C. 207(a)) is amended, in the fourth sentence, by striking “121⁄2 per centum” and inserting “121⁄2 percent, except such amount shall be not more than 7 percent during the period that begins on the date of enactment of the Act entitled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’ (119th Congress) and ends September 30, 2034,”.
 
@@ -3268,7 +3138,6 @@ SEC. 50202. Coal royalty.
 (2) that has not been terminated.
 
 (c) Advance royalties.—With respect to a lease issued under section 2 of the Mineral Leasing Act (30 U.S.C. 201) for which the lessee has paid advance royalties under section 7(b) of that Act (30 U.S.C. 207(b)), the Secretary of the Interior shall provide to the lessee a credit for the difference between the amount paid by the lessee in advance royalties for the lease before the date of the enactment of this Act and the amount the lessee would have been required to pay if the amendment made by subsection (a) had been made before the lessee paid advance royalties for the lease.
-
 
 SEC. 50203. Leases for known recoverable coal resources.
 Notwithstanding section 2(a)(3)(A) of the Mineral Leasing Act (30 U.S.C. 201(a)(3)(A)) and section 202(a) of the Federal Land Policy and Management Act of 1976 (43 U.S.C. 1712(a)), not later than 90 days after the date of enactment of this Act, the Secretary of the Interior shall make available for lease known recoverable coal resources of not less than 4,000,000 additional acres on Federal land located in the 48 contiguous States and Alaska subject to the jurisdiction of the Secretary, but which shall not include any Federal land within—
@@ -3290,7 +3159,6 @@ Notwithstanding section 2(a)(3)(A) of the Mineral Leasing Act (30 U.S.C. 201(a)(
 (8) a unit of the National Fish Hatchery System; or
 
 (9) a unit of the National Park System.
-
 
 SEC. 50204. Authorization to mine Federal coal.
 (a) Authorization.—In order to provide access to coal reserves in adjacent State or private land that without an authorization could not be mined economically, Federal coal reserves located in Federal land subject to a mining plan previously approved by the Secretary of the Interior as of the date of enactment of this Act and adjacent to coal reserves in adjacent State or private land are authorized to be mined.
@@ -3353,7 +3221,6 @@ SEC. 50301. Timber sales and long-term contracting for the Forest Service and th
 (B) CONTRACT LENGTH.—The period of a contract entered into to meet the requirement under subparagraph (A) shall be not less than 20 years, with options for extensions or renewals, as determined by the Secretary.
 
 (C) RECEIPTS.—Any monies derived from a contract entered into to meet the requirements under subparagraphs (A) and (B) shall be deposited in the general fund of the Treasury.
-
 
 SEC. 50302. Renewable energy fees on Federal land.
 (a) Definitions.—In this section:
@@ -3440,7 +3307,6 @@ SEC. 50302. Renewable energy fees on Federal land.
 
 (2) TERMINATION OF RIGHT-OF-WAY.—The Secretary may terminate a right-of-way for a renewable energy project if the Secretary does not receive payment for the acreage rent under subsection (b) or the capacity fee under subsection (c) by the date that is 90 days after the date on which the payment was due.
 
-
 SEC. 50303. Renewable energy revenue sharing.
 (a) Definitions.—In this section:
 
@@ -3496,7 +3362,6 @@ SEC. 50303. Renewable energy revenue sharing.
 
 (C) TIMING.—The amounts required to be paid under paragraph (1)(B) for an applicable fiscal year shall be made available in the fiscal year that immediately follows the fiscal year for which the amounts were collected.
 
-
 SEC. 50304. Rescission of National Park Service and Bureau of Land Management funds.
 There are rescinded the unobligated balances of amounts made available by the following sections of Public Law 117–169 (commonly known as the “Inflation Reduction Act of 2022”) (136 Stat. 1818):
 
@@ -3505,7 +3370,6 @@ There are rescinded the unobligated balances of amounts made available by the fo
 (2) Section 50222 (136 Stat. 2052).
 
 (3) Section 50223 (136 Stat. 2052).
-
 
 SEC. 50305. Celebrating America's 250th anniversary.
 In addition to amounts otherwise available, there is appropriated to the Secretary of the Interior (acting through the Director of the National Park Service) for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $150,000,000 for events, celebrations, and activities surrounding the observance and commemoration of the 250th anniversary of the founding of the United States, to remain available through fiscal year 2028.
@@ -3522,7 +3386,6 @@ SEC. 50401. Strategic Petroleum Reserve.
 (2) $171,000,000 to acquire, by purchase, petroleum products for storage in the Strategic Petroleum Reserve.
 
 (c) Repeal of strategic petroleum reserve drawdown and sale mandate.—Section 20003 of Public Law 115–97 (42 U.S.C. 6241 note) is repealed.
-
 
 SEC. 50402. Repeals; rescissions.
 (a) Repeal and rescission.—Section 50142 of Public Law 117–169 (136 Stat. 2044) (commonly known as the “Inflation Reduction Act of 2022”) is repealed and the unobligated balance of amounts made available under that section (as in effect on the day before the date of enactment of this Act) is rescinded.
@@ -3549,7 +3412,6 @@ SEC. 50402. Repeals; rescissions.
 
 (H) Section 50161 (42 U.S.C. 17113b).
 
-
 SEC. 50403. Energy dominance financing.
 (a) In general.—Section 1706 of the Energy Policy Act of 2005 (42 U.S.C. 16517) is amended—
 
@@ -3560,7 +3422,6 @@ SEC. 50403. Energy dominance financing.
 (B) in paragraph (2), by striking “avoid” and all that follows through the period at the end and inserting “increase capacity or output; or”; and
 
 (C) by adding at the end the following:
-
 
 “(3) support or enable the provision of known or forecastable electric supply at time intervals necessary to maintain or enhance grid reliability or other system adequacy needs.”;
 
@@ -3580,7 +3441,6 @@ SEC. 50403. Energy dominance financing.
 
 (6) by adding at the end the following:
 
-
 “(f) Funding.—
 
 “(1) IN GENERAL.—In addition to amounts otherwise available, there is appropriated to the Secretary for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $1,000,000,000, to remain available through September 30, 2028, to carry out activities under this section.
@@ -3588,7 +3448,6 @@ SEC. 50403. Energy dominance financing.
 “(2) ADMINISTRATIVE COSTS.—Of the amount made available under paragraph (1), the Secretary shall use not more than 3 percent for administrative expenses.”.
 
 (b) Commitment authority.—Section 50144(b) of Public Law 117–169 (commonly known as the “Inflation Reduction Act of 2022”) (136 Stat. 2045) is amended by striking “2026” and inserting “2028”.
-
 
 SEC. 50404. Transformational artificial intelligence models.
 (a) Definitions.—In this section:
@@ -3621,106 +3480,81 @@ TITLE VI—Committee on Environment and Public Works
 SEC. 60001. Rescission of funding for clean heavy-duty vehicles.
 The unobligated balances of amounts made available to carry out section 132 of the Clean Air Act (42 U.S.C. 7432) are rescinded.
 
-
 SEC. 60002. Repeal of Greenhouse Gas Reduction Fund.
 Section 134 of the Clean Air Act (42 U.S.C. 7434) is repealed and the unobligated balances of amounts made available to carry out that section (as in effect on the day before the date of enactment of this Act) are rescinded.
-
 
 SEC. 60003. Rescission of funding for diesel emissions reductions.
 The unobligated balances of amounts made available to carry out section 60104 of Public Law 117–169 (136 Stat. 2067) are rescinded.
 
-
 SEC. 60004. Rescission of funding to address air pollution.
 The unobligated balances of amounts made available to carry out section 60105 of Public Law 117–169 (136 Stat. 2067) are rescinded.
-
 
 SEC. 60005. Rescission of funding to address air pollution at schools.
 The unobligated balances of amounts made available to carry out section 60106 of Public Law 117–169 (136 Stat. 2069) are rescinded.
 
-
 SEC. 60006. Rescission of funding for the low emissions electricity program.
 The unobligated balances of amounts made available to carry out section 135 of the Clean Air Act (42 U.S.C. 7435) are rescinded.
-
 
 SEC. 60007. Rescission of funding for section 211(o) of the Clean Air Act.
 The unobligated balances of amounts made available to carry out section 60108 of Public Law 117–169 (136 Stat. 2070) are rescinded.
 
-
 SEC. 60008. Rescission of funding for implementation of the American Innovation and Manufacturing Act.
 The unobligated balances of amounts made available to carry out section 60109 of Public Law 117–169 (136 Stat. 2071) are rescinded.
-
 
 SEC. 60009. Rescission of funding for enforcement technology and public information.
 The unobligated balances of amounts made available to carry out section 60110 of Public Law 117–169 (136 Stat. 2071) are rescinded.
 
-
 SEC. 60010. Rescission of funding for greenhouse gas corporate reporting.
 The unobligated balances of amounts made available to carry out section 60111 of Public Law 117–169 (136 Stat. 2072) are rescinded.
 
-
 SEC. 60011. Rescission of funding for environmental product declaration assistance.
 The unobligated balances of amounts made available to carry out section 60112 of Public Law 117–169 (42 U.S.C. 4321 note; 136 Stat. 2072) are rescinded.
-
 
 SEC. 60012. Rescission of funding for methane emissions and waste reduction incentive program for petroleum and natural gas systems.
 (a) Rescission.—The unobligated balances of amounts made available to carry out subsections (a) and (b) of section 136 of the Clean Air Act (42 U.S.C. 7436) are rescinded.
 
 (b) Period.—Section 136(g) of the Clean Air Act (42 U.S.C. 7436(g)) is amended by striking “calendar year 2024” and inserting “calendar year 2034”.
 
-
 SEC. 60013. Rescission of funding for greenhouse gas air pollution plans and implementation grants.
 The unobligated balances of amounts made available to carry out section 137 of the Clean Air Act (42 U.S.C. 7437) are rescinded.
-
 
 SEC. 60014. Rescission of funding for environmental protection agency efficient, accurate, and timely reviews.
 The unobligated balances of amounts made available to carry out section 60115 of Public Law 117–169 (136 Stat. 2077) are rescinded.
 
-
 SEC. 60015. Rescission of funding for low-embodied carbon labeling for construction materials.
 The unobligated balances of amounts made available to carry out section 60116 of Public Law 117–169 (42 U.S.C. 4321 note; 136 Stat. 2077) are rescinded.
-
 
 SEC. 60016. Rescission of funding for environmental and climate justice block grants.
 The unobligated balances of amounts made available to carry out section 138 of the Clean Air Act (42 U.S.C. 7438) are rescinded.
 
-
 SEC. 60017. Rescission of funding for ESA recovery plans.
 The unobligated balances of amounts made available to carry out section 60301 of Public Law 117–169 (136 Stat. 2079) are rescinded.
-
 
 SEC. 60018. Rescission of funding for environmental and climate data collection.
 The unobligated balances of amounts made available to carry out section 60401 of Public Law 117–169 (136 Stat. 2079) are rescinded.
 
-
 SEC. 60019. Rescission of neighborhood access and equity grant program.
 The unobligated balances of amounts made available to carry out section 177 of title 23, United States Code, are rescinded.
-
 
 SEC. 60020. Rescission of funding for Federal building assistance.
 The unobligated balances of amounts made available to carry out section 60502 of Public Law 117–169 (136 Stat. 2083) are rescinded.
 
-
 SEC. 60021. Rescission of funding for low-carbon materials for Federal buildings.
 The unobligated balances of amounts made available to carry out section 60503 of Public Law 117–169 (136 Stat. 2083) are rescinded.
-
 
 SEC. 60022. Rescission of funding for GSA emerging and sustainable technologies.
 The unobligated balances of amounts made available to carry out section 60504 of Public Law 117–169 (136 Stat. 2083) are rescinded.
 
-
 SEC. 60023. Rescission of environmental review implementation funds.
 The unobligated balances of amounts made available to carry out section 178 of title 23, United States Code, are rescinded.
 
-
 SEC. 60024. Rescission of low-carbon transportation materials grants.
 The unobligated balances of amounts made available to carry out section 179 of title 23, United States Code, are rescinded.
-
 
 SEC. 60025. John F. Kennedy Center for the Performing Arts.
 (a) In general.—In addition to amounts otherwise available, there is appropriated for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $256,657,000, to remain available until September 30, 2029, for necessary expenses for capital repair, restoration, maintenance backlog, and security structures of the building and site of the John F. Kennedy Center for the Performing Arts.
 
 (b) Administrative costs.—Of the amounts made available under subsection (a), not more than 3 percent may be used for administrative costs necessary to carry out this section.
-
 
 SEC. 60026. Project sponsor opt-in fees for environmental reviews.
 Title I of the National Environmental Policy Act of 1969 (42 U.S.C. 4331 et seq.) is amended by adding at the end the following:
@@ -3772,7 +3606,6 @@ SEC. 70101. Extension and enhancement of reduced rates.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70102. Extension and enhancement of increased standard deduction.
 (a) In general.—Section 63(c)(7) is amended—
 
@@ -3792,7 +3625,6 @@ SEC. 70102. Extension and enhancement of increased standard deduction.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
-
 SEC. 70103. Termination of deduction for personal exemptions other than temporary senior deduction.
 (a) In general.—Section 151(d)(5) is amended—
 
@@ -3801,7 +3633,6 @@ SEC. 70103. Termination of deduction for personal exemptions other than temporar
 (2) by striking “, and before January 1, 2026”, and
 
 (3) by adding at the end the following new subparagraph:
-
 
 “(C) DEDUCTION FOR SENIORS.—
 
@@ -3829,11 +3660,9 @@ SEC. 70103. Termination of deduction for personal exemptions other than temporar
 
 (b) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2) is amended by striking “and” at the end of subparagraph (U), by striking the period at the end of subparagraph (V) and inserting “, and”, and by inserting after subparagraph (V) the following new subparagraph:
 
-
 “(W) an omission of a correct social security number required under section 151(d)(5)(C) (relating to deduction for seniors).”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
-
 
 SEC. 70104. Extension and enhancement of increased child tax credit.
 (a) Extension and increase of expanded child tax credit.—Section 24(h) is amended—
@@ -3845,7 +3674,6 @@ SEC. 70104. Extension and enhancement of increased child tax credit.
 (3) by striking “2018 through 2025” in the heading and inserting “beginning after 2017”.
 
 (b) Social security number required.—Section 24(h)(7) is amended to read as follows:
-
 
 “(7) SOCIAL SECURITY NUMBER REQUIRED.—
 
@@ -3862,7 +3690,6 @@ SEC. 70104. Extension and enhancement of increased child tax credit.
 “(ii) before the due date for such return.”.
 
 (c) Inflation adjustments.—Section 24(i) is amended to read as follows:
-
 
 “(i) Inflation adjustments.—
 
@@ -3882,13 +3709,11 @@ SEC. 70104. Extension and enhancement of increased child tax credit.
 
 (d) Conforming amendment.—Section 24(h)(5) is amended to read as follows:
 
-
 “(5) MAXIMUM AMOUNT OF REFUNDABLE CREDIT.—The amount determined under subsection (d)(1)(A) with respect to any qualifying child shall not exceed $1,400, and such subsection shall be applied without regard to paragraph (4) of this subsection.”.
 
 (e) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2)(I) is amended by striking “section 24(e)” and inserting “section 24”.
 
 (f) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
-
 
 SEC. 70105. Extension and enhancement of deduction for qualified business income.
 (a) Increase in taxable income limitation phase-in amounts.—
@@ -3900,7 +3725,6 @@ SEC. 70105. Extension and enhancement of deduction for qualified business income
 (b) Minimum deduction for active qualified business income.—
 
 (1) IN GENERAL.—Subsection (i) of section 199A is amended to read as follows:
-
 
 “(i) Minimum deduction for active qualified business income.—
 
@@ -3928,7 +3752,6 @@ If any increase under this paragraph is not a multiple of $5, such increase shal
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70106. Extension and enhancement of increased estate and gift tax exemption amounts.
 (a) In general.—Section 2010(c)(3) is amended—
 
@@ -3944,7 +3767,6 @@ SEC. 70106. Extension and enhancement of increased estate and gift tax exemption
 
 (b) Effective date.—The amendments made by this section shall apply to estates of decedents dying and gifts made after December 31, 2025.
 
-
 SEC. 70107. Extension of increased alternative minimum tax exemption amounts and modification of phaseout thresholds.
 (a) In general.—Section 55(d)(4) is amended—
 
@@ -3958,18 +3780,15 @@ SEC. 70107. Extension of increased alternative minimum tax exemption amounts and
 
 (2) by striking “determined by substituting ‘calendar year 2017’ for ‘calendar year 2016’ in subparagraph (A)(ii) thereof.” and inserting “determined by substituting for ‘calendar year 2016’ in subparagraph (A)(ii) thereof—
 
-
 “(1) ‘calendar year 2017’, in the case of the $109,400 amount in subparagraph (A)(i)(I) and the $70,300 amount in subparagraph (A)(i)(II), and
 
 “(2) ‘calendar year 2025’, in the case of the $1,000,000 amount in subparagraph (A)(ii)(I).”.
 
 (c) Modification of phaseout amount.—Section 55(d)(4)(A)(ii) is amended by striking “and” at the end of subclause (II), and by adding at the end the following new subclause:
 
-
 “(IV) by substituting ‘50 percent’ for ‘25 percent’, and”.
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70108. Extension and modification of limitation on deduction for qualified residence interest.
 (a) In general.—Section 163(h)(3)(F) is amended—
@@ -3984,7 +3803,6 @@ SEC. 70108. Extension and modification of limitation on deduction for qualified 
 
 (D) by inserting after subclause (II) the following new subclause:
 
-
 “(III) MORTGAGE INSURANCE PREMIUMS TREATED AS INTEREST.—Clause (iv) of subparagraph (E) shall not apply.”,
 
 (2) by striking clause (ii) and redesignating clauses (iii) and (iv) as clauses (ii) and (iii), respectively, and
@@ -3992,7 +3810,6 @@ SEC. 70108. Extension and modification of limitation on deduction for qualified 
 (3) by striking “2018 through 2025” in the heading and inserting “beginning after 2017”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70109. Extension and modification of limitation on casualty loss deduction.
 (a) In general.—Section 165(h)(5) is amended—
@@ -4009,7 +3826,6 @@ SEC. 70109. Extension and modification of limitation on casualty loss deduction.
 
 (3) STATE DECLARED DISASTER.—Paragraph (5) of section 165(h) is amended by adding at the end the following new subparagraph:
 
-
 “(C) STATE DECLARED DISASTER.—For purposes of this paragraph—
 
 “(i) IN GENERAL.—The term ‘State declared disaster’ means, with respect to any State, any natural catastrophe (including any hurricane, tornado, storm, high water, wind-driven water, tidal wave, tsunami, earthquake, volcanic eruption, landslide, mudslide, snowstorm, or drought), or, regardless of cause, any fire, flood, or explosion, in any part of the State, which in the determination of the Governor of such State (or the Mayor, in the case of the District of Columbia) and the Secretary causes damage of sufficient severity and magnitude to warrant the application of the rules of this section.
@@ -4017,7 +3833,6 @@ SEC. 70109. Extension and modification of limitation on casualty loss deduction.
 “(ii) STATE.—The term ‘State’ includes the District of Columbia, the Commonwealth of Puerto Rico, the Virgin Islands, Guam, American Samoa, and the Commonwealth of the Northern Mariana Islands.”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70110. Termination of miscellaneous itemized deductions other than educator expenses.
 (a) In general.—Section 67(g) is amended—
@@ -4030,11 +3845,9 @@ SEC. 70110. Termination of miscellaneous itemized deductions other than educator
 
 (1) IN GENERAL.—Section 67(b) is amended by striking “and” at the end of paragraph (11), by striking the period at the end of paragraph (12) and inserting “, and”, and by adding at the end the following new paragraph:
 
-
 “(13) the deductions allowed by section 162 for educator expenses (as defined in subsection (g)).”.
 
 (2) INCLUSION OF COACHES AND CERTAIN NONATHLETIC INSTRUCTIONAL EQUIPMENT.—Section 67 is amended by redesignating subsection (g), as amended by this section, as subsection (h), and by inserting after subsection (f) the following new section:
-
 
 “(g) Educator expenses.—For purposes of subsection (b)(13), the term ‘educator expenses’ means expenses of a type which would be described in section 62(a)(2)(D) if—
 
@@ -4050,10 +3863,8 @@ SEC. 70110. Termination of miscellaneous itemized deductions other than educator
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70111. Limitation on tax benefit of itemized deductions.
 (a) In general.—Section 68 is amended to read as follows:
-
 
 “(a) In general.—In the case of an individual, the amount of the itemized deductions otherwise allowable for the taxable year (determined without regard to this section) shall be reduced by 2⁄37 of the lesser of—
 
@@ -4070,7 +3881,6 @@ SEC. 70111. Limitation on tax benefit of itemized deductions.
 (2) PATRONS OF SPECIFIED AGRICULTURAL AND HORTICULTURAL COOPERATIVES.—Section 199A(g)(2)(B) is amended by inserting “section 68 or” after “without regard to”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70112. Extension and modification of qualified transportation fringe benefits.
 (a) In general.—Section 132(f) is amended—
@@ -4095,7 +3905,6 @@ SEC. 70112. Extension and modification of qualified transportation fringe benefi
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70113. Extension and modification of limitation on deduction and exclusion for moving expenses.
 (a) Extension of limitation on deduction.—Section 217(k) is amended—
 
@@ -4107,11 +3916,9 @@ SEC. 70113. Extension and modification of limitation on deduction and exclusion 
 
 (1) by striking “2017.—Except in the case” and inserting “2017.—
 
-
 “(1) IN GENERAL.—Except in the case”, and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(2) MEMBERS OF THE INTELLIGENCE COMMUNITY.—An employee or new appointee of the intelligence community (as defined in section 3 of the National Security Act of 1947 (50 U.S.C. 3003)) (other than a member of the Armed Forces of the United States) who moves pursuant to a change in assignment which requires relocation shall be treated for purposes of this section in the same manner as an individual to whom subsection (g) applies.”.
 
@@ -4125,10 +3932,8 @@ SEC. 70113. Extension and modification of limitation on deduction and exclusion 
 
 (e) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70114. Extension and modification of limitation on wagering losses.
 (a) In general.—Section 165 is amended by striking subsection (d) and inserting the following:
-
 
 “(d) Wagering losses.—
 
@@ -4141,7 +3946,6 @@ SEC. 70114. Extension and modification of limitation on wagering losses.
 “(2) SPECIAL RULE.—For purposes of paragraph (1), the term ‘losses from wagering transactions’ includes any deduction otherwise allowable under this chapter incurred in carrying on any wagering transaction.”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70115. Extension and enhancement of increased limitation on contributions to ABLE accounts.
 (a) In general.—Section 529A(b)(2)(B) is amended—
@@ -4156,12 +3960,10 @@ SEC. 70115. Extension and enhancement of increased limitation on contributions t
 
 (2) MODIFIED INFLATION ADJUSTMENT.—The amendment made by subsection (a)(1) shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70116. Extension and enhancement of savers credit allowed for ABLE contributions.
 (a) Extension.—
 
 (1) IN GENERAL.—Section 25B(d)(1) is amended to read as follows:
-
 
 “(1) IN GENERAL.—The term ‘qualified retirement savings contributions’ means, with respect to any taxable year, the sum of—
 
@@ -4189,18 +3991,15 @@ SEC. 70116. Extension and enhancement of savers credit allowed for ABLE contribu
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after December 31, 2026.
 
-
 SEC. 70117. Extension of rollovers from qualified tuition programs to ABLE accounts permitted.
 (a) In general.—Section 529(c)(3)(C)(i)(III) is amended by striking “before January 1, 2026,”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70118. Extension of treatment of certain individuals performing services in the Sinai Peninsula and enhancement to include additional areas.
 (a) Treatment made permanent.—Section 11026(a) of Public Law 115–97 is amended by striking “, with respect to the applicable period”.
 
 (b) Kenya, Mali, Burkina Faso, and Chad included as hazardous duty areas.—Section 11026(b) of Public Law 115–97 is amended to read as follows:
-
 
 “(b) Qualified hazardous duty area.—For purposes of this section, the term ‘qualified hazardous duty area’ means each of the following locations, but only during the period for which any member of the Armed Forces of the United States is entitled to special pay under section 310 of title 37, United States Code (relating to special pay; duty subject to hostile fire or imminent danger), for services performed in such location:
 
@@ -4218,10 +4017,8 @@ SEC. 70118. Extension of treatment of certain individuals performing services in
 
 (d) Effective date.—The amendments made by this section shall take effect on January 1, 2026.
 
-
 SEC. 70119. Extension and modification of exclusion from gross income of student loans discharged on account of death or disability.
 (a) In general.—Section 108(f)(5) is amended to read as follows:
-
 
 “(5) DISCHARGES ON ACCOUNT OF DEATH OR DISABILITY.—
 
@@ -4247,11 +4044,9 @@ SEC. 70119. Extension and modification of exclusion from gross income of student
 
 (b) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2), as amended by this Act, is further amended by striking “and” at the end of subparagraph (V), by striking the period at the end of subparagraph (W) and inserting “, and”, and by inserting after subparagraph (W) the following new subparagraph:
 
-
 “(X) an omission of a correct social security number required under section 108(f)(5)(C) (relating to discharges on account of death or disability).”.
 
 (c) Effective date.—The amendments made by this section shall apply to discharges after December 31, 2025.
-
 
 SEC. 70120. Limitation on individual deductions for certain state and local taxes, etc.
 (a) In general.—Section 164(b)(6) is amended—
@@ -4261,7 +4056,6 @@ SEC. 70120. Limitation on individual deductions for certain state and local taxe
 (2) by striking “$10,000 ($5,000 in the case of a married individual filing a separate return)” and inserting “the applicable limitation amount (half the applicable limitation amount in the case of a married individual filing a separate return)”.
 
 (b) Applicable limitation amount.—Section 164(b) is amended by adding at the end the following new paragraph:
-
 
 “(7) APPLICABLE LIMITATION AMOUNT.—
 
@@ -4344,23 +4138,19 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (b) Deduction allowed to non-itemizers.—Section 63(b) is amended by striking “and” at the end of paragraph (3), by striking the period at the end of paragraph (4) and inserting “, and”, and by adding at the end the following new paragraph:
 
-
 “(5) the deduction provided in section 224.”.
 
 (c) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of subparagraph (W), by striking the period at the end of subparagraph (X) and inserting “, and”, and by inserting after subparagraph (X) the following new subparagraph:
 
-
 “(Y) an omission of a correct social security number required under section 224(e) (relating to deduction for qualified tips).”.
 
 (d) Exclusion from qualified business income.—Section 199A(c)(4) is amended by striking “and” at the end of subparagraph (B), by striking the period at the end of subparagraph (C) and inserting “, and”, and by adding at the end the following new subparagraph:
-
 
 “(D) any amount with respect to which a deduction is allowable to the taxpayer under section 224(a) for the taxable year.”.
 
 (e) Extension of tip credit to beauty service business.—
 
 (1) IN GENERAL.—Section 45B(b)(2) is amended to read as follows:
-
 
 “(2) APPLICATION ONLY TO CERTAIN LINES OF BUSINESS.—In applying paragraph (1) there shall be taken into account only tips received from customers or clients in connection with the following services:
 
@@ -4390,7 +4180,6 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (B) STATEMENT FURNISHED TO PAYEE.—Section 6041(d) is amended by striking “and” at the end of paragraph (1), by striking the period at the end of paragraph (2) and inserting “, and”, and by inserting after paragraph (2) the following new paragraph:
 
-
 “(3) in the case of compensation to non-employees, the portion of payments that have been reasonably designated as cash tips and the occupation described in section 224(d)(1) of the person receiving such tips.”.
 
 (2) RETURNS FOR PAYMENTS MADE FOR SERVICES AND DIRECT SALES.—
@@ -4399,13 +4188,11 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (B) STATEMENT FURNISHED TO PAYEE.—Section 6041A(e) is amended by striking “and” at the end of paragraph (1), by striking the period at the end of paragraph (2) and inserting “, and”, and by inserting after paragraph (2) the following new paragraph:
 
-
 “(3) in the case of subsection (a), the portion of payments that have been reasonably designated as cash tips and the occupation described in section 224(d)(1) of the person receiving such tips.”.
 
 (3) RETURNS RELATING TO THIRD PARTY SETTLEMENT ORGANIZATIONS.—
 
 (A) STATEMENT FURNISHED TO SECRETARY.—Section 6050W(a) is amended by striking “and” at the end of paragraph (1), by striking the period at the end of paragraph (2) and inserting “and”, and by adding at the end the following new paragraph:
-
 
 “(3) in the case of a third party settlement organization, the portion of reportable payment transactions that have been reasonably designated by payors as cash tips and the occupation described in section 224(d)(1) of the person receiving such tips.”.
 
@@ -4413,11 +4200,9 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 
 (4) RETURNS RELATED TO WAGES.—Section 6051(a) is amended by striking “and” at the end of paragraph (16), by striking the period at the end of paragraph (17) and inserting “, and”, and by inserting after paragraph (17) the following new paragraph:
 
-
 “(18) the total amount of cash tips reported by the employee under section 6053(a) and the occupation described in section 224(d)(1) such person.”.
 
 (g) Clerical amendment.—The table of sections for part VII of subchapter B of chapter 1 is amended by redesignating the item relating to section 224 as relating to section 225 and by inserting after the item relating to section 223 the following new item:
-
 
 “Sec. 224. Qualified tips. ”.
 (h) Published list of occupations traditionally receiving tips.—Not later than 90 days after the date of the enactment of this Act, the Secretary of the Treasury (or the Secretary's delegate) shall publish a list of occupations which customarily and regularly received tips on or before December 31, 2024, for purposes of section 224(d)(1) of the Internal Revenue Code of 1986 (as added by subsection (a)).
@@ -4427,7 +4212,6 @@ For purposes of subparagraph (B), in the case of an individual receiving tips in
 (j) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
 (k) Transition rule.—In the case of any cash tips required to be reported for periods before January 1, 2026, persons required to file returns or statements under section 6041(a), 6041(d)(3), 6041A(a), 6041A(e)(3), 6050W(a), or 6050W(f)(2) of the Internal Revenue Code of 1986 (as amended by this section) may approximate a separate accounting of amounts designated as cash tips by any reasonable method specified by the Secretary.
-
 
 SEC. 70202. No tax on overtime.
 (a) Deduction allowed.—Part VII of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by redesignating section 225 as section 226 and by inserting after section 224 the following new section:
@@ -4466,13 +4250,11 @@ SEC. 70202. No tax on overtime.
 
 (b) Deduction allowed to non-itemizers.—Section 63(b), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of paragraph (4), by striking the period at the end of paragraph (5) and inserting “, and”, and by adding at the end the following new paragraph:
 
-
 “(6) the deduction provided in section 225.”.
 
 (c) Reporting.—
 
 (1) REQUIREMENT TO INCLUDE OVERTIME COMPENSATION ON W-2.—Section 6051(a), as amended by the preceding provision of this Act, is amended by striking “and” at the end of paragraph (17), by striking the period at the end of paragraph (18) and inserting “, and”, and by inserting after paragraph (18) the following new paragraph:
-
 
 “(19) the total amount of qualified overtime compensation (as defined in section 225(c)).”.
 
@@ -4482,16 +4264,13 @@ SEC. 70202. No tax on overtime.
 
 (B) STATEMENT FURNISHED TO PAYEE.—Section 6041(d), as amended by section 70201(e)(1)(B), is amended by striking “and” at the end of paragraph (2), by striking the period at the end of paragraph (3) and inserting “, and”, and by inserting after paragraph (3) the following new paragraph:
 
-
 “(4) the portion of payments that are qualified overtime compensation (as defined in section 225(c)).”.
 
 (d) Omission of correct social security number treated as mathematical or clerical error.—Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of subparagraph (X), by striking the period at the end of subparagraph (Y) and inserting “, and”, and by inserting after subparagraph (Y) the following new subparagraph:
 
-
 “(Z) an omission of a correct social security number required under section 225(d) (relating to deduction for qualified overtime).”.
 
 (e) Clerical amendment.—The table of sections for part VII of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by redesignating the item relating to section 225 as an item relating to section 226 and by inserting after the item relating to section 224 the following new item:
-
 
 “Sec. 225. Qualified overtime compensation. ”.
 (f) Withholding.—The Secretary of the Treasury (or the Secretary's delegate) shall modify the procedures prescribed under section 3402(a) of the Internal Revenue Code of 1986 for taxable years beginning after December 31, 2025, to take into account the deduction allowed under section 225 of such Code (as added by this Act).
@@ -4500,10 +4279,8 @@ SEC. 70202. No tax on overtime.
 
 (h) Transition rule.—In the case of qualified overtime compensation required to be reported for periods before January 1, 2026, persons required to file returns or statements under section 6051(a)(19), 6041(a), or 6041(d)(4) of the Internal Revenue Code of 1986 (as amended by this section) may approximate a separate accounting of amounts designated as qualified overtime compensation by any reasonable method specified by the Secretary.
 
-
 SEC. 70203. No tax on car loan interest.
 (a) In general.—Section 163(h) is amended by redesignating paragraph (4) as paragraph (5) and by inserting after paragraph (3) the following new paragraph:
-
 
 “(4) SPECIAL RULES FOR TAXABLE YEARS 2025 THROUGH 2028 RELATING TO QUALIFIED PASSENGER VEHICLE LOAN INTEREST.—
 
@@ -4563,7 +4340,6 @@ Such term shall not include any vehicle the final assembly of which did not occu
 
 (b) Deduction allowed to non-itemizers.—Section 63(b), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of paragraph (5), by striking the period at the end of paragraph (6) and inserting “and”, and by adding at the end the following new paragraph:
 
-
 “(7) so much of the deduction allowed by section 163(a) as is attributable to the exception under section 163(h)(4)(A).”.
 
 (c) Reporting.—
@@ -4618,11 +4394,9 @@ The written statement required under the preceding sentence shall be furnished o
 
 (A) in paragraph (1)(B), by striking “or” at the end of clause (xxvii), by striking “and” at the end of clause (xxviii) and inserting “or”, and by adding at the end the following new clause:
 
-
 “(xxix) section 6050AA(a) (relating to returns relating to applicable passenger vehicle loan interest received in trade or business from individuals),”, and
 
 (B) in paragraph (2), by striking “or” at the end of subparagraph (KK), by striking the period at the end of subparagraph (LL) and inserting “, or”, and by inserting after subparagraph (LL) the following new subparagraph:
-
 
 “(MM) section 6050AA(c) (relating to statements relating to applicable passenger vehicle loan interest received in trade or business from individuals).”.
 
@@ -4632,16 +4406,13 @@ The written statement required under the preceding sentence shall be furnished o
 
 (2) The table of sections for subpart B of part III of subchapter A of chapter 61 is amended by adding at the end the following new item:
 
-
 “Sec. 6050AA. Returns relating to applicable passenger vehicle loan interest received in trade or business from individuals. ”.
 (e) Effective date.—The amendments made by this section shall apply to indebtedness incurred after December 31, 2024.
-
 
 SEC. 70204. Trump accounts and contribution pilot program.
 (a) Trump accounts.—
 
 (1) IN GENERAL.—Subchapter F of chapter 1 is amended by adding at the end the following new part:
-
 
 “PART IX—Trump accounts
 
@@ -4886,7 +4657,6 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 
 (3) FAILURE TO PROVIDE REPORTS ON TRUMP ACCOUNTS.—Section 6693(a)(2) is amended by striking “and” at the end of subparagraph (E), by striking the period at the end of subparagraph (F) and inserting “, and”, and by inserting after subparagraph (F) the following new subparagraph:
 
-
 “(G) section 530A(i) (relating to Trump accounts).”.
 
 (4) CLERICAL AMENDMENT.—
@@ -4897,7 +4667,6 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 (b) Employer contributions.—
 
 (1) IN GENERAL.—Part III of subchapter B of chapter 1 is amended by inserting after section 127 the following new section:
-
 
 “SEC. 128. Employer contributions to Trump accounts.
 “(a) In general.—Gross income of an employee does not include amounts paid by the employer as a contribution to the Trump account of such employee or of any dependent of such employee if the amounts are paid or incurred pursuant to a program which is described in subsection (c).
@@ -4920,12 +4689,10 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 
 (2) CLERICAL AMENDMENT.—The table of sections for part III of subchapter B of chapter 1 is amended by inserting after the item relating to section 127 the following new item:
 
-
 “Sec. 128. Employer contributions to Trump accounts.”.
 (c) Certain contributions excluded from gross income.—
 
 (1) IN GENERAL.—Part III of subchapter B of chapter 1 is amended by inserting before section 140 the following new section:
-
 
 “SEC. 139J. Certain contributions to Trump accounts.
 “(a) In general.—Gross income of an account beneficiary shall not include any qualified general contribution to a Trump account of the account beneficiary.
@@ -4933,7 +4700,6 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 “(b) Definitions.—Any term used in this section which is used in section 530A shall have the meaning given such term under section 530A.”.
 
 (2) CLERICAL AMENDMENT.—The table of sections for part III of subchapter B is amended by inserting before the item relating to section 140 the following new item:
-
 
 “Sec. 139J. Certain contributions to Trump accounts.”.
 (d) Trump accounts contribution pilot program.—
@@ -4992,17 +4758,14 @@ For purposes of this paragraph, the excess contributions for a taxable year are 
 
 (3) OMISSION OF CORRECT SOCIAL SECURITY NUMBER TREATED AS MATHEMATICAL OR CLERICAL ERROR.—Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking “and” at the end of subparagraph (Y), by striking the period at the end of subparagraph (Z) and inserting “, and”, and by inserting after subparagraph (Z) the following new subparagraph:
 
-
 “(AA) an omission of a correct social security number required under section 6434(e)(1) (relating to the Trump accounts contribution pilot program).”.
 
 (4) CONFORMING AMENDMENTS.—
 
 (A) The table of sections for subchapter B of chapter 65 is amended by adding at the end the following new item:
 
-
 “Sec. 6434. Trump accounts contribution pilot program.”.
 (B) The table of sections for part I of subchapter A of chapter 68 is amended by inserting after the item relating to section 6658 the following new item:
-
 
 “Sec. 6659. Improper claim for Trump account contribution pilot program credit.”.
 (e) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
@@ -5049,7 +4812,6 @@ SEC. 70301. Full expensing for certain business property.
 
 (3) TRANSITIONAL ELECTION OF REDUCED PERCENTAGE.—Section 168(k)(10) is amended by striking subparagraph (A), by redesignating subparagraph (B) as subparagraph (C), and by inserting before subparagraph (C) (as so redesignated) the following new subparagraphs:
 
-
 “(A) IN GENERAL.—In the case of qualified property placed in service by the taxpayer during the first taxable year ending after January 19, 2025, if the taxpayer elects to have this paragraph apply for such taxable year, paragraph (1)(A) shall be applied—
 
 “(i) in the case of property which is not described in clause (ii), by substituting ‘40 percent’ for ‘100 percent’, or
@@ -5068,10 +4830,8 @@ SEC. 70301. Full expensing for certain business property.
 
 (4) ACQUISITION DATE DETERMINATION.—For purposes of paragraph (1), property shall not be treated as acquired after the date on which a written binding contract is entered into for such acquisition.
 
-
 SEC. 70302. Full expensing of domestic research and experimental expenditures.
 (a) In general.—Part VI of subchapter B of chapter 1 is amended by inserting after section 174 the following new section:
-
 
 “SEC. 174A. Domestic research or experimental expenditures.
 “(a) Treatment as expenses.—Notwithstanding section 263, there shall be allowed as a deduction any domestic research or experimental expenditures which are paid or incurred by the taxpayer during the taxable year.
@@ -5124,11 +4884,9 @@ SEC. 70302. Full expensing of domestic research and experimental expenditures.
 
 (A) Section 41(d)(1)(A) is amended to read as follows:
 
-
 “(A) with respect to which expenditures are treated as domestic research or experimental expenditures under section 174A,”.
 
 (B) Section 280C(c)(1) is amended to read as follows:
-
 
 “(1) IN GENERAL.—The domestic research or experimental expenditures (as defined in section 174A(b)) otherwise taken into account as a deduction or charged to capital account under this chapter shall be reduced by the amount of the credit allowed under section 41(a).”.
 
@@ -5188,7 +4946,6 @@ SEC. 70302. Full expensing of domestic research and experimental expenditures.
 
 (d) Clerical amendment.—The table of sections for part VI of subchapter B of chapter 1 is amended by inserting after the item relating to section 174 the following new item:
 
-
 “Sec. 174A. Domestic research or experimental expenditures.”.
 (e) Effective date.—
 
@@ -5242,7 +4999,6 @@ SEC. 70302. Full expensing of domestic research and experimental expenditures.
 
 (C) REGULATIONS.—The Secretary of the Treasury (or the Secretary’s delegate) shall publish such guidance or regulations as may be necessary to carry out the purposes of this paragraph, including regulations or guidance allowing for the deduction allowed under subparagraph (A) in the case of taxpayers with taxable years beginning after December 31, 2024, and ending before the date of the enactment of this Act.
 
-
 SEC. 70303. Modification of limitation on business interest.
 (a) In general.—Section 163(j)(8)(A)(v) is amended by striking “in the case of taxable years beginning before January 1, 2022,”.
 
@@ -5256,14 +5012,12 @@ SEC. 70303. Modification of limitation on business interest.
 
 (2) SPECIAL RULE FOR SHORT TAXABLE YEARS.—The Secretary of the Treasury (or the Secretary's delegate) may prescribe such rules as are necessary or appropriate to provide for the application of the amendments made by this section in the case of any taxable year of less than 12 months that begins after December 31, 2024, and ends before the date of the enactment of this Act.
 
-
 SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 (a) In general.—Section 45S is amended—
 
 (1) in subsection (a)—
 
 (A) by striking paragraph (1) and inserting the following:
-
 
 “(1) IN GENERAL.—For purposes of section 38, in the case of an eligible employer, the paid family and medical leave credit is an amount equal to either of the following (as elected by such employer):
 
@@ -5273,13 +5027,11 @@ SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 
 (B) by adding at the end the following:
 
-
 “(3) RATE OF PAYMENT DETERMINED WITHOUT REGARD TO WHETHER LEAVE IS TAKEN.—For purposes of determining the applicable percentage with respect to paragraph (1)(B), the rate of payment under the insurance policy shall be determined without regard to whether any qualifying employees were on family and medical leave during the taxable year.”,
 
 (2) in subsection (b)(1), by striking “credit allowed” and inserting “wages taken into account”,
 
 (3) in subsection (c), by striking paragraphs (3) and (4) and inserting the following:
-
 
 “(3) AGGREGATION RULE.—
 
@@ -5309,7 +5061,6 @@ SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 
 (C) by adding at the end the following:
 
-
 “(3) is customarily employed for not less than 20 hours per week.”, and
 
 (5) by striking subsection (i).
@@ -5322,12 +5073,10 @@ SEC. 70304. Extension and enhancement of paid family and medical leave credit.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70305. Exceptions from limitations on deduction for business meals.
 (a) Exception to denial of deduction for business meals.—Section 274(o), as added by section 13304 of Public Law 115–97, is amended by striking “No deduction” and inserting “Except in the case of an expense described in subsection (e)(8) or (n)(2)(C), no deduction”.
 
 (b) Meals provided on certain fishing boats and at certain fish processing facilities not subject to 50 percent limitation.—Section 274(n)(2)(C) of the Internal Revenue Code of 1986 is amended by striking “or” at the end of clause (iii) and by adding at the end the following new clause:
-
 
 “(v) provided—
 
@@ -5340,7 +5089,6 @@ SEC. 70305. Exceptions from limitations on deduction for business meals.
 “(bb) is not located in a metropolitan statistical area (within the meaning of section 143(k)(2)(B)), or”.
 
 (c) Effective date.—The amendments made by this section shall apply to amounts paid or incurred after December 31, 2025.
-
 
 SEC. 70306. Increased dollar limitations for expensing of certain depreciable business assets.
 (a) In general.—Section 179(b) is amended—
@@ -5361,10 +5109,8 @@ SEC. 70306. Increased dollar limitations for expensing of certain depreciable bu
 
 (c) Effective date.—The amendments made by this section shall apply to property placed in service in taxable years beginning after December 31, 2024.
 
-
 SEC. 70307. Special depreciation allowance for qualified production property.
 (a) In general.—Section 168 is amended by adding at the end the following new subsection:
-
 
 “(n) Special allowance for qualified production property.—
 
@@ -5464,31 +5210,25 @@ Such election shall be made in such manner as the Secretary may prescribe by reg
 
 (b) Treatment of qualified production property as section 1245 property.—Section 1245(a)(3) is amended by striking “or” at the end of subparagraph (E), by striking the period at the end of subparagraph (F) and inserting “, or”, and by adding at the end the following new subparagraph:
 
-
 “(G) any qualified production property (as defined in section 168(n)(2)).”.
 
 (c) Effective date.—The amendments made by this section shall apply to property placed in service after the date of the enactment of this Act.
-
 
 SEC. 70308. Enhancement of advanced manufacturing investment credit.
 (a) In general.—Section 48D(a) is amended by striking “25 percent” and inserting “35 percent”.
 
 (b) Effective date.—The amendments made by this section shall apply to property placed in service after December 31, 2025.
 
-
 SEC. 70309. Spaceports are treated like airports under exempt facility bond rules.
 (a) In general.—Section 142(a)(1) is amended to read as follows:
-
 
 “(1) airports and spaceports,”.
 
 (b) Treatment of ground leases.—Section 142(b)(1) is amended by adding at the end the following new subparagraph:
 
-
 “(C) SPECIAL RULE FOR SPACEPORT GROUND LEASES.—For purposes of subparagraph (A), spaceport property located on land leased by a governmental unit from the United States shall not fail to be treated as owned by a governmental unit if the requirements of this paragraph are met by the lease and any subleases of the property.”.
 
 (c) Definition of spaceport.—Section 142 is amended by adding at the end the following new subsection:
-
 
 “(p) Spaceport.—
 
@@ -5516,7 +5256,6 @@ SEC. 70309. Spaceports are treated like airports under exempt facility bond rule
 
 (d) Exception from federally guaranteed bond prohibition.—Section 149(b)(3) is amended by adding at the end the following new subparagraph:
 
-
 “(F) EXCEPTION FOR SPACEPORTS.—A bond shall not be treated as federally guaranteed merely because of the payment of rent, user fees, or other charges by the United States (or any agency or instrumentality thereof) in exchange for the use of the spaceport by the United States (or any agency or instrumentality thereof).”.
 
 (e) Conforming amendment.—The heading for section 142(c) is amended by inserting “Spaceports,” after “Airports,”.
@@ -5528,7 +5267,6 @@ PART I—Foreign tax credit
 
 SEC. 70311. Modifications related to foreign tax credit limitation.
 (a) Rules for allocation of certain deductions to foreign source net CFC tested income for purposes of foreign tax credit limitation.—Section 904(b) is amended by adding at the end the following new paragraph:
-
 
 “(5) DEDUCTIONS TREATED AS ALLOCABLE TO FOREIGN SOURCE NET CFC TESTED INCOME.—Solely for purposes of the application of subsection (a) with respect to amounts described in subsection (d)(1)(A), the taxpayer’s taxable income from sources without the United States shall be determined by allocating and apportioning—
 
@@ -5550,7 +5288,6 @@ Any amount or deduction which would (but for subparagraphs (B) and (C)) have bee
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70312. Modifications to determination of deemed paid credit for taxes properly attributable to tested income.
 (a) Increase in deemed paid credit.—
 
@@ -5564,7 +5301,6 @@ SEC. 70312. Modifications to determination of deemed paid credit for taxes prope
 
 (b) Disallowance of foreign tax credit with respect to distributions of previously taxed net CFC tested income.—Section 960(d) is amended by adding at the end the following new paragraph:
 
-
 “(4) DISALLOWANCE OF FOREIGN TAX CREDIT WITH RESPECT TO DISTRIBUTIONS OF PREVIOUSLY TAXED NET CFC TESTED INCOME.—No credit shall be allowed under section 901 for 10 percent of any foreign income taxes paid or accrued (or deemed paid under subsection (b)(1)) with respect to any amount excluded from gross income under section 959(a) by reason of an inclusion in gross income under section 951A(a).”.
 
 (c) Effective dates.—
@@ -5573,10 +5309,8 @@ SEC. 70312. Modifications to determination of deemed paid credit for taxes prope
 
 (2) DISALLOWANCE.—The amendment made by subsection (b) shall apply to foreign income taxes paid or accrued (or deemed paid under section 960(b)(1) of the Internal Revenue Code of 1986) with respect to any amount excluded from gross income under section 959(a) of such Code by reason of an inclusion in gross income under section 951A(a) of such Code after June 28, 2025.
 
-
 SEC. 70313. Sourcing certain income from the sale of inventory produced in the United States.
 (a) In general.—Section 904(b), as amended by section 70311, is amended by adding at the end the following new paragraph:
-
 
 “(6) SOURCE RULES FOR CERTAIN INVENTORY PRODUCED IN THE UNITED STATES AND SOLD THROUGH FOREIGN BRANCHES.—For purposes of this section, if a United States person maintains an office or other fixed place of business in a foreign country (determined under rules similar to the rules of section 864(c)(5)), the portion of income which—
 
@@ -5607,7 +5341,6 @@ SEC. 70321. Modification of deduction for foreign-derived deduction eligible inc
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70322. Determination of deduction eligible income.
 (a) Sales or other dispositions of certain property.—
 
@@ -5618,7 +5351,6 @@ SEC. 70322. Determination of deduction eligible income.
 (B) by striking “over” at the end of subclause (VI) and inserting “and”, and
 
 (C) by adding at the end the following new subclause:
-
 
 “(VII) except as otherwise provided by the Secretary, any income and gain from the sale or other disposition (including pursuant to the deemed sale or other deemed disposition or a transaction subject to section 367(d)) of—
 
@@ -5634,11 +5366,9 @@ SEC. 70322. Determination of deduction eligible income.
 
 (1) IN GENERAL.—Section 250(b)(3)(A)(ii) is amended to read as follows:
 
-
 “(ii) expenses and deductions (including taxes), other than interest expense and research or experimental expenditures, properly allocable to such gross income.”.
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70323. Rules related to deemed intangible income.
 (a) Taxation of net CFC tested income.—
@@ -5735,7 +5465,6 @@ PART IV—Business interest limitation
 SEC. 70341. Coordination of business interest limitation with interest capitalization provisions.
 (a) In general.—Section 163(j) is amended by redesignating paragraphs (10) and (11) as paragraphs (11) and (12) and by inserting after paragraph (9) the following:
 
-
 “(10) COORDINATION WITH INTEREST CAPITALIZATION PROVISIONS.—
 
 “(A) IN GENERAL.—In applying this subsection—
@@ -5762,11 +5491,9 @@ SEC. 70341. Coordination of business interest limitation with interest capitaliz
 
 (c) Regulatory authority.—Section 163(j), as amended by subsection (a), is amended by redesignating paragraphs (11) and (12) as paragraphs (12) and (13) and by inserting after paragraph (10) the following:
 
-
 “(11) REGULATORY AUTHORITY.—The Secretary shall issue such regulations or guidance as may be necessary or appropriate to carry out the purposes of this subsection, including regulations or guidance to determine which business interest is taken into account under this subsection and section 59A(c)(3).”.
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70342. Definition of adjusted taxable income for business interest limitation.
 (a) In general.—Subparagraph (A) of section 163(j)(8) is amended—
@@ -5774,7 +5501,6 @@ SEC. 70342. Definition of adjusted taxable income for business interest limitati
 (1) by striking “and” at the end of clause (iv), and
 
 (2) by adding at the end the following new clause:
-
 
 “(vi) the amounts included in gross income under sections 951(a), 951A(a), and 78 (and the portion of the deductions allowed under sections 245A(a) (by reason of section 964(e)(4)) and 250(a)(1)(B) by reason of such inclusions), and”.
 
@@ -5786,7 +5512,6 @@ SEC. 70351. Permanent extension of look-thru rule for related controlled foreign
 (a) In general.—Section 954(c)(6)(C) is amended by striking “and before January 1, 2026,”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years of foreign corporations beginning after December 31, 2025.
-
 
 SEC. 70352. Repeal of election for 1-month deferral in determination of taxable year of specified foreign corporations.
 (a) In general.—Section 898(c) is amended by striking paragraph (2) and redesignating paragraph (3) as paragraph (2).
@@ -5805,12 +5530,10 @@ SEC. 70352. Repeal of election for 1-month deferral in determination of taxable 
 
 (2) SECRETARY.—For purposes of this subsection, the term “Secretary” means the Secretary of the Treasury or the Secretary's delegate.
 
-
 SEC. 70353. Restoration of limitation on downward attribution of stock ownership in applying constructive ownership rules.
 (a) In general.—Section 958(b) is amended—
 
 (1) by inserting after paragraph (3) the following:
-
 
 “(4) Subparagraphs (A), (B), and (C) of section 318(a)(3) shall not be applied so as to consider a United States person as owning stock which is owned by a person who is not a United States person.”, and
 
@@ -5854,7 +5577,6 @@ SEC. 70353. Restoration of limitation on downward attribution of stock ownership
 
 (c) Clerical amendment.—The table of sections for subpart F of part III of subchapter N of chapter 1 is amended by inserting after the item relating to section 951A the following new item:
 
-
 “Sec. 951B. Amounts included in gross income of foreign controlled United States shareholders.”.
 (d) Effective date.—The amendments made by this section shall apply to taxable years of foreign corporations beginning after December 31, 2025.
 
@@ -5866,10 +5588,8 @@ SEC. 70353. Restoration of limitation on downward attribution of stock ownership
 
 (f) No inference.—The amendments made by this section shall not be construed to create any inference with respect to the proper application of any provision of the Internal Revenue Code of 1986 with respect to taxable years beginning before the taxable years to which such amendments apply.
 
-
 SEC. 70354. Modifications to pro rata share rules.
 (a) In general.—Subsection (a) of section 951 is amended to read as follows:
-
 
 “(a) Amounts included.—
 
@@ -5931,7 +5651,6 @@ SEC. 70401. Enhancement of employer-provided child care credit.
 
 (b) Increase of maximum credit amount.—Subsection (b) of section 45F is amended to read as follows:
 
-
 “(b) Dollar limitation.—
 
 “(1) IN GENERAL.—The credit allowable under subsection (a) for any taxable year shall not exceed $500,000 ($600,000 in the case of an eligible small business).
@@ -5944,7 +5663,6 @@ SEC. 70401. Enhancement of employer-provided child care credit.
 
 (c) Eligible small business.—Section 45F(c) is amended by adding at the end the following new paragraph:
 
-
 “(4) ELIGIBLE SMALL BUSINESS.—The term ‘eligible small business’ means a business that meets the gross receipts test of section 448(c), determined—
 
 “(A) by substituting ‘5-taxable-year’ for ‘3-taxable-year’ in paragraph (1) thereof, and
@@ -5955,25 +5673,20 @@ SEC. 70401. Enhancement of employer-provided child care credit.
 
 (e) Treatment of jointly owned or operated child care facility.—Section 45F(c)(2) is amended by adding at the end the following new subparagraph:
 
-
 “(C) TREATMENT OF JOINTLY OWNED OR OPERATED CHILD CARE FACILITY.—A facility shall not fail to be treated as a qualified child care facility of the taxpayer merely because such facility is jointly owned or operated by the taxpayer and other persons.”.
 
 (f) Regulations and guidance.—Section 45F is amended by adding at the end the following new subsection:
-
 
 “(g) Regulations and guidance.—The Secretary shall issue such regulations or other guidance as may be necessary to carry out the purposes of this section, including guidance to carry out the purposes of paragraphs (1)(A)(iii) and (2)(C) of subsection (c).”.
 
 (g) Effective date.—The amendments made by this section shall apply to amounts paid or incurred after December 31, 2025.
 
-
 SEC. 70402. Enhancement of adoption credit.
 (a) In general.—Section 23(a) is amended by adding at the end the following new paragraph:
-
 
 “(4) PORTION OF CREDIT REFUNDABLE.—So much of the credit allowed under paragraph (1) as does not exceed $5,000 shall be treated as a credit allowed under subpart C and not as a credit allowed under this subpart.”.
 
 (b) Adjustments for inflation.—Section 23(h) is amended to read as follows:
-
 
 “(h) Adjustments for inflation.—
 
@@ -5995,7 +5708,6 @@ SEC. 70402. Enhancement of adoption credit.
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
-
 SEC. 70403. Recognizing Indian tribal governments for purposes of determining whether a child has special needs for purposes of the adoption credit.
 (a) In general.—Section 23(d)(3) is amended—
 
@@ -6005,16 +5717,13 @@ SEC. 70403. Recognizing Indian tribal governments for purposes of determining wh
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2024.
 
-
 SEC. 70404. Enhancement of the dependent care assistance program.
 (a) In general.—Section 129(a)(2)(A) is amended by striking “$5,000 ($2,500” and inserting “$7,500 ($3,750”.
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70405. Enhancement of child and dependent care tax credit.
 (a) In general.—Paragraph (2) of section 21(a) is amended to read as follows:
-
 
 “(2) APPLICABLE PERCENTAGE DEFINED.—For purposes of paragraph (1), the term ‘applicable percentage’ means 50 percent—
 
@@ -6129,7 +5838,6 @@ SEC. 70411. Tax credit for contributions of individuals to scholarship granting 
 
 (B) The table of sections for subpart A of part IV of subchapter A of chapter 1 is amended by inserting after the item relating to section 25E the following new item:
 
-
 “Sec. 25F. Qualified elementary and secondary education scholarships. ”.
 (b) Exclusion from gross income for scholarships for qualified elementary or secondary education expenses of eligible students.—
 
@@ -6143,14 +5851,12 @@ SEC. 70411. Tax credit for contributions of individuals to scholarship granting 
 
 (2) CONFORMING AMENDMENT.—The table of sections for part III of subchapter B of chapter 1 is amended by inserting before the item relating to section 140 the following new item:
 
-
 “Sec. 139K. Scholarships for qualified elementary or secondary education expenses of eligible students. ”.
 (c) Effective date.—
 
 (1) IN GENERAL.—Except as otherwise provided in this subsection, the amendments made by this section shall apply to taxable years ending after December 31, 2026.
 
 (2) EXCLUSION FROM GROSS INCOME.—The amendments made by subsection (b) shall apply to amounts received after December 31, 2026, in taxable years ending after such date.
-
 
 SEC. 70412. Exclusion for employer payments of student loans.
 (a) In general.—Section 127(c)(1)(B) is amended by striking “in the case of payments made before January 1, 2026,”.
@@ -6160,7 +5866,6 @@ SEC. 70412. Exclusion for employer payments of student loans.
 (1) by redesignating subsection (d) as subsection (e), and
 
 (2) by inserting after subsection (c) the following new subsection:
-
 
 “(d) Inflation adjustment.—
 
@@ -6174,12 +5879,10 @@ SEC. 70412. Exclusion for employer payments of student loans.
 
 (c) Effective date.—The amendment made by this section shall apply to payments made after December 31, 2025.
 
-
 SEC. 70413. Additional expenses treated as qualified higher education expenses for purposes of 529 accounts.
 (a) In general.—
 
 (1) IN GENERAL.—Section 529(c)(7) is amended to read as follows:
-
 
 “(7) TREATMENT OF ELEMENTARY AND SECONDARY TUITION.—Any reference in this section to the term ‘qualified higher education expense’ shall include a reference to the following expenses in connection with enrollment or attendance at, or for students enrolled at or attending, an elementary or secondary public, private, or religious school:
 
@@ -6213,15 +5916,12 @@ SEC. 70413. Additional expenses treated as qualified higher education expenses f
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70414. Certain postsecondary credentialing expenses treated as qualified higher education expenses for purposes of 529 accounts.
 (a) In general.—Section 529(e)(3) is amended by adding at the end the following new subparagraph:
-
 
 “(C) CERTAIN POSTSECONDARY CREDENTIALING EXPENSES.—The term ‘qualified higher education expenses’ includes qualified postsecondary credentialing expenses (as defined in subsection (f)).”.
 
 (b) Qualified postsecondary credentialing expenses.—Section 529 is amended by redesignating subsection (f) as subsection (g) and by inserting after subsection (e) the following new subsection:
-
 
 “(f) Qualified postsecondary credentialing expenses.—For purposes of this section—
 
@@ -6260,7 +5960,6 @@ SEC. 70414. Certain postsecondary credentialing expenses treated as qualified hi
 “(D) any recognized postsecondary credential as defined in section 3(52) of the Workforce Innovation and Opportunity Act (29 U.S.C. 3102(52)), provided through a program described in paragraph (2)(A).”.
 
 (c) Effective date.—The amendments made by this section shall apply to distributions made after the date of the enactment of this Act.
-
 
 SEC. 70415. Modification of excise tax on investment income of certain private colleges and universities.
 (a) In general.—Section 4968 is amended to read as follows:
@@ -6335,7 +6034,6 @@ SEC. 70415. Modification of excise tax on investment income of certain private c
 
 (b) Requirement to report certain information with respect to application of excise tax based on investment income of private colleges and universities.—Section 6033 is amended by redesignating subsection (o) as subsection (p) and by inserting after subsection (n) the following new subsection:
 
-
 “(o) Requirement to report certain information with respect to excise tax based on investment income of private colleges and universities.—Each applicable educational institution described in section 4968(c) which is subject to the requirements of subsection (a) shall include on the return required under subsection (a)—
 
 “(1) the number of tuition-paying students taken into account under section 4968(c), and
@@ -6344,10 +6042,8 @@ SEC. 70415. Modification of excise tax on investment income of certain private c
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70416. Expanding application of tax on excess compensation within tax-exempt organizations.
 (a) In general.—Section 4960(c)(2) is amended to read as follows:
-
 
 “(2) COVERED EMPLOYEE.—For purposes of this section, the term ‘covered employee’ means any employee of an applicable tax-exempt organization (or any predecessor of such an organization) and any former employee of such an organization (or predecessor) who was such an employee during any taxable year beginning after December 31, 2016.”.
 
@@ -6361,7 +6057,6 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 (1) DETERMINATION PERIOD.—Section 1400Z-1(c)(2)(B) is amended by striking “beginning on the date of the enactment of the Tax Cuts and Jobs Act” and inserting “beginning on the decennial determination date”.
 
 (2) DECENNIAL DETERMINATION DATE.—Section 1400Z-1(c)(2) is amended by adding at the end the following new subparagraph:
-
 
 “(C) DECENNIAL DETERMINATION DATE.—The term ‘decennial determination date’ means—
 
@@ -6391,7 +6086,6 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (1) DETERMINATION OF LOW-INCOME COMMUNITIES.—Section 1400Z-1(c) is amended by striking all that precedes paragraph (2) and inserting the following:
 
-
 “(c) Other definitions.—For purposes of this section—
 
 “(1) LOW-INCOME COMMUNITIES.—The term ‘low-income community’ means any population census tract if—
@@ -6416,7 +6110,6 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (3) PERIOD FOR WHICH DESIGNATION IS IN EFFECT.—Section 1400Z-1(e), as redesignated by paragraph (2), is amended to read as follows:
 
-
 “(e) Period for which designation is in effect.—
 
 “(1) IN GENERAL.—A designation as a qualified opportunity zone shall remain in effect for the period beginning on the applicable start date and ending on the day before the date that is 10 years after the applicable start date.
@@ -6429,11 +6122,9 @@ SEC. 70421. Permanent renewal and enhancement of opportunity zones.
 
 (1) REPEAL OF SUNSET ON ELECTION.—Section 1400Z-2(a)(2) is amended to read as follows:
 
-
 “(2) ELECTION.—No election may be made under paragraph (1) with respect to a sale or exchange if an election previously made with respect to such sale or exchange is in effect.”.
 
 (2) MODIFICATION OF RULES FOR DEFERRAL OF GAIN.—Section 1400Z-2(b) is amended to read as follows:
-
 
 “(b) Deferral of gain invested in opportunity zone property.—
 
@@ -6494,7 +6185,6 @@ For purposes of the preceding sentence, property held in the fund shall be measu
 (i) by striking “December 31, 2017,” each place it appears in subparagraphs (B)(i)(I) and (C)(i) and inserting “the applicable date”, and
 
 (ii) by adding at the end the following new subparagraph:
-
 
 “(E) APPLICABLE DATE.—For purposes of this subparagraph, the term ‘applicable date’ means, with respect to any corporation or partnership which is a qualified opportunity zone business, the earliest date described in subparagraph (D)(i)(I) with respect to the qualified opportunity zone business property held by such qualified opportunity zone business.”.
 
@@ -6664,18 +6354,15 @@ For purposes of the preceding sentence, property held in the fund shall be measu
 
 (3) ELECTRONIC FILING.—Section 6011(e) is amended by adding at the end the following new paragraph:
 
-
 “(8) QUALIFIED OPPORTUNITY FUNDS AND QUALIFIED RURAL OPPORTUNITY FUNDS.—Notwithstanding paragraphs (1) and (2), any return filed by a qualified opportunity fund or qualified rural opportunity fund under section 6039K shall be filed on magnetic media or other machine-readable form.”.
 
 (4) CLERICAL AMENDMENTS.—
 
 (A) The table of sections for subpart A of part III of subchapter A of chapter 61 is amended by inserting after the item relating to section 6039J the following new items:
 
-
 “Sec. 6039K. Returns with respect to qualified opportunity funds and qualified rural opportunity funds.
 “Sec. 6039L. Information required from qualified opportunity zone businesses and qualified rural opportunity zone businesses.”.
 (B) The table of sections for part II of subchapter B of chapter 68 is amended by inserting after the item relating to section 6725 the following new item:
-
 
 “Sec. 6726. Failure to comply with information reporting requirements relating to qualified opportunity funds and qualified rural opportunity funds.”.
 (5) EFFECTIVE DATE.—The amendments made by this subsection shall apply to taxable years beginning after the date of the enactment of this Act.
@@ -6764,7 +6451,6 @@ For purposes of the preceding sentence, property held in the fund shall be measu
 
 (C) by treating any reference (after the application of subparagraph (A)) to qualified rural opportunity zone stock, qualified rural opportunity zone partnership interest, qualified rural opportunity zone business, or qualified opportunity zone business property as stock, interest, business, or property, respectively, described in subclause (I) or (II), as the case may be, of section 1400Z–2(b)(2)(C)(i) of the Internal Revenue Code of 1986.
 
-
 SEC. 70422. Permanent enhancement of low-income housing tax credit.
 (a) Permanent State housing credit ceiling increase for low-income housing credit.—
 
@@ -6781,7 +6467,6 @@ SEC. 70422. Permanent enhancement of low-income housing tax credit.
 (b) Tax-exempt bond financing requirement.—
 
 (1) IN GENERAL.—Section 42(h)(4) is amended by striking subparagraph (B) and inserting the following:
-
 
 “(B) SPECIAL RULE WHERE MINIMUM PERCENT OF BUILDINGS IS FINANCED WITH TAX-EXEMPT BONDS SUBJECT TO VOLUME CAP.—For purposes of subparagraph (A), paragraph (1) shall not apply to any portion of the credit allowable under subsection (a) with respect to a building if—
 
@@ -6801,7 +6486,6 @@ SEC. 70422. Permanent enhancement of low-income housing tax credit.
 
 (B) REHABILITATION EXPENDITURES TREATED AS SEPARATE NEW BUILDING.—In the case of any building with respect to which any expenditures are treated as a separate new building under section 42(e) of the Internal Revenue Code of 1986, for purposes of subparagraph (A), both the existing building and the separate new building shall be treated as having been placed in service on the date such expenditures are treated as placed in service under section 42(e)(4) of such Code.
 
-
 SEC. 70423. Permanent extension of new markets tax credit.
 (a) In general.—Section 45D(f)(1)(H) is amended by striking “for for each of calendar years 2020 through 2025” and inserting “ for each calendar year after 2019”.
 
@@ -6809,16 +6493,13 @@ SEC. 70423. Permanent extension of new markets tax credit.
 
 (1) by striking “If the” and inserting the following:
 
-
 “(A) IN GENERAL.—If the”, and
 
 (2) by striking the second sentence and inserting the following:
 
-
 “(B) LIMITATION.—No amount may be carried under subparagraph (A) to any calendar year afer the fifth calendar year after the calendar year in which the excess described in such subparagraph occurred. For purposes of this subparagraph, any excess described in subparagraph (A) with respect to any calendar year before 2026 shall be treated as occurring in calendar year 2025.”.
 
 (c) Effective date.—The amendments made by this section shall apply to calendar years beginning after December 31, 2025.
-
 
 SEC. 70424. Permanent and expanded reinstatement of partial deduction for charitable contributions of individuals who do not elect to itemize.
 (a) In general.—Section 170(p) is amended—
@@ -6829,12 +6510,10 @@ SEC. 70424. Permanent and expanded reinstatement of partial deduction for charit
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 (a) In general.—
 
 (1) IN GENERAL.—Paragraph (1) of section 170(b) is amended by adding at the end the following new subparagraph:
-
 
 “(I) 0.5-PERCENT FLOOR.—Any charitable contribution otherwise allowable (without regard to this subparagraph) as a deduction under this section shall be allowed only to the extent that the aggregate of such contributions exceeds 0.5 percent of the taxpayer's contribution base for the taxable year. The preceding sentence shall be applied—
 
@@ -6851,7 +6530,6 @@ SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 “(vi) sixth, by taking into account charitable contributions to which subparagraph (G) applies to the extent thereof.”.
 
 (2) APPLICATION OF CARRYFORWARD.—Paragraph (1) of section 170(d) is amended by adding at the end the following new subparagraph:
-
 
 “(C) CONTRIBUTIONS DISALLOWED BY 0.5-PERCENT FLOOR CARRIED FORWARD ONLY FROM YEARS IN WHICH LIMITATION IS EXCEEDED.—
 
@@ -6873,7 +6551,6 @@ SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 
 (1) IN GENERAL.—Clause (i) of section 170(b)(1)(G) is amended to read as follows:
 
-
 “(i) IN GENERAL.—For taxable years beginning after December 31, 2017, any contribution of cash to an organization described in subparagraph (A) shall be allowed as a deduction under subsection (a) to the extent that the aggregate of such contributions does not exceed the excess of—
 
 “(I) 60 percent of the taxpayer’s contribution base for the taxable year, over
@@ -6894,17 +6571,14 @@ SEC. 70425. 0.5 percent floor on deduction of contributions made by individuals.
 
 (ii) in clause (ii), by striking “over the amount” and all that follows through “subparagraph (C)).” and inserting “over—
 
-
 “(I) the amount of charitable contributions allowable under subparagraph (A) (determined without regard to subparagraph (C)) and subparagraph (G), reduced by
 
 “(II) so much of the contributions taken into account under subparagraph (G) as does not exceed 10 percent of the taxpayer’s contribution base.”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70426. 1-percent floor on deduction of charitable contributions made by corporations.
 (a) In general.—Section 170(b)(2)(A) is amended to read as follows:
-
 
 “(A) IN GENERAL.—Any charitable contribution otherwise allowable (without regard to this subparagraph) as a deduction under this section for any taxable year, other than any contribution to which subparagraph (B) or (C) applies, shall be allowed only to the extent that the aggregate of such contributions—
 
@@ -6913,7 +6587,6 @@ SEC. 70426. 1-percent floor on deduction of charitable contributions made by cor
 “(ii) does not exceed 10 percent of the taxpayer's taxable income for the taxable year.”.
 
 (b) Application of carryforward.—Section 170(d)(2) is amended to read as follows:
-
 
 “(2) CORPORATIONS.—
 
@@ -6929,15 +6602,12 @@ SEC. 70426. 1-percent floor on deduction of charitable contributions made by cor
 
 (d) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70427. Permanent increase in limitation on cover over of tax on distilled spirits.
 (a) In general.—Paragraph (1) of section 7652(f) is amended to read as follows:
-
 
 “(1) $13.25, or”.
 
 (b) Effective date.—The amendment made by this section shall apply to distilled spirits brought into the United States after December 31, 2025.
-
 
 SEC. 70428. Nonprofit community development activities in remote native villages.
 (a) In general.—For purposes of subchapter F of chapter 1 of the Internal Revenue Code of 1986, any activity substantially related to participation or investment in fisheries in the Bering Sea and Aleutian Islands statistical and reporting areas (as described in Figure 1 of section 679 of title 50, Code of Federal Regulations) carried on by an entity identified in section 305(i)(1)(D) of the Magnuson-Stevens Fishery Conservation and Management Act (16 U.S.C. 1855(i)(1)(D)) (as in effect on the date of enactment of this section) shall be considered substantially related to the exercise or performance of the purpose constituting the basis of such entity's exemption under section 501(a) of such Code if the conduct of such activity is in furtherance of 1 or more of the purposes specified in section 305(i)(1)(A) of such Act (as so in effect). For purposes of this paragraph, activities substantially related to participation or investment in fisheries include the harvesting, processing, transportation, sales, and marketing of fish and fish products of the Bering Sea and Aleutian Islands statistical and reporting areas.
@@ -6950,12 +6620,10 @@ SEC. 70428. Nonprofit community development activities in remote native villages
 
 (c) Effective date.—This section shall take effect on the date of the enactment of this Act and shall remain effective during the existence of the western Alaska community development quota program established by Section 305(i)(1) of the Magnuson-Stevens Fishery Conservation and Management Act (16 U.S.C. 1855(i)(1)), as amended.
 
-
 SEC. 70429. Adjustment of charitable deduction for certain expenses incurred in support of Native Alaskan subsistence whaling.
 (a) In general.—Section 170(n)(1) of the Internal Revenue Code of 1986 is amended by striking “$10,000” and inserting “$50,000”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70430. Exception to percentage of completion method of accounting for certain residential construction contracts.
 (a) In general.—Section 460(e) is amended—
@@ -6981,7 +6649,6 @@ SEC. 70431. Expansion of qualified small business stock gain exclusion.
 
 (1) IN GENERAL.—Section 1202(a)(1) is amended to read as follows:
 
-
 “(1) IN GENERAL.— In the case of a taxpayer other than a corporation, gross income shall not include—
 
 “(A) except as provided in paragraphs (3) and (4), 50 percent of any gain from the sale or exchange of qualified small business stock acquired on or before the applicable date and held for more than 5 years, and
@@ -6990,17 +6657,13 @@ SEC. 70431. Expansion of qualified small business stock gain exclusion.
 
 (2) APPLICABLE PERCENTAGE.—Section 1202(a) is amended by adding at the end the following new paragraph:
 
-
 “(5) APPLICABLE PERCENTAGE.—The applicable percentage under paragraph (1) shall be determined under the following table:
 
-
-
-“Years stock held:	Applicable percentage:
-3 years	50%
-4 years	75%
-5 years or more	100%”.
+“Years stock held: Applicable percentage:
+3 years 50%
+4 years 75%
+5 years or more 100%”.
 (3) APPLICABLE DATE; ACQUISITION DATE.—Section 1202(a), as amended by paragraph (2), is amended by adding at the end the following new paragraph:
-
 
 “(6) APPLICABLE DATE; ACQUISITION DATE.—For purposes of this section—
 
@@ -7036,11 +6699,9 @@ SEC. 70431. Expansion of qualified small business stock gain exclusion.
 
 (1) IN GENERAL.—Subparagraph (A) of section 1202(b)(1) is amended to read as follows:
 
-
 “(A) the applicable dollar limit for the taxable year, or”.
 
 (2) APPLICABLE DOLLAR LIMIT.—Section 1202 (b) is amended by adding at the end the following:
-
 
 “(4) APPLICABLE DOLLAR LIMIT.—For purposes of paragraph (1)(A), the applicable dollar limit for any taxable year with respect to eligible gain from 1 or more dispositions by a taxpayer of qualified business stock of a corporation is—
 
@@ -7066,7 +6727,6 @@ If any increase under this subparagraph is not a multiple of $10,000, such incre
 
 (3) SEPARATE RETURNS.—Subparagraph (A) of section 1202(b)(3) is amended to read as follows:
 
-
 “(A) SEPARATE RETURNS.—In the case of a separate return by a married individual for any taxable year—
 
 “(i) paragraph (4)(A) shall be applied by substituting ‘$5,000,000’ for ‘$10,000,000’, and
@@ -7081,7 +6741,6 @@ If any increase under this subparagraph is not a multiple of $10,000, such incre
 
 (2) INFLATION ADJUSTMENT.—Section 1202(b) is amended by adding at the end the following:
 
-
 “(4) INFLATION ADJUSTMENT.—In the case of any taxable year beginning after 2026, the $75,000,000 amounts in paragraphs (1)(A) and (1)(B) shall each be increased by an amount equal to—
 
 “(A) such dollar amount, multiplied by
@@ -7092,12 +6751,10 @@ If any increase under this paragraph is not a multiple of $10,000, such increase
 
 (3) EFFECTIVE DATE.—The amendments made by this subsection shall apply to stock issued after the date of the enactment of this Act.
 
-
 SEC. 70432. Repeal of revision to de minimis rules for third party network transactions.
 (a) Reinstatement of exception for de minimis payments as in effect prior to enactment of American Rescue Plan Act of 2021.—
 
 (1) IN GENERAL.—Section 6050W(e) is amended to read as follows:
-
 
 “(e) Exception for de minimis payments by third party settlement organizations.—A third party settlement organization shall be required to report any information under subsection (a) with respect to third party network transactions of any participating payee only if—
 
@@ -7111,7 +6768,6 @@ SEC. 70432. Repeal of revision to de minimis rules for third party network trans
 
 (1) IN GENERAL.—Section 3406(b) is amended by adding at the end the following new paragraph:
 
-
 “(8) OTHER REPORTABLE PAYMENTS INCLUDE PAYMENTS IN SETTLEMENT OF THIRD PARTY NETWORK TRANSACTIONS ONLY WHERE AGGREGATE TRANSACTIONS EXCEED REPORTING THRESHOLD FOR THE CALENDAR YEAR.—
 
 “(A) IN GENERAL.—Any payment in settlement of a third party network transaction required to be shown on a return required under section 6050W which is made during any calendar year shall be treated as a reportable payment only if—
@@ -7124,12 +6780,10 @@ SEC. 70432. Repeal of revision to de minimis rules for third party network trans
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to calendar years beginning after December 31, 2024.
 
-
 SEC. 70433. Increase in threshold for requiring information reporting with respect to certain payees.
 (a) In general.—Section 6041(a) is amended by striking “$600” and inserting “$2,000”.
 
 (b) Inflation adjustment.—Section 6041 is amended by adding at the end the following new subsection:
-
 
 “(h) Inflation adjustment.—In the case of any calendar year after 2026, the dollar amount in subsection (a) shall be increased by an amount equal to—
 
@@ -7154,12 +6808,10 @@ If any increase under the preceding sentence is not a multiple of $100, such inc
 
 (f) Effective date.—The amendments made by this section shall apply with respect to payments made after December 31, 2025.
 
-
 SEC. 70434. Treatment of certain qualified sound recording productions.
 (a) Election to treat costs as expenses.—Section 181(a)(1) is amended by striking “qualified film or television production, and any qualified live theatrical production,” and inserting “qualified film or television production, any qualified live theatrical production, and any qualified sound recording production”.
 
 (b) Dollar limitation.—Section 181(a)(2) is amended by adding at the end the following new subparagraph:
-
 
 “(C) QUALIFIED SOUND RECORDING PRODUCTION.—Paragraph (1) shall not apply to so much of the aggregate cost of any qualified sound recording production, or to so much of the aggregate, cumulative cost of all such qualified sound recording productions in the taxable year, as exceeds $150,000.”.
 
@@ -7168,7 +6820,6 @@ SEC. 70434. Treatment of certain qualified sound recording productions.
 (d) Election.—Section 181(c)(1) is amended by striking “qualified film or television production or any qualified live theatrical production” and inserting “qualified film or television production, any qualified live theatrical production, or any qualified sound recording production”.
 
 (e) Qualified sound recording production defined.—Section 181 is amended by redesignating subsections (f) and (g) as subsections (g) and (h), respectively, and by inserting after subsection (e) the following new subsection:
-
 
 “(f) Qualified sound recording production.—For purposes of this section, the term ‘qualified sound recording production’ means a sound recording (as defined in section 101 of title 17, United States Code) produced and recorded in the United States.”.
 
@@ -7180,13 +6831,11 @@ SEC. 70434. Treatment of certain qualified sound recording productions.
 
 (A) by striking “or” at the end of subclause (IV), by inserting “or” at the end of subclause (V), and by inserting after subclause (V) the following:
 
-
 “(VI) which is a qualified sound recording production (as defined in subsection (f) of section 181) for which a deduction would have been allowable under section 181 without regard to subsections (a)(2) and (h) of such section or this subsection, and”, and
 
 (B) in subclauses (IV) and (V) (as so amended) by striking “without regard to subsections (a)(2) and (g)” both places it appears and inserting “without regard to subsections (a)(2) and (h)”.
 
 (2) PRODUCTION PLACED IN SERVICE.—Section 168(k)(2)(H) is amended by striking “and” at the end of clause (i), by striking the period at the end of clause (ii) and inserting “, and”, and by adding after clause (ii) the following:
-
 
 “(iii) a qualified sound recording production shall be considered to be placed in service at the time of initial release or broadcast.”.
 
@@ -7196,10 +6845,8 @@ SEC. 70434. Treatment of certain qualified sound recording productions.
 
 (2) The table of sections for part VI of subchapter B of chapter 1 is amended by striking the item relating to section 181 and inserting the following new item:
 
-
 “Sec. 181. Treatment of certain qualified productions. ”.
 (i) Effective date.—The amendments made by this section shall apply to productions commencing in taxable years ending after the date of the enactment of this Act.
-
 
 SEC. 70435. Exclusion of interest on loans secured by rural or agricultural real property.
 (a) In general.—Part III of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by inserting after section 139K the following new section:
@@ -7266,14 +6913,11 @@ Such term shall not include any property which is not located in a State or a po
 
 (b) Clerical amendment.—The table of sections for part III of subchapter B of chapter 1, as amended by the preceding provisions of this Act, is amended by inserting after the item relating to section 139K the following new item:
 
-
 “Sec. 139L. Interest on loans secured by rural or agricultural real property. ”.
 (c) Effective date.—The amendments made by this section shall apply to taxable years ending after the date of the enactment of this Act.
 
-
 SEC. 70436. Reduction of transfer and manufacturing taxes for certain devices.
 (a) Transfer tax.—Section 5811(a) is amended to read as follows:
-
 
 “(a) Rate.—There shall be levied, collected, and paid on firearms transferred a tax at the rate of—
 
@@ -7282,7 +6926,6 @@ SEC. 70436. Reduction of transfer and manufacturing taxes for certain devices.
 “(2) $0 for any firearm transferred which is not described in paragraph (1).”.
 
 (b) Making tax.—Section 5821(a) is amended to read as follows:
-
 
 “(a) Rate.—There shall be levied, collected, and paid upon the making of a firearm a tax at the rate of—
 
@@ -7294,10 +6937,8 @@ SEC. 70436. Reduction of transfer and manufacturing taxes for certain devices.
 
 (d) Effective date.—The amendments made by this section shall apply to calendar quarters beginning more than 90 days after the date of the enactment of this Act.
 
-
 SEC. 70437. Treatment of capital gains from the sale of certain farmland property.
 (a) In general.—Part IV of subchapter O of chapter 1 is amended by redesignating section 1062 as section 1063 and by inserting after section 1061 the following new section:
-
 
 “SEC. 1062. Gain from the sale or exchange of qualified farmland property to qualified farmers.
 “(a) Election to pay tax in installments.—In the case of gain from the sale or exchange of qualified farmland property to a qualified farmer, at the election of the taxpayer, the portion of the net income tax of such taxpayer for the taxable year of the sale or exchange which is equal to the applicable net tax liability shall be paid in 4 equal installments.
@@ -7358,14 +6999,11 @@ For purposes of clause (i), property which is used or leased by a partnership or
 
 (b) Clerical amendment.—The table of sections for part IV of subchapter O of chapter 1 is amended by redesignating the item relating to section 1062 as relating to section 1063 and by inserting after the item relating to section 1061 the following new item:
 
-
 “Sec. 1062. Gain from the sale or exchange of qualified farmland property to qualified farmers.”.
 (c) Effective date.—The amendments made by this section shall apply to sales or exchanges in taxable years beginning after the date of the enactment of this Act.
 
-
 SEC. 70438. Extension of rules for treatment of certain disaster-related personal casualty losses.
 For purposes of applying section 304(b) of the Taxpayer Certainty and Disaster Tax Relief Act of 2020 (division EE of Public Law 116–260), section 301 of such Act shall be applied by substituting the date of the enactment of this section for “the date of the enactment of this Act” each place it appears.
-
 
 SEC. 70439. Restoration of taxable REIT subsidiary asset test.
 (a) In general.—Section 856(c)(4)(B)(ii) is amended by striking “20 percent” and inserting “25 percent”.
@@ -7377,7 +7015,6 @@ subchapter A—Termination of Green New Deal subsidies
 
 SEC. 70501. Termination of previously-owned clean vehicle credit.
 Section 25E(g) is amended by striking “December 31, 2032” and inserting “September 30, 2025”.
-
 
 SEC. 70502. Termination of clean vehicle credit.
 (a) In general.—Section 30D(h) is amended by striking “placed in service after December 31, 2032” and inserting “acquired after September 30, 2025”.
@@ -7400,27 +7037,22 @@ SEC. 70502. Termination of clean vehicle credit.
 
 (C) by striking clauses (iv) through (vi).
 
-
 SEC. 70503. Termination of qualified commercial clean vehicles credit.
 Section 45W(g) is amended by striking “December 31, 2032” and inserting “September 30, 2025”.
 
-
 SEC. 70504. Termination of alternative fuel vehicle refueling property credit.
 Section 30C(i) is amended by striking “December 31, 2032” and inserting “June 30, 2026”.
-
 
 SEC. 70505. Termination of energy efficient home improvement credit.
 (a) In general.—Section 25C(h) is amended by striking “placed in service” and all that follows through “December 31, 2032” and inserting “placed in service after December 31, 2025”.
 
 (b) Conforming amendment.—Section 25C(d)(2)(C) is amended to read as follows:
 
-
 “(C) Any oil furnace or hot water boiler which—
 
 “(i) meets or exceeds 2021 Energy Star efficiency criteria, and
 
 “(ii) is rated by the manufacturer for use with fuel blends at least 20 percent of the volume of which consists of an eligible fuel.”.
-
 
 SEC. 70506. Termination of residential clean energy credit.
 (a) In general.—Section 25D(h) is amended by striking “to property placed in service after December 31, 2034” and inserting “with respect to any expenditures made after December 31, 2025”.
@@ -7433,17 +7065,13 @@ SEC. 70506. Termination of residential clean energy credit.
 
 (3) by striking paragraphs (4) and (5).
 
-
 SEC. 70507. Termination of energy efficient commercial buildings deduction.
 Section 179D is amended by adding at the end the following new subsection:
 
-
 “(i) Termination.—This section shall not apply with respect to property the construction of which begins after June 30, 2026.”.
-
 
 SEC. 70508. Termination of new energy efficient home credit.
 Section 45L(h) is amended by striking “December 31, 2032” and inserting “June 30, 2026”.
-
 
 SEC. 70509. Termination of cost recovery for energy property.
 (a) Energy property.—Section 168(e)(3)(B)(vi), as amended by section 13703 of Public Law 117–169, is amended—
@@ -7454,10 +7082,8 @@ SEC. 70509. Termination of cost recovery for energy property.
 
 (b) Effective date.—The amendments made by subsection (a) shall apply to property the construction of which begins after December 31, 2024.
 
-
 SEC. 70510. Modifications of zero-emission nuclear power production credit.
 (a) Restrictions relating to prohibited foreign entities.—Section 45U(c) is amended by adding at the end the following new paragraph:
-
 
 “(3) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -7467,10 +7093,8 @@ SEC. 70510. Modifications of zero-emission nuclear power production credit.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after the date of enactment of this Act.
 
-
 SEC. 70511. Termination of clean hydrogen production credit.
 Section 45V(c)(3)(C) is amended by striking “January 1, 2033” and inserting “January 1, 2028”.
-
 
 SEC. 70512. Termination and restrictions on clean electricity production credit.
 (a) Termination for wind and solar facilities.—Section 45Y(d) is amended—
@@ -7478,7 +7102,6 @@ SEC. 70512. Termination and restrictions on clean electricity production credit.
 (1) in paragraph (1), by striking “The amount of” and inserting “Subject to paragraph (4), the amount of”, and
 
 (2) by striking paragraph (3) and inserting the following new paragraphs:
-
 
 “(3) APPLICABLE YEAR.—For purposes of this subsection, the term ‘applicable year’ means calendar year 2032.
 
@@ -7496,11 +7119,9 @@ SEC. 70512. Termination and restrictions on clean electricity production credit.
 
 (1) in subsection (b)(1), by adding at the end the following new subparagraph:
 
-
 “(E) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—The term ‘qualified facility’ shall not include any facility for which construction begins after December 31, 2025, if the construction of such facility includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52)).”, and
 
 (2) in subsection (g), by adding at the end the following new paragraph:
-
 
 “(13) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -7513,7 +7134,6 @@ SEC. 70512. Termination and restrictions on clean electricity production credit.
 “(B) EFFECTIVE CONTROL.—In the case of a taxpayer for which section 7701(a)(51)(D)(i)(II) is determined to apply for any taxable year, no credit shall be determined under subsection (a) for such taxable year if such determination relates to a qualified facility described in subsection (b)(1).”.
 
 (c) Definitions relating to prohibited foreign entities.—Section 7701(a) is amended by adding at the end the following new paragraphs:
-
 
 “(51) PROHIBITED FOREIGN ENTITY.—
 
@@ -7937,11 +7557,9 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (d) Denial of credit for certain wind and solar leasing arrangements.—Section 45Y is amended by adding at the end the following new subsection:
 
-
 “(h) Denial of credit for wind and solar leasing arrangements.—No credit shall be determined under this section with respect to any production of electricity during the taxable year with respect to property described in paragraph (1) or (4) of section 25D(d) (as applied by substituting ‘lessee’ for ‘taxpayer’) if the taxpayer rents or leases such property to a third party during such taxable year.”.
 
 (e) Emissions rates tables.—Section 45Y(b)(2)(C) is amended by adding at the end the following new clause:
-
 
 “(iii) EXISTING STUDIES.—For purposes of clause (i), in determining greenhouse gas emissions rates for types or categories of facilities for the purpose of determining whether a facility satisfies the requirements under paragraph (1), the Secretary shall consider studies published on or before the date of enactment of this clause which demonstrate a net lifecycle greenhouse gas emissions rate which is not greater than zero using widely accepted lifecycle assessment concepts, such as concepts described in standards developed by the International Organization for Standardization.”.
 
@@ -7957,7 +7575,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (iii) by adding at the end the following new clause:
 
-
 “(iv) for purposes of any qualified facility which is an advanced nuclear facility, a metropolitan statistical area which has (or, at any time during the period beginning after December 31, 2009, had) 0.17 percent or greater direct employment related to the advancement of nuclear power, including employment related to—
 
 “(I) an advanced nuclear facility,
@@ -7969,7 +7586,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 “(IV) the manufacturing or assembly of components used in an advanced nuclear facility.”, and
 
 (B) by adding at the end the following new subparagraph:
-
 
 “(C) ADVANCED NUCLEAR FACILITIES.—
 
@@ -7985,7 +7601,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (2) by inserting after subparagraph (C) the following new subparagraph:
 
-
 “(D) DETERMINATION OF CAPACITY.—For purposes of subparagraph (C), additions of capacity of a facility shall be determined in any reasonable manner, including based on—
 
 “(i) determinations by, or reports to, the Federal Energy Regulatory Commission (including interconnection agreements), the Nuclear Regulatory Commission, or any similar entity, reflecting additions of capacity,
@@ -7998,7 +7613,6 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (h) Prohibition on transfer of credits to specified foreign entities.—Section 6418(g) is amended by adding at the end the following new paragraph:
 
-
 “(5) PROHIBITION ON TRANSFER OF CREDITS TO SPECIFIED FOREIGN ENTITIES.—With respect to any eligible credit described in clause (iii), (iv), (vi), (vii), (viii), or (xi) of subsection (f)(1)(A), an eligible taxpayer may not elect to transfer any portion of such credit to a taxpayer that is a specified foreign entity (as defined in section 7701(a)(51)(B)).”.
 
 (i) Extension of period of limitations for errors relating to determining of material assistance from a prohibited foreign entity.—Section 6501 is amended—
@@ -8007,13 +7621,11 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (2) by inserting after subsection (n) the following new subsection:
 
-
 “(o) Material assistance from a prohibited foreign entity.—In the case of a deficiency attributable to an error with respect to the determination under section 7701(a)(52) for any taxable year, such deficiency may be assessed at any time within 6 years after the return for such year was filed.”.
 
 (j) Imposition of accuracy-related penalties.—
 
 (1) IN GENERAL.—Section 6662 is amended by adding at the end the following new subsection:
-
 
 “(m) Substantial understatement of income tax due to disallowance of applicable energy credits.—
 
@@ -8027,13 +7639,11 @@ the cost to the taxpayer with respect to such product, component, element, mater
 
 (2) CONFORMING AMENDMENT.—Section 6417(d)(6) is amended by adding at the end the following new subparagraph:
 
-
 “(D) DISALLOWANCE OF AN APPLICABLE ENERGY CREDIT.—In the case of an applicable entity which made an election under subsection (a) with respect to an applicable credit for which there is a disallowance described in section 6662(m)(2), subparagraph (A) shall apply with respect to any excessive payment resulting from such disallowance.”.
 
 (k) Penalty for substantial misstatements on certification provided by supplier.—
 
 (1) IN GENERAL.—Part I of subchapter B of chapter 68 is amended by inserting after section 6695A the following new section:
-
 
 “SEC. 6695B. Penalty for substantial misstatements on certification provided by supplier.
 “(a) Imposition of penalty.—If—
@@ -8086,7 +7696,6 @@ then such person shall pay a penalty in the amount determined under subsection (
 
 (B) The table of sections for part I of subchapter B of chapter 68 is amended by inserting after item relating to section 6695A the following new item:
 
-
 “Sec. 6695B. Penalty for substantial misstatements on certification provided by supplier.”.
 (l) Effective dates.—
 
@@ -8098,14 +7707,12 @@ then such person shall pay a penalty in the amount determined under subsection (
 
 (4) TERMINATION FOR WIND AND SOLAR FACILITIES.—The amendments made by subsection (a) shall apply to facilities the construction of which begins after the date which is 12 months after the date of enactment of this Act.
 
-
 SEC. 70513. Termination and restrictions on clean electricity investment credit.
 (a) Termination for wind and solar facilities.—Section 48E(e) is amended—
 
 (1) in paragraph (1), by striking “The amount of” and inserting “Subject to paragraph (4), the amount of”, and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(4) TERMINATION FOR WIND AND SOLAR FACILITIES.—
 
@@ -8129,16 +7736,13 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (ii) by inserting after paragraph (5) the following new paragraph:
 
-
 “(6) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—The terms ‘qualified facility’ and ‘qualified interconnection property’ shall not include any facility or property the construction, reconstruction, or erection of which begins after December 31, 2025, if the construction, reconstruction, or erection of such facility or property includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52)).”, and
 
 (B) in subsection (c), by adding at the end the following new paragraph:
 
-
 “(3) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—The term ‘energy storage technology’ shall not include any property the construction of which begins after December 31, 2025, if the construction of such property includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52)).”.
 
 (2) ADDITIONAL RESTRICTIONS.—Section 48E(d) is amended by adding at the end the following new paragraph:
-
 
 “(6) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -8157,7 +7761,6 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 (i) by redesignating paragraphs (4) through (6) as paragraphs (5) through (7), respectively,
 
 (ii) by inserting after paragraph (3) the following new paragraph:
-
 
 “(4) PAYMENTS TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -8185,16 +7788,13 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (B) by inserting after subsection (h) the following new subsection:
 
-
 “(i) Denial of credit for expenditures for wind and solar leasing arrangements.—No credit shall be determined under this section for any qualified investment during the taxable year with respect to property described in paragraph (1) or (4) of section 25D(d) (as applied by substituting ‘lessee’ for ‘taxpayer’) if the taxpayer rents or leases such property to a third party during such taxable year.”.
 
 (2) CONFORMING RULES.—Section 50 is amended by adding at the end the following new subsection:
 
-
 “(e) Rules for geothermal heat pumps.—For purposes of this section and section 168, the ownership of energy property described in section 48(a)(3)(A)(vii) shall be determined without regard to whether such property is readily usable by a person other than the lessee or service recipient.”.
 
 (d) Domestic content rules.—Subparagraph (B) of section 48E(a)(3) is amended to read as follows:
-
 
 “(B) DOMESTIC CONTENT.—Rules similar to the rules of section 48(a)(12) shall apply, except that, for purposes of subparagraph (B) of such section and the application of rules similar to the rules of section 45(b)(9)(B), the adjusted percentage (as determined under section 45(b)(9)(C)) shall be determined as follows:
 
@@ -8212,7 +7812,6 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (2) by adding at the end the following new subparagraph:
 
-
 “(C) NONAPPLICATION OF INCREASES TO ENERGY PERCENTAGE.—For purposes of energy property described in subparagraph (A)(ii), the energy percentage applicable to such property pursuant to such subparagraph shall not be increased or otherwise adjusted by any provision of this section.”.
 
 (f) Application of clean electricity investment credit to qualified fuel cell property.—Section 48E, as amended by subsection (c), is amended—
@@ -8220,7 +7819,6 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 (1) by redesignating subsection (j) as subsection (k), and
 
 (2) by inserting after subsection (i) the following new subsection:
-
 
 “(j) Application to qualified fuel cell property.—For purposes of this section, in the case of any qualified fuel cell property (as defined in section 48(c)(1), as applied without regard to subparagraph (E) thereof)—
 
@@ -8242,10 +7840,8 @@ SEC. 70513. Termination and restrictions on clean electricity investment credit.
 
 (5) TERMINATION FOR WIND AND SOLAR FACILITIES.—The amendments made by subsection (a) shall apply to facilities the construction of which begins after the date which is 12 months after the date of enactment of this Act.
 
-
 SEC. 70514. Phase-out and restrictions on advanced manufacturing production credit.
 (a) Modification of provision relating to sale of integrated components.—Paragraph (4) of section 45X(d) is amended to read as follows:
-
 
 “(4) SALE OF INTEGRATED COMPONENTS.—
 
@@ -8264,7 +7860,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 (2) in subparagraph (A), in the matter preceding clause (i), by striking “subparagraph (C)” and inserting “subparagraphs (C) and (D)”, and
 
 (3) by striking subparagraph (C) and inserting the following:
-
 
 “(C) PHASE OUT FOR APPLICABLE CRITICAL MINERALS OTHER THAN METALLURGICAL COAL.—
 
@@ -8292,11 +7887,9 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 
 (1) in subsection (c)(1), by adding at the end the following new subparagraph:
 
-
 “(C) MATERIAL ASSISTANCE FROM PROHIBITED FOREIGN ENTITIES.—In the case of taxable years beginning after the date of enactment of this subparagraph, the term ‘eligible component’ shall not include any property which includes any material assistance from a prohibited foreign entity (as defined in section 7701(a)(52), as applied by substituting ‘used in a product sold before January 1, 2027’ for ‘used in a product sold before January 1, 2030’ in subparagraph (D)(iv)(II)(bb) thereof).”, and
 
 (2) in subsection (d), as amended by subsection (a) of this section, by adding at the end the following new paragraph:
-
 
 “(4) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
@@ -8316,7 +7909,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 
 (3) by adding at the end the following new subclause:
 
-
 “(III) which is comprised of all other essential equipment needed for battery functionality, such as current collector assemblies and voltage sense harnesses, or any other essential energy collection equipment.”.
 
 (e) Inclusion of metallurgical coal as an applicable critical mineral for purposes of the advanced manufacturing production credit.—
@@ -8327,7 +7919,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 
 (B) by inserting after subparagraph (Q) the following new subparagraph:
 
-
 “(R) METALLURGICAL COAL.—Metallurgical coal which is suitable for use in the production of steel (within the meaning of the notice published by the Department of Energy entitled ‘Critical Material List; Addition of Metallurgical Coal Used for Steelmaking’ (90 Fed. Reg. 22711 (May 29, 2025))), regardless of whether such production occurs inside or outside of the United States.”.
 
 (2) CREDIT AMOUNT.—Section 45X(b)(1)(M) is amended by inserting “(2.5 percent in the case of metallurgical coal)” after “10 percent”.
@@ -8337,7 +7928,6 @@ SEC. 70514. Phase-out and restrictions on advanced manufacturing production cred
 (1) IN GENERAL.—Except as provided in paragraph (2), the amendments made by this section shall apply to taxable years beginning after the date of enactment of this Act.
 
 (2) MODIFICATION OF PROVISION RELATING TO SALE OF INTEGRATED COMPONENTS.—The amendment made by subsection (a) shall apply to components sold during taxable years beginning after December 31, 2026.
-
 
 SEC. 70515. Restriction on the extension of advanced energy project credit program.
 (a) In general.—Section 48C(e)(3)(C) is amended by striking “shall be increased” and inserting “shall not be increased”.
@@ -8357,7 +7947,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (C) by adding at the end the following new clause:
 
-
 “(iii) such fuel is exclusively derived from a feedstock which was produced or grown in the United States, Mexico, or Canada.”.
 
 (2) EFFECTIVE DATE.—The amendments made by this subsection shall apply to transportation fuel produced after December 31, 2025.
@@ -8368,11 +7957,9 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (A) by striking subparagraph (C) and inserting the following:
 
-
 “(C) ROUNDING OF EMISSIONS RATE.—The Secretary may round the emissions rates under subparagraph (B) to the nearest multiple of 5 kilograms of CO2e per mmBTU.”, and
 
 (B) by adding at the end the following new subparagraph:
-
 
 “(E) PROHIBITION ON NEGATIVE EMISSION RATES.—For purposes of this section, the emissions rate for a transportation fuel may not be less than zero.”.
 
@@ -8381,7 +7968,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (c) Determination of emissions rate.—
 
 (1) IN GENERAL.—Section 45Z(b)(1)(B) is amended by adding at the end the following new clauses:
-
 
 “(iv) EXCLUSION OF INDIRECT LAND USE CHANGES.—Notwithstanding clauses (i), (ii), and (iii), the emissions rate shall be adjusted as necessary to exclude any emissions attributed to indirect land use change. Any such adjustment shall be based on regulations or methodologies determined by the Secretary.
 
@@ -8407,11 +7993,9 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (C) by adding at the end the following new clause:
 
-
 “(iv) is not produced from a fuel for which a credit under this section is allowable.”, and
 
 (2) by adding at the end the following new subparagraph:
-
 
 “(C) REGULATIONS AND GUIDANCE.—The Secretary shall issue such regulations or other guidance as the Secretary determines necessary to carry out the purposes of subparagraph (A)(iv).”.
 
@@ -8422,7 +8006,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (1) COORDINATION OF CREDITS.—
 
 (A) IN GENERAL.—Section 6426(k) is amended by adding at the end the following new paragraph:
-
 
 “(4) COORDINATION OF CREDITS.—With respect to any gallon of sustainable aviation fuel in a qualified mixture, this subsection shall not apply to any such gallon for which a credit under section 45Z is allowable (as determined without regard to subsection (a)(1)(A) of such section).”.
 
@@ -8435,7 +8018,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (2) ELIMINATION OF SPECIAL RATE.—
 
 (A) IN GENERAL.—Paragraph (3) of section 45Z(a) is amended to read as follows:
-
 
 “(3) DEFINITION OF SUSTAINABLE AVIATION FUEL.—For purposes of this section, the term ‘sustainable aviation fuel’ means liquid fuel, the portion of which is not kerosene, which is sold for use in an aircraft and which—
 
@@ -8452,7 +8034,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 (C) EFFECTIVE DATE.—The amendments made by this paragraph shall apply to fuel produced after December 31, 2025.
 
 (h) Sustainable aviation fuel credit.—Section 6426(k), as amended by the preceding provisions of this Act, is amended by adding at the end the following new paragraph:
-
 
 “(5) TERMINATION.—This subsection shall not apply to any sale or use for any period after September 30, 2025.”.
 
@@ -8474,13 +8055,11 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (iii) by adding at the end the following new subparagraph:
 
-
 “(D) COORDINATION WITH CLEAN FUEL PRODUCTION CREDIT.—The credit determined under this paragraph with respect to any gallon of fuel shall be in addition to any credit determined under section 45Z with respect to such gallon of fuel.”, and
 
 (B) in subsection (g), by inserting “(or, in the case of the small agri-biodiesel producer credit, any sale or use after December 31, 2026)” after “December 31, 2024”.
 
 (2) TRANSFER OF CREDIT.—Section 6418(f)(1)(A) is amended by adding at the end the following new clause:
-
 
 “(xii) So much of the biodiesel fuels credit determined under section 40A which consists of the small agri-biodiesel producer credit determined under subsection (b)(4) of such section.”.
 
@@ -8490,7 +8069,6 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (1) IN GENERAL.—Section 45Z(f) is amended by adding at the end the following new paragraph:
 
-
 “(8) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—
 
 “(A) IN GENERAL.—No credit shall be determined under subsection (a) for any taxable year beginning after the date of enactment of this paragraph if the taxpayer is a specified foreign entity (as defined in section 7701(a)(51)(B)).
@@ -8499,10 +8077,8 @@ SEC. 70521. Extension and modification of clean fuel production credit.
 
 (2) EFFECTIVE DATE.—The amendment made by this subsection shall apply to taxable years beginning after the date of enactment of this Act.
 
-
 SEC. 70522. Restrictions on carbon oxide sequestration credit.
 (a) Restrictions relating to prohibited foreign entities.—Section 45Q(f) is amended by adding at the end the following new paragraph:
-
 
 “(10) RESTRICTIONS RELATING TO PROHIBITED FOREIGN ENTITIES.—No credit shall be determined under subsection (a) for any taxable year beginning after the date of enactment of this paragraph if the taxpayer is—
 
@@ -8518,7 +8094,6 @@ SEC. 70522. Restrictions on carbon oxide sequestration credit.
 
 (B) in paragraph (3), by striking subparagraph (B) and inserting the following:
 
-
 “(B) (i) disposed of by the taxpayer in secure geological storage and not used by the taxpayer as described in clause (ii) or (iii),
 
 “(ii) used by the taxpayer as a tertiary injectant in a qualified enhanced oil or natural gas recovery project and disposed of by the taxpayer in secure geological storage, or
@@ -8532,7 +8107,6 @@ SEC. 70522. Restrictions on carbon oxide sequestration credit.
 (A) in paragraph (1)—
 
 (i) by striking subparagraph (A) and inserting the following:
-
 
 “(A) IN GENERAL.—Except as provided in subparagraph (B) or (C), the applicable dollar amount shall be an amount equal to—
 
@@ -8562,12 +8136,10 @@ SEC. 70522. Restrictions on carbon oxide sequestration credit.
 
 (2) PARITY FOR DIFFERENT USES AND UTILIZATIONS OF QUALIFIED CARBON OXIDE.—The amendments made subsections (b) and (c) shall apply to facilities or equipment placed in service after the date of enactment of this Act.
 
-
 SEC. 70523. Intangible drilling and development costs taken into account for purposes of computing adjusted financial statement income.
 (a) In general.—Section 56A(c)(13) is amended—
 
 (1) by striking subparagraph (A) and inserting the following:
-
 
 “(A) reduced by—
 
@@ -8577,7 +8149,6 @@ SEC. 70523. Intangible drilling and development costs taken into account for pur
 
 (2) by striking subparagraph (B)(i) and inserting the following:
 
-
 “(i) to disregard any amount of—
 
 “(I) depreciation expense that is taken into account on the taxpayer's applicable financial statement with respect to such property, and
@@ -8585,7 +8156,6 @@ SEC. 70523. Intangible drilling and development costs taken into account for pur
 “(II) depletion expense that is taken into account on the taxpayer’s applicable financial statement with respect to the intangible drilling and development costs of such property, and”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70524. Income from hydrogen storage, carbon capture, advanced nuclear, hydropower, and geothermal energy added to qualifying income of certain publicly traded partnerships.
 (a) In general.—Section 7704(d)(1)(E) is amended—
@@ -8597,7 +8167,6 @@ SEC. 70524. Income from hydrogen storage, carbon capture, advanced nuclear, hydr
 (2) by inserting “or” before “industrial source”, and
 
 (3) by striking “or the transportation or storage” and all that follows and inserting the following:
-
 
 “(ii) the transportation or storage of—
 
@@ -8618,7 +8187,6 @@ SEC. 70524. Income from hydrogen storage, carbon capture, advanced nuclear, hydr
 “(vi) the operation of energy property described in clause (iii) or (vii) of section 48(a)(3)(A) (determined without regard to any requirement under such section with respect to the date on which construction of property begins).”.
 
 (b) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70525. Allow for payments to certain individuals who dye fuel.
 (a) In general.—Subchapter B of chapter 65, as amended by the preceding provisions of this Act, is amended by adding at the end the following new section:
@@ -8651,7 +8219,6 @@ SEC. 70525. Allow for payments to certain individuals who dye fuel.
 
 (A) by striking “or” at the end of paragraph (2), by striking the period at the end of paragraph (3) and inserting “, or”, and by adding at the end the following new paragraph:
 
-
 “(4) which are removed as eligible indelibly dyed diesel fuel or kerosene under section 6435.”.
 
 (3) Section 6675 is amended—
@@ -8662,7 +8229,6 @@ SEC. 70525. Allow for payments to certain individuals who dye fuel.
 
 (4) The table of sections for subchapter B of chapter 65, as amended by the preceding provisions of this Act, is amended by adding at the end the following new item:
 
-
 “Sec. 6435. Dyed fuel.”.
 (c) Effective date.—The amendments made by this section shall apply to eligible indelibly dyed diesel fuel or kerosene removed on or after the date that is 180 days after the date of the enactment of this section.
 
@@ -8672,7 +8238,6 @@ SEC. 70531. Modifications to de minimis entry privilege for commercial shipments
 (a) Civil penalty.—
 
 (1) ADDITIONAL PENALTY IMPOSED.—Section 321 of the Tariff Act of 1930 (19 U.S.C. 1321) is amended by adding at the end the following new subsection:
-
 
 “(c) Any person who enters, introduces, facilitates, or attempts to introduce an article into the United States using the privilege of this section, the importation of which violates any other provision of United States customs law, shall be assessed, in addition to any other penalty permitted by law, a civil penalty of up to $5,000 for the first violation and up to $10,000 for each subsequent violation.”.
 
@@ -8703,7 +8268,6 @@ SEC. 70601. Modification and extension of limitation on excess business losses o
 
 (2) ADJUSTMENT OF AMOUNTS FOR CALCULATION OF EXCESS BUSINESS LOSS.—The amendments made by subsection (b) shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70602. Treatment of payments from partnerships to partners for property or services.
 (a) In general.—Section 707(a)(2) is amended by striking “Under regulations prescribed” and inserting “Except as provided”.
 
@@ -8711,10 +8275,8 @@ SEC. 70602. Treatment of payments from partnerships to partners for property or 
 
 (c) Rule of construction.—Nothing in this section, or the amendments made by this section, shall be construed to create any inference with respect to the proper treatment under section 707(a) of the Internal Revenue Code of 1986 with respect to payments from a partnership to a partner for services performed, or property transferred, on or before the date of the enactment of this Act.
 
-
 SEC. 70603. Excessive employee remuneration from controlled group members and allocation of deduction.
 (a) Application of aggregation rules.—Section 162(m) is amended by adding at the end the following new paragraph:
-
 
 “(7) REMUNERATION FROM CONTROLLED GROUP MEMBERS.—
 
@@ -8744,10 +8306,8 @@ SEC. 70603. Excessive employee remuneration from controlled group members and al
 
 (b) Effective date.—The amendment made by this section shall apply to taxable years beginning after December 31, 2025.
 
-
 SEC. 70604. Excise tax on certain remittance transfers.
 (a) In general.—Chapter 36 is amended by inserting after subchapter B the following new subchapter:
-
 
 “subchapter C—Remittance transfers
 
@@ -8791,7 +8351,6 @@ SEC. 70604. Excise tax on certain remittance transfers.
 “SUBCHAPTER C—REMITTANCE TRANSFERS”.
 (c) Effective date.—The amendments made by this section shall apply to transfers made after December 31, 2025.
 
-
 SEC. 70605. Enforcement provisions with respect to COVID-related employee retention credits.
 (a) Assessable penalty for failure to comply with due diligence requirements.—
 
@@ -8833,7 +8392,6 @@ SEC. 70605. Enforcement provisions with respect to COVID-related employee retent
 
 (e) Extension of limitation on assessment.—Section 3134(l) is amended to read as follows:
 
-
 “(l) Extension of limitation on assessment.—
 
 “(1) IN GENERAL.—Notwithstanding section 6501, the limitation on the time period for the assessment of any amount attributable to a credit claimed under this section shall not expire before the date that is 6 years after the latest of—
@@ -8864,10 +8422,8 @@ SEC. 70605. Enforcement provisions with respect to COVID-related employee retent
 
 (h) Regulations.—The Secretary (as defined in subsection (a)(5)) shall issue such regulations or other guidance as may be necessary or appropriate to carry out the purposes of this section (and the amendments made by this section).
 
-
 SEC. 70606. Social security number requirement for American Opportunity and Lifetime Learning credits.
 (a) Social security number of taxpayer required.—Section 25A(g)(1) is amended to read as follows:
-
 
 “(1) IDENTIFICATION REQUIREMENT.—
 
@@ -8884,7 +8440,6 @@ SEC. 70606. Social security number requirement for American Opportunity and Life
 (b) Omission treated as mathematical or clerical error.—Section 6213(g)(2)(J) is amended by striking “TIN” and inserting “social security number or employer identification number”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2025.
-
 
 SEC. 70607. Task force on the replacement of Direct File.
 Out of any money in the Treasury not otherwise appropriated, there is hereby appropriated for the fiscal year ending September 30, 2026, $15,000,000, to remain available until September 30, 2026, for necessary expenses of the Department of the Treasury to deliver to Congress, within 90 days following the date of the enactment of this Act, a report on—
@@ -8915,7 +8470,6 @@ SEC. 71101. Moratorium on implementation of rule relating to eligibility and enr
 (5) Section 435.952.
 
 (b) Implementation funding.—For the purposes of carrying out the provisions of this section and section 71102, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $1,000,000 for fiscal year 2026, to remain available until expended.
-
 
 SEC. 71102. Moratorium on implementation of rule relating to eligibility and enrollment for Medicaid, CHIP, and the Basic Health Program.
 The Secretary of Health and Human Services shall not, during the period beginning on the date of the enactment of this section and ending September 30, 2034, implement, administer, or enforce the amendments made by the provisions of the final rule published by the Centers for Medicare & Medicaid Services on April 2, 2024, and titled “Medicaid Program; Streamlining the Medicaid, Children's Health Insurance Program, and Basic Health Program Application, Eligibility Determination, Enrollment, and Renewal Processes” (89 Fed. Reg. 22780) to the following sections of title 42, Code of Federal Regulations:
@@ -8960,7 +8514,6 @@ The Secretary of Health and Human Services shall not, during the period beginnin
 
 (E) Section 457.1180.
 
-
 SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 (a) Medicaid.—
 
@@ -8973,7 +8526,6 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 (ii) in paragraph (87), by striking the period and inserting “; and”; and
 
 (iii) by inserting after paragraph (87) the following new paragraph:
-
 
 “(88) provide—
 
@@ -8992,7 +8544,6 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 “(iii) in the case that such system indicates that an individual enrolled or seeking to enroll under such plan (or waiver of such plan) is enrolled under a State plan (or waiver of such a plan) of another State, for the taking of appropriate action (as determined by the Secretary) to identify whether such an individual resides in the State and disenroll an individual from the State plan of such State if such individual does not reside in such State (unless such individual meets such an exception as the Secretary may specify).”; and
 
 (B) by adding at the end the following new subsections:
-
 
 “(uu) Prevention of enrollment under multiple State plans.—
 
@@ -9040,11 +8591,9 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 
 (iv) by adding at the end the following new subparagraph:
 
-
 “(B) Beginning October 1, 2029, the Secretary may determine that a State is not required to have in operation an eligibility determination system which provides for data matching (for purposes of address verification under section 1902(vv)) through the system described in subparagraph (A)(i) to meet the requirements of this paragraph.”.
 
 (B) MANAGED CARE.—Section 1932 of the Social Security Act (42 U.S.C. 1396u–2) is amended by adding at the end the following new subsection:
-
 
 “(j) Transmission of address information.—Beginning January 1, 2027, each contract under a State plan with a managed care entity (as defined in section 1932(a)(1)(B)) or with a prepaid inpatient health plan or prepaid ambulatory health plan (as such terms are defined in section 1903(m)(9)(D)), shall provide that such entity or plan shall promptly transmit to the State any address information for an individual enrolled with such entity or plan that is provided to such entity or plan directly from, or verified by such entity or plan directly with, such individual.”.
 
@@ -9056,11 +8605,9 @@ SEC. 71103. Reducing duplicate enrollment under the Medicaid and CHIP programs.
 
 (B) by inserting after subparagraph (G) the following new subparagraph:
 
-
 “(H) Section 1902(a)(88) (relating to address information for enrollees and prevention of simultaneous enrollments).”.
 
 (2) MANAGED CARE.—Section 2103(f)(3) of the Social Security Act (42 U.S.C. 1397cc(f)(3)) is amended by striking “and (e)” and inserting “(e), and (j)”.
-
 
 SEC. 71104. Ensuring deceased individuals do not remain enrolled.
 Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by section 71103, is further amended—
@@ -9072,7 +8619,6 @@ Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by section
 (B) in paragraph (88), by striking the period at the end and inserting “; and”; and
 
 (C) by inserting after paragraph (88) the following new paragraph:
-
 
 “(89) provide that the State shall comply with the eligibility verification requirements under subsection (ww), except that this paragraph shall apply only in the case of the 50 States and the District of Columbia.”; and
 
@@ -9096,7 +8642,6 @@ Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by section
 
 “(2) RULE OF CONSTRUCTION.—Nothing under this subsection shall be construed to preclude the ability of a State to use other electronic data sources to timely identify potentially deceased beneficiaries, so long as the State is also in compliance with the requirements of this subsection (and all other requirements under this title relating to Medicaid eligibility determination and redetermination).”.
 
-
 SEC. 71105. Ensuring deceased providers do not remain enrolled.
 Section 1902(kk)(1) of the Social Security Act (42 U.S.C. 1396a(kk)(1)) is amended—
 
@@ -9107,7 +8652,6 @@ Section 1902(kk)(1) of the Social Security Act (42 U.S.C. 1396a(kk)(1)) is amend
 (2) by adding at the end the following new subparagraph:
 
 “(B) PROVIDER SCREENING AGAINST DEATH MASTER FILE.—Beginning January 1, 2028, as part of the enrollment (or reenrollment or revalidation of enrollment) of a provider or supplier under this title, and not less frequently than quarterly during the period that such provider or supplier is so enrolled, the State conducts a check of the Death Master File (as such term is defined in section 203(d) of the Bipartisan Budget Act of 2013) to determine whether such provider or supplier is deceased.”.
-
 
 SEC. 71106. Payment reduction related to certain erroneous excess payments under Medicaid.
 (a) In general.—Section 1903(u)(1) of the Social Security Act (42 U.S.C. 1396b(u)(1)) is amended—
@@ -9124,7 +8668,6 @@ SEC. 71106. Payment reduction related to certain erroneous excess payments under
 
 (B) by adding at the end the following new clause:
 
-
 “(ii) The amount waived under clause (i) for a fiscal year may not exceed an amount equal to the erroneous excess payments for medical assistance described in subparagraph (D)(i)(II) made for such fiscal year that exceed the allowable error rate of 0.03.”.
 
 (3) in subparagraph (C), by striking “he” in each place it appears and inserting “the Secretary” in each such place; and
@@ -9137,15 +8680,12 @@ SEC. 71106. Payment reduction related to certain erroneous excess payments under
 
 (C) by adding at the end the following new subclause:
 
-
 “(III) payments (other than payments described in subclause (I)) for items and services furnished to an individual who is not eligible for medical assistance under the State plan (or a waiver of such plan) with respect to such items and services, or payments where insufficient information is available to confirm eligibility.”.
 
 (b) Effective date.—The amendments made by subsection (a) shall apply beginning with respect to fiscal year 2030.
 
-
 SEC. 71107. Eligibility redeterminations.
 (a) In general.—Section 1902(e)(14) of the Social Security Act (42 U.S.C. 1396a(e)(14)) is amended by adding at the end the following new subparagraph:
-
 
 “(L) FREQUENCY OF ELIGIBILITY REDETERMINATIONS FOR CERTAIN INDIVIDUALS.—
 
@@ -9163,7 +8703,6 @@ SEC. 71107. Eligibility redeterminations.
 
 (c) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $75,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71108. Revising home equity limit for determining eligibility for long-term care services under the Medicaid program.
 (a) Revising home equity limit.—Section 1917(f)(1) of the Social Security Act (42 U.S.C. 1396p(f)(1)) is amended—
 
@@ -9179,7 +8718,6 @@ SEC. 71108. Revising home equity limit for determining eligibility for long-term
 
 (C) by adding at the end the following new clause:
 
-
 “(ii) A State may elect, without regard to the requirements of section 1902(a)(1) (relating to statewideness) and section 1902(a)(10)(B) (relating to comparability), to apply subparagraph (A), in the case of an individual’s home that is not described in clause (i), by substituting for the amount specified in such subparagraph, an amount that exceeds such amount, but does not exceed $1,000,000.”; and
 
 (2) in subparagraph (C)—
@@ -9192,23 +8730,19 @@ SEC. 71108. Revising home equity limit for determining eligibility for long-term
 
 (1) in subsection (r)(2), by adding at the end the following new subparagraph:
 
-
 “(C) This paragraph shall not be construed as permitting a State to determine the eligibility of an individual for medical assistance with respect to nursing facility services or other long-term care services without application of the limit under section 1917(f)(1).”; and
 
 (2) in subsection (e)(14)(D)(iv)—
 
 (A) by striking “Subparagraphs” and inserting
 
-
 “(I) IN GENERAL.—Subparagraphs”; and
 
 (B) by adding at the end the following new subclause:
 
-
 “(II) APPLICATION OF HOME EQUITY INTEREST LIMIT.—Section 1917(f) shall apply for purposes of determining the eligibility of an individual for medical assistance with respect to nursing facility services or other long-term care services.”.
 
 (c) Effective date.—The amendments made by subsection (a) shall apply beginning on January 1, 2028.
-
 
 SEC. 71109. Alien Medicaid eligibility.
 (a) Medicaid.—Section 1903(v) of the Social Security Act (42 U.S.C. 1396b(v)) is amended—
@@ -9216,7 +8750,6 @@ SEC. 71109. Alien Medicaid eligibility.
 (1) in paragraph (1), by striking “and (4)”and inserting “, (4), and (5)”; and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(5) Notwithstanding the preceding paragraphs of this subsection, beginning on October 1, 2026, except as provided in paragraphs (2) and (4), in no event shall payment be made to a State under this section for medical assistance furnished to an individual unless such individual is—
 
@@ -9238,15 +8771,12 @@ SEC. 71109. Alien Medicaid eligibility.
 
 (2) by inserting after paragraph (Q) the following:
 
-
 “(R) Section 1903(v)(5) (relating to payments for medical assistance furnished to aliens), except in relation to payments for services provided under section 2105(a)(1)(D)(ii).”.
 
 (c) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $15,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71110. Expansion FMAP for emergency Medicaid.
 (a) In general.—Section 1905 of the Social Security Act (42 U.S.C. 1396d) is amended by adding at the end the following new subsection:
-
 
 “(kk) FMAP for treatment of an emergency Medical condition.—Notwithstanding subsection (y) and (z), beginning on October 1, 2026, the Federal medical assistance percentage for payments for care and services described in paragraph (2) of subsection 1903(v) furnished to an alien described in paragraph (1) of such subsection shall not exceed the Federal medical assistance percentage determined under subsection (b) for such State.”.
 
@@ -9261,10 +8791,8 @@ The Secretary of Health and Human Services shall not, during the period beginnin
 
 (2) Section 483.35.
 
-
 SEC. 71112. Reducing State Medicaid costs.
 (a) In general.—Section 1902(a)(34) of the Social Security Act (42 U.S.C. 1396a(a)(34)) is amended to read as follows:
-
 
 “(34) provide that in the case of any individual who has been determined to be eligible for medical assistance under the plan and—
 
@@ -9282,13 +8810,11 @@ SEC. 71112. Reducing State Medicaid costs.
 
 (3) by adding at the end the following new clause:
 
-
 “(vi) shall, in the case that the State elects to provide child health or pregnancy-related assistance to an individual for any period prior to the month in which the individual made application for such assistance (or application was made on behalf of the individual), provide that such assistance is not made available to such individual for items and services included under the State child health plan (or waiver of such plan) that are furnished before the second month preceding the month in which such individual made application (or application was made on behalf of such individual) for assistance.”.
 
 (d) Effective date.—The amendments made by this section shall apply to medical assistance, child health assistance, and pregnancy-related assistance with respect to individuals whose eligibility for such medical assistance, child health assistance, or pregnancy-related assistance is based on an application made on or after the first day of the first quarter that begins after December 31, 2026.
 
 (e) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $10,000,000 for fiscal year 2026, to remain available until expended.
-
 
 SEC. 71113. Federal payments to prohibited entities.
 (a) In general.—No Federal funds that are considered direct spending and provided to carry out a State plan under title XIX of the Social Security Act or a waiver of such a plan shall be used to make payments to a prohibited entity for items and services furnished during the 1-year period beginning on the date of the enactment of this Act, including any payments made directly to the prohibited entity or under a contract or other arrangement between a State and a covered organization.
@@ -9334,14 +8860,12 @@ Section 1905(ii)(3) of the Social Security Act (42 U.S.C. 1396d(ii)(3)) is amend
 
 “(B) begins to expend amounts for all such individuals prior to January 1, 2026.”.
 
-
 SEC. 71115. Provider taxes.
 (a) Change in threshold for hold harmless provision of broad-based health care related taxes.—Section 1903(w)(4) of the Social Security Act (42 U.S.C. 1396b(w)(4)) is amended—
 
 (1) in subparagraph (C)(ii), by inserting “, and for fiscal years beginning on or after October 1, 2026, the applicable percent determined under subparagraph (D) shall be substituted for ‘6 percent’ each place it appears” after “each place it appears”; and
 
 (2) by inserting after subparagraph (C)(ii), the following new subparagraph:
-
 
 “(D) (i) For purposes of subparagraph (C)(ii), the applicable percent determined under this subparagraph is—
 
@@ -9384,7 +8908,6 @@ SEC. 71115. Provider taxes.
 (b) Non-application to territories.—The amendments made by this section shall only apply with respect to a State that is 1 of the 50 States or the District of Columbia.
 
 (c) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $20,000,000 for fiscal year 2026, to remain available until expended.
-
 
 SEC. 71116. State directed payments.
 (a) In general.—Subject to subsection (b), the Secretary of Health and Human Services (in this section referred to as the Secretary) shall revise section 438.6(c)(2)(iii) of title 42, Code of Federal Regulations (or a successor regulation) such that, with respect to a payment described in such section made for a service furnished during a rating period beginning on or after the date of the enactment of this Act, the total payment rate for such service is limited to—
@@ -9429,12 +8952,10 @@ SEC. 71116. State directed payments.
 
 (e) Funding.—There are appropriated out of any monies in the Treasury not otherwise appropriated $7,000,000 for each of fiscal years 2026 through 2033 for purposes of carrying out this section, to remain available until expended.
 
-
 SEC. 71117. Requirements regarding waiver of uniform tax requirement for Medicaid provider tax.
 (a) In general.—Section 1903(w) of the Social Security Act (42 U.S.C. 1396b(w)) is amended—
 
 (1) in paragraph (3)(E), by inserting after clause (ii)(II) the following new clause:
-
 
 “(iii) For purposes of clause (ii)(I), a tax is not considered to be generally redistributive if any of the following conditions apply:
 
@@ -9449,7 +8970,6 @@ SEC. 71117. Requirements regarding waiver of uniform tax requirement for Medicai
 “(bb) that closely approximates a taxpayer or tax rate group under the program under this title, to the same effect as described in subclause (I) or (II).”; and
 
 (2) in paragraph (7), by adding at the end the following new subparagraphs:
-
 
 “(H) The term ‘Medicaid taxable unit’ means a unit that is being taxed within a health care related tax that is applicable to the program under this title. Such term includes a unit that is used as the basis for—
 
@@ -9477,10 +8997,8 @@ SEC. 71117. Requirements regarding waiver of uniform tax requirement for Medicai
 
 (c) Effective date.—The amendments made by this section shall take effect upon the date of enactment of this Act, subject to any applicable transition period determined appropriate by the Secretary of Health and Human Services, not to exceed 3 fiscal years.
 
-
 SEC. 71118. Requiring budget neutrality for Medicaid demonstration projects under section 1115.
 (a) In general.—Section 1115 of the Social Security Act (42 U.S.C. 1315) is amended by adding at the end the following new subsection:
-
 
 “(g) Requirement of budget neutrality for Medicaid demonstration projects.—
 
@@ -9494,7 +9012,6 @@ subchapter D—Increasing personal accountability
 
 SEC. 71119. Requirement for States to establish Medicaid community engagement requirements for certain individuals.
 (a) In general.—Section 1902 of the Social Security Act (42 U.S.C. 1396a), as amended by sections 71103 and 71104, is further amended by adding at the end the following new subsection:
-
 
 “(xx) Community engagement requirement for applicable individuals.—
 
@@ -9744,14 +9261,12 @@ SEC. 71119. Requirement for States to establish Medicaid community engagement re
 
 (f) Implementation funding.—For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $200,000,000 for fiscal year 2026, to remain available until expended.
 
-
 SEC. 71120. Modifying cost sharing requirements for certain expansion individuals under the Medicaid program.
 (a) In general.—Section 1916 of the Social Security Act (42 U.S.C. 1396o) is amended—
 
 (1) in subsection (a), in the matter preceding paragraph (1), by inserting “(other than, beginning October 1, 2028, specified individuals (as defined in subsection (k)(3)))” after “individuals”; and
 
 (2) by adding at the end the following new subsection:
-
 
 “(k) Special rules for certain expansion individuals.—
 
@@ -9799,7 +9314,6 @@ SEC. 71121. Making certain adjustments to coverage of home or community-based se
 (1) in paragraph (3), by inserting “paragraph (11) or” before “subsection (h)(2)”; and
 
 (2) by adding at the end the following new paragraph:
-
 
 “(11) Expanding coverage for home or community-based services.—
 
@@ -9886,7 +9400,6 @@ SEC. 71202. Temporary payment increase under the medicare physician fee schedule
 
 (D) by adding at the end the following new subparagraph:
 
-
 “(F) such services furnished on or after January 1, 2026, and before January 1, 2027, by 2.5 percent.”; and
 
 (3) in paragraph (2)(C)—
@@ -9896,7 +9409,6 @@ SEC. 71202. Temporary payment increase under the medicare physician fee schedule
 (B) by striking “or 2024” each place it appears and inserting “2024, or 2026”.
 
 (b) Conforming amendment.—Section 1848(c)(2)(B)(iv)(V) of the Social Security Act (42 U.S.C. 1395w–4(c)(2)(B)(iv)(V)) is amended by striking “or 2024” and inserting “2024, or 2026”.
-
 
 SEC. 71203. Expanding and clarifying the exclusion for orphan drugs under the Drug Price Negotiation Program.
 (a) In general.—Section 1192(e) of the Social Security Act (42 U.S.C. 1320f–1(e)) is amended—
@@ -9910,7 +9422,6 @@ SEC. 71203. Expanding and clarifying the exclusion for orphan drugs under the Dr
 (B) by striking “such disease or condition” and inserting “one or more such rare diseases or conditions (as such term is defined in section 526(a)(2) of the Federal Food, Drug, and Cosmetic Act)”; and
 
 (3) by adding at the end the following new paragraph:
-
 
 “(4) TREATMENT OF FORMER ORPHAN DRUGS.—In the case of a drug or biological product that, as of the date of the approval or licensure of such drug or biological product, is a drug or biological product described in paragraph (3)(A), paragraph (1)(A)(ii) or (1)(B)(ii) (as applicable) shall apply as if the reference to ‘the date of such approval’ or ‘the date of such licensure’, respectively, were instead a reference to ‘the first day after the date of such approval for which such drug is not a drug described in paragraph (3)(A)’ or ‘the first day after the date of such licensure for which such biological product is not a biological product described in paragraph (3)(A)’, respectively.”.
 
@@ -9926,11 +9437,9 @@ SEC. 71301. Permitting premium tax credit only for certain individuals.
 
 (1) by striking “For purposes of this section, an individual” and inserting “For purposes of this section—
 
-
 “(A) IN GENERAL.—An individual”, and
 
 (2) by adding at the end the following new subparagraph:
-
 
 “(B) ELIGIBLE ALIENS.—An individual who is an alien and lawfully present shall be treated as an eligible alien if such individual is, and is reasonably expected to be for the entire period of enrollment for which the credit under this section is being claimed—
 
@@ -9956,16 +9465,13 @@ SEC. 71301. Permitting premium tax credit only for certain individuals.
 
 (III) by adding at the end the following new subparagraph:
 
-
 “(C) in the case such individual is an alien lawfully present in the United States, whether such individual is an eligible alien (within the meaning of section 36B(e)(2) of such Code);”;
 
 (B) in subsection (b)(3), by adding at the end the following new subparagraph:
 
-
 “(D) IMMIGRATION STATUS.—In the case the individual's eligibility is based on an attestation of the enrollee's immigration status, an attestation that such individual is an eligible alien (within the meaning of 36B(e)(2) of the Internal Revenue Code of 1986).”; and
 
 (C) in subsection (c)(2)(B)(ii), by adding at the end the following new subclause:
-
 
 “(III) In the case of an individual described in clause (i)(I) with respect to whom a premium tax credit under section 36B of the Internal Revenue Code of 1986 is being claimed, the attestation that the individual is an eligible alien (within the meaning of section 36B(e)(2) of such Code).”.
 
@@ -9977,7 +9483,6 @@ SEC. 71301. Permitting premium tax credit only for certain individuals.
 
 (e) Effective date.—The amendments made by this section (other than the amendments made by subsection (c)) shall apply to taxable years beginning after December 31, 2026.
 
-
 SEC. 71302. Disallowing premium tax credit during periods of medicaid ineligibility due to alien status.
 (a) In general.—Section 36B(c)(1) is amended by striking subparagraph (B).
 
@@ -9987,7 +9492,6 @@ subchapter B—Preventing waste, fraud, and abuse
 
 SEC. 71303. Requiring verification of eligibility for premium tax credit.
 (a) In general.—Section 36B(c) is amended by adding at the end the following new paragraphs:
-
 
 “(5) EXCHANGE ENROLLMENT VERIFICATION REQUIREMENT.—
 
@@ -10027,15 +9531,12 @@ SEC. 71303. Requiring verification of eligibility for premium tax credit.
 
 (2) by adding at the end the following new clause:
 
-
 “(ii) PRE-ENROLLMENT VERIFICATION PROCESS REQUIRED.—Such term shall not include any plan enrolled in through an Exchange, unless such Exchange provides a process for pre-enrollment verification through which any applicant may, beginning not later than August 1, verify with the Exchange the applicant's household income and eligibility for enrollment in such plan for plan years beginning in the subsequent year.”.
 
 (c) Effective date.—The amendments made by this section shall apply to taxable years beginning after December 31, 2027.
 
-
 SEC. 71304. Disallowing premium tax credit in case of certain coverage enrolled in during special enrollment period.
 (a) In general.—Section 36B(c)(3)(A), as amended by the preceding provisions of this Act, is amended by adding at the end the following new clause:
-
 
 “(iii) EXCEPTION IN CASE OF CERTAIN SPECIAL ENROLLMENT PERIODS.—Such term shall not include any plan enrolled in during a special enrollment period provided for by an Exchange—
 
@@ -10044,7 +9545,6 @@ SEC. 71304. Disallowing premium tax credit in case of certain coverage enrolled 
 “(II) not in connection with the occurrence of an event or change in circumstances specified by the Secretary of Health and Human Services for such purposes.”.
 
 (b) Effective date.—The amendments made by this section shall apply with respect to plan years beginning after December 31, 2025.
-
 
 SEC. 71305. Eliminating limitation on recapture of advance payment of premium tax credit.
 (a) In general.—Section 36B(f)(2) is amended by striking subparagraph (B).
@@ -10062,17 +9562,14 @@ subchapter C—Enhancing choice for patients
 SEC. 71306. Permanent extension of safe harbor for absence of deductible for telehealth services.
 (a) In general.—Subparagraph (E) of section 223(c)(2) is amended to read as follows:
 
-
 “(E) SAFE HARBOR FOR ABSENCE OF DEDUCTIBLE FOR TELEHEALTH.—A plan shall not fail to be treated as a high deductible health plan by reason of failing to have a deductible for telehealth and other remote care services.”.
 
 (b) Certain coverage disregarded.—Clause (ii) of section 223(c)(1)(B) is amended by striking “(in the case of months or plan years to which paragraph (2)(E) applies)”.
 
 (c) Effective date.—The amendments made by this section shall apply to plan years beginning after December 31, 2024.
 
-
 SEC. 71307. Allowance of bronze and catastrophic plans in connection with health savings accounts.
 (a) In general.—Section 223(c)(2) is amended by adding at the end the following new subparagraph:
-
 
 “(H) BRONZE AND CATASTROPHIC PLANS TREATED AS HIGH DEDUCTIBLE HEALTH PLANS.—The term ‘high deductible health plan’ shall include any plan which is—
 
@@ -10082,10 +9579,8 @@ SEC. 71307. Allowance of bronze and catastrophic plans in connection with health
 
 (b) Effective date.—The amendment made by this section shall apply to months beginning after December 31, 2025.
 
-
 SEC. 71308. Treatment of direct primary care service arrangements.
 (a) In general.—Section 223(c)(1) is amended by adding at the end the following new subparagraph:
-
 
 “(E) TREATMENT OF DIRECT PRIMARY CARE SERVICE ARRANGEMENTS.—
 
@@ -10109,7 +9604,6 @@ The Secretary, after consultation with the Secretary of Health and Human Service
 
 (b) Direct primary care service arrangement fees treated as medical expenses.—Section 223(d)(2)(C) is amended by striking “or” at the end of clause (iii), by striking the period at the end of clause (iv) and inserting “, or”, and by adding at the end the following new clause:
 
-
 “(v) any direct primary care service arrangement.”.
 
 (c) Inflation adjustment.—Section 223(g)(1) is amended—
@@ -10117,7 +9611,6 @@ The Secretary, after consultation with the Secretary of Health and Human Service
 (1) by striking “in subsections (b)(2) and (c)(2)(A)” and inserting “in subsections (b)(2), (c)(2)(A), and in the case of taxable years beginning after 2026, (c)(1)(E)(ii)(II)”,
 
 (2) in subparagraph (B), by striking “clause (ii)” in clause (i) and inserting “clauses (ii) and (iii)”, by striking “and” at the end of clause (i), by striking the period at the end of clause (ii) and inserting “, and”, and by inserting after clause (ii) the following new clause:
-
 
 “(iii) in the case of the dollar amount in subsection (c)(1)(E)(ii)(II), ‘calendar year 2025’.”, and
 
@@ -10129,7 +9622,6 @@ CHAPTER 4—PROTECTING RURAL HOSPITALS AND PROVIDERS
 
 SEC. 71401. Rural Health Transformation Program.
 (a) In general.—Section 2105 of the Social Security Act (42 U.S.C. 1397ee) is amended by adding at the end the following new subsection:
-
 
 “(h) Rural health transformation program.—
 
@@ -10353,13 +9845,11 @@ SEC. 80001. Exemption of certain assets.
 
 (1) by striking “net value of the” and inserting the following: “net value of—
 
-
 “(A) the”;
 
 (2) by striking the period at the end and inserting a semicolon; and
 
 (3) by adding at the end the following:
-
 
 “(B) a family farm on which the family resides;
 
@@ -10380,7 +9870,6 @@ Section 455(a) of the Higher Education Act of 1965 (20 U.S.C. 1087e(a)) is amend
 
 (B) by striking subparagraph (A) and inserting the following:
 
-
 “(A) TERMINATION OF AUTHORITY TO MAKE INTEREST SUBSIDIZED LOANS TO GRADUATE AND PROFESSIONAL STUDENTS.—Subject to subparagraph (B), and notwithstanding any provision of this part or part B—
 
 “(i) for any period of instruction beginning on or after July 1, 2012, a graduate or professional student shall not be eligible to receive a Federal Direct Stafford loan under this part; and
@@ -10389,11 +9878,9 @@ Section 455(a) of the Higher Education Act of 1965 (20 U.S.C. 1087e(a)) is amend
 
 (C) by adding at the end the following:
 
-
 “(C) TERMINATION OF AUTHORITY TO MAKE FEDERAL DIRECT PLUS LOANS TO GRADUATE AND PROFESSIONAL STUDENTS.—Subject to paragraph (8) and notwithstanding any provision of this part or part B, for any period of instruction beginning on or after July 1, 2026, a graduate or professional student shall not be eligible to receive a Federal Direct PLUS Loan under this part.”; and
 
 (2) by adding at the end the following:
-
 
 “(4) GRADUATE AND PROFESSIONAL ANNUAL AND AGGREGATE LIMITS FOR FEDERAL DIRECT UNSUBSIDIZED STAFFORD LOANS BEGINNING JULY 1, 2026.—
 
@@ -10512,7 +9999,6 @@ SEC. 82001. Loan repayment.
 
 (D) by adding at the end the following:
 
-
 “(F) beginning on July 1, 2026, the income-based Repayment Assistance Plan under subsection (q), provided that—
 
 “(i) such Plan shall not be available for the repayment of excepted loans (as defined in paragraph (7)(E)); and
@@ -10521,11 +10007,9 @@ SEC. 82001. Loan repayment.
 
 (2) in paragraph (5), by amending subparagraph (B) to read as follows:
 
-
 “(B) repay the loan pursuant to an income-based repayment plan under subsection (q) or section 493C, as applicable.”; and
 
 (3) by adding at the end the following:
-
 
 “(6) TERMINATION AND LIMITATION OF REPAYMENT AUTHORITY.—
 
@@ -10597,7 +10081,6 @@ SEC. 82001. Loan repayment.
 
 (II) by amending paragraph (1) to read as follows:
 
-
 “(1) AUTHORITY OF SECRETARY TO REQUIRE.—The Secretary may require borrowers who have defaulted on loans made under this part that are assigned to the Secretary under subsection (c)(8) to repay those loans pursuant to an income-based repayment plan under section 493C.”; and
 
 (III) in the heading of paragraph (2), by striking “income contingent or”.
@@ -10629,7 +10112,6 @@ SEC. 82001. Loan repayment.
 (3) EFFECTIVE DATE.—The amendments made by this subsection shall take effect on July 1, 2028.
 
 (d) Repayment assistance plan.—Section 455 of the Higher Education Act of 1965 (20 U.S.C. 1087e) is amended by adding at the end the following new subsection:
-
 
 “(q) Repayment assistance plan.—
 
@@ -10739,7 +10221,6 @@ SEC. 82001. Loan repayment.
 
 (e) Federal consolidation loans.—Section 455(g) of the Higher Education Act of 1965 (20 U.S.C. 1087e(g)) is amended by adding at the end the following new paragraph:
 
-
 “(3) CONSOLIDATION LOANS MADE ON OR AFTER JULY 1, 2026.—A Federal Direct Consolidation Loan offered to a borrower under this part on or after July 1, 2026, may only be repaid pursuant to a repayment plan described in clause (i) or (ii) of subsection (d)(7)(A) of this section, as applicable, and the repayment schedule of such a Consolidation Loan shall be determined in accordance with such repayment plan.”.
 
 (f) Income-Based repayment.—
@@ -10747,7 +10228,6 @@ SEC. 82001. Loan repayment.
 (1) AMENDMENTS.—
 
 (A) EXCEPTED CONSOLIDATION LOAN DEFINED.—Section 493C(a)(2) of the Higher Education Act of 1965 (20 U.S.C. 1098e(a)(2)) is amended to read as follows:
-
 
 “(2) EXCEPTED CONSOLIDATION LOAN.—
 
@@ -10765,7 +10245,6 @@ SEC. 82001. Loan repayment.
 
 (B) TERMINATION OF PARTIAL FINANCIAL HARDSHIP ELIGIBILITY.—Section 493C(a)(3) of the Higher Education Act of 1965 (20 U.S.C. 1098e(a)(3)) is amended to read as follows:
 
-
 “(3) APPLICABLE AMOUNT.—The term ‘applicable amount’ means 15 percent of the result obtained by calculating, on at least an annual basis, the amount by which—
 
 “(A) the borrower's, and the borrower's spouse's (if applicable), adjusted gross income; exceeds
@@ -10776,11 +10255,9 @@ SEC. 82001. Loan repayment.
 
 (i) by amending paragraph (1) to read as follows:
 
-
 “(1) a borrower of any loan made, insured, or guaranteed under part B or D (other than an excepted PLUS loan or excepted consolidation loan), may elect to have the borrower’s aggregate monthly payment for all such loans not exceed the applicable amount divided by 12;”;
 
 (ii) by striking paragraph (6) and inserting the following:
-
 
 “(6) if the monthly payment amount calculated under this section for all loans made to the borrower under part B or D (other than an excepted PLUS loan or excepted consolidation loan) exceeds the monthly amount calculated under section 428(b)(9)(A)(i) or 455(d)(1)(A), based on a 10-year repayment period, when the borrower first made the election described in this subsection (referred to in this paragraph as the ‘standard monthly repayment amount’), or if the borrower no longer wishes to continue the election under this subsection, then—
 
@@ -10793,7 +10270,6 @@ SEC. 82001. Loan repayment.
 (iv) in paragraph (8), by inserting “or the Repayment Assistance Program under section 455(q)” after “standard repayment plan”.
 
 (D) ELIGIBILITY DETERMINATIONS.—Section 493C(c) of the Higher Education Act of 1965 (20 U.S.C. 1098e(c)) is amended to read as follows:
-
 
 “(c) Eligibility determinations; automatic recertification.—
 
@@ -10825,7 +10301,6 @@ SEC. 82001. Loan repayment.
 
 (g) FFEL adjustment.—Section 428(b)(9)(A)(v) of the Higher Education Act of 1965 (20 U.S.C. 1078(b)(9)(A)(v)) is amended by striking “who has a partial financial hardship”.
 
-
 SEC. 82002. Deferment; forbearance.
 (a) Sunset of economic hardship and unemployment deferments.—Section 455(f) of the Higher Education Act of 1965 (20 U.S.C. 1087e(f)) is amended—
 
@@ -10839,14 +10314,11 @@ SEC. 82002. Deferment; forbearance.
 
 (3) by adding at the end the following:
 
-
 “(7) SUNSET OF UNEMPLOYMENT AND ECONOMIC HARDSHIP DEFERMENTS.—A borrower who receives a loan made under this part on or after July 1, 2027, shall not be eligible to defer such loan under subparagraph (B) or (D) of paragraph (2).”.
 
 (b) Forbearance on loans made under this part on or after July 1, 2027.—Section 455(f) of the Higher Education Act of 1965 (20 U.S.C. 1087e(f)) is amended by adding at the end the following:
 
-
 “(8) FORBEARANCE ON LOANS MADE UNDER THIS PART ON OR AFTER JULY 1, 2027.—A borrower who receives a loan made under this part on or after July 1, 2027, may only be eligible for a forbearance on such loan pursuant to section 428(c)(3)(B) that does not exceed 9 months during any 24-month period.”.
-
 
 SEC. 82003. Loan rehabilitation.
 (a) Updating loan rehabilitation limits.—
@@ -10859,7 +10331,6 @@ SEC. 82003. Loan rehabilitation.
 
 (b) Minimum monthly payment amount.—Section 428F(a)(1)(B) of the Higher Education Act of 1965 (20 U.S.C. 1078–6(a)(1)(B)) is amended by adding at the end the following: “With respect to a borrower who has 1 or more loans made under part D on or after July 1, 2027 that are described in subparagraph (A), the total monthly payment of the borrower for all such loans shall not be less than $10.”.
 
-
 SEC. 82004. Public service loan forgiveness.
 Section 455(m)(1)(A) of the Higher Education Act of 1965 (20 U.S.C. 1087e(m)(1)(A)) is amended—
 
@@ -10871,10 +10342,8 @@ Section 455(m)(1)(A) of the Higher Education Act of 1965 (20 U.S.C. 1087e(m)(1)(
 
 “(v) on-time payments under the Repayment Assistance Plan under subsection (q); and”.
 
-
 SEC. 82005. Student loan servicing.
 Paragraph (1) of section 458(a) of the Higher Education Act of 1965 (20 U.S.C. 1087h(a)(1)) is amended to read as follows:
-
 
 “(1) ADDITIONAL MANDATORY FUNDS FOR SERVICING.—There shall be available to the Secretary (in addition to any other amounts appropriated under any appropriations Act for administrative costs under this part and part B and out of any money in the Treasury not otherwise appropriated) $1,000,000,000 to be obligated for administrative costs under this part and part B, including the costs of servicing the direct student loan programs under this part, which shall remain available until expended.”.
 
@@ -10884,7 +10353,6 @@ SEC. 83001. Eligibility.
 (a) Foreign income and federal pell grant eligibility.—
 
 (1) ADJUSTED GROSS INCOME DEFINED.—Section 401(a)(2)(A) of the Higher Education Act of 1965 (20 U.S.C. 1070a(a)(2)(A)) is amended to read as follows:
-
 
 “(A) the term ‘adjusted gross income’ means—
 
@@ -10920,15 +10388,12 @@ SEC. 83001. Eligibility.
 
 (1) IN GENERAL.—Section 401(b)(1) of the Higher Education Act of 1965 (20 U.S.C. 1070a(b)(1)) is amended by adding at the end the following:
 
-
 “(F) INELIGIBILITY OF STUDENTS WITH A HIGH STUDENT AID INDEX.—Notwithstanding subparagraphs (A) through (E), a student shall not be eligible for a Federal Pell Grant under this subsection for an academic year in which the student has a student aid index that equals or exceeds twice the amount of the total maximum Federal Pell Grant for such academic year.”.
 
 (2) EFFECTIVE DATE.—The amendment made by paragraph (1) shall take effect on July 1, 2026.
 
-
 SEC. 83002. Workforce Pell Grants.
 (a) In general.—Section 401 of the Higher Education Act of 1965 (20 U.S.C. 1070a) is amended by adding at the end the following:
-
 
 “(k) Workforce pell grant program.—
 
@@ -10965,7 +10430,6 @@ SEC. 83002. Workforce Pell Grants.
 (1) by redesignating paragraphs (3) and (4) as paragraphs (4) and (5), respectively; and
 
 (2) by inserting after paragraph (2) the following:
-
 
 “(3) (A) A program is an eligible program for purposes of the Workforce Pell Grant program under section 401(k) only if—
 
@@ -11019,14 +10483,11 @@ SEC. 83002. Workforce Pell Grants.
 
 (c) Effective date; applicability.—The amendments made by this section shall take effect on July 1, 2026, and shall apply with respect to award year 2026–2027 and each succeeding award year.
 
-
 SEC. 83003. Pell shortfall.
 Section 401(b)(7)(A)(iii) of the Higher Education Act of 1965 (20 U.S.C. 1070a(b)(7)(A)(iii)) is amended by striking “$2,170,000,000” and inserting “$12,670,000,000”.
 
-
 SEC. 83004. Federal Pell Grant exclusion relating to other grant aid.
 Section 401(d) of the Higher Education Act of 1965 (20 U.S.C. 1070a(d)) is amended by adding at the end the following:
-
 
 “(6) EXCLUSION.—Beginning on July 1, 2026, and notwithstanding this subsection or subsection (b), a student shall not be eligible for a Federal Pell Grant under subsection (b) during any period for which the student receives grant aid from non-Federal sources, including States, institutions of higher education, or private sources, in an amount that equals or exceeds the student's cost of attendance for such period.”.
 
@@ -11042,7 +10503,6 @@ Section 454 of the Higher Education Act of 1965 (20 U.S.C. 1087d) is amended—
 (B) by redesignating paragraph (6) as paragraph (7); and
 
 (C) by inserting after paragraph (5) the following:
-
 
 “(6) provide assurances that, beginning July 1, 2026, the institution will comply with all requirements of subsection (c); and”;
 
@@ -11117,7 +10577,6 @@ SEC. 85001. Delay of rule relating to borrower defense to repayment.
 
 (b) Effect.—Beginning on the date of enactment of this section, with respect to loans that first originate before July 1, 2035, any regulations relating to borrower defense to repayment that took effect on July 1, 2020, are restored and revived as such regulations were in effect on such date.
 
-
 SEC. 85002. Delay of rule relating to closed school discharges.
 (a) Delay.—Beginning on the date of enactment of this section, for loans that first originate before July 1, 2035, the provisions of sections 674.33(g), 682.402(d), and 685.214 of title 34, Code of Federal Regulations (relating to closed school discharges), as added or amended by the final regulations published by the Department of Education on November 1, 2022, and titled “Institutional Eligibility Under the Higher Education Act of 1965, as Amended; Student Assistance General Provisions; Federal Perkins Loan Program; Federal Family Education Loan Program; and William D. Ford Federal Direct Loan Program” (87 Fed. Reg. 65904), shall not be in effect.
 
@@ -11179,7 +10638,6 @@ In addition to amounts otherwise available, there is appropriated to the Commiss
 
 (4) Any work necessary to prepare the ground at or near the border to allow U.S. Customs and Border Protection to conduct its operations, including the construction and maintenance of the barrier system.
 
-
 SEC. 90002. U.S. Customs and Border Protection personnel, fleet vehicles, and facilities.
 (a) In general.—In addition to amounts otherwise available, there is appropriated to the Commissioner of U.S. Customs and Border Protection for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, the following:
 
@@ -11193,14 +10651,12 @@ SEC. 90002. U.S. Customs and Border Protection personnel, fleet vehicles, and fa
 
 (b) Restriction.—None of the funds made available by subsection (a) may be used to recruit, hire, or train personnel for the duties of processing coordinators after October 31, 2028.
 
-
 SEC. 90003. Detention capacity.
 (a) In general.—In addition to any amounts otherwise appropriated, there is appropriated to U.S. Immigration and Customs Enforcement for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029, $45,000,000,000, for single adult alien detention capacity and family residential center capacity.
 
 (b) Duration and standards.—Aliens may be detained at family residential centers, as described in subsection (a), pending a decision, under the Immigration and Nationality Act (8 U.S.C. 1101 et seq.), on whether the aliens are to be removed from the United States and, if such aliens are ordered removed from the United States, until such aliens are removed. The detention standards for the single adult detention capacity described in subsection (a) shall be set in the discretion of the Secretary of Homeland Security, consistent with applicable law.
 
 (c) Definition of family residential center.—In this section, the term “family residential center” means a facility used by the Department of Homeland Security to detain family units of aliens (including alien children who are not unaccompanied alien children (as defined in section 462(g) of the Homeland Security Act of 2002 (6 U.S.C. 279(g)))) who are encountered or apprehended by the Department of Homeland Security.
-
 
 SEC. 90004. Border security, technology, and screening.
 (a) In general.—In addition to amounts otherwise available, there is appropriated to the Commissioner of U.S. Customs and Border Protection for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029, $6,168,000,000 for the following:
@@ -11224,7 +10680,6 @@ SEC. 90004. Border security, technology, and screening.
 (b) Restrictions.—None of the funds made available under subsection (a) may be used for the procurement or deployment of surveillance towers along the southwest border and northern border that have not been tested and accepted by U.S. Customs and Border Protection to deliver autonomous capabilities.
 
 (c) Definition of autonomous.—In this section, with respect to capabilities, the term “autonomous” means a system designed to apply artificial intelligence, machine learning, computer vision, or other algorithms to accurately detect, identify, classify, and track items of interest in real time such that the system can make operational adjustments without the active engagement of personnel or continuous human command or control.
-
 
 SEC. 90005. State and local assistance.
 (a) State Homeland Security Grant Programs.—
@@ -11263,7 +10718,6 @@ SEC. 90005. State and local assistance.
 
 (6) TERMS AND CONDITIONS.—Nothing in this subsection shall authorize any State or local government to exercise immigration or border security authorities reserved exclusively to the Federal Government under the Immigration and Nationality Act (8 U.S.C. 1101 et seq.) or the Homeland Security Act of 2002 (6 U.S.C. 101 et seq.). The Federal Emergency Management Agency may use not more than 1 percent of the funds made available under this subsection for the purpose of administering grants provided for in this section.
 
-
 SEC. 90006. Presidential residence protection.
 (a) In general.—In addition to amounts otherwise available, there is appropriated to the Administrator of the Federal Emergency Management Agency for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $300,000,000, to remain available until September 30, 2029, for the reimbursement of extraordinary law enforcement personnel costs for protection activities directly and demonstrably associated with any residence of the President designated pursuant to section 3 or 4 of the Presidential Protection Assistance Act of 1976 (Public Law 94–524; 18 U.S.C. 3056 note) to be secured by the United States Secret Service.
 
@@ -11282,7 +10736,6 @@ SEC. 90006. Presidential residence protection.
 (3) certifies to the Administrator as compensating protection activities requested by the United States Secret Service.
 
 (c) Terms and conditions.—The Federal Emergency Management Agency may use not more than 3 percent of the funds made available under this section for the purpose of administering grants provided for in this section.
-
 
 SEC. 90007. Department of Homeland Security appropriations for border support.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Homeland Security for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $10,000,000,000, to remain available until September 30, 2029, for reimbursement of costs incurred in undertaking activities in support of the Department of Homeland Security’s mission to safeguard the borders of the United States.
@@ -11330,9 +10783,7 @@ SEC. 90101. FEHB improvements.
 
 (B) by inserting after paragraph (1) the following:
 
-
 “(2) In fiscal year 2026, $66,000,000, to be derived from all contributions, and to remain available until the end of fiscal year 2035, for the Director of the Office to carry out subsections (c) through (f) of the FEHB Protection Act of 2025.”.
-
 
 SEC. 90102. Pandemic Response Accountability Committee.
 (a) Pandemic response accountability committee funding availability.—In addition to amounts otherwise available, there is appropriated for fiscal year 2026, out of any money in the Treasury not otherwise appropriated, $88,000,000, to remain available until expended, for the Pandemic Response Accountability Committee to support oversight of the Coronavirus response and of funds provided in this Act or any other Act pertaining to the Coronavirus pandemic.
@@ -11347,11 +10798,9 @@ SEC. 90102. Pandemic Response Accountability Committee.
 
 (C) by adding at the end the following:
 
-
 “(G) the Act titled ‘An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14’; and”; and
 
 (2) in subsection (k), by striking “2025” and inserting “2034”.
-
 
 SEC. 90103. Appropriation for the Office of Management and Budget.
 In addition to amounts otherwise available, there is appropriated to the Office of Management and Budget for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $100,000,000, to remain available until September 30, 2029, for purposes of finding budget and accounting efficiencies in the executive branch.
@@ -11366,7 +10815,6 @@ SEC. 100001. Applicability of the immigration laws.
 (b) Terms.—The terms used under this subtitle shall have the meanings given such terms in section 101 of the Immigration and Nationality Act (8 U.S.C. 1101).
 
 (c) References to Immigration and Nationality Act.—Except as otherwise expressly provided, any reference in this subtitle to a section or other provision shall be considered to be to a section or other provision of the Immigration and Nationality Act (8 U.S.C. 1101 et seq.).
-
 
 SEC. 100002. Asylum fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security or the Attorney General, as applicable, shall require the payment of a fee, equal to the amount specified in this section, by any alien who files an application for asylum under section 208 (8 U.S.C. 1158) at the time such application is filed.
@@ -11402,7 +10850,6 @@ SEC. 100002. Asylum fee.
 (3) any amounts received in fees required under this section that were not credited to the Executive Office for Immigration Review pursuant to paragraph (1) or to U.S. Citizenship and Immigration Services pursuant to paragraph (2) shall be deposited into the general fund of the Treasury.
 
 (e) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100003. Employment authorization document fees.
 (a) Asylum applicants.—
@@ -11474,7 +10921,6 @@ SEC. 100003. Employment authorization document fees.
 (4) DISPOSITION OF EMPLOYMENT AUTHORIZATION APPLICATION FEES COLLECTED FROM ALIENS GRANTED TEMPORARY PROTECTED STATUS.—All of the fees collected pursuant to this subsection shall be deposited into the general fund of the Treasury.
 
 (5) NO FEE WAIVER.—Fees required to be paid under this subsection shall not be waived or reduced.
-
 
 SEC. 100004. Immigration parole fee.
 (a) In general.—Except as provided under subsection (b), the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in this section and in addition to any other fee authorized by law, by any alien who is paroled into the United States.
@@ -11551,7 +10997,6 @@ SEC. 100004. Immigration parole fee.
 
 (f) No fee waiver.—Except as provided in subsection (b), fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100005. Special immigrant juvenile fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in this section, by any alien, parent, or legal guardian of an alien applying for special immigrant juvenile status under section 101(a)(27)(J) (8 U.S.C. 1101(a)(27)(J)).
 
@@ -11568,7 +11013,6 @@ SEC. 100005. Special immigrant juvenile fee.
 (2) the product resulting from the multiplication of the amount referred to in paragraph (1) by the percentage (if any) by which the Consumer Price Index for All Urban Consumers for the month of July preceding the date on which such adjustment takes effect exceeds the Consumer Price Index for All Urban Consumers for the same month of the preceding calendar year, rounded to the next lowest multiple of $10.
 
 (d) Disposition of special immigrant juvenile fees.—All of the fees collected pursuant to this section shall be deposited into the general fund of the Treasury.
-
 
 SEC. 100006. Temporary protected status fee.
 Section 244(c)(1)(B) of the Immigration and Nationality Act (8 U.S.C. 1254a(c)(1)(B)) is amended—
@@ -11590,7 +11034,6 @@ Section 244(c)(1)(B) of the Immigration and Nationality Act (8 U.S.C. 1254a(c)(1
 “(iii) DISPOSITION OF TEMPORARY PROTECTED STATUS FEES.—All of the fees collected pursuant to this subparagraph shall be deposited into the general fund of the Treasury.
 
 “(iv) NO FEE WAIVER.—Fees required to be paid under this subparagraph shall not be waived or reduced.”.
-
 
 SEC. 100007. Visa integrity fee.
 (a) Visa integrity fee.—
@@ -11621,7 +11064,6 @@ SEC. 100007. Visa integrity fee.
 
 (B) during such period of validity, was granted an extension of such nonimmigrant status or an adjustment to the status of a lawful permanent resident.
 
-
 SEC. 100008. Form I–94 fee.
 (a) Fee authorized.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), by any alien who submits an application for a Form I–94 Arrival/Departure Record.
 
@@ -11651,7 +11093,6 @@ SEC. 100008. Form I–94 fee.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100009. Annual asylum fee.
 (a) Fee authorized.—In addition to any other fee authorized by law, for each calendar year that an alien’s application for asylum remains pending, the Secretary of Homeland Security or the Attorney General, as applicable, shall require the payment of a fee, equal to the amount specified in subsection (b), by such alien.
 
@@ -11672,7 +11113,6 @@ SEC. 100009. Annual asylum fee.
 (c) Disposition of annual asylum fees.—All of the fees collected pursuant to this section shall be deposited into the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100010. Fee relating to renewal and extension of employment authorization for parolees.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), for any parolee who seeks a renewal or extension of employment authorization based on a grant of parole. The employment authorization for each alien paroled into the United States, or any renewal or extension of such parole, shall be valid for a period of 1 year or for the duration of the alien’s parole, whichever is shorter.
@@ -11705,7 +11145,6 @@ SEC. 100010. Fee relating to renewal and extension of employment authorization f
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100011. Fee relating to renewal or extension of employment authorization for asylum applicants.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee of not less than $275 by any alien who has applied for asylum for each renewal or extension of employment authorization based on such application.
 
@@ -11730,7 +11169,6 @@ SEC. 100011. Fee relating to renewal or extension of employment authorization fo
 (2) any amounts collected pursuant to this section that are not credited to U.S. Citizenship and Immigration Services pursuant to subparagraph (A) shall be deposited into the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100012. Fee relating to renewal and extension of employment authorization for aliens granted temporary protected status.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), by any alien at the time such alien seeks a renewal or extension of employment authorization based on a grant of temporary protected status. Any employment authorization for an alien granted temporary protected status, or any renewal or extension of such employment authorization, shall be valid for a period of 1 year or for the duration of the designation of temporary protected status, whichever is shorter.
@@ -11762,7 +11200,6 @@ SEC. 100012. Fee relating to renewal and extension of employment authorization f
 (2) any amounts collected pursuant to this section that are not credited to U.S. Citizenship and Immigration Services pursuant to subparagraph (A) shall be deposited into the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100013. Fees relating to applications for adjustment of status.
 (a) Fee for filing an application to adjust status to that of a lawful permanent resident.—
@@ -12055,7 +11492,6 @@ SEC. 100013. Fees relating to applications for adjustment of status.
 
 (k) Limitation on use of funds.—No fees collected pursuant to this section may be expended by the Executive Office for Immigration Review for the Legal Orientation Program, or for any successor program.
 
-
 SEC. 100014. Electronic System for Travel Authorization fee.
 Section 217(h)(3)(B) (8 U.S.C. 1187(h)(3)(B)) is amended—
 
@@ -12071,7 +11507,6 @@ Section 217(h)(3)(B) (8 U.S.C. 1187(h)(3)(B)) is amended—
 
 (C) by adding at the end the following:
 
-
 “(III) not less than $13 per travel authorization.”;
 
 (2) in clause (iii), by striking “October 31, 2028” and inserting “October 31, 2034”; and
@@ -12083,7 +11518,6 @@ Section 217(h)(3)(B) (8 U.S.C. 1187(h)(3)(B)) is amended—
 “(I) the amount of the fee required under this subparagraph during the most recently concluded fiscal year; and
 
 “(II) the product of the amount referred to in subclause (I) multiplied by the percentage (if any) by which the Consumer Price Index for All Urban Consumers for the month of July preceding the date on which such adjustment takes effect exceeds the Consumer Price Index for All Urban Consumers for the same month of the preceding calendar year.”.
-
 
 SEC. 100015. Electronic Visa Update System fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, in the amount specified in subsection (b), by any alien subject to the Electronic Visa Update System at the time of such alien’s enrollment in such system.
@@ -12106,7 +11540,6 @@ SEC. 100015. Electronic Visa Update System fee.
 
 (1) IN GENERAL.—Section 286 (8 U.S.C. 1356) is amended by adding at the end the following:
 
-
 “(w) CBP electronic visa update system account.—
 
 “(1) ESTABLISHMENT.—There is established in the general fund of the Treasury a separate account, which shall be known as the ‘CBP Electronic Visa Update System Account’ (referred to in this subsection as the ‘Account’).
@@ -12126,7 +11559,6 @@ SEC. 100015. Electronic Visa Update System fee.
 (2) REMAINING FEES.—Of the fees collected pursuant to this section, an amount equal to $5 multiplied by the number of payments collected pursuant to this section shall be deposited to the general fund of the Treasury.
 
 (d) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
-
 
 SEC. 100016. Fee for aliens ordered removed in absentia.
 (a) In general.—As partial reimbursement for the cost of arresting an alien described in this section, the Secretary of Homeland Security, except as provided in subsection (c), shall require the payment of a fee, equal to the amount specified in subsection (b) on any alien who—
@@ -12165,7 +11597,6 @@ SEC. 100016. Fee for aliens ordered removed in absentia.
 
 (e) No fee waiver.—Fees required to be paid under this section shall not be waived or reduced.
 
-
 SEC. 100017. Inadmissible alien apprehension fee.
 (a) In general.—In addition to any other fee authorized by law, the Secretary of Homeland Security shall require the payment of a fee, equal to the amount specified in subsection (b), by any inadmissible alien at the time such alien is apprehended between ports of entry.
 
@@ -12196,7 +11627,6 @@ SEC. 100017. Inadmissible alien apprehension fee.
 (2) any amounts collected pursuant to this section that are not credited to U.S. Immigration and Customs Enforcement pursuant to paragraph (1) shall be deposited into the general fund of the Treasury.
 
 (d) Disposition of inadmissible alien apprehension fees.—All of the fees collected pursuant to this section shall be deposited into the general fund of the Treasury.
-
 
 SEC. 100018. Amendment to authority to apply for asylum.
 Section 208(d)(3) (8 U.S.C. 1158(d)(3)) is amended—
@@ -12264,7 +11694,6 @@ In addition to amounts otherwise available, there is appropriated to the Secreta
 
 (12) INFORMATION TECHNOLOGY.—Information technology investments to support immigration purposes, including improvements to fee and revenue collections.
 
-
 SEC. 100052. Appropriation for U.S. Immigration and Customs Enforcement.
 In addition to amounts otherwise available, there is appropriated to the Secretary of Homeland Security for U.S. Immigration and Customs Enforcement for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $29,850,000,000, to remain available through September 30, 2029, for the following purposes:
 
@@ -12326,14 +11755,12 @@ In addition to amounts otherwise available, there is appropriated to the Secreta
 
 (11) OFFICE OF THE PRINCIPAL LEGAL ADVISOR.—Hiring additional attorneys and the necessary support staff within the Office of the Principal Legal Advisor to represent the Department of Homeland Security in immigration enforcement and removal proceedings.
 
-
 SEC. 100053. Appropriation for Federal Law Enforcement Training Centers.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Secretary of Homeland Security for the Federal Law Enforcement Training Centers for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $750,000,000, to remain available until September 30, 2029, for the purposes described in subsections (b) and (c).
 
 (b) Training.—Not less than $285,000,000 of the amounts available under subsection (a) shall be for supporting the training of newly hired Federal law enforcement personnel employed by the Department of Homeland Security and State and local law enforcement agencies operating in support of the Department of Homeland Security.
 
 (c) Facilities.—Not more than $465,000,000 of the amounts available under subsection (a) shall be for procurement, construction and maintenance of, improvements to, training equipment for, and related expenses, of facilities of the Federal Law Enforcement Training Centers.
-
 
 SEC. 100054. Appropriation for the Department of Justice.
 In addition to amounts otherwise available, there is appropriated to the Attorney General for the Department of Justice for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $3,330,000,000, to remain available through September 30, 2029, for the following purposes:
@@ -12394,7 +11821,6 @@ In addition to amounts otherwise available, there is appropriated to the Attorne
 
 (III) Complying with requests for such information from Federal law enforcement entities, officials, or other personnel.
 
-
 SEC. 100055. Bridging Immigration-related Deficits Experienced Nationwide Reimbursement Fund.
 (a) Establishment.—There is established within the Department of Justice a fund, to be known as the “Bridging Immigration-related Deficits Experienced Nationwide (BIDEN) Reimbursement Fund” (referred to in this section as the “Fund”).
 
@@ -12426,14 +11852,12 @@ SEC. 100055. Bridging Immigration-related Deficits Experienced Nationwide Reimbu
 
 (d) Grant eligibility of completed, ongoing, or new activities.—The Attorney General may provide grants under this section to State agencies and units of local government for expenditures made by State agencies or units of local government for completed, ongoing, or new activities determined to be eligible for such grant funding that occurred on or after January 20, 2021. Amounts made available under this section shall be distributed to more than 1 State.
 
-
 SEC. 100056. Appropriation for the Bureau of Prisons.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Director of the Bureau of Prisons for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $5,000,000,000, to remain available through September 30, 2029, for the purposes described in subsections (b) and (c).
 
 (b) Salaries and benefits.—Not less than $3,000,000,000 of the amounts made available under subsection (a) shall be for hiring and training of new employees, including correctional officers, medical professionals, and facilities and maintenance employees, the necessary support staff, and for additional funding for salaries and benefits for the current workforce of the Bureau of Prisons.
 
 (c) Facilities.—Not more than $2,000,000,000 of the amounts made available under subsection (a) shall be for addressing maintenance and repairs to facilities maintained or operated by the Bureau of Prisons.
-
 
 SEC. 100057. Appropriation for the United States Secret Service.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Director of the United States Secret Service (referred to in this section as the “Director”) for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $1,170,000,000, to remain available through September 30, 2029, for the purposes described in subsection (b).
@@ -12473,7 +11897,6 @@ subtitle B—Judiciary Matters
 SEC. 100101. Appropriation to the Administrative Office of the United States Courts.
 In addition to amounts otherwise available, there is appropriated to the Director of the Administrative Office of the United States Courts, out of amounts in the Treasury not otherwise appropriated, $1,250,000 for each of fiscal years 2025 through 2028, for the purpose of continuing analyses and reporting pursuant to section 604(a)(2) of title 28, United States Code, to examine the state of the dockets of the courts and to prepare and transmit statistical data and reports as to the business of the courts, including an assessment of the number, frequency, and related metrics of judicial orders issuing non-party relief against the Federal Government and their aggregate cost impact on the taxpayers of the United States, as determined by each court when imposing securities for the issuance of preliminary injunctions or temporary restraining orders against the Federal Government pursuant to rule 65(c) of the Federal Rules of Civil Procedure.
 
-
 SEC. 100102. Appropriation to the Federal Judicial Center.
 (a) Appropriation.—In addition to amounts otherwise available, there is appropriated to the Director of the Federal Judicial Center, out of amounts in the Treasury not otherwise appropriated, $1,000,000 for each of fiscal years 2025 through 2028, for the purpose described in subsection (b).
 
@@ -12487,7 +11910,6 @@ Section 3(d) of the Radiation Exposure Compensation Act (Public Law 101–426; 4
 (1) by striking the first sentence and inserting “The Fund shall terminate on December 31, 2028.”; and
 
 (2) by striking “the end of that 2-year period” and inserting “such date”.
-
 
 SEC. 100202. Claims relating to atmospheric testing.
 (a) Leukemia claims relating to trinity test in New Mexico and tests at the Nevada site.—Section 4(a)(1)(A) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended—
@@ -12506,7 +11928,6 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (D) by inserting after subclause (II) the following:
 
-
 “(III) was physically present in an affected area for a period of at least 1 year during the period beginning on September 24, 1944, and ending on November 6, 1962; or”; and
 
 (2) in clause (ii)(I), by striking “physical presence described in subclause (I) or (II) of clause (i) or onsite participation described in clause (i)(III)” and inserting “physical presence described in subclause (I), (II), or (III) of clause (i) or onsite participation described in clause (i)(IV)”.
@@ -12517,11 +11938,9 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (2) by striking subparagraph (B) and inserting the following:
 
-
 “(B) AMOUNT.—If the conditions described in subparagraph (C) are met, an individual who is described in subparagraph (A) shall receive $100,000.”; and
 
 (3) in subparagraph (C), by adding at the end the following:
-
 
 “(iv) No payment under this paragraph previously has been made to the individual, on behalf of the individual, or to a survivor of the individual.”.
 
@@ -12551,7 +11970,6 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (4) by inserting after subparagraph (B) the following:
 
-
 “(C) was physically present in an affected area for a period of at least 1 year during the period beginning on September 24, 1944, and ending on November 6, 1962; or”.
 
 (e) Amounts for claims related to specified diseases.—Section 4(a)(2) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended in the matter following subparagraph (D) (as redesignated by subsection (d) of this section)—
@@ -12564,11 +11982,9 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 (4) by adding at the end the following:
 
-
 “(iii) no payment under this paragraph previously has been made to the individual, on behalf of the individual, or to a survivor of the individual.”.
 
 (f) Downwind states.—Section 4(b)(1) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended to read as follows:
-
 
 “(1) ‘affected area’ means—
 
@@ -12582,10 +11998,8 @@ SEC. 100202. Claims relating to atmospheric testing.
 
 “(B) with respect to a claim by an individual under subsection (a)(1)(A)(i)(III) or subsection (a)(2)(C), only New Mexico; and”.
 
-
 SEC. 100203. Claims relating to uranium mining.
 (a) Employees of mines and mills.—Section 5(a)(1)(A)(i) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended to read as follows:
-
 
 “(i) (I) was employed in a uranium mine or uranium mill (including any individual who was employed in the transport of uranium ore or vanadium-uranium ore from such mine or mill) located in Colorado, New Mexico, Arizona, Wyoming, South Dakota, Washington, Utah, Idaho, North Dakota, Oregon, or Texas at any time during the period beginning on January 1, 1942, and ending on December 31, 1990; or
 
@@ -12609,7 +12023,6 @@ SEC. 100203. Claims relating to uranium mining.
 
 (2) by adding at the end the following:
 
-
 “(III) (aa) does not meet the conditions of subclause (I) or (II);
 
 “(bb) worked, during the period described in clause (i)(I), in 2 or more of the following positions: miner, miller, core driller, and ore transporter;
@@ -12619,7 +12032,6 @@ SEC. 100203. Claims relating to uranium mining.
 “(dd) submits written medical documentation that the individual developed lung cancer, a nonmalignant respiratory disease, renal cancer, or any other chronic renal disease, including nephritis and kidney tubal tissue injury after exposure to radiation through work in one or more of the positions referred to in item (bb);”.
 
 (e) Special rules relating to combined work histories.—Section 5(a) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended by adding at the end the following:
-
 
 “(4) SPECIAL RULE RELATING TO COMBINED WORK HISTORIES FOR INDIVIDUALS WITH AT LEAST ONE YEAR OF EXPERIENCE.—An individual meets the requirements under this paragraph if the individual worked in one or more of the positions referred to in paragraph (1)(A)(ii)(III)(bb) for a period of at least one year during the period described in paragraph (1)(A)(i)(I).
 
@@ -12633,9 +12045,7 @@ SEC. 100203. Claims relating to uranium mining.
 
 (3) by adding at the end the following:
 
-
 “(9) the term ‘core driller’ means any individual employed to engage in the act or process of obtaining cylindrical rock samples of uranium or vanadium by means of a borehole drilling machine for the purpose of mining uranium or vanadium.”.
-
 
 SEC. 100204. Claims relating to Manhattan Project waste.
 The Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended by inserting after section 5 the following:
@@ -12766,24 +12176,14 @@ The Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 no
 
 “(2) other documentation determined by the Attorney General to demonstrate that the claimant contracted a specified disease after a period of physical presence in an affected area.”.
 
-
 SEC. 100205. Limitations on claims.
 Section 8(a) of the Radiation Exposure Compensation Act (Public Law 101–426; 42 U.S.C. 2210 note) is amended by striking “2 years after the date of enactment of the RECA Extension Act of 2022” and inserting “December 31, 2027”.
 
 Attest:
 
-
-
-
-
-Speaker of the House of Representatives.  
+Speaker of the House of Representatives.
 
 Attest:
 
-
-
-
-
-Vice President of the United States and   
+Vice President of the United States and  
 President of the Senate.
-

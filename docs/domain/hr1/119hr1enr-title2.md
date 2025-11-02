@@ -69,7 +69,6 @@ SEC. 20001. Enhancement of Department of Defense resources for improving the qua
 
 (B) by striking “September 30, 2009” and inserting “September 30, 2029”.
 
-
 SEC. 20002. Enhancement of Department of Defense resources for shipbuilding.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -145,7 +144,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 
 (36) $150,000,000 for retention of inactive reserve fleet ships.
 
-
 SEC. 20003. Enhancement of Department of Defense resources for integrated air and missile defense.
 (a) Next generation missile defense technologies.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -174,7 +172,6 @@ SEC. 20003. Enhancement of Department of Defense resources for integrated air an
 (4) $1,975,000,000 for improved ground-based missile defense radars; and
 
 (5) $530,000,000 for the design and construction of Missile Defense Agency missile instrumentation range safety ship.
-
 
 SEC. 20004. Enhancement of Department of Defense resources for munitions and defense supply chain resiliency.
 (a) Appropriations.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -323,7 +320,6 @@ SEC. 20004. Enhancement of Department of Defense resources for munitions and def
 
 (2) such amounts are available to cover all costs and expenditures as provided under section 149(e)(5)(B) of title 10, United States Code.
 
-
 SEC. 20005. Enhancement of Department of Defense resources for scaling low-cost weapons into production.
 (a) Appropriations.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -399,7 +395,6 @@ SEC. 20005. Enhancement of Department of Defense resources for scaling low-cost 
 
 (2) such amounts are available to cover all costs and expenditures as provided under section 149(e)(5)(B) of title 10, United States Code.
 
-
 SEC. 20006. Enhancement of Department of Defense resources for improving the efficiency and cybersecurity of the Department of Defense.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -410,7 +405,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 (3) $10,000,000 for the improvement of the budgetary and programmatic infrastructure of the Office of the Secretary of Defense; and
 
 (4) $20,000,000 for defense cybersecurity programs of the Defense Advanced Research Projects Agency.
-
 
 SEC. 20007. Enhancement of Department of Defense resources for air superiority.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -452,7 +446,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 (18) $600,000,000 for the development, procurement, and integration of Air Force long-range strike aircraft; and
 
 (19) $500,000,000 for the development, procurement, and integration of Navy long-range strike aircraft.
-
 
 SEC. 20008. Enhancement of resources for nuclear forces.
 (a) DOD appropriations.—In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -500,7 +493,6 @@ SEC. 20008. Enhancement of resources for nuclear forces.
 (8) $10,000,000 for National Nuclear Security Administration evaluation of spent fuel reprocessing technology; and
 
 (9) $115,000,000 for accelerating nuclear national security missions through artificial intelligence.
-
 
 SEC. 20009. Enhancement of Department of Defense resources to improve capabilities of United States Indo-Pacific Command.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
@@ -569,7 +561,6 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 
 (32) $350,000,000 for the development, procurement, and integration of military space command and control systems.
 
-
 SEC. 20010. Enhancement of Department of Defense resources for improving the readiness of the Department of Defense.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -619,10 +610,8 @@ In addition to amounts otherwise available, there are appropriated to the Secret
 
 (23) $320,000,000 for Joint Special Operations Command.
 
-
 SEC. 20011. Improving Department of Defense border support and counter-drug missions.
 In addition to amounts otherwise available, there are appropriated to the Secretary of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029, $1,000,000,000 for the deployment of military personnel in support of border operations, operations and maintenance activities in support of border operations, counter-narcotics and counter-transnational criminal organization mission support, the operation of national defense areas and construction in national defense areas, and the temporary detention of migrants on Department of Defense installations, in accordance with chapter 15 of title 10, United States Code.
-
 
 SEC. 20012. Department of Defense oversight.
 In addition to amounts otherwise available, there is appropriated to the Inspector General of the Department of Defense for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $10,000,000, to remain available through September 30, 2029, to monitor Department of Defense activities for which funding is appropriated in this title, including—
@@ -632,7 +621,6 @@ In addition to amounts otherwise available, there is appropriated to the Inspect
 (2) programs with related data management and data ownership considerations; and
 
 (3) programs particularly vulnerable to supply chain disruptions and long lead time components.
-
 
 SEC. 20013. Military construction projects authorized.
 (a) Authorization of appropriations.—Funds are hereby authorized to be appropriated for military construction, land acquisition, and military family housing functions of each military department (as defined in section 101(a) of title 10, United States Code) as specified in this title.

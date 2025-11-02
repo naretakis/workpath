@@ -1,12 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Container, Typography, Box } from '@mui/material';
+import { useState, useEffect } from "react";
+import { Container, Typography, Box } from "@mui/material";
 
 export default function TrackingPage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

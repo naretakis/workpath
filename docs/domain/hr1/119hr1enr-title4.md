@@ -3,7 +3,6 @@ TITLE IV—Committee on Commerce, Science, and Transportation
 SEC. 40001. Coast Guard mission readiness.
 (a) In general.—Chapter 11 of title 14, United States Code, is amended by adding at the end the following:
 
-
 “SUBCHAPTER V—COAST GUARD MISSION READINESS
 “§ 1181. Special appropriations
 
@@ -126,7 +125,6 @@ SEC. 40002. Spectrum auctions.
 
 (2) publish a biennial report, with the last report to be published not later than June 30, 2034, on the value of all spectrum used by Federal entities (as defined in section 113(l) of the National Telecommunications and Information Administration Organization Act (47 U.S.C. 923(l))), that assesses the value of bands of frequencies in increments of not more than 100 megahertz.
 
-
 SEC. 40003. Air traffic control improvements.
 (a) In general.—For the purpose of the acquisition, construction, sustainment, and improvement of facilities and equipment necessary to improve or maintain aviation safety, in addition to amounts otherwise made available, there is appropriated to the Administrator of the Federal Aviation Administration for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, to remain available until September 30, 2029—
 
@@ -160,10 +158,8 @@ SEC. 40003. Air traffic control improvements.
 
 (b) Quarterly reporting.—Not later than 180 days after the date of enactment of this Act, and every 90 days thereafter, the Administrator of the Federal Aviation Administration shall submit to Congress a report that describes any expenditures under this section.
 
-
 SEC. 40004. Space launch and reentry licensing and permitting user fees.
 (a) In general.—Chapter 509 of title 51, United States Code, is amended by adding at the end the following new section:
-
 
 “§ 50924. Space launch and reentry licensing and permitting user fees
 “(a) Fees.—
@@ -217,7 +213,6 @@ SEC. 40004. Space launch and reentry licensing and permitting user fees.
 “(b) Office of Commercial Space Transportation Launch and Reentry Licensing and Permitting Fund.—There is established in the Treasury of the United States a separate account, which shall be known as the ‘Office of Commercial Space Transportation Launch and Reentry Licensing and Permitting Fund’, for the purposes of expenses of the Office of Commercial Space Transportation of the Federal Aviation Administration and to carry out section 630(b) of the FAA Reauthorization Act of 2024. 70 percent of the amounts deposited into the fund shall be available for such purposes and shall be available without further appropriation and without fiscal year limitation.”.
 
 (b) Clerical amendment.—The table of sections for chapter 509 of title 51, United States Code, is amended by inserting after the item relating to section 50923 the following:
-
 
 “50924. Space launch and reentry licensing and permitting user fees.”.
 
@@ -300,7 +295,6 @@ SEC. 40005. Mars missions, Artemis missions, and Moon to Mars program.
 
 (b) Clerical amendment.—The table of sections for chapter 203 of title 51, United States Code, is amended by adding at the end the following:
 
-
 “20306. Special appropriations for Mars missions, Artemis missions, and Moon to Mars program.”.
 
 SEC. 40006. Corporate average fuel economy civil penalties.
@@ -316,10 +310,8 @@ SEC. 40006. Corporate average fuel economy civil penalties.
 
 (2) apply to all model years of a manufacturer for which the Secretary of Transportation has not provided a notification pursuant to section 32903(b)(2)(B) of title 49, United States Code, specifying the penalty due for the average fuel economy of that manufacturer being less than the applicable standard prescribed under section 32902 of that title.
 
-
 SEC. 40007. Payments for lease of Metropolitan Washington Airports.
 Section 49104(b) of title 49, United States Code, is amended to read as follows:
-
 
 “(b) Payments.—
 
@@ -331,18 +323,14 @@ Section 49104(b) of title 49, United States Code, is amended to read as follows:
 
 “(2) RENEGOTIATION.—The Secretary and the Airports Authority shall renegotiate the level of lease payments at least once every 10 years to ensure that in no year the amount specified in paragraph (1)(B) is less than $15,000,000 in 2027 dollars.”.
 
-
 SEC. 40008. Rescission of certain amounts for the National Oceanic and Atmospheric Administration.
 Any unobligated balances of amounts appropriated or otherwise made available by sections 40001, 40002, 40003, and 40004 of Public Law 117–169 (136 Stat. 2028) are hereby rescinded.
-
 
 SEC. 40009. Reduction in annual transfers to Travel Promotion Fund.
 Subsection (d)(2)(B) of the Travel Promotion Act of 2009 (22 U.S.C. 2131(d)(2)(B)) is amended by striking “$100,000,000” and inserting “$20,000,000”.
 
-
 SEC. 40010. Treatment of unobligated funds for alternative fuel and low-emission aviation technology.
 Out of the amounts made available by section 40007(a) of title IV of Public Law 117–169 (49 U.S.C. 44504 note), any unobligated balances of such amounts are hereby rescinded.
-
 
 SEC. 40011. Rescission of amounts appropriated to Public Wireless Supply Chain Innovation Fund.
 Of the unobligated balances of amounts made available under section 106(a) of the CHIPS Act of 2022 (Public Law 117–167; 136 Stat. 1392), $850,000,000 are permanently rescinded.

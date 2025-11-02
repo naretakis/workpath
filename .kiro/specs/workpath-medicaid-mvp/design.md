@@ -9,6 +9,7 @@
 This is a **simplified design** for a new developer learning to build PWAs. The focus is on getting a working app with core features, not building enterprise-grade infrastructure.
 
 **Design Philosophy:**
+
 - Start simple, add complexity later
 - Learn by building, not by configuring
 - Get something working end-to-end first
@@ -54,6 +55,7 @@ This is a **simplified design** for a new developer learning to build PWAs. The 
 ```
 
 **Key Points:**
+
 - Everything runs in the browser
 - No backend server needed
 - Data stored locally in IndexedDB
@@ -67,10 +69,10 @@ This is a **simplified design** for a new developer learning to build PWAs. The 
 
 ```typescript
 interface UserProfile {
-  id: string;              // UUID
-  name: string;            // User's name
-  state: string;           // State abbreviation (e.g., "CA")
-  createdAt: Date;         // When profile was created
+  id: string; // UUID
+  name: string; // User's name
+  state: string; // State abbreviation (e.g., "CA")
+  createdAt: Date; // When profile was created
 }
 ```
 
@@ -78,13 +80,13 @@ interface UserProfile {
 
 ```typescript
 interface Activity {
-  id?: number;             // Auto-increment ID
-  date: string;            // YYYY-MM-DD format
-  type: 'work' | 'volunteer' | 'education';
-  hours: number;           // 0-24
-  organization?: string;   // Optional: where they worked
-  createdAt: Date;         // When entry was created
-  updatedAt: Date;         // When entry was last modified
+  id?: number; // Auto-increment ID
+  date: string; // YYYY-MM-DD format
+  type: "work" | "volunteer" | "education";
+  hours: number; // 0-24
+  organization?: string; // Optional: where they worked
+  createdAt: Date; // When entry was created
+  updatedAt: Date; // When entry was last modified
 }
 ```
 
@@ -92,13 +94,13 @@ interface Activity {
 
 ```typescript
 interface MonthlySummary {
-  month: string;           // YYYY-MM format
-  totalHours: number;      // Sum of all hours
-  workHours: number;       // Sum of work hours
-  volunteerHours: number;  // Sum of volunteer hours
-  educationHours: number;  // Sum of education hours
-  isCompliant: boolean;    // totalHours >= 80
-  hoursNeeded: number;     // 80 - totalHours (if not compliant)
+  month: string; // YYYY-MM format
+  totalHours: number; // Sum of all hours
+  workHours: number; // Sum of work hours
+  volunteerHours: number; // Sum of volunteer hours
+  educationHours: number; // Sum of education hours
+  isCompliant: boolean; // totalHours >= 80
+  hoursNeeded: number; // 80 - totalHours (if not compliant)
 }
 ```
 
@@ -118,24 +120,28 @@ interface MonthlySummary {
 ### Key Components
 
 #### 1. Calendar Component
+
 - Shows current month
 - Visual indicators for days with logged hours
 - Click a day to add/edit hours
 - Simple month navigation (< >)
 
 #### 2. Activity Form
+
 - Activity type selector (work/volunteer/education)
 - Hours input (number, 0-24)
 - Organization input (optional text)
 - Save/Cancel buttons
 
 #### 3. Dashboard Component
+
 - Total hours for current month
 - Progress bar (0-80 hours)
 - Compliance status (green checkmark or red X)
 - Breakdown by activity type
 
 #### 4. Activity List
+
 - List of all entries for current month
 - Grouped by date
 - Edit/Delete buttons for each entry
@@ -145,6 +151,7 @@ interface MonthlySummary {
 ## Technology Stack
 
 ### Core Technologies
+
 - **Next.js 14+**: React framework with App Router
 - **TypeScript**: Type safety (but keep it simple)
 - **Material-UI v5**: Pre-built components
@@ -152,11 +159,13 @@ interface MonthlySummary {
 - **next-pwa**: PWA plugin for Next.js
 
 ### Development Tools (Minimal)
+
 - **ESLint**: Catch errors
 - **Prettier**: Format code
 - **TypeScript**: Type checking
 
 **What We're NOT Using (Yet):**
+
 - ❌ Husky/Git hooks
 - ❌ Automated testing
 - ❌ CI/CD pipelines
@@ -174,17 +183,18 @@ class WorkPathDB extends Dexie {
   activities!: Table<Activity>;
 
   constructor() {
-    super('WorkPathDB');
-    
+    super("WorkPathDB");
+
     this.version(1).stores({
-      profiles: 'id',
-      activities: '++id, date, type'
+      profiles: "id",
+      activities: "++id, date, type",
     });
   }
 }
 ```
 
 **Indexes:**
+
 - `profiles`: Primary key on `id`
 - `activities`: Auto-increment `id`, indexed on `date` and `type`
 
@@ -195,6 +205,7 @@ class WorkPathDB extends Dexie {
 ### 1. Profile Setup (Onboarding)
 
 **Flow:**
+
 1. User opens app for first time
 2. Check if profile exists in IndexedDB
 3. If no profile → redirect to `/onboarding`
@@ -203,6 +214,7 @@ class WorkPathDB extends Dexie {
 6. Redirect to `/tracking`
 
 **Code Location:**
+
 - Page: `src/app/onboarding/page.tsx`
 - Storage: `src/lib/db.ts`
 
@@ -211,6 +223,7 @@ class WorkPathDB extends Dexie {
 ### 2. Activity Tracking
 
 **Flow:**
+
 1. User sees calendar for current month
 2. User clicks a date
 3. Modal/dialog opens with activity form
@@ -220,6 +233,7 @@ class WorkPathDB extends Dexie {
 7. Recalculate monthly total
 
 **Code Location:**
+
 - Page: `src/app/tracking/page.tsx`
 - Components: `src/components/Calendar.tsx`, `src/components/ActivityForm.tsx`
 - Storage: `src/lib/db.ts`
@@ -229,6 +243,7 @@ class WorkPathDB extends Dexie {
 ### 3. Monthly Dashboard
 
 **Flow:**
+
 1. Query all activities for current month from IndexedDB
 2. Calculate totals by type
 3. Calculate overall total
@@ -236,6 +251,7 @@ class WorkPathDB extends Dexie {
 5. Display with progress bar and status
 
 **Code Location:**
+
 - Component: `src/components/Dashboard.tsx`
 - Utils: `src/lib/calculations.ts`
 
@@ -244,6 +260,7 @@ class WorkPathDB extends Dexie {
 ### 4. Data Export
 
 **Flow:**
+
 1. User clicks "Export" in settings
 2. Query all data from IndexedDB
 3. Create JSON object with profile + activities
@@ -251,6 +268,7 @@ class WorkPathDB extends Dexie {
 5. File named: `workpath-export-YYYY-MM-DD.json`
 
 **Code Location:**
+
 - Page: `src/app/settings/page.tsx`
 - Utils: `src/lib/export.ts`
 
@@ -259,12 +277,14 @@ class WorkPathDB extends Dexie {
 ### 5. PWA Offline Support
 
 **Flow:**
+
 1. Service worker caches app files on first load
 2. When offline, serve from cache
 3. IndexedDB works offline by default
 4. Show offline indicator in UI
 
 **Code Location:**
+
 - Config: `next.config.js` (next-pwa setup)
 - Service Worker: Auto-generated by next-pwa
 - Offline Indicator: `src/components/OfflineIndicator.tsx`
@@ -277,15 +297,15 @@ class WorkPathDB extends Dexie {
 
 ```typescript
 // src/theme/theme.ts
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',  // Blue
+      main: "#1976d2", // Blue
     },
     secondary: {
-      main: '#dc004e',  // Pink
+      main: "#dc004e", // Pink
     },
   },
   breakpoints: {
@@ -301,6 +321,7 @@ export const theme = createTheme({
 ```
 
 ### Responsive Design
+
 - Use MUI's `sx` prop for styling
 - Mobile-first approach (design for phone, then desktop)
 - Use MUI breakpoints: `sx={{ padding: { xs: 2, md: 3 } }}`
@@ -349,6 +370,7 @@ workpath/
 ## Development Workflow
 
 ### Getting Started
+
 ```bash
 # Install dependencies
 npm install
@@ -364,6 +386,7 @@ npm run export
 ```
 
 ### Adding a Feature
+
 1. Create the component
 2. Add the page (if needed)
 3. Test in browser
@@ -376,6 +399,7 @@ npm run export
 ## Deployment
 
 ### GitHub Pages with GitHub Actions
+
 We'll use GitHub Actions to automatically build and deploy when you push to main:
 
 1. **Setup** (Phase 7):
@@ -402,6 +426,7 @@ We'll use GitHub Actions to automatically build and deploy when you push to main
 ## What's Different from Full Spec
 
 ### Removed Complexity
+
 - ❌ No exemption screening system
 - ❌ No document management
 - ❌ No camera integration
@@ -415,6 +440,7 @@ We'll use GitHub Actions to automatically build and deploy when you push to main
 - ❌ No documentation automation
 
 ### Kept Simple
+
 - ✅ Basic profile (name, state)
 - ✅ Activity logging (type, hours, organization)
 - ✅ Monthly calculations
@@ -429,16 +455,19 @@ We'll use GitHub Actions to automatically build and deploy when you push to main
 Once the MVP is working, you can add:
 
 **Phase 2:**
+
 - Exemption screening questionnaire
 - Income tracking
 - Better date navigation
 
 **Phase 3:**
+
 - Document photo capture
 - Markdown report export
 - Data import
 
 **Phase 4:**
+
 - Hardship reporting
 - Compliance predictions
 - Multi-user support
@@ -450,6 +479,7 @@ Once the MVP is working, you can add:
 ## Success Metrics
 
 The design is successful when:
+
 - ✅ You can build it in 4-8 weeks part-time
 - ✅ You understand every line of code
 - ✅ It works on your phone
@@ -461,6 +491,7 @@ The design is successful when:
 ## Learning Goals
 
 By building this MVP, you'll learn:
+
 - Next.js App Router
 - TypeScript basics
 - Material-UI components
@@ -470,6 +501,7 @@ By building this MVP, you'll learn:
 - State management (useState, useEffect)
 
 **You won't learn (yet):**
+
 - Complex testing frameworks
 - CI/CD pipelines
 - Advanced git workflows

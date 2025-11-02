@@ -41,21 +41,21 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
 
 - [x] Phase 2: Profile Setup (Week 1-2)
 
-- [ ] 2.1 Create TypeScript types
+- [x] 2.1 Create TypeScript types
   - Define `UserProfile` and `Activity` interfaces
   - _Requirements: 1_
 
-- [ ] 2.2 Create onboarding page
+- [x] 2.2 Create onboarding page
   - Create `app/onboarding/page.tsx`
   - Build form with name and state inputs
   - _Requirements: 1_
 
-- [ ] 2.3 Save profile to IndexedDB
+- [x] 2.3 Save profile to IndexedDB
   - Save profile on form submit
   - Redirect to `/tracking`
   - _Requirements: 1_
 
-- [ ] 2.4 Add profile check on home page
+- [x] 2.4 Add profile check on home page
   - Check if profile exists
   - Redirect accordingly
   - _Requirements: 1_
