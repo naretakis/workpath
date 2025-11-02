@@ -12,27 +12,27 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
 
 ---
 
-- [ ] Phase 1: Project Setup (Week 1)
+- [x] Phase 1: Project Setup (Week 1)
 
-- [ ] 1.1 Create Next.js project
+- [x] 1.1 Create Next.js project
   - Run: `npx create-next-app@latest workpath --typescript --app`
   - Test: `npm run dev` and see it running
   - _Requirements: Setup_
 
-- [ ] 1.2 Install core dependencies
+- [x] 1.2 Install core dependencies
   - Install Material-UI: `npm install @mui/material @emotion/react @emotion/styled`
   - Install Dexie: `npm install dexie`
   - Install date-fns: `npm install date-fns`
   - _Requirements: Setup_
 
-- [ ] 1.3 Create basic file structure
+- [x] 1.3 Create basic file structure
   - Create folders: `src/components`, `src/lib`, `src/types`, `src/theme`
   - Create `.github/workflows` folder for GitHub Actions (will use in Phase 7)
   - Create `src/theme/theme.ts` with basic MUI theme
   - Create `src/types/index.ts` for TypeScript types
   - _Requirements: Setup_
 
-- [ ] 1.4 Set up IndexedDB with Dexie
+- [x] 1.4 Set up IndexedDB with Dexie
   - Create `src/lib/db.ts`
   - Define database with `profiles` and `activities` tables
   - _Requirements: 2, 3_
