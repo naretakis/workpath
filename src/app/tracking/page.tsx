@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Container, Typography, Box, Alert } from "@mui/material";
+import { useRouter } from "next/navigation";
+import { Container, Typography, Box, Alert, IconButton } from "@mui/material";
+import {
+  Settings as SettingsIcon,
+  Download as DownloadIcon,
+} from "@mui/icons-material";
 import { Calendar } from "@/components/Calendar";
 import { ActivityForm } from "@/components/ActivityForm";
 import { ActivityList } from "@/components/ActivityList";
@@ -14,6 +19,7 @@ import { calculateMonthlySummary } from "@/lib/calculations";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 
 export default function TrackingPage() {
+  const router = useRouter();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [formOpen, setFormOpen] = useState(false);
   const [menuAnchor, setMenuAnchor] = useState<HTMLElement | null>(null);
@@ -224,12 +230,41 @@ export default function TrackingPage() {
     setActivityToDuplicate(null);
   };
 
+  const handleExport = () => {
+    router.push("/export");
+  };
+
   return (
     <Container maxWidth="lg">
       <Box sx={{ py: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Activity Tracking
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 2,
+          }}
+        >
+          <Typography variant="h4" component="h1">
+            Activity Tracking
+          </Typography>
+          <Box sx={{ display: "flex", gap: 1 }}>
+            <IconButton
+              onClick={handleExport}
+              aria-label="export data"
+              size="large"
+            >
+              <DownloadIcon />
+            </IconButton>
+            <IconButton
+              onClick={() => router.push("/settings")}
+              aria-label="settings"
+              size="large"
+            >
+              <SettingsIcon />
+            </IconButton>
+          </Box>
+        </Box>
 
         {error && (
           <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError(null)}>

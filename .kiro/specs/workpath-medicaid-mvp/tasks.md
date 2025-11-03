@@ -116,17 +116,17 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
 
 ---
 
-- [ ] Phase 5: Settings & Export (Week 5-6)
+- [x] Phase 5: Settings & Export (Week 5-6)
 
-- [ ] 5.1 Create settings page
+- [x] 5.1 Create settings page
   - Show profile and export button
   - _Requirements: 5_
 
-- [ ] 5.2 Implement export
+- [x] 5.2 Implement export
   - Export data as JSON
   - _Requirements: 5_
 
-- [ ] 5.3 Add navigation
+- [x] 5.3 Add navigation
   - Add nav between pages
   - _Requirements: Navigation_
 
