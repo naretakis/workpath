@@ -254,23 +254,23 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-- [ ] 8. Storage Quota Monitoring
+- [x] 8. Storage Quota Monitoring
 
-- [ ] 8.1 Create storage quota hook
+- [x] 8.1 Create storage quota hook
   - Create `src/hooks/useStorageQuota.ts`
   - Implement `navigator.storage.estimate()` call
   - Calculate usage percentage
   - Poll every 60 seconds
   - Return usage, quota, and percentage
 
-- [ ] 8.2 Build StorageWarning component
+- [x] 8.2 Build StorageWarning component
   - Create `src/components/settings/StorageWarning.tsx`
   - Display warning banner when usage > 80%
   - Show current usage and available space
   - Link to storage management in settings
   - Make dismissible (but show again if still over threshold)
 
-- [ ] 8.3 Build StorageInfo component
+- [x] 8.3 Build StorageInfo component
   - Create `src/components/settings/StorageInfo.tsx`
   - Display total storage usage
   - Display available storage quota
@@ -280,12 +280,12 @@ This task list breaks down the document management feature into discrete, manage
   - Show list of documents sorted by size (largest first)
   - Add bulk delete option for old documents
 
-- [ ] 8.4 Add storage warning to app layout
+- [x] 8.4 Add storage warning to app layout
   - Modify `src/app/layout.tsx` or main layout component
   - Add StorageWarning component at top
   - Only show when usage > 80%
 
-- [ ] 8.5 Add storage info to settings page
+- [x] 8.5 Add storage info to settings page
   - Modify `src/app/settings/page.tsx`
   - Add StorageInfo component
   - Add section header "Storage Management"

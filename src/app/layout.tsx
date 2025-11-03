@@ -5,6 +5,7 @@ import { CacheProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { theme } from "@/theme/theme";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
+import { StorageWarning } from "@/components/settings/StorageWarning";
 import createEmotionCache from "@/lib/emotion-cache";
 import "./globals.css";
 
@@ -45,6 +46,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <OfflineIndicator />
+            <StorageWarning />
             {children}
           </ThemeProvider>
         </CacheProvider>

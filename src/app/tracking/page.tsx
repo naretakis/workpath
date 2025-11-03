@@ -24,6 +24,7 @@ import { DuplicateActivityDialog } from "@/components/DuplicateActivityDialog";
 import { db } from "@/lib/db";
 import { Activity, MonthlySummary } from "@/types";
 import { calculateMonthlySummary } from "@/lib/calculations";
+import { deleteActivityWithDocuments } from "@/lib/storage/activities";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 
 export default function TrackingPage() {
@@ -147,7 +148,7 @@ export default function TrackingPage() {
 
     setSaving(true);
     try {
-      await db.activities.delete(activity.id);
+      await deleteActivityWithDocuments(activity.id);
       await loadActivities();
       setError(null);
     } catch (err) {
@@ -200,7 +201,7 @@ export default function TrackingPage() {
 
     setSaving(true);
     try {
-      await db.activities.delete(existingActivity.id);
+      await deleteActivityWithDocuments(existingActivity.id);
       await loadActivities();
       setError(null);
     } catch (err) {

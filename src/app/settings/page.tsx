@@ -22,6 +22,7 @@ import {
 } from "@mui/icons-material";
 import { db } from "@/lib/db";
 import { UserProfile } from "@/types";
+import { StorageInfo } from "@/components/settings/StorageInfo";
 
 const US_STATES = [
   "AL",
@@ -287,6 +288,14 @@ export default function SettingsPage() {
           </Typography>
         )}
       </Paper>
+
+      {/* Storage Management Section */}
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="h6" gutterBottom>
+          Storage Management
+        </Typography>
+        <StorageInfo />
+      </Box>
 
       {/* About Section */}
       <Paper sx={{ p: 3, mt: 3 }}>
