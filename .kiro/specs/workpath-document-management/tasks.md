@@ -133,9 +133,9 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-- [ ] 5. Document Metadata Form
+- [x] 5. Document Metadata Form
 
-- [ ] 5.1 Build DocumentMetadataForm component
+- [x] 5.1 Build DocumentMetadataForm component
   - Create `src/components/documents/DocumentMetadataForm.tsx`
   - Accept `blob` prop (the captured/uploaded image)
   - Accept `activityId` prop (to link document to activity)
@@ -148,7 +148,7 @@ This task list breaks down the document management feature into discrete, manage
   - Show validation errors inline
   - Add save and cancel buttons
 
-- [ ] 5.2 Implement form submission and compression
+- [x] 5.2 Implement form submission and compression
   - Validate document type is selected
   - Validate description length (max 200 chars)
   - Check if image needs compression (>5MB)
