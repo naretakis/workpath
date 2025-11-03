@@ -232,6 +232,7 @@ export function CameraCapture({ onCapture, onCancel }: CameraCaptureProps) {
         )}
 
         {capturedImage && (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={capturedImage}
             alt="Captured"

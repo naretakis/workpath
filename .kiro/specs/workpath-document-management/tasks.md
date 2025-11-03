@@ -102,9 +102,9 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-- [ ] 4. File Upload Component
+- [x] 4. File Upload Component
 
-- [ ] 4.1 Build FileUpload component
+- [x] 4.1 Build FileUpload component
   - Create `src/components/documents/FileUpload.tsx`
   - Add file input with `accept="image/jpeg,image/png"`
   - Add drag-and-drop zone
@@ -114,55 +114,78 @@ This task list breaks down the document management feature into discrete, manage
   - Show error messages for invalid files
   - Display file preview after selection
 
-- [ ] 4.2 Add upload progress indicator
+- [x] 4.2 Add upload progress indicator
   - Show loading spinner during file read
   - Show compression progress if needed
   - Display final file size
 
+- [x] 4.3 Create unified DocumentCapture component
+  - Create `src/components/documents/DocumentCapture.tsx`
+  - Add "Take Photo" button (only show if camera available)
+  - Add "Upload Photo" button
+  - Handle "Take Photo" click to show CameraCapture component
+  - Handle "Upload Photo" click to show FileUpload component
+  - Accept `onCapture(blob)` callback prop
+  - Accept `onCancel()` callback prop
+  - Pass blob from either method to parent via onCapture
+  - Provide consistent interface regardless of capture method
+  - Add proper back navigation between views
+
 ---
 
-## 5. Document Metadata Form
+- [ ] 5. Document Metadata Form
 
 - [ ] 5.1 Build DocumentMetadataForm component
   - Create `src/components/documents/DocumentMetadataForm.tsx`
-  - Add document type selector (dropdown)
-  - Add custom type input (shown when "other" selected)
+  - Accept `blob` prop (the captured/uploaded image)
+  - Accept `activityId` prop (to link document to activity)
+  - Accept `onSave(documentId)` callback prop
+  - Accept `onCancel()` callback prop
+  - Display image preview at top
+  - Add document type selector (dropdown with options: pay_stub, volunteer_letter, school_enrollment, other)
   - Add description textarea (optional, max 200 chars)
-  - Display linked activity info (read-only)
   - Add character counter for description
-  - Integrate React Hook Form with Zod validation
-
-- [ ] 5.2 Implement form submission
-  - Validate all fields on submit
   - Show validation errors inline
-  - Call `saveDocument()` on valid submission
-  - Handle save errors
-  - Show success message
-  - Close form and return to activity view
+  - Add save and cancel buttons
+
+- [ ] 5.2 Implement form submission and compression
+  - Validate document type is selected
+  - Validate description length (max 200 chars)
+  - Check if image needs compression (>5MB)
+  - Show compression progress if compressing
+  - Call `saveDocument(activityId, blob, metadata)` on valid submission
+  - Handle save errors with user-friendly messages
+  - Call `onSave(documentId)` on success
+  - Handle cancel to call `onCancel()`
 
 ---
 
-## 6. Activity Form Integration
+- [ ] 6. Activity Form Integration
 
-- [ ] 6.1 Add document capture to ActivityForm
-  - Modify `src/components/tracking/ActivityForm.tsx`
-  - Add camera button (if available)
-  - Add upload button
-  - Open CameraCapture or FileUpload on button click
-  - Handle captured/uploaded image
-  - Trigger image compression if needed
-  - Open DocumentMetadataForm after image ready
-  - Link document to activity on save
+- [ ] 6.1 Add document capture flow to ActivityForm
+  - Modify `src/components/ActivityForm.tsx`
+  - Add state to track document capture mode: 'form' | 'capture' | 'metadata'
+  - Add "Add Document" button in dialog actions (only show if activity is saved/has ID)
+  - When "Add Document" clicked, switch to 'capture' mode
+  - Render DocumentCapture component when in 'capture' mode
+  - Handle `onCapture(blob)` callback from DocumentCapture
+  - Switch to 'metadata' mode and pass blob to DocumentMetadataForm
+  - Handle `onSave(documentId)` from DocumentMetadataForm to return to 'form' mode
+  - Handle `onCancel()` from both components to return to previous mode
+  - Ensure proper back navigation between modes
 
 - [ ] 6.2 Show attached documents in activity form
-  - Display count of attached documents
-  - Show document thumbnails
-  - Allow viewing full-size documents
-  - Allow deleting documents
+  - Query documents for current activity (if activity has ID)
+  - Display document count badge (e.g., "3 documents attached")
+  - Show document thumbnails in a horizontal scrollable list
+  - Add "View" button on each thumbnail to open full-size viewer
+  - Add "Delete" button on each thumbnail with confirmation
+  - Update document count after adding/deleting documents
+  - Show empty state when no documents ("No documents yet")
 
 ---
 
-## 7. Document Display Components
+- [ ] 7. Document Display Components
 
 - [ ] 7.1 Build DocumentThumbnails component
   - Create `src/components/documents/DocumentThumbnails.tsx`
@@ -193,16 +216,13 @@ This task list breaks down the document management feature into discrete, manage
   - Handle delete action
 
 - [ ] 7.4 Update ActivityList to show document indicators
-  - Modify `src/components/tracking/ActivityList.tsx`
-  - Query document count for each activity
-  - Display document icon if count > 0
-  - Show document count (e.g., "2 documents")
-  - Make indicator tappable to view activity details
-
-- [ ] 7.5 Update ActivityCard component
-  - Modify `src/components/tracking/ActivityCard.tsx`
-  - Add document icon and count display
-  - Style document indicator
+  - Modify `src/components/ActivityList.tsx`
+  - Query document count for each activity in the list
+  - Add document icon (AttachFile or Description icon) to ListItem if count > 0
+  - Show document count next to icon (e.g., "2")
+  - Position indicator in the secondary action area
+  - Style indicator to be subtle but visible
+  - Make indicator clickable to open activity form with documents visible
 
 ---
 
