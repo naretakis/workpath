@@ -132,7 +132,7 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
 
 ---
 
-- [ ] Phase 6: PWA Features (Week 6-8)
+- [x] Phase 6: PWA Features (Week 6-8)
 
 - [ ] 6.1 Configure next-pwa
   - Install and configure

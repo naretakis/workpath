@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Generate PWA Icons from Lucide</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      canvas {
+        border: 1px solid #ccc;
+        margin: 10px;
+      }
+      .instructions {
+        background: #f0f0f0;
+        padding: 15px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Generate PWA Icons from Lucide</h1>
+
+    <div class="instructions">
+      <h3>Instructions:</h3>
+      <ol>
+        <li>The icons below use the Lucide "briefcase" icon (work-related)</li>
+        <li>Right-click each canvas and "Save image as..."</li>
+        <li>
+          Save as: <code>icon-192x192.png</code> and
+          <code>icon-512x512.png</code>
+        </li>
+        <li>Replace the files in the <code>public/</code> folder</li>
+      </ol>
+      <p>
+        <strong>Want a different icon?</strong> Browse
+        <a href="https://lucide.dev/icons/" target="_blank">lucide.dev</a> and
+        change the icon name in the code below!
+      </p>
+    </div>
+
+    <h2>192x192 Icon</h2>
+    <canvas id="icon192" width="192" height="192"></canvas>
+
+    <h2>512x512 Icon</h2>
+    <canvas id="icon512" width="512" height="512"></canvas>
+
+    <script>
+      function drawIcon(canvasId, size) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext("2d");
+
+        // Background - Material-UI primary blue
+        ctx.fillStyle = "#1976d2";
+        ctx.fillRect(0, 0, size, size);
+
+        // Create SVG with Lucide icon
+        // Change 'briefcase' to any Lucide icon name!
+        const iconSize = size * 0.5;
+        const padding = (size - iconSize) / 2;
+
+        const svg = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="${iconSize}" height="${iconSize}" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    <rect width="20" height="14" x="2" y="6" rx="2"/>
+                </svg>
+            `;
+
+        // Convert SVG to image and draw
+        const img = new Image();
+        const blob = new Blob([svg], { type: "image/svg+xml" });
+        const url = URL.createObjectURL(blob);
+
+        img.onload = function () {
+          ctx.drawImage(img, padding, padding, iconSize, iconSize);
+          URL.revokeObjectURL(url);
+        };
+        img.src = url;
+      }
+
+      // Generate both icons
+      drawIcon("icon192", 192);
+      drawIcon("icon512", 512);
+    </script>
+
+    <div
+      style="
+        margin-top: 40px;
+        padding: 20px;
+        background: #e3f2fd;
+        border-left: 4px solid #1976d2;
+      "
+    >
+      <h3>Popular Icon Suggestions:</h3>
+      <ul>
+        <li><strong>briefcase</strong> - Current choice (work/professional)</li>
+        <li><strong>calendar-check</strong> - Tracking/scheduling</li>
+        <li><strong>clipboard-check</strong> - Tasks/compliance</li>
+        <li><strong>clock</strong> - Time tracking</li>
+        <li><strong>user-check</strong> - Personal tracking</li>
+        <li><strong>trending-up</strong> - Progress/goals</li>
+      </ul>
+      <p>
+        To change: Edit the SVG path in the code above with the path from
+        <a href="https://lucide.dev/icons/" target="_blank">lucide.dev</a>
+      </p>
+    </div>
+  </body>
+</html>
