@@ -293,6 +293,35 @@ Deeper insights into your compliance patterns.
 
 ---
 
+### PWA Library Upgrade 🔧
+
+Update to a more actively maintained PWA solution.
+
+**Context:**
+
+The current `next-pwa@5.6.0` library uses deprecated Workbox packages and hasn't been updated recently. While everything works fine now, upgrading would improve long-term maintainability.
+
+**Potential Approaches:**
+
+- Upgrade to `@ducanh2912/next-pwa` (actively maintained fork)
+- Check for newer `next-pwa` versions
+- Roll custom service worker implementation
+
+**Why Consider This:**
+
+- Reduces deprecation warnings in builds
+- Ensures compatibility with future Next.js versions
+- Improves long-term maintainability
+- No immediate urgency (no security issues, everything works)
+
+**Timeline:**
+
+- Low priority maintenance task
+- Address during a maintenance sprint
+- Or when deprecations cause actual build issues
+
+---
+
 ### SNAP Work Requirements Support 🍎
 
 Expand WorkPath to support SNAP (food assistance) work requirements in addition to Medicaid.
