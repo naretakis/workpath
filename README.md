@@ -13,9 +13,10 @@ Start using WorkPath today: https://naretakis.github.io/workpath
 WorkPath is a simple, privacy-focused app that helps you:
 
 - **Track hours** - Log work, volunteer, and education activities daily
+- **Capture documents** - Photograph or upload pay stubs, volunteer letters, and other verification documents
 - **Monitor compliance** - See your monthly total and compliance status (80-hour requirement)
-- **Stay organized** - Visual calendar shows all your logged activities
-- **Export data** - Generate reports for agency submission
+- **Stay organized** - Visual calendar shows all your logged activities with document indicators
+- **Export data** - Generate reports for agency submission with attached documents
 - **Work offline** - All data stored locally on your device, no internet required
 
 ## Key Features
@@ -24,6 +25,10 @@ WorkPath is a simple, privacy-focused app that helps you:
 - ✅ Visual calendar with activity indicators
 - ✅ Automatic monthly compliance calculations
 - ✅ Edit and delete entries
+- ✅ **Document capture and management** - Photograph or upload verification documents
+- ✅ **Smart image compression** - Automatic compression for large images
+- ✅ **Document viewer** - Full-size viewing with pinch-to-zoom
+- ✅ **Storage monitoring** - Track usage and get low-storage warnings
 - ✅ Export data as JSON or readable text
 - ✅ 100% offline functionality
 - ✅ Installable as a native app on mobile devices
@@ -115,13 +120,15 @@ workpath/
 3. Select activity type (work, volunteer, or education)
 4. Enter hours worked
 5. Optionally add organization name
-6. Save
+6. Optionally capture or upload verification documents
+7. Save
 
 ### Viewing Progress
 
 - Your monthly total is displayed at the top of the tracking page
 - Green "Compliant" badge shows when you've met the 80-hour requirement
 - Calendar shows visual indicators for dates with logged activities
+- Document icons show which activities have attached verification documents
 
 ### Exporting Data
 
@@ -164,6 +171,7 @@ Built as an MVP learning project to understand:
 
 ## Documentation
 
+- [CHANGELOG.md](CHANGELOG.md) - Version history and release notes
 - [ROADMAP.md](ROADMAP.md) - Product roadmap and future features
 - [DEPLOYMENT.md](DEPLOYMENT.md) - How to deploy to GitHub Pages
 - [PWA-TESTING.md](PWA-TESTING.md) - Testing PWA features
@@ -173,7 +181,8 @@ Built as an MVP learning project to understand:
 
 WorkPath is actively evolving. See our [ROADMAP.md](ROADMAP.md) to learn about:
 
-- 🚧 Features in development (document management, exemption screening, enhanced onboarding)
+- ✅ Recently shipped (v2.0: Document management)
+- 🚧 Features in development (exemption screening, enhanced onboarding)
 - 💭 Future considerations (income tracking, hardship reporting, compliance alerts)
 - ❌ What we're explicitly not building (and why)
 

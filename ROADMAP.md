@@ -6,13 +6,13 @@ This roadmap outlines where WorkPath is today, what we're building next, and our
 
 ---
 
-## Now (v1.0) - ✅ Shipped
+## Now (v2.0) - ✅ Shipped
 
-**Current MVP - Available Today**
+**Current Release - Available Today**
 
-WorkPath helps you track work, volunteer, and education hours to meet Medicaid work requirements.
+WorkPath helps you track work, volunteer, and education hours to meet Medicaid work requirements, and now includes comprehensive document management.
 
-### Core Features
+### Core Features (v1.0)
 
 - ✅ **Activity Tracking** - Log daily work, volunteer, and education hours
 - ✅ **Visual Calendar** - See all your logged activities at a glance
@@ -24,11 +24,19 @@ WorkPath helps you track work, volunteer, and education hours to meet Medicaid w
 - ✅ **PWA Support** - Install as a native app on your phone
 - ✅ **Privacy First** - All data stays on your device, nothing sent to servers
 
-### What's Missing
+### Document Management (v2.0) - NEW! 📸
 
-The current MVP is intentionally simple. It doesn't include:
+- ✅ **Camera Capture** - Take photos of documents directly from your phone
+- ✅ **File Upload** - Upload existing photos from your device
+- ✅ **Smart Compression** - Automatic image compression for large files
+- ✅ **Document Organization** - Link documents to activities with types and descriptions
+- ✅ **Thumbnail Gallery** - View all documents for an activity
+- ✅ **Full-Size Viewer** - Open documents with pinch-to-zoom support
+- ✅ **Storage Monitoring** - Track usage and get low-storage warnings
+- ✅ **Document Management** - Easy deletion with confirmation
 
-- ❌ Document management
+### What's Still Missing
+
 - ❌ Exemption screening
 - ❌ Extended profile information
 - ❌ Income tracking
@@ -36,38 +44,13 @@ The current MVP is intentionally simple. It doesn't include:
 
 ---
 
-## Next (v2.0) - 🚧 In Development
+## Next (v3.0) - 🚧 In Development
 
-**Three Major Features Coming Soon**
+**Two Major Features Coming Soon**
 
-We're building three independent features that you can use as they're completed. Each adds significant value to WorkPath.
+We're building two independent features that you can use as they're completed. Each adds significant value to WorkPath.
 
-### 1. Document Management (Priority 1) 📸
-
-**Status:** Spec complete, ready to build  
-**Estimated:** 2-3 weeks  
-**Spec:** `.kiro/specs/workpath-document-management/`
-
-Capture and store verification documents directly from your phone.
-
-**What You'll Be Able To Do:**
-
-- Take photos of pay stubs, volunteer letters, and other documents
-- Upload existing photos from your device
-- Automatic image compression to save storage space
-- Link documents directly to your logged activities
-- View full-size documents with zoom
-- Monitor storage usage and manage old documents
-
-**Why This Matters:**
-
-- Verification is critical for Medicaid compliance
-- Having documents ready when the agency asks saves time and stress
-- Mobile-first design makes it easy to snap and store on the go
-
----
-
-### 2. Exemption Screening (Priority 2) ✓
+### 1. Exemption Screening (Priority 1) ✓
 
 **Status:** Spec complete, ready to build  
 **Estimated:** 2.5-3.5 weeks  
@@ -100,7 +83,7 @@ Find out if you're exempt from work requirements before you start tracking.
 
 ---
 
-### 3. Enhanced Onboarding (Priority 3) 🔐
+### 2. Enhanced Onboarding (Priority 2) 🔐
 
 **Status:** Spec complete, ready to build  
 **Estimated:** 3-4 weeks  
@@ -126,7 +109,7 @@ Better first impression with privacy notice and extended profile.
 
 ---
 
-## Later (v3.0+) - 💭 Future Considerations
+## Later (v4.0+) - 💭 Future Considerations
 
 **Ideas We're Exploring**
 
@@ -427,9 +410,10 @@ To keep WorkPath simple, privacy-focused, and offline-first, we're explicitly NO
 
 **Current Plan:**
 
-- **v1.0** (Shipped) - Basic activity tracking MVP
-- **v2.0** (Q2 2024) - Document management, exemption screening, enhanced onboarding
-- **v3.0** (TBD) - Features from "Later" section based on user feedback
+- **v1.0** (Shipped Oct 2025) - Basic activity tracking MVP
+- **v2.0** (Shipped Nov 2025) - Document management
+- **v3.0** (Q1 2026) - Exemption screening, enhanced onboarding
+- **v4.0** (TBD) - Features from "Later" section based on user feedback
 
 **Release Strategy:**
 
@@ -479,5 +463,5 @@ To keep WorkPath simple, privacy-focused, and offline-first, we're explicitly NO
 ---
 
 **Last Updated:** November 2025
-**Current Version:** v1.0 (MVP)  
-**Next Release:** v2.0 (Document Management, Exemption Screening, Enhanced Onboarding)
+**Current Version:** v2.0 (Document Management)  
+**Next Release:** v3.0 (Exemption Screening, Enhanced Onboarding)
