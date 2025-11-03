@@ -19,7 +19,9 @@ import {
   Delete as DeleteIcon,
   ZoomIn as ZoomInIcon,
   ZoomOut as ZoomOutIcon,
+  RestartAlt as ResetIcon,
 } from "@mui/icons-material";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { format } from "date-fns";
 import { Document } from "@/types/documents";
 import {
@@ -54,7 +56,6 @@ export function DocumentViewer({
   const [error, setError] = useState<string | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleting, setDeleting] = useState(false);
-  const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
     if (documentId === null) {
@@ -63,7 +64,6 @@ export function DocumentViewer({
       setImageUrl(null);
       setError(null);
       setDeleteConfirm(false);
-      setZoom(1);
       return;
     }
 
@@ -130,18 +130,6 @@ export function DocumentViewer({
     }
   };
 
-  const handleZoomIn = () => {
-    setZoom((prev) => Math.min(prev + 0.25, 3));
-  };
-
-  const handleZoomOut = () => {
-    setZoom((prev) => Math.max(prev - 0.25, 0.5));
-  };
-
-  const handleZoomReset = () => {
-    setZoom(1);
-  };
-
   return (
     <Dialog
       open={documentId !== null}
@@ -203,72 +191,99 @@ export function DocumentViewer({
               height: "100%",
             }}
           >
-            {/* Image Display with Zoom */}
+            {/* Image Display with Zoom/Pan */}
             <Box
               sx={{
                 flex: 1,
-                overflow: "auto",
+                overflow: "hidden",
                 backgroundColor: "grey.100",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
                 position: "relative",
                 minHeight: 400,
               }}
             >
-              <Box
-                component="img"
-                src={imageUrl}
-                alt={document.type}
-                sx={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  objectFit: "contain",
-                  transform: `scale(${zoom})`,
-                  transition: "transform 0.2s",
-                  cursor: zoom > 1 ? "grab" : "default",
-                }}
-              />
-
-              {/* Zoom Controls */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 16,
-                  right: 16,
-                  display: "flex",
-                  gap: 1,
-                  backgroundColor: "rgba(0, 0, 0, 0.6)",
-                  borderRadius: 1,
-                  p: 0.5,
-                }}
+              <TransformWrapper
+                initialScale={1}
+                minScale={0.5}
+                maxScale={4}
+                centerOnInit
+                wheel={{ step: 0.1 }}
+                doubleClick={{ mode: "toggle", step: 0.7 }}
+                pinch={{ step: 5 }}
               >
-                <IconButton
-                  size="small"
-                  onClick={handleZoomOut}
-                  disabled={zoom <= 0.5}
-                  sx={{ color: "white" }}
-                  aria-label="zoom out"
-                >
-                  <ZoomOutIcon fontSize="small" />
-                </IconButton>
-                <Button
-                  size="small"
-                  onClick={handleZoomReset}
-                  sx={{ color: "white", minWidth: 60 }}
-                >
-                  {Math.round(zoom * 100)}%
-                </Button>
-                <IconButton
-                  size="small"
-                  onClick={handleZoomIn}
-                  disabled={zoom >= 3}
-                  sx={{ color: "white" }}
-                  aria-label="zoom in"
-                >
-                  <ZoomInIcon fontSize="small" />
-                </IconButton>
-              </Box>
+                {({ zoomIn, zoomOut, resetTransform, instance }) => (
+                  <>
+                    <TransformComponent
+                      wrapperStyle={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      contentStyle={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Box
+                        component="img"
+                        src={imageUrl}
+                        alt={document.type}
+                        sx={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          objectFit: "contain",
+                          userSelect: "none",
+                        }}
+                      />
+                    </TransformComponent>
+
+                    {/* Zoom Controls */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: 16,
+                        right: 16,
+                        display: "flex",
+                        gap: 0.5,
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
+                        borderRadius: 1,
+                        p: 0.5,
+                      }}
+                    >
+                      <IconButton
+                        size="small"
+                        onClick={() => zoomOut()}
+                        sx={{ color: "white" }}
+                        aria-label="zoom out"
+                      >
+                        <ZoomOutIcon fontSize="small" />
+                      </IconButton>
+                      <Button
+                        size="small"
+                        onClick={() => resetTransform()}
+                        sx={{
+                          color: "white",
+                          minWidth: 60,
+                          fontSize: "0.75rem",
+                        }}
+                        startIcon={<ResetIcon sx={{ fontSize: 14 }} />}
+                      >
+                        {Math.round((instance.transformState.scale || 1) * 100)}
+                        %
+                      </Button>
+                      <IconButton
+                        size="small"
+                        onClick={() => zoomIn()}
+                        sx={{ color: "white" }}
+                        aria-label="zoom in"
+                      >
+                        <ZoomInIcon fontSize="small" />
+                      </IconButton>
+                    </Box>
+                  </>
+                )}
+              </TransformWrapper>
             </Box>
 
             {/* Document Metadata */}

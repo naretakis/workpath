@@ -68,29 +68,46 @@ export function CameraCapture({ onCapture, onCancel }: CameraCaptureProps) {
     const video = videoRef.current;
     const canvas = canvasRef.current;
 
-    // Set canvas dimensions to match video
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    // Detect if photo is landscape (wider than tall)
+    const isLandscapePhoto = video.videoWidth > video.videoHeight;
 
-    // Draw video frame to canvas
-    const ctx = canvas.getContext("2d");
-    if (ctx) {
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // If landscape photo, rotate it 90 degrees for portrait display
+    if (isLandscapePhoto) {
+      // Swap dimensions for rotation
+      canvas.width = video.videoHeight;
+      canvas.height = video.videoWidth;
 
-      // Convert canvas to blob
-      canvas.toBlob(
-        (blob) => {
-          if (blob) {
-            const imageUrl = URL.createObjectURL(blob);
-            setCapturedImage(imageUrl);
-            closeCamera(); // Stop camera after capture
-          }
-          setIsCapturing(false);
-        },
-        "image/jpeg",
-        0.95,
-      );
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        // Rotate 90 degrees clockwise
+        ctx.translate(canvas.width, 0);
+        ctx.rotate(Math.PI / 2);
+        ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+      }
+    } else {
+      // Portrait photo - no rotation needed
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      }
     }
+
+    // Convert canvas to blob
+    canvas.toBlob(
+      (blob) => {
+        if (blob) {
+          const imageUrl = URL.createObjectURL(blob);
+          setCapturedImage(imageUrl);
+          closeCamera(); // Stop camera after capture
+        }
+        setIsCapturing(false);
+      },
+      "image/jpeg",
+      0.95,
+    );
   };
 
   const handleRetake = () => {
@@ -196,7 +213,7 @@ export function CameraCapture({ onCapture, onCancel }: CameraCaptureProps) {
         sx={{
           position: "relative",
           width: "100%",
-          aspectRatio: "4/3",
+          aspectRatio: "3/4", // Portrait aspect ratio for mobile
           bgcolor: "black",
           display: "flex",
           alignItems: "center",

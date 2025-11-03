@@ -20,7 +20,6 @@ import {
   CardMedia,
   CardActions,
   IconButton,
-  Alert,
 } from "@mui/material";
 import {
   AttachFile as AttachFileIcon,
@@ -32,6 +31,8 @@ import { Activity } from "@/types";
 import { Document } from "@/types/documents";
 import { DocumentCapture } from "@/components/documents/DocumentCapture";
 import { DocumentViewer } from "@/components/documents/DocumentViewer";
+import { DocumentMetadataForm } from "@/components/documents/DocumentMetadataForm";
+import { DocumentMetadataFormSimple } from "@/components/documents/DocumentMetadataFormSimple";
 import {
   getDocumentsByActivity,
   getDocumentBlob,
@@ -82,6 +83,8 @@ function ActivityFormContent({
     description?: string;
   } | null>(null);
   const [showDocumentCapture, setShowDocumentCapture] = useState(false);
+  const [capturedBlob, setCapturedBlob] = useState<Blob | null>(null);
+  const [showMetadataForm, setShowMetadataForm] = useState(false);
 
   // Document display state for existing activities
   const [documents, setDocuments] = useState<Document[]>([]);
@@ -183,12 +186,28 @@ function ActivityFormContent({
   };
 
   const handleDocumentCaptured = (blob: Blob) => {
-    // Store the blob temporarily - we'll save it after the activity is saved
-    setPendingDocument({
-      blob,
-      type: "pay-stub", // Default type
-    });
+    // For new activities, show metadata form (we'll save after activity is created)
+    setCapturedBlob(blob);
     setShowDocumentCapture(false);
+    setShowMetadataForm(true);
+  };
+
+  const handleMetadataSavedForNew = (metadata: {
+    type: string;
+    customType?: string;
+    description?: string;
+  }) => {
+    // Store metadata temporarily - we'll save the document after activity is created
+    if (capturedBlob) {
+      setPendingDocument({
+        blob: capturedBlob,
+        type: metadata.type,
+        customType: metadata.customType,
+        description: metadata.description,
+      });
+    }
+    setShowMetadataForm(false);
+    setCapturedBlob(null);
   };
 
   const handleRemovePendingDocument = () => {
@@ -203,40 +222,24 @@ function ActivityFormContent({
   const handleDocumentCapturedForExisting = async (blob: Blob) => {
     if (!existingActivity?.id) return;
 
-    try {
-      const { saveDocument } = await import("@/lib/storage/documents");
-      const { compressImage } = await import("@/lib/utils/imageCompression");
+    // Show metadata form instead of saving directly
+    setCapturedBlob(blob);
+    setShowDocumentCapture(false);
+    setShowMetadataForm(true);
+  };
 
-      let finalBlob = blob;
-      let compressedSize: number | undefined;
-
-      // Compress if needed
-      const fiveMB = 5 * 1024 * 1024;
-      if (blob.size > fiveMB) {
-        const compressed = await compressImage(blob as File, {
-          maxSizeMB: 5,
-          quality: 0.8,
-          maxDimension: 1920,
-        });
-        finalBlob = compressed.blob;
-        compressedSize = compressed.compressedSize;
-      }
-
-      // Save document with default metadata
-      await saveDocument(existingActivity.id, finalBlob, {
-        type: "pay-stub",
-        fileSize: blob.size,
-        compressedSize,
-        mimeType: blob.type as "image/jpeg" | "image/png",
-        captureMethod: "camera",
-      });
-
-      // Reload documents
+  const handleMetadataSaved = async () => {
+    // Document was saved, close metadata form and reload
+    setShowMetadataForm(false);
+    setCapturedBlob(null);
+    if (existingActivity?.id) {
       await loadDocuments(existingActivity.id);
-      setShowDocumentCapture(false);
-    } catch (error) {
-      console.error("Error saving document:", error);
     }
+  };
+
+  const handleMetadataCancel = () => {
+    setShowMetadataForm(false);
+    setCapturedBlob(null);
   };
 
   const handleCancelDocumentCapture = () => {
@@ -285,6 +288,40 @@ function ActivityFormContent({
   }, [existingActivity?.id, reloadTrigger]);
 
   if (!selectedDate) return null;
+
+  // Show metadata form for existing activities
+  if (showMetadataForm && capturedBlob && existingActivity?.id) {
+    return (
+      <>
+        <DialogTitle>Add Document Details</DialogTitle>
+        <DialogContent>
+          <DocumentMetadataForm
+            blob={capturedBlob}
+            activityId={existingActivity.id}
+            captureMethod="camera"
+            onSave={handleMetadataSaved}
+            onCancel={handleMetadataCancel}
+          />
+        </DialogContent>
+      </>
+    );
+  }
+
+  // Show metadata form for new activities (no activityId yet)
+  if (showMetadataForm && capturedBlob && !existingActivity) {
+    return (
+      <>
+        <DialogTitle>Add Document Details</DialogTitle>
+        <DialogContent>
+          <DocumentMetadataFormSimple
+            blob={capturedBlob}
+            onSave={handleMetadataSavedForNew}
+            onCancel={handleMetadataCancel}
+          />
+        </DialogContent>
+      </>
+    );
+  }
 
   // Show document capture overlay
   if (showDocumentCapture) {
@@ -382,7 +419,7 @@ function ActivityFormContent({
           {!existingActivity && (
             <Box
               sx={{
-                p: 2,
+                p: 1.5,
                 borderRadius: 1,
                 backgroundColor: "primary.50",
                 border: "1px solid",
@@ -390,12 +427,13 @@ function ActivityFormContent({
               }}
             >
               <Typography
-                variant="overline"
+                variant="caption"
                 sx={{
                   fontWeight: 600,
                   color: "primary.main",
-                  mb: 1.5,
+                  mb: 1,
                   display: "block",
+                  textTransform: "uppercase",
                 }}
               >
                 Verification Document (Optional)
@@ -404,26 +442,27 @@ function ActivityFormContent({
                 <Card sx={{ position: "relative" }}>
                   <CardMedia
                     component="img"
-                    height="200"
+                    height="120"
                     image={URL.createObjectURL(pendingDocument.blob)}
                     alt="Document preview"
                     sx={{ objectFit: "contain", backgroundColor: "grey.100" }}
                   />
-                  <CardActions>
+                  <CardActions sx={{ p: 0.5 }}>
                     <Button
                       size="small"
                       color="error"
                       onClick={handleRemovePendingDocument}
                       startIcon={<DeleteIcon />}
+                      sx={{ fontSize: "0.75rem" }}
                     >
                       Remove
                     </Button>
                     <Typography
                       variant="caption"
                       color="text.secondary"
-                      sx={{ ml: "auto" }}
+                      sx={{ ml: "auto", fontSize: "0.7rem" }}
                     >
-                      Will be attached when saved
+                      Attached
                     </Typography>
                   </CardActions>
                 </Card>
@@ -433,7 +472,8 @@ function ActivityFormContent({
                   startIcon={<AttachFileIcon />}
                   onClick={handleAddDocumentClick}
                   fullWidth
-                  sx={{ py: 1.5 }}
+                  size="small"
+                  sx={{ py: 1 }}
                 >
                   Add Document
                 </Button>
@@ -445,25 +485,29 @@ function ActivityFormContent({
           {existingActivity?.id && (
             <Box
               sx={{
-                p: 2,
+                p: 1.5,
                 borderRadius: 1,
                 backgroundColor: "primary.50",
                 border: "1px solid",
                 borderColor: "primary.100",
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                 <Box
                   sx={{
                     display: "flex",
                     alignItems: "center",
                     flex: 1,
-                    gap: 1.5,
+                    gap: 1,
                   }}
                 >
                   <Typography
-                    variant="overline"
-                    sx={{ fontWeight: 600, color: "primary.main" }}
+                    variant="caption"
+                    sx={{
+                      fontWeight: 600,
+                      color: "primary.main",
+                      textTransform: "uppercase",
+                    }}
                   >
                     Documents
                   </Typography>
@@ -471,62 +515,59 @@ function ActivityFormContent({
                     <Badge
                       badgeContent={documents.length}
                       color="primary"
-                      sx={{ ml: 0.5 }}
+                      sx={{
+                        "& .MuiBadge-badge": {
+                          fontSize: "0.65rem",
+                          height: 16,
+                          minWidth: 16,
+                        },
+                      }}
                     />
                   )}
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <Typography
-                    sx={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      color: "primary.main",
-                      lineHeight: 1,
-                    }}
-                  >
-                    +
-                  </Typography>
-                  <IconButton
-                    size="small"
-                    onClick={handleAddDocumentToExisting}
-                    disabled={saving}
-                    sx={{
-                      backgroundColor: "primary.main",
-                      color: "white",
-                      "&:hover": {
-                        backgroundColor: "primary.dark",
-                      },
-                      width: 32,
-                      height: 32,
-                    }}
-                  >
-                    <AttachFileIcon fontSize="small" />
-                  </IconButton>
-                </Box>
+                <IconButton
+                  size="small"
+                  onClick={handleAddDocumentToExisting}
+                  disabled={saving}
+                  sx={{
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "primary.dark",
+                    },
+                    width: 28,
+                    height: 28,
+                  }}
+                >
+                  <AttachFileIcon sx={{ fontSize: 16 }} />
+                </IconButton>
               </Box>
 
               {loadingDocuments ? (
-                <Box sx={{ display: "flex", justifyContent: "center", py: 2 }}>
-                  <CircularProgress size={24} />
+                <Box sx={{ display: "flex", justifyContent: "center", py: 1 }}>
+                  <CircularProgress size={20} />
                 </Box>
               ) : documents.length === 0 ? (
-                <Alert severity="info" sx={{ mt: 1 }}>
-                  No documents yet. Click &quot;Add Document&quot; below to
-                  attach verification documents.
-                </Alert>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{ display: "block", textAlign: "center", py: 0.5 }}
+                >
+                  No documents yet
+                </Typography>
               ) : (
                 <Box
                   sx={{
                     display: "flex",
-                    gap: 2,
+                    gap: 1,
                     overflowX: "auto",
-                    py: 1,
+                    py: 0.5,
                     "&::-webkit-scrollbar": {
-                      height: 8,
+                      height: 6,
                     },
                     "&::-webkit-scrollbar-thumb": {
                       backgroundColor: "rgba(0,0,0,0.2)",
-                      borderRadius: 4,
+                      borderRadius: 3,
                     },
                   }}
                 >
@@ -534,14 +575,14 @@ function ActivityFormContent({
                     <Card
                       key={doc.id}
                       sx={{
-                        minWidth: 120,
-                        maxWidth: 120,
+                        minWidth: 80,
+                        maxWidth: 80,
                         flexShrink: 0,
                       }}
                     >
                       <CardMedia
                         component="img"
-                        height="120"
+                        height="80"
                         image={documentUrls.get(doc.id!) || ""}
                         alt={doc.type}
                         sx={{
@@ -551,7 +592,7 @@ function ActivityFormContent({
                       />
                       <CardActions
                         sx={{
-                          p: 0.5,
+                          p: 0.25,
                           justifyContent: "space-between",
                           minHeight: "auto",
                         }}
@@ -560,16 +601,21 @@ function ActivityFormContent({
                           size="small"
                           onClick={() => onViewDocument(doc.id!)}
                           title="View"
+                          sx={{ padding: 0.25 }}
                         >
-                          <VisibilityIcon fontSize="small" />
+                          <VisibilityIcon sx={{ fontSize: 16 }} />
                         </IconButton>
                         <IconButton
                           size="small"
                           color="error"
-                          onClick={() => onViewDocument(doc.id!)}
+                          onClick={() => {
+                            // View document to access delete functionality
+                            onViewDocument(doc.id!);
+                          }}
                           title="View/Delete"
+                          sx={{ padding: 0.25 }}
                         >
-                          <DeleteIcon fontSize="small" />
+                          <DeleteIcon sx={{ fontSize: 16 }} />
                         </IconButton>
                       </CardActions>
                     </Card>

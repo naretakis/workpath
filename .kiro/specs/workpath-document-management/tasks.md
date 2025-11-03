@@ -318,38 +318,38 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-- [ ] 10. Testing and Polish
+- [x] 10. Testing and Polish
 
-- [ ] 10.1 Test camera capture on mobile devices
+- [x] 10.1 Test camera capture on mobile devices
   - Test on iOS Safari
   - Test on Android Chrome
   - Verify camera opens correctly
   - Verify photos are captured
   - Verify compression works
 
-- [ ] 10.2 Test file upload on all browsers
+- [x] 10.2 Test file upload on all browsers
   - Test on Chrome, Firefox, Safari, Edge
   - Verify file picker opens
   - Verify drag-and-drop works
   - Verify validation works
 
-- [ ] 10.3 Test document viewing and deletion
+- [x] 10.3 Test document viewing and deletion
   - Verify thumbnails display correctly
   - Verify full-size viewer works
   - Verify zoom works
   - Verify delete removes both metadata and blob
 
-- [ ] 10.4 Test storage monitoring
+- [x] 10.4 Test storage monitoring
   - Verify quota calculation is accurate
   - Verify warning appears at 80%
   - Verify storage breakdown is correct
 
-- [ ] 10.5 Test offline functionality
+- [x] 10.5 Test offline functionality
   - Verify all features work offline
   - Verify documents persist across sessions
   - Verify no network errors
 
-- [ ] 10.6 Polish UI and UX
+- [x] 10.6 Polish UI and UX
   - Ensure all buttons have proper touch targets (44px+)
   - Add loading states where needed
   - Add empty states where needed
@@ -357,7 +357,9 @@ This task list breaks down the document management feature into discrete, manage
   - Test on small screens (320px width)
 
 ---
+
 - [ ] Spec is completed!
+
 ## Implementation Notes
 
 ### Order of Implementation
