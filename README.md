@@ -4,6 +4,10 @@
 
 A Progressive Web App (PWA) that helps you track work, volunteer, and education hours to maintain your Medicaid benefits.
 
+Start using WorkPath today: https://naretakis.github.io/workpath
+
+[Here's our development roadmap](ROADMAP.md) - WorkPath's current and future features
+
 ## What It Does
 
 WorkPath is a simple, privacy-focused app that helps you:
