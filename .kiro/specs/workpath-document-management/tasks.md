@@ -12,16 +12,16 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-## 1. Database Schema and Data Models
+- [x] 1. Database Schema and Data Models
 
-- [ ] 1.1 Define TypeScript interfaces for documents
+- [x] 1.1 Define TypeScript interfaces for documents
   - Create `src/types/documents.ts`
   - Define `Document` interface with all metadata fields
   - Define `DocumentBlob` interface
   - Define `DocumentType` enum
   - Export types
 
-- [ ] 1.2 Update IndexedDB schema with document tables
+- [x] 1.2 Update IndexedDB schema with document tables
   - Modify `src/lib/storage/db.ts`
   - Add `documents` table with indexes (++id, activityId, type, createdAt)
   - Add `documentBlobs` table with index (++id)
@@ -29,7 +29,7 @@ This task list breaks down the document management feature into discrete, manage
   - Add upgrade function (no data migration needed)
   - Test database creation in browser DevTools
 
-- [ ] 1.3 Create document storage operations
+- [x] 1.3 Create document storage operations
   - Create `src/lib/storage/documents.ts`
   - Implement `saveDocument(activityId, blob, metadata)` function
   - Implement `getDocumentsByActivity(activityId)` function
@@ -38,7 +38,7 @@ This task list breaks down the document management feature into discrete, manage
   - Implement `getDocumentBlob(blobId)` function
   - Add error handling for all operations
 
-- [ ] 1.4 Create Zod validation schemas
+- [x] 1.4 Create Zod validation schemas
   - Create `src/lib/validation/documents.ts`
   - Define `documentMetadataSchema` with Zod
   - Add validation for document type
@@ -48,7 +48,7 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-## 2. Image Compression Utility
+- [ ] 2. Image Compression Utility
 
 - [ ] 2.1 Implement image compression function
   - Create `src/lib/utils/imageCompression.ts`

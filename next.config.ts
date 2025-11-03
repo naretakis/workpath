@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // Set base path if deploying to a subdirectory (e.g., /workpath)
-  basePath: '/workpath',
+  basePath: "/workpath",
 };
 
 export default withPWA({
