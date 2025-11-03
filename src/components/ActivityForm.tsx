@@ -31,10 +31,9 @@ import { format } from "date-fns";
 import { Activity } from "@/types";
 import { Document } from "@/types/documents";
 import { DocumentCapture } from "@/components/documents/DocumentCapture";
-import { DocumentMetadataForm } from "@/components/documents/DocumentMetadataForm";
+import { DocumentViewer } from "@/components/documents/DocumentViewer";
 import {
   getDocumentsByActivity,
-  deleteDocument,
   getDocumentBlob,
 } from "@/lib/storage/documents";
 
@@ -43,13 +42,16 @@ interface ActivityFormProps {
   onClose: () => void;
   onSave: (
     activity: Omit<Activity, "id" | "createdAt" | "updatedAt">,
-  ) => Promise<void>;
+  ) => Promise<number | void>; // Return activity ID if created
   onDelete?: () => void;
   selectedDate: Date | null;
   existingActivity?: Activity;
 }
 
-type DocumentCaptureMode = "form" | "capture" | "metadata";
+interface ActivityFormContentProps extends Omit<ActivityFormProps, "open"> {
+  onViewDocument: (documentId: number) => void;
+  reloadTrigger: number;
+}
 
 function ActivityFormContent({
   onClose,
@@ -57,7 +59,9 @@ function ActivityFormContent({
   onDelete,
   selectedDate,
   existingActivity,
-}: Omit<ActivityFormProps, "open">) {
+  onViewDocument,
+  reloadTrigger,
+}: ActivityFormContentProps) {
   const [type, setType] = useState<"work" | "volunteer" | "education">(
     existingActivity?.type || "work",
   );
@@ -70,17 +74,21 @@ function ActivityFormContent({
   const [errors, setErrors] = useState<{ hours?: string }>({});
   const [saving, setSaving] = useState(false);
 
-  // Document capture state
-  const [captureMode, setCaptureMode] = useState<DocumentCaptureMode>("form");
-  const [capturedBlob, setCapturedBlob] = useState<Blob | null>(null);
+  // Document state for new activities
+  const [pendingDocument, setPendingDocument] = useState<{
+    blob: Blob;
+    type: string;
+    customType?: string;
+    description?: string;
+  } | null>(null);
+  const [showDocumentCapture, setShowDocumentCapture] = useState(false);
 
-  // Document display state
+  // Document display state for existing activities
   const [documents, setDocuments] = useState<Document[]>([]);
   const [documentUrls, setDocumentUrls] = useState<Map<number, string>>(
     new Map(),
   );
   const [loadingDocuments, setLoadingDocuments] = useState(false);
-  const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
 
   const validateHours = (value: string): boolean => {
     const num = parseFloat(value);
@@ -110,7 +118,40 @@ function ActivityFormContent({
 
     setSaving(true);
     try {
-      await onSave(activity);
+      const result = await onSave(activity);
+
+      // If there's a pending document and we got an activity ID, save it
+      if (pendingDocument && typeof result === "number") {
+        const { saveDocument } = await import("@/lib/storage/documents");
+        const { compressImage } = await import("@/lib/utils/imageCompression");
+
+        let finalBlob = pendingDocument.blob;
+        let compressedSize: number | undefined;
+
+        // Compress if needed
+        const fiveMB = 5 * 1024 * 1024;
+        if (pendingDocument.blob.size > fiveMB) {
+          const compressed = await compressImage(pendingDocument.blob as File, {
+            maxSizeMB: 5,
+            quality: 0.8,
+            maxDimension: 1920,
+          });
+          finalBlob = compressed.blob;
+          compressedSize = compressed.compressedSize;
+        }
+
+        // Save document
+        await saveDocument(result, finalBlob, {
+          type: pendingDocument.type as Document["type"],
+          customType: pendingDocument.customType,
+          description: pendingDocument.description,
+          fileSize: pendingDocument.blob.size,
+          compressedSize,
+          mimeType: pendingDocument.blob.type as "image/jpeg" | "image/png",
+          captureMethod: "camera",
+        });
+      }
+
       onClose();
     } catch (error) {
       console.error("Error saving activity:", error);
@@ -136,42 +177,70 @@ function ActivityFormContent({
     }
   };
 
-  // Document capture handlers
-  const handleAddDocument = () => {
-    setCaptureMode("capture");
+  // Document handlers for new activities
+  const handleAddDocumentClick = () => {
+    setShowDocumentCapture(true);
   };
 
-  const handleDocumentCapture = (blob: Blob) => {
-    setCapturedBlob(blob);
-    setCaptureMode("metadata");
+  const handleDocumentCaptured = (blob: Blob) => {
+    // Store the blob temporarily - we'll save it after the activity is saved
+    setPendingDocument({
+      blob,
+      type: "pay-stub", // Default type
+    });
+    setShowDocumentCapture(false);
   };
 
-  const handleDocumentSave = async (documentId: number) => {
-    console.log("Document saved with ID:", documentId);
-    setCapturedBlob(null);
-    setCaptureMode("form");
-    // Reload documents
-    if (existingActivity?.id) {
-      await loadDocuments(existingActivity.id);
-    }
+  const handleRemovePendingDocument = () => {
+    setPendingDocument(null);
   };
 
-  const handleDocumentCancel = () => {
-    setCapturedBlob(null);
-    setCaptureMode("form");
+  // Document handlers for existing activities
+  const handleAddDocumentToExisting = () => {
+    setShowDocumentCapture(true);
   };
 
-  const handleDeleteDocument = async (documentId: number) => {
+  const handleDocumentCapturedForExisting = async (blob: Blob) => {
+    if (!existingActivity?.id) return;
+
     try {
-      await deleteDocument(documentId);
-      // Reload documents
-      if (existingActivity?.id) {
-        await loadDocuments(existingActivity.id);
+      const { saveDocument } = await import("@/lib/storage/documents");
+      const { compressImage } = await import("@/lib/utils/imageCompression");
+
+      let finalBlob = blob;
+      let compressedSize: number | undefined;
+
+      // Compress if needed
+      const fiveMB = 5 * 1024 * 1024;
+      if (blob.size > fiveMB) {
+        const compressed = await compressImage(blob as File, {
+          maxSizeMB: 5,
+          quality: 0.8,
+          maxDimension: 1920,
+        });
+        finalBlob = compressed.blob;
+        compressedSize = compressed.compressedSize;
       }
-      setDeleteConfirm(null);
+
+      // Save document with default metadata
+      await saveDocument(existingActivity.id, finalBlob, {
+        type: "pay-stub",
+        fileSize: blob.size,
+        compressedSize,
+        mimeType: blob.type as "image/jpeg" | "image/png",
+        captureMethod: "camera",
+      });
+
+      // Reload documents
+      await loadDocuments(existingActivity.id);
+      setShowDocumentCapture(false);
     } catch (error) {
-      console.error("Error deleting document:", error);
+      console.error("Error saving document:", error);
     }
+  };
+
+  const handleCancelDocumentCapture = () => {
+    setShowDocumentCapture(false);
   };
 
   // Load documents for the activity
@@ -212,37 +281,26 @@ function ActivityFormContent({
     return () => {
       documentUrls.forEach((url) => URL.revokeObjectURL(url));
     };
-  }, [existingActivity?.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [existingActivity?.id, reloadTrigger]);
 
   if (!selectedDate) return null;
 
-  // Show document capture view
-  if (captureMode === "capture") {
+  // Show document capture overlay
+  if (showDocumentCapture) {
     return (
       <>
-        <DialogTitle>Add Document</DialogTitle>
+        <DialogTitle>
+          {existingActivity ? "Add Document" : "Add Document (Optional)"}
+        </DialogTitle>
         <DialogContent>
           <DocumentCapture
-            onCapture={handleDocumentCapture}
-            onCancel={handleDocumentCancel}
-          />
-        </DialogContent>
-      </>
-    );
-  }
-
-  // Show document metadata form
-  if (captureMode === "metadata" && capturedBlob && existingActivity?.id) {
-    return (
-      <>
-        <DialogTitle>Document Details</DialogTitle>
-        <DialogContent>
-          <DocumentMetadataForm
-            blob={capturedBlob}
-            activityId={existingActivity.id}
-            captureMethod="camera"
-            onSave={handleDocumentSave}
-            onCancel={handleDocumentCancel}
+            onCapture={
+              existingActivity
+                ? handleDocumentCapturedForExisting
+                : handleDocumentCaptured
+            }
+            onCancel={handleCancelDocumentCapture}
           />
         </DialogContent>
       </>
@@ -259,59 +317,193 @@ function ActivityFormContent({
       </DialogTitle>
 
       <DialogContent>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
-          <FormControl fullWidth>
-            <InputLabel>Activity Type</InputLabel>
-            <Select
-              value={type}
-              label="Activity Type"
-              onChange={(e) =>
-                setType(e.target.value as "work" | "volunteer" | "education")
-              }
-            >
-              <MenuItem value="work">Work</MenuItem>
-              <MenuItem value="volunteer">Volunteer</MenuItem>
-              <MenuItem value="education">Education</MenuItem>
-            </Select>
-          </FormControl>
-
-          <TextField
-            label="Hours"
-            type="number"
-            value={hours}
-            onChange={(e) => handleHoursChange(e.target.value)}
-            error={!!errors.hours}
-            helperText={errors.hours || "Enter hours between 0 and 24"}
-            inputProps={{
-              min: 0,
-              max: 24,
-              step: 0.5,
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 1 }}>
+          {/* Activity Details Section */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+              p: 2,
+              borderRadius: 1,
+              backgroundColor: "grey.50",
+              border: "1px solid",
+              borderColor: "divider",
             }}
-            fullWidth
-            required
-          />
+          >
+            <Typography
+              variant="overline"
+              sx={{ fontWeight: 600, color: "text.secondary" }}
+            >
+              Activity Details
+            </Typography>
 
-          <TextField
-            label="Organization (Optional)"
-            value={organization}
-            onChange={(e) => setOrganization(e.target.value)}
-            placeholder="Where did you work/volunteer/study?"
-            fullWidth
-          />
+            <FormControl fullWidth>
+              <InputLabel>Activity Type</InputLabel>
+              <Select
+                value={type}
+                label="Activity Type"
+                onChange={(e) =>
+                  setType(e.target.value as "work" | "volunteer" | "education")
+                }
+              >
+                <MenuItem value="work">Work</MenuItem>
+                <MenuItem value="volunteer">Volunteer</MenuItem>
+                <MenuItem value="education">Education</MenuItem>
+              </Select>
+            </FormControl>
 
-          {/* Documents Section - Only show for existing activities */}
-          {existingActivity?.id && (
-            <Box sx={{ mt: 2 }}>
-              <Typography variant="subtitle2" gutterBottom>
-                Documents
-                {documents.length > 0 && (
-                  <Badge
-                    badgeContent={documents.length}
-                    color="primary"
-                    sx={{ ml: 2 }}
-                  />
-                )}
+            <TextField
+              label="Hours"
+              type="number"
+              value={hours}
+              onChange={(e) => handleHoursChange(e.target.value)}
+              error={!!errors.hours}
+              helperText={errors.hours || "Enter hours between 0 and 24"}
+              inputProps={{
+                min: 0,
+                max: 24,
+                step: 0.5,
+              }}
+              fullWidth
+              required
+            />
+
+            <TextField
+              label="Organization (Optional)"
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+              placeholder="Where did you work/volunteer/study?"
+              fullWidth
+            />
+          </Box>
+
+          {/* Document Section for NEW activities */}
+          {!existingActivity && (
+            <Box
+              sx={{
+                p: 2,
+                borderRadius: 1,
+                backgroundColor: "primary.50",
+                border: "1px solid",
+                borderColor: "primary.100",
+              }}
+            >
+              <Typography
+                variant="overline"
+                sx={{
+                  fontWeight: 600,
+                  color: "primary.main",
+                  mb: 1.5,
+                  display: "block",
+                }}
+              >
+                Verification Document (Optional)
               </Typography>
+              {pendingDocument ? (
+                <Card sx={{ position: "relative" }}>
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={URL.createObjectURL(pendingDocument.blob)}
+                    alt="Document preview"
+                    sx={{ objectFit: "contain", backgroundColor: "grey.100" }}
+                  />
+                  <CardActions>
+                    <Button
+                      size="small"
+                      color="error"
+                      onClick={handleRemovePendingDocument}
+                      startIcon={<DeleteIcon />}
+                    >
+                      Remove
+                    </Button>
+                    <Typography
+                      variant="caption"
+                      color="text.secondary"
+                      sx={{ ml: "auto" }}
+                    >
+                      Will be attached when saved
+                    </Typography>
+                  </CardActions>
+                </Card>
+              ) : (
+                <Button
+                  variant="outlined"
+                  startIcon={<AttachFileIcon />}
+                  onClick={handleAddDocumentClick}
+                  fullWidth
+                  sx={{ py: 1.5 }}
+                >
+                  Add Document
+                </Button>
+              )}
+            </Box>
+          )}
+
+          {/* Documents Section for EXISTING activities */}
+          {existingActivity?.id && (
+            <Box
+              sx={{
+                p: 2,
+                borderRadius: 1,
+                backgroundColor: "primary.50",
+                border: "1px solid",
+                borderColor: "primary.100",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    flex: 1,
+                    gap: 1.5,
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    sx={{ fontWeight: 600, color: "primary.main" }}
+                  >
+                    Documents
+                  </Typography>
+                  {documents.length > 0 && (
+                    <Badge
+                      badgeContent={documents.length}
+                      color="primary"
+                      sx={{ ml: 0.5 }}
+                    />
+                  )}
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <Typography
+                    sx={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                      color: "primary.main",
+                      lineHeight: 1,
+                    }}
+                  >
+                    +
+                  </Typography>
+                  <IconButton
+                    size="small"
+                    onClick={handleAddDocumentToExisting}
+                    disabled={saving}
+                    sx={{
+                      backgroundColor: "primary.main",
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "primary.dark",
+                      },
+                      width: 32,
+                      height: 32,
+                    }}
+                  >
+                    <AttachFileIcon fontSize="small" />
+                  </IconButton>
+                </Box>
+              </Box>
 
               {loadingDocuments ? (
                 <Box sx={{ display: "flex", justifyContent: "center", py: 2 }}>
@@ -366,10 +558,7 @@ function ActivityFormContent({
                       >
                         <IconButton
                           size="small"
-                          onClick={() => {
-                            // TODO: Implement full-size viewer in task 7
-                            console.log("View document:", doc.id);
-                          }}
+                          onClick={() => onViewDocument(doc.id!)}
                           title="View"
                         >
                           <VisibilityIcon fontSize="small" />
@@ -377,8 +566,8 @@ function ActivityFormContent({
                         <IconButton
                           size="small"
                           color="error"
-                          onClick={() => setDeleteConfirm(doc.id!)}
-                          title="Delete"
+                          onClick={() => onViewDocument(doc.id!)}
+                          title="View/Delete"
                         >
                           <DeleteIcon fontSize="small" />
                         </IconButton>
@@ -387,69 +576,76 @@ function ActivityFormContent({
                   ))}
                 </Box>
               )}
-
-              {/* Delete Confirmation */}
-              {deleteConfirm !== null && (
-                <Alert
-                  severity="warning"
-                  sx={{ mt: 2 }}
-                  action={
-                    <Box>
-                      <Button
-                        size="small"
-                        onClick={() => handleDeleteDocument(deleteConfirm)}
-                      >
-                        Delete
-                      </Button>
-                      <Button
-                        size="small"
-                        onClick={() => setDeleteConfirm(null)}
-                      >
-                        Cancel
-                      </Button>
-                    </Box>
-                  }
-                >
-                  Delete this document?
-                </Alert>
-              )}
             </Box>
           )}
         </Box>
       </DialogContent>
 
-      <DialogActions sx={{ px: 3, pb: 2 }}>
-        {existingActivity && onDelete && (
-          <Button
-            onClick={handleDelete}
-            color="error"
-            sx={{ mr: "auto" }}
-            disabled={saving}
-          >
-            Delete
-          </Button>
-        )}
-        {existingActivity?.id && (
-          <Button
-            onClick={handleAddDocument}
-            startIcon={<AttachFileIcon />}
-            disabled={saving}
-            sx={{ mr: "auto" }}
-          >
-            Add Document
-          </Button>
-        )}
-        <Button onClick={onClose} disabled={saving}>
-          Cancel
-        </Button>
-        <Button
-          onClick={handleSave}
-          variant="contained"
-          disabled={!hours || saving}
-          startIcon={saving ? <CircularProgress size={16} /> : null}
+      <DialogActions
+        sx={{
+          px: 3,
+          pb: 2,
+          pt: 2,
+          borderTop: "1px solid",
+          borderColor: "divider",
+          backgroundColor: "grey.50",
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          alignItems: "stretch",
+          gap: 1,
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            gap: 1,
+            flex: 1,
+            justifyContent: "space-between",
+          }}
         >
-          {saving ? "Saving..." : "Save"}
-        </Button>
+          {existingActivity && onDelete && (
+            <Button
+              onClick={handleDelete}
+              variant="outlined"
+              color="error"
+              disabled={saving}
+              sx={{
+                flex: { xs: 1, sm: "0 0 auto" },
+              }}
+            >
+              Delete
+            </Button>
+          )}
+          <Box
+            sx={{
+              display: "flex",
+              gap: 1,
+              ml: existingActivity && onDelete ? 0 : "auto",
+            }}
+          >
+            <Button
+              onClick={onClose}
+              disabled={saving}
+              variant="outlined"
+              sx={{
+                minWidth: 100,
+              }}
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleSave}
+              variant="contained"
+              disabled={!hours || saving}
+              startIcon={saving ? <CircularProgress size={16} /> : null}
+              sx={{
+                minWidth: 100,
+              }}
+            >
+              {saving ? "Saving..." : "Save"}
+            </Button>
+          </Box>
+        </Box>
       </DialogActions>
     </>
   );
@@ -463,34 +659,64 @@ export function ActivityForm({
   selectedDate,
   existingActivity,
 }: ActivityFormProps) {
+  const [viewingDocumentId, setViewingDocumentId] = useState<number | null>(
+    null,
+  );
+  const [reloadTrigger, setReloadTrigger] = useState(0);
+
   // Use key to reset form state when dialog opens with different data
   const dialogKey = open
-    ? `${selectedDate?.toISOString()}-${existingActivity?.id || "new"}`
+    ? `${selectedDate?.toISOString()}-${existingActivity?.id || "new"}-${reloadTrigger}`
     : "closed";
 
+  const handleViewDocument = (documentId: number) => {
+    setViewingDocumentId(documentId);
+  };
+
+  const handleCloseViewer = () => {
+    setViewingDocumentId(null);
+  };
+
+  const handleDocumentDeleted = () => {
+    // Document was deleted, close viewer and trigger reload
+    setViewingDocumentId(null);
+    setReloadTrigger((prev) => prev + 1);
+  };
+
   return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      maxWidth="sm"
-      fullWidth
-      key={dialogKey}
-      PaperProps={{
-        sx: {
-          m: { xs: 2, sm: 3 },
-          maxHeight: { xs: "calc(100% - 32px)", sm: "calc(100% - 64px)" },
-        },
-      }}
-    >
-      {open && (
-        <ActivityFormContent
-          onClose={onClose}
-          onSave={onSave}
-          onDelete={onDelete}
-          selectedDate={selectedDate}
-          existingActivity={existingActivity}
-        />
-      )}
-    </Dialog>
+    <>
+      <Dialog
+        open={open}
+        onClose={onClose}
+        maxWidth="sm"
+        fullWidth
+        key={dialogKey}
+        PaperProps={{
+          sx: {
+            m: { xs: 2, sm: 3 },
+            maxHeight: { xs: "calc(100% - 32px)", sm: "calc(100% - 64px)" },
+          },
+        }}
+      >
+        {open && (
+          <ActivityFormContent
+            onClose={onClose}
+            onSave={onSave}
+            onDelete={onDelete}
+            selectedDate={selectedDate}
+            existingActivity={existingActivity}
+            onViewDocument={handleViewDocument}
+            reloadTrigger={reloadTrigger}
+          />
+        )}
+      </Dialog>
+
+      {/* Document Viewer - Separate from main dialog */}
+      <DocumentViewer
+        documentId={viewingDocumentId}
+        onClose={handleCloseViewer}
+        onDelete={handleDocumentDeleted}
+      />
+    </>
   );
 }

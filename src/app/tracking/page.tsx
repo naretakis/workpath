@@ -160,18 +160,21 @@ export default function TrackingPage() {
 
   const handleSaveActivity = async (
     activityData: Omit<Activity, "id" | "createdAt" | "updatedAt">,
-  ) => {
+  ): Promise<number | void> => {
     try {
       setSaving(true);
+      let activityId: number | undefined;
+
       if (existingActivity) {
         // Update existing activity
         await db.activities.update(existingActivity.id!, {
           ...activityData,
           updatedAt: new Date(),
         });
+        activityId = existingActivity.id;
       } else {
-        // Create new activity
-        await db.activities.add({
+        // Create new activity and return its ID
+        activityId = await db.activities.add({
           ...activityData,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -181,6 +184,9 @@ export default function TrackingPage() {
       // Reload activities
       await loadActivities();
       setError(null);
+
+      // Return the activity ID for new activities
+      return activityId;
     } catch (err) {
       console.error("Error saving activity:", err);
       setError("Failed to save activity");

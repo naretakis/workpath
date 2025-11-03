@@ -216,7 +216,7 @@ This task list breaks down the document management feature into discrete, manage
   - **Note**: Reference ActivityForm.tsx Card implementation (lines 340-380)
   - **Note**: Size should be 120x120px to match current implementation
 
-- [ ] 7.3 Build DocumentViewer component (REQUIRED - not yet implemented)
+- [x] 7.3 Build DocumentViewer component (REQUIRED - not yet implemented)
   - Create `src/components/documents/DocumentViewer.tsx`
   - Accept `documentId: number | null` prop (null = closed)
   - Accept `onClose()` callback prop
@@ -240,7 +240,7 @@ This task list breaks down the document management feature into discrete, manage
   - **Note**: This is needed to replace the console.log in ActivityForm.tsx line 365
   - **Note**: Consider mobile-friendly zoom gestures (pinch, double-tap)
 
-- [ ] 7.4 Update ActivityList to show document indicators
+- [x] 7.4 Update ActivityList to show document indicators
   - Modify `src/components/ActivityList.tsx`
   - Query document count for each activity using `getDocumentsByActivity(activityId).length`
   - Add document icon (AttachFile icon from @mui/icons-material) to ListItem if count > 0
@@ -292,7 +292,7 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-## 9. Error Handling and Edge Cases
+- [ ] 9. Error Handling and Edge Cases
 
 - [ ] 9.1 Handle camera permission errors
   - Show clear error message when permission denied
@@ -318,7 +318,7 @@ This task list breaks down the document management feature into discrete, manage
 
 ---
 
-## 10. Testing and Polish
+- [ ] 10. Testing and Polish
 
 - [ ] 10.1 Test camera capture on mobile devices
   - Test on iOS Safari

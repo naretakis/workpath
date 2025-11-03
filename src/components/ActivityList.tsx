@@ -15,9 +15,11 @@ import {
   Edit as EditIcon,
   Delete as DeleteIcon,
   ContentCopy as ContentCopyIcon,
+  AttachFile as AttachFileIcon,
 } from "@mui/icons-material";
 import { Activity } from "@/types";
 import { format, parseISO } from "date-fns";
+import { useActivityDocumentCounts } from "@/hooks/useActivityDocumentCounts";
 
 interface ActivityListProps {
   activities: Activity[];
@@ -44,6 +46,12 @@ export function ActivityList({
   onDelete,
   onDuplicate,
 }: ActivityListProps) {
+  // Get document counts for all activities
+  const activityIds = activities
+    .map((a) => a.id)
+    .filter((id): id is number => id !== undefined);
+  const documentCounts = useActivityDocumentCounts(activityIds);
+
   if (activities.length === 0) {
     return (
       <Paper sx={{ p: 3, textAlign: "center" }}>
@@ -81,7 +89,35 @@ export function ActivityList({
                 py: { xs: 1.5, sm: 2 },
               }}
               secondaryAction={
-                <Box sx={{ display: "flex", gap: { xs: 0, sm: 0.5 } }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: { xs: 0, sm: 0.5 },
+                    alignItems: "center",
+                  }}
+                >
+                  {activity.id && documentCounts.get(activity.id) ? (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 0.5,
+                        mr: 1,
+                        color: "text.secondary",
+                      }}
+                    >
+                      <AttachFileIcon
+                        fontSize="small"
+                        sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+                      />
+                      <Typography
+                        variant="caption"
+                        sx={{ fontSize: { xs: "0.7rem", sm: "0.75rem" } }}
+                      >
+                        {documentCounts.get(activity.id)}
+                      </Typography>
+                    </Box>
+                  ) : null}
                   <IconButton
                     aria-label="duplicate"
                     onClick={() => onDuplicate(activity)}

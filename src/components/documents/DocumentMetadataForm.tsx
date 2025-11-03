@@ -57,7 +57,7 @@ export function DocumentMetadataForm({
   const [compressing, setCompressing] = useState(false);
   const [compressionProgress, setCompressionProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const [imageUrl, setImageUrl] = useState<string>("");
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [activity, setActivity] = useState<{
     date: string;
     type: string;
@@ -211,32 +211,46 @@ export function DocumentMetadataForm({
       </Typography>
 
       {/* Image Preview */}
-      <Paper
-        elevation={2}
-        sx={{
-          mb: 3,
-          overflow: "hidden",
-          backgroundColor: "grey.100",
-        }}
-      >
-        <Box
-          component="img"
-          src={imageUrl}
-          alt="Document preview"
+      {imageUrl ? (
+        <Paper
+          elevation={2}
           sx={{
-            width: "100%",
-            height: "auto",
-            maxHeight: 400,
-            objectFit: "contain",
-            display: "block",
+            mb: 3,
+            overflow: "hidden",
+            backgroundColor: "grey.100",
           }}
-        />
-        <Box sx={{ p: 1, textAlign: "center", backgroundColor: "grey.200" }}>
-          <Typography variant="caption" color="text.secondary">
-            File size: {formatFileSize(blob.size)}
-          </Typography>
+        >
+          <Box
+            component="img"
+            src={imageUrl}
+            alt="Document preview"
+            sx={{
+              width: "100%",
+              height: "auto",
+              maxHeight: 400,
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+          <Box sx={{ p: 1, textAlign: "center", backgroundColor: "grey.200" }}>
+            <Typography variant="caption" color="text.secondary">
+              File size: {formatFileSize(blob.size)}
+            </Typography>
+          </Box>
+        </Paper>
+      ) : (
+        <Box
+          sx={{
+            mb: 3,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: 200,
+          }}
+        >
+          <CircularProgress />
         </Box>
-      </Paper>
+      )}
 
       {/* Error Alert */}
       {error && (

@@ -1,10 +1,15 @@
 "use client";
 
 import { ThemeProvider } from "@mui/material/styles";
+import { CacheProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { theme } from "@/theme/theme";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
+import createEmotionCache from "@/lib/emotion-cache";
 import "./globals.css";
+
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
 
 // Get the base path from the environment
 // In production (GitHub Pages), this will be "/workpath"
@@ -19,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="emotion-insertion-point" content="" />
         <meta name="application-name" content="WorkPath" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -35,11 +41,13 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href={`${basePath}/icon-192x192.png`} />
       </head>
       <body suppressHydrationWarning>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <OfflineIndicator />
-          {children}
-        </ThemeProvider>
+        <CacheProvider value={clientSideEmotionCache}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <OfflineIndicator />
+            {children}
+          </ThemeProvider>
+        </CacheProvider>
       </body>
     </html>
   );
