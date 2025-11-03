@@ -134,27 +134,27 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
 
 - [x] Phase 6: PWA Features (Week 6-8)
 
-- [ ] 6.1 Configure next-pwa
+- [x] 6.1 Configure next-pwa
   - Install and configure
   - _Requirements: 6, 7_
 
-- [ ] 6.2 Create manifest
+- [x] 6.2 Create manifest
   - Add PWA manifest
   - _Requirements: 7_
 
-- [ ] 6.3 Create icons
+- [x] 6.3 Create icons
   - Generate app icons
   - _Requirements: 7_
 
-- [ ] 6.4 Add offline indicator
+- [x] 6.4 Add offline indicator
   - Show when offline
   - _Requirements: 6_
 
-- [ ] 6.5 Test offline
+- [x] 6.5 Test offline
   - Verify offline functionality
   - _Requirements: 6_
 
-- [ ] 6.6 Test installation
+- [x] 6.6 Test installation
   - Test on mobile device
   - _Requirements: 7_
 
