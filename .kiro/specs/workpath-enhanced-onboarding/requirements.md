@@ -1,4 +1,4 @@
-# Requirements Document: WorkPath - Enhanced Onboarding
+# Requirements Document: HourKeep - Enhanced Onboarding
 
 **Improved First-Time User Experience with Privacy Notice**
 

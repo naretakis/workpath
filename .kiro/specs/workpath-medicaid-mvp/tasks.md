@@ -1,4 +1,4 @@
-# Implementation Plan: WorkPath MVP (Simplified)
+# Implementation Plan: HourKeep MVP (Simplified)
 
 **Your Work Requirements Assistant**
 
@@ -15,7 +15,7 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
 - [x] Phase 1: Project Setup (Week 1)
 
 - [x] 1.1 Create Next.js project
-  - Run: `npx create-next-app@latest workpath --typescript --app`
+  - Run: `npx create-next-app@latest hourkeep --typescript --app`
   - Test: `npm run dev` and see it running
   - _Requirements: Setup_
 
@@ -179,7 +179,7 @@ This is a **realistic task list for a new developer** learning to build PWAs. Th
   - Configure Next.js for static export in `next.config.js`
   - Set up GitHub Pages in repository settings (Settings → Pages → Source: GitHub Actions)
   - Push to main branch to trigger first deployment
-  - Verify app works at your GitHub Pages URL (https://[username].github.io/workpath)
+  - Verify app works at your GitHub Pages URL (https://[username].github.io/hourkeep)
   - _Requirements: Deployment_
 
 ---

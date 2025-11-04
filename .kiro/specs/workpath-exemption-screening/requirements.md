@@ -1,4 +1,4 @@
-# Requirements Document: WorkPath - Exemption Screening
+# Requirements Document: HourKeep - Exemption Screening
 
 **Help Users Determine if They're Exempt from Work Requirements**
 
@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This feature adds a self-service exemption screening tool to WorkPath, allowing users to determine if they qualify for an exemption from Medicaid work requirements based on HR1 Section 71119 criteria. The screening is optional and accessible from settings, not blocking the main app functionality.
+This feature adds a self-service exemption screening tool to HourKeep, allowing users to determine if they qualify for an exemption from Medicaid work requirements based on HR1 Section 71119 criteria. The screening is optional and accessible from settings, not blocking the main app functionality.
 
 ## Glossary
 

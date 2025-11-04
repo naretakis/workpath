@@ -1,6 +1,6 @@
-# WorkPath MVP Spec
+# HourKeep MVP Spec
 
-This directory contains the **simplified MVP specification** for WorkPath, designed for a new developer learning to build PWAs.
+This directory contains the **simplified MVP specification** for HourKeep, designed for a new developer learning to build PWAs.
 
 ---
 

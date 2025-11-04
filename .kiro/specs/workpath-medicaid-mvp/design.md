@@ -1,4 +1,4 @@
-# Design Document: WorkPath MVP (Simplified)
+# Design Document: HourKeep MVP (Simplified)
 
 **Your Work Requirements Assistant**
 
@@ -178,12 +178,12 @@ interface MonthlySummary {
 
 ```typescript
 // Using Dexie.js
-class WorkPathDB extends Dexie {
+class HourKeepDB extends Dexie {
   profiles!: Table<UserProfile>;
   activities!: Table<Activity>;
 
   constructor() {
-    super("WorkPathDB");
+    super("HourKeepDB");
 
     this.version(1).stores({
       profiles: "id",
@@ -265,7 +265,7 @@ class WorkPathDB extends Dexie {
 2. Query all data from IndexedDB
 3. Create JSON object with profile + activities
 4. Trigger browser download
-5. File named: `workpath-export-YYYY-MM-DD.json`
+5. File named: `hourkeep-export-YYYY-MM-DD.json`
 
 **Code Location:**
 
@@ -331,7 +331,7 @@ export const theme = createTheme({
 ## File Structure
 
 ```
-workpath/
+hourkeep/
 ├── public/
 │   ├── manifest.json          # PWA manifest
 │   └── icons/                 # App icons
@@ -412,7 +412,7 @@ We'll use GitHub Actions to automatically build and deploy when you push to main
    - GitHub Actions runs automatically
    - Builds the Next.js app
    - Deploys directly to GitHub Pages
-   - Your app is live at `https://[username].github.io/workpath`
+   - Your app is live at `https://[username].github.io/hourkeep`
 
 3. **Benefits**:
    - No manual deployment steps

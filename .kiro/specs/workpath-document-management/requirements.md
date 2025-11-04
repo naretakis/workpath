@@ -1,4 +1,4 @@
-# Requirements Document: WorkPath - Document Management
+# Requirements Document: HourKeep - Document Management
 
 **Capture and Store Verification Documents**
 
@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This feature adds document capture and storage capabilities to WorkPath, allowing users to photograph and store verification documents (pay stubs, volunteer letters, school enrollment) directly from their mobile device and link them to their logged activities.
+This feature adds document capture and storage capabilities to HourKeep, allowing users to photograph and store verification documents (pay stubs, volunteer letters, school enrollment) directly from their mobile device and link them to their logged activities.
 
 ## Glossary
 

@@ -1,4 +1,4 @@
-# Design Document: WorkPath - Enhanced Onboarding
+# Design Document: HourKeep - Enhanced Onboarding
 
 **Improved First-Time User Experience with Privacy Notice**
 
@@ -100,12 +100,12 @@ interface PrivacyAcknowledgment {
 ## Database Schema (IndexedDB)
 
 ```typescript
-class WorkPathDB extends Dexie {
+class HourKeepDB extends Dexie {
   profiles!: Table<UserProfile>;
   // ... other tables
 
   constructor() {
-    super("WorkPathDB");
+    super("HourKeepDB");
 
     // Version 4: Update profile schema
     this.version(4)
@@ -146,7 +146,7 @@ class WorkPathDB extends Dexie {
 
 ```
 ┌─────────────────────────────────────┐
-│  Welcome to WorkPath                │
+│  Welcome to HourKeep                │
 ├─────────────────────────────────────┤
 │                                     │
 │  Before you start, here's how we    │
@@ -190,7 +190,7 @@ function PrivacyNotice({ onAcknowledge }: Props) {
   return (
     <Box sx={{ padding: 3, maxWidth: 600, margin: "0 auto" }}>
       <Typography variant="h4" gutterBottom>
-        Welcome to WorkPath
+        Welcome to HourKeep
       </Typography>
 
       <Typography variant="body1" paragraph>
@@ -338,7 +338,7 @@ export const profileSchema = z.object({
 // Note: This is basic encryption for local storage protection
 // Not meant for transmission or high-security scenarios
 
-const ENCRYPTION_KEY_NAME = "workpath-encryption-key";
+const ENCRYPTION_KEY_NAME = "hourkeep-encryption-key";
 
 async function getEncryptionKey(): Promise<CryptoKey> {
   // Try to get existing key from IndexedDB
@@ -621,7 +621,7 @@ async function promptProfileUpdate(userId: string) {
 **Markdown Export (with profile):**
 
 ```markdown
-# WorkPath Export
+# HourKeep Export
 
 **Generated:** March 15, 2024
 

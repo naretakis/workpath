@@ -1,4 +1,4 @@
-# Design Document: WorkPath - Exemption Screening
+# Design Document: HourKeep - Exemption Screening
 
 **Help Users Determine if They're Exempt from Work Requirements**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This design adds a self-service exemption screening questionnaire to WorkPath, allowing users to determine if they qualify for an exemption from Medicaid work requirements. The screening follows HR1 Section 71119 criteria and covers all 5 exemption categories. It's accessible from settings and doesn't block the main app functionality.
+This design adds a self-service exemption screening questionnaire to HourKeep, allowing users to determine if they qualify for an exemption from Medicaid work requirements. The screening follows HR1 Section 71119 criteria and covers all 5 exemption categories. It's accessible from settings and doesn't block the main app functionality.
 
 **Key Design Principles:**
 
@@ -140,7 +140,7 @@ interface ExemptionHistory {
 ## Database Schema (IndexedDB)
 
 ```typescript
-class WorkPathDB extends Dexie {
+class HourKeepDB extends Dexie {
   profiles!: Table<UserProfile>;
   activities!: Table<Activity>;
   documents!: Table<Document>;
@@ -149,7 +149,7 @@ class WorkPathDB extends Dexie {
   exemptionHistory!: Table<ExemptionHistory>; // NEW
 
   constructor() {
-    super("WorkPathDB");
+    super("HourKeepDB");
 
     // Version 3: Add exemption tables
     this.version(3).stores({

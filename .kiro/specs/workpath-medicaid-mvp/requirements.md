@@ -1,4 +1,4 @@
-# Requirements Document: WorkPath MVP (Simplified)
+# Requirements Document: HourKeep MVP (Simplified)
 
 **Your Work Requirements Assistant**
 
@@ -8,7 +8,7 @@ _Track your work hours to maintain your Medicaid benefits_
 
 ## Introduction
 
-WorkPath is a simple Progressive Web Application (PWA) that helps you track work, volunteer, and education hours to meet Medicaid work requirements (80 hours/month or $580/month income).
+HourKeep is a simple Progressive Web Application (PWA) that helps you track work, volunteer, and education hours to meet Medicaid work requirements (80 hours/month or $580/month income).
 
 **Core Principles:**
 
@@ -181,4 +181,4 @@ The archived full spec contains detailed requirements for:
 - Advanced reporting and analytics
 - Multi-user support
 
-**Refer to `.kiro/specs/workpath-medicaid-mvp/archive-full-version/` for the complete vision.**
+**Refer to `.kiro/specs/hourkeep-medicaid-mvp/archive-full-version/` for the complete vision.**

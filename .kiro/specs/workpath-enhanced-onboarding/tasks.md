@@ -1,4 +1,4 @@
-# Implementation Tasks: WorkPath - Enhanced Onboarding
+# Implementation Tasks: HourKeep - Enhanced Onboarding
 
 **Improved First-Time User Experience with Privacy Notice**
 

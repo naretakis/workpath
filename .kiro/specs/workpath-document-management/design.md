@@ -1,4 +1,4 @@
-# Design Document: WorkPath - Document Management
+# Design Document: HourKeep - Document Management
 
 **Capture and Store Verification Documents**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This design adds document capture, storage, and viewing capabilities to WorkPath. Users can photograph or upload verification documents (pay stubs, volunteer letters, etc.) and link them directly to their logged activities. All documents are stored locally in IndexedDB with automatic compression for large images.
+This design adds document capture, storage, and viewing capabilities to HourKeep. Users can photograph or upload verification documents (pay stubs, volunteer letters, etc.) and link them directly to their logged activities. All documents are stored locally in IndexedDB with automatic compression for large images.
 
 **Key Design Principles:**
 
@@ -149,14 +149,14 @@ interface Activity {
 ## Database Schema (IndexedDB)
 
 ```typescript
-class WorkPathDB extends Dexie {
+class HourKeepDB extends Dexie {
   profiles!: Table<UserProfile>;
   activities!: Table<Activity>;
   documents!: Table<Document>; // NEW
   documentBlobs!: Table<DocumentBlob>; // NEW
 
   constructor() {
-    super("WorkPathDB");
+    super("HourKeepDB");
 
     // Version 2: Add document tables
     this.version(2).stores({

@@ -34,7 +34,7 @@ This implementation plan breaks down the rebrand into discrete, sequential tasks
   - Update project name and commands in `.kiro/steering/getting-started.md`
   - _Requirements: 4.4, 4.5_
 
-- [ ] 6. Update spec documentation
+- [x] 6. Update spec documentation
   - Update references in `.kiro/specs/workpath-medicaid-mvp/` files (design.md, requirements.md, README.md)
   - Update references in `.kiro/specs/workpath-enhanced-onboarding/` files
   - Update references in `.kiro/specs/workpath-exemption-screening/` files
