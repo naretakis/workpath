@@ -11,7 +11,7 @@ This design document outlines the systematic approach to rebranding the applicat
 **New Branding:**
 - **App Name:** HourKeep
 - **Tagline:** Keep Your Hours, Keep Your Coverage
-- **Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage.
+- **Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage and benefits.
 
 **Design Principles:**
 - Systematic and thorough - use search to find all references
@@ -188,7 +188,7 @@ basePath: process.env.NODE_ENV === "production" ? "/hourkeep" : "",
 {
   "name": "HourKeep - Keep Your Hours, Keep Your Coverage",
   "short_name": "HourKeep",
-  "description": "Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage."
+  "description": "Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage and benefits."
 }
 ```
 
@@ -238,7 +238,7 @@ const basePath = isProduction ? "/hourkeep" : "";
 
 **App Name:** HourKeep
 **Tagline:** Keep Your Hours, Keep Your Coverage
-**Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage.
+**Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage and benefits.
 ```
 
 **Changes:**

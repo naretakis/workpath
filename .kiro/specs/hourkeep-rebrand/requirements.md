@@ -11,7 +11,7 @@ This specification covers the complete rebranding of the application from "WorkP
 **New Branding:**
 - **App Name:** HourKeep
 - **Tagline:** Keep Your Hours, Keep Your Coverage
-- **Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage.
+- **Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage and benefits.
 
 **Key Principles:**
 - Complete and thorough - no references to "WorkPath" should remain
