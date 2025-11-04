@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 
 const isProduction = process.env.NODE_ENV === "production";
-const basePath = isProduction ? "/workpath" : "";
+const basePath = isProduction ? "/hourkeep" : "";
 
 // Read the manifest from the out directory
 const manifestPath = path.join(__dirname, "../out/manifest.json");
