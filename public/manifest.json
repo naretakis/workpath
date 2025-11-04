@@ -1,7 +1,7 @@
 {
-  "name": "WorkPath - Work Requirements Assistant",
-  "short_name": "WorkPath",
-  "description": "Track your work hours to maintain your Medicaid benefits",
+  "name": "HourKeep - Keep Your Hours, Keep Your Coverage",
+  "short_name": "HourKeep",
+  "description": "Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage and benefits.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

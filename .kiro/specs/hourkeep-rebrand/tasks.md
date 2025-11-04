@@ -21,7 +21,7 @@ This implementation plan breaks down the rebrand into discrete, sequential tasks
   - Update basePath in `scripts/update-manifest.js`
   - _Requirements: 3.1, 3.2, 7.1, 7.2_
 
-- [ ] 3. Update PWA manifest
+- [x] 3. Update PWA manifest
   - Update app name, short name, and description in `public/manifest.json`
   - _Requirements: 2.1, 2.2, 2.3_
 
