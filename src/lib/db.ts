@@ -1,6 +1,7 @@
 import Dexie, { Table } from "dexie";
 import { UserProfile, Activity } from "@/types";
 import { Document, DocumentBlob } from "@/types/documents";
+import { ExemptionScreening, ExemptionHistory } from "@/types/exemptions";
 
 // Database class
 class HourKeepDB extends Dexie {
@@ -8,6 +9,8 @@ class HourKeepDB extends Dexie {
   activities!: Table<Activity>;
   documents!: Table<Document>;
   documentBlobs!: Table<DocumentBlob>;
+  exemptions!: Table<ExemptionScreening>;
+  exemptionHistory!: Table<ExemptionHistory>;
 
   constructor() {
     super("HourKeepDB");
@@ -29,6 +32,21 @@ class HourKeepDB extends Dexie {
       .upgrade(() => {
         // No data migration needed for new tables
         console.log("Added document tables to database");
+      });
+
+    // Version 3: Add exemption tables
+    this.version(3)
+      .stores({
+        profiles: "id",
+        activities: "++id, date, type",
+        documents: "++id, activityId, type, createdAt",
+        documentBlobs: "++id",
+        exemptions: "++id, userId, screeningDate",
+        exemptionHistory: "++id, userId, screeningDate",
+      })
+      .upgrade(() => {
+        // No data migration needed for new tables
+        console.log("Added exemption tables to database");
       });
   }
 }

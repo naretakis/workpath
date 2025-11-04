@@ -12,9 +12,9 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 1. Database Schema and Data Models
+- [x] 1. Database Schema and Data Models
 
-- [ ] 1.1 Define TypeScript interfaces for exemptions
+- [x] 1.1 Define TypeScript interfaces for exemptions
   - Create `src/types/exemptions.ts`
   - Define `ExemptionScreening` interface
   - Define `ExemptionResponses` interface
@@ -23,7 +23,7 @@ This task list breaks down the exemption screening feature into discrete, manage
   - Define `ExemptionHistory` interface
   - Export all types
 
-- [ ] 1.2 Update IndexedDB schema with exemption tables
+- [x] 1.2 Update IndexedDB schema with exemption tables
   - Modify `src/lib/storage/db.ts`
   - Add `exemptions` table with indexes (++id, userId, screeningDate)
   - Add `exemptionHistory` table with indexes (++id, userId, screeningDate)
@@ -31,7 +31,7 @@ This task list breaks down the exemption screening feature into discrete, manage
   - Add upgrade function (no data migration needed)
   - Test database creation in browser DevTools
 
-- [ ] 1.3 Create exemption storage operations
+- [x] 1.3 Create exemption storage operations
   - Create `src/lib/storage/exemptions.ts`
   - Implement `saveScreening(userId, responses, result)` function
   - Implement `getLatestScreening(userId)` function
@@ -41,7 +41,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 2. Question Flow Logic
+- [ ] 2. Question Flow Logic
 
 - [ ] 2.1 Define exemption questions
   - Create `src/lib/exemptions/questions.ts`
@@ -75,7 +75,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 3. Screening UI Components
+- [ ] 3. Screening UI Components
 
 - [ ] 3.1 Build ExemptionQuestion component
   - Create `src/components/exemptions/ExemptionQuestion.tsx`
@@ -105,7 +105,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 4. Results Display
+- [ ] 4. Results Display
 
 - [ ] 4.1 Build ExemptionResults component
   - Create `src/components/exemptions/ExemptionResults.tsx`
@@ -126,7 +126,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 5. Screening Page
+- [ ] 5. Screening Page
 
 - [ ] 5.1 Build ExemptionScreeningPage
   - Create `src/app/exemptions/page.tsx`
@@ -146,7 +146,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 6. Dashboard Integration
+- [ ] 6. Dashboard Integration
 
 - [ ] 6.1 Build ExemptionBadge component
   - Create `src/components/exemptions/ExemptionBadge.tsx`
@@ -167,7 +167,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 7. Settings Integration
+- [ ] 7. Settings Integration
 
 - [ ] 7.1 Add exemption screening to settings
   - Modify `src/app/settings/page.tsx`
@@ -193,7 +193,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 8. Re-screening Functionality
+- [ ] 8. Re-screening Functionality
 
 - [ ] 8.1 Build RescreenDialog component
   - Create `src/components/exemptions/RescreenDialog.tsx`
@@ -212,7 +212,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 9. Plain Language Review
+- [ ] 9. Plain Language Review
 
 - [ ] 9.1 Review all question text
   - Ensure all questions use plain language
@@ -234,7 +234,7 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-## 10. Testing and Polish
+- [ ] 10. Testing and Polish
 
 - [ ] 10.1 Test all exemption paths
   - Test age-based exemption (≤18)
