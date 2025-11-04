@@ -140,9 +140,18 @@ export default function OnboardingPage() {
             Welcome to HourKeep
           </Typography>
 
+          <Typography
+            variant="h6"
+            color="primary"
+            sx={{ mb: 2, fontWeight: 500 }}
+          >
+            Keep Your Hours, Keep Your Coverage
+          </Typography>
+
           <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
             Keep track of your work, volunteer, and school hours in one simple
-            place
+            place. When it's time, share them with your agency to keep your
+            coverage and benefits.
           </Typography>
 
           {error && (
