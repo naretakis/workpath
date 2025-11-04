@@ -41,9 +41,9 @@ This task list breaks down the exemption screening feature into discrete, manage
 
 ---
 
-- [ ] 2. Question Flow Logic
+- [x] 2. Question Flow Logic
 
-- [ ] 2.1 Define exemption questions
+- [x] 2.1 Define exemption questions
   - Create `src/lib/exemptions/questions.ts`
   - Define age-based questions
   - Define family/caregiving questions
@@ -54,7 +54,7 @@ This task list breaks down the exemption screening feature into discrete, manage
   - Add help text where needed
   - Export question definitions
 
-- [ ] 2.2 Implement exemption calculator
+- [x] 2.2 Implement exemption calculator
   - Create `src/lib/exemptions/calculator.ts`
   - Implement `calculateExemption(responses)` function
   - Add logic for age-based exemptions
@@ -65,7 +65,7 @@ This task list breaks down the exemption screening feature into discrete, manage
   - Return `ExemptionResult` with category and explanation
   - Add plain-language explanations for each result
 
-- [ ] 2.3 Implement question flow logic
+- [x] 2.3 Implement question flow logic
   - Create `src/lib/exemptions/questionFlow.ts`
   - Implement `getNextQuestion(responses)` function
   - Add conditional logic (skip questions if already exempt)
