@@ -1,12 +1,12 @@
-# WorkPath - Branding Guide
+# HourKeep - Branding Guide
 
 ## Name and Tagline
 
-**App Name:** WorkPath
+**App Name:** HourKeep
 
-**Tagline:** Your Hours, Your Way
+**Tagline:** Keep Your Hours, Keep Your Coverage
 
-**Description:** Keep track of your work, volunteer, and school hours in one simple place
+**Description:** Keep track of your work, volunteer, and school hours in one simple place. When it's time, share them with your agency to keep your coverage and benefits.
 
 ## Brand Voice
 
@@ -101,8 +101,8 @@
 
 ### Disclaimer
 
-"WorkPath is an independent tool to help you keep track of your hours. It is not affiliated with any government agency. Always check with your state Medicaid office about your specific situation."
+"HourKeep is an independent tool to help you keep track of your hours. It is not affiliated with any government agency. Always check with your state Medicaid office about your specific situation."
 
 ### Privacy Statement
 
-"WorkPath stores all data locally on your device. We do not collect, transmit, or store any personal information on external servers."
+"HourKeep stores all data locally on your device. We do not collect, transmit, or store any personal information on external servers."
