@@ -300,15 +300,18 @@ export default function SettingsPage() {
       {/* About Section */}
       <Paper sx={{ p: 3, mt: 3 }}>
         <Typography variant="h6" gutterBottom>
-          About WorkPath
+          About HourKeep
         </Typography>
         <Divider sx={{ mb: 2 }} />
         <Typography variant="body2" color="text.secondary" paragraph>
-          WorkPath helps you track work, volunteer, and education hours to meet
+          HourKeep helps you track work, volunteer, and education hours to meet
           Medicaid work requirements (80 hours/month).
         </Typography>
+        <Typography variant="body2" color="text.secondary" paragraph>
+          Keep your hours, keep your coverage.
+        </Typography>
         <Typography variant="body2" color="text.secondary">
-          Version 1.0 - All data is stored locally on your device.
+          Version 2.0 - All data is stored locally on your device.
         </Typography>
       </Paper>
     </Container>

@@ -13,9 +13,9 @@ import "./globals.css";
 const clientSideEmotionCache = createEmotionCache();
 
 // Get the base path from the environment
-// In production (GitHub Pages), this will be "/workpath"
+// In production (GitHub Pages), this will be "/hourkeep"
 // In development, this will be ""
-const basePath = process.env.NODE_ENV === "production" ? "/workpath" : "";
+const basePath = process.env.NODE_ENV === "production" ? "/hourkeep" : "";
 
 export default function RootLayout({
   children,
@@ -26,10 +26,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="emotion-insertion-point" content="" />
-        <meta name="application-name" content="WorkPath" />
+        <meta name="application-name" content="HourKeep" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="WorkPath" />
+        <meta name="apple-mobile-web-app-title" content="HourKeep" />
         <meta
           name="description"
           content="Track your work hours to maintain your Medicaid benefits"

@@ -68,7 +68,7 @@ export default function ExportPage() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `workpath-export-${
+      link.download = `hourkeep-export-${
         new Date().toISOString().split("T")[0]
       }.json`;
       document.body.appendChild(link);
@@ -93,7 +93,7 @@ export default function ExportPage() {
       const profile = profiles[0];
 
       // Create readable text format
-      let textContent = "WORKPATH ACTIVITY REPORT\n";
+      let textContent = "HOURKEEP ACTIVITY REPORT\n";
       textContent += "=".repeat(50) + "\n\n";
 
       if (profile) {
@@ -156,7 +156,7 @@ export default function ExportPage() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `workpath-report-${
+      link.download = `hourkeep-report-${
         new Date().toISOString().split("T")[0]
       }.txt`;
       document.body.appendChild(link);
