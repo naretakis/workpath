@@ -101,13 +101,13 @@ export function ProfileForm({
 
   const validateName = (value: string): boolean => {
     if (!value.trim()) {
-      setErrors((prev) => ({ ...prev, name: "Name is required" }));
+      setErrors((prev) => ({ ...prev, name: "Please enter your full name" }));
       return false;
     }
     if (value.length > 100) {
       setErrors((prev) => ({
         ...prev,
-        name: "Name must be less than 100 characters",
+        name: "Name is too long. Please use 100 characters or less",
       }));
       return false;
     }
@@ -136,7 +136,7 @@ export function ProfileForm({
     if (!value) {
       setErrors((prev) => ({
         ...prev,
-        dateOfBirth: "Date of birth is required",
+        dateOfBirth: "Please select your date of birth",
       }));
       setAgeHint(null);
       return false;
@@ -145,10 +145,19 @@ export function ProfileForm({
     const date = new Date(value);
     const age = calculateAge(date);
 
-    if (age < 16 || age > 120) {
+    if (age < 16) {
       setErrors((prev) => ({
         ...prev,
-        dateOfBirth: "Please enter a valid date of birth (age must be 16-120)",
+        dateOfBirth: "You must be at least 16 years old to use this app",
+      }));
+      setAgeHint(null);
+      return false;
+    }
+
+    if (age > 120) {
+      setErrors((prev) => ({
+        ...prev,
+        dateOfBirth: "Please check your date of birth - it seems incorrect",
       }));
       setAgeHint(null);
       return false;
@@ -163,7 +172,7 @@ export function ProfileForm({
     // Show age exemption hint for users 65+
     if (age >= 65) {
       setAgeHint(
-        "You may be exempt from work requirements due to your age. Check the exemption screening after setup.",
+        "Good news! You may be exempt from work requirements due to your age. Check the exemption screening after setup.",
       );
     } else {
       setAgeHint(null);
@@ -176,7 +185,7 @@ export function ProfileForm({
     if (value && value.length > 50) {
       setErrors((prev) => ({
         ...prev,
-        medicaidId: "Medicaid ID must be less than 50 characters",
+        medicaidId: "Medicaid ID is too long. Please check and try again",
       }));
       return false;
     }
@@ -192,7 +201,7 @@ export function ProfileForm({
     if (value && !validatePhoneNumber(value)) {
       setErrors((prev) => ({
         ...prev,
-        phoneNumber: "Please enter a valid US phone number",
+        phoneNumber: "Please enter a valid phone number (e.g., 555-123-4567)",
       }));
       return false;
     }
@@ -208,7 +217,7 @@ export function ProfileForm({
     if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       setErrors((prev) => ({
         ...prev,
-        email: "Please enter a valid email address",
+        email: "Please enter a valid email address (e.g., name@example.com)",
       }));
       return false;
     }
@@ -290,7 +299,10 @@ export function ProfileForm({
       await onSave(profile);
     } catch (error) {
       console.error("Error saving profile:", error);
-      setErrors({ submit: "Failed to save profile. Please try again." });
+      setErrors({
+        submit:
+          "We couldn't save your profile. Please check your information and try again.",
+      });
       setSaving(false);
     }
   };

@@ -142,7 +142,7 @@ export default function SettingsPage() {
         <Button
           startIcon={<ArrowBackIcon />}
           onClick={handleBackToTracking}
-          sx={{ mb: 2 }}
+          sx={{ mb: 2, minHeight: 44 }}
         >
           Back to Tracking
         </Button>
@@ -226,6 +226,7 @@ export default function SettingsPage() {
                 variant="outlined"
                 onClick={() => router.push("/exemptions")}
                 fullWidth
+                sx={{ minHeight: 44 }}
               >
                 View Results
               </Button>
@@ -233,6 +234,7 @@ export default function SettingsPage() {
                 variant="contained"
                 onClick={handleRescreenClick}
                 fullWidth
+                sx={{ minHeight: 44 }}
               >
                 Re-screen
               </Button>
@@ -248,6 +250,7 @@ export default function SettingsPage() {
               variant="contained"
               onClick={() => router.push("/exemptions")}
               fullWidth
+              sx={{ minHeight: 48 }}
             >
               Start Screening
             </Button>
@@ -292,7 +295,12 @@ export default function SettingsPage() {
         <Typography variant="body2" color="text.secondary" paragraph>
           Review how we handle your data and your privacy rights.
         </Typography>
-        <Button variant="outlined" onClick={handlePrivacyPolicyOpen} fullWidth>
+        <Button
+          variant="outlined"
+          onClick={handlePrivacyPolicyOpen}
+          fullWidth
+          sx={{ minHeight: 48 }}
+        >
           View Privacy Policy
         </Button>
       </Paper>

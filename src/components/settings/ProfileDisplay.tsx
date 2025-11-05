@@ -92,7 +92,11 @@ export function ProfileDisplay({ profile, onEdit }: ProfileDisplayProps) {
         }}
       >
         <Typography variant="h6">Your Profile</Typography>
-        <Button startIcon={<EditIcon />} onClick={onEdit} size="small">
+        <Button
+          startIcon={<EditIcon />}
+          onClick={onEdit}
+          sx={{ minHeight: 44, minWidth: 44 }}
+        >
           Edit
         </Button>
       </Box>

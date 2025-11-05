@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Box, Container, Paper } from "@mui/material";
+import { Box, Container, Paper, CircularProgress } from "@mui/material";
 import { UserProfile } from "@/types";
 import { saveProfile } from "@/lib/storage/profile";
 import { PrivacyNotice } from "@/components/onboarding/PrivacyNotice";
@@ -13,6 +13,7 @@ export default function OnboardingPage() {
   const [step, setStep] = useState<"privacy" | "profile">("privacy");
   const [privacyAcknowledgedAt, setPrivacyAcknowledgedAt] =
     useState<Date | null>(null);
+  const [redirecting, setRedirecting] = useState(false);
 
   const handlePrivacyAcknowledge = () => {
     const now = new Date();
@@ -34,10 +35,14 @@ export default function OnboardingPage() {
 
       await saveProfile(fullProfile);
 
+      // Show redirecting state
+      setRedirecting(true);
+
       // Redirect to tracking page
       router.push("/tracking");
     } catch (error) {
       console.error("Error saving profile:", error);
+      setRedirecting(false);
       throw error; // Let ProfileForm handle the error display
     }
   };
@@ -60,15 +65,35 @@ export default function OnboardingPage() {
             width: "100%",
           }}
         >
-          {step === "privacy" && (
-            <PrivacyNotice onAcknowledge={handlePrivacyAcknowledge} />
-          )}
+          {redirecting ? (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                py: 8,
+                gap: 2,
+              }}
+            >
+              <CircularProgress size={48} />
+              <Box sx={{ textAlign: "center", color: "text.secondary" }}>
+                Setting up your profile...
+              </Box>
+            </Box>
+          ) : (
+            <>
+              {step === "privacy" && (
+                <PrivacyNotice onAcknowledge={handlePrivacyAcknowledge} />
+              )}
 
-          {step === "profile" && privacyAcknowledgedAt && (
-            <ProfileForm
-              onSave={handleProfileSave}
-              privacyAcknowledgedAt={privacyAcknowledgedAt}
-            />
+              {step === "profile" && privacyAcknowledgedAt && (
+                <ProfileForm
+                  onSave={handleProfileSave}
+                  privacyAcknowledgedAt={privacyAcknowledgedAt}
+                />
+              )}
+            </>
           )}
         </Paper>
       </Box>

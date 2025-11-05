@@ -23,7 +23,6 @@ import {
   archiveScreening,
 } from "@/lib/storage/exemptions";
 import { ExemptionResponses, ExemptionResult } from "@/types/exemptions";
-import { db } from "@/lib/db";
 
 type ScreenState = "welcome" | "screening" | "results";
 

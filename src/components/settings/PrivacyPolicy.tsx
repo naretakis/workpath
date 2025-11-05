@@ -190,7 +190,12 @@ export function PrivacyPolicy({
       </DialogContent>
 
       <DialogActions sx={{ px: 3, pb: 2 }}>
-        <Button onClick={onClose} variant="contained" fullWidth>
+        <Button
+          onClick={onClose}
+          variant="contained"
+          fullWidth
+          sx={{ minHeight: 48 }}
+        >
           Close
         </Button>
       </DialogActions>
