@@ -3,7 +3,15 @@ export interface UserProfile {
   id: string; // UUID
   name: string; // User's name
   state: string; // State abbreviation (e.g., "CA")
+  dateOfBirth: string; // Encrypted ISO date string (required)
+  medicaidId?: string; // Encrypted, optional
+  phoneNumber?: string; // Optional, formatted
+  email?: string; // Optional
   createdAt: Date; // When profile was created
+  updatedAt: Date; // When profile was last updated
+  privacyNoticeAcknowledged: boolean; // Must be true
+  privacyNoticeAcknowledgedAt: Date; // When acknowledged
+  version: number; // Profile schema version (for migrations)
 }
 
 // Activity

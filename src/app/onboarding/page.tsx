@@ -94,12 +94,18 @@ export default function OnboardingPage() {
     setError(null);
 
     try {
-      // Create profile
+      // Create profile with all required fields
+      const now = new Date();
       const profile: UserProfile = {
         id: crypto.randomUUID(),
         name: name.trim(),
         state,
-        createdAt: new Date(),
+        dateOfBirth: "", // Will be collected in enhanced onboarding
+        createdAt: now,
+        updatedAt: now,
+        privacyNoticeAcknowledged: false, // Will be updated in enhanced onboarding
+        privacyNoticeAcknowledgedAt: now,
+        version: 1, // Initial version
       };
 
       // Save to IndexedDB
