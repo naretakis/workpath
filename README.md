@@ -12,6 +12,7 @@ Start using HourKeep today: https://naretakis.github.io/hourkeep
 
 HourKeep is a simple, privacy-focused app that helps you:
 
+- **Check exemptions** - Find out if you're exempt from work requirements (you might not need to track at all!)
 - **Track hours** - Log work, volunteer, and education activities daily
 - **Capture documents** - Photograph or upload pay stubs, volunteer letters, and other verification documents
 - **Monitor compliance** - See your monthly total and compliance status (80-hour requirement)
@@ -21,6 +22,10 @@ HourKeep is a simple, privacy-focused app that helps you:
 
 ## Key Features
 
+- ✅ **Exemption screening** - Find out if you're exempt from work requirements
+- ✅ **Plain language questionnaire** - Simple questions covering all 5 exemption categories
+- ✅ **Smart question flow** - Dynamic questions that adapt to your answers
+- ✅ **Exemption history** - Track your status over time
 - ✅ Simple daily activity logging
 - ✅ Visual calendar with activity indicators
 - ✅ Automatic monthly compliance calculations
@@ -88,13 +93,18 @@ hourkeep/
 │   ├── app/              # Next.js app routes
 │   │   ├── onboarding/   # Initial profile setup
 │   │   ├── tracking/     # Main activity tracking page
+│   │   ├── exemptions/   # Exemption screening
 │   │   └── settings/     # Settings and export
 │   ├── components/       # React components
+│   │   ├── exemptions/   # Exemption screening components
+│   │   ├── documents/    # Document management components
 │   │   ├── Calendar.tsx
 │   │   ├── ActivityForm.tsx
 │   │   ├── Dashboard.tsx
 │   │   └── ...
 │   ├── lib/              # Utilities and database
+│   │   ├── exemptions/   # Exemption logic and definitions
+│   │   ├── storage/      # Database operations
 │   │   ├── db.ts         # Dexie database setup
 │   │   └── calculations.ts
 │   ├── types/            # TypeScript type definitions
@@ -111,7 +121,17 @@ hourkeep/
 
 1. Open the app
 2. Enter your name and state
-3. Start tracking your hours!
+3. Check if you're exempt (optional but recommended)
+4. Start tracking your hours (if not exempt)!
+
+### Checking Exemptions
+
+1. Go to the dashboard or settings
+2. Click "Check Exemptions" or "Start Screening"
+3. Answer simple questions about your situation
+4. Get immediate results - exempt or need to track
+5. See which exemption applies to you
+6. Rescreen anytime your circumstances change
 
 ### Logging Activities
 
@@ -181,8 +201,8 @@ Built as an MVP learning project to understand:
 
 HourKeep is actively evolving. See our [ROADMAP.md](ROADMAP.md) to learn about:
 
-- ✅ Recently shipped (v2.0: Document management)
-- 🚧 Features in development (exemption screening, enhanced onboarding)
+- ✅ Recently shipped (v3.0: Exemption screening)
+- 🚧 Features in development (enhanced onboarding)
 - 💭 Future considerations (income tracking, hardship reporting, compliance alerts)
 - ❌ What we're explicitly not building (and why)
 

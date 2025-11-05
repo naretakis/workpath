@@ -5,6 +5,85 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - 2025-11-05
+
+### Added - Exemption Screening System 🎯
+
+A comprehensive exemption screening system that helps users determine if they're exempt from Medicaid work requirements before they start tracking hours. This major feature implements all five exemption categories from HR1 legislation with plain language explanations and an intuitive question flow.
+
+#### Exemption Questionnaire
+
+- **Smart question flow** - Dynamic questionnaire that adapts based on your answers
+- **5 exemption categories** - Age, family/caregiving, health/disability, program participation, and other
+- **Plain language** - Clear, simple questions without legal jargon
+- **Immediate results** - Know right away if you're exempt or need to track hours
+- **Detailed explanations** - Understand which exemption applies and why
+- **Definition tooltips** - Tap any underlined term to see what it means
+
+#### Exemption Categories Covered
+
+- **Age-based** - 18 or younger, 65 or older
+- **Family/Caregiving** - Pregnant, postpartum, caring for children under 13, caring for disabled dependents
+- **Health/Disability** - Medicare enrollment, medically frail, disabled veteran, substance use disorder, mental health conditions, physical/intellectual/developmental disabilities
+- **Program Participation** - SNAP/TANF work requirements, drug/alcohol rehabilitation
+- **Other** - Recent incarceration, tribal status (Indian, Urban Indian, California Indian, IHS-eligible)
+
+#### Dashboard Integration
+
+- **Exemption badge** - Prominent display of your current exemption status
+- **Quick access** - Start screening from dashboard or settings
+- **Status indicators** - Clear visual distinction between exempt and non-exempt
+- **Rescreen option** - Update your status when circumstances change
+
+#### Exemption Management
+
+- **Screening history** - View all past screenings with dates and results
+- **Rescreen workflow** - Confirmation dialog before starting a new screening
+- **Status tracking** - Database stores complete screening history
+- **Exemption details** - See which specific exemption applies to you
+
+#### Plain Language Definitions
+
+- **Comprehensive glossary** - 30+ terms defined in simple language
+- **Contextual help** - Definitions appear right where you need them
+- **Expandable accordion** - Full definitions list available on exemption page
+- **Accessible design** - Tooltips work on touch and desktop
+
+#### Technical Implementation
+
+- **Question flow engine** - Sophisticated logic for dynamic questionnaires
+- **Exemption calculator** - Determines exemption status based on answers
+- **Type-safe** - Full TypeScript coverage for exemption types
+- **Offline-first** - All screening works without internet
+- **IndexedDB storage** - Exemption history persisted locally
+
+### Changed
+
+- **Dashboard** - Added exemption status badge and screening call-to-action
+- **Settings page** - Added exemption screening section with history view
+- **Tracking page** - Shows exemption status for context
+- **Database schema** - Added exemptions table for screening history
+- **Navigation** - New exemptions route at `/exemptions`
+
+### Technical Details
+
+- Added comprehensive exemption type definitions in `src/types/exemptions.ts`
+- Implemented question flow engine in `src/lib/exemptions/questionFlow.ts`
+- Created exemption calculator in `src/lib/exemptions/calculator.ts`
+- Built 30+ plain language definitions in `src/lib/exemptions/definitions.ts`
+- Added 9 new React components in `src/components/exemptions/`
+- Implemented exemption storage layer in `src/lib/storage/exemptions.ts`
+- Created dedicated exemption page at `src/app/exemptions/page.tsx`
+
+### Developer Experience
+
+- Comprehensive documentation in `src/lib/exemptions/DEFINITIONS_README.md`
+- Plain language review summary in `PLAIN_LANGUAGE_REVIEW_SUMMARY.md`
+- Legislative review findings in `.kiro/specs/workpath-exemption-screening/legislative-review-findings.md`
+- Updated task tracking in `.kiro/specs/workpath-exemption-screening/tasks.md`
+
+---
+
 ## [2.0.0] - 2025-11-03
 
 ### Added - Document Management System 📸
@@ -147,5 +226,38 @@ The first release of HourKeep, providing essential activity tracking and complia
 
 ---
 
+## Release Notes
+
+### v3.0.0 - Exemption Screening
+
+This is a major release that adds comprehensive exemption screening to HourKeep. Many Medicaid beneficiaries don't realize they're exempt from work requirements. This feature helps users quickly determine if they need to track hours at all, saving time and reducing stress.
+
+**Key highlights:**
+
+- 🎯 Complete exemption questionnaire covering all 5 HR1 categories
+- 💬 Plain language questions and definitions (no legal jargon)
+- 🔄 Smart question flow that adapts to your answers
+- 📊 Dashboard integration with prominent status display
+- 📜 Screening history to track status changes over time
+- 📱 Fully mobile-optimized and offline-capable
+
+This release represents the completion of the exemption screening spec, including question flow logic, exemption calculator, plain language definitions, UI components, dashboard integration, and comprehensive testing.
+
+**Who benefits:**
+
+- People who are exempt but don't know it
+- People whose circumstances change (pregnancy, new child, health issues)
+- Anyone who wants to understand their exemption status clearly
+
+**Upgrade notes:**
+
+- Database automatically adds exemptions table
+- No data migration required
+- Existing activities and documents continue to work normally
+- New exemption features available immediately
+
+---
+
+[3.0.0]: https://github.com/naretakis/hourkeep/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/naretakis/hourkeep/compare/v0.1.0...v2.0.0
 [0.1.0]: https://github.com/naretakis/hourkeep/releases/tag/v0.1.0

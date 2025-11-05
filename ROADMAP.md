@@ -6,11 +6,11 @@ This roadmap outlines where HourKeep is today, what we're building next, and our
 
 ---
 
-## Now (v2.0) - ✅ Shipped
+## Now (v3.0) - ✅ Shipped
 
 **Current Release - Available Today**
 
-HourKeep helps you track work, volunteer, and education hours to meet Medicaid work requirements, and now includes comprehensive document management.
+HourKeep helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management.
 
 ### Core Features (v1.0)
 
@@ -24,7 +24,7 @@ HourKeep helps you track work, volunteer, and education hours to meet Medicaid w
 - ✅ **PWA Support** - Install as a native app on your phone
 - ✅ **Privacy First** - All data stays on your device, nothing sent to servers
 
-### Document Management (v2.0) - NEW! 📸
+### Document Management (v2.0) 📸
 
 - ✅ **Camera Capture** - Take photos of documents directly from your phone
 - ✅ **File Upload** - Upload existing photos from your device
@@ -35,55 +35,38 @@ HourKeep helps you track work, volunteer, and education hours to meet Medicaid w
 - ✅ **Storage Monitoring** - Track usage and get low-storage warnings
 - ✅ **Document Management** - Easy deletion with confirmation
 
-### What's Still Missing
+### Exemption Screening (v3.0) - NEW! 🎯
 
-- ❌ Exemption screening
-- ❌ Extended profile information
-- ❌ Income tracking
-- ❌ Hardship reporting
-
----
-
-## Next (v3.0) - 🚧 In Development
-
-**Two Major Features Coming Soon**
-
-We're building two independent features that you can use as they're completed. Each adds significant value to HourKeep.
-
-### 1. Exemption Screening (Priority 1) ✓
-
-**Status:** Spec complete, ready to build  
-**Estimated:** 2.5-3.5 weeks  
-**Spec:** `.kiro/specs/hourkeep-exemption-screening/`
-
-Find out if you're exempt from work requirements before you start tracking.
-
-**What You'll Be Able To Do:**
-
-- Complete a simple questionnaire (5 categories, plain language)
-- Get immediate results: exempt or must track hours
-- Understand which exemption applies to you
-- See your exemption status on the dashboard
-- Re-screen when your circumstances change
-- View your screening history
+- ✅ **Complete Questionnaire** - Simple questions covering all 5 exemption categories
+- ✅ **Smart Question Flow** - Dynamic questions that adapt to your answers
+- ✅ **Immediate Results** - Know right away if you're exempt or need to track
+- ✅ **Plain Language** - No legal jargon, clear explanations
+- ✅ **Definition Tooltips** - Tap any term to see what it means
+- ✅ **Dashboard Integration** - Prominent exemption status display
+- ✅ **Screening History** - Track your status over time
+- ✅ **Rescreen Workflow** - Update status when circumstances change
 
 **Exemption Categories:**
-
 - Age-based (18 or younger, 65 or older)
 - Family/caregiving (pregnant, young children, disabled dependent)
 - Health/disability (Medicare, medically frail, disabled veteran)
 - Program participation (SNAP/TANF, rehabilitation)
 - Other (incarcerated, tribal status)
 
-**Why This Matters:**
+### What's Still Missing
 
-- Many people don't realize they're exempt
-- Saves time if you don't need to track hours
-- Helps you understand your situation clearly
+- ❌ Extended profile information (date of birth, Medicaid ID, contact info)
+- ❌ Income tracking
+- ❌ Hardship reporting
+- ❌ Compliance alerts
 
 ---
 
-### 2. Enhanced Onboarding (Priority 2) 🔐
+## Next (v4.0) - 🚧 In Development
+
+**Enhanced Onboarding Coming Soon**
+
+### Enhanced Onboarding 🔐
 
 **Status:** Spec complete, ready to build  
 **Estimated:** 3-4 weeks  
@@ -109,7 +92,7 @@ Better first impression with privacy notice and extended profile.
 
 ---
 
-## Later (v4.0+) - 💭 Future Considerations
+## Later (v5.0+) - 💭 Future Considerations
 
 **Ideas We're Exploring**
 
@@ -412,8 +395,9 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 
 - **v1.0** (Shipped Oct 2025) - Basic activity tracking MVP
 - **v2.0** (Shipped Nov 2025) - Document management
-- **v3.0** (Q1 2026) - Exemption screening, enhanced onboarding
-- **v4.0** (TBD) - Features from "Later" section based on user feedback
+- **v3.0** (Shipped Nov 2025) - Exemption screening
+- **v4.0** (Q1 2026) - Enhanced onboarding
+- **v5.0** (TBD) - Features from "Later" section based on user feedback
 
 **Release Strategy:**
 
@@ -463,5 +447,5 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 ---
 
 **Last Updated:** November 2025
-**Current Version:** v2.0 (Document Management)  
-**Next Release:** v3.0 (Exemption Screening, Enhanced Onboarding)
+**Current Version:** v3.0 (Exemption Screening)  
+**Next Release:** v4.0 (Enhanced Onboarding)

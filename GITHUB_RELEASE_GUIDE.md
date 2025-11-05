@@ -1,196 +1,231 @@
-# How to Create a GitHub Release
+# GitHub Release Guide - v3.0.0
 
-This guide will walk you through creating your first GitHub Release for HourKeep v2.0.0.
+**Quick reference for creating the GitHub release after you approve the changes.**
 
 ---
 
-## Step-by-Step Instructions
+## Step-by-Step Process
 
-### 1. Navigate to Your Repository
+### Step 1: Review Changes
+✅ Review all modified files (see `REVIEW_v3.0.0_CHANGES.md`)
 
-Go to: https://github.com/naretakis/hourkeep
-
-### 2. Click on "Releases"
-
-- Look in the right sidebar
-- You'll see a section called "Releases"
-- Click on "Releases" or "Create a new release"
-
-### 3. Click "Draft a new release"
-
-- This button is usually in the top right
-- Or click "Create a new release" if this is your first one
-
-### 4. Fill in the Release Form
-
-#### Tag Version
-
-- **Tag:** `v2.0.0`
-- **Target:** `main` (should be selected by default)
-- The tag already exists, so GitHub will recognize it
-
-#### Release Title
-
-```
-v2.0.0 - Document Management 📸
+### Step 2: Commit Changes
+```bash
+git add .
+git commit -m "Release v3.0.0 - Exemption Screening"
 ```
 
-#### Release Description
+### Step 3: Create Git Tag
+```bash
+git tag -a v3.0.0 -m "Release v3.0.0 - Exemption Screening
 
-Copy and paste the contents from `RELEASE_NOTES_v2.0.0.md` into the description box.
+Major new feature: Comprehensive exemption screening system covering all 5 HR1 exemption categories with plain language questionnaire, smart question flow, and dashboard integration.
 
-The file contains:
-
-- What's new section
-- Why it matters
-- Technical highlights
-- Installation instructions
-- And more!
-
-### 5. Optional: Add Assets
-
-You can attach files to the release (though not necessary for a web app):
-
-- Build artifacts
-- Documentation PDFs
-- Screenshots
-
-GitHub automatically includes:
-
-- Source code (zip)
-- Source code (tar.gz)
-
-### 6. Set Release Options
-
-#### Checkboxes:
-
-- ✅ **Set as the latest release** - Check this!
-- ⬜ **Set as a pre-release** - Leave unchecked (this is a stable release)
-- ⬜ **Create a discussion for this release** - Optional, but recommended!
-
-### 7. Preview (Optional)
-
-Click the "Preview" tab to see how your release will look.
-
-### 8. Publish Release
-
-Click the green **"Publish release"** button at the bottom.
-
----
-
-## What Happens After Publishing?
-
-1. **Release Page Created** - Your release will appear at:
-   `https://github.com/naretakis/hourkeep/releases/tag/v2.0.0`
-
-2. **Latest Release Badge** - The release will be marked as "Latest"
-
-3. **Notifications** - Anyone watching your repository will be notified
-
-4. **Changelog Link** - GitHub will show the comparison link between versions
-
----
-
-## Tips for Future Releases
-
-### Good Release Titles
-
-- ✅ `v2.0.0 - Document Management 📸`
-- ✅ `v3.0.0 - Exemption Screening ✓`
-- ❌ `Release 2.0.0`
-- ❌ `New version`
-
-### Good Release Descriptions
-
-- Start with a summary of what's new
-- Use emojis to make it scannable
-- Include "Why this matters" section
-- List technical highlights
-- Provide installation instructions
-- Link to documentation
-- Include "What's next" section
-
-### Release Checklist
-
-Before publishing, make sure:
-
-- [ ] Tag is pushed to GitHub
-- [ ] CHANGELOG.md is updated
-- [ ] README.md reflects new features
-- [ ] Version in package.json is updated
-- [ ] All tests pass
-- [ ] Documentation is current
-
----
-
-## Editing a Release
-
-If you need to edit after publishing:
-
-1. Go to the release page
-2. Click "Edit release" button
-3. Make your changes
-4. Click "Update release"
-
----
-
-## Deleting a Release
-
-If you need to delete (rare):
-
-1. Go to the release page
-2. Click "Delete" button
-3. Confirm deletion
-4. Note: This doesn't delete the git tag
-
----
-
-## Example Release URLs
-
-After publishing, your release will be at:
-
-- **Release page:** `https://github.com/naretakis/hourkeep/releases/tag/v2.0.0`
-- **All releases:** `https://github.com/naretakis/hourkeep/releases`
-- **Latest release:** `https://github.com/naretakis/hourkeep/releases/latest`
-
----
-
-## Screenshots
-
-### Where to Find Releases
-
-```
-GitHub Repo → Right Sidebar → Releases
+See RELEASE_NOTES_v3.0.0.md for full details."
 ```
 
-### Release Form
+### Step 4: Push Everything
+```bash
+# Push the commit
+git push origin main
 
+# Push the tag
+git push origin v3.0.0
 ```
-Tag: v2.0.0
-Target: main
-Title: v2.0.0 - Document Management 📸
-Description: [Paste from RELEASE_NOTES_v2.0.0.md]
-☑ Set as the latest release
-☐ Set as a pre-release
+
+### Step 5: Create GitHub Release
+
+1. **Go to releases page:**
+   - Navigate to: https://github.com/naretakis/hourkeep/releases/new
+   - Or click "Releases" → "Draft a new release"
+
+2. **Fill in the form:**
+   - **Choose a tag:** Select `v3.0.0` from dropdown (or type it if not listed)
+   - **Target:** `main` branch
+   - **Release title:** `v3.0.0 - Exemption Screening`
+   - **Description:** Copy the content below
+
+3. **Click "Publish release"**
+
+---
+
+## GitHub Release Description
+
+Copy this into the GitHub release description field:
+
+```markdown
+# HourKeep v3.0.0 - Exemption Screening
+
+**Release Date:** November 5, 2025
+
+## 🎯 What's New
+
+Version 3.0.0 introduces comprehensive exemption screening to HourKeep. Find out if you're exempt from Medicaid work requirements before you start tracking hours!
+
+### Exemption Screening System
+
+A complete questionnaire covering all five exemption categories from HR1 legislation:
+
+- **Age-based** - 18 or younger, 65 or older
+- **Family/caregiving** - Pregnant, postpartum, caring for children under 13, caring for disabled dependents
+- **Health/disability** - Medicare, medically frail, disabled veteran, substance use disorder, mental health conditions, disabilities
+- **Program participation** - SNAP/TANF work requirements, drug/alcohol rehabilitation
+- **Other** - Recent incarceration, tribal status
+
+### Key Features
+
+✅ **Smart question flow** - Questions adapt based on your answers  
+✅ **Plain language** - No legal jargon, simple explanations  
+✅ **Definition tooltips** - Tap any underlined term to see what it means  
+✅ **Immediate results** - Know right away if you're exempt  
+✅ **Dashboard integration** - See your exemption status prominently  
+✅ **Screening history** - Track your status over time  
+✅ **Rescreen workflow** - Update when circumstances change  
+
+### Why This Matters
+
+- **Save time** - Find out if you don't need to track hours at all
+- **Reduce stress** - Understand your exemption status clearly
+- **Stay informed** - Know which exemption applies and why
+- **Track changes** - Rescreen when life circumstances change
+
+## 📦 What's Included
+
+- 9 new React components for exemption screening
+- 6 new library modules for exemption logic
+- 30+ plain language definitions
+- Complete screening history tracking
+- Dashboard and settings integration
+- Comprehensive documentation
+
+## 🚀 Upgrade Instructions
+
+### For Users
+
+1. Refresh the app (or it will auto-update)
+2. Look for "Check Exemptions" on the dashboard
+3. Complete the questionnaire if desired
+4. Continue using HourKeep as normal
+
+**No action required** - all existing data remains intact.
+
+### For Developers
+
+```bash
+git pull origin main
+npm install
+npm run dev
+```
+
+## 💥 Breaking Changes
+
+**None.** This is a purely additive release.
+
+## 📚 Documentation
+
+- [Full Release Notes](RELEASE_NOTES_v3.0.0.md)
+- [Changelog](CHANGELOG.md)
+- [Roadmap](ROADMAP.md)
+- [README](README.md)
+
+## 🔗 Links
+
+- **Live App:** https://naretakis.github.io/hourkeep
+- **Source Code:** https://github.com/naretakis/hourkeep
+- **Issues:** https://github.com/naretakis/hourkeep/issues
+
+## 🎉 What's Next
+
+See our [Roadmap](ROADMAP.md) for upcoming features:
+- **v4.0** - Enhanced onboarding with privacy notice and extended profile
+- **v5.0+** - Income tracking, hardship reporting, compliance alerts
+
+---
+
+**Thank you for using HourKeep!**
+
+*Keep Your Hours, Keep Your Coverage* 💙
 ```
 
 ---
 
-## Need Help?
+## Verification Steps
 
-- **GitHub Docs:** https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
-- **Example Release:** Look at other popular repos for inspiration
+After creating the release:
+
+1. **Check the release page:**
+   - Visit: https://github.com/naretakis/hourkeep/releases
+   - Verify v3.0.0 appears at the top
+   - Verify description is formatted correctly
+
+2. **Check the tags page:**
+   - Visit: https://github.com/naretakis/hourkeep/tags
+   - Verify v3.0.0 tag exists
+
+3. **Check the main branch:**
+   - Verify commit appears in history
+   - Verify package.json shows 3.0.0
+
+4. **Test the live app:**
+   - Visit: https://naretakis.github.io/hourkeep
+   - Wait for deployment (may take a few minutes)
+   - Verify exemption screening features work
 
 ---
 
-## Quick Reference
+## Troubleshooting
 
-**Your release details:**
+### Tag already exists
+```bash
+# Delete local tag
+git tag -d v3.0.0
 
-- **Tag:** `v2.0.0` (already created and pushed)
-- **Title:** `v2.0.0 - Document Management 📸`
-- **Description:** Copy from `RELEASE_NOTES_v2.0.0.md`
-- **Target:** `main` branch
-- **Type:** Latest release (not pre-release)
+# Delete remote tag
+git push origin :refs/tags/v3.0.0
 
-**Ready to publish!** 🚀
+# Recreate tag
+git tag -a v3.0.0 -m "..."
+git push origin v3.0.0
+```
+
+### Need to update release
+- Go to the release page
+- Click "Edit release"
+- Make changes
+- Click "Update release"
+
+### Deployment not working
+- Check GitHub Actions tab
+- Verify workflow ran successfully
+- Check for any error messages
+
+---
+
+## Quick Commands Reference
+
+```bash
+# Review changes
+git status
+git diff
+
+# Commit
+git add .
+git commit -m "Release v3.0.0 - Exemption Screening"
+
+# Tag
+git tag -a v3.0.0 -m "Release v3.0.0 - Exemption Screening"
+
+# Push
+git push origin main
+git push origin v3.0.0
+
+# View tags
+git tag -l
+
+# View tag details
+git show v3.0.0
+```
+
+---
+
+**Ready to proceed?** Follow the steps above after reviewing the changes!
