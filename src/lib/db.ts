@@ -48,6 +48,34 @@ class HourKeepDB extends Dexie {
         // No data migration needed for new tables
         console.log("Added exemption tables to database");
       });
+
+    // Version 4: Update profile schema with new fields
+    this.version(4)
+      .stores({
+        profiles: "id",
+        activities: "++id, date, type",
+        documents: "++id, activityId, type, createdAt",
+        documentBlobs: "++id",
+        exemptions: "++id, userId, screeningDate",
+        exemptionHistory: "++id, userId, screeningDate",
+      })
+      .upgrade(async (tx) => {
+        // Migrate existing profiles
+        const profiles = await tx.table("profiles").toArray();
+
+        for (const profile of profiles) {
+          // Add new fields with defaults
+          await tx.table("profiles").update(profile.id, {
+            dateOfBirth: "", // Empty, will prompt user to complete
+            privacyNoticeAcknowledged: false,
+            privacyNoticeAcknowledgedAt: new Date(),
+            version: 2,
+            updatedAt: new Date(),
+          });
+        }
+
+        console.log("Migrated profiles to version 2 schema");
+      });
   }
 }
 

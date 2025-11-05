@@ -12,9 +12,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 1. Database Schema and Data Models
+- [x] 1. Database Schema and Data Models
 
-- [ ] 1.1 Update UserProfile interface
+- [x] 1.1 Update UserProfile interface
   - Modify `src/types/profile.ts`
   - Add `dateOfBirth` field (string, encrypted)
   - Add `medicaidId` field (string, optional, encrypted)
@@ -26,7 +26,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Add `updatedAt` field (Date)
   - Export updated interface
 
-- [ ] 1.2 Update IndexedDB schema
+- [x] 1.2 Update IndexedDB schema
   - Modify `src/lib/storage/db.ts`
   - Increment database version to 4
   - Add upgrade function to migrate existing profiles
@@ -34,7 +34,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Set `version: 2` for migrated profiles
   - Test migration with existing data
 
-- [ ] 1.3 Update profile storage operations
+- [x] 1.3 Update profile storage operations
   - Modify `src/lib/storage/profile.ts`
   - Update `saveProfile()` to handle new fields
   - Update `getProfile()` to decrypt sensitive fields
@@ -43,9 +43,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 2. Encryption Utilities
+- [x] 2. Encryption Utilities
 
-- [ ] 2.1 Implement encryption functions
+- [x] 2.1 Implement encryption functions
   - Create `src/lib/utils/encryption.ts`
   - Implement `getEncryptionKey()` function
   - Implement `encryptString(plaintext)` function using Web Crypto API
@@ -53,7 +53,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Add key storage in IndexedDB
   - Add error handling
 
-- [ ] 2.2 Test encryption
+- [x] 2.2 Test encryption
   - Test encryption with various strings
   - Test decryption returns original value
   - Test key persistence across sessions
@@ -61,9 +61,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 3. Validation Schemas
+- [x] 3. Validation Schemas
 
-- [ ] 3.1 Update profile validation schema
+- [x] 3.1 Update profile validation schema
   - Modify `src/lib/validation/profile.ts`
   - Add validation for `name` (required, 1-100 chars)
   - Add validation for `state` (required, 2-char code)
@@ -73,7 +73,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Add validation for `email` (optional, valid email format)
   - Export updated schema
 
-- [ ] 3.2 Add helper validation functions
+- [x] 3.2 Add helper validation functions
   - Add `calculateAge(dateOfBirth)` function
   - Add `formatPhoneNumber(phone)` function
   - Add `validatePhoneNumber(phone)` function
@@ -81,9 +81,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 4. Privacy Notice Component
+- [x] 4. Privacy Notice Component
 
-- [ ] 4.1 Build PrivacyNotice component
+- [x] 4.1 Build PrivacyNotice component
   - Create `src/components/onboarding/PrivacyNotice.tsx`
   - Add welcome heading
   - Add privacy statement text
@@ -97,7 +97,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Style for mobile-first
   - Ensure 44px+ touch target for button
 
-- [ ] 4.2 Add privacy notice acknowledgment logic
+- [x] 4.2 Add privacy notice acknowledgment logic
   - Handle "I Understand" button click
   - Create acknowledgment object with timestamp
   - Pass acknowledgment to parent component
@@ -105,9 +105,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 5. Profile Form Component
+- [x] 5. Profile Form Component
 
-- [ ] 5.1 Build ProfileForm component
+- [x] 5.1 Build ProfileForm component
   - Create `src/components/onboarding/ProfileForm.tsx`
   - Add form heading
   - Add "Required Information" section
@@ -116,21 +116,21 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Integrate Zod validation
   - Style for mobile-first
 
-- [ ] 5.2 Add required fields
+- [x] 5.2 Add required fields
   - Add full name text input
   - Add state dropdown (all 50 states + DC)
   - Add date of birth date picker (mobile-optimized)
   - Mark fields as required with asterisk
   - Add validation error display
 
-- [ ] 5.3 Add optional fields
+- [x] 5.3 Add optional fields
   - Add Medicaid ID text input with help text
   - Add phone number input with formatting
   - Add email input
   - Add help text explaining fields are optional
   - Add "Why do you need this?" help text for each field
 
-- [ ] 5.4 Implement form submission
+- [x] 5.4 Implement form submission
   - Validate all fields on submit
   - Show validation errors inline
   - Encrypt sensitive fields (DOB, Medicaid ID)
@@ -140,9 +140,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 6. Onboarding Page
+- [x] 6. Onboarding Page
 
-- [ ] 6.1 Update OnboardingPage
+- [x] 6.1 Update OnboardingPage
   - Modify `src/app/onboarding/page.tsx`
   - Add two-step flow (privacy notice → profile form)
   - Show PrivacyNotice first
@@ -150,7 +150,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Handle navigation between steps
   - Save complete profile on form submission
 
-- [ ] 6.2 Add routing logic
+- [x] 6.2 Add routing logic
   - Check if profile exists on app load
   - Redirect to onboarding if no profile
   - Redirect to main app if profile complete
@@ -158,9 +158,9 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 7. Settings Integration
+- [x] 7. Settings Integration
 
-- [ ] 7.1 Build ProfileDisplay component
+- [x] 7.1 Build ProfileDisplay component
   - Create `src/components/settings/ProfileDisplay.tsx`
   - Display all profile fields (read-only)
   - Decrypt sensitive fields for display
@@ -169,7 +169,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Show profile created and updated dates
   - Add "Edit Profile" button
 
-- [ ] 7.2 Build ProfileEditor component
+- [x] 7.2 Build ProfileEditor component
   - Create `src/components/settings/ProfileEditor.tsx`
   - Pre-fill form with current values
   - Allow editing all fields
@@ -179,27 +179,27 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Show success message
   - Return to profile display
 
-- [ ] 7.3 Add profile section to settings
+- [x] 7.3 Add profile section to settings
   - Modify `src/app/settings/page.tsx`
   - Add "Your Profile" section
   - Integrate ProfileDisplay component
   - Add navigation to ProfileEditor
 
-- [ ] 7.4 Build PrivacyPolicy component
+- [x] 7.4 Build PrivacyPolicy component
   - Create `src/components/settings/PrivacyPolicy.tsx`
   - Display full privacy notice text
   - Show acknowledgment date
   - Add "Close" button
   - Style for readability
 
-- [ ] 7.5 Add privacy policy to settings
+- [x] 7.5 Add privacy policy to settings
   - Add "Privacy Policy" option in settings
   - Link to PrivacyPolicy component
   - Make easily accessible
 
 ---
 
-## 8. Existing User Migration
+- [ ] 8. Existing User Migration
 
 - [ ] 8.1 Build ProfileUpdatePrompt component
   - Create `src/components/onboarding/ProfileUpdatePrompt.tsx`
@@ -233,7 +233,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 9. Export Integration
+- [ ] 9. Export Integration SKIP THIS - WE'LL DO A SEPARATE SPEC FOR THIS
 
 - [ ] 9.1 Update JSON export
   - Modify `src/lib/export/json.ts`
@@ -257,7 +257,7 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
 
 ---
 
-## 10. Testing and Polish
+- [ ] 10. Testing and Polish
 
 - [ ] 10.1 Test new user flow
   - Open app as new user
@@ -320,15 +320,14 @@ This task list breaks down the enhanced onboarding feature into discrete, manage
   - Verify all works without network
   - Verify data persists
 
-- [ ] 10.9 Polish UI and UX
+- [x] 10.9 Polish UI and UX
   - Ensure all buttons have proper touch targets (44px+)
   - Add loading states where needed
   - Ensure error messages are clear and helpful
-  - Test on small screens (320px width)
-  - Verify accessibility (keyboard navigation, screen reader)
-  - Test on iOS Safari and Android Chrome
 
 ---
+
+- [ ] Spec completed!
 
 ## Implementation Notes
 

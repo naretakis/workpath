@@ -68,7 +68,7 @@ This feature enhances the initial onboarding experience by collecting additional
 
 ---
 
-### Requirement 4: Collect Medicaid ID (Optional)
+### Requirement 4: Collect Medicaid ID
 
 **User Story:** As a user, I want to optionally enter my Medicaid ID, so I can include it in my exports if needed.
 
@@ -82,7 +82,7 @@ This feature enhances the initial onboarding experience by collecting additional
 
 ---
 
-### Requirement 5: Collect Contact Information (Optional)
+### Requirement 5: Collect Contact Information
 
 **User Story:** As a user, I want to optionally enter my contact information, so I can include it in my exports for agency submission.
 
