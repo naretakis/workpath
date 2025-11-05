@@ -9,22 +9,37 @@ import { ExemptionResponses, ExemptionResult } from "@/types/exemptions";
 
 interface QuestionFlowProps {
   onComplete: (responses: ExemptionResponses, result: ExemptionResult) => void;
+  initialDateOfBirth?: Date | null;
 }
 
-export function QuestionFlow({ onComplete }: QuestionFlowProps) {
-  const [responses, setResponses] = useState<ExemptionResponses>({});
+export function QuestionFlow({
+  onComplete,
+  initialDateOfBirth,
+}: QuestionFlowProps) {
+  const [responses, setResponses] = useState<ExemptionResponses>(() => {
+    // Initialize with DOB from profile if available
+    if (initialDateOfBirth) {
+      return {
+        dateOfBirth: initialDateOfBirth,
+        age: calculateAge(initialDateOfBirth),
+      };
+    }
+    return {};
+  });
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [questionHistory, setQuestionHistory] = useState<Question[]>([]);
   const [progress, setProgress] = useState(0);
 
   // Load first question on mount
   useEffect(() => {
+    // Always start with the first question (DOB question)
+    // Don't pass responses to getNextQuestion so it doesn't skip
     const firstQuestion = getNextQuestion({});
     if (firstQuestion) {
       // Using a microtask to avoid synchronous setState in effect
       Promise.resolve().then(() => {
         setCurrentQuestion(firstQuestion);
-        setProgress(10); // Start at 10%
+        setProgress(10); // Always start at 10%
       });
     }
   }, []);

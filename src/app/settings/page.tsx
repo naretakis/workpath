@@ -10,23 +10,17 @@ import {
   Button,
   CircularProgress,
   Divider,
-  TextField,
-  MenuItem,
-  Alert,
 } from "@mui/material";
-import {
-  ArrowBack as ArrowBackIcon,
-  Edit as EditIcon,
-  Save as SaveIcon,
-  Cancel as CancelIcon,
-} from "@mui/icons-material";
-import { db } from "@/lib/db";
+import { ArrowBack as ArrowBackIcon } from "@mui/icons-material";
 import { UserProfile } from "@/types";
 import {
   ExemptionScreening,
   ExemptionHistory as ExemptionHistoryType,
 } from "@/types/exemptions";
 import { StorageInfo } from "@/components/settings/StorageInfo";
+import { ProfileDisplay } from "@/components/settings/ProfileDisplay";
+import { ProfileEditor } from "@/components/settings/ProfileEditor";
+import { PrivacyPolicy } from "@/components/settings/PrivacyPolicy";
 import { ExemptionHistory } from "@/components/exemptions/ExemptionHistory";
 import { RescreenDialog } from "@/components/exemptions/RescreenDialog";
 import {
@@ -34,59 +28,6 @@ import {
   getScreeningHistory,
 } from "@/lib/storage/exemptions";
 import { format } from "date-fns";
-
-const US_STATES = [
-  "AL",
-  "AK",
-  "AZ",
-  "AR",
-  "CA",
-  "CO",
-  "CT",
-  "DE",
-  "FL",
-  "GA",
-  "HI",
-  "ID",
-  "IL",
-  "IN",
-  "IA",
-  "KS",
-  "KY",
-  "LA",
-  "ME",
-  "MD",
-  "MA",
-  "MI",
-  "MN",
-  "MS",
-  "MO",
-  "MT",
-  "NE",
-  "NV",
-  "NH",
-  "NJ",
-  "NM",
-  "NY",
-  "NC",
-  "ND",
-  "OH",
-  "OK",
-  "OR",
-  "PA",
-  "RI",
-  "SC",
-  "SD",
-  "TN",
-  "TX",
-  "UT",
-  "VT",
-  "VA",
-  "WA",
-  "WV",
-  "WI",
-  "WY",
-];
 
 // Helper function to get category label
 function getCategoryLabel(category: string): string {
@@ -105,40 +46,39 @@ export default function SettingsPage() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
-  const [editedName, setEditedName] = useState("");
-  const [editedState, setEditedState] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
   const [exemptionScreening, setExemptionScreening] =
     useState<ExemptionScreening | null>(null);
   const [exemptionHistory, setExemptionHistory] = useState<
     ExemptionHistoryType[]
   >([]);
   const [rescreenDialogOpen, setRescreenDialogOpen] = useState(false);
+  const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
+
+  const loadProfile = async () => {
+    try {
+      // Use getFirstProfile which handles decryption
+      const { getFirstProfile } = await import("@/lib/storage/profile");
+      const userProfile = await getFirstProfile();
+
+      if (userProfile) {
+        setProfile(userProfile);
+
+        // Load exemption screening
+        const screening = await getLatestScreening(userProfile.id);
+        setExemptionScreening(screening || null);
+
+        // Load exemption history
+        const history = await getScreeningHistory(userProfile.id);
+        setExemptionHistory(history);
+      }
+    } catch (error) {
+      console.error("Error loading profile:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const loadProfile = async () => {
-      try {
-        const profiles = await db.profiles.toArray();
-        if (profiles.length > 0) {
-          const userProfile = profiles[0];
-          setProfile(userProfile);
-
-          // Load exemption screening
-          const screening = await getLatestScreening(userProfile.id);
-          setExemptionScreening(screening || null);
-
-          // Load exemption history
-          const history = await getScreeningHistory(userProfile.id);
-          setExemptionHistory(history);
-        }
-      } catch (error) {
-        console.error("Error loading profile:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     loadProfile();
   }, []);
 
@@ -147,60 +87,25 @@ export default function SettingsPage() {
   };
 
   const handleEdit = () => {
-    if (profile) {
-      setEditedName(profile.name);
-      setEditedState(profile.state);
-      setEditing(true);
-      setError(null);
-      setSuccess(false);
-    }
+    setEditing(true);
   };
 
-  const handleCancel = () => {
+  const handleCancelEdit = () => {
     setEditing(false);
-    setEditedName("");
-    setEditedState("");
-    setError(null);
   };
 
-  const handleSave = async () => {
-    if (!profile) return;
+  const handleSaveEdit = async () => {
+    setEditing(false);
+    // Reload profile to get updated data
+    await loadProfile();
+  };
 
-    // Validate
-    if (!editedName.trim()) {
-      setError("Name is required");
-      return;
-    }
+  const handlePrivacyPolicyOpen = () => {
+    setPrivacyPolicyOpen(true);
+  };
 
-    if (!editedState) {
-      setError("State is required");
-      return;
-    }
-
-    try {
-      // Update profile in database
-      await db.profiles.update(profile.id, {
-        name: editedName.trim(),
-        state: editedState,
-      });
-
-      // Update local state
-      setProfile({
-        ...profile,
-        name: editedName.trim(),
-        state: editedState,
-      });
-
-      setEditing(false);
-      setSuccess(true);
-      setError(null);
-
-      // Hide success message after 3 seconds
-      setTimeout(() => setSuccess(false), 3000);
-    } catch (err) {
-      console.error("Error updating profile:", err);
-      setError("Failed to update profile. Please try again.");
-    }
+  const handlePrivacyPolicyClose = () => {
+    setPrivacyPolicyOpen(false);
   };
 
   const handleRescreenClick = () => {
@@ -246,97 +151,28 @@ export default function SettingsPage() {
         </Typography>
       </Box>
 
-      {success && (
-        <Alert severity="success" sx={{ mb: 3 }}>
-          Profile updated successfully!
-        </Alert>
-      )}
-
-      {error && (
-        <Alert severity="error" sx={{ mb: 3 }} onClose={() => setError(null)}>
-          {error}
-        </Alert>
-      )}
-
       {/* Profile Section */}
       <Paper sx={{ p: 3, mb: 3 }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            mb: 2,
-          }}
-        >
-          <Typography variant="h6">Profile</Typography>
-          {!editing && profile && (
-            <Button startIcon={<EditIcon />} onClick={handleEdit} size="small">
-              Edit
-            </Button>
-          )}
-        </Box>
-        <Divider sx={{ mb: 2 }} />
         {profile ? (
           editing ? (
-            <Box>
-              <TextField
-                label="Name"
-                value={editedName}
-                onChange={(e) => setEditedName(e.target.value)}
-                fullWidth
-                sx={{ mb: 2 }}
-                autoFocus
-              />
-              <TextField
-                label="State"
-                value={editedState}
-                onChange={(e) => setEditedState(e.target.value)}
-                select
-                fullWidth
-                sx={{ mb: 3 }}
-              >
-                {US_STATES.map((state) => (
-                  <MenuItem key={state} value={state}>
-                    {state}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <Box sx={{ display: "flex", gap: 2 }}>
-                <Button
-                  variant="contained"
-                  startIcon={<SaveIcon />}
-                  onClick={handleSave}
-                  fullWidth
-                >
-                  Save
-                </Button>
-                <Button
-                  variant="outlined"
-                  startIcon={<CancelIcon />}
-                  onClick={handleCancel}
-                  fullWidth
-                >
-                  Cancel
-                </Button>
-              </Box>
-            </Box>
+            <ProfileEditor
+              profile={profile}
+              onSave={handleSaveEdit}
+              onCancel={handleCancelEdit}
+            />
           ) : (
-            <Box>
-              <Typography variant="body1" gutterBottom>
-                <strong>Name:</strong> {profile.name}
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                <strong>State:</strong> {profile.state}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Created: {new Date(profile.createdAt).toLocaleDateString()}
-              </Typography>
-            </Box>
+            <ProfileDisplay profile={profile} onEdit={handleEdit} />
           )
         ) : (
-          <Typography variant="body2" color="text.secondary">
-            No profile found
-          </Typography>
+          <Box>
+            <Typography variant="h6" gutterBottom>
+              Your Profile
+            </Typography>
+            <Divider sx={{ mb: 2 }} />
+            <Typography variant="body2" color="text.secondary">
+              No profile found
+            </Typography>
+          </Box>
         )}
       </Paper>
 
@@ -447,6 +283,20 @@ export default function SettingsPage() {
         <StorageInfo />
       </Box>
 
+      {/* Privacy Policy Section */}
+      <Paper sx={{ p: 3, mb: 3 }}>
+        <Typography variant="h6" gutterBottom>
+          Privacy & Data
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+        <Typography variant="body2" color="text.secondary" paragraph>
+          Review how we handle your data and your privacy rights.
+        </Typography>
+        <Button variant="outlined" onClick={handlePrivacyPolicyOpen} fullWidth>
+          View Privacy Policy
+        </Button>
+      </Paper>
+
       {/* About Section */}
       <Paper sx={{ p: 3, mt: 3 }}>
         <Typography variant="h6" gutterBottom>
@@ -470,6 +320,13 @@ export default function SettingsPage() {
         open={rescreenDialogOpen}
         onClose={handleRescreenCancel}
         onConfirm={handleRescreenConfirm}
+      />
+
+      {/* Privacy Policy Dialog */}
+      <PrivacyPolicy
+        open={privacyPolicyOpen}
+        onClose={handlePrivacyPolicyClose}
+        acknowledgedAt={profile?.privacyNoticeAcknowledgedAt}
       />
     </Container>
   );

@@ -31,6 +31,9 @@ export default function ExemptionScreeningPage() {
   const router = useRouter();
   const [screenState, setScreenState] = useState<ScreenState>("welcome");
   const [userId, setUserId] = useState<string | null>(null);
+  const [profileDateOfBirth, setProfileDateOfBirth] = useState<Date | null>(
+    null,
+  );
   const [loading, setLoading] = useState(true);
   const [hasExistingScreening, setHasExistingScreening] = useState(false);
   const [currentResult, setCurrentResult] = useState<ExemptionResult | null>(
@@ -42,11 +45,22 @@ export default function ExemptionScreeningPage() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Get user profile
-        const profiles = await db.profiles.toArray();
-        if (profiles.length > 0) {
-          const profile = profiles[0];
+        // Get user profile with decrypted DOB
+        const { getFirstProfile } = await import("@/lib/storage/profile");
+        const profile = await getFirstProfile();
+
+        if (profile) {
           setUserId(profile.id);
+
+          // Get DOB from profile if available
+          if (profile.dateOfBirth) {
+            try {
+              const dob = new Date(profile.dateOfBirth);
+              setProfileDateOfBirth(dob);
+            } catch (error) {
+              console.error("Error parsing profile DOB:", error);
+            }
+          }
 
           // Check for existing screening
           const existing = await getLatestScreening(profile.id);
@@ -99,7 +113,7 @@ export default function ExemptionScreeningPage() {
   };
 
   const handleDone = () => {
-    router.push("/settings");
+    router.push("/tracking");
   };
 
   const handleRescreen = () => {
@@ -191,6 +205,15 @@ export default function ExemptionScreeningPage() {
             </Typography>
           </Alert>
 
+          {profileDateOfBirth && (
+            <Alert severity="success">
+              <Typography variant="body2">
+                <strong>Good news!</strong> We&apos;ll use your date of birth
+                from your profile, so you won&apos;t need to enter it again.
+              </Typography>
+            </Alert>
+          )}
+
           {hasExistingScreening && (
             <Alert severity="info">
               <Typography variant="body2">
@@ -231,7 +254,10 @@ export default function ExemptionScreeningPage() {
 
       {/* Screening Flow */}
       {screenState === "screening" && (
-        <QuestionFlow onComplete={handleComplete} />
+        <QuestionFlow
+          onComplete={handleComplete}
+          initialDateOfBirth={profileDateOfBirth}
+        />
       )}
 
       {/* Results */}

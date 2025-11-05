@@ -71,6 +71,9 @@ export function ExemptionQuestion({
     return "";
   };
 
+  // Check if this is the DOB question and it's pre-filled
+  const isPrefilledDOB = question.id === "age-dob" && value instanceof Date;
+
   return (
     <Box
       sx={{
@@ -151,26 +154,38 @@ export function ExemptionQuestion({
         )}
 
         {question.type === "date" && (
-          <TextField
-            type="date"
-            label="Select your date of birth"
-            placeholder="MM/DD/YYYY"
-            value={getDateValue()}
-            onChange={(e) => handleDateChange(e.target.value)}
-            fullWidth
-            InputLabelProps={{
-              shrink: true,
-            }}
-            inputProps={{
-              max: new Date().toISOString().split("T")[0], // Can't select future dates
-            }}
-            helperText="Tap the field to open the date picker"
-            sx={{
-              "& .MuiInputBase-root": {
-                minHeight: 56,
-              },
-            }}
-          />
+          <>
+            {isPrefilledDOB && (
+              <Alert severity="info" sx={{ mb: 2 }}>
+                We&apos;ve pre-filled your date of birth from your profile. You
+                can change it if needed.
+              </Alert>
+            )}
+            <TextField
+              type="date"
+              label="Select your date of birth"
+              placeholder="MM/DD/YYYY"
+              value={getDateValue()}
+              onChange={(e) => handleDateChange(e.target.value)}
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{
+                max: new Date().toISOString().split("T")[0], // Can't select future dates
+              }}
+              helperText={
+                isPrefilledDOB
+                  ? "From your profile - you can change this if needed"
+                  : "Tap the field to open the date picker"
+              }
+              sx={{
+                "& .MuiInputBase-root": {
+                  minHeight: 56,
+                },
+              }}
+            />
+          </>
         )}
 
         {question.type === "multipleChoice" && question.options && (
