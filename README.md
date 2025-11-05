@@ -22,6 +22,10 @@ HourKeep is a simple, privacy-focused app that helps you:
 
 ## Key Features
 
+- ✅ **Privacy notice** - Clear explanation of data handling before you start
+- ✅ **Extended profile** - Name, state, date of birth, and optional contact info
+- ✅ **Secure encryption** - Sensitive data encrypted at rest
+- ✅ **Profile management** - View and edit your information anytime
 - ✅ **Exemption screening** - Find out if you're exempt from work requirements
 - ✅ **Plain language questionnaire** - Simple questions covering all 5 exemption categories
 - ✅ **Smart question flow** - Dynamic questions that adapt to your answers
@@ -120,9 +124,11 @@ hourkeep/
 ### First Time Setup
 
 1. Open the app
-2. Enter your name and state
-3. Check if you're exempt (optional but recommended)
-4. Start tracking your hours (if not exempt)!
+2. Read and acknowledge the privacy notice
+3. Enter your profile information (name, state, date of birth)
+4. Optionally add Medicaid ID and contact information
+5. Check if you're exempt (recommended - you might not need to track!)
+6. Start tracking your hours (if not exempt)!
 
 ### Checking Exemptions
 
@@ -201,9 +207,8 @@ Built as an MVP learning project to understand:
 
 HourKeep is actively evolving. See our [ROADMAP.md](ROADMAP.md) to learn about:
 
-- ✅ Recently shipped (v3.0: Exemption screening)
-- 🚧 Features in development (enhanced onboarding)
-- 💭 Future considerations (income tracking, hardship reporting, compliance alerts)
+- ✅ Recently shipped (v4.0: Enhanced onboarding with privacy notice)
+- � Future sconsiderations (income tracking, hardship reporting, compliance alerts)
 - ❌ What we're explicitly not building (and why)
 
 ## Support

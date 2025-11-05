@@ -5,6 +5,86 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2025-11-05
+
+### Added - Enhanced Onboarding 🔐
+
+A comprehensive onboarding experience that builds trust through transparency and collects essential profile information for better exports and exemption screening. This major feature introduces privacy-first design, secure data encryption, and extended profile management.
+
+#### Privacy Notice
+
+- **Privacy statement first** - Clear explanation of data handling before any data collection
+- **Plain language** - No legal jargon, just clear facts about privacy
+- **Key privacy points** - All data stays on device, you control exports, no tracking
+- **Acknowledgment required** - Users must confirm understanding before proceeding
+- **Timestamp tracking** - Records when privacy notice was acknowledged
+- **Always accessible** - Privacy policy available anytime from settings
+
+#### Extended Profile Information
+
+- **Required fields** - Full name, state, date of birth
+- **Optional fields** - Medicaid ID, phone number, email address
+- **Age-based exemption** - Date of birth enables automatic age exemption screening
+- **Contact information** - Phone and email for agency reports
+- **Medicaid ID** - Optional ID for export inclusion
+- **Help text** - Clear explanations for each field
+
+#### Secure Data Encryption
+
+- **Web Crypto API** - Industry-standard encryption for sensitive data
+- **Encrypted fields** - Date of birth and Medicaid ID encrypted at rest
+- **Automatic decryption** - Seamlessly decrypted when viewing or exporting
+- **Key management** - Encryption keys stored securely in IndexedDB
+- **Device-only** - Keys never leave your device
+- **Error handling** - Graceful handling of encryption failures
+
+#### Profile Management
+
+- **Profile display** - View all profile information in settings
+- **Profile editor** - Update any field when circumstances change
+- **Age calculation** - Automatically shows current age from date of birth
+- **Formatted display** - Phone numbers and dates formatted for readability
+- **Timestamps** - Shows profile creation and last update dates
+- **Validation** - Real-time validation with helpful error messages
+
+#### Form Experience
+
+- **Mobile-optimized** - Touch-friendly inputs with proper spacing (44px+ targets)
+- **Smart date picker** - Mobile-optimized date selection
+- **Phone formatting** - Automatic formatting as you type
+- **Email validation** - Real-time email format validation
+- **Clear errors** - Helpful error messages in plain language
+- **Smooth transitions** - Polished animations and loading states
+
+### Changed
+
+- **Onboarding flow** - Now two-step: privacy notice → profile form
+- **Settings page** - Added "Your Profile" section with display and edit
+- **Database schema** - Upgraded to v4 with new profile fields
+- **Profile storage** - Enhanced with encryption for sensitive fields
+- **Exemptions page** - Improved date input field UX
+
+### Technical Details
+
+- Added comprehensive profile validation in `src/lib/validation/profile.ts`
+- Implemented encryption utilities in `src/lib/utils/encryption.ts`
+- Enhanced profile storage layer in `src/lib/storage/profile.ts`
+- Created PrivacyNotice component in `src/components/onboarding/PrivacyNotice.tsx`
+- Created ProfileForm component in `src/components/onboarding/ProfileForm.tsx`
+- Created ProfileDisplay component in `src/components/settings/ProfileDisplay.tsx`
+- Created ProfileEditor component in `src/components/settings/ProfileEditor.tsx`
+- Created PrivacyPolicy component in `src/components/settings/PrivacyPolicy.tsx`
+- Updated database schema to v4 with automatic migration
+- Added profile type definitions in `src/types/index.ts`
+
+### Developer Experience
+
+- Comprehensive UI/UX polish summary in `.kiro/specs/workpath-enhanced-onboarding/ui-ux-polish-summary.md`
+- Updated task tracking in `.kiro/specs/workpath-enhanced-onboarding/tasks.md`
+- Clear migration path for existing users (no data loss)
+
+---
+
 ## [3.0.0] - 2025-11-05
 
 ### Added - Exemption Screening System 🎯
@@ -258,6 +338,7 @@ This release represents the completion of the exemption screening spec, includin
 
 ---
 
+[4.0.0]: https://github.com/naretakis/hourkeep/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/naretakis/hourkeep/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/naretakis/hourkeep/compare/v0.1.0...v2.0.0
 [0.1.0]: https://github.com/naretakis/hourkeep/releases/tag/v0.1.0

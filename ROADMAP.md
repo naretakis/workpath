@@ -6,11 +6,11 @@ This roadmap outlines where HourKeep is today, what we're building next, and our
 
 ---
 
-## Now (v3.0) - ✅ Shipped
+## Now (v4.0) - ✅ Shipped
 
 **Current Release - Available Today**
 
-HourKeep helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management.
+HourKeep provides a privacy-first onboarding experience, helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management.
 
 ### Core Features (v1.0)
 
@@ -35,7 +35,17 @@ HourKeep helps you determine if you're exempt from Medicaid work requirements, a
 - ✅ **Storage Monitoring** - Track usage and get low-storage warnings
 - ✅ **Document Management** - Easy deletion with confirmation
 
-### Exemption Screening (v3.0) - NEW! 🎯
+### Enhanced Onboarding (v4.0) - NEW! 🔐
+
+- ✅ **Privacy Notice First** - Clear explanation of data handling before any data collection
+- ✅ **Extended Profile** - Name, state, date of birth, Medicaid ID, contact info
+- ✅ **Secure Encryption** - Date of birth and Medicaid ID encrypted at rest
+- ✅ **Profile Management** - View and edit your information in settings
+- ✅ **Age-Based Exemption** - Date of birth enables automatic age exemption screening
+- ✅ **Mobile-Optimized Forms** - Touch-friendly inputs with smart validation
+- ✅ **Privacy Policy Access** - Review privacy policy anytime from settings
+
+### Exemption Screening (v3.0) 🎯
 
 - ✅ **Complete Questionnaire** - Simple questions covering all 5 exemption categories
 - ✅ **Smart Question Flow** - Dynamic questions that adapt to your answers
@@ -56,40 +66,36 @@ HourKeep helps you determine if you're exempt from Medicaid work requirements, a
 
 ### What's Still Missing
 
-- ❌ Extended profile information (date of birth, Medicaid ID, contact info)
+- ❌ Profile information in exports
 - ❌ Income tracking
 - ❌ Hardship reporting
 - ❌ Compliance alerts
 
 ---
 
-## Next (v4.0) - 🚧 In Development
+## Next (v4.1) - 🚧 Coming Soon
 
-**Enhanced Onboarding Coming Soon**
+**Export Improvements**
 
-### Enhanced Onboarding 🔐
+### Profile Information in Exports 📄
 
-**Status:** Spec complete, ready to build  
-**Estimated:** 3-4 weeks  
-**Spec:** `.kiro/specs/hourkeep-enhanced-onboarding/`
+**Status:** Ready to build  
+**Estimated:** 1-2 weeks
 
-Better first impression with privacy notice and extended profile.
+Include profile information in data exports for professional agency submission.
 
 **What You'll Be Able To Do:**
 
-- See a clear privacy notice before entering any data
-- Add date of birth (used for age exemption screening)
-- Optionally add Medicaid ID for exports
-- Optionally add contact information for agency reports
-- Edit your profile anytime in settings
-- View the privacy policy whenever you want
+- Export data with your name and contact information
+- Include Medicaid ID in exports
+- Professional formatting with profile section at top
+- Export warning about personal information
 
 **Why This Matters:**
 
-- Builds trust by explaining privacy upfront
-- More complete exports for agency submission
-- Better integration with exemption screening
-- Sensitive data encrypted for security
+- Agencies need your contact information
+- More professional and complete submissions
+- Reduces manual data entry for caseworkers
 
 ---
 
@@ -397,7 +403,8 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 - **v1.0** (Shipped Oct 2025) - Basic activity tracking MVP
 - **v2.0** (Shipped Nov 2025) - Document management
 - **v3.0** (Shipped Nov 2025) - Exemption screening
-- **v4.0** (Q1 2026) - Enhanced onboarding
+- **v4.0** (Shipped Nov 2025) - Enhanced onboarding
+- **v4.1** (Q4 2025) - Export improvements
 - **v5.0** (TBD) - Features from "Later" section based on user feedback
 
 **Release Strategy:**
@@ -448,5 +455,5 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 ---
 
 **Last Updated:** November 2025
-**Current Version:** v3.0 (Exemption Screening)  
-**Next Release:** v4.0 (Enhanced Onboarding)
+**Current Version:** v4.0 (Enhanced Onboarding)  
+**Next Release:** v4.1 (Export Improvements)
