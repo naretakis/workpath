@@ -8,7 +8,7 @@ This implementation plan converts the design into discrete coding tasks. Each ta
 
 ## Tasks
 
-- [ ] 1. Comprehensive review of HR1 Section 71119 exemption coverage
+- [x] 1. Comprehensive review of HR1 Section 71119 exemption coverage
   - Read HR1 Section 71119(9)(A)(ii) in full (docs/domain/hr1/119hr1enr-title7-part3.md)
   - Create checklist of all "specified excluded individual" categories from HR1:
     - (I) Non-MAGI Medicaid eligibility
@@ -254,6 +254,7 @@ This implementation plan converts the design into discrete coding tasks. Each ta
 ## Success Criteria
 
 Implementation is complete when:
+
 - [ ] All question text uses authoritative HR1 terminology
 - [ ] All help text provides plain language translation
 - [ ] All definition callouts match terms used in question text

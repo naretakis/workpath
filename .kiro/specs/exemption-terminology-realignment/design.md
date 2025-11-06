@@ -37,9 +37,9 @@ The `ExemptionQuestion` interface already supports the three-tier structure:
 export interface ExemptionQuestion {
   id: string;
   category: ExemptionCategory;
-  text: string;              // Tier 1: HR1 terminology
+  text: string; // Tier 1: HR1 terminology
   type: QuestionType;
-  helpText?: string;         // Tier 2: Plain language translation
+  helpText?: string; // Tier 2: Plain language translation
   options?: QuestionOption[];
   required: boolean;
 }
@@ -54,16 +54,19 @@ The `questionDefinitionMap` in `definitions.ts` links questions to relevant defi
 #### Question: age-dob
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 What is your date of birth?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 We use this to check if you're exempt based on age. People 18 or younger and 65 or older are exempt from work requirements.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - None needed (straightforward question)
 
 **Source:** Original from commit 0adec5c (no changes needed)
@@ -75,16 +78,19 @@ We use this to check if you're exempt based on age. People 18 or younger and 65 
 #### Question: family-pregnant
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you currently pregnant or postpartum?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you currently pregnant or gave birth within the last 60 days? If yes, you're exempt from work requirements.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `postpartum`: "The period after giving birth. For Medicaid, this typically means within 60 days after you have a baby..."
 
 **Source:** Restore "postpartum" from commit 0adec5c, adapt current help text
@@ -96,16 +102,19 @@ Are you currently pregnant or gave birth within the last 60 days? If yes, you're
 #### Question: family-child
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Do you live in a household with a dependent child 13 years of age and under?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Do you live with a child age 13 or younger? This includes your own children, stepchildren, or children you care for. If yes, you're exempt from work requirements.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `dependentChild13OrYounger`: "A child age 13 or under who lives in your household..."
 - `dependent`: "A child or person you take care of..."
 
@@ -118,16 +127,19 @@ Do you live with a child age 13 or younger? This includes your own children, ste
 #### Question: family-disabled-dependent
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you a parent, guardian, caretaker relative, or family caregiver of a disabled individual?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you a parent or guardian of someone with a disability? This includes caring for a child or adult with a disability. If yes, you're exempt from work requirements.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `caretakerRelative`: "A family member who takes care of a child..."
 - `dependent`: "A child or person you take care of..."
 
@@ -142,16 +154,19 @@ Are you a parent or guardian of someone with a disability? This includes caring 
 #### Question: health-medicare
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you entitled to or enrolled for Medicare?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Do you have Medicare? Medicare is federal health insurance, usually for people 65 or older or with certain disabilities. This is different from Medicaid.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `medicare`: "Federal health insurance for people 65 or older, or people under 65 with certain disabilities..."
 
 **Source:** Restore "entitled to or enrolled for" from commit 0adec5c
@@ -163,16 +178,19 @@ Do you have Medicare? Medicare is federal health insurance, usually for people 6
 #### Question: health-non-magi
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you eligible for non-MAGI Medicaid?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Do you get Medicaid because of a disability or long-term care needs? This is a special type of Medicaid for people with disabilities or in nursing homes. If you're not sure, select 'No'.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `nonMAGIMedicaid`: "Medicaid for people with disabilities or elderly people who need long-term care..."
 
 **Source:** Restore "non-MAGI Medicaid" from commit 0adec5c
@@ -184,16 +202,19 @@ Do you get Medicaid because of a disability or long-term care needs? This is a s
 #### Question: health-disabled-veteran
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you a veteran with a disability rated as total?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you a veteran with a 100% disability rating from the VA? This means the VA determined you have a total service-connected disability. If you're not sure of your rating, select 'No'.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `disabledVeteran`: "A veteran who has a total disability rating from the VA (Veterans Affairs)..."
 
 **Source:** Restore "disability rated as total" from commit 0adec5c
@@ -205,16 +226,19 @@ Are you a veteran with a 100% disability rating from the VA? This means the VA d
 #### Question: health-medically-frail
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you medically frail or otherwise have special medical needs?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Do you have a serious health condition or disability? This includes being blind, disabled, having substance use disorder, mental health conditions, or chronic illnesses. Tap the info icons below for detailed examples.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `medicallyFrail`: "Having a serious health condition or disability that makes it hard to work..."
 - `substanceUseDisorder`: "A medical condition where someone has trouble controlling their use of drugs or alcohol..."
 - `disablingMentalDisorder`: "A mental health condition that makes it hard to do daily activities..."
@@ -232,16 +256,19 @@ Do you have a serious health condition or disability? This includes being blind,
 #### Question: program-snap-tanf
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you in compliance with SNAP or TANF work requirements?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you on food stamps (SNAP) or cash assistance (TANF) and meeting their work requirements? Important: You must be actively meeting their work requirements (not exempt from them). If you're exempt from SNAP/TANF work requirements, select 'No'.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `snap`: "The Supplemental Nutrition Assistance Program, also called food stamps..."
 - `tanf`: "Temporary Assistance for Needy Families. It's cash assistance for families with children..."
 - `communityEngagement`: "Activities that count toward the 80 hours per month requirement..."
@@ -255,16 +282,19 @@ Are you on food stamps (SNAP) or cash assistance (TANF) and meeting their work r
 #### Question: program-rehab
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you participating in a drug addiction or alcoholic treatment and rehabilitation program?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you currently in a drug or alcohol treatment program? This includes inpatient programs (where you stay at a facility) or outpatient programs (where you go for treatment but live at home).
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `drugAlcoholRehabProgram`: "A treatment program for people with drug or alcohol addiction..."
 
 **Source:** Restore full terminology from commit 0adec5c
@@ -278,16 +308,19 @@ Are you currently in a drug or alcohol treatment program? This includes inpatien
 #### Question: other-incarcerated
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you an inmate of a public institution or within 3 months of release?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you currently in jail or prison, or were you released in the last 3 months? If yes, you're exempt during this time. After 3 months, you'll need to re-screen.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `inmate`: "A person who is in jail or prison..."
 
 **Source:** Restore "inmate of a public institution" from commit 0adec5c
@@ -299,16 +332,19 @@ Are you currently in jail or prison, or were you released in the last 3 months? 
 #### Question: other-tribal
 
 **Tier 1 - Question Text (HR1 terminology):**
+
 ```
 Are you an Indian, Urban Indian, California Indian, or IHS-eligible Indian?
 ```
 
 **Tier 2 - Help Text (Plain language):**
+
 ```
 Are you a member of a Native American tribe or eligible for Indian Health Service? This includes being enrolled in a federally recognized tribe, being an Urban Indian, California Indian, or eligible for IHS services.
 ```
 
 **Tier 3 - Definition Callouts:**
+
 - `indianUrbanIndianCaliforniaIndian`: "A person who is a member of a federally recognized Native American tribe..."
 - `ihsEligible`: "Eligible for the Indian Health Service..."
 
@@ -387,6 +423,7 @@ No new unit tests needed - existing tests for `questions.ts` and `definitions.ts
 ### Manual Testing Checklist
 
 For each question:
+
 - [ ] Question text uses HR1 terminology
 - [ ] Help text provides plain language translation
 - [ ] Help text is immediately visible
@@ -401,6 +438,7 @@ For each question:
 ### User Acceptance Testing
 
 Test with actual users to verify:
+
 - Users understand what the question is asking
 - Users can find definitions when needed
 - Users are not confused by terminology mismatches
@@ -438,6 +476,7 @@ The three-tier structure enhances accessibility:
 - **Tier 3** provides optional deep dives for users who want more information
 
 Screen readers will announce:
+
 1. Question text (with HR1 terminology)
 2. Help text (with plain language translation)
 3. "Info button" for each definition callout

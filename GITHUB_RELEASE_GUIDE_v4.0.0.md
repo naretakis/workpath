@@ -34,11 +34,13 @@ Before you enter any data, HourKeep now explains exactly how your information is
 HourKeep now collects additional profile information to improve your experience:
 
 **Required Information:**
+
 - Full name - Personalize your experience
 - State - Understand state-specific requirements
 - Date of birth - Determine age-based exemptions automatically
 
 **Optional Information:**
+
 - Medicaid ID - Include in exports for agency submission
 - Phone number - Provide contact information in reports
 - Email address - Alternative contact method for agencies
