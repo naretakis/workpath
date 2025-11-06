@@ -7,8 +7,16 @@
  * All definitions are written at an 8th grade reading level and use conversational
  * tone to help users understand complex terms without legal jargon.
  *
+ * Three-Tier Information Architecture:
+ * - Tier 1 (Question Text in questions.ts): Uses authoritative HR1 terminology
+ * - Tier 2 (Help Text in questions.ts): Provides plain language translation
+ * - Tier 3 (Definition Callouts - this file): Detailed definitions with examples
+ *
+ * All definitions align with updated question terminology from commit 0adec5c.
+ * See HR1_COVERAGE_ANALYSIS.md for complete mapping of definitions to HR1 categories.
+ *
  * Created: November 5, 2025
- * Last Updated: November 5, 2025
+ * Last Updated: November 6, 2025 (Terminology Realignment)
  */
 
 export interface TermDefinition {
