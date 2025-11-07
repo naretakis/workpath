@@ -141,17 +141,20 @@ export default function RootLayout({ children }) {
 
 Plausible Analytics automatically respects the DNT header. No additional code needed. The script checks `navigator.doNotTrack` and will not send data if DNT is enabled.
 
-### 2. Privacy Notice Component (Modified)
+### 2. Privacy Notice and Privacy Policy Components (Modified)
 
-**File:** `src/components/onboarding/PrivacyNotice.tsx`
+**Files:** 
+- `src/components/onboarding/PrivacyNotice.tsx`
+- `src/components/settings/PrivacyPolicy.tsx`
 
 **Changes:**
 
-- Update "No tracking or analytics" bullet point
+- Update "No tracking or analytics" bullet point in BOTH components
 - Add new section explaining anonymous analytics
 - Maintain plain language and clear structure
 - Add Do Not Track information
 - Mention state-level geographic data
+- **Important:** Both components must have IDENTICAL wording for consistency
 
 **Content Structure:**
 

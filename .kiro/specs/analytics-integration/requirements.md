@@ -36,7 +36,7 @@ The implementation must maintain HourKeep's privacy-first values: no personal da
 #### Acceptance Criteria
 
 1. THE System SHALL update the Privacy Notice to accurately describe anonymous usage data collection
-2. THE Privacy Notice SHALL explain what specific data is collected (page views, device type, browser, region/state)
+2. THE Privacy Notice SHALL explain what specific data is collected (page views, device type, browser, states)
 3. THE Privacy Notice SHALL explain what data is NOT collected (no personal information, no activity tracking, no hour logs)
 4. THE Privacy Notice SHALL explain that analytics respect "Do Not Track" browser settings
 5. THE Privacy Notice SHALL maintain plain language and avoid technical jargon
