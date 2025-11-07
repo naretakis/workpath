@@ -194,8 +194,32 @@ hourkeep/
 
 - **All data stays on your device** - Nothing is sent to any server
 - **No account required** - No sign-up, no login
-- **No tracking** - We don't collect any analytics or personal information
+- **Anonymous usage analytics** - We collect anonymous usage statistics (page views, device types, states) to understand where this tool is needed most and improve the app. This does NOT include any personal information, activity logs, or documents. Respects "Do Not Track" browser settings.
 - **You control exports** - Only you decide when to share your data
+
+### What Analytics We Collect
+
+We use [Plausible Analytics](https://plausible.io/) (privacy-first, open-source, lightweight) to collect:
+
+- ✅ Page views (which pages you visit)
+- ✅ Device type (mobile, desktop, tablet)
+- ✅ Browser and operating system
+- ✅ State/region (e.g., "California", "Texas")
+- ✅ Screen size
+
+We do NOT collect:
+
+- ❌ Your profile information (name, state, DOB, Medicaid ID)
+- ❌ Your activity logs (hours worked, organizations)
+- ❌ Your documents (pay stubs, verification letters)
+- ❌ Your exemption screening results
+- ❌ IP addresses or persistent identifiers
+- ❌ Cookies or tracking across websites
+- ❌ City-level or more granular location data
+
+**Opt Out:** Enable "Do Not Track" in your browser settings to opt out of analytics.
+
+Learn more: [Plausible Privacy Policy](https://plausible.io/privacy)
 
 ## Browser Support
 

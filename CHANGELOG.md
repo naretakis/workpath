@@ -5,6 +5,76 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.3.0] - 2025-11-07
+
+### Added - Privacy-First Analytics Integration 📊
+
+Integrated Plausible Analytics to understand usage patterns and identify which states need HourKeep most, while maintaining our privacy-first values.
+
+#### Anonymous Usage Analytics
+
+- **Plausible Analytics integration** - Lightweight (< 1KB), privacy-first, GDPR-compliant analytics
+- **State-level geographic data** - Understand which U.S. states are using HourKeep to identify where Medicaid work requirements have the most impact
+- **Do Not Track support** - Automatically respects browser "Do Not Track" settings
+- **No cookies** - Zero cookies or persistent identifiers used for tracking
+- **No personal data** - Analytics never collect profile information, activity logs, documents, or exemption results
+
+#### What We Track (Anonymous)
+
+- Page views (which pages users visit)
+- Device types (mobile, desktop, tablet)
+- Browser and operating system
+- State/region (e.g., "California", "Texas") - NOT city-level
+- Screen size
+
+#### What We DON'T Track
+
+- ❌ Profile information (name, state, DOB, Medicaid ID)
+- ❌ Activity logs (hours worked, organizations)
+- ❌ Documents (pay stubs, verification letters)
+- ❌ Exemption screening results
+- ❌ IP addresses or persistent identifiers
+- ❌ Cookies or cross-site tracking
+- ❌ City-level or more granular location data
+
+#### Transparency Updates
+
+- **Privacy Notice updated** - Clear explanation of anonymous analytics with detailed "What We Track" section
+- **Privacy Policy updated** - Consistent wording with Privacy Notice
+- **README updated** - New "What Analytics We Collect" section with opt-out instructions
+- **Link to Plausible's privacy policy** - Full transparency about analytics provider
+
+### Changed
+
+- **Privacy Notice** - Updated "No tracking" bullet to "Anonymous usage analytics" with detailed explanation
+- **Privacy Policy** - Updated to match Privacy Notice wording exactly
+- **README** - Updated "Privacy & Data" section with analytics disclosure and opt-out instructions
+
+### Technical Details
+
+- Added Plausible Analytics script tag to root layout (`src/app/layout.tsx`)
+- Script uses `defer` attribute to prevent blocking page load
+- Configured for domain `naretakis.github.io`
+- Automatic Do Not Track detection (no custom code needed)
+- Zero impact on existing functionality or offline capabilities
+
+### Why Plausible?
+
+- **Privacy-first** - No cookies, GDPR compliant, respects DNT
+- **Lightweight** - < 1KB script, no performance impact
+- **State-level data** - Helps understand where tool is needed most
+- **Open-source** - Transparent and auditable
+- **Works with GitHub Pages** - No domain ownership required
+
+### Developer Experience
+
+- Simple script tag integration (no custom JavaScript)
+- No server-side components required
+- Works seamlessly with static site deployment
+- Comprehensive documentation in analytics-integration spec
+
+---
+
 ## [4.2.0] - 2025-11-06
 
 ### Added - Settings About Section & Configuration 🔗
@@ -396,6 +466,7 @@ This release represents the completion of the exemption screening spec, includin
 
 ---
 
+[4.3.0]: https://github.com/naretakis/hourkeep/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/naretakis/hourkeep/compare/v4.0.0...v4.2.0
 [4.0.0]: https://github.com/naretakis/hourkeep/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/naretakis/hourkeep/compare/v2.0.0...v3.0.0

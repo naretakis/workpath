@@ -9,8 +9,15 @@ import {
   ListItemText,
   Typography,
   Divider,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Link,
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CheckIcon from "@mui/icons-material/Check";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface PrivacyNoticeProps {
   onAcknowledge: () => void;
@@ -83,8 +90,8 @@ export function PrivacyNotice({ onAcknowledge }: PrivacyNoticeProps) {
             <CheckCircleIcon color="success" />
           </ListItemIcon>
           <ListItemText
-            primary="No tracking or analytics"
-            secondary="We don't collect any information about how you use the app. No cookies, no tracking, no analytics."
+            primary="Anonymous usage analytics"
+            secondary="We collect anonymous usage statistics (page views, device types, states) to understand where this tool is needed most and improve the app. This does NOT include any personal information, activity logs, or documents. Respects 'Do Not Track' browser settings."
             primaryTypographyProps={{ fontWeight: 500 }}
           />
         </ListItem>
@@ -113,6 +120,138 @@ export function PrivacyNotice({ onAcknowledge }: PrivacyNoticeProps) {
       </List>
 
       <Divider sx={{ my: 3 }} />
+
+      <Accordion sx={{ mb: 3, boxShadow: 1 }}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="analytics-details-content"
+          id="analytics-details-header"
+        >
+          <Typography variant="h6" sx={{ fontWeight: 600 }}>
+            What We Track (Details)
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography variant="body2" paragraph sx={{ fontWeight: 500 }}>
+            What is collected (anonymous):
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, mb: 2 }}>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CheckIcon
+                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Page views (which pages you visit)
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CheckIcon
+                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Device type (mobile, desktop, tablet)
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CheckIcon
+                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Browser and operating system
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CheckIcon
+                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                State/region (e.g., &quot;California&quot;, &quot;Texas&quot;)
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CheckIcon
+                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Screen size
+              </Typography>
+            </Box>
+          </Box>
+
+          <Typography variant="body2" paragraph sx={{ fontWeight: 500 }}>
+            What is NOT collected:
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, mb: 2 }}>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Your profile information (name, state, DOB, Medicaid ID)
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Your activity logs (hours worked, organizations)
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Your documents (pay stubs, verification letters)
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Your exemption screening results
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                IP addresses or persistent identifiers
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                Cookies or tracking across websites
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
+              <CloseIcon
+                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
+              />
+              <Typography component="span" variant="body2">
+                City-level or more granular location data
+              </Typography>
+            </Box>
+          </Box>
+
+          <Typography variant="body2" color="text.secondary">
+            Learn more:{" "}
+            <Link
+              href="https://plausible.io/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Plausible Privacy Policy
+            </Link>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
 
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
         What We Store

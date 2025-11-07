@@ -36,8 +36,8 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Verify app functionality is unaffected
     - _Requirements: 1.1, 3.4_
 
-- [ ] 3. Update Privacy Notice and Privacy Policy components
-  - [ ] 3.1 Modify the "No tracking" bullet point in PrivacyNotice.tsx
+- [x] 3. Update Privacy Notice and Privacy Policy components
+  - [x] 3.1 Modify the "No tracking" bullet point in PrivacyNotice.tsx
     - Open `src/components/onboarding/PrivacyNotice.tsx`
     - Find the ListItem with "No tracking or analytics" text
     - Update primary text to "Anonymous usage analytics"
@@ -47,7 +47,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Maintain plain language and clear structure
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6_
 
-  - [ ] 3.2 Modify the "No tracking" bullet point in PrivacyPolicy.tsx
+  - [x] 3.2 Modify the "No tracking" bullet point in PrivacyPolicy.tsx
     - Open `src/components/settings/PrivacyPolicy.tsx`
     - Find the ListItem with "No tracking or analytics" text
     - Update with IDENTICAL wording to PrivacyNotice.tsx (keep both consistent)
@@ -56,7 +56,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Mention Do Not Track support
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6_
 
-  - [ ] 3.3 Add new "What We Track" section (optional enhancement)
+  - [x] 3.3 Add new "What We Track" section (optional enhancement)
     - Consider adding a collapsible section with more details about analytics
     - Include specific examples of what is tracked vs not tracked
     - Add link to Plausible's privacy policy (https://plausible.io/privacy)
@@ -64,7 +64,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - If added to one component, add to both for consistency
     - _Requirements: 2.2, 2.3, 2.6_
 
-  - [ ] 3.4 Review both components for accuracy and consistency
+  - [x] 3.4 Review both components for accuracy and consistency
     - Read through entire PrivacyNotice.tsx
     - Read through entire PrivacyPolicy.tsx
     - Verify both components have identical privacy statements
@@ -74,8 +74,8 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Test on mobile device for readability
     - _Requirements: 2.5, 2.6_
 
-- [ ] 4. Update README documentation
-  - [ ] 4.1 Update "Privacy & Data" section
+- [x] 4. Update README documentation
+  - [x] 4.1 Update "Privacy & Data" section
     - Open `README.md`
     - Find the "Privacy & Data" section
     - Update the "No tracking" bullet point to match Privacy Notice wording
@@ -86,14 +86,14 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Add link to Plausible's privacy policy (https://plausible.io/privacy)
     - _Requirements: 5.1, 5.2, 5.3, 5.5_
 
-  - [ ] 4.2 Verify consistency between Privacy Notice and README
+  - [x] 4.2 Verify consistency between Privacy Notice and README
     - Compare Privacy Notice wording to README wording
     - Ensure both documents say the same thing
     - Check that technical details match actual implementation
     - Fix any inconsistencies
     - _Requirements: 5.5_
 
-- [ ] 5. Update CHANGELOG
+- [x] 5. Update CHANGELOG
   - Open `CHANGELOG.md`
   - Add new entry for analytics integration under appropriate version
   - Describe what was added (Plausible Analytics)
@@ -103,8 +103,8 @@ This implementation plan breaks down the analytics integration into discrete, ma
   - Mention Privacy Notice and README updates
   - _Requirements: 5.4_
 
-- [ ] 6. Test analytics implementation
-  - [ ] 6.1 Test basic analytics functionality
+- [x] 6. Test analytics implementation
+  - [x] 6.1 Test basic analytics functionality
     - Build and deploy to GitHub Pages (or test locally)
     - Open app in browser
     - Navigate to multiple pages (tracking, settings, exemptions, export)
@@ -114,7 +114,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Verify device type is detected correctly
     - _Requirements: 1.1, 3.4_
 
-  - [ ] 6.2 Test state-level geographic data
+  - [x] 6.2 Test state-level geographic data
     - Navigate several pages in the app
     - Wait a few minutes for data to appear
     - Check Plausible dashboard → Locations
@@ -123,7 +123,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Verify country is showing as "United States"
     - _Requirements: 4.1, 4.2, 4.4_
 
-  - [ ] 6.3 Test Do Not Track functionality
+  - [x] 6.3 Test Do Not Track functionality
     - Enable "Do Not Track" in browser settings
     - Open HourKeep in browser
     - Navigate to several pages
@@ -133,7 +133,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Test in multiple browsers (Chrome, Firefox, Safari)
     - _Requirements: 1.2, 1.5, 2.4_
 
-  - [ ] 6.4 Test offline functionality
+  - [x] 6.4 Test offline functionality
     - Open HourKeep online
     - Go offline (airplane mode or DevTools offline mode)
     - Navigate between pages
@@ -143,7 +143,7 @@ This implementation plan breaks down the analytics integration into discrete, ma
     - Go back online and verify analytics resume
     - _Requirements: 3.4_
 
-  - [ ] 6.5 Test on mobile devices
+  - [x] 6.5 Test on mobile devices
     - Open HourKeep on actual mobile device (iOS and Android if possible)
     - Test basic navigation
     - Verify Privacy Notice is readable on mobile
