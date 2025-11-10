@@ -272,6 +272,8 @@ export function HelpTooltip({
           tooltip: {
             sx: {
               maxWidth: 350,
+              maxHeight: "calc(100vh - 32px)",
+              overflowY: "auto",
               p: 2,
               backgroundColor: "background.paper",
               color: "text.primary",
@@ -289,6 +291,21 @@ export function HelpTooltip({
                 name: "offset",
                 options: {
                   offset: [0, 8],
+                },
+              },
+              {
+                name: "preventOverflow",
+                enabled: true,
+                options: {
+                  boundary: "viewport",
+                  padding: 8,
+                },
+              },
+              {
+                name: "flip",
+                enabled: true,
+                options: {
+                  fallbackPlacements: ["bottom", "top", "right", "left"],
                 },
               },
             ],
