@@ -6,13 +6,13 @@ This roadmap outlines where HourKeep is today, what we're building next, and our
 
 ---
 
-## Now (v4.5) - ✅ Shipped
+## Now - ✅ Shipped
 
 **Current Release - Available Today**
 
 HourKeep provides a privacy-first onboarding experience, helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management and contextual help throughout the app.
 
-### Core Features (v1.0)
+### Core Features
 
 - ✅ **Activity Tracking** - Log daily work, volunteer, and education hours
 - ✅ **Visual Calendar** - See all your logged activities at a glance
@@ -24,7 +24,7 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - ✅ **PWA Support** - Install as a native app on your phone
 - ✅ **Privacy First** - All data stays on your device, nothing sent to servers
 
-### Document Management (v2.0) 📸
+### Document Management 📸
 
 - ✅ **Camera Capture** - Take photos of documents directly from your phone
 - ✅ **File Upload** - Upload existing photos from your device
@@ -35,7 +35,7 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - ✅ **Storage Monitoring** - Track usage and get low-storage warnings
 - ✅ **Document Management** - Easy deletion with confirmation
 
-### Enhanced Onboarding (v4.0) - NEW! 🔐
+### Enhanced Onboarding 🔐
 
 - ✅ **Privacy Notice First** - Clear explanation of data handling before any data collection
 - ✅ **Extended Profile** - Name, state, date of birth, Medicaid ID, contact info
@@ -45,7 +45,7 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - ✅ **Mobile-Optimized Forms** - Touch-friendly inputs with smart validation
 - ✅ **Privacy Policy Access** - Review privacy policy anytime from settings
 
-### Exemption Screening (v3.0) 🎯
+### Exemption Screening 🎯
 
 - ✅ **Complete Questionnaire** - Simple questions covering all 5 exemption categories
 - ✅ **Smart Question Flow** - Dynamic questions that adapt to your answers
@@ -64,7 +64,7 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - Program participation (SNAP/TANF, rehabilitation)
 - Other (incarcerated, tribal status)
 
-### Activity Definitions Help (v4.5) 💡
+### Activity Definitions Help 💡
 
 - ✅ **Contextual Help** - Get guidance right where you need it
 - ✅ **Activity Definitions** - Clear explanations for work, volunteer, education, work programs
@@ -83,52 +83,19 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - Income ($580/month) is an alternative to hours
 - Seasonal workers can average income over 6 months
 
-### What's Still Missing
-
-- ❌ Profile information in exports
-- ❌ Income tracking
-- ❌ Hardship reporting
-- ❌ Compliance alerts
-
 ---
 
-## Next (v4.1) - 🚧 Coming Soon
+## Next - 🚧 Coming Soon
 
-**Export Improvements**
+**Planned Features**
 
-### Profile Information in Exports 📄
-
-**Status:** Ready to build  
-**Estimated:** 1-2 weeks
-
-Include profile information in data exports for professional agency submission.
-
-**What You'll Be Able To Do:**
-
-- Export data with your name and contact information
-- Include Medicaid ID in exports
-- Professional formatting with profile section at top
-- Export warning about personal information
-
-**Why This Matters:**
-
-- Agencies need your contact information
-- More professional and complete submissions
-- Reduces manual data entry for caseworkers
-
----
-
-## Later (v5.0+) - 💭 Future Considerations
-
-**Ideas We're Exploring**
-
-These features align with the full Medicaid work requirements domain but aren't yet scheduled. We'll prioritize based on user feedback and real-world needs.
+These are the next features we're building, in roughly this order:
 
 ### Income Tracking 💰
 
 Track income alongside hours to meet the $580/month alternative requirement.
 
-**Potential Features:**
+**What You'll Be Able To Do:**
 
 - Log income with pay period (hourly, daily, weekly, monthly)
 - Automatic conversion to monthly equivalent
@@ -136,7 +103,7 @@ Track income alongside hours to meet the $580/month alternative requirement.
 - Income compliance status on dashboard
 - Combined hours + income view
 
-**Why Consider This:**
+**Why This Matters:**
 
 - Some people meet requirements through income, not hours
 - Provides flexibility for different work situations
@@ -148,7 +115,7 @@ Track income alongside hours to meet the $580/month alternative requirement.
 
 Report temporary hardships that affect your ability to meet requirements.
 
-**Potential Features:**
+**What You'll Be Able To Do:**
 
 - Report medical hardships (hospitalization, serious illness)
 - Track disaster hardships (automatic based on county)
@@ -157,7 +124,7 @@ Report temporary hardships that affect your ability to meet requirements.
 - Attach supporting documents
 - View hardship history
 
-**Why Consider This:**
+**Why This Matters:**
 
 - Life happens - system should accommodate temporary setbacks
 - Required by HR1 legislation
@@ -165,216 +132,89 @@ Report temporary hardships that affect your ability to meet requirements.
 
 ---
 
+### Exemption Document Capture 📸
+
+Attach supporting documents to your exemption screening responses.
+
+**What You'll Be Able To Do:**
+
+- Upload documents for each exemption category
+- Capture photos of medical records, school enrollment, etc.
+- Link documents to specific exemption responses
+- View all exemption documents in one place
+- Include exemption documents in exports
+
+**Why This Matters:**
+
+- Agencies may request proof of exemption status
+- Having documents ready speeds up verification
+- Reduces stress when asked for documentation
+- Natural extension of existing document management
+
+---
+
+### Comprehensive Export Overhaul 📦
+
+Export everything - profile, activities, documents, exemptions, income, hardships.
+
+**What You'll Be Able To Do:**
+
+- Export complete compliance package
+- Include profile information (name, contact info, Medicaid ID)
+- Include all activities with attached documents
+- Include exemption screening results and documents
+- Include income records and hardship reports
+- Multiple export formats (JSON, PDF, text)
+- Professional formatting for agency submission
+- Export warning about personal information
+
+**Why This Matters:**
+
+- One-click submission of everything agencies need
+- Agencies need your contact information for processing
+- Reduces back-and-forth with caseworkers
+- Complete compliance documentation in one package
+- Saves time during verification requests
+
+---
+
+## Later - 💭 Future Considerations
+
+**Ideas We're Exploring**
+
+These features align with the full Medicaid work requirements domain but aren't yet scheduled. We'll prioritize based on user feedback and real-world needs.
+
+### SNAP Work Requirements Support
+
+Expand to support SNAP (food assistance) work requirements in addition to Medicaid. This would be a major undertaking requiring significant research and design work.
+
+### State System Integration 🔗
+
+API integration with state Medicaid systems for direct data submission. Would require partnerships with state agencies and careful privacy/security considerations.
+
 ### Compliance Alerts & Predictions 📊
 
-Proactive notifications to help you stay on track.
-
-**Potential Features:**
-
-- Risk alerts (< 60 hours with < 1 week remaining)
-- Projected compliance based on historical patterns
-- Deadline countdown (days remaining in month)
-- Missing documentation alerts
-- Recommendations for meeting requirements
-
-**Why Consider This:**
-
-- Prevents last-minute scrambling
-- Helps users plan ahead
-- Reduces non-compliance risk
-
----
-
-### Verification Response Generator 📄
-
-Respond quickly to agency verification requests.
-
-**Potential Features:**
-
-- Log verification requests from agency
-- Track due dates (30-day response period)
-- Generate formatted responses with relevant data
-- Include activities, documents, and compliance summary
-- Printable/exportable format
-
-**Why Consider This:**
-
-- HR1 requires 30-day response to verification requests
-- Having data organized makes response easier
-- Reduces stress when agency asks for proof
-
----
-
-### Help System & Guided Tours 💡
-
-Better onboarding and support for new users.
-
-**Potential Features:**
-
-- Searchable help center
-- FAQ section
-- Contextual help tooltips
-- Guided tours for first-time users
-- Video tutorials or animated guides
-- Agency contact information
-
-**Why Consider This:**
-
-- Reduces confusion for new users
-- Decreases support burden
-- Improves user confidence
-
----
+Proactive notifications to help you stay on track with risk alerts, projected compliance based on historical patterns, deadline countdowns, and recommendations for meeting requirements.
 
 ### Multi-Language Support 🌍
 
-Reach more users by supporting multiple languages.
-
-**Potential Features:**
-
-- Spanish translation (most requested)
+- Spanish translation
 - Language selector in settings
 - Translated help content
-- Professional translation (not machine-generated)
-
-**Why Consider This:**
-
-- Many Medicaid beneficiaries speak Spanish
-- Increases accessibility
-- Aligns with equity goals
-
----
 
 ### State-Specific Configurations 🗺️
 
-Adapt to different state implementations of work requirements.
-
-**Potential Features:**
-
 - State-specific exemption variations
-- Custom hour requirements (if different from 80)
+- Custom hour requirements
 - State agency contact information
 - State-specific reporting deadlines
-- Custom compliance lookback periods
-
-**Why Consider This:**
-
-- States may implement requirements differently
-- Provides accurate information for each state
-- Reduces confusion about local rules
-
----
 
 ### Advanced Analytics 📈
 
-Deeper insights into your compliance patterns.
-
-**Potential Features:**
-
 - Compliance trends over time
-- Activity type breakdown (work vs volunteer vs education)
+- Activity type breakdown
 - Average hours per week/month
 - Compliance streak tracking
-- Exportable charts and graphs
-
-**Why Consider This:**
-
-- Helps users understand their patterns
-- Identifies areas for improvement
-- Provides motivation through progress tracking
-
----
-
-### PWA Library Upgrade 🔧
-
-Update to a more actively maintained PWA solution.
-
-**Context:**
-
-The current `next-pwa@5.6.0` library uses deprecated Workbox packages and hasn't been updated recently. While everything works fine now, upgrading would improve long-term maintainability.
-
-**Potential Approaches:**
-
-- Upgrade to `@ducanh2912/next-pwa` (actively maintained fork)
-- Check for newer `next-pwa` versions
-- Roll custom service worker implementation
-
-**Why Consider This:**
-
-- Reduces deprecation warnings in builds
-- Ensures compatibility with future Next.js versions
-- Improves long-term maintainability
-- No immediate urgency (no security issues, everything works)
-
-**Timeline:**
-
-- Low priority maintenance task
-- Address during a maintenance sprint
-- Or when deprecations cause actual build issues
-
----
-
-### SNAP Work Requirements Support 🍎
-
-Expand HourKeep to support SNAP (food assistance) work requirements in addition to Medicaid.
-
-**Context:**
-SNAP has its own work requirements for "Able-Bodied Adults Without Dependents" (ABAWDs). While similar to Medicaid requirements, there are important differences:
-
-- 80 hours/month requirement (same as Medicaid)
-- 3-month time limit in a 36-month period if not meeting requirements
-- Different exemption categories
-- "Good cause" provisions for temporary hardships
-- Employment & Training (E&T) program participation
-
-**Potential Features:**
-
-- SNAP-specific exemption screening (ABAWD criteria)
-- Time limit tracking (3 months used out of 36)
-- Good cause reporting for missed hours
-- E&T activity tracking
-- Combined Medicaid + SNAP compliance view
-- SNAP-specific export formats
-
-**Why Consider This:**
-
-- Many people receive both Medicaid and SNAP
-- Similar tracking needs (80 hours/month)
-- Reduces burden of using multiple apps
-- Addresses a real need in the benefits ecosystem
-
-**Challenges:**
-
-- SNAP rules are more complex (time limits, good cause, E&T)
-- State-by-state variation in implementation
-- Different exemption categories than Medicaid
-- Would significantly increase app complexity
-- Requires careful design to avoid confusion between programs
-
-**Approach:**
-If we build this, it would likely be:
-
-- A separate mode or profile setting ("Track for Medicaid", "Track for SNAP", "Track for Both")
-- Clear visual distinction between program requirements
-- Shared activity tracking (same hours count for both)
-- Program-specific exemption screening and compliance calculations
-- Careful user research to ensure clarity
-
-**Timeline:**
-This is a major undertaking that would require:
-
-- Deep research into SNAP implementation across states
-- User research with people receiving both benefits
-- Significant design work to avoid confusion
-- Extensive testing with real users
-- Likely 3-6 months of development
-
-**User Feedback Needed:**
-
-- Would you use HourKeep for SNAP tracking?
-- Do you receive both Medicaid and SNAP?
-- What's most confusing about SNAP work requirements?
-- Would combined tracking be helpful or confusing?
 
 ---
 
@@ -386,7 +226,6 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 
 - ❌ **Cloud sync or backup** - Conflicts with privacy-first approach
 - ❌ **User accounts or authentication** - Adds complexity, reduces privacy
-- ❌ **Integration with state systems** - Beyond scope, requires partnerships
 - ❌ **Automatic verification** - Can't access state databases
 - ❌ **Social features or sharing** - Privacy risk
 - ❌ **Payment or monetization** - This is a public good
@@ -415,23 +254,15 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 
 ---
 
-## Timeline & Releases
+## Release Strategy
 
-**Current Plan:**
-
-- **v1.0** (Shipped Oct 2025) - Basic activity tracking MVP
-- **v2.0** (Shipped Nov 2025) - Document management
-- **v3.0** (Shipped Nov 2025) - Exemption screening
-- **v4.0** (Shipped Nov 2025) - Enhanced onboarding
-- **v4.1** (Q4 2025) - Export improvements
-- **v5.0** (TBD) - Features from "Later" section based on user feedback
-
-**Release Strategy:**
+**How We Ship:**
 
 - Ship features independently as they're completed
 - Each feature is fully functional on its own
 - No waiting for entire version to be complete
 - Continuous improvement based on usage
+- User feedback shapes what we build next
 
 ---
 
@@ -474,5 +305,3 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 ---
 
 **Last Updated:** November 2025
-**Current Version:** v4.5 (Activity Definitions Help)  
-**Next Release:** v4.6 (Export Improvements)
