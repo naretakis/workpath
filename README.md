@@ -30,6 +30,10 @@ HourKeep is a simple, privacy-focused app that helps you:
 - ✅ **Plain language questionnaire** - Simple questions covering all 5 exemption categories
 - ✅ **Smart question flow** - Dynamic questions that adapt to your answers
 - ✅ **Exemption history** - Track your status over time
+- ✅ **Contextual help system** - Get guidance right where you need it
+- ✅ **Activity definitions** - Clear explanations of what counts for each activity type
+- ✅ **Edge case examples** - 20+ scenarios showing what counts and what doesn't
+- ✅ **Income guidance** - Understand the $580/month threshold and seasonal worker rules
 - ✅ Simple daily activity logging
 - ✅ Visual calendar with activity indicators
 - ✅ Automatic monthly compliance calculations

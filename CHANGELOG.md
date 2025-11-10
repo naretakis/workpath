@@ -5,6 +5,105 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.5.0] - 2025-11-10
+
+### Added - Activity Definitions Help System 💡
+
+A comprehensive contextual help system that explains Medicaid work requirements in plain language, right where users need it. This feature helps users understand what activities count toward their 80-hour requirement, how to combine activities, and provides 20+ edge case examples.
+
+#### Contextual Help Throughout the App
+
+- **Activity form help** - Help icons next to each activity type (work, volunteer, education, work programs)
+- **Income threshold guidance** - Clear explanation of the $580/month alternative requirement
+- **Dashboard guidance card** - First-time user onboarding with 4 key steps
+- **Document verification help** - Guidance on what documents to capture and why
+- **Mobile-responsive tooltips** - Desktop tooltips convert to bottom sheets on mobile
+
+#### Comprehensive Activity Definitions
+
+- **Work activities** - What counts as paid employment, including edge cases
+- **Volunteer activities** - Unpaid community service requirements and examples
+- **Education activities** - School enrollment requirements (half-time or more)
+- **Work programs** - Job training and workforce development programs
+- **Job searching doesn't count** - Critical clarification that job searching is NOT a qualifying activity
+
+#### Edge Case Examples (20+ Scenarios)
+
+- **Work edge cases** - Gig work, on-call shifts, training time, commute time
+- **Volunteer edge cases** - Religious activities, family caregiving, informal help
+- **Education edge cases** - Online classes, part-time enrollment, study time
+- **Income edge cases** - Tips, bonuses, reimbursements, varying income
+- **Clear visual indicators** - Green checkmarks (counts), red X (doesn't count), warning icons (varies)
+
+#### Income Threshold Guidance
+
+- **$580/month threshold** - Clear explanation with calculation (80 hours × $7.25)
+- **What counts as income** - Wages, salaries, tips, commissions, self-employment
+- **What doesn't count** - Benefits, gifts, loans, reimbursements
+- **Seasonal worker rules** - 6-month averaging calculation with step-by-step example
+- **Income vs hours comparison** - Understand the two ways to meet requirements
+
+#### Activity Combination Rules
+
+- **80-hour minimum** - Clear explanation that activities can be combined
+- **Combination examples** - 40 hours work + 40 hours volunteer = compliant
+- **Flexible tracking** - Mix and match activities to reach 80 hours
+
+#### Dashboard Onboarding
+
+- **First-time guidance** - 4-step guide for new users (exemptions, calendar, review, export)
+- **Dismissible card** - Hide guidance once you're familiar with the app
+- **Restore from help button** - Bring back guidance anytime from header
+- **Action links** - Direct links to exemption screening, tracking, and export
+
+#### Plain Language Content
+
+- **8th grade reading level** - All content reviewed with Hemingway Editor
+- **Short sentences** - Average 15 words per sentence
+- **Active voice** - "You" language throughout
+- **No jargon** - Technical terms explained in simple language
+- **HR1 source references** - All definitions cite Section 71119 for accuracy
+
+#### Mobile-First Design
+
+- **Touch-friendly targets** - All interactive elements 44px minimum
+- **Bottom sheet modals** - Help content slides up from bottom on mobile
+- **Readable text** - Increased font sizes (13px minimum)
+- **Smooth animations** - 250ms slide-up, 300ms expand/collapse
+- **Tested at 320px** - Works on smallest mobile screens
+
+### Changed
+
+- **Activity form** - Added help icons next to activity type selector
+- **Dashboard** - Added guidance card for first-time users
+- **Tracking page** - Integrated help button in header to restore guidance
+- **Help tooltips** - Increased font size from 0.75rem to 0.8125rem for better readability
+- **Chip components** - Increased height from 20px to 22px for better touch targets
+
+### Technical Details
+
+- Created comprehensive help content in `src/content/helpText.ts`
+- Built 6 new reusable components in `src/components/help/` and `src/components/activities/`
+- Added HelpTooltip component with desktop/mobile responsive behavior
+- Added EdgeCaseExamples component with visual indicators
+- Added ActivityFormHelp component for inline activity guidance
+- Added IncomeHelp component for income threshold guidance
+- Added DashboardGuidance component for first-time onboarding
+- Added HelpSection component for collapsible content sections
+- Added DocumentVerificationHelp component for document guidance
+- All content sourced from HR1 Section 71119 and CFA Service Blueprint
+- Comprehensive plain language review completed
+- Mobile optimization tested at 320px, 375px, and 414px widths
+
+### Developer Experience
+
+- Completed all 9 tasks across 5 phases of activity-definitions-help spec
+- Plain language review summary documented
+- Mobile optimization testing completed
+- Reusable component patterns established for future help content
+
+---
+
 ## [4.4.0] - 2025-11-10
 
 ### Changed - Warm Neutral Theme 🎨
@@ -512,6 +611,7 @@ This release represents the completion of the exemption screening spec, includin
 
 ---
 
+[4.5.0]: https://github.com/naretakis/hourkeep/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/naretakis/hourkeep/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/naretakis/hourkeep/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/naretakis/hourkeep/compare/v4.0.0...v4.2.0

@@ -6,11 +6,11 @@ This roadmap outlines where HourKeep is today, what we're building next, and our
 
 ---
 
-## Now (v4.0) - ✅ Shipped
+## Now (v4.5) - ✅ Shipped
 
 **Current Release - Available Today**
 
-HourKeep provides a privacy-first onboarding experience, helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management.
+HourKeep provides a privacy-first onboarding experience, helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management and contextual help throughout the app.
 
 ### Core Features (v1.0)
 
@@ -63,6 +63,25 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - Health/disability (Medicare, medically frail, disabled veteran)
 - Program participation (SNAP/TANF, rehabilitation)
 - Other (incarcerated, tribal status)
+
+### Activity Definitions Help (v4.5) 💡
+
+- ✅ **Contextual Help** - Get guidance right where you need it
+- ✅ **Activity Definitions** - Clear explanations for work, volunteer, education, work programs
+- ✅ **Edge Case Examples** - 20+ scenarios showing what counts and what doesn't
+- ✅ **Income Guidance** - Understand the $580/month threshold and seasonal worker rules
+- ✅ **Combination Rules** - Learn how to mix activities to reach 80 hours
+- ✅ **Dashboard Onboarding** - First-time user guidance with 4 key steps
+- ✅ **Mobile-Responsive** - Tooltips on desktop, bottom sheets on mobile
+- ✅ **Plain Language** - 8th grade reading level, no jargon
+- ✅ **HR1 Sourced** - All definitions cite Section 71119 for accuracy
+
+**Key Clarifications:**
+
+- Job searching does NOT count as a qualifying activity
+- Activities can be combined to reach 80 hours
+- Income ($580/month) is an alternative to hours
+- Seasonal workers can average income over 6 months
 
 ### What's Still Missing
 
@@ -455,5 +474,5 @@ To keep HourKeep simple, privacy-focused, and offline-first, we're explicitly NO
 ---
 
 **Last Updated:** November 2025
-**Current Version:** v4.0 (Enhanced Onboarding)  
-**Next Release:** v4.1 (Export Improvements)
+**Current Version:** v4.5 (Activity Definitions Help)  
+**Next Release:** v4.6 (Export Improvements)
