@@ -198,7 +198,7 @@ hourkeep/
 
 - **All data stays on your device** - Nothing is sent to any server
 - **No account required** - No sign-up, no login
-- **Anonymous usage analytics** - We collect anonymous usage statistics (page views, device types, states) to understand where this tool is needed most and improve the app. This does NOT include any personal information, activity logs, or documents. Respects "Do Not Track" browser settings.
+- **Anonymous usage analytics** - We collect anonymous usage statistics (page views, device types, states) to understand where this tool is needed most. This does NOT include any personal information, activity logs, or documents. Respects "Do Not Track" browser settings.
 - **You control exports** - Only you decide when to share your data
 
 ### What Analytics We Collect
@@ -262,9 +262,10 @@ Built as an MVP learning project to understand:
 
 HourKeep is actively evolving. See our [ROADMAP.md](ROADMAP.md) to learn about:
 
-- ✅ Recently shipped (v4.4: Warm Neutral theme for a friendlier look)
-- � Future sconsiderations (income tracking, hardship reporting, compliance alerts)
-- ❌ What we're explicitly not building (and why)
+- ✅ **Now** - What's available today (exemption screening, document management, activity tracking)
+- 🚧 **Next** - Coming soon (income tracking, hardship reporting, exemption documents, export overhaul)
+- 💭 **Later** - Future considerations (SNAP support, state integration, compliance alerts)
+- ❌ **Not Planned** - What we're explicitly not building (and why)
 
 ## Support
 
