@@ -7,6 +7,7 @@ import {
 } from "@mui/icons-material";
 import { MonthlySummary } from "@/types";
 import { format, parseISO } from "date-fns";
+import { HourTrackingHelpIcon } from "@/components/help/HourTrackingHelp";
 
 interface DashboardProps {
   summary: MonthlySummary;
@@ -31,14 +32,22 @@ export function Dashboard({ summary }: DashboardProps) {
 
   return (
     <Paper sx={{ p: { xs: 2, sm: 3 } }}>
-      <Box sx={{ mb: { xs: 2, sm: 3 } }}>
+      {/* Header with Help Icon */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: { xs: 2, sm: 3 },
+        }}
+      >
         <Typography
           variant="h5"
-          gutterBottom
           sx={{ fontSize: { xs: "1.25rem", sm: "1.5rem" } }}
         >
           Monthly Progress - {monthDisplay}
         </Typography>
+        <HourTrackingHelpIcon />
       </Box>
 
       {/* Compliance Status */}

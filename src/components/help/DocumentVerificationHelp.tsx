@@ -8,21 +8,29 @@ import { HelpTooltip } from "@/components/help/HelpTooltip";
 import { documentVerificationHelp } from "@/content/helpText";
 
 export interface DocumentVerificationHelpIconProps {
-  activityType: "work" | "volunteer" | "education";
+  activityType?: "work" | "volunteer" | "education";
+  context?: "income" | "gig-work";
 }
 
 /**
  * DocumentVerificationHelpIcon Component
  *
  * Displays a help icon that shows information about verification documents
- * for different activity types. Explains why documents are helpful and
- * provides examples of acceptable documents.
+ * for different activity types or income contexts. Explains why documents
+ * are helpful and provides examples of acceptable documents.
  */
 export function DocumentVerificationHelpIcon({
   activityType,
+  context,
 }: DocumentVerificationHelpIconProps) {
-  // Get examples based on activity type
+  // Get examples based on activity type or context
   const getExamples = () => {
+    if (context === "income") {
+      return documentVerificationHelp.incomeExamples;
+    }
+    if (context === "gig-work") {
+      return documentVerificationHelp.gigWorkExamples;
+    }
     switch (activityType) {
       case "work":
         return documentVerificationHelp.workExamples;
@@ -35,7 +43,22 @@ export function DocumentVerificationHelpIcon({
     }
   };
 
+  const getTips = () => {
+    if (context === "gig-work") {
+      return documentVerificationHelp.gigWorkTips;
+    }
+    return documentVerificationHelp.tips;
+  };
+
+  const getContextLabel = () => {
+    if (context === "income") return "income";
+    if (context === "gig-work") return "gig work";
+    return activityType;
+  };
+
   const examples = getExamples();
+  const tips = getTips();
+  const contextLabel = getContextLabel();
 
   // Render full content for the tooltip/modal
   const renderContent = () => (
@@ -54,14 +77,14 @@ export function DocumentVerificationHelpIcon({
         </Typography>
       </Box>
 
-      {/* Examples for this activity type */}
+      {/* Examples for this activity type or context */}
       <Box sx={{ mb: 2 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mb: 1 }}>
           <CheckCircleOutlineIcon
             sx={{ fontSize: 18, color: "success.main" }}
           />
           <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-            Examples for {activityType}:
+            Examples for {contextLabel}:
           </Typography>
         </Box>
         <List dense sx={{ py: 0, pl: 2 }}>
@@ -88,7 +111,7 @@ export function DocumentVerificationHelpIcon({
           </Typography>
         </Box>
         <List dense sx={{ py: 0, pl: 2 }}>
-          {documentVerificationHelp.tips.map((tip, index) => (
+          {tips.map((tip, index) => (
             <ListItem key={index} sx={{ py: 0.25, px: 0 }}>
               <ListItemText
                 primary={`• ${tip}`}

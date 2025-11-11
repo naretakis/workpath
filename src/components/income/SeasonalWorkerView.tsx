@@ -14,7 +14,7 @@ import {
 } from "@mui/icons-material";
 import { formatCurrency } from "@/lib/utils/payPeriodConversion";
 import { INCOME_THRESHOLD } from "@/lib/utils/payPeriodConversion";
-import { HelpTooltip } from "@/components/help/HelpTooltip";
+import { SeasonalWorkerHelpIcon } from "@/components/help/SeasonalWorkerHelp";
 
 export interface SeasonalWorkerViewProps {
   history: Array<{ month: string; total: number }>;
@@ -76,19 +76,7 @@ export function SeasonalWorkerView({
             <Typography variant="h6" component="h3">
               6-Month Income History
             </Typography>
-            <HelpTooltip
-              title="Seasonal Worker Calculation"
-              content="As a seasonal worker, your income is averaged over the past 6 months. This helps account for months when you earn more or less due to seasonal work patterns."
-              examples={[
-                "Farm work during harvest season",
-                "Holiday retail work",
-                "Summer tourism jobs",
-                "Ski resort employment",
-              ]}
-              ariaLabel="Help for seasonal worker calculation"
-              size="small"
-              color="primary"
-            />
+            <SeasonalWorkerHelpIcon />
           </Box>
         </Box>
 

@@ -20,6 +20,8 @@ import {
   CardActions,
   IconButton,
   Divider,
+  Alert,
+  Snackbar,
 } from "@mui/material";
 import {
   AttachFile as AttachFileIcon,
@@ -35,6 +37,7 @@ import {
 import { DocumentCapture } from "@/components/documents/DocumentCapture";
 import { DocumentViewer } from "@/components/documents/DocumentViewer";
 import { DocumentMetadataFormSimple } from "@/components/documents/DocumentMetadataFormSimple";
+import { DocumentVerificationHelpIcon } from "@/components/help/DocumentVerificationHelp";
 import {
   getDocumentsByIncomeEntry,
   getIncomeDocumentBlob,
@@ -70,6 +73,9 @@ export function IncomeEntryForm({
   const [incomeType, setIncomeType] = useState<IncomeEntry["incomeType"]>();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("");
 
   // Document state for new entries
   const [pendingDocument, setPendingDocument] = useState<{
@@ -147,22 +153,75 @@ export function IncomeEntryForm({
 
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
+    let hasWarnings = false;
 
+    // Amount validation
     if (!amount || parseFloat(amount) <= 0) {
       newErrors.amount = "Amount must be greater than $0";
-    } else if (parseFloat(amount) > 100000) {
-      newErrors.amount = "Amount seems unusually high. Please verify.";
+    } else {
+      const amountValue = parseFloat(amount);
+
+      // Check for unusually high amounts
+      if (amountValue > 100000) {
+        newErrors.amount = "Amount seems unusually high. Please verify.";
+      } else if (amountValue > 50000) {
+        setWarningMessage(
+          "This is a very high amount. Please double-check that it's correct.",
+        );
+        hasWarnings = true;
+      }
+
+      // Check for unusually low amounts for certain pay periods
+      if (payPeriod === "monthly" && amountValue < 100) {
+        setWarningMessage(
+          "This monthly amount seems low. Make sure you selected the correct pay period.",
+        );
+        hasWarnings = true;
+      } else if (payPeriod === "bi-weekly" && amountValue < 50) {
+        setWarningMessage(
+          "This bi-weekly amount seems low. Make sure you selected the correct pay period.",
+        );
+        hasWarnings = true;
+      }
     }
 
+    // Date validation
     if (!date) {
       newErrors.date = "Date is required";
+    } else {
+      const selectedDate = new Date(date);
+      const today = new Date();
+      const oneYearAgo = new Date();
+      oneYearAgo.setFullYear(today.getFullYear() - 1);
+      const oneMonthFuture = new Date();
+      oneMonthFuture.setMonth(today.getMonth() + 1);
+
+      // Check if date is too far in the past
+      if (selectedDate < oneYearAgo) {
+        setWarningMessage(
+          "This date is more than a year ago. Make sure it's correct.",
+        );
+        hasWarnings = true;
+      }
+
+      // Check if date is in the future
+      if (selectedDate > oneMonthFuture) {
+        newErrors.date = "Date cannot be more than one month in the future";
+      }
     }
 
+    // Pay period validation
     if (!payPeriod) {
       newErrors.payPeriod = "Pay period is required";
     }
 
     setErrors(newErrors);
+
+    // Show warning if there are warnings but no errors
+    if (hasWarnings && Object.keys(newErrors).length === 0) {
+      setShowWarning(true);
+    }
+
     return Object.keys(newErrors).length === 0;
   };
 
@@ -217,10 +276,32 @@ export function IncomeEntryForm({
         });
       }
 
-      handleClose();
+      // Show success message
+      setShowSuccess(true);
+
+      // Close after a brief delay to show success message
+      setTimeout(() => {
+        handleClose();
+      }, 1000);
     } catch (error) {
       console.error("Error saving income entry:", error);
-      setErrors({ submit: "Failed to save income entry. Please try again." });
+
+      // Provide more specific error messages
+      let errorMessage = "Failed to save income entry. Please try again.";
+
+      if (error instanceof Error) {
+        if (error.message.includes("duplicate")) {
+          errorMessage =
+            "This income entry may already exist. Please check your entries.";
+        } else if (error.message.includes("network")) {
+          errorMessage =
+            "Network error. Please check your connection and try again.";
+        } else if (error.message.includes("storage")) {
+          errorMessage = "Storage error. Your device may be out of space.";
+        }
+      }
+
+      setErrors({ submit: errorMessage });
     } finally {
       setSaving(false);
     }
@@ -322,6 +403,9 @@ export function IncomeEntryForm({
     setDocuments([]);
     documentUrls.forEach((url) => URL.revokeObjectURL(url));
     setDocumentUrls(new Map());
+    setShowSuccess(false);
+    setShowWarning(false);
+    setWarningMessage("");
     onClose();
   };
 
@@ -479,9 +563,14 @@ export function IncomeEntryForm({
           {/* Document Section */}
           <Divider sx={{ my: 2 }} />
           <Box>
-            <Typography variant="subtitle2" gutterBottom>
-              Documentation (Optional)
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+              <Typography variant="subtitle2">
+                Documentation (Optional)
+              </Typography>
+              <DocumentVerificationHelpIcon
+                context={incomeType === "gig-work" ? "gig-work" : "income"}
+              />
+            </Box>
             <Typography
               variant="caption"
               color="text.secondary"
@@ -692,6 +781,38 @@ export function IncomeEntryForm({
           }}
         />
       )}
+
+      {/* Success Snackbar */}
+      <Snackbar
+        open={showSuccess}
+        autoHideDuration={3000}
+        onClose={() => setShowSuccess(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setShowSuccess(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Income entry saved successfully!
+        </Alert>
+      </Snackbar>
+
+      {/* Warning Snackbar */}
+      <Snackbar
+        open={showWarning}
+        autoHideDuration={6000}
+        onClose={() => setShowWarning(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setShowWarning(false)}
+          severity="warning"
+          sx={{ width: "100%" }}
+        >
+          {warningMessage}
+        </Alert>
+      </Snackbar>
     </Dialog>
   );
 }

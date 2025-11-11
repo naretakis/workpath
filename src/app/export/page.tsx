@@ -28,13 +28,17 @@ export default function ExportPage() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [incomeCount, setIncomeCount] = useState(0);
+
   useEffect(() => {
     const loadData = async () => {
       try {
         const profiles = await db.profiles.toArray();
         const activities = await db.activities.toArray();
+        const incomeEntries = await db.incomeEntries.toArray();
         setProfileExists(profiles.length > 0);
         setActivityCount(activities.length);
+        setIncomeCount(incomeEntries.length);
       } catch (error) {
         console.error("Error loading data:", error);
         setError("Failed to load data. Please refresh the page.");
@@ -51,13 +55,19 @@ export default function ExportPage() {
       // Get all data from database
       const profiles = await db.profiles.toArray();
       const activities = await db.activities.toArray();
+      const incomeEntries = await db.incomeEntries.toArray();
+      const exemptions = await db.exemptions.toArray();
+      const complianceModes = await db.complianceModes.toArray();
 
       // Create export object
       const exportData = {
         exportDate: new Date().toISOString(),
         profile: profiles[0] || null,
         activities: activities,
-        version: "1.0",
+        incomeEntries: incomeEntries,
+        exemptions: exemptions,
+        complianceModes: complianceModes,
+        version: "2.0", // Updated version to include income data
       };
 
       // Convert to JSON
@@ -89,11 +99,13 @@ export default function ExportPage() {
       // Get all data from database
       const profiles = await db.profiles.toArray();
       const activities = await db.activities.toArray();
+      const incomeEntries = await db.incomeEntries.toArray();
+      const complianceModes = await db.complianceModes.toArray();
 
       const profile = profiles[0];
 
       // Create readable text format
-      let textContent = "HOURKEEP ACTIVITY REPORT\n";
+      let textContent = "HOURKEEP COMPLIANCE REPORT\n";
       textContent += "=".repeat(50) + "\n\n";
 
       if (profile) {
@@ -104,51 +116,91 @@ export default function ExportPage() {
 
       textContent += "=".repeat(50) + "\n\n";
 
-      // Group activities by month
-      const activitiesByMonth = activities.reduce(
-        (acc, activity) => {
-          const month = activity.date.substring(0, 7); // YYYY-MM
-          if (!acc[month]) {
-            acc[month] = [];
-          }
-          acc[month].push(activity);
-          return acc;
-        },
-        {} as Record<string, typeof activities>,
-      );
+      // Get all unique months from both activities and income entries
+      const allMonths = new Set<string>();
+      activities.forEach((a) => allMonths.add(a.date.substring(0, 7)));
+      incomeEntries.forEach((i) => allMonths.add(i.date.substring(0, 7)));
 
       // Sort months
-      const sortedMonths = Object.keys(activitiesByMonth).sort().reverse();
+      const sortedMonths = Array.from(allMonths).sort().reverse();
 
       sortedMonths.forEach((month) => {
-        const monthActivities = activitiesByMonth[month];
-        const totalHours = monthActivities.reduce((sum, a) => sum + a.hours, 0);
-        const isCompliant = totalHours >= 80;
+        // Get compliance mode for this month
+        const modeRecord = complianceModes.find(
+          (m) => m.month === month && m.userId === profile?.id,
+        );
+        const mode = modeRecord?.mode || "hours";
 
         textContent += `${format(new Date(month + "-01"), "MMMM yyyy")}\n`;
         textContent += `-`.repeat(50) + "\n";
-        textContent += `Total Hours: ${totalHours} / 80 ${isCompliant ? "✓ COMPLIANT" : "✗ NOT COMPLIANT"}\n\n`;
+        textContent += `Compliance Mode: ${mode === "hours" ? "Hours Tracking" : "Income Tracking"}\n\n`;
 
-        // Sort activities by date
-        const sortedActivities = [...monthActivities].sort((a, b) =>
-          a.date.localeCompare(b.date),
-        );
+        if (mode === "hours") {
+          // Hours tracking
+          const monthActivities = activities.filter(
+            (a) => a.date.substring(0, 7) === month,
+          );
+          const totalHours = monthActivities.reduce(
+            (sum, a) => sum + a.hours,
+            0,
+          );
+          const isCompliant = totalHours >= 80;
 
-        sortedActivities.forEach((activity) => {
-          textContent += `  ${format(new Date(activity.date + "T00:00:00"), "MMM d, yyyy")} - `;
-          textContent += `${activity.type.charAt(0).toUpperCase() + activity.type.slice(1)} - `;
-          textContent += `${activity.hours} hours`;
-          if (activity.organization) {
-            textContent += ` - ${activity.organization}`;
+          textContent += `Total Hours: ${totalHours} / 80 ${isCompliant ? "✓ COMPLIANT" : "✗ NOT COMPLIANT"}\n\n`;
+
+          if (monthActivities.length > 0) {
+            const sortedActivities = [...monthActivities].sort((a, b) =>
+              a.date.localeCompare(b.date),
+            );
+
+            sortedActivities.forEach((activity) => {
+              textContent += `  ${format(new Date(activity.date + "T00:00:00"), "MMM d, yyyy")} - `;
+              textContent += `${activity.type.charAt(0).toUpperCase() + activity.type.slice(1)} - `;
+              textContent += `${activity.hours} hours`;
+              if (activity.organization) {
+                textContent += ` - ${activity.organization}`;
+              }
+              textContent += "\n";
+            });
+          } else {
+            textContent += "  No activities recorded\n";
           }
-          textContent += "\n";
-        });
+        } else {
+          // Income tracking
+          const monthIncomeEntries = incomeEntries.filter(
+            (i) => i.date.substring(0, 7) === month,
+          );
+          const totalIncome = monthIncomeEntries.reduce(
+            (sum, i) => sum + i.monthlyEquivalent,
+            0,
+          );
+          const isCompliant = totalIncome >= 580;
+
+          textContent += `Total Income: $${totalIncome.toFixed(2)} / $580.00 ${isCompliant ? "✓ COMPLIANT" : "✗ NOT COMPLIANT"}\n\n`;
+
+          if (monthIncomeEntries.length > 0) {
+            const sortedEntries = [...monthIncomeEntries].sort((a, b) =>
+              a.date.localeCompare(b.date),
+            );
+
+            sortedEntries.forEach((entry) => {
+              textContent += `  ${format(new Date(entry.date + "T00:00:00"), "MMM d, yyyy")} - `;
+              textContent += `$${entry.amount.toFixed(2)} (${entry.payPeriod}) → $${entry.monthlyEquivalent.toFixed(2)}/month`;
+              if (entry.source) {
+                textContent += ` - ${entry.source}`;
+              }
+              textContent += "\n";
+            });
+          } else {
+            textContent += "  No income entries recorded\n";
+          }
+        }
 
         textContent += "\n";
       });
 
-      if (activities.length === 0) {
-        textContent += "No activities recorded yet.\n";
+      if (activities.length === 0 && incomeEntries.length === 0) {
+        textContent += "No activities or income entries recorded yet.\n";
       }
 
       // Create blob and download
@@ -230,8 +282,11 @@ export default function ExportPage() {
         <Typography variant="body1" gutterBottom>
           <strong>Profile:</strong> {profileExists ? "Yes" : "No"}
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body1" gutterBottom>
           <strong>Activities:</strong> {activityCount} recorded
+        </Typography>
+        <Typography variant="body1">
+          <strong>Income Entries:</strong> {incomeCount} recorded
         </Typography>
       </Paper>
 

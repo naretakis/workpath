@@ -157,7 +157,7 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
                   fontSize: { xs: "0.75rem", sm: "0.875rem" },
                 }}
               >
-                You don&apos;t need to track hours
+                You don&apos;t need to track hours (but you can if you like)
               </Typography>
             </Box>
             {screening.result.exemptionCategory && (

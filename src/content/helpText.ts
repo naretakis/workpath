@@ -353,6 +353,48 @@ export const incomeDefinitions: Record<string, IncomeDefinition> = {
     ],
     source: "HR1 Section 71119(xx)(2)",
   },
+
+  gigEconomy: {
+    title: "Gig Economy Workers",
+    definition:
+      "If you work for gig economy platforms like Uber, DoorDash, or Instacart, your income counts toward the $580 threshold.",
+    whatCounts: {
+      title: "What Gig Work Counts?",
+      description:
+        "Earnings from gig economy platforms count as earned income.",
+      examples: [
+        "Uber or Lyft driving",
+        "DoorDash, Uber Eats, or Grubhub delivery",
+        "Instacart shopping",
+        "TaskRabbit tasks",
+        "Fiverr or Upwork freelancing",
+        "Other app-based gig work",
+      ],
+    },
+    note: "Track your income from all gig platforms. If you earn $580 or more per month total, you meet requirements.",
+    edgeCases: [
+      {
+        scenario: "I drive for Uber and made $650 this month",
+        counts: true,
+        explanation:
+          "Yes! Since you earned more than $580 from gig work, you automatically meet work requirements.",
+      },
+      {
+        scenario:
+          "I do DoorDash but my income varies. Some months $700, some $400",
+        counts: "varies",
+        explanation:
+          "It depends on the month. In months where you earn $580 or more, you meet requirements. In months under $580, you may need to track hours or qualify as a seasonal worker.",
+      },
+      {
+        scenario: "I work for multiple gig apps. Do I add them together?",
+        counts: true,
+        explanation:
+          "Yes! Add up all your gig work income. If the total is $580 or more, you meet requirements.",
+      },
+    ],
+    source: "HR1 Section 71119(xx)(2)(F)",
+  },
 };
 
 // ============================================================================
@@ -413,15 +455,18 @@ export interface DocumentVerificationHelp {
   workExamples: string[];
   volunteerExamples: string[];
   educationExamples: string[];
+  incomeExamples: string[];
+  gigWorkExamples: string[];
   tips: string[];
+  gigWorkTips: string[];
   note: string;
 }
 
 export const documentVerificationHelp: DocumentVerificationHelp = {
   title: "Verification Documents",
   definition:
-    "Documents that prove you completed work, volunteer, or education activities.",
-  why: "Your state Medicaid agency may ask for proof that you met the 80-hour requirement. Having documents ready makes it easier to verify your hours.",
+    "Documents that prove you completed work, volunteer, or education activities, or that verify your income.",
+  why: "Your state Medicaid agency may ask for proof that you met the 80-hour requirement or the $580 income threshold. Having documents ready makes it easier to verify your hours or income.",
   workExamples: [
     "Pay stubs showing hours worked",
     "Timesheet or work schedule",
@@ -441,11 +486,33 @@ export const documentVerificationHelp: DocumentVerificationHelp = {
     "Transcript or grade report",
     "Tuition receipt or financial aid papers",
   ],
+  incomeExamples: [
+    "Pay stubs showing income amount",
+    "Bank statements showing deposits from work",
+    "1099 forms for self-employment or contract work",
+    "Self-employment records (invoices, receipts, payment confirmations)",
+    "Payment platform screenshots (PayPal, Venmo, Cash App for business)",
+  ],
+  gigWorkExamples: [
+    "Uber or Lyft earnings summary from the app",
+    "DoorDash weekly payment summary screenshot",
+    "Instacart payment history from the app",
+    "TaskRabbit earnings report",
+    "Fiverr or Upwork payment confirmations",
+    "Any gig platform's earnings dashboard screenshot",
+  ],
   tips: [
     "Take a clear photo of the whole document",
     "Make sure you can read all the text",
     "Include the date and your name if you can see them",
-    "You can add more than one document for each activity",
+    "You can add more than one document for each activity or income entry",
+  ],
+  gigWorkTips: [
+    "Screenshot your earnings dashboard from the app",
+    "Make sure the screenshot shows the date and total amount",
+    "Include weekly or monthly summaries if available",
+    "Capture payment confirmations or deposit notifications",
+    "If you work for multiple apps, document each one separately",
   ],
   note: "Documents are optional but we recommend them. They stay private on your device. You only share them when you export your data.",
 };

@@ -10,6 +10,7 @@ import {
   formatCurrency,
   INCOME_THRESHOLD,
 } from "@/lib/utils/payPeriodConversion";
+import { IncomeTrackingHelpIcon } from "@/components/help/IncomeTrackingHelp";
 
 interface IncomeStatusIndicatorProps {
   summary: MonthlyIncomeSummary;
@@ -44,6 +45,24 @@ export function IncomeStatusIndicator({ summary }: IncomeStatusIndicatorProps) {
 
   return (
     <Paper sx={{ p: { xs: 2, sm: 3 } }}>
+      {/* Header with Help Icon */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 2,
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+        >
+          Income Tracking
+        </Typography>
+        <IncomeTrackingHelpIcon />
+      </Box>
+
       {/* Compliance Status */}
       <Box
         sx={{

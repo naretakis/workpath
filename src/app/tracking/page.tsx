@@ -446,16 +446,14 @@ export default function TrackingPage() {
           <ExemptionBadge screening={exemptionScreening} />
         </Box>
 
-        {/* Compliance Mode Selector - only show for non-exempt users */}
-        {(!exemptionScreening || !exemptionScreening.result.isExempt) && (
-          <Box sx={{ mt: 3 }}>
-            <ComplianceModeSelector
-              currentMode={complianceMode}
-              currentMonth={format(new Date(), "yyyy-MM")}
-              onModeChange={handleModeChange}
-            />
-          </Box>
-        )}
+        {/* Compliance Mode Selector - show for all users, but note exempt users don't need to track */}
+        <Box sx={{ mt: 3 }}>
+          <ComplianceModeSelector
+            currentMode={complianceMode}
+            currentMonth={format(new Date(), "yyyy-MM")}
+            onModeChange={handleModeChange}
+          />
+        </Box>
 
         {/* Hours Tracking UI */}
         {complianceMode === "hours" && (

@@ -124,7 +124,7 @@ This implementation plan breaks down the income tracking feature into discrete, 
 
 ## Phase 4: Help Content & Polish
 
-- [ ] 16. Create income tracking help content components
+- [x] 16. Create income tracking help content components
   - Create `src/components/help/IncomeTrackingHelp.tsx` using content from `src/content/helpText.ts`
   - Display income threshold definition with note about federal minimum wage basis and potential changes
   - Display earned vs unearned income examples with disclaimer about pending regulatory clarification
@@ -133,21 +133,21 @@ This implementation plan breaks down the income tracking feature into discrete, 
   - Add help dialogs/expandable sections to relevant components
   - _Requirements: 5, 13_
 
-- [ ] 17. Update DocumentVerificationHelp for income documents
+- [x] 17. Update DocumentVerificationHelp for income documents
   - Update `src/components/help/DocumentVerificationHelp.tsx` to include income document examples
   - Add examples: pay stubs, bank statements, gig work app screenshots (Uber earnings, DoorDash weekly summary, Instacart payment history), 1099 forms, self-employment records, payment platform screenshots (PayPal, Venmo, Cash App for business)
   - Provide guidance on what makes good income documentation for different income types
   - Include specific guidance for gig economy workers
   - _Requirements: 4, 5, 13_
 
-- [ ] 18. Implement form validation and error handling
+- [x] 18. Implement form validation and error handling
   - Add comprehensive validation to IncomeEntryForm (amount range, date validation, unusual amounts warning)
   - Implement error messages for failed saves
   - Add success notifications after saving
   - Handle edge cases (duplicate entries, invalid dates)
   - _Requirements: 2, 3_
 
-- [ ] 19. Add mobile responsiveness and accessibility
+- [x] 19. Add mobile responsiveness and accessibility
   - Ensure touch targets are at least 44x44px
   - Verify color contrast meets WCAG 2.1 AA standards
   - _Requirements: All UI components_
@@ -156,19 +156,21 @@ This implementation plan breaks down the income tracking feature into discrete, 
 
 ## Phase 5: Export & Integration
 
-- [ ] 20. Update export functionality for income data
+- [x] 20. Update export functionality for income data
   - Update `src/lib/export/exportData.ts` to include income data structure
   - Implement `exportIncomeData()` function to gather entries, summary, and documents
   - Update `exportComplianceData()` to conditionally export hours or income based on mode
   - Ensure income documents are included in export
   - _Requirements: 10_
 
-- [ ] 21. Update exemption flow integration
+- [x] 21. Update exemption flow integration
   - Ensure ComplianceModeSelector only shows for non-exempt users
   - Update onboarding flow to direct to exemption screener first
   - For exempt users, signify/note that compliance tracking is not required (but they can still do it if they like)
   - Update dashboard to show exemption status prominently
   - _Requirements: 14_
+
+## We can skip the remaining tasks, I'll do manual testing.
 
 - [ ] 22. Add income tracking to existing navigation/routing
   - Ensure income tracking is accessible from main navigation
