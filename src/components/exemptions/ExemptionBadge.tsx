@@ -10,6 +10,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ExemptionScreening } from "@/types/exemptions";
 import { RescreenDialog } from "./RescreenDialog";
+import { ExemptionDetailsDialog } from "./ExemptionDetailsDialog";
 
 interface ExemptionBadgeProps {
   screening: ExemptionScreening | null;
@@ -18,15 +19,30 @@ interface ExemptionBadgeProps {
 export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
   const router = useRouter();
   const [rescreenDialogOpen, setRescreenDialogOpen] = useState(false);
+  const [detailsDialogOpen, setDetailsDialogOpen] = useState(false);
 
   const handleClick = () => {
     if (screening) {
-      // If there's an existing screening, show confirmation dialog
-      setRescreenDialogOpen(true);
+      // If there's an existing screening, show details dialog
+      setDetailsDialogOpen(true);
     } else {
       // If no screening, go directly to exemptions page
       router.push("/exemptions");
     }
+  };
+
+  const handleViewDetails = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setDetailsDialogOpen(true);
+  };
+
+  const handleDetailsClose = () => {
+    setDetailsDialogOpen(false);
+  };
+
+  const handleRescreenFromDetails = () => {
+    setDetailsDialogOpen(false);
+    setRescreenDialogOpen(true);
   };
 
   const handleRescreenConfirm = () => {
@@ -120,14 +136,21 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
           <Button
             size="small"
             sx={{ mt: 1, color: "success.dark" }}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleClick();
-            }}
+            onClick={handleViewDetails}
           >
             View Details
           </Button>
         </Paper>
+
+        {/* Details Dialog */}
+        {screening && (
+          <ExemptionDetailsDialog
+            open={detailsDialogOpen}
+            onClose={handleDetailsClose}
+            screening={screening}
+            onRescreen={handleRescreenFromDetails}
+          />
+        )}
 
         {/* Rescreen Confirmation Dialog */}
         <RescreenDialog
@@ -168,17 +191,20 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
             </Typography>
           </Box>
         </Box>
-        <Button
-          size="small"
-          sx={{ mt: 1 }}
-          onClick={(e) => {
-            e.stopPropagation();
-            handleClick();
-          }}
-        >
+        <Button size="small" sx={{ mt: 1 }} onClick={handleViewDetails}>
           View Details
         </Button>
       </Paper>
+
+      {/* Details Dialog */}
+      {screening && (
+        <ExemptionDetailsDialog
+          open={detailsDialogOpen}
+          onClose={handleDetailsClose}
+          screening={screening}
+          onRescreen={handleRescreenFromDetails}
+        />
+      )}
 
       {/* Rescreen Confirmation Dialog */}
       <RescreenDialog

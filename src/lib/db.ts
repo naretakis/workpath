@@ -2,6 +2,12 @@ import Dexie, { Table } from "dexie";
 import { UserProfile, Activity } from "@/types";
 import { Document, DocumentBlob } from "@/types/documents";
 import { ExemptionScreening, ExemptionHistory } from "@/types/exemptions";
+import {
+  IncomeEntry,
+  IncomeDocument,
+  IncomeDocumentBlob,
+  ComplianceMode,
+} from "@/types/income";
 
 // Database class
 class HourKeepDB extends Dexie {
@@ -11,6 +17,10 @@ class HourKeepDB extends Dexie {
   documentBlobs!: Table<DocumentBlob>;
   exemptions!: Table<ExemptionScreening>;
   exemptionHistory!: Table<ExemptionHistory>;
+  incomeEntries!: Table<IncomeEntry>;
+  incomeDocuments!: Table<IncomeDocument>;
+  incomeDocumentBlobs!: Table<IncomeDocumentBlob>;
+  complianceModes!: Table<ComplianceMode>;
 
   constructor() {
     super("HourKeepDB");
@@ -75,6 +85,24 @@ class HourKeepDB extends Dexie {
         }
 
         console.log("Migrated profiles to version 2 schema");
+      });
+
+    // Version 5: Add income tracking tables
+    this.version(5)
+      .stores({
+        profiles: "id",
+        activities: "++id, date, type",
+        documents: "++id, activityId, type, createdAt",
+        documentBlobs: "++id",
+        exemptions: "++id, userId, screeningDate",
+        exemptionHistory: "++id, userId, screeningDate",
+        incomeEntries: "++id, date, userId, isSeasonalWorker",
+        incomeDocuments: "++id, incomeEntryId, type, createdAt",
+        incomeDocumentBlobs: "++id",
+        complianceModes: "++id, month, userId",
+      })
+      .upgrade(() => {
+        console.log("Added income tracking tables to database");
       });
   }
 }

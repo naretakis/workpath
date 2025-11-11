@@ -1,0 +1,691 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  TextField,
+  ToggleButtonGroup,
+  ToggleButton,
+  Box,
+  Typography,
+  MenuItem,
+  FormHelperText,
+  Badge,
+  Card,
+  CardMedia,
+  CardActions,
+  IconButton,
+  Divider,
+} from "@mui/material";
+import {
+  AttachFile as AttachFileIcon,
+  Visibility as VisibilityIcon,
+  Delete as DeleteIcon,
+} from "@mui/icons-material";
+import { IncomeEntry, IncomeDocument } from "@/types/income";
+import {
+  calculateMonthlyEquivalent,
+  formatCurrency,
+  getPayPeriodLabel,
+} from "@/lib/utils/payPeriodConversion";
+import { DocumentCapture } from "@/components/documents/DocumentCapture";
+import { DocumentViewer } from "@/components/documents/DocumentViewer";
+import { DocumentMetadataFormSimple } from "@/components/documents/DocumentMetadataFormSimple";
+import {
+  getDocumentsByIncomeEntry,
+  getIncomeDocumentBlob,
+  deleteIncomeDocument,
+} from "@/lib/storage/incomeDocuments";
+
+interface IncomeEntryFormProps {
+  open: boolean;
+  onClose: () => void;
+  onSave: (
+    entry: Omit<IncomeEntry, "id" | "createdAt" | "updatedAt">,
+  ) => Promise<number | void>;
+  onDelete?: () => void;
+  selectedDate: Date | null;
+  existingEntry?: IncomeEntry;
+  userId: string;
+}
+
+export function IncomeEntryForm({
+  open,
+  onClose,
+  onSave,
+  onDelete,
+  selectedDate,
+  existingEntry,
+  userId,
+}: IncomeEntryFormProps) {
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
+  const [payPeriod, setPayPeriod] =
+    useState<IncomeEntry["payPeriod"]>("monthly");
+  const [source, setSource] = useState("");
+  const [incomeType, setIncomeType] = useState<IncomeEntry["incomeType"]>();
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [saving, setSaving] = useState(false);
+
+  // Document state for new entries
+  const [pendingDocument, setPendingDocument] = useState<{
+    blob: Blob;
+    type: string;
+    customType?: string;
+    description?: string;
+  } | null>(null);
+  const [showDocumentCapture, setShowDocumentCapture] = useState(false);
+  const [capturedBlob, setCapturedBlob] = useState<Blob | null>(null);
+  const [showMetadataForm, setShowMetadataForm] = useState(false);
+
+  // Document display state for existing entries
+  const [documents, setDocuments] = useState<IncomeDocument[]>([]);
+  const [documentUrls, setDocumentUrls] = useState<Map<number, string>>(
+    new Map(),
+  );
+  const [viewingDocumentId, setViewingDocumentId] = useState<number | null>(
+    null,
+  );
+
+  // Initialize form with existing entry or selected date
+  useEffect(() => {
+    if (existingEntry) {
+      setAmount(existingEntry.amount.toString());
+      setDate(existingEntry.date);
+      setPayPeriod(existingEntry.payPeriod);
+      setSource(existingEntry.source || "");
+      setIncomeType(existingEntry.incomeType);
+
+      // Load documents for existing entry
+      if (existingEntry.id) {
+        loadDocuments(existingEntry.id);
+      }
+    } else if (selectedDate) {
+      const year = selectedDate.getFullYear();
+      const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const day = String(selectedDate.getDate()).padStart(2, "0");
+      setDate(`${year}-${month}-${day}`);
+    }
+  }, [existingEntry, selectedDate]);
+
+  // Load documents for existing income entry
+  const loadDocuments = async (incomeEntryId: number) => {
+    try {
+      const docs = await getDocumentsByIncomeEntry(incomeEntryId);
+      setDocuments(docs);
+
+      // Load document blobs and create URLs
+      const urls = new Map<number, string>();
+      for (const doc of docs) {
+        const blobData = await getIncomeDocumentBlob(doc.blobId);
+        if (blobData) {
+          const url = URL.createObjectURL(blobData.blob);
+          urls.set(doc.id!, url);
+        }
+      }
+      setDocumentUrls(urls);
+    } catch (error) {
+      console.error("Error loading documents:", error);
+    }
+  };
+
+  // Cleanup document URLs on unmount
+  useEffect(() => {
+    return () => {
+      documentUrls.forEach((url) => URL.revokeObjectURL(url));
+    };
+  }, [documentUrls]);
+
+  // Calculate monthly equivalent in real-time
+  const monthlyEquivalent = amount
+    ? calculateMonthlyEquivalent(parseFloat(amount), payPeriod)
+    : 0;
+
+  const validate = (): boolean => {
+    const newErrors: Record<string, string> = {};
+
+    if (!amount || parseFloat(amount) <= 0) {
+      newErrors.amount = "Amount must be greater than $0";
+    } else if (parseFloat(amount) > 100000) {
+      newErrors.amount = "Amount seems unusually high. Please verify.";
+    }
+
+    if (!date) {
+      newErrors.date = "Date is required";
+    }
+
+    if (!payPeriod) {
+      newErrors.payPeriod = "Pay period is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSave = async () => {
+    if (!validate()) {
+      return;
+    }
+
+    setSaving(true);
+    try {
+      const result = await onSave({
+        userId,
+        date,
+        amount: parseFloat(amount),
+        payPeriod,
+        monthlyEquivalent,
+        source: source.trim() || undefined,
+        incomeType,
+        isSeasonalWorker: false, // Will be added in task 13
+      });
+
+      // If there's a pending document and we got an income entry ID, save it
+      if (pendingDocument && typeof result === "number") {
+        const { saveIncomeDocument } = await import(
+          "@/lib/storage/incomeDocuments"
+        );
+        const { compressImage } = await import("@/lib/utils/imageCompression");
+
+        let finalBlob = pendingDocument.blob;
+        let compressedSize: number | undefined;
+
+        // Compress if needed
+        const fiveMB = 5 * 1024 * 1024;
+        if (pendingDocument.blob.size > fiveMB) {
+          const compressed = await compressImage(pendingDocument.blob as File, {
+            maxSizeMB: 5,
+            quality: 0.8,
+            maxDimension: 1920,
+          });
+          finalBlob = compressed.blob;
+          compressedSize = compressed.compressedSize;
+        }
+
+        // Save document
+        await saveIncomeDocument(result, finalBlob, {
+          type: pendingDocument.type as IncomeDocument["type"],
+          customType: pendingDocument.customType,
+          description: pendingDocument.description,
+          fileSize: pendingDocument.blob.size,
+          compressedSize,
+          mimeType: pendingDocument.blob.type as "image/jpeg" | "image/png",
+          captureMethod: "camera",
+        });
+      }
+
+      handleClose();
+    } catch (error) {
+      console.error("Error saving income entry:", error);
+      setErrors({ submit: "Failed to save income entry. Please try again." });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // Document handlers for new entries
+  const handleAddDocumentClick = () => {
+    setShowDocumentCapture(true);
+  };
+
+  const handleDocumentCaptured = (blob: Blob) => {
+    console.log("IncomeEntryForm - Document captured:", {
+      size: blob.size,
+      type: blob.type,
+      constructor: blob.constructor.name,
+    });
+    setCapturedBlob(blob);
+    setShowDocumentCapture(false);
+    setShowMetadataForm(true);
+  };
+
+  const handleMetadataSavedForNew = (metadata: {
+    type: string;
+    customType?: string;
+    description?: string;
+  }) => {
+    if (capturedBlob) {
+      setPendingDocument({
+        blob: capturedBlob,
+        type: metadata.type,
+        customType: metadata.customType,
+        description: metadata.description,
+      });
+    }
+    setShowMetadataForm(false);
+    setCapturedBlob(null);
+  };
+
+  const handleRemovePendingDocument = () => {
+    setPendingDocument(null);
+  };
+
+  // Document handlers for existing entries
+  const handleAddDocumentToExisting = () => {
+    setShowDocumentCapture(true);
+  };
+
+  const handleDocumentCapturedForExisting = async (blob: Blob) => {
+    if (!existingEntry?.id) return;
+    setCapturedBlob(blob);
+    setShowDocumentCapture(false);
+    setShowMetadataForm(true);
+  };
+
+  const handleMetadataSaved = async () => {
+    setShowMetadataForm(false);
+    setCapturedBlob(null);
+    if (existingEntry?.id) {
+      await loadDocuments(existingEntry.id);
+    }
+  };
+
+  const handleMetadataCancel = () => {
+    setShowMetadataForm(false);
+    setCapturedBlob(null);
+  };
+
+  const handleCancelDocumentCapture = () => {
+    setShowDocumentCapture(false);
+  };
+
+  const handleViewDocument = (documentId: number) => {
+    setViewingDocumentId(documentId);
+  };
+
+  const handleCloseDocumentViewer = () => {
+    setViewingDocumentId(null);
+  };
+
+  const handleDeleteDocument = async (documentId: number) => {
+    try {
+      await deleteIncomeDocument(documentId);
+      if (existingEntry?.id) {
+        await loadDocuments(existingEntry.id);
+      }
+    } catch (error) {
+      console.error("Error deleting document:", error);
+    }
+  };
+
+  const handleClose = () => {
+    setAmount("");
+    setDate("");
+    setPayPeriod("monthly");
+    setSource("");
+    setIncomeType(undefined);
+    setErrors({});
+    setPendingDocument(null);
+    setDocuments([]);
+    documentUrls.forEach((url) => URL.revokeObjectURL(url));
+    setDocumentUrls(new Map());
+    onClose();
+  };
+
+  return (
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      maxWidth="sm"
+      fullWidth
+      aria-labelledby="income-entry-form-title"
+    >
+      <DialogTitle id="income-entry-form-title">
+        {existingEntry ? "Edit Income Entry" : "Add Income Entry"}
+      </DialogTitle>
+
+      <DialogContent>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 1 }}>
+          {/* Amount */}
+          <TextField
+            label="Amount"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            error={!!errors.amount}
+            helperText={errors.amount}
+            required
+            fullWidth
+            inputProps={{
+              min: 0,
+              step: 0.01,
+            }}
+            InputProps={{
+              startAdornment: <Typography sx={{ mr: 1 }}>$</Typography>,
+            }}
+          />
+
+          {/* Date */}
+          <TextField
+            label="Date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            error={!!errors.date}
+            helperText={errors.date}
+            required
+            fullWidth
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          {/* Pay Period */}
+          <Box>
+            <Typography variant="subtitle2" gutterBottom>
+              Pay Period *
+            </Typography>
+            <ToggleButtonGroup
+              value={payPeriod}
+              exclusive
+              onChange={(_, value) => value && setPayPeriod(value)}
+              aria-label="pay period"
+              fullWidth
+              sx={{
+                "& .MuiToggleButton-root": {
+                  py: 1,
+                  fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                },
+              }}
+            >
+              <ToggleButton value="daily">Daily</ToggleButton>
+              <ToggleButton value="weekly">Weekly</ToggleButton>
+              <ToggleButton value="bi-weekly">Bi-weekly</ToggleButton>
+              <ToggleButton value="monthly">Monthly</ToggleButton>
+            </ToggleButtonGroup>
+            {errors.payPeriod && (
+              <FormHelperText error>{errors.payPeriod}</FormHelperText>
+            )}
+          </Box>
+
+          {/* Monthly Equivalent Display */}
+          {amount && parseFloat(amount) > 0 && (
+            <Box
+              sx={{
+                p: 2,
+                bgcolor: "primary.50",
+                borderRadius: 1,
+                border: "1px solid",
+                borderColor: "primary.200",
+              }}
+            >
+              <Typography variant="subtitle2" color="primary.main" gutterBottom>
+                Monthly Equivalent
+              </Typography>
+              <Typography variant="h5" color="primary.main">
+                {formatCurrency(monthlyEquivalent)}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                Calculated: {formatCurrency(parseFloat(amount))} ×{" "}
+                {payPeriod === "monthly"
+                  ? "1"
+                  : payPeriod === "bi-weekly"
+                    ? "2.17"
+                    : payPeriod === "weekly"
+                      ? "4.33"
+                      : "30"}{" "}
+                {getPayPeriodLabel(payPeriod).toLowerCase()} periods/month
+              </Typography>
+            </Box>
+          )}
+
+          {/* Source (Optional) */}
+          <TextField
+            label="Source/Employer (Optional)"
+            value={source}
+            onChange={(e) => setSource(e.target.value)}
+            fullWidth
+            placeholder="e.g., Acme Corp, Uber, Freelance"
+          />
+
+          {/* Income Type (Optional) */}
+          <TextField
+            label="Income Type (Optional)"
+            select
+            value={incomeType || ""}
+            onChange={(e) =>
+              setIncomeType(
+                e.target.value as IncomeEntry["incomeType"] | undefined,
+              )
+            }
+            fullWidth
+          >
+            <MenuItem value="">
+              <em>Not specified</em>
+            </MenuItem>
+            <MenuItem value="wages">Wages (W-2)</MenuItem>
+            <MenuItem value="self-employment">Self-Employment</MenuItem>
+            <MenuItem value="gig-work">Gig Work</MenuItem>
+            <MenuItem value="tips">Tips</MenuItem>
+            <MenuItem value="other">Other</MenuItem>
+          </TextField>
+
+          {errors.submit && (
+            <Typography color="error" variant="body2">
+              {errors.submit}
+            </Typography>
+          )}
+
+          {/* Document Section */}
+          <Divider sx={{ my: 2 }} />
+          <Box>
+            <Typography variant="subtitle2" gutterBottom>
+              Documentation (Optional)
+            </Typography>
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              display="block"
+              sx={{ mb: 2 }}
+            >
+              Add pay stubs, bank statements, or app screenshots to verify your
+              income
+            </Typography>
+
+            {/* Pending document for new entries */}
+            {!existingEntry && pendingDocument && (
+              <Card sx={{ mb: 2 }}>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={URL.createObjectURL(pendingDocument.blob)}
+                  alt="Pending document"
+                />
+                <CardActions>
+                  <Button
+                    size="small"
+                    startIcon={<DeleteIcon />}
+                    onClick={handleRemovePendingDocument}
+                    color="error"
+                  >
+                    Remove
+                  </Button>
+                </CardActions>
+              </Card>
+            )}
+
+            {/* Existing documents */}
+            {existingEntry && documents.length > 0 && (
+              <Box
+                sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 2 }}
+              >
+                {documents.map((doc) => {
+                  const url = documentUrls.get(doc.id!);
+                  return (
+                    <Card key={doc.id} sx={{ display: "flex" }}>
+                      {url && (
+                        <CardMedia
+                          component="img"
+                          sx={{ width: 100, height: 100, objectFit: "cover" }}
+                          image={url}
+                          alt="Income document"
+                        />
+                      )}
+                      <CardActions sx={{ ml: "auto" }}>
+                        <IconButton
+                          size="small"
+                          onClick={() => handleViewDocument(doc.id!)}
+                          aria-label="view document"
+                        >
+                          <VisibilityIcon />
+                        </IconButton>
+                        <IconButton
+                          size="small"
+                          onClick={() => handleDeleteDocument(doc.id!)}
+                          aria-label="delete document"
+                          color="error"
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </CardActions>
+                    </Card>
+                  );
+                })}
+              </Box>
+            )}
+
+            {/* Add document button */}
+            <Button
+              startIcon={
+                <Badge
+                  badgeContent={
+                    existingEntry ? documents.length : pendingDocument ? 1 : 0
+                  }
+                  color="primary"
+                >
+                  <AttachFileIcon />
+                </Badge>
+              }
+              onClick={
+                existingEntry
+                  ? handleAddDocumentToExisting
+                  : handleAddDocumentClick
+              }
+              variant="outlined"
+              fullWidth
+            >
+              {existingEntry
+                ? "Add Another Document"
+                : pendingDocument
+                  ? "Replace Document"
+                  : "Add Document"}
+            </Button>
+          </Box>
+        </Box>
+      </DialogContent>
+
+      <DialogActions>
+        {existingEntry && onDelete && (
+          <Button onClick={onDelete} color="error" sx={{ mr: "auto" }}>
+            Delete
+          </Button>
+        )}
+        <Button onClick={handleClose} disabled={saving}>
+          Cancel
+        </Button>
+        <Button onClick={handleSave} variant="contained" disabled={saving}>
+          {saving ? "Saving..." : "Save"}
+        </Button>
+      </DialogActions>
+
+      {/* Document Capture Dialog */}
+      <Dialog
+        open={showDocumentCapture}
+        onClose={handleCancelDocumentCapture}
+        maxWidth="md"
+        fullWidth
+      >
+        <DialogContent>
+          <DocumentCapture
+            onCapture={
+              existingEntry
+                ? handleDocumentCapturedForExisting
+                : handleDocumentCaptured
+            }
+            onCancel={handleCancelDocumentCapture}
+          />
+        </DialogContent>
+      </Dialog>
+
+      {/* Document Metadata Form Dialog */}
+      {showMetadataForm && capturedBlob && (
+        <Dialog
+          open={true}
+          onClose={handleMetadataCancel}
+          maxWidth="sm"
+          fullWidth
+        >
+          <DialogTitle>Add Document Details</DialogTitle>
+          <DialogContent>
+            <DocumentMetadataFormSimple
+              blob={capturedBlob}
+              onCancel={handleMetadataCancel}
+              context="income"
+              onSave={
+                existingEntry
+                  ? async (metadata) => {
+                      if (!existingEntry.id) return;
+                      const { saveIncomeDocument } = await import(
+                        "@/lib/storage/incomeDocuments"
+                      );
+                      const { compressImage } = await import(
+                        "@/lib/utils/imageCompression"
+                      );
+
+                      let finalBlob = capturedBlob;
+                      let compressedSize: number | undefined;
+
+                      const fiveMB = 5 * 1024 * 1024;
+                      if (capturedBlob.size > fiveMB) {
+                        const compressed = await compressImage(
+                          capturedBlob as File,
+                          {
+                            maxSizeMB: 5,
+                            quality: 0.8,
+                            maxDimension: 1920,
+                          },
+                        );
+                        finalBlob = compressed.blob;
+                        compressedSize = compressed.compressedSize;
+                      }
+
+                      await saveIncomeDocument(existingEntry.id, finalBlob, {
+                        type: metadata.type as IncomeDocument["type"],
+                        customType: metadata.customType,
+                        description: metadata.description,
+                        fileSize: capturedBlob.size,
+                        compressedSize,
+                        mimeType: capturedBlob.type as
+                          | "image/jpeg"
+                          | "image/png",
+                        captureMethod: "camera",
+                      });
+
+                      await handleMetadataSaved();
+                    }
+                  : handleMetadataSavedForNew
+              }
+            />
+          </DialogContent>
+        </Dialog>
+      )}
+
+      {/* Document Viewer Dialog */}
+      {viewingDocumentId !== null && (
+        <DocumentViewer
+          documentId={viewingDocumentId}
+          onClose={handleCloseDocumentViewer}
+          onDelete={async (deletedId) => {
+            // Remove from documents list and refresh
+            setDocuments((prev) => prev.filter((doc) => doc.id !== deletedId));
+            handleCloseDocumentViewer();
+          }}
+        />
+      )}
+    </Dialog>
+  );
+}

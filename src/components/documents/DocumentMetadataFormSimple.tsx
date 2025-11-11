@@ -19,7 +19,6 @@ import {
   Typography,
   Paper,
 } from "@mui/material";
-import { DocumentType } from "@/types/documents";
 import { formatFileSize } from "@/lib/utils/imageCompression";
 
 interface DocumentMetadataFormSimpleProps {
@@ -30,9 +29,29 @@ interface DocumentMetadataFormSimpleProps {
     description?: string;
   }) => void;
   onCancel: () => void;
+  context?: "income" | "activity"; // Determines which document types to show
 }
 
-const DOCUMENT_TYPE_LABELS: Record<DocumentType, string> = {
+type IncomeDocumentType =
+  | "pay_stub"
+  | "bank_statement"
+  | "app_screenshot"
+  | "other";
+type ActivityDocumentType =
+  | "pay-stub"
+  | "volunteer-verification"
+  | "school-enrollment"
+  | "medical-documentation"
+  | "other";
+
+const INCOME_DOCUMENT_TYPE_LABELS: Record<IncomeDocumentType, string> = {
+  pay_stub: "Pay Stub",
+  bank_statement: "Bank Statement",
+  app_screenshot: "App Screenshot (Uber, DoorDash, etc.)",
+  other: "Other Income Proof",
+};
+
+const ACTIVITY_DOCUMENT_TYPE_LABELS: Record<ActivityDocumentType, string> = {
   "pay-stub": "Pay Stub",
   "volunteer-verification": "Volunteer Verification Letter",
   "school-enrollment": "School Enrollment",
@@ -44,19 +63,49 @@ export function DocumentMetadataFormSimple({
   blob,
   onSave,
   onCancel,
+  context = "activity", // Default to activity for backward compatibility
 }: DocumentMetadataFormSimpleProps) {
-  const [type, setType] = useState<DocumentType | "">("");
+  const [type, setType] = useState<string>("");
+
+  // Select the appropriate labels based on context
+  const documentTypeLabels =
+    context === "income"
+      ? INCOME_DOCUMENT_TYPE_LABELS
+      : ACTIVITY_DOCUMENT_TYPE_LABELS;
   const [customType, setCustomType] = useState("");
   const [description, setDescription] = useState("");
-  // Create image preview URL using useMemo to avoid effect
+  const [imageError, setImageError] = useState(false);
+
+  // Create image preview URL using useMemo
   const imageUrl = useMemo(() => {
-    return URL.createObjectURL(blob);
+    if (!blob || blob.size === 0) {
+      console.error("Invalid blob:", blob);
+      return null;
+    }
+
+    try {
+      console.log("DocumentMetadataFormSimple - Creating URL for blob:", {
+        size: blob.size,
+        type: blob.type,
+        constructor: blob.constructor.name,
+      });
+
+      const url = URL.createObjectURL(blob);
+      console.log("Created object URL successfully:", url);
+      return url;
+    } catch (error) {
+      console.error("Error creating object URL:", error);
+      return null;
+    }
   }, [blob]);
 
-  // Cleanup on unmount
+  // Cleanup URL on unmount or blob change
   useEffect(() => {
     return () => {
-      URL.revokeObjectURL(imageUrl);
+      if (imageUrl) {
+        console.log("Cleaning up object URL:", imageUrl);
+        URL.revokeObjectURL(imageUrl);
+      }
     };
   }, [imageUrl]);
 
@@ -95,13 +144,9 @@ export function DocumentMetadataFormSimple({
   };
 
   return (
-    <Box sx={{ width: "100%", maxWidth: 600, mx: "auto", p: 2 }}>
-      <Typography variant="h5" gutterBottom>
-        Add Document Details
-      </Typography>
-
+    <Box sx={{ width: "100%", maxWidth: 600, mx: "auto" }}>
       {/* Image Preview */}
-      {imageUrl && (
+      {imageUrl ? (
         <Paper
           elevation={2}
           sx={{
@@ -110,23 +155,55 @@ export function DocumentMetadataFormSimple({
             backgroundColor: "grey.100",
           }}
         >
-          <Box
-            component="img"
-            src={imageUrl}
-            alt="Document preview"
-            sx={{
-              width: "100%",
-              height: "auto",
-              maxHeight: 400,
-              objectFit: "contain",
-              display: "block",
-            }}
-          />
+          {!imageError && (
+            <img
+              src={imageUrl}
+              alt="Document preview"
+              onError={(e) => {
+                console.error("Image failed to load:", e, "URL:", imageUrl);
+                setImageError(true);
+              }}
+              onLoad={() => {
+                console.log("Image loaded successfully from URL:", imageUrl);
+                setImageError(false);
+              }}
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: 400,
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          )}
+          {imageError && (
+            <Box sx={{ p: 3, textAlign: "center" }}>
+              <Typography color="error">
+                Failed to load image preview
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                Blob size: {blob.size} bytes, Type: {blob.type || "unknown"}
+              </Typography>
+            </Box>
+          )}
           <Box sx={{ p: 1, textAlign: "center", backgroundColor: "grey.200" }}>
             <Typography variant="caption" color="text.secondary">
-              File size: {formatFileSize(blob.size)}
+              File size: {formatFileSize(blob.size)} • Type:{" "}
+              {blob.type || "unknown"}
             </Typography>
           </Box>
+        </Paper>
+      ) : (
+        <Paper
+          elevation={2}
+          sx={{
+            mb: 3,
+            p: 3,
+            textAlign: "center",
+            backgroundColor: "grey.100",
+          }}
+        >
+          <Typography color="error">No image preview available</Typography>
         </Paper>
       )}
 
@@ -138,9 +215,9 @@ export function DocumentMetadataFormSimple({
           <Select
             value={type}
             label="Document Type"
-            onChange={(e) => setType(e.target.value as DocumentType)}
+            onChange={(e) => setType(e.target.value)}
           >
-            {Object.entries(DOCUMENT_TYPE_LABELS).map(([value, label]) => (
+            {Object.entries(documentTypeLabels).map(([value, label]) => (
               <MenuItem key={value} value={value}>
                 {label}
               </MenuItem>

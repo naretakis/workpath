@@ -24,12 +24,15 @@ import { Dashboard } from "@/components/Dashboard";
 import { DuplicateActivityDialog } from "@/components/DuplicateActivityDialog";
 import { ExemptionBadge } from "@/components/exemptions/ExemptionBadge";
 import { DashboardGuidance } from "@/components/help/DashboardGuidance";
+import { ComplianceModeSelector } from "@/components/compliance/ComplianceModeSelector";
+import { IncomeDashboard } from "@/components/income/IncomeDashboard";
 import { db } from "@/lib/db";
 import { Activity, MonthlySummary } from "@/types";
 import { ExemptionScreening } from "@/types/exemptions";
 import { calculateMonthlySummary } from "@/lib/calculations";
 import { deleteActivityWithDocuments } from "@/lib/storage/activities";
 import { getLatestScreening } from "@/lib/storage/exemptions";
+import { getComplianceMode, setComplianceMode } from "@/lib/storage/income";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 
 export default function TrackingPage() {
@@ -69,6 +72,10 @@ export default function TrackingPage() {
     useState<Activity | null>(null);
   const [exemptionScreening, setExemptionScreening] =
     useState<ExemptionScreening | null>(null);
+  const [complianceMode, setComplianceModeState] = useState<"hours" | "income">(
+    "hours",
+  );
+  const [userId, setUserId] = useState<string>("");
 
   const loadActivities = async () => {
     try {
@@ -106,12 +113,18 @@ export default function TrackingPage() {
       const summary = calculateMonthlySummary(allActivities);
       setMonthlySummary(summary);
 
-      // Load exemption screening
+      // Load exemption screening and compliance mode
       const profiles = await db.profiles.toArray();
       if (profiles.length > 0) {
         const profile = profiles[0];
+        setUserId(profile.id);
         const screening = await getLatestScreening(profile.id);
         setExemptionScreening(screening || null);
+
+        // Load compliance mode for current month
+        const currentMonth = format(new Date(), "yyyy-MM");
+        const mode = await getComplianceMode(profile.id, currentMonth);
+        setComplianceModeState(mode);
       }
     } catch (err) {
       console.error("Error loading activities:", err);
@@ -294,6 +307,19 @@ export default function TrackingPage() {
     router.push("/export");
   };
 
+  const handleModeChange = async (mode: "hours" | "income") => {
+    if (!userId) return;
+
+    try {
+      const currentMonth = format(new Date(), "yyyy-MM");
+      await setComplianceMode(userId, currentMonth, mode);
+      setComplianceModeState(mode);
+    } catch (error) {
+      console.error("Error changing compliance mode:", error);
+      setError("Failed to change tracking mode. Please try again.");
+    }
+  };
+
   if (loading) {
     return (
       <Box
@@ -394,27 +420,53 @@ export default function TrackingPage() {
           <ExemptionBadge screening={exemptionScreening} />
         </Box>
 
-        <Box sx={{ mt: 3 }}>
-          <Dashboard summary={monthlySummary} />
-        </Box>
+        {/* Compliance Mode Selector - only show for non-exempt users */}
+        {(!exemptionScreening || !exemptionScreening.result.isExempt) && (
+          <Box sx={{ mt: 3 }}>
+            <ComplianceModeSelector
+              currentMode={complianceMode}
+              currentMonth={format(new Date(), "yyyy-MM")}
+              onModeChange={handleModeChange}
+            />
+          </Box>
+        )}
 
-        <Box sx={{ mt: 3 }}>
-          <Calendar
-            onDateClick={handleDateClick}
-            activeDates={activeDates}
-            dateHours={dateHours}
-            dateActivityCount={dateActivityCount}
-          />
-        </Box>
+        {/* Hours Tracking UI */}
+        {complianceMode === "hours" && (
+          <>
+            <Box sx={{ mt: 3 }}>
+              <Dashboard summary={monthlySummary} />
+            </Box>
 
-        <Box sx={{ mt: 3 }}>
-          <ActivityList
-            activities={currentMonthActivities}
-            onEdit={handleEditActivity}
-            onDelete={handleDeleteActivityFromList}
-            onDuplicate={handleDuplicateActivity}
-          />
-        </Box>
+            <Box sx={{ mt: 3 }}>
+              <Calendar
+                onDateClick={handleDateClick}
+                activeDates={activeDates}
+                dateHours={dateHours}
+                dateActivityCount={dateActivityCount}
+              />
+            </Box>
+
+            <Box sx={{ mt: 3 }}>
+              <ActivityList
+                activities={currentMonthActivities}
+                onEdit={handleEditActivity}
+                onDelete={handleDeleteActivityFromList}
+                onDuplicate={handleDuplicateActivity}
+              />
+            </Box>
+          </>
+        )}
+
+        {/* Income Tracking UI */}
+        {complianceMode === "income" && userId && (
+          <Box sx={{ mt: 3 }}>
+            <IncomeDashboard
+              userId={userId}
+              currentMonth={format(new Date(), "yyyy-MM")}
+            />
+          </Box>
+        )}
 
         <DateActivityMenu
           anchorEl={menuAnchor}

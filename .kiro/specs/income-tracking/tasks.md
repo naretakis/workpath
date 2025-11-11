@@ -8,32 +8,32 @@ This implementation plan breaks down the income tracking feature into discrete, 
 
 ## Phase 1: Core Data Layer
 
-- [ ] 1. Set up database schema and TypeScript interfaces
+- [x] 1. Set up database schema and TypeScript interfaces
   - Create new database version (Version 5) in `src/lib/db.ts` with tables: `incomeEntries`, `incomeDocuments`, `incomeDocumentBlobs`, `complianceModes`
   - Create `src/types/income.ts` with interfaces: `IncomeEntry`, `IncomeDocument`, `IncomeDocumentBlob`, `ComplianceMode`, `MonthlyIncomeSummary`
   - Add database upgrade logic for Version 5
   - _Requirements: 9_
 
-- [ ] 2. Implement pay period conversion utilities
+- [x] 2. Implement pay period conversion utilities
   - Create `src/lib/utils/payPeriodConversion.ts` with conversion multipliers and `calculateMonthlyEquivalent()` function
   - Implement rounding logic to 2 decimal places
   - Export constants: `PAY_PERIOD_MULTIPLIERS`, `INCOME_THRESHOLD`, `FEDERAL_MINIMUM_WAGE`, `REQUIRED_HOURS`
   - Make income threshold configurable for future minimum wage changes
   - _Requirements: 3, 13_
 
-- [ ] 3. Create income storage functions
+- [x] 3. Create income storage functions
   - Create `src/lib/storage/income.ts` with functions: `saveIncomeEntry()`, `updateIncomeEntry()`, `deleteIncomeEntry()`, `getIncomeEntriesByMonth()`, `getIncomeEntryById()`
   - Implement `getMonthlyIncomeSummary()` function with compliance calculation and income breakdown by source
   - Implement duplicate detection logic to prevent double-counting entries
   - Implement `setComplianceMode()` and `getComplianceMode()` functions
   - _Requirements: 9, 1, 2, 11_
 
-- [ ] 4. Create income document storage functions
+- [x] 4. Create income document storage functions
   - Create `src/lib/storage/incomeDocuments.ts` with functions: `saveIncomeDocument()`, `getDocumentsByIncomeEntry()`, `getIncomeDocumentBlob()`, `deleteIncomeDocument()`
   - Reuse document compression logic from activity documents
   - _Requirements: 4, 9_
 
-- [ ] 5. Implement seasonal worker calculation logic
+- [x] 5. Implement seasonal worker calculation logic
   - Add `calculateSeasonalAverage()` function to `src/lib/storage/income.ts`
   - Implement `getLast6Months()` helper function
   - Update `getMonthlyIncomeSummary()` to include seasonal worker data when applicable
@@ -43,14 +43,14 @@ This implementation plan breaks down the income tracking feature into discrete, 
 
 ## Phase 2: Basic UI Components
 
-- [ ] 6. Create ComplianceModeSelector component
+- [x] 6. Create ComplianceModeSelector component
   - Create `src/components/compliance/ComplianceModeSelector.tsx` with ToggleButtonGroup for Hours/Income selection
   - Implement mode switching warning dialog
   - Connect to `setComplianceMode()` storage function
   - Add help icon with explanation of mode switching
   - _Requirements: 1, 12_
 
-- [ ] 7. Create IncomeStatusIndicator component
+- [x] 7. Create IncomeStatusIndicator component
   - Create `src/components/income/IncomeStatusIndicator.tsx` mirroring Dashboard component structure
   - Display compliance status (compliant/not compliant) with icons and colors
   - Show progress bar for income ($X / $INCOME_THRESHOLD)
@@ -58,14 +58,14 @@ This implementation plan breaks down the income tracking feature into discrete, 
   - Show entry count, total income, and breakdown by source
   - _Requirements: 6, 11_
 
-- [ ] 8. Create IncomeEntryList component
+- [x] 8. Create IncomeEntryList component
   - Create `src/components/income/IncomeEntryList.tsx` with card-based layout
   - Display each income entry with: date, amount, pay period, monthly equivalent, source, document count
   - Implement edit and delete actions
   - Handle empty state (no entries yet)
   - _Requirements: 2, 11_
 
-- [ ] 9. Create IncomeEntryForm component (basic version)
+- [x] 9. Create IncomeEntryForm component (basic version)
   - Create `src/components/income/IncomeEntryForm.tsx` as a Dialog form
   - Implement form fields: amount (required), date (required), pay period selector (required), source (optional), income type (optional: wages, self-employment, gig-work, tips, other)
   - Add pay period selector using ToggleButtonGroup (Daily/Weekly/Bi-weekly/Monthly)
@@ -73,7 +73,7 @@ This implementation plan breaks down the income tracking feature into discrete, 
   - Implement form validation (amount > 0, date required, pay period required, duplicate detection)
   - _Requirements: 2, 3_
 
-- [ ] 10. Integrate document capture into IncomeEntryForm
+- [x] 10. Integrate document capture into IncomeEntryForm
   - Reuse `DocumentCapture` component from `src/components/documents/DocumentCapture.tsx`
   - Add document attachment section to IncomeEntryForm
   - Display attached document thumbnails
@@ -81,14 +81,14 @@ This implementation plan breaks down the income tracking feature into discrete, 
   - Handle multiple documents per income entry
   - _Requirements: 4_
 
-- [ ] 11. Create income tracking dashboard view
+- [x] 11. Create income tracking dashboard view
   - Create `src/components/income/IncomeDashboard.tsx` combining IncomeStatusIndicator and IncomeEntryList
   - Add "Add Income" floating action button
   - Integrate IncomeEntryForm dialog
   - Handle form submission and list refresh
   - _Requirements: 2, 6, 11_
 
-- [ ] 12. Update main Dashboard to support mode switching
+- [x] 12. Update main Dashboard to support mode switching
   - Update `src/components/Dashboard.tsx` to include ComplianceModeSelector
   - Conditionally render hours tracking UI or income tracking UI based on mode
   - Preserve both data sets when switching modes
