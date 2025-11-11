@@ -99,14 +99,14 @@ This implementation plan breaks down the income tracking feature into discrete, 
 
 ## Phase 3: Seasonal Worker Feature
 
-- [ ] 13. Add seasonal worker toggle to IncomeEntryForm
+- [x] 13. Add seasonal worker toggle to IncomeEntryForm
   - Add checkbox/toggle for "Mark as seasonal worker income" in IncomeEntryForm
   - Update form submission to include `isSeasonalWorker` flag
   - Add help icon with explanation of seasonal worker calculation including IRS definition (section 45R(d)(5)(B))
   - Provide examples of seasonal work (farm work, holiday retail, summer tourism, ski resorts, fishing industry)
   - _Requirements: 7, 13_
 
-- [ ] 14. Create SeasonalWorkerView component
+- [x] 14. Create SeasonalWorkerView component
   - Create `src/components/income/SeasonalWorkerView.tsx` with 6-month history display
   - Implement list view showing each month's income total
   - Display calculated 6-month average
@@ -114,7 +114,7 @@ This implementation plan breaks down the income tracking feature into discrete, 
   - Add help text explaining 6-month averaging
   - _Requirements: 8_
 
-- [ ] 15. Integrate SeasonalWorkerView into IncomeDashboard
+- [x] 15. Integrate SeasonalWorkerView into IncomeDashboard
   - Conditionally display SeasonalWorkerView when any income entry is marked as seasonal
   - Fetch seasonal data using `calculateSeasonalAverage()`
   - Update IncomeStatusIndicator to show seasonal average when applicable
@@ -148,10 +148,7 @@ This implementation plan breaks down the income tracking feature into discrete, 
   - _Requirements: 2, 3_
 
 - [ ] 19. Add mobile responsiveness and accessibility
-  - Test all income components on mobile viewport sizes
   - Ensure touch targets are at least 44x44px
-  - Add proper ARIA labels and keyboard navigation
-  - Test with screen reader
   - Verify color contrast meets WCAG 2.1 AA standards
   - _Requirements: All UI components_
 

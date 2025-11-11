@@ -181,7 +181,6 @@ export function IncomeEntryForm({
         monthlyEquivalent,
         source: source.trim() || undefined,
         incomeType,
-        isSeasonalWorker: false, // Will be added in task 13
       });
 
       // If there's a pending document and we got an income entry ID, save it
@@ -340,40 +339,6 @@ export function IncomeEntryForm({
 
       <DialogContent>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 1 }}>
-          {/* Amount */}
-          <TextField
-            label="Amount"
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            error={!!errors.amount}
-            helperText={errors.amount}
-            required
-            fullWidth
-            inputProps={{
-              min: 0,
-              step: 0.01,
-            }}
-            InputProps={{
-              startAdornment: <Typography sx={{ mr: 1 }}>$</Typography>,
-            }}
-          />
-
-          {/* Date */}
-          <TextField
-            label="Date"
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            error={!!errors.date}
-            helperText={errors.date}
-            required
-            fullWidth
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
           {/* Pay Period */}
           <Box>
             <Typography variant="subtitle2" gutterBottom>
@@ -401,6 +366,27 @@ export function IncomeEntryForm({
               <FormHelperText error>{errors.payPeriod}</FormHelperText>
             )}
           </Box>
+
+          {/* Amount */}
+          <TextField
+            label="Amount"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            error={!!errors.amount}
+            helperText={errors.amount}
+            required
+            fullWidth
+            slotProps={{
+              input: {
+                startAdornment: <Typography sx={{ mr: 1 }}>$</Typography>,
+              },
+              htmlInput: {
+                min: 0,
+                step: 0.01,
+              },
+            }}
+          />
 
           {/* Monthly Equivalent Display */}
           {amount && parseFloat(amount) > 0 && (
@@ -433,36 +419,56 @@ export function IncomeEntryForm({
             </Box>
           )}
 
-          {/* Source (Optional) */}
+          {/* Payday */}
           <TextField
-            label="Source/Employer (Optional)"
-            value={source}
-            onChange={(e) => setSource(e.target.value)}
+            label="Payday"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            error={!!errors.date}
+            helperText={errors.date || "When did you get paid?"}
+            required
             fullWidth
-            placeholder="e.g., Acme Corp, Uber, Freelance"
+            slotProps={{
+              inputLabel: {
+                shrink: true,
+              },
+            }}
           />
 
-          {/* Income Type (Optional) */}
-          <TextField
-            label="Income Type (Optional)"
-            select
-            value={incomeType || ""}
-            onChange={(e) =>
-              setIncomeType(
-                e.target.value as IncomeEntry["incomeType"] | undefined,
-              )
-            }
-            fullWidth
-          >
-            <MenuItem value="">
-              <em>Not specified</em>
-            </MenuItem>
-            <MenuItem value="wages">Wages (W-2)</MenuItem>
-            <MenuItem value="self-employment">Self-Employment</MenuItem>
-            <MenuItem value="gig-work">Gig Work</MenuItem>
-            <MenuItem value="tips">Tips</MenuItem>
-            <MenuItem value="other">Other</MenuItem>
-          </TextField>
+          {/* Combined Source/Employer and Type */}
+          <Box>
+            <TextField
+              label="Source/Employer (Optional)"
+              value={source}
+              onChange={(e) => setSource(e.target.value)}
+              fullWidth
+              placeholder="e.g., Acme Corp, Uber, Freelance"
+              helperText="Who pays you for this income?"
+            />
+            <TextField
+              label="Income Type (Optional)"
+              select
+              value={incomeType || ""}
+              onChange={(e) =>
+                setIncomeType(
+                  e.target.value as IncomeEntry["incomeType"] | undefined,
+                )
+              }
+              fullWidth
+              sx={{ mt: 2 }}
+              helperText="What kind of work is this?"
+            >
+              <MenuItem value="">
+                <em>Not specified</em>
+              </MenuItem>
+              <MenuItem value="wages">Wages (W-2)</MenuItem>
+              <MenuItem value="self-employment">Self-Employment</MenuItem>
+              <MenuItem value="gig-work">Gig Work</MenuItem>
+              <MenuItem value="tips">Tips</MenuItem>
+              <MenuItem value="other">Other</MenuItem>
+            </TextField>
+          </Box>
 
           {errors.submit && (
             <Typography color="error" variant="body2">

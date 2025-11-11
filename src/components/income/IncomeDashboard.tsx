@@ -7,23 +7,30 @@ import { IncomeEntry, MonthlyIncomeSummary } from "@/types/income";
 import { IncomeStatusIndicator } from "./IncomeStatusIndicator";
 import { IncomeEntryList } from "./IncomeEntryList";
 import { IncomeEntryForm } from "./IncomeEntryForm";
+import { SeasonalWorkerView } from "./SeasonalWorkerView";
+import { SeasonalWorkerToggle } from "./SeasonalWorkerToggle";
 import {
   saveIncomeEntry,
   updateIncomeEntry,
   deleteIncomeEntry,
-  getIncomeEntriesByMonth,
+  getIncomeEntriesForLast6Months,
   getMonthlyIncomeSummary,
+  getSeasonalWorkerStatus,
 } from "@/lib/storage/income";
 import { getDocumentsByIncomeEntry } from "@/lib/storage/incomeDocuments";
 
 interface IncomeDashboardProps {
   userId: string;
   currentMonth: string; // YYYY-MM format
+  isSeasonalWorker: boolean;
+  onSeasonalWorkerToggle: (checked: boolean) => void;
 }
 
 export function IncomeDashboard({
   userId,
   currentMonth,
+  isSeasonalWorker,
+  onSeasonalWorkerToggle,
 }: IncomeDashboardProps) {
   const [entries, setEntries] = useState<IncomeEntry[]>([]);
   const [summary, setSummary] = useState<MonthlyIncomeSummary | null>(null);
@@ -38,13 +45,13 @@ export function IncomeDashboard({
   useEffect(() => {
     loadIncomeData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId, currentMonth]);
+  }, [userId, currentMonth, isSeasonalWorker]);
 
   const loadIncomeData = async () => {
     setLoading(true);
     try {
       const [incomeEntries, incomeSummary] = await Promise.all([
-        getIncomeEntriesByMonth(userId, currentMonth),
+        getIncomeEntriesForLast6Months(userId, currentMonth),
         getMonthlyIncomeSummary(userId, currentMonth),
       ]);
 
@@ -130,6 +137,25 @@ export function IncomeDashboard({
           <IncomeStatusIndicator summary={summary} />
         </Box>
       )}
+
+      {/* Seasonal Worker Toggle - below the dashboard */}
+      <Box sx={{ mb: 3 }}>
+        <SeasonalWorkerToggle
+          isSeasonalWorker={isSeasonalWorker}
+          onToggle={onSeasonalWorkerToggle}
+        />
+      </Box>
+
+      {/* Seasonal Worker View - Show when seasonal worker is enabled */}
+      {isSeasonalWorker &&
+        summary?.seasonalHistory &&
+        summary.seasonalAverage !== undefined && (
+          <SeasonalWorkerView
+            history={summary.seasonalHistory}
+            average={summary.seasonalAverage}
+            isCompliant={summary.isCompliant}
+          />
+        )}
 
       {/* Income Entry List */}
       <IncomeEntryList

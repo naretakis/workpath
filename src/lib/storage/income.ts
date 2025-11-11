@@ -69,6 +69,24 @@ export async function getIncomeEntriesByMonth(
 }
 
 /**
+ * Get all income entries for the past 6 months (including current month)
+ */
+export async function getIncomeEntriesForLast6Months(
+  userId: string,
+  currentMonth: string, // YYYY-MM
+): Promise<IncomeEntry[]> {
+  const months = getLast6Months(currentMonth);
+  const firstMonth = months[0];
+  const lastMonth = months[months.length - 1];
+
+  return db.incomeEntries
+    .where("date")
+    .between(`${firstMonth}-01`, `${lastMonth}-31`, true, true)
+    .and((entry) => entry.userId === userId)
+    .toArray();
+}
+
+/**
  * Calculate 6-month seasonal average
  */
 export async function calculateSeasonalAverage(
@@ -143,7 +161,8 @@ export async function getMonthlyIncomeSummary(
     [] as Array<{ source: string; monthlyEquivalent: number }>,
   );
 
-  const isSeasonalWorker = entries.some((entry) => entry.isSeasonalWorker);
+  // Check user-level seasonal worker status for this month
+  const isSeasonalWorker = await getSeasonalWorkerStatus(userId, month);
 
   let seasonalData;
   if (isSeasonalWorker) {
@@ -204,4 +223,45 @@ export async function getComplianceMode(
   const mode = await db.complianceModes.where({ userId, month }).first();
 
   return mode?.mode || "hours"; // Default to hours
+}
+
+/**
+ * Set seasonal worker status for a specific user and month
+ */
+export async function setSeasonalWorkerStatus(
+  userId: string,
+  month: string,
+  isSeasonalWorker: boolean,
+): Promise<void> {
+  const existing = await db.seasonalWorkerStatus
+    .where({ userId, month })
+    .first();
+
+  if (existing) {
+    await db.seasonalWorkerStatus.update(existing.id!, {
+      isSeasonalWorker,
+      updatedAt: new Date(),
+    });
+  } else {
+    await db.seasonalWorkerStatus.add({
+      userId,
+      month,
+      isSeasonalWorker,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+  }
+}
+
+/**
+ * Get seasonal worker status for a specific user and month
+ * Defaults to false if not set
+ */
+export async function getSeasonalWorkerStatus(
+  userId: string,
+  month: string,
+): Promise<boolean> {
+  const status = await db.seasonalWorkerStatus.where({ userId, month }).first();
+
+  return status?.isSeasonalWorker || false;
 }

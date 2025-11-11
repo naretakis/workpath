@@ -14,8 +14,17 @@ export interface IncomeEntry {
   payPeriod: "daily" | "weekly" | "bi-weekly" | "monthly";
   monthlyEquivalent: number; // Calculated based on pay period
   source?: string; // Optional: employer/source name
-  isSeasonalWorker: boolean; // Whether this entry is marked as seasonal
   incomeType?: "wages" | "self-employment" | "gig-work" | "tips" | "other"; // Type of earned income
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Seasonal Worker Status (stored per user per month)
+export interface SeasonalWorkerStatus {
+  id?: number;
+  userId: string;
+  month: string; // YYYY-MM format
+  isSeasonalWorker: boolean;
   createdAt: Date;
   updatedAt: Date;
 }

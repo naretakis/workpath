@@ -7,6 +7,7 @@ import {
   IncomeDocument,
   IncomeDocumentBlob,
   ComplianceMode,
+  SeasonalWorkerStatus,
 } from "@/types/income";
 
 // Database class
@@ -21,6 +22,7 @@ class HourKeepDB extends Dexie {
   incomeDocuments!: Table<IncomeDocument>;
   incomeDocumentBlobs!: Table<IncomeDocumentBlob>;
   complianceModes!: Table<ComplianceMode>;
+  seasonalWorkerStatus!: Table<SeasonalWorkerStatus>;
 
   constructor() {
     super("HourKeepDB");
@@ -96,10 +98,11 @@ class HourKeepDB extends Dexie {
         documentBlobs: "++id",
         exemptions: "++id, userId, screeningDate",
         exemptionHistory: "++id, userId, screeningDate",
-        incomeEntries: "++id, date, userId, isSeasonalWorker",
+        incomeEntries: "++id, date, userId",
         incomeDocuments: "++id, incomeEntryId, type, createdAt",
         incomeDocumentBlobs: "++id",
         complianceModes: "++id, month, userId",
+        seasonalWorkerStatus: "++id, userId, month",
       })
       .upgrade(() => {
         console.log("Added income tracking tables to database");

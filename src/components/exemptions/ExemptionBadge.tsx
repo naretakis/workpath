@@ -60,8 +60,8 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
       <Paper
         elevation={0}
         sx={{
-          p: 2,
-          mb: 3,
+          p: { xs: 1.5, sm: 2 },
+          mb: 2,
           backgroundColor: "info.50",
           border: "1px solid",
           borderColor: "info.100",
@@ -72,14 +72,35 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
         }}
         onClick={handleClick}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <HelpOutlineIcon sx={{ color: "info.main", fontSize: 32 }} />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: { xs: 1.5, sm: 2 },
+          }}
+        >
+          <HelpOutlineIcon
+            sx={{ color: "info.main", fontSize: { xs: 28, sm: 32 } }}
+          />
           <Box sx={{ flex: 1 }}>
-            <Typography variant="body1" sx={{ fontWeight: 600 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "0.875rem", sm: "1rem" },
+              }}
+            >
               Find Out if You Need to Track Hours
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Take a quick 5-minute screening to check your status
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              sx={{
+                display: "block",
+                fontSize: { xs: "0.75rem", sm: "0.875rem" },
+              }}
+            >
+              Take a quick 5-minute screening
             </Typography>
           </Box>
         </Box>
@@ -94,8 +115,8 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
         <Paper
           elevation={0}
           sx={{
-            p: 2,
-            mb: 3,
+            p: { xs: 1.5, sm: 2 },
+            mb: 2,
             backgroundColor: "success.50",
             border: "1px solid",
             borderColor: "success.main",
@@ -106,22 +127,40 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
           }}
           onClick={handleClick}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}>
-            <CheckCircleIcon sx={{ color: "success.main", fontSize: 32 }} />
-            <Box sx={{ flex: 1 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: { xs: 1.5, sm: 2 },
+              flexWrap: { xs: "wrap", sm: "nowrap" },
+            }}
+          >
+            <CheckCircleIcon
+              sx={{ color: "success.main", fontSize: { xs: 28, sm: 32 } }}
+            />
+            <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography
-                variant="body1"
-                sx={{ fontWeight: 600, color: "success.dark" }}
+                variant="body2"
+                sx={{
+                  fontWeight: 600,
+                  color: "success.dark",
+                  fontSize: { xs: "0.875rem", sm: "1rem" },
+                }}
               >
                 You Are Exempt
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography
+                variant="caption"
+                color="text.secondary"
+                sx={{
+                  display: "block",
+                  fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                }}
+              >
                 You don&apos;t need to track hours
               </Typography>
             </Box>
-          </Box>
-          {screening.result.exemptionCategory && (
-            <Box sx={{ mt: 1 }}>
+            {screening.result.exemptionCategory && (
               <Chip
                 label={getCategoryLabel(screening.result.exemptionCategory)}
                 size="small"
@@ -129,17 +168,25 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
                   backgroundColor: "success.main",
                   color: "white",
                   fontWeight: 600,
+                  height: 24,
+                  fontSize: "0.75rem",
                 }}
               />
-            </Box>
-          )}
-          <Button
-            size="small"
-            sx={{ mt: 1, color: "success.dark" }}
-            onClick={handleViewDetails}
-          >
-            View Details
-          </Button>
+            )}
+            <Button
+              size="small"
+              sx={{
+                color: "success.dark",
+                textTransform: "none",
+                fontSize: "0.8125rem",
+                minWidth: "auto",
+                px: 1,
+              }}
+              onClick={handleViewDetails}
+            >
+              Details
+            </Button>
+          </Box>
         </Paper>
 
         {/* Details Dialog */}
@@ -168,8 +215,8 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
       <Paper
         elevation={0}
         sx={{
-          p: 2,
-          mb: 3,
+          p: { xs: 1.5, sm: 2 },
+          mb: 2,
           backgroundColor: "warning.50",
           border: "1px solid",
           borderColor: "warning.main",
@@ -180,20 +227,52 @@ export function ExemptionBadge({ screening }: ExemptionBadgeProps) {
         }}
         onClick={handleClick}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <InfoIcon sx={{ color: "warning.main", fontSize: 32 }} />
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="body1" sx={{ fontWeight: 600 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: { xs: 1.5, sm: 2 },
+            flexWrap: { xs: "wrap", sm: "nowrap" },
+          }}
+        >
+          <InfoIcon
+            sx={{ color: "warning.main", fontSize: { xs: 28, sm: 32 } }}
+          />
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Typography
+              variant="body2"
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "0.875rem", sm: "1rem" },
+              }}
+            >
               Must Track Hours
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              You need to track 80 hours/month or earn $580/month
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              sx={{
+                display: "block",
+                fontSize: { xs: "0.75rem", sm: "0.875rem" },
+              }}
+            >
+              Track 80 hours/month or earn $580/month
             </Typography>
           </Box>
+          <Button
+            size="small"
+            sx={{
+              color: "warning.dark",
+              textTransform: "none",
+              fontSize: "0.8125rem",
+              minWidth: "auto",
+              px: 1,
+            }}
+            onClick={handleViewDetails}
+          >
+            Details
+          </Button>
         </Box>
-        <Button size="small" sx={{ mt: 1 }} onClick={handleViewDetails}>
-          View Details
-        </Button>
       </Paper>
 
       {/* Details Dialog */}

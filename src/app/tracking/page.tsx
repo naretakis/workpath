@@ -26,13 +26,19 @@ import { ExemptionBadge } from "@/components/exemptions/ExemptionBadge";
 import { DashboardGuidance } from "@/components/help/DashboardGuidance";
 import { ComplianceModeSelector } from "@/components/compliance/ComplianceModeSelector";
 import { IncomeDashboard } from "@/components/income/IncomeDashboard";
+import { SeasonalWorkerToggle } from "@/components/income/SeasonalWorkerToggle";
 import { db } from "@/lib/db";
 import { Activity, MonthlySummary } from "@/types";
 import { ExemptionScreening } from "@/types/exemptions";
 import { calculateMonthlySummary } from "@/lib/calculations";
 import { deleteActivityWithDocuments } from "@/lib/storage/activities";
 import { getLatestScreening } from "@/lib/storage/exemptions";
-import { getComplianceMode, setComplianceMode } from "@/lib/storage/income";
+import {
+  getComplianceMode,
+  setComplianceMode,
+  getSeasonalWorkerStatus,
+  setSeasonalWorkerStatus,
+} from "@/lib/storage/income";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 
 export default function TrackingPage() {
@@ -76,6 +82,7 @@ export default function TrackingPage() {
     "hours",
   );
   const [userId, setUserId] = useState<string>("");
+  const [isSeasonalWorker, setIsSeasonalWorker] = useState(false);
 
   const loadActivities = async () => {
     try {
@@ -113,7 +120,7 @@ export default function TrackingPage() {
       const summary = calculateMonthlySummary(allActivities);
       setMonthlySummary(summary);
 
-      // Load exemption screening and compliance mode
+      // Load exemption screening, compliance mode, and seasonal worker status
       const profiles = await db.profiles.toArray();
       if (profiles.length > 0) {
         const profile = profiles[0];
@@ -121,10 +128,16 @@ export default function TrackingPage() {
         const screening = await getLatestScreening(profile.id);
         setExemptionScreening(screening || null);
 
-        // Load compliance mode for current month
+        // Load compliance mode and seasonal worker status for current month
         const currentMonth = format(new Date(), "yyyy-MM");
         const mode = await getComplianceMode(profile.id, currentMonth);
         setComplianceModeState(mode);
+
+        const seasonalStatus = await getSeasonalWorkerStatus(
+          profile.id,
+          currentMonth,
+        );
+        setIsSeasonalWorker(seasonalStatus);
       }
     } catch (err) {
       console.error("Error loading activities:", err);
@@ -320,6 +333,19 @@ export default function TrackingPage() {
     }
   };
 
+  const handleSeasonalWorkerToggle = async (checked: boolean) => {
+    if (!userId) return;
+
+    try {
+      const currentMonth = format(new Date(), "yyyy-MM");
+      await setSeasonalWorkerStatus(userId, currentMonth, checked);
+      setIsSeasonalWorker(checked);
+    } catch (error) {
+      console.error("Error updating seasonal worker status:", error);
+      setError("Failed to update seasonal worker status. Please try again.");
+    }
+  };
+
   if (loading) {
     return (
       <Box
@@ -464,6 +490,8 @@ export default function TrackingPage() {
             <IncomeDashboard
               userId={userId}
               currentMonth={format(new Date(), "yyyy-MM")}
+              isSeasonalWorker={isSeasonalWorker}
+              onSeasonalWorkerToggle={handleSeasonalWorkerToggle}
             />
           </Box>
         )}
