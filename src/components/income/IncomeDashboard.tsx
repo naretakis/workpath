@@ -9,13 +9,13 @@ import { IncomeEntryList } from "./IncomeEntryList";
 import { IncomeEntryForm } from "./IncomeEntryForm";
 import { SeasonalWorkerView } from "./SeasonalWorkerView";
 import { SeasonalWorkerToggle } from "./SeasonalWorkerToggle";
+import { DuplicateIncomeDialog } from "./DuplicateIncomeDialog";
 import {
   saveIncomeEntry,
   updateIncomeEntry,
   deleteIncomeEntry,
   getIncomeEntriesForLast6Months,
   getMonthlyIncomeSummary,
-  getSeasonalWorkerStatus,
 } from "@/lib/storage/income";
 import { getDocumentsByIncomeEntry } from "@/lib/storage/incomeDocuments";
 
@@ -40,6 +40,10 @@ export function IncomeDashboard({
   const [formOpen, setFormOpen] = useState(false);
   const [editingEntry, setEditingEntry] = useState<IncomeEntry | undefined>();
   const [loading, setLoading] = useState(true);
+  const [duplicateDialogOpen, setDuplicateDialogOpen] = useState(false);
+  const [entryToDuplicate, setEntryToDuplicate] = useState<IncomeEntry | null>(
+    null,
+  );
 
   // Load income data
   useEffect(() => {
@@ -125,6 +129,40 @@ export function IncomeDashboard({
     setEditingEntry(undefined);
   };
 
+  const handleDuplicateEntry = (entry: IncomeEntry) => {
+    setEntryToDuplicate(entry);
+    setDuplicateDialogOpen(true);
+  };
+
+  const handleDuplicateToMultipleDates = async (dates: string[]) => {
+    if (!entryToDuplicate) return;
+
+    try {
+      // Create a new income entry for each selected date
+      for (const date of dates) {
+        await saveIncomeEntry({
+          userId,
+          date,
+          amount: entryToDuplicate.amount,
+          payPeriod: entryToDuplicate.payPeriod,
+          monthlyEquivalent: entryToDuplicate.monthlyEquivalent,
+          source: entryToDuplicate.source,
+          incomeType: entryToDuplicate.incomeType,
+        });
+      }
+
+      // Reload data
+      await loadIncomeData();
+    } catch (error) {
+      console.error("Error duplicating income entry:", error);
+    }
+  };
+
+  const handleCloseDuplicateDialog = () => {
+    setDuplicateDialogOpen(false);
+    setEntryToDuplicate(null);
+  };
+
   if (loading) {
     return <Box sx={{ p: 3, textAlign: "center" }}>Loading income data...</Box>;
   }
@@ -162,7 +200,16 @@ export function IncomeDashboard({
         entries={entries}
         onEdit={handleEditEntry}
         onDelete={handleDeleteEntry}
+        onDuplicate={handleDuplicateEntry}
         documentCounts={documentCounts}
+      />
+
+      {/* Duplicate Income Dialog */}
+      <DuplicateIncomeDialog
+        open={duplicateDialogOpen}
+        onClose={handleCloseDuplicateDialog}
+        onDuplicate={handleDuplicateToMultipleDates}
+        entry={entryToDuplicate}
       />
 
       {/* Add Income FAB */}

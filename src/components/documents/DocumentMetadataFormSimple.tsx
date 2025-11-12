@@ -8,6 +8,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -156,25 +157,22 @@ export function DocumentMetadataFormSimple({
           }}
         >
           {!imageError && (
-            <img
-              src={imageUrl}
-              alt="Document preview"
-              onError={(e) => {
-                console.error("Image failed to load:", e, "URL:", imageUrl);
-                setImageError(true);
-              }}
-              onLoad={() => {
-                console.log("Image loaded successfully from URL:", imageUrl);
-                setImageError(false);
-              }}
-              style={{
-                width: "100%",
-                height: "auto",
-                maxHeight: 400,
-                objectFit: "contain",
-                display: "block",
-              }}
-            />
+            <Box sx={{ position: "relative", width: "100%", height: 400 }}>
+              <Image
+                src={imageUrl}
+                alt="Document preview"
+                fill
+                style={{ objectFit: "contain" }}
+                onError={(e) => {
+                  console.error("Image failed to load:", e, "URL:", imageUrl);
+                  setImageError(true);
+                }}
+                onLoad={() => {
+                  console.log("Image loaded successfully from URL:", imageUrl);
+                  setImageError(false);
+                }}
+              />
+            </Box>
           )}
           {imageError && (
             <Box sx={{ p: 3, textAlign: "center" }}>

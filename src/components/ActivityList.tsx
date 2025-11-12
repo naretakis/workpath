@@ -2,14 +2,11 @@
 
 import {
   Box,
-  Paper,
+  Card,
+  CardContent,
   Typography,
-  List,
-  ListItem,
-  ListItemText,
   IconButton,
   Chip,
-  Divider,
 } from "@mui/material";
 import {
   Edit as EditIcon,
@@ -32,12 +29,14 @@ const activityTypeColors = {
   work: "primary",
   volunteer: "success",
   education: "info",
+  workProgram: "secondary",
 } as const;
 
 const activityTypeLabels = {
   work: "Work",
   volunteer: "Volunteer",
   education: "Education",
+  workProgram: "Work Program",
 } as const;
 
 export function ActivityList({
@@ -54,11 +53,20 @@ export function ActivityList({
 
   if (activities.length === 0) {
     return (
-      <Paper sx={{ p: 3, textAlign: "center" }}>
-        <Typography variant="body1" color="text.secondary">
-          No activities logged yet. Click a date on the calendar to get started!
+      <Box
+        sx={{
+          textAlign: "center",
+          py: 6,
+          px: 2,
+        }}
+      >
+        <Typography variant="h6" color="text.secondary" gutterBottom>
+          No hours logged yet
         </Typography>
-      </Paper>
+        <Typography variant="body2" color="text.secondary">
+          Click the + button below to log your first activity
+        </Typography>
+      </Box>
     );
   }
 
@@ -67,135 +75,154 @@ export function ActivityList({
     b.date.localeCompare(a.date),
   );
 
+  // Group activities by month
+  const activitiesByMonth = sortedActivities.reduce(
+    (acc, activity) => {
+      const monthKey = activity.date.substring(0, 7); // YYYY-MM
+      if (!acc[monthKey]) {
+        acc[monthKey] = [];
+      }
+      acc[monthKey].push(activity);
+      return acc;
+    },
+    {} as Record<string, Activity[]>,
+  );
+
+  // Get sorted month keys (most recent first)
+  const monthKeys = Object.keys(activitiesByMonth).sort((a, b) =>
+    b.localeCompare(a),
+  );
+
+  // Format month for display
+  const formatMonthHeader = (monthKey: string): string => {
+    const [year, month] = monthKey.split("-");
+    const date = new Date(parseInt(year), parseInt(month) - 1, 1);
+    return date.toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric",
+    });
+  };
+
   return (
-    <Paper sx={{ p: { xs: 1, sm: 2 } }}>
-      <Typography
-        variant="h6"
-        gutterBottom
-        sx={{
-          fontSize: { xs: "1.1rem", sm: "1.25rem" },
-          px: { xs: 1, sm: 0 },
-        }}
-      >
-        Activity Log
-      </Typography>
-      <List sx={{ px: { xs: 0, sm: 0 } }}>
-        {sortedActivities.map((activity, index) => (
-          <Box key={activity.id}>
-            {index > 0 && <Divider />}
-            <ListItem
-              sx={{
-                px: { xs: 1, sm: 2 },
-                py: { xs: 1.5, sm: 2 },
-              }}
-              secondaryAction={
-                <Box
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+      {monthKeys.map((monthKey) => (
+        <Box key={monthKey}>
+          {/* Month Header */}
+          <Typography
+            variant="h6"
+            sx={{
+              mb: 2,
+              pb: 1,
+              borderBottom: "2px solid",
+              borderColor: "divider",
+            }}
+          >
+            {formatMonthHeader(monthKey)}
+          </Typography>
+
+          {/* Activities for this month */}
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {activitiesByMonth[monthKey].map((activity) => {
+              const docCount = activity.id
+                ? documentCounts.get(activity.id) || 0
+                : 0;
+              const dateObj = parseISO(activity.date);
+              const formattedDate = format(dateObj, "MMMM d, yyyy");
+
+              return (
+                <Card
+                  key={activity.id}
                   sx={{
-                    display: "flex",
-                    gap: { xs: 0, sm: 0.5 },
-                    alignItems: "center",
+                    position: "relative",
+                    "&:hover": {
+                      boxShadow: 3,
+                    },
                   }}
                 >
-                  {activity.id && documentCounts.get(activity.id) ? (
+                  <CardContent>
                     <Box
                       sx={{
                         display: "flex",
-                        alignItems: "center",
-                        gap: 0.5,
-                        mr: 1,
-                        color: "text.secondary",
+                        justifyContent: "space-between",
+                        alignItems: "flex-start",
+                        mb: 1,
                       }}
                     >
-                      <AttachFileIcon
-                        fontSize="small"
-                        sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
-                      />
-                      <Typography
-                        variant="caption"
-                        sx={{ fontSize: { xs: "0.7rem", sm: "0.75rem" } }}
-                      >
-                        {documentCounts.get(activity.id)}
-                      </Typography>
+                      <Box sx={{ flex: 1 }}>
+                        <Typography variant="subtitle1" fontWeight="bold">
+                          {formattedDate}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {activity.hours}{" "}
+                          {activity.hours === 1 ? "hour" : "hours"}
+                        </Typography>
+                        {activity.organization && (
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ mt: 0.5 }}
+                          >
+                            {activity.organization}
+                          </Typography>
+                        )}
+                      </Box>
+
+                      <Box sx={{ display: "flex", gap: 0.5 }}>
+                        <IconButton
+                          size="small"
+                          onClick={() => onDuplicate(activity)}
+                          aria-label="duplicate activity"
+                        >
+                          <ContentCopyIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                          size="small"
+                          onClick={() => onEdit(activity)}
+                          aria-label="edit activity"
+                        >
+                          <EditIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                          size="small"
+                          onClick={() => onDelete(activity)}
+                          aria-label="delete activity"
+                          color="error"
+                        >
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
+                      </Box>
                     </Box>
-                  ) : null}
-                  <IconButton
-                    aria-label="duplicate"
-                    onClick={() => onDuplicate(activity)}
-                    size="small"
-                  >
-                    <ContentCopyIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton
-                    aria-label="edit"
-                    onClick={() => onEdit(activity)}
-                    size="small"
-                  >
-                    <EditIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton
-                    edge="end"
-                    aria-label="delete"
-                    onClick={() => onDelete(activity)}
-                    size="small"
-                  >
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
-                </Box>
-              }
-            >
-              <ListItemText
-                sx={{ pr: { xs: 1, sm: 2 } }}
-                primary={
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: { xs: 0.5, sm: 1 },
-                      mb: 0.5,
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <Typography
-                      variant="subtitle1"
-                      sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 1,
+                        flexWrap: "wrap",
+                        mt: 1,
+                      }}
                     >
-                      {format(parseISO(activity.date), "MMM d, yyyy")}
-                    </Typography>
-                    <Chip
-                      label={activityTypeLabels[activity.type]}
-                      color={activityTypeColors[activity.type]}
-                      size="small"
-                      sx={{ fontSize: { xs: "0.7rem", sm: "0.75rem" } }}
-                    />
-                  </Box>
-                }
-                secondary={
-                  <>
-                    <Typography
-                      variant="body2"
-                      component="span"
-                      sx={{ fontSize: { xs: "0.85rem", sm: "0.875rem" } }}
-                    >
-                      {activity.hours} {activity.hours === 1 ? "hour" : "hours"}
-                    </Typography>
-                    {activity.organization && (
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        component="span"
-                        sx={{ fontSize: { xs: "0.85rem", sm: "0.875rem" } }}
-                      >
-                        {" • "}
-                        {activity.organization}
-                      </Typography>
-                    )}
-                  </>
-                }
-              />
-            </ListItem>
+                      <Chip
+                        label={activityTypeLabels[activity.type]}
+                        color={activityTypeColors[activity.type]}
+                        size="small"
+                        variant="outlined"
+                      />
+                      {docCount > 0 && (
+                        <Chip
+                          icon={<AttachFileIcon />}
+                          label={`${docCount} ${docCount === 1 ? "document" : "documents"}`}
+                          size="small"
+                          variant="outlined"
+                        />
+                      )}
+                    </Box>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </Box>
-        ))}
-      </List>
-    </Paper>
+        </Box>
+      ))}
+    </Box>
   );
 }

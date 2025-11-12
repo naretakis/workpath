@@ -520,10 +520,10 @@ export function IncomeEntryForm({
             }}
           />
 
-          {/* Combined Source/Employer and Type */}
+          {/* Combined Source/Employer/Organization and Type */}
           <Box>
             <TextField
-              label="Source/Employer (Optional)"
+              label="Source/Employer/Organization (Optional)"
               value={source}
               onChange={(e) => setSource(e.target.value)}
               fullWidth

@@ -25,7 +25,6 @@ interface ComplianceModeSelectorProps {
 
 export function ComplianceModeSelector({
   currentMode,
-  currentMonth: _currentMonth,
   onModeChange,
   disabled = false,
 }: ComplianceModeSelectorProps) {

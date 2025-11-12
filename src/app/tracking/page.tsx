@@ -10,11 +10,13 @@ import {
   IconButton,
   CircularProgress,
   Backdrop,
+  Fab,
 } from "@mui/material";
 import {
   Settings as SettingsIcon,
   Download as DownloadIcon,
   HelpOutline as HelpOutlineIcon,
+  Add as AddIcon,
 } from "@mui/icons-material";
 import { Calendar } from "@/components/Calendar";
 import { ActivityForm } from "@/components/ActivityForm";
@@ -26,7 +28,6 @@ import { ExemptionBadge } from "@/components/exemptions/ExemptionBadge";
 import { DashboardGuidance } from "@/components/help/DashboardGuidance";
 import { ComplianceModeSelector } from "@/components/compliance/ComplianceModeSelector";
 import { IncomeDashboard } from "@/components/income/IncomeDashboard";
-import { SeasonalWorkerToggle } from "@/components/income/SeasonalWorkerToggle";
 import { db } from "@/lib/db";
 import { Activity, MonthlySummary } from "@/types";
 import { ExemptionScreening } from "@/types/exemptions";
@@ -150,6 +151,17 @@ export default function TrackingPage() {
   // Load activities on mount - this is intentional initialization
   useEffect(() => {
     loadActivities();
+
+    // Listen for custom event to reload activities (for batch saves)
+    const handleActivitiesUpdated = () => {
+      loadActivities();
+    };
+
+    window.addEventListener("activities-updated", handleActivitiesUpdated);
+
+    return () => {
+      window.removeEventListener("activities-updated", handleActivitiesUpdated);
+    };
   }, []);
 
   const handleDateClick = async (
@@ -226,6 +238,9 @@ export default function TrackingPage() {
           updatedAt: new Date(),
         });
         activityId = existingActivity.id;
+
+        // Reload activities for updates
+        await loadActivities();
       } else {
         // Create new activity and return its ID
         activityId = await db.activities.add({
@@ -233,10 +248,10 @@ export default function TrackingPage() {
           createdAt: new Date(),
           updatedAt: new Date(),
         });
+
+        // Don't reload immediately for new activities - let the form handle batch reload
       }
 
-      // Reload activities
-      await loadActivities();
       setError(null);
 
       // Return the activity ID for new activities
@@ -462,15 +477,7 @@ export default function TrackingPage() {
               <Dashboard summary={monthlySummary} />
             </Box>
 
-            <Box sx={{ mt: 3 }}>
-              <Calendar
-                onDateClick={handleDateClick}
-                activeDates={activeDates}
-                dateHours={dateHours}
-                dateActivityCount={dateActivityCount}
-              />
-            </Box>
-
+            {/* Hour Log - moved up */}
             <Box sx={{ mt: 3 }}>
               <ActivityList
                 activities={currentMonthActivities}
@@ -479,6 +486,41 @@ export default function TrackingPage() {
                 onDuplicate={handleDuplicateActivity}
               />
             </Box>
+
+            {/* Calendar - moved down */}
+            <Box sx={{ mt: 3 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: 2,
+                  pb: 1,
+                  borderBottom: "2px solid",
+                  borderColor: "divider",
+                }}
+              >
+                Calendar View
+              </Typography>
+              <Calendar
+                onDateClick={handleDateClick}
+                activeDates={activeDates}
+                dateHours={dateHours}
+                dateActivityCount={dateActivityCount}
+              />
+            </Box>
+
+            {/* Add Hours FAB */}
+            <Fab
+              color="primary"
+              aria-label="add hours"
+              onClick={handleAddNewActivity}
+              sx={{
+                position: "fixed",
+                bottom: { xs: 16, sm: 24 },
+                right: { xs: 16, sm: 24 },
+              }}
+            >
+              <AddIcon />
+            </Fab>
           </>
         )}
 

@@ -12,6 +12,7 @@ import {
   Edit as EditIcon,
   Delete as DeleteIcon,
   AttachFile as AttachFileIcon,
+  ContentCopy as ContentCopyIcon,
 } from "@mui/icons-material";
 import { IncomeEntry } from "@/types/income";
 import {
@@ -24,6 +25,7 @@ interface IncomeEntryListProps {
   entries: IncomeEntry[];
   onEdit: (entry: IncomeEntry) => void;
   onDelete: (entryId: number) => void;
+  onDuplicate: (entry: IncomeEntry) => void;
   documentCounts?: Record<number, number>; // Map of entryId to document count
 }
 
@@ -31,6 +33,7 @@ export function IncomeEntryList({
   entries,
   onEdit,
   onDelete,
+  onDuplicate,
   documentCounts = {},
 }: IncomeEntryListProps) {
   if (entries.length === 0) {
@@ -151,6 +154,13 @@ export function IncomeEntryList({
                       </Box>
 
                       <Box sx={{ display: "flex", gap: 0.5 }}>
+                        <IconButton
+                          size="small"
+                          onClick={() => onDuplicate(entry)}
+                          aria-label="duplicate income entry"
+                        >
+                          <ContentCopyIcon fontSize="small" />
+                        </IconButton>
                         <IconButton
                           size="small"
                           onClick={() => onEdit(entry)}

@@ -6,10 +6,7 @@
 
 import { db } from "@/lib/db";
 import { IncomeEntry, MonthlyIncomeSummary } from "@/types/income";
-import {
-  calculateMonthlyEquivalent,
-  INCOME_THRESHOLD,
-} from "@/lib/utils/payPeriodConversion";
+import { INCOME_THRESHOLD } from "@/lib/utils/payPeriodConversion";
 
 /**
  * Save a new income entry

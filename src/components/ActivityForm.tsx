@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Dialog,
   DialogTitle,
@@ -8,36 +8,36 @@ import {
   DialogActions,
   Button,
   TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
   Box,
   Typography,
-  CircularProgress,
   Badge,
   Card,
   CardMedia,
   CardActions,
   IconButton,
+  Divider,
+  Alert,
+  Snackbar,
+  Chip,
+  FormHelperText,
 } from "@mui/material";
 import {
   AttachFile as AttachFileIcon,
   Visibility as VisibilityIcon,
   Delete as DeleteIcon,
+  CalendarToday as CalendarTodayIcon,
 } from "@mui/icons-material";
-import { format } from "date-fns";
+import { ActivityFormHelp } from "@/components/activities/ActivityFormHelp";
 import { Activity } from "@/types";
 import { Document } from "@/types/documents";
-import { ActivityFormHelp } from "@/components/activities/ActivityFormHelp";
-import { DocumentVerificationHelpIcon } from "@/components/help/DocumentVerificationHelp";
 import { DocumentCapture } from "@/components/documents/DocumentCapture";
 import { DocumentViewer } from "@/components/documents/DocumentViewer";
-import { DocumentMetadataForm } from "@/components/documents/DocumentMetadataForm";
 import { DocumentMetadataFormSimple } from "@/components/documents/DocumentMetadataFormSimple";
+import { DocumentVerificationHelpIcon } from "@/components/help/DocumentVerificationHelp";
 import {
   getDocumentsByActivity,
   getDocumentBlob,
+  deleteDocument,
 } from "@/lib/storage/documents";
 
 interface ActivityFormProps {
@@ -45,39 +45,35 @@ interface ActivityFormProps {
   onClose: () => void;
   onSave: (
     activity: Omit<Activity, "id" | "createdAt" | "updatedAt">,
-  ) => Promise<number | void>; // Return activity ID if created
+  ) => Promise<number | void>;
   onDelete?: () => void;
   selectedDate: Date | null;
   existingActivity?: Activity;
 }
 
-interface ActivityFormContentProps extends Omit<ActivityFormProps, "open"> {
-  onViewDocument: (documentId: number) => void;
-  reloadTrigger: number;
-}
-
-function ActivityFormContent({
+export function ActivityForm({
+  open,
   onClose,
   onSave,
   onDelete,
   selectedDate,
   existingActivity,
-  onViewDocument,
-  reloadTrigger,
-}: ActivityFormContentProps) {
-  const [type, setType] = useState<"work" | "volunteer" | "education">(
-    existingActivity?.type || "work",
-  );
-  const [hours, setHours] = useState<string>(
-    existingActivity?.hours.toString() || "",
-  );
-  const [organization, setOrganization] = useState<string>(
-    existingActivity?.organization || "",
-  );
-  const [errors, setErrors] = useState<{ hours?: string }>({});
+}: ActivityFormProps) {
+  const [type, setType] = useState<Activity["type"]>("work");
+  const [hours, setHours] = useState("");
+  const [date, setDate] = useState("");
+  const [dates, setDates] = useState<string[]>([]);
+  const [organization, setOrganization] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("");
 
-  // Document state for new activities
+  // Ref for the hidden date input
+  const additionalDateInputRef = useRef<HTMLInputElement>(null);
+
+  // Document state for new entries
   const [pendingDocument, setPendingDocument] = useState<{
     blob: Blob;
     type: string;
@@ -88,107 +84,243 @@ function ActivityFormContent({
   const [capturedBlob, setCapturedBlob] = useState<Blob | null>(null);
   const [showMetadataForm, setShowMetadataForm] = useState(false);
 
-  // Document display state for existing activities
+  // Document display state for existing entries
   const [documents, setDocuments] = useState<Document[]>([]);
   const [documentUrls, setDocumentUrls] = useState<Map<number, string>>(
     new Map(),
   );
-  const [loadingDocuments, setLoadingDocuments] = useState(false);
+  const [viewingDocumentId, setViewingDocumentId] = useState<number | null>(
+    null,
+  );
 
-  const validateHours = (value: string): boolean => {
-    const num = parseFloat(value);
-    if (isNaN(num)) {
-      setErrors({ hours: "Please enter a valid number" });
-      return false;
+  // Initialize form with existing activity or selected date
+  useEffect(() => {
+    if (existingActivity) {
+      setType(existingActivity.type);
+      setHours(existingActivity.hours.toString());
+      setDate(existingActivity.date);
+      setDates([existingActivity.date]);
+      setOrganization(existingActivity.organization || "");
+
+      // Load documents for existing activity
+      if (existingActivity.id) {
+        loadDocuments(existingActivity.id);
+      }
+    } else if (selectedDate) {
+      const year = selectedDate.getFullYear();
+      const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const day = String(selectedDate.getDate()).padStart(2, "0");
+      const dateStr = `${year}-${month}-${day}`;
+      setDate(dateStr);
+      setDates([dateStr]);
     }
-    if (num < 0 || num > 24) {
-      setErrors({ hours: "Hours must be between 0 and 24" });
-      return false;
+  }, [existingActivity, selectedDate]);
+
+  // Load documents for existing activity
+  const loadDocuments = async (activityId: number) => {
+    try {
+      const docs = await getDocumentsByActivity(activityId);
+      setDocuments(docs);
+
+      // Load document blobs and create URLs
+      const urls = new Map<number, string>();
+      for (const doc of docs) {
+        const blobData = await getDocumentBlob(doc.blobId);
+        if (blobData) {
+          const url = URL.createObjectURL(blobData.blob);
+          urls.set(doc.id!, url);
+        }
+      }
+      setDocumentUrls(urls);
+    } catch (error) {
+      console.error("Error loading documents:", error);
     }
-    setErrors({});
-    return true;
+  };
+
+  // Cleanup document URLs on unmount
+  useEffect(() => {
+    return () => {
+      documentUrls.forEach((url) => URL.revokeObjectURL(url));
+    };
+  }, [documentUrls]);
+
+  const validate = (): boolean => {
+    const newErrors: Record<string, string> = {};
+    let hasWarnings = false;
+
+    // Hours validation
+    if (!hours || parseFloat(hours) <= 0) {
+      newErrors.hours = "Hours must be greater than 0";
+    } else {
+      const hoursValue = parseFloat(hours);
+
+      if (hoursValue > 24) {
+        newErrors.hours = "Hours cannot exceed 24 per day";
+      } else if (hoursValue > 16) {
+        setWarningMessage(
+          "This is a lot of hours for one day. Please double-check.",
+        );
+        hasWarnings = true;
+      }
+    }
+
+    // Date validation
+    if (!date && dates.length === 0) {
+      newErrors.date = "At least one date is required";
+    }
+
+    setErrors(newErrors);
+
+    // Show warning if there are warnings but no errors
+    if (hasWarnings && Object.keys(newErrors).length === 0) {
+      setShowWarning(true);
+    }
+
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSave = async () => {
-    if (!selectedDate) return;
-
-    if (!validateHours(hours)) return;
-
-    const activity: Omit<Activity, "id" | "createdAt" | "updatedAt"> = {
-      date: format(selectedDate, "yyyy-MM-dd"),
-      type,
-      hours: parseFloat(hours),
-      organization: organization.trim() || undefined,
-    };
+    if (!validate()) {
+      return;
+    }
 
     setSaving(true);
     try {
-      const result = await onSave(activity);
+      // If editing existing activity
+      if (existingActivity) {
+        await onSave({
+          date,
+          type,
+          hours: parseFloat(hours),
+          organization: organization.trim() || undefined,
+        });
 
-      // If there's a pending document and we got an activity ID, save it
-      if (pendingDocument && typeof result === "number") {
-        const { saveDocument } = await import("@/lib/storage/documents");
-        const { compressImage } = await import("@/lib/utils/imageCompression");
+        // If there's a pending document, save it
+        if (pendingDocument && existingActivity.id) {
+          const { saveDocument } = await import("@/lib/storage/documents");
+          const { compressImage } = await import(
+            "@/lib/utils/imageCompression"
+          );
 
-        let finalBlob = pendingDocument.blob;
-        let compressedSize: number | undefined;
+          let finalBlob = pendingDocument.blob;
+          let compressedSize: number | undefined;
 
-        // Compress if needed
-        const fiveMB = 5 * 1024 * 1024;
-        if (pendingDocument.blob.size > fiveMB) {
-          const compressed = await compressImage(pendingDocument.blob as File, {
-            maxSizeMB: 5,
-            quality: 0.8,
-            maxDimension: 1920,
+          const fiveMB = 5 * 1024 * 1024;
+          if (pendingDocument.blob.size > fiveMB) {
+            const compressed = await compressImage(
+              pendingDocument.blob as File,
+              {
+                maxSizeMB: 5,
+                quality: 0.8,
+                maxDimension: 1920,
+              },
+            );
+            finalBlob = compressed.blob;
+            compressedSize = compressed.compressedSize;
+          }
+
+          await saveDocument(existingActivity.id, finalBlob, {
+            type: pendingDocument.type as Document["type"],
+            customType: pendingDocument.customType,
+            description: pendingDocument.description,
+            fileSize: pendingDocument.blob.size,
+            compressedSize,
+            mimeType: pendingDocument.blob.type as "image/jpeg" | "image/png",
+            captureMethod: "camera",
           });
-          finalBlob = compressed.blob;
-          compressedSize = compressed.compressedSize;
+        }
+      } else {
+        // Creating new activity/activities
+        const datesToCreate = dates.length > 0 ? dates : [date];
+
+        // Import db directly to batch save without triggering reload each time
+        const { db } = await import("@/lib/db");
+        let firstActivityId: number | undefined;
+
+        // Save all activities in batch
+        for (const dateStr of datesToCreate) {
+          const activityId = await db.activities.add({
+            date: dateStr,
+            type,
+            hours: parseFloat(hours),
+            organization: organization.trim() || undefined,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          });
+
+          // Store the first activity ID for document attachment
+          if (!firstActivityId) {
+            firstActivityId = activityId;
+          }
         }
 
-        // Save document
-        await saveDocument(result, finalBlob, {
-          type: pendingDocument.type as Document["type"],
-          customType: pendingDocument.customType,
-          description: pendingDocument.description,
-          fileSize: pendingDocument.blob.size,
-          compressedSize,
-          mimeType: pendingDocument.blob.type as "image/jpeg" | "image/png",
-          captureMethod: "camera",
-        });
+        // If there's a pending document, attach it to the first entry
+        if (pendingDocument && firstActivityId) {
+          const { saveDocument } = await import("@/lib/storage/documents");
+          const { compressImage } = await import(
+            "@/lib/utils/imageCompression"
+          );
+
+          let finalBlob = pendingDocument.blob;
+          let compressedSize: number | undefined;
+
+          const fiveMB = 5 * 1024 * 1024;
+          if (pendingDocument.blob.size > fiveMB) {
+            const compressed = await compressImage(
+              pendingDocument.blob as File,
+              {
+                maxSizeMB: 5,
+                quality: 0.8,
+                maxDimension: 1920,
+              },
+            );
+            finalBlob = compressed.blob;
+            compressedSize = compressed.compressedSize;
+          }
+
+          await saveDocument(firstActivityId, finalBlob, {
+            type: pendingDocument.type as Document["type"],
+            customType: pendingDocument.customType,
+            description: pendingDocument.description,
+            fileSize: pendingDocument.blob.size,
+            compressedSize,
+            mimeType: pendingDocument.blob.type as "image/jpeg" | "image/png",
+            captureMethod: "camera",
+          });
+        }
       }
 
-      onClose();
+      // Close the form immediately
+      handleClose();
+
+      // Manually reload activities after batch save
+      if (!existingActivity) {
+        // Trigger a page reload by dispatching a custom event
+        window.dispatchEvent(new CustomEvent("activities-updated"));
+      }
     } catch (error) {
       console.error("Error saving activity:", error);
-      setErrors({ hours: "Failed to save. Please try again." });
+
+      let errorMessage = "Failed to save activity. Please try again.";
+
+      if (error instanceof Error) {
+        if (error.message.includes("storage")) {
+          errorMessage = "Storage error. Your device may be out of space.";
+        }
+      }
+
+      setErrors({ submit: errorMessage });
     } finally {
       setSaving(false);
     }
   };
 
-  const handleDelete = () => {
-    if (onDelete) {
-      onDelete();
-      onClose();
-    }
-  };
-
-  const handleHoursChange = (value: string) => {
-    setHours(value);
-    if (value) {
-      validateHours(value);
-    } else {
-      setErrors({});
-    }
-  };
-
-  // Document handlers for new activities
+  // Document handlers for new entries
   const handleAddDocumentClick = () => {
     setShowDocumentCapture(true);
   };
 
   const handleDocumentCaptured = (blob: Blob) => {
-    // For new activities, show metadata form (we'll save after activity is created)
     setCapturedBlob(blob);
     setShowDocumentCapture(false);
     setShowMetadataForm(true);
@@ -199,7 +331,6 @@ function ActivityFormContent({
     customType?: string;
     description?: string;
   }) => {
-    // Store metadata temporarily - we'll save the document after activity is created
     if (capturedBlob) {
       setPendingDocument({
         blob: capturedBlob,
@@ -216,22 +347,19 @@ function ActivityFormContent({
     setPendingDocument(null);
   };
 
-  // Document handlers for existing activities
+  // Document handlers for existing entries
   const handleAddDocumentToExisting = () => {
     setShowDocumentCapture(true);
   };
 
   const handleDocumentCapturedForExisting = async (blob: Blob) => {
     if (!existingActivity?.id) return;
-
-    // Show metadata form instead of saving directly
     setCapturedBlob(blob);
     setShowDocumentCapture(false);
     setShowMetadataForm(true);
   };
 
   const handleMetadataSaved = async () => {
-    // Document was saved, close metadata form and reload
     setShowMetadataForm(false);
     setCapturedBlob(null);
     if (existingActivity?.id) {
@@ -248,90 +376,466 @@ function ActivityFormContent({
     setShowDocumentCapture(false);
   };
 
-  // Load documents for the activity
-  const loadDocuments = async (activityId: number) => {
-    setLoadingDocuments(true);
-    try {
-      const docs = await getDocumentsByActivity(activityId);
-      setDocuments(docs);
+  const handleViewDocument = (documentId: number) => {
+    setViewingDocumentId(documentId);
+  };
 
-      // Load blob URLs for thumbnails
-      const urls = new Map<number, string>();
-      for (const doc of docs) {
-        try {
-          const blobData = await getDocumentBlob(doc.blobId);
-          if (blobData) {
-            const url = URL.createObjectURL(blobData.blob);
-            urls.set(doc.id!, url);
-          }
-        } catch (error) {
-          console.error("Error loading document blob:", error);
-        }
+  const handleCloseDocumentViewer = () => {
+    setViewingDocumentId(null);
+  };
+
+  const handleDeleteDocument = async (documentId: number) => {
+    try {
+      await deleteDocument(documentId);
+      if (existingActivity?.id) {
+        await loadDocuments(existingActivity.id);
       }
-      setDocumentUrls(urls);
     } catch (error) {
-      console.error("Error loading documents:", error);
-    } finally {
-      setLoadingDocuments(false);
+      console.error("Error deleting document:", error);
     }
   };
 
-  // Load documents when activity changes
-  useEffect(() => {
-    if (existingActivity?.id) {
-      loadDocuments(existingActivity.id);
-    }
+  const handleClose = () => {
+    setType("work");
+    setHours("");
+    setDate("");
+    setDates([]);
+    setOrganization("");
+    setErrors({});
+    setPendingDocument(null);
+    setDocuments([]);
+    documentUrls.forEach((url) => URL.revokeObjectURL(url));
+    setDocumentUrls(new Map());
+    setShowSuccess(false);
+    setShowWarning(false);
+    setWarningMessage("");
+    onClose();
+  };
 
-    // Cleanup blob URLs on unmount
-    return () => {
-      documentUrls.forEach((url) => URL.revokeObjectURL(url));
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [existingActivity?.id, reloadTrigger]);
+  // Calculate total hours for multi-day entries
+  const totalHours =
+    dates.length > 1 && hours ? parseFloat(hours) * dates.length : null;
 
-  if (!selectedDate) return null;
+  return (
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      maxWidth="sm"
+      fullWidth
+      aria-labelledby="activity-form-title"
+    >
+      <DialogTitle id="activity-form-title">
+        {existingActivity ? "Edit Activity" : "Log Hours"}
+      </DialogTitle>
 
-  // Show metadata form for existing activities
-  if (showMetadataForm && capturedBlob && existingActivity?.id) {
-    return (
-      <>
-        <DialogTitle>Add Document Details</DialogTitle>
-        <DialogContent>
-          <DocumentMetadataForm
-            blob={capturedBlob}
-            activityId={existingActivity.id}
-            captureMethod="camera"
-            onSave={handleMetadataSaved}
-            onCancel={handleMetadataCancel}
+      <DialogContent>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 1 }}>
+          {/* Activity Type */}
+          <Box>
+            <Typography variant="subtitle2" gutterBottom>
+              Activity Type *
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              {[
+                { value: "work", label: "Work" },
+                { value: "volunteer", label: "Volunteer" },
+                { value: "education", label: "Education" },
+              ].map((activityType) => (
+                <Box
+                  key={activityType.value}
+                  sx={{
+                    flex: 1,
+                    position: "relative",
+                    border: "2px solid",
+                    borderColor:
+                      type === activityType.value ? "primary.main" : "divider",
+                    borderRadius: 1,
+                    bgcolor:
+                      type === activityType.value
+                        ? "primary.50"
+                        : "transparent",
+                    cursor: "pointer",
+                    transition: "all 0.2s",
+                    "&:hover": {
+                      borderColor: "primary.main",
+                      bgcolor: "primary.50",
+                    },
+                  }}
+                  onClick={() =>
+                    setType(activityType.value as Activity["type"])
+                  }
+                >
+                  <Box
+                    sx={{
+                      p: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 0.5,
+                    }}
+                  >
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontWeight: type === activityType.value ? 600 : 400,
+                        color:
+                          type === activityType.value
+                            ? "primary.main"
+                            : "text.primary",
+                        fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                      }}
+                    >
+                      {activityType.label}
+                    </Typography>
+                    <Box
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent selecting the type when clicking help
+                      }}
+                      sx={{ display: "flex", alignItems: "center" }}
+                    >
+                      <ActivityFormHelp
+                        activityType={
+                          activityType.value as
+                            | "work"
+                            | "volunteer"
+                            | "education"
+                        }
+                        inline={true}
+                      />
+                    </Box>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+            {errors.type && (
+              <FormHelperText error>{errors.type}</FormHelperText>
+            )}
+          </Box>
+
+          {/* Hours */}
+          <TextField
+            label="Hours"
+            type="number"
+            value={hours}
+            onChange={(e) => setHours(e.target.value)}
+            error={!!errors.hours}
+            helperText={errors.hours}
+            required
+            fullWidth
+            slotProps={{
+              htmlInput: {
+                min: 0,
+                max: 24,
+                step: 0.5,
+              },
+            }}
           />
-        </DialogContent>
-      </>
-    );
-  }
 
-  // Show metadata form for new activities (no activityId yet)
-  if (showMetadataForm && capturedBlob && !existingActivity) {
-    return (
-      <>
-        <DialogTitle>Add Document Details</DialogTitle>
-        <DialogContent>
-          <DocumentMetadataFormSimple
-            blob={capturedBlob}
-            onSave={handleMetadataSavedForNew}
-            onCancel={handleMetadataCancel}
+          {/* Date(s) */}
+          {!existingActivity && (
+            <Box>
+              <TextField
+                label="Date"
+                type="date"
+                value={date}
+                onChange={(e) => {
+                  setDate(e.target.value);
+                  if (!dates.includes(e.target.value)) {
+                    setDates([e.target.value]);
+                  }
+                }}
+                error={!!errors.date}
+                helperText={errors.date || "When did you complete these hours?"}
+                required
+                fullWidth
+                slotProps={{
+                  inputLabel: {
+                    shrink: true,
+                  },
+                }}
+              />
+
+              {/* Add more dates section */}
+              {dates.length > 1 && (
+                <Box sx={{ mt: 2 }}>
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ mb: 1, display: "block" }}
+                  >
+                    Selected dates:
+                  </Typography>
+                  <Box
+                    sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 2 }}
+                  >
+                    {dates.map((d) => (
+                      <Chip
+                        key={d}
+                        label={new Date(d + "T00:00:00").toLocaleDateString(
+                          "en-US",
+                          {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                          },
+                        )}
+                        size="small"
+                        onDelete={() => {
+                          const newDates = dates.filter((date) => date !== d);
+                          setDates(newDates);
+                          if (newDates.length > 0) {
+                            setDate(newDates[0]);
+                          }
+                        }}
+                      />
+                    ))}
+                  </Box>
+                </Box>
+              )}
+
+              <Box
+                sx={{
+                  mt: 2,
+                  p: 1.5,
+                  border: "1px dashed",
+                  borderColor: "divider",
+                  borderRadius: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  cursor: "pointer",
+                  "&:hover": {
+                    bgcolor: "action.hover",
+                    borderColor: "primary.main",
+                  },
+                }}
+                onClick={() => additionalDateInputRef.current?.showPicker?.()}
+              >
+                <CalendarTodayIcon
+                  sx={{ color: "primary.main", fontSize: 20 }}
+                />
+                <Typography
+                  variant="body2"
+                  color="primary.main"
+                  sx={{ fontWeight: 500 }}
+                >
+                  Add Another Date
+                </Typography>
+                <input
+                  ref={additionalDateInputRef}
+                  type="date"
+                  style={{
+                    position: "absolute",
+                    opacity: 0,
+                    width: 0,
+                    height: 0,
+                    pointerEvents: "none",
+                  }}
+                  onChange={(e) => {
+                    const newDate = e.target.value;
+                    if (newDate && !dates.includes(newDate)) {
+                      setDates([...dates, newDate]);
+                    }
+                    // Clear the input
+                    e.target.value = "";
+                  }}
+                />
+              </Box>
+
+              {/* Multi-day indicator */}
+              {totalHours && (
+                <Box
+                  sx={{
+                    mt: 2,
+                    p: 1.5,
+                    bgcolor: "info.50",
+                    borderRadius: 1,
+                    border: "1px solid",
+                    borderColor: "info.200",
+                  }}
+                >
+                  <Typography variant="body2" color="info.main">
+                    {dates.length} {dates.length === 1 ? "day" : "days"} ×{" "}
+                    {hours} hours = <strong>{totalHours} total hours</strong>
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary">
+                    This will create {dates.length} separate{" "}
+                    {dates.length === 1 ? "entry" : "entries"}
+                  </Typography>
+                </Box>
+              )}
+            </Box>
+          )}
+
+          {existingActivity && (
+            <TextField
+              label="Date"
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              error={!!errors.date}
+              helperText={errors.date}
+              required
+              fullWidth
+              slotProps={{
+                inputLabel: {
+                  shrink: true,
+                },
+              }}
+            />
+          )}
+
+          {/* Source/Employer/Organization */}
+          <TextField
+            label="Source/Employer/Organization (Optional)"
+            value={organization}
+            onChange={(e) => setOrganization(e.target.value)}
+            fullWidth
+            placeholder="e.g., Acme Corp, Food Bank, Community College"
+            helperText="Where did you complete these hours?"
           />
-        </DialogContent>
-      </>
-    );
-  }
 
-  // Show document capture overlay
-  if (showDocumentCapture) {
-    return (
-      <>
-        <DialogTitle>
-          {existingActivity ? "Add Document" : "Add Document (Optional)"}
-        </DialogTitle>
+          {errors.submit && (
+            <Typography color="error" variant="body2">
+              {errors.submit}
+            </Typography>
+          )}
+
+          {/* Document Section */}
+          <Divider sx={{ my: 2 }} />
+          <Box>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+              <Typography variant="subtitle2">
+                Documentation (Optional)
+              </Typography>
+              <DocumentVerificationHelpIcon activityType={type} />
+            </Box>
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              display="block"
+              sx={{ mb: 2 }}
+            >
+              Add timesheets, pay stubs, or verification letters
+            </Typography>
+
+            {/* Pending document for new entries */}
+            {!existingActivity && pendingDocument && (
+              <Card sx={{ mb: 2 }}>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={URL.createObjectURL(pendingDocument.blob)}
+                  alt="Pending document"
+                />
+                <CardActions>
+                  <Button
+                    size="small"
+                    startIcon={<DeleteIcon />}
+                    onClick={handleRemovePendingDocument}
+                    color="error"
+                  >
+                    Remove
+                  </Button>
+                </CardActions>
+              </Card>
+            )}
+
+            {/* Existing documents */}
+            {existingActivity && documents.length > 0 && (
+              <Box
+                sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 2 }}
+              >
+                {documents.map((doc) => {
+                  const url = documentUrls.get(doc.id!);
+                  return (
+                    <Card key={doc.id} sx={{ display: "flex" }}>
+                      {url && (
+                        <CardMedia
+                          component="img"
+                          sx={{ width: 100, height: 100, objectFit: "cover" }}
+                          image={url}
+                          alt="Activity document"
+                        />
+                      )}
+                      <CardActions sx={{ ml: "auto" }}>
+                        <IconButton
+                          size="small"
+                          onClick={() => handleViewDocument(doc.id!)}
+                          aria-label="view document"
+                        >
+                          <VisibilityIcon />
+                        </IconButton>
+                        <IconButton
+                          size="small"
+                          onClick={() => handleDeleteDocument(doc.id!)}
+                          aria-label="delete document"
+                          color="error"
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </CardActions>
+                    </Card>
+                  );
+                })}
+              </Box>
+            )}
+
+            {/* Add document button */}
+            <Button
+              startIcon={
+                <Badge
+                  badgeContent={
+                    existingActivity
+                      ? documents.length
+                      : pendingDocument
+                        ? 1
+                        : 0
+                  }
+                  color="primary"
+                >
+                  <AttachFileIcon />
+                </Badge>
+              }
+              onClick={
+                existingActivity
+                  ? handleAddDocumentToExisting
+                  : handleAddDocumentClick
+              }
+              variant="outlined"
+              fullWidth
+            >
+              {existingActivity
+                ? "Add Another Document"
+                : pendingDocument
+                  ? "Replace Document"
+                  : "Add Document"}
+            </Button>
+          </Box>
+        </Box>
+      </DialogContent>
+
+      <DialogActions>
+        {existingActivity && onDelete && (
+          <Button onClick={onDelete} color="error" sx={{ mr: "auto" }}>
+            Delete
+          </Button>
+        )}
+        <Button onClick={handleClose} disabled={saving}>
+          Cancel
+        </Button>
+        <Button onClick={handleSave} variant="contained" disabled={saving}>
+          {saving ? "Saving..." : "Save"}
+        </Button>
+      </DialogActions>
+
+      {/* Document Capture Dialog */}
+      <Dialog
+        open={showDocumentCapture}
+        onClose={handleCancelDocumentCapture}
+        maxWidth="md"
+        fullWidth
+      >
         <DialogContent>
           <DocumentCapture
             onCapture={
@@ -342,438 +846,114 @@ function ActivityFormContent({
             onCancel={handleCancelDocumentCapture}
           />
         </DialogContent>
-      </>
-    );
-  }
-
-  return (
-    <>
-      <DialogTitle>
-        {existingActivity ? "Edit Activity" : "Log Activity"}
-        <Typography variant="body2" color="text.secondary">
-          {format(selectedDate, "MMMM d, yyyy")}
-        </Typography>
-      </DialogTitle>
-
-      <DialogContent>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 1 }}>
-          {/* Activity Details Section */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-              p: 2,
-              borderRadius: 1,
-              backgroundColor: "grey.50",
-              border: "1px solid",
-              borderColor: "divider",
-            }}
-          >
-            <Typography
-              variant="overline"
-              sx={{ fontWeight: 600, color: "text.secondary" }}
-            >
-              Activity Details
-            </Typography>
-
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <FormControl fullWidth>
-                <InputLabel>Activity Type</InputLabel>
-                <Select
-                  value={type}
-                  label="Activity Type"
-                  onChange={(e) =>
-                    setType(
-                      e.target.value as "work" | "volunteer" | "education",
-                    )
-                  }
-                >
-                  <MenuItem value="work">Work</MenuItem>
-                  <MenuItem value="volunteer">Volunteer</MenuItem>
-                  <MenuItem value="education">Education</MenuItem>
-                </Select>
-              </FormControl>
-              <ActivityFormHelp activityType={type} inline={true} />
-            </Box>
-
-            <TextField
-              label="Hours"
-              type="number"
-              value={hours}
-              onChange={(e) => handleHoursChange(e.target.value)}
-              error={!!errors.hours}
-              helperText={errors.hours || "Enter hours between 0 and 24"}
-              inputProps={{
-                min: 0,
-                max: 24,
-                step: 0.5,
-              }}
-              fullWidth
-              required
-            />
-
-            <TextField
-              label="Organization (Optional)"
-              value={organization}
-              onChange={(e) => setOrganization(e.target.value)}
-              placeholder="Where did you work/volunteer/study?"
-              fullWidth
-            />
-          </Box>
-
-          {/* Document Section for NEW activities */}
-          {!existingActivity && (
-            <Box
-              sx={{
-                p: 1.5,
-                borderRadius: 1,
-                backgroundColor: "primary.50",
-                border: "1px solid",
-                borderColor: "primary.100",
-              }}
-            >
-              <Box
-                sx={{ display: "flex", alignItems: "center", gap: 0.5, mb: 1 }}
-              >
-                <Typography
-                  variant="caption"
-                  sx={{
-                    fontWeight: 600,
-                    color: "primary.main",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Verification Document (Optional)
-                </Typography>
-                <DocumentVerificationHelpIcon activityType={type} />
-              </Box>
-              {pendingDocument ? (
-                <Card sx={{ position: "relative" }}>
-                  <CardMedia
-                    component="img"
-                    height="120"
-                    image={URL.createObjectURL(pendingDocument.blob)}
-                    alt="Document preview"
-                    sx={{ objectFit: "contain", backgroundColor: "grey.100" }}
-                  />
-                  <CardActions sx={{ p: 0.5 }}>
-                    <Button
-                      size="small"
-                      color="error"
-                      onClick={handleRemovePendingDocument}
-                      startIcon={<DeleteIcon />}
-                      sx={{ fontSize: "0.75rem" }}
-                    >
-                      Remove
-                    </Button>
-                    <Typography
-                      variant="caption"
-                      color="text.secondary"
-                      sx={{ ml: "auto", fontSize: "0.7rem" }}
-                    >
-                      Attached
-                    </Typography>
-                  </CardActions>
-                </Card>
-              ) : (
-                <Button
-                  variant="outlined"
-                  startIcon={<AttachFileIcon />}
-                  onClick={handleAddDocumentClick}
-                  fullWidth
-                  size="small"
-                  sx={{ py: 1 }}
-                >
-                  Add Document
-                </Button>
-              )}
-            </Box>
-          )}
-
-          {/* Documents Section for EXISTING activities */}
-          {existingActivity?.id && (
-            <Box
-              sx={{
-                p: 1.5,
-                borderRadius: 1,
-                backgroundColor: "primary.50",
-                border: "1px solid",
-                borderColor: "primary.100",
-              }}
-            >
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    flex: 1,
-                    gap: 0.5,
-                  }}
-                >
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      fontWeight: 600,
-                      color: "primary.main",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Documents
-                  </Typography>
-                  <DocumentVerificationHelpIcon activityType={type} />
-                  {documents.length > 0 && (
-                    <Badge
-                      badgeContent={documents.length}
-                      color="primary"
-                      sx={{
-                        "& .MuiBadge-badge": {
-                          fontSize: "0.65rem",
-                          height: 16,
-                          minWidth: 16,
-                        },
-                      }}
-                    />
-                  )}
-                </Box>
-                <IconButton
-                  size="small"
-                  onClick={handleAddDocumentToExisting}
-                  disabled={saving}
-                  sx={{
-                    backgroundColor: "primary.main",
-                    color: "white",
-                    "&:hover": {
-                      backgroundColor: "primary.dark",
-                    },
-                    width: 28,
-                    height: 28,
-                  }}
-                >
-                  <AttachFileIcon sx={{ fontSize: 16 }} />
-                </IconButton>
-              </Box>
-
-              {loadingDocuments ? (
-                <Box sx={{ display: "flex", justifyContent: "center", py: 1 }}>
-                  <CircularProgress size={20} />
-                </Box>
-              ) : documents.length === 0 ? (
-                <Typography
-                  variant="caption"
-                  color="text.secondary"
-                  sx={{ display: "block", textAlign: "center", py: 0.5 }}
-                >
-                  No documents yet
-                </Typography>
-              ) : (
-                <Box
-                  sx={{
-                    display: "flex",
-                    gap: 1,
-                    overflowX: "auto",
-                    py: 0.5,
-                    "&::-webkit-scrollbar": {
-                      height: 6,
-                    },
-                    "&::-webkit-scrollbar-thumb": {
-                      backgroundColor: "rgba(0,0,0,0.2)",
-                      borderRadius: 3,
-                    },
-                  }}
-                >
-                  {documents.map((doc) => (
-                    <Card
-                      key={doc.id}
-                      sx={{
-                        minWidth: 80,
-                        maxWidth: 80,
-                        flexShrink: 0,
-                      }}
-                    >
-                      <CardMedia
-                        component="img"
-                        height="80"
-                        image={documentUrls.get(doc.id!) || ""}
-                        alt={doc.type}
-                        sx={{
-                          objectFit: "cover",
-                          backgroundColor: "grey.200",
-                        }}
-                      />
-                      <CardActions
-                        sx={{
-                          p: 0.25,
-                          justifyContent: "space-between",
-                          minHeight: "auto",
-                        }}
-                      >
-                        <IconButton
-                          size="small"
-                          onClick={() => onViewDocument(doc.id!)}
-                          title="View"
-                          sx={{ padding: 0.25 }}
-                        >
-                          <VisibilityIcon sx={{ fontSize: 16 }} />
-                        </IconButton>
-                        <IconButton
-                          size="small"
-                          color="error"
-                          onClick={() => {
-                            // View document to access delete functionality
-                            onViewDocument(doc.id!);
-                          }}
-                          title="View/Delete"
-                          sx={{ padding: 0.25 }}
-                        >
-                          <DeleteIcon sx={{ fontSize: 16 }} />
-                        </IconButton>
-                      </CardActions>
-                    </Card>
-                  ))}
-                </Box>
-              )}
-            </Box>
-          )}
-        </Box>
-      </DialogContent>
-
-      <DialogActions
-        sx={{
-          px: 3,
-          pb: 2,
-          pt: 2,
-          borderTop: "1px solid",
-          borderColor: "divider",
-          backgroundColor: "grey.50",
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          alignItems: "stretch",
-          gap: 1,
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            gap: 1,
-            flex: 1,
-            justifyContent: "space-between",
-          }}
-        >
-          {existingActivity && onDelete && (
-            <Button
-              onClick={handleDelete}
-              variant="outlined"
-              color="error"
-              disabled={saving}
-              sx={{
-                flex: { xs: 1, sm: "0 0 auto" },
-              }}
-            >
-              Delete
-            </Button>
-          )}
-          <Box
-            sx={{
-              display: "flex",
-              gap: 1,
-              ml: existingActivity && onDelete ? 0 : "auto",
-            }}
-          >
-            <Button
-              onClick={onClose}
-              disabled={saving}
-              variant="outlined"
-              sx={{
-                minWidth: 100,
-              }}
-            >
-              Cancel
-            </Button>
-            <Button
-              onClick={handleSave}
-              variant="contained"
-              disabled={!hours || saving}
-              startIcon={saving ? <CircularProgress size={16} /> : null}
-              sx={{
-                minWidth: 100,
-              }}
-            >
-              {saving ? "Saving..." : "Save"}
-            </Button>
-          </Box>
-        </Box>
-      </DialogActions>
-    </>
-  );
-}
-
-export function ActivityForm({
-  open,
-  onClose,
-  onSave,
-  onDelete,
-  selectedDate,
-  existingActivity,
-}: ActivityFormProps) {
-  const [viewingDocumentId, setViewingDocumentId] = useState<number | null>(
-    null,
-  );
-  const [reloadTrigger, setReloadTrigger] = useState(0);
-
-  // Use key to reset form state when dialog opens with different data
-  const dialogKey = open
-    ? `${selectedDate?.toISOString()}-${existingActivity?.id || "new"}-${reloadTrigger}`
-    : "closed";
-
-  const handleViewDocument = (documentId: number) => {
-    setViewingDocumentId(documentId);
-  };
-
-  const handleCloseViewer = () => {
-    setViewingDocumentId(null);
-  };
-
-  const handleDocumentDeleted = () => {
-    // Document was deleted, close viewer and trigger reload
-    setViewingDocumentId(null);
-    setReloadTrigger((prev) => prev + 1);
-  };
-
-  return (
-    <>
-      <Dialog
-        open={open}
-        onClose={onClose}
-        maxWidth="sm"
-        fullWidth
-        key={dialogKey}
-        PaperProps={{
-          sx: {
-            m: { xs: 2, sm: 3 },
-            maxHeight: { xs: "calc(100% - 32px)", sm: "calc(100% - 64px)" },
-          },
-        }}
-      >
-        {open && (
-          <ActivityFormContent
-            onClose={onClose}
-            onSave={onSave}
-            onDelete={onDelete}
-            selectedDate={selectedDate}
-            existingActivity={existingActivity}
-            onViewDocument={handleViewDocument}
-            reloadTrigger={reloadTrigger}
-          />
-        )}
       </Dialog>
 
-      {/* Document Viewer - Separate from main dialog */}
-      <DocumentViewer
-        documentId={viewingDocumentId}
-        onClose={handleCloseViewer}
-        onDelete={handleDocumentDeleted}
-      />
-    </>
+      {/* Document Metadata Form Dialog */}
+      {showMetadataForm && capturedBlob && (
+        <Dialog
+          open={true}
+          onClose={handleMetadataCancel}
+          maxWidth="sm"
+          fullWidth
+        >
+          <DialogTitle>Add Document Details</DialogTitle>
+          <DialogContent>
+            <DocumentMetadataFormSimple
+              blob={capturedBlob}
+              onCancel={handleMetadataCancel}
+              context="activity"
+              onSave={
+                existingActivity
+                  ? async (metadata) => {
+                      if (!existingActivity.id) return;
+                      const { saveDocument } = await import(
+                        "@/lib/storage/documents"
+                      );
+                      const { compressImage } = await import(
+                        "@/lib/utils/imageCompression"
+                      );
+
+                      let finalBlob = capturedBlob;
+                      let compressedSize: number | undefined;
+
+                      const fiveMB = 5 * 1024 * 1024;
+                      if (capturedBlob.size > fiveMB) {
+                        const compressed = await compressImage(
+                          capturedBlob as File,
+                          {
+                            maxSizeMB: 5,
+                            quality: 0.8,
+                            maxDimension: 1920,
+                          },
+                        );
+                        finalBlob = compressed.blob;
+                        compressedSize = compressed.compressedSize;
+                      }
+
+                      await saveDocument(existingActivity.id, finalBlob, {
+                        type: metadata.type as Document["type"],
+                        customType: metadata.customType,
+                        description: metadata.description,
+                        fileSize: capturedBlob.size,
+                        compressedSize,
+                        mimeType: capturedBlob.type as
+                          | "image/jpeg"
+                          | "image/png",
+                        captureMethod: "camera",
+                      });
+
+                      await handleMetadataSaved();
+                    }
+                  : handleMetadataSavedForNew
+              }
+            />
+          </DialogContent>
+        </Dialog>
+      )}
+
+      {/* Document Viewer Dialog */}
+      {viewingDocumentId !== null && (
+        <DocumentViewer
+          documentId={viewingDocumentId}
+          onClose={handleCloseDocumentViewer}
+          onDelete={async (deletedId) => {
+            setDocuments((prev) => prev.filter((doc) => doc.id !== deletedId));
+            handleCloseDocumentViewer();
+          }}
+        />
+      )}
+
+      {/* Success Snackbar */}
+      <Snackbar
+        open={showSuccess}
+        autoHideDuration={3000}
+        onClose={() => setShowSuccess(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setShowSuccess(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Activity saved successfully!
+        </Alert>
+      </Snackbar>
+
+      {/* Warning Snackbar */}
+      <Snackbar
+        open={showWarning}
+        autoHideDuration={6000}
+        onClose={() => setShowWarning(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setShowWarning(false)}
+          severity="warning"
+          sx={{ width: "100%" }}
+        >
+          {warningMessage}
+        </Alert>
+      </Snackbar>
+    </Dialog>
   );
 }
