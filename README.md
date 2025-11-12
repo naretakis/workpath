@@ -13,39 +13,64 @@ Start using HourKeep today: https://naretakis.github.io/hourkeep
 HourKeep is a simple, privacy-focused app that helps you:
 
 - **Check exemptions** - Find out if you're exempt from work requirements (you might not need to track at all!)
-- **Track hours** - Log work, volunteer, and education activities daily
+- **Track hours OR income** - Choose to log activities (80 hours/month) or track income ($580/month)
+- **Flexible tracking** - Switch between hours and income modes anytime
 - **Capture documents** - Photograph or upload pay stubs, volunteer letters, and other verification documents
-- **Monitor compliance** - See your monthly total and compliance status (80-hour requirement)
+- **Monitor compliance** - See your monthly total and compliance status in real-time
+- **Seasonal worker support** - 6-month income averaging for variable income
 - **Stay organized** - Visual calendar shows all your logged activities with document indicators
-- **Export data** - Generate reports for agency submission with attached documents
+- **Export data** - Generate comprehensive reports for agency submission
 - **Work offline** - All data stored locally on your device, no internet required
 
 ## Key Features
 
+### Privacy & Profile
 - ✅ **Privacy notice** - Clear explanation of data handling before you start
 - ✅ **Extended profile** - Name, state, date of birth, and optional contact info
 - ✅ **Secure encryption** - Sensitive data encrypted at rest
 - ✅ **Profile management** - View and edit your information anytime
+
+### Exemption Screening
 - ✅ **Exemption screening** - Find out if you're exempt from work requirements
 - ✅ **Plain language questionnaire** - Simple questions covering all 5 exemption categories
 - ✅ **Smart question flow** - Dynamic questions that adapt to your answers
 - ✅ **Exemption history** - Track your status over time
-- ✅ **Contextual help system** - Get guidance right where you need it
+
+### Hours Tracking
+- ✅ **Activity logging** - Log work, volunteer, and education activities daily
+- ✅ **Visual calendar** - See all logged activities with indicators
+- ✅ **80-hour compliance** - Automatic monthly compliance calculations
 - ✅ **Activity definitions** - Clear explanations of what counts for each activity type
 - ✅ **Edge case examples** - 20+ scenarios showing what counts and what doesn't
-- ✅ **Income guidance** - Understand the $580/month threshold and seasonal worker rules
-- ✅ Simple daily activity logging
-- ✅ Visual calendar with activity indicators
-- ✅ Automatic monthly compliance calculations
-- ✅ Edit and delete entries
-- ✅ **Document capture and management** - Photograph or upload verification documents
+- ✅ **Duplicate activities** - Replicate entries across multiple dates
+
+### Income Tracking (NEW!)
+- ✅ **Income entry logging** - Record income with dates, amounts, and sources
+- ✅ **Pay period conversion** - Automatic monthly equivalent (daily, weekly, bi-weekly, monthly)
+- ✅ **$580 threshold tracking** - Real-time progress toward income requirement
+- ✅ **Multiple income sources** - Track multiple jobs or income streams
+- ✅ **Seasonal worker support** - 6-month income averaging for variable income
+- ✅ **Compliance mode switching** - Choose hours or income tracking each month
+- ✅ **Duplicate income entries** - Replicate entries across multiple dates
+
+### Document Management
+- ✅ **Document capture** - Photograph or upload verification documents
 - ✅ **Smart image compression** - Automatic compression for large images
 - ✅ **Document viewer** - Full-size viewing with pinch-to-zoom
 - ✅ **Storage monitoring** - Track usage and get low-storage warnings
-- ✅ Export data as JSON or readable text
-- ✅ 100% offline functionality
-- ✅ Installable as a native app on mobile devices
-- ✅ Privacy-first: all data stays on your device
+- ✅ **Income documents** - Pay stubs, bank statements, gig work screenshots
+
+### Help & Guidance
+- ✅ **Contextual help system** - Get guidance right where you need it
+- ✅ **Income guidance** - Understand the $580/month threshold and seasonal worker rules
+- ✅ **Activity combinations** - Learn how to mix activities to reach 80 hours
+
+### Export & Offline
+- ✅ **Data export** - JSON or text format with activities and income
+- 🚧 **Comprehensive export** - Full package with profile, exemptions, documents (coming soon)
+- ✅ **100% offline functionality** - No internet required
+- ✅ **Installable PWA** - Add to home screen as native app
+- ✅ **Privacy-first** - All data stays on your device
 
 ## Tech Stack
 
@@ -170,22 +195,51 @@ hourkeep/
 5. See which exemption applies to you
 6. Rescreen anytime your circumstances change
 
-### Logging Activities
+### Logging Activities (Hours Mode)
 
 1. Go to the tracking page
-2. Click on any date in the calendar
-3. Select activity type (work, volunteer, or education)
-4. Enter hours worked
-5. Optionally add organization name
-6. Optionally capture or upload verification documents
-7. Save
+2. Ensure you're in "Track Hours" mode
+3. Click the "+" button (floating action button)
+4. Select a date
+5. Select activity type (work, volunteer, or education)
+6. Enter hours worked
+7. Optionally add organization name
+8. Optionally capture or upload verification documents
+9. Save
+
+### Logging Income (Income Mode)
+
+1. Go to the tracking page
+2. Switch to "Track Income" mode
+3. Click "Add Income" + button
+4. Enter amount and select date
+5. Choose pay period (daily, weekly, bi-weekly, monthly)
+6. Optionally add source/employer name
+7. Optionally capture or upload pay stubs or other income documents
+8. See automatic monthly equivalent calculation
+9. Save
+
+### Seasonal Worker Income
+
+1. Switch to "Track Income" mode
+2. Toggle "Seasonal Worker" for the current month
+3. Add income entries for the month
+4. View 6-month income history and rolling average
+5. Compliance determined by 6-month average instead of single month
 
 ### Viewing Progress
 
+**Hours Mode:**
 - Your monthly total is displayed at the top of the tracking page
 - Green "Compliant" badge shows when you've met the 80-hour requirement
 - Calendar shows visual indicators for dates with logged activities
 - Document icons show which activities have attached verification documents
+
+**Income Mode:**
+- Your total monthly income is displayed with progress toward $580
+- Green "Compliant" badge shows when you've met the income threshold
+- Income breakdown by source shows where your income comes from
+- Seasonal worker view shows 6-month history and average (if enabled)
 
 ### Exporting Data
 

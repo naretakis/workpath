@@ -5,6 +5,134 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0] - 2025-11-11
+
+### Added - Income Tracking 💰
+
+A comprehensive income tracking system that provides an alternative way to meet Medicaid work requirements. Users can now track earned income ($580/month threshold) instead of hours, with full feature parity including document capture, compliance status, and seasonal worker support.
+
+#### Income Tracking Core Features
+
+- **Compliance mode selector** - Toggle between hours and income tracking for each month
+- **Income entry logging** - Record income with dates, amounts, sources, and pay periods
+- **Pay period conversion** - Automatic monthly equivalent calculation (daily, weekly, bi-weekly, monthly)
+- **Multiple income sources** - Track multiple jobs or income streams per month
+- **Income compliance status** - Real-time progress toward $580 threshold with visual indicators
+- **Income breakdown** - See total income split by source/employer
+
+#### Pay Period Conversion
+
+- **Daily pay** - Amount × 30 = Monthly equivalent
+- **Weekly pay** - Amount × 4.33 = Monthly equivalent  
+- **Bi-weekly pay** - Amount × 2.17 = Monthly equivalent
+- **Monthly pay** - Amount = Monthly equivalent (no conversion)
+- **Real-time calculation** - See monthly equivalent as you type
+- **Configurable threshold** - $580 based on federal minimum wage ($7.25 × 80 hours)
+
+#### Seasonal Worker Support
+
+- **6-month income averaging** - For workers with variable seasonal income
+- **Seasonal worker toggle** - Enable at user-month level (not per entry)
+- **6-month history view** - Visual display of income across 6 months
+- **Rolling average calculation** - Automatic calculation of average monthly income
+- **Compliance based on average** - Meet requirements via 6-month average instead of single month
+- **IRS definition** - Based on section 45R(d)(5)(B) for seasonal workers
+
+#### Income Document Capture
+
+- **Reuse existing system** - Same document capture as activity tracking
+- **Pay stub capture** - Photograph or upload pay stubs
+- **Gig work screenshots** - Uber, DoorDash, Instacart earnings
+- **Bank statements** - Upload statements showing deposits
+- **1099 forms** - Self-employment income documentation
+- **Payment platforms** - PayPal, Venmo, Cash App screenshots
+- **Document viewer** - Full-size viewing with pinch-to-zoom
+
+#### Comprehensive Help System
+
+- **Income tracking help** - Threshold explanation, earned vs. unearned income, gig economy examples
+- **Seasonal worker help** - IRS definition, 6-month averaging, step-by-step calculation
+- **Hour tracking help** - Activity definitions, combinations, edge cases (for comparison)
+- **Enhanced document help** - Income document examples and guidance
+- **Contextual help icons** - Help available throughout income tracking UI
+- **Plain language** - 8th grade reading level, no jargon
+
+#### Mode Switching & Data Preservation
+
+- **Flexible switching** - Change between hours and income modes anytime
+- **Data preservation** - Both datasets preserved when switching modes
+- **Warning dialogs** - Clear explanation before mode changes
+- **Per-month tracking** - Compliance mode tracked separately for each month
+- **No data loss** - Switch modes without losing any information
+
+#### Enhanced Export
+
+- **Income data included** - All income entries, summaries, and documents
+- **Seasonal worker data** - 6-month history and averages when applicable
+- **Compliance mode tracking** - Shows which method used per month
+- **Export version 2.0** - Updated format to include income tracking
+- **Backward compatible** - Works with existing export consumers
+
+### Added - Activity Tracking Enhancements
+
+#### Duplicate Functionality
+
+- **Duplicate to multiple dates** - Replicate activities across multiple days
+- **Multi-date selection** - Pick multiple dates from calendar dialog
+- **Time saver** - Quickly log recurring activities (same shift, regular volunteer hours)
+- **Works for income too** - Duplicate income entries to multiple dates
+- **Preserves all data** - Documents, metadata, and details copied to each date
+
+#### Redesigned Activity List
+
+- **Card-based layout** - Modern card design for each activity
+- **Month grouping** - Activities grouped by month with headers
+- **Better document indicators** - Clear display of attached documents
+- **Improved actions** - Edit, delete, and duplicate buttons
+- **Mobile-optimized** - Better touch targets and spacing
+
+#### UI Improvements
+
+- **Next.js Image optimization** - Replaced img tags for better performance
+- **Enhanced document management** - Improved UI in activity form
+- **Better form layouts** - Reordered fields for better UX
+- **Exemption badge mobile** - Improved responsiveness on small screens
+- **Exemption details dialog** - Quick reference for exemption status
+
+### Changed
+
+- **Database schema** - Upgraded to v5 with 5 new tables for income tracking
+- **Tracking page** - Now supports both hours and income modes with mode selector
+- **Dashboard** - Shows compliance status for active mode (hours or income)
+- **Export page** - Updated to include income data and compliance modes
+- **Settings page** - Exemption section clarifies voluntary tracking for exempt users
+- **Activity form** - Enhanced document management UI
+- **Activity list** - Complete redesign with card layout and grouping
+
+### Technical Details
+
+- Created comprehensive income tracking spec (design, requirements, tasks)
+- Added 12 new components in `src/components/income/` and `src/components/compliance/`
+- Added 3 new help components in `src/components/help/`
+- Implemented income storage layer in `src/lib/storage/income.ts`
+- Implemented income document storage in `src/lib/storage/incomeDocuments.ts`
+- Created pay period conversion utilities in `src/lib/utils/payPeriodConversion.ts`
+- Added complete TypeScript interfaces in `src/types/income.ts`
+- Database version 5 with automatic migration from v4
+- Enhanced export functionality to include income data
+- Updated ROADMAP with 15 detailed future features
+- 31 files changed, 6,505 insertions, 855 deletions
+
+### Developer Experience
+
+- Completed all 21 tasks across 5 phases of income-tracking spec
+- Comprehensive documentation in `.kiro/specs/income-tracking/`
+- Clear migration path with no breaking changes
+- Full TypeScript coverage for income types
+- Reusable component patterns for future features
+
+---
+
 ## [4.5.0] - 2025-11-10
 
 ### Added - Activity Definitions Help System 💡
@@ -611,6 +739,7 @@ This release represents the completion of the exemption screening spec, includin
 
 ---
 
+[5.0.0]: https://github.com/naretakis/hourkeep/compare/v4.5.0...v5.0.0
 [4.5.0]: https://github.com/naretakis/hourkeep/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/naretakis/hourkeep/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/naretakis/hourkeep/compare/v4.2.0...v4.3.0

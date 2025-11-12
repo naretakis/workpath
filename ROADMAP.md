@@ -10,16 +10,18 @@ This roadmap outlines where HourKeep is today, what we're building next, and our
 
 **Current Release - Available Today**
 
-HourKeep provides a privacy-first onboarding experience, helps you determine if you're exempt from Medicaid work requirements, and if not, track work, volunteer, and education hours with comprehensive document management and contextual help throughout the app.
+HourKeep provides a privacy-first onboarding experience, helps you determine if you're exempt from Medicaid work requirements, and if not, track work hours OR income to meet compliance requirements. Full feature parity between hours and income tracking with comprehensive document management and contextual help throughout the app.
 
 ### Core Features
 
 - ✅ **Activity Tracking** - Log daily work, volunteer, and education hours
+- ✅ **Income Tracking** - Track earned income as alternative to hours
+- ✅ **Flexible Compliance** - Choose hours (80/month) OR income ($580/month)
 - ✅ **Visual Calendar** - See all your logged activities at a glance
-- ✅ **Monthly Compliance** - Automatic calculation of your 80-hour requirement
+- ✅ **Monthly Compliance** - Automatic calculation of your requirements
 - ✅ **Progress Dashboard** - Know exactly where you stand each month
 - ✅ **Edit & Delete** - Fix mistakes in your entries
-- ✅ **Data Export** - Generate JSON or text reports for agency submission
+- ✅ **Basic Data Export** - Export activities and income data (JSON or text)
 - ✅ **Offline First** - Works completely without internet
 - ✅ **PWA Support** - Install as a native app on your phone
 - ✅ **Privacy First** - All data stays on your device, nothing sent to servers
@@ -83,6 +85,35 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 - Income ($580/month) is an alternative to hours
 - Seasonal workers can average income over 6 months
 
+### Income Tracking 💰
+
+Track income as an alternative to hours to meet the $580/month requirement.
+
+**What You Can Do:**
+
+- ✅ **Log income entries** - Record income with dates, amounts, and sources
+- ✅ **Pay period conversion** - Automatic monthly equivalent (daily, weekly, bi-weekly, monthly)
+- ✅ **Multiple income sources** - Track multiple jobs or income streams
+- ✅ **Income compliance status** - Real-time progress toward $580 threshold
+- ✅ **Seasonal worker support** - 6-month income averaging for variable income
+- ✅ **Document capture** - Attach pay stubs, bank statements, gig work screenshots
+- ✅ **Mode switching** - Choose hours or income tracking each month
+- ✅ **Duplicate entries** - Replicate income entries across multiple dates
+- ✅ **Comprehensive help** - Income guidance, seasonal worker explanation, edge cases
+
+**Why This Matters:**
+
+- Some people meet requirements through income, not hours
+- Provides flexibility for different work situations
+- Aligns with HR1 legislation requirements
+- Supports gig workers, seasonal workers, and traditional employment
+
+**Pay Period Examples:**
+
+- $400 bi-weekly → $868/month
+- $150 weekly → $649.50/month
+- $650 monthly → $650/month
+
 ---
 
 ## Next - 🚧 Coming Soon
@@ -90,24 +121,6 @@ HourKeep provides a privacy-first onboarding experience, helps you determine if 
 **Planned Features**
 
 These are the next features we're building, in roughly this order:
-
-### Income Tracking 💰
-
-Track income alongside hours to meet the $580/month alternative requirement.
-
-**What You'll Be Able To Do:**
-
-- Log income with pay period (hourly, daily, weekly, monthly)
-- Automatic conversion to monthly equivalent
-- Support for seasonal workers (6-month averaging)
-- Income compliance status on dashboard
-- Combined hours + income view
-
-**Why This Matters:**
-
-- Some people meet requirements through income, not hours
-- Provides flexibility for different work situations
-- Aligns with HR1 legislation requirements
 
 ---
 
