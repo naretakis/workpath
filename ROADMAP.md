@@ -37,9 +37,15 @@ HourKeep provides a guided assessment to help you discover the easiest way to ma
 - ✅ **Storage Monitoring** - Track usage and get low-storage warnings
 - ✅ **Document Management** - Easy deletion with confirmation
 
-### Enhanced Onboarding 🔐
+### Context-Aware Onboarding 🔐
 
 - ✅ **Privacy Notice First** - Clear explanation of data handling before any data collection
+- ✅ **Personalized Flow** - Adapts to your situation (received notice, applying, renewal, proactive tracking)
+- ✅ **Notice Details Capture** - Record months required and deadline when you have a notice
+- ✅ **Getting Started Guidance** - Contextual next steps based on your assessment results
+- ✅ **Goal Progress Tracking** - Dashboard shows progress toward your compliance goal (months completed, deadline countdown)
+- ✅ **Completion Messaging** - Celebration and next steps when you meet your goal
+- ✅ **Goal Configuration** - Edit months required and deadline in settings
 - ✅ **Extended Profile** - Name, state, date of birth, Medicaid ID, contact info
 - ✅ **Secure Encryption** - Date of birth and Medicaid ID encrypted at rest
 - ✅ **Profile Management** - View and edit your information in settings
@@ -53,13 +59,17 @@ HourKeep provides a guided assessment to help you discover the easiest way to ma
 - ✅ **Personalized Recommendations** - Smart analysis suggests optimal method for your situation
 - ✅ **Four Compliance Paths** - Exemption, income tracking, seasonal income tracking, or hour tracking
 - ✅ **Notice Screening** - Upfront question about receiving agency communication
+- ✅ **Notice Details Capture** - Record months required and deadline when you have a notice
 - ✅ **Integrated Exemption Check** - Complete 5-category exemption screening built into flow
 - ✅ **Work Situation Analysis** - Questions about employment, income, and activities
 - ✅ **Estimation Tools** - Simple calculators to convert weekly to monthly values
+- ✅ **Getting Started Screen** - Contextual guidance and next steps based on your results
+- ✅ **Dashboard Configuration** - Automatically sets compliance mode based on recommendation
 - ✅ **Progress Saving** - Resume incomplete assessments where you left off
 - ✅ **Assessment History** - Track how your situation changes over time
 - ✅ **Dashboard Integration** - Prominent badge showing status and recommendation
 - ✅ **Alternative Methods** - View other viable options and make informed choices
+- ✅ **Consistent UX** - Same modern patterns as onboarding flow
 - ✅ **Plain Language** - No jargon, clear explanations throughout
 - ✅ **Mobile-Optimized** - Touch-friendly interface with clear navigation
 

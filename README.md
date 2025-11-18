@@ -29,19 +29,25 @@ HourKeep is a simple, privacy-focused app that helps you:
 ### Privacy & Profile
 
 - ✅ **Privacy notice** - Clear explanation of data handling before you start
+- ✅ **Context-aware onboarding** - Personalized experience based on your situation (notice, applying, renewal, proactive)
+- ✅ **Notice details capture** - Record months required and deadline when you have a notice
+- ✅ **Goal progress tracking** - Dashboard shows progress toward your compliance goal
 - ✅ **Extended profile** - Name, state, date of birth, and optional contact info
 - ✅ **Secure encryption** - Sensitive data encrypted at rest
 - ✅ **Profile management** - View and edit your information anytime
 
-### Find Your Path Assessment (NEW!)
+### How to HourKeep Assessment
 
 - ✅ **Guided assessment** - Comprehensive questionnaire to find your easiest compliance path
 - ✅ **Personalized recommendations** - Smart analysis suggests optimal method based on your situation
 - ✅ **Four compliance paths** - Exemption, income tracking, seasonal income tracking, or hour tracking
 - ✅ **Notice screening** - Upfront question about agency communication
+- ✅ **Notice details capture** - Record months required and deadline when you have a notice
 - ✅ **Integrated exemption check** - Complete 5-category exemption screening built into flow
 - ✅ **Work situation analysis** - Questions about employment, income, and activities
 - ✅ **Estimation tools** - Simple calculators to convert weekly to monthly values
+- ✅ **Getting started guidance** - Contextual next steps based on your assessment results
+- ✅ **Dashboard configuration** - Automatically sets compliance mode based on recommendation
 - ✅ **Progress saving** - Resume incomplete assessments where you left off
 - ✅ **Assessment history** - Track how your situation changes over time
 - ✅ **Dashboard integration** - Prominent badge showing your status and recommendation

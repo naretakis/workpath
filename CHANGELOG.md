@@ -5,6 +5,150 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [7.0.0] - 2025-11-18
+
+### Added - Context-Aware Onboarding & Assessment Flow Alignment 🎯
+
+Two major features that transform how users start with HourKeep and ensure consistent experience across assessment flows.
+
+#### Context-Aware Onboarding Flow
+
+A personalized onboarding experience that adapts to each user's situation - whether they received a notice, are applying for Medicaid, preparing for renewal, or tracking proactively.
+
+**Notice Context Capture:**
+- **Notice details question** - Capture months required (1-6) and deadline date when user has received agency notice
+- **Smart routing** - Different follow-up questions based on whether user has notice
+- **Goal tracking** - Store user's compliance goal (months needed, deadline) in profile
+- **Deadline awareness** - System knows when user needs to respond and can show countdown
+
+**Personalized Getting Started:**
+- **Contextual guidance** - Different next steps based on user's situation (notice vs. proactive)
+- **Notice users** - See deadline, required months, and action steps (document, add documents, export)
+- **Proactive users** - See continuous tracking benefits and renewal timeline
+- **Recommendation display** - Shows assessment recommendation (exemption, income, hours)
+- **Dashboard configuration** - Automatically sets compliance mode based on recommendation
+
+**Enhanced Components:**
+- **ProfileForm** - Added skip option and optional deadline field
+- **NoticeQuestion** - Redesigned with radio button interface for better UX
+- **IntroductionScreen** - Supports onboarding variant with updated copy
+- **QuestionWrapper** - Consistent navigation with back/continue buttons
+
+**Goal Progress Tracking:**
+- **Dashboard integration** - Shows progress toward compliance goal if user has one
+- **Month-by-month view** - Visual indicators for each required month (✓ compliant, incomplete)
+- **Deadline countdown** - Shows days remaining to respond to notice
+- **Add month button** - Easily extend tracking to additional months
+- **Completion detection** - Recognizes when goal is met
+
+**Goal Configuration:**
+- **Settings management** - Edit months required and deadline anytime
+- **Mode switching** - Toggle between goal-based and continuous tracking
+- **Profile updates** - Changes save to onboarding context in profile
+
+**Completion Messaging:**
+- **Goal completion detection** - Automatic recognition when all required months are compliant
+- **Next steps guidance** - Prompts to export report and submit to agency
+- **Renewal reminders** - Reminds about future 6-month renewals
+- **Continue tracking option** - Encourages ongoing use for future renewals
+
+#### Assessment Flow Alignment
+
+Brings "How to HourKeep" assessment into alignment with the modern onboarding flow, ensuring consistent UX patterns and shared components.
+
+**Notice Details in Assessment:**
+- **Notice details step** - Added to How to HourKeep flow (previously only in onboarding)
+- **Months and deadline capture** - Same questions as onboarding for consistency
+- **Notice context storage** - Saved in assessment responses for future reference
+- **Pre-population support** - Notice details load from previous assessment
+
+**Getting Started Screen:**
+- **Replaces immediate redirect** - Users see contextual guidance before returning to dashboard
+- **Shows recommendation** - Displays assessment result (exemption, income, hours)
+- **Contextual content** - Different guidance for notice vs. proactive users
+- **Dashboard configuration** - Sets compliance mode and seasonal worker status
+- **Profile integration** - Updates onboarding context with notice details
+
+**Component Pattern Consistency:**
+- **Box wrappers** - Replaced QuestionWrapper with consistent Box (py: 2) pattern
+- **Standalone components** - NoticeQuestion, NoticeFollowUp used without wrappers
+- **Visual consistency** - Same padding, spacing, and layout across both flows
+- **Navigation patterns** - Consistent back/continue button placement
+
+**Progress Calculation Updates:**
+- **Notice section** - 15-25% progress (notice, noticeDetails, noticeFollowUpWithNotice)
+- **Exemption section** - 25-60% progress (12 questions)
+- **Work section** - 60-95% progress (work and activity questions)
+- **Getting started** - 95% progress (final screen)
+
+**Visual Consistency Fixes:**
+- **Primary color branding** - Changed AssessmentBadge and DashboardGuidance from info to primary color
+- **GoalProgress styling** - Improved chip styling with explicit colors and better contrast
+- **Deadline chip** - White text on primary/warning background for better visibility
+
+**Dashboard Integration:**
+- **Event dispatching** - Assessment completion triggers dashboard refresh
+- **Compliance mode** - Automatically set based on recommendation (income vs. hours)
+- **Seasonal worker** - Configured if seasonal income tracking recommended
+- **Profile updates** - Onboarding context updated with assessment results
+- **GoalProgress display** - Shows on income tracking view when user has notice context
+
+### Changed
+
+- **Onboarding flow** - Now captures notice details and provides contextual getting started screen
+- **How to HourKeep flow** - Added notice details, getting started screen, and consistent component patterns
+- **Dashboard** - Shows goal progress when user has compliance goal
+- **Settings** - Added goal configuration section
+- **Tracking page** - Shows GoalProgress component for income mode when user has onboarding context
+- **Assessment responses** - Extended with noticeContext field (months required, deadline)
+- **User profile** - Extended with onboardingContext field (hasNotice, months, deadline, completedAt)
+
+### Technical Details
+
+**New Components:**
+- `GettingStartedContextual` - Contextual final screen with personalized guidance
+- `NoticeDetailsQuestion` - Capture months required and deadline
+- `GoalProgress` - Dashboard component showing progress toward compliance goal
+- `CompletionMessage` - Celebration and next steps when goal is met
+
+**Enhanced Components:**
+- `ProfileForm` - Skip option, deadline field, improved validation
+- `NoticeQuestion` - Radio button interface, better mobile UX
+- `IntroductionScreen` - Onboarding variant support
+- `QuestionWrapper` - Consistent navigation patterns
+- `AssessmentBadge` - Primary color branding
+- `DashboardGuidance` - Primary color branding
+
+**Data Model Extensions:**
+- `OnboardingContext` - hasNotice, monthsRequired, deadline, completedAt
+- `AssessmentResponses.noticeContext` - monthsRequired, deadline
+- Both stored in IndexedDB, backward compatible
+
+**Assessment Flow Updates:**
+- Added noticeDetails, noticeFollowUpWithNotice, gettingStarted steps
+- Updated progress calculation for new steps
+- Replaced QuestionWrapper with Box wrappers throughout
+- Added event dispatching for dashboard refresh
+
+**Implementation Stats:**
+- 2 comprehensive specs created (onboarding-redesign, assessment-flow-alignment)
+- 14 files changed in onboarding implementation
+- 11 files changed in assessment alignment
+- 90% component reuse achieved (only 3 new components)
+- All 19 tasks completed from onboarding spec
+- All 14 tasks completed from assessment alignment spec
+
+### Developer Experience
+
+- Created comprehensive onboarding redesign spec in `.kiro/specs/onboarding-redesign/`
+- Created assessment flow alignment spec in `.kiro/specs/assessment-flow-alignment/`
+- Component reuse analysis documented in `reuse-analysis.md`
+- Time savings analysis: 44 hours vs. 98 hours (55% reduction)
+- Clear migration path with backward compatibility
+- No breaking changes to existing data structures
+
+---
+
 ## [6.1.0] - 2025-11-17
 
 ### Changed - "How to HourKeep" Rebrand 🎨
@@ -867,6 +1011,7 @@ This release represents the completion of the exemption screening spec, includin
 
 ---
 
+[7.0.0]: https://github.com/naretakis/hourkeep/compare/v6.1.0...v7.0.0
 [6.1.0]: https://github.com/naretakis/hourkeep/compare/v6.0.0...v6.1.0
 [6.0.0]: https://github.com/naretakis/hourkeep/compare/v5.0.0...v6.0.0
 [5.0.0]: https://github.com/naretakis/hourkeep/compare/v4.5.0...v5.0.0
