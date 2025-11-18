@@ -160,17 +160,17 @@ export function AssessmentBadge({
             >
               {recommendation.reasoning}
             </Typography>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1 }}>
               <Button
                 variant="outlined"
                 size="small"
                 onClick={onViewDetails}
-                fullWidth
                 sx={{
                   borderColor: "success.main",
                   color: "success.main",
                   fontSize: { xs: "0.8125rem", sm: "0.875rem" },
                   py: { xs: 0.75, sm: 1 },
+                  flex: { xs: "1", sm: "0 1 auto" },
                   "&:hover": {
                     borderColor: "success.dark",
                     bgcolor: "success.50",
@@ -183,11 +183,11 @@ export function AssessmentBadge({
                 variant="text"
                 size="small"
                 onClick={onRetakeAssessment}
-                fullWidth
                 sx={{
                   color: "text.secondary",
                   fontSize: { xs: "0.75rem", sm: "0.8125rem" },
                   py: { xs: 0.5, sm: 0.75 },
+                  flex: { xs: "1", sm: "0 1 auto" },
                 }}
               >
                 Retake Assessment
@@ -258,16 +258,16 @@ export function AssessmentBadge({
               }}
             />
           </Box>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1 }}>
             <Button
               variant="contained"
               size="small"
               onClick={onViewDetails}
-              fullWidth
               sx={{
                 bgcolor: "primary.main",
                 fontSize: { xs: "0.8125rem", sm: "0.875rem" },
                 py: { xs: 0.75, sm: 1 },
+                flex: { xs: "1", sm: "0 1 auto" },
                 "&:hover": {
                   bgcolor: "primary.dark",
                 },
@@ -279,11 +279,11 @@ export function AssessmentBadge({
               variant="text"
               size="small"
               onClick={onRetakeAssessment}
-              fullWidth
               sx={{
                 color: "text.secondary",
                 fontSize: { xs: "0.75rem", sm: "0.8125rem" },
                 py: { xs: 0.5, sm: 0.75 },
+                flex: { xs: "1", sm: "0 1 auto" },
               }}
             >
               Retake Assessment
