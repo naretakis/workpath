@@ -8,7 +8,6 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-  Divider,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -43,83 +42,59 @@ export function PrivacyNotice({ onAcknowledge }: PrivacyNoticeProps) {
         Welcome to HourKeep
       </Typography>
 
-      <Typography variant="h6" color="primary" sx={{ mb: 2, fontWeight: 500 }}>
+      <Typography variant="h6" color="primary" sx={{ mb: 3, fontWeight: 500 }}>
         Keep Your Hours, Keep Your Coverage
       </Typography>
 
-      <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-        Before you start, here&apos;s how we handle your data:
+      <Typography variant="body1" sx={{ mb: 3, fontWeight: 500 }}>
+        Your privacy comes first:
       </Typography>
 
-      <List sx={{ mb: 2 }}>
-        <ListItem sx={{ px: 0 }}>
-          <ListItemIcon>
+      <List sx={{ mb: 3 }}>
+        <ListItem sx={{ px: 0, py: 1 }}>
+          <ListItemIcon sx={{ minWidth: 40 }}>
             <CheckCircleIcon color="success" />
           </ListItemIcon>
           <ListItemText
-            primary="All data stays on your device"
-            secondary="Nothing is sent to any server. Your information never leaves your device unless you explicitly export it."
+            primary="Everything stays on your device"
+            secondary="Your data never leaves unless you export it"
             primaryTypographyProps={{ fontWeight: 500 }}
           />
         </ListItem>
 
-        <ListItem sx={{ px: 0 }}>
-          <ListItemIcon>
+        <ListItem sx={{ px: 0, py: 1 }}>
+          <ListItemIcon sx={{ minWidth: 40 }}>
             <CheckCircleIcon color="success" />
           </ListItemIcon>
           <ListItemText
-            primary="You control all exports"
-            secondary="Only you decide when to share your data. You can export your hours and documents whenever you need to submit them."
+            primary="You control your data"
+            secondary="Export or delete anytime"
             primaryTypographyProps={{ fontWeight: 500 }}
           />
         </ListItem>
 
-        <ListItem sx={{ px: 0 }}>
-          <ListItemIcon>
+        <ListItem sx={{ px: 0, py: 1 }}>
+          <ListItemIcon sx={{ minWidth: 40 }}>
             <CheckCircleIcon color="success" />
           </ListItemIcon>
           <ListItemText
-            primary="You can delete everything"
-            secondary="Remove all your data anytime from the settings page. Once deleted, it's gone forever."
+            primary="Works offline"
+            secondary="No internet required"
             primaryTypographyProps={{ fontWeight: 500 }}
           />
         </ListItem>
 
-        <ListItem sx={{ px: 0 }}>
-          <ListItemIcon>
+        <ListItem sx={{ px: 0, py: 1 }}>
+          <ListItemIcon sx={{ minWidth: 40 }}>
             <CheckCircleIcon color="success" />
           </ListItemIcon>
           <ListItemText
-            primary="Anonymous usage analytics"
-            secondary="We collect anonymous usage statistics (page views, device types, states) to understand where this tool is needed most and improve the app. This does NOT include any personal information, activity logs, or documents. Respects 'Do Not Track' browser settings."
-            primaryTypographyProps={{ fontWeight: 500 }}
-          />
-        </ListItem>
-
-        <ListItem sx={{ px: 0 }}>
-          <ListItemIcon>
-            <CheckCircleIcon color="success" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Works completely offline"
-            secondary="No internet connection needed. Everything works locally on your device."
-            primaryTypographyProps={{ fontWeight: 500 }}
-          />
-        </ListItem>
-
-        <ListItem sx={{ px: 0 }}>
-          <ListItemIcon>
-            <CheckCircleIcon color="success" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Sensitive data is encrypted"
-            secondary="Your date of birth and Medicaid ID are encrypted when stored on your device for extra protection."
+            primary="Sensitive data encrypted"
+            secondary="Date of birth and Medicaid ID protected"
             primaryTypographyProps={{ fontWeight: 500 }}
           />
         </ListItem>
       </List>
-
-      <Divider sx={{ my: 3 }} />
 
       <Accordion sx={{ mb: 3, boxShadow: 1 }}>
         <AccordionSummary
@@ -127,185 +102,50 @@ export function PrivacyNotice({ onAcknowledge }: PrivacyNoticeProps) {
           aria-controls="analytics-details-content"
           id="analytics-details-header"
         >
-          <Typography variant="h6" sx={{ fontWeight: 600 }}>
-            What We Track (Details)
+          <Typography variant="body1" sx={{ fontWeight: 500 }}>
+            About anonymous analytics
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography variant="body2" paragraph sx={{ fontWeight: 500 }}>
-            What is collected (anonymous):
+          <Typography variant="body2" paragraph>
+            We collect basic anonymous stats (page views, device types, states)
+            to improve the app. This helps us understand where HourKeep is
+            needed most.
           </Typography>
-          <Box component="ul" sx={{ pl: 2, mb: 2 }}>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CheckIcon
-                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Page views (which pages you visit)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CheckIcon
-                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Device type (mobile, desktop, tablet)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CheckIcon
-                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Browser and operating system
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CheckIcon
-                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                State/region (e.g., &quot;California&quot;, &quot;Texas&quot;)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CheckIcon
-                sx={{ fontSize: 18, color: "success.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Screen size
-              </Typography>
-            </Box>
+
+          <Typography variant="body2" paragraph sx={{ fontWeight: 500 }}>
+            We collect (anonymous):
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, mb: 2, fontSize: "0.875rem" }}>
+            <li>Page views</li>
+            <li>Device type and screen size</li>
+            <li>Browser and OS</li>
+            <li>State/region only</li>
           </Box>
 
           <Typography variant="body2" paragraph sx={{ fontWeight: 500 }}>
-            What is NOT collected:
+            We never collect:
           </Typography>
-          <Box component="ul" sx={{ pl: 2, mb: 2 }}>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Your profile information (name, state, DOB, Medicaid ID)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Your activity logs (hours worked, organizations)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Your documents (pay stubs, verification letters)
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Your exemption screening results
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                IP addresses or persistent identifiers
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                Cookies or tracking across websites
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "flex-start", mb: 0.5 }}>
-              <CloseIcon
-                sx={{ fontSize: 18, color: "error.main", mr: 1, mt: 0.2 }}
-              />
-              <Typography component="span" variant="body2">
-                City-level or more granular location data
-              </Typography>
-            </Box>
+          <Box component="ul" sx={{ pl: 2, mb: 2, fontSize: "0.875rem" }}>
+            <li>Your name, DOB, or Medicaid ID</li>
+            <li>Your hours or activity logs</li>
+            <li>Your documents</li>
+            <li>IP addresses or cookies</li>
+            <li>City-level location</li>
           </Box>
 
           <Typography variant="body2" color="text.secondary">
-            Learn more:{" "}
+            Analytics respect &quot;Do Not Track&quot; settings.{" "}
             <Link
               href="https://plausible.io/privacy"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Plausible Privacy Policy
+              Learn more
             </Link>
           </Typography>
         </AccordionDetails>
       </Accordion>
-
-      <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-        What We Store
-      </Typography>
-
-      <Typography variant="body2" paragraph>
-        HourKeep stores the following information locally on your device:
-      </Typography>
-
-      <Box component="ul" sx={{ pl: 2, mb: 3 }}>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Your profile information (name, state, date of birth, contact info)
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Your activity logs (work, volunteer, education hours)
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Documents you upload (pay stubs, verification letters)
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Your exemption screening results (if you complete the screening)
-        </Typography>
-      </Box>
-
-      <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-        Your Rights
-      </Typography>
-
-      <Typography variant="body2" paragraph>
-        You have complete control over your data:
-      </Typography>
-
-      <Box component="ul" sx={{ pl: 2, mb: 3 }}>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          View all your data anytime
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Edit your profile information
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Export your data in multiple formats
-        </Typography>
-        <Typography component="li" variant="body2" sx={{ mb: 0.5 }}>
-          Delete all your data permanently
-        </Typography>
-      </Box>
-
-      <Divider sx={{ my: 3 }} />
-
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        Your privacy is our priority. If you have questions about how your data
-        is handled, please contact your local Medicaid office or the app
-        developer.
-      </Typography>
 
       <Button
         variant="contained"
@@ -313,7 +153,7 @@ export function PrivacyNotice({ onAcknowledge }: PrivacyNoticeProps) {
         size="large"
         onClick={onAcknowledge}
         sx={{
-          minHeight: 48, // 48px touch target
+          minHeight: 48,
           fontSize: "1.1rem",
         }}
       >
