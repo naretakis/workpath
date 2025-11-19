@@ -59,17 +59,17 @@ export function calculateRecommendation(
     viableMethods.includes("seasonal-income-tracking")
   ) {
     primaryMethod = "seasonal-income-tracking";
-    reasoning = `Your seasonal work averages $${monthlyIncome}/month over 6 months, meeting the $580 requirement. Seasonal income tracking is perfect for your situation—it lets you average your income across months when work varies by season.`;
+    reasoning = `Your seasonal work averages $${monthlyIncome}/month over 6 months, which could meet the $580 requirement. Seasonal income tracking is perfect for your situation—it lets you average your income across months when work varies by season.`;
     complianceStatus = "compliant";
     estimatedEffort = "low";
   } else if (viableMethods.includes("income-tracking")) {
     primaryMethod = "income-tracking";
-    reasoning = `You earn $${monthlyIncome}/month, which meets the $580 requirement. Income tracking is the easiest option—just submit one paystub each month instead of tracking hours daily.`;
+    reasoning = `You earn $${monthlyIncome}/month, which could meet the $580 requirement. Income tracking is the easiest option—just submit one paystub each month instead of tracking hours daily.`;
     complianceStatus = "compliant";
     estimatedEffort = "low";
   } else if (viableMethods.includes("hour-tracking")) {
     primaryMethod = "hour-tracking";
-    reasoning = `You're completing ${totalHours} hours per month across your activities, which meets the 80-hour requirement. Keep tracking your hours to stay compliant.`;
+    reasoning = `You're completing ${totalHours} hours per month across your activities, which could meet the 80-hour requirement. Keep tracking your hours to document your compliance.`;
     complianceStatus = "compliant";
     estimatedEffort = totalHours > 100 ? "low" : "medium";
   } else {
@@ -81,11 +81,11 @@ export function calculateRecommendation(
     if (totalHours > 0 && monthlyIncome > 0) {
       reasoning = `You're currently at ${totalHours} hours/month and $${monthlyIncome}/month. You need either ${hoursNeeded} more hours or $${incomeNeeded} more income to meet requirements. Hour tracking is recommended—add more work, volunteering, or school hours to reach 80 hours/month.`;
     } else if (totalHours > 0) {
-      reasoning = `You're currently at ${totalHours} hours/month. You need ${hoursNeeded} more hours to reach the 80-hour requirement. Add more work, volunteering, or school hours to stay compliant.`;
+      reasoning = `You're currently at ${totalHours} hours/month. You need ${hoursNeeded} more hours to reach the 80-hour requirement. Add more work, volunteering, or school hours to document your compliance.`;
     } else if (monthlyIncome > 0) {
       reasoning = `You're currently earning $${monthlyIncome}/month. You need $${incomeNeeded} more to reach the $580 requirement, or you can track 80 hours/month of activities instead.`;
     } else {
-      reasoning = `To stay compliant, you need to either earn $580/month or complete 80 hours/month of qualifying activities (work, volunteering, or school). Start tracking your activities to see where you stand.`;
+      reasoning = `To document compliance, you need to either earn $580/month or complete 80 hours/month of qualifying activities (work, volunteering, or school). Start tracking your activities to see where you stand.`;
     }
 
     complianceStatus = "needs-increase";
@@ -163,7 +163,7 @@ export function getComplianceMethodDescription(
 ): string {
   switch (method) {
     case "exemption":
-      return "You don't need to track anything—you're exempt from work requirements.";
+      return "You may be exempt from work requirements, just export your data (with exemption docs) and share to your Medicaid agency.";
     case "income-tracking":
       return "Submit one paystub per month showing you earn at least $580.";
     case "seasonal-income-tracking":

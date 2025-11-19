@@ -423,23 +423,18 @@ export const dashboardGuidance: DashboardGuidance = {
   steps: [
     {
       icon: "compass",
-      text: "Take the quick assessment to discover if you're exempt and learn which tracking method works best for you",
-      action: "/how-to-hourkeep",
-    },
-    {
-      icon: "chart",
-      text: "Choose between tracking hours or income based on your recommendation",
+      text: "Decide how you want to use HourKeep, log hours, income, or seasonal income",
       action: null,
     },
     {
-      icon: "calendar",
-      text: "Log your hours or income each month to stay on track",
+      icon: "add",
+      text: "Click + on the bottom right to add your monthly hours or income",
       action: null,
     },
     {
       icon: "download",
       text: "Export and share your data with your state Medicaid agency",
-      action: "/export",
+      action: null,
     },
   ],
 };

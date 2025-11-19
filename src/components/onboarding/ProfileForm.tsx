@@ -20,6 +20,7 @@ import {
   TrendingUp as TrendingUpIcon,
   Assessment as AssessmentIcon,
   FileDownload as FileDownloadIcon,
+  Add as AddIcon,
 } from "@mui/icons-material";
 import { UserProfile } from "@/types";
 import {
@@ -452,34 +453,49 @@ export function ProfileForm({
               Here&apos;s how HourKeep works:
             </Typography>
 
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <TrendingUpIcon color="primary" />
+            <List sx={{ py: 0 }}>
+              <ListItem sx={{ py: 2, alignItems: "flex-start" }}>
+                <ListItemIcon sx={{ minWidth: 48, mt: 0.5 }}>
+                  <Box
+                    sx={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: "50%",
+                      backgroundColor: "primary.main",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <AddIcon sx={{ fontSize: 20, color: "white" }} />
+                  </Box>
                 </ListItemIcon>
                 <ListItemText
                   primary="Log your hours or income"
-                  secondary="Track work, volunteer, school, and training hours—or just track your income"
+                  secondary="Track work, volunteer, school, and training hours"
+                  primaryTypographyProps={{ fontWeight: 600 }}
                 />
               </ListItem>
 
-              <ListItem>
-                <ListItemIcon>
-                  <AssessmentIcon color="primary" />
+              <ListItem sx={{ py: 2, alignItems: "flex-start" }}>
+                <ListItemIcon sx={{ minWidth: 48, mt: 0.5 }}>
+                  <AssessmentIcon color="primary" sx={{ fontSize: 32 }} />
                 </ListItemIcon>
                 <ListItemText
                   primary="See your progress"
                   secondary="Know if you're meeting your requirements"
+                  primaryTypographyProps={{ fontWeight: 600 }}
                 />
               </ListItem>
 
-              <ListItem>
-                <ListItemIcon>
-                  <FileDownloadIcon color="primary" />
+              <ListItem sx={{ py: 2, alignItems: "flex-start" }}>
+                <ListItemIcon sx={{ minWidth: 48, mt: 0.5 }}>
+                  <FileDownloadIcon color="primary" sx={{ fontSize: 32 }} />
                 </ListItemIcon>
                 <ListItemText
                   primary="Export when needed"
                   secondary="Generate reports to submit to your state"
+                  primaryTypographyProps={{ fontWeight: 600 }}
                 />
               </ListItem>
             </List>

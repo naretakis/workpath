@@ -177,61 +177,6 @@ export default function SettingsPage() {
         )}
       </Paper>
 
-      {/* Goal Configuration Section */}
-      {profile?.onboardingContext && (
-        <Paper sx={{ p: 3, mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Tracking Goal
-          </Typography>
-          <Divider sx={{ mb: 2 }} />
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="body2" color="text.secondary" gutterBottom>
-              Months Required
-            </Typography>
-            <Typography variant="body1" fontWeight={600}>
-              {profile.onboardingContext.monthsRequired || "Not set"} month
-              {(profile.onboardingContext.monthsRequired || 0) !== 1 ? "s" : ""}
-            </Typography>
-          </Box>
-          {profile.onboardingContext.deadline && (
-            <Box sx={{ mb: 2 }}>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
-                Deadline
-              </Typography>
-              <Typography variant="body1" fontWeight={600}>
-                {format(
-                  new Date(profile.onboardingContext.deadline),
-                  "MMMM d, yyyy",
-                )}
-              </Typography>
-            </Box>
-          )}
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="body2" color="text.secondary" gutterBottom>
-              Tracking Mode
-            </Typography>
-            <Typography variant="body1" fontWeight={600}>
-              {profile.onboardingContext.hasNotice
-                ? "Notice Response"
-                : "Continuous Tracking"}
-            </Typography>
-          </Box>
-          <Button
-            variant="outlined"
-            onClick={() => {
-              // For now, just show a message
-              alert(
-                "Goal editing will be available in a future update. To change your goal, please contact support.",
-              );
-            }}
-            fullWidth
-            sx={{ minHeight: 44 }}
-          >
-            Edit Goal
-          </Button>
-        </Paper>
-      )}
-
       {/* Exemption Screening Section */}
       <Paper sx={{ p: 3, mb: 3 }}>
         <Typography variant="h6" gutterBottom>

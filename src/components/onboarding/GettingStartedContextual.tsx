@@ -21,6 +21,7 @@ import {
   TrendingUp as TrendingUpIcon,
   Assessment as AssessmentIcon,
   FileDownload as FileDownloadIcon,
+  Add as AddIcon,
 } from "@mui/icons-material";
 import { Recommendation } from "@/types/assessment";
 import {
@@ -66,9 +67,9 @@ export function GettingStartedContextual({
     >
       {/* Success Header */}
       <Box sx={{ textAlign: "center" }}>
-        <CheckCircleIcon sx={{ fontSize: 64, color: "success.main", mb: 2 }} />
+        <CheckCircleIcon sx={{ fontSize: 64, color: "primary.main", mb: 2 }} />
         <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
-          ✅ You&apos;re all set!
+          Assessment Complete
         </Typography>
       </Box>
 
@@ -108,49 +109,49 @@ export function GettingStartedContextual({
           Here&apos;s how HourKeep works:
         </Typography>
 
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <TrendingUpIcon color="primary" />
+        <List sx={{ py: 0 }}>
+          <ListItem sx={{ py: 2, alignItems: "flex-start" }}>
+            <ListItemIcon sx={{ minWidth: 48, mt: 0.5 }}>
+              <Box
+                sx={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: "50%",
+                  backgroundColor: "primary.main",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <AddIcon sx={{ fontSize: 20, color: "white" }} />
+              </Box>
             </ListItemIcon>
             <ListItemText
-              primary={
-                recommendation?.primaryMethod === "income-tracking" ||
-                recommendation?.primaryMethod === "seasonal-income-tracking"
-                  ? "📊 Log your income"
-                  : "📊 Log your hours"
-              }
-              secondary={
-                recommendation?.primaryMethod === "income-tracking"
-                  ? "Track your monthly income from work"
-                  : recommendation?.primaryMethod === "seasonal-income-tracking"
-                    ? "Track your income over 6 months for seasonal work"
-                    : "Track work, volunteer, school, and training hours"
-              }
+              primary="Log your hours or income"
+              secondary="Track work, volunteer, school, and training hours"
+              primaryTypographyProps={{ fontWeight: 600 }}
             />
           </ListItem>
 
-          <ListItem>
-            <ListItemIcon>
-              <AssessmentIcon color="primary" />
+          <ListItem sx={{ py: 2, alignItems: "flex-start" }}>
+            <ListItemIcon sx={{ minWidth: 48, mt: 0.5 }}>
+              <AssessmentIcon color="primary" sx={{ fontSize: 32 }} />
             </ListItemIcon>
             <ListItemText
-              primary="📈 See your progress"
-              secondary={
-                hasNotice && monthsRequired
-                  ? `Track progress for the ${monthsRequired} month${monthsRequired > 1 ? "s" : ""} you need`
-                  : "Know if you're meeting your requirements"
-              }
+              primary="See your progress"
+              secondary="Know if you're meeting your requirements"
+              primaryTypographyProps={{ fontWeight: 600 }}
             />
           </ListItem>
 
-          <ListItem>
-            <ListItemIcon>
-              <FileDownloadIcon color="primary" />
+          <ListItem sx={{ py: 2, alignItems: "flex-start" }}>
+            <ListItemIcon sx={{ minWidth: 48, mt: 0.5 }}>
+              <FileDownloadIcon color="primary" sx={{ fontSize: 32 }} />
             </ListItemIcon>
             <ListItemText
-              primary="📤 Export when needed"
+              primary="Export when needed"
               secondary="Generate reports to submit to your state"
+              primaryTypographyProps={{ fontWeight: 600 }}
             />
           </ListItem>
         </List>

@@ -5,6 +5,46 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [7.1.0] - 2025-11-18
+
+### Changed - UX Language Refinement & UI Simplification
+
+Refined user-facing language throughout the app to avoid making definitive legal claims about exemption and compliance status, and simplified the interface by removing goal tracking components.
+
+#### Language Softening
+
+- **Exemption language** - Changed "You're exempt" to "You may be exempt" throughout exemption calculator to avoid making definitive legal determinations
+- **Compliance language** - Changed "stay compliant" to "document compliance" in recommendation engine to emphasize documentation over legal status
+- **Recommendation wording** - Updated income and hour tracking recommendations to use "could meet" instead of "meets" requirements
+
+#### UI Simplification
+
+- **Removed Goal Progress component** - Eliminated goal tracking UI from tracking and settings pages to simplify the interface
+- **Removed compliance status chip** - Removed "Currently Compliant" / "Needs More Activities" chip from assessment results page
+- **Streamlined settings** - Removed goal configuration section from settings page
+
+#### Onboarding Improvements
+
+- **Updated icon styling** - Improved visual consistency in ProfileForm and GettingStartedContextual with circular backgrounds for add icon
+- **Better icon sizing** - Consistent 32px sizing for icons in onboarding lists
+- **Improved spacing** - Better padding and alignment in list items
+
+#### Dashboard Guidance Updates
+
+- **Simplified guidance** - Updated dashboard help text to be more direct and actionable
+- **Removed assessment-first flow** - Guidance now focuses on core actions (add hours/income, export data)
+- **Added "add" icon** - New circular icon for the "add" action in guidance
+
+### Technical Details
+
+- Updated 10 files across exemption calculator, recommendation engine, and UI components
+- Softened language in 13 exemption scenarios and 5 recommendation scenarios
+- Removed GoalProgress component usage from 2 pages
+- Improved icon styling in 3 onboarding components
+- Updated dashboard guidance content and icon rendering
+
+---
+
 ## [7.0.0] - 2025-11-18
 
 ### Added - Context-Aware Onboarding & Assessment Flow Alignment 🎯

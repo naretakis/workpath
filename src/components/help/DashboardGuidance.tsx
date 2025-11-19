@@ -24,6 +24,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import ExploreIcon from "@mui/icons-material/Explore";
+import AddIcon from "@mui/icons-material/Add";
 import { useRouter } from "next/navigation";
 import { dashboardGuidance } from "@/content/helpText";
 
@@ -154,6 +155,22 @@ export function DashboardGuidance({
         return <BarChartIcon />;
       case "download":
         return <FileDownloadIcon />;
+      case "add":
+        return (
+          <Box
+            sx={{
+              width: 24,
+              height: 24,
+              borderRadius: "50%",
+              backgroundColor: "primary.main",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <AddIcon sx={{ fontSize: 18, color: "white" }} />
+          </Box>
+        );
       default:
         return <ChecklistIcon />;
     }

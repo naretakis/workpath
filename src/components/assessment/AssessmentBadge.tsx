@@ -160,7 +160,13 @@ export function AssessmentBadge({
             >
               {recommendation.reasoning}
             </Typography>
-            <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                gap: 1,
+              }}
+            >
               <Button
                 variant="outlined"
                 size="small"
@@ -258,7 +264,13 @@ export function AssessmentBadge({
               }}
             />
           </Box>
-          <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: 1,
+            }}
+          >
             <Button
               variant="contained"
               size="small"

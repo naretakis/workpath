@@ -178,25 +178,6 @@ export default function AssessmentResultsPage() {
           Your Recommended Path
         </Typography>
 
-        {/* Compliance Status Chip */}
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
-          <Chip
-            label={
-              recommendation.complianceStatus === "compliant"
-                ? "Currently Compliant"
-                : recommendation.complianceStatus === "needs-increase"
-                  ? "Needs More Activities"
-                  : "Status Unknown"
-            }
-            color={
-              recommendation.complianceStatus === "compliant"
-                ? "success"
-                : "warning"
-            }
-            sx={{ fontWeight: 600 }}
-          />
-        </Box>
-
         {/* Primary Recommendation */}
         <Paper
           sx={{
