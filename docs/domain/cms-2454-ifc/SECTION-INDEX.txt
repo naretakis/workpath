@@ -1,0 +1,184 @@
+11	AGENCY:
+15	ACTION:
+19	SUMMARY:
+23	DATES:
+31	ADDRESSES:
+57	FOR FURTHER INFORMATION CONTACT:
+62	SUPPLEMENTARY INFORMATION:
+71	Table of Contents
+149	I. Background
+151	A. Overview
+196	B. Working Families Tax Cut Legislation
+334	C. Severability
+338	II. Provisions of the Interim Final Rule With Comment Period
+348	A. Decision to Revise Certain Eligibility and Enrollment Regulations To Implement Community Engagement
+395	B. Applicable Individuals
+425	C. Demonstrating Community Engagement
+447	1. Work
+471	2. Community Service
+498	3. Work Program
+521	4. Educational Program
+537	5. Enrollment in an Educational Program at Least Half-Time
+551	6. Enrollment in an Educational Program Less Than Half-Time
+626	7. Combination of Activities
+634	8. Monthly Income and Average Monthly Income for Seasonal Workers
+712	D. Mandatory Exceptions for Certain Individuals
+744	E. Specified Excluded Individuals
+756	1. Former Foster Care Children
+781	2. American Indians
+792	3. Parent, Guardian, Caretaker Relative, or Family Caregiver of a Dependent Child 13 Years of Age and Under or a Disabled Individual
+796	a. Definition of Caretaker Relative
+817	b. Definition of Parent
+827	c. Definition of Guardian
+852	d. Definition of Family Caregiver
+874	e. Definition of Dependent Child
+904	f. Definition of Disabled Individual
+918	g. Applicability of Parent, Caretaker Relative, Guardian, or Family Caregiver Exclusion to Multiple Individuals in a Residence
+941	h. Criteria for the Family Caregiver Exclusion
+998	4. Veteran With a Disability Rated as Total
+1006	5. An Individual Who is Medically Frail or Otherwise has Special Medical Needs
+1008	a. Background
+1036	b. Medically Frail Definition
+1191	6. Individuals Compliant With TANF Work Requirements and Individuals Not Exempt From SNAP Work Requirements
+1233	7. Participant in a Drug or Alcohol Rehabilitation or Treatment Program
+1239	8. Inmate of a Public Institution
+1263	9. Pregnant or Entitled to Postpartum Coverage
+1287	F. Mandatory Exceptions vs. Specified Excluded Individuals
+1299	G. Short-Term Hardship Exceptions
+1317	1. Scope of the Election and Certain Notice Requirements
+1329	2. Procedures for Implementing Short-Term Hardship Exceptions
+1383	3. Definition of a Short-Term Hardship Event
+1387	4. Applicable Individuals in Certain Medical Institutions or Receiving Outpatient Services
+1445	5. Emergency and Disaster Areas
+1516	6. Areas With Certain Levels of Unemployment
+1550	7. Applicable Individual or Dependent Must Travel Outside of Their Community for an Extended Period of Time To Receive Medical Services Necessary for a Serious or Complex Medical Condition
+1615	H. Assessing Compliance With the Community Engagement Requirement
+1627	1. Assessing Applicability of the Community Engagement Requirement
+1631	2. Assessing Compliance for Applicants
+1637	3. Assessing Compliance for Enrolled Beneficiaries
+1647	a. Assessing Compliance at Renewal if the State Does Not Elect To Conduct More Frequent Verifications of Compliance With the Community Engagement Requirement
+1661	b. Assessing Compliance When the State Conducts More Frequent Verifications of Compliance With the Community Engagement Requirement
+1675	c. Prohibition on Assessing Compliance With Community Engagement for Specified Excluded Individuals
+1679	d. Processing Certain Changes in Circumstances
+1683	(1) Changes in Circumstances for Beneficiaries Enrolled on Another Basis Who Become Eligible for a Group Subject to the Community Engagement Requirement
+1691	(2) Changes in an Individual's Status as a Specified Excluded Individual
+1703	e. Notifying Individuals About Eligibility Decisions and Changes in Eligibility Requirements
+1711	I. Verification of Compliance With and Exceptions and Exclusions From the Community Engagement Requirement
+1717	1. Requirement To Conduct Ex Parte Verification
+1739	2. Requirement To Use Reliable Information Available to the State
+1763	3. Requesting Additional Information From Applicants and Beneficiaries To Verify Compliance With, and Exceptions and Exclusions From, the Community Engagement Requirement
+1777	a. Requirement To Accept Information From Applicants and Beneficiaries
+1785	4. Verifying Community Engagement at Application, Renewal and More Frequent Verifications
+1799	a. Verifying Community Engagement Information Provided on an Application, Renewal Form, or Reported Between Regular Renewals
+1807	b. Verifying Community Engagement When Conducting More Frequent Verifications Between Regularly Scheduled Redeterminations
+1815	5. The Federal Data Services Hub or Other Electronic Service
+1823	6. Verifying Compliance With Community Engagement Activities
+1839	a. Verifying Hours of Work
+1853	(1) Verifying Hours for Certain Caregivers
+1861	b. Verifying Community Service
+1871	c. Verifying Participation in a Work Program
+1875	d. Verifying Enrollment in an Educational Program
+1887	e. Verifying Compliance Using a Combination of Activities
+1897	f. Verifying Compliance Based on Monthly Income
+1905	7. Verifying Status as a Specified Excluded Individual
+1919	a. Former Foster Care Children
+1927	b. American Indians
+1933	c. Parent, Guardian, Caretaker Relative, or Family Caregiver of a Dependent Child or a Disabled Individual
+1980	d. Veterans with a Disability Rating as Total
+1990	e. Individuals Who Are Medically Frail or Otherwise Have Special Medical Needs
+2037	f. Individuals Compliant With TANF Work Requirements and Individuals Not Exempt From SNAP Work Requirements
+2051	g. Participants in Drug Addiction or Alcoholic Treatment and Rehabilitation Programs
+2059	h. Inmate of a Public Institution
+2063	i. Pregnant or Eligible for Postpartum Coverage
+2067	8. Mandatory Exceptions
+2081	9. Verifying Optional Short-Term Exceptions
+2085	a. Applicable Individuals in Certain Medical Institutions or Receiving Outpatient Services
+2089	b. Applicable Individual or Dependent Must Travel Outside of Their Community for an Extended Period of Time To Receive Medical Services Necessary for a Serious or Complex Medical Condition
+2101	c. Emergency and Disaster Declarations and High Unemployment Rate
+2105	J. Noncompliance Procedures
+2115	1. Providing a Notice of Noncompliance
+2125	2. Defining “Unable To Verify” Compliance With the Community Engagement Requirement
+2129	a. Defining “Unable To Verify” at Application
+2133	b. Defining “Unable To Verify” at Renewal
+2137	Option 1
+2143	Option 2
+2176	c. Defining “Unable To Verify” During More Frequent Verifications of Compliance With Community Engagement
+2180	Option 1
+2184	Option 2
+2194	3. Content and Timing of the Noncompliance Notice
+2222	4. State Responsibilities When There Is No Satisfactory Showing of Compliance
+2240	5. Reenrollment and Reconsideration Periods
+2253	6. Noncompliance Procedures and Ensuring Timely Eligibility Determinations at Application
+2271	7. Impact of Noncompliance and Eligibility for Financial Assistance for Coverage on a Health Insurance Exchange
+2275	K. Implementation Timing
+2279	1. Implementation Date
+2283	2. Special Considerations at Implementation
+2285	a. Pending Applications and Implementation of the Community Engagement Requirement
+2295	b. Community Engagement Requirement for Enrolled Beneficiaries at Implementation
+2310	3. Systems Changes Needed To Implement Community Engagement
+2364	4. Good Faith Effort Exemption
+2374	a. Process and Timing of Requests
+2378	b. Criteria for Good Faith Effort Determination
+2408	c. Duration of Exemption
+2420	d. Reporting Requirements for States Granted Good Faith Effort Exemptions
+2424	L. Outreach
+2491	M. Managed Care Implications
+2523	N. Additional Considerations
+2525	1. Implications of Community Engagement on Presumptive Eligibility and Presumptive Eligibility Determined by Hospitals
+2549	2. Additional Considerations for Section 1115 Demonstrations
+2553	O. Monitoring
+2571	III. Good Cause for Proceeding With an Interim Final Rule With Comment Period
+2583	IV. Collection of Information Requirements
+2603	A. Wage Estimates
+2605	1. States and the Private Sector
+2615	2. Beneficiaries
+2631	B. Adjustment to State Cost Estimates
+2635	C. Information Collection Requirements (ICRs)
+2660	1. ICRs Regarding State Requirements To Submit Data for Monitoring Community Engagement (§ 435.562)
+2680	a. Performance Indicator Data (Annual Reporting for Monitoring Community Engagement)
+2690	b. Eligibility Processing Data (Annual Reporting for Monitoring Community Engagement)
+2696	c. T-MSIS Data
+2712	2. ICRs Regarding Good Faith Effort Exemptions and Quarterly Reporting (§ 435.560)
+2748	3. ICRs Regarding State Plan Amendment (SPA) Submissions To Implement and Confirm Compliance (§ 430.10)
+2762	4. ICRs Regarding Verification Plan Submission and Updates (§ 435.557)
+2808	5. ICRs Regarding Beneficiary Application Updates (Single Streamlined and Presumptive Eligibility Applications) (§§ 435.912, 435.556, and 435.557)
+2864	6. ICRs Regarding Short-Term Hardship Exception Requests (§ 435.555)
+3006	7. ICRs Regarding State Requirements for Outreach (§ 435.561) and Noncompliance (§ 435.558).
+3062	D. Burden Summary
+3090	E. Submission of PRA-Related Comments
+3104	V. Regulatory Impact Analysis
+3106	A. Statement of Need
+3134	B. Overall Impact
+3142	C. Detailed Economic Analysis
+3144	1. Benefits
+3162	a. Medicaid Applicants and Beneficiaries Subject to the Community Engagement Requirement
+3222	2. Costs
+3226	a. State and Federal Costs
+3261	b. Costs to Medicaid Beneficiaries
+3312	3. Transfers
+3314	a. Impacts on Medicaid Enrollment and Benefit Expenditures
+3421	4. Aggregate Time Allocation and Additional Effects on the Federal Deficit
+3521	5. Regulatory Review Cost Estimation
+3529	D. Alternatives Considered
+3533	1. Compliance and Verification Provisions
+3553	2. State Implementation
+3567	3. Monitoring and Reporting
+3571	E. Accounting Statement
+3585	F. Regulatory Flexibility Act (RFA)
+3589	G. Unfunded Mandates Reform Act (UMRA)
+3597	H. Federalism
+3603	I. E.O. 14192, “Unleashing Prosperity Through Deregulation”
+3616	J. Conclusion
+3622	List of Subjects
+3646	PART 431—STATE ORGANIZATION AND GENERAL ADMINISTRATION
+3650	Authority:
+3670	PART 435—ELIGIBILITY IN THE STATES, DISTRICT OF COLUMBIA, THE NORTHERN MARIANA ISLANDS, AND AMERICAN SAMOA
+3674	Authority:
+3700	Community Engagement Requirement
+3761	Community Engagement Requirement
+4802	PART 438—MANAGED CARE
+4806	Authority:
+4824	PART 457—ALLOTMENTS AND GRANTS TO STATES
+4828	Authority:
+4862	PART 600—ADMINISTRATION, ELIGIBILITY, ESSENTIAL HEALTH BENEFITS, PERFORMANCE STANDARDS, SERVICE DELIVERY REQUIREMENTS, PREMIUM AND COST SHARING, ALLOTMENTS, AND RECONCILIATION
+4866	Authority:
