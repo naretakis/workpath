@@ -27,6 +27,7 @@ import { DuplicateActivityDialog } from "@/components/DuplicateActivityDialog";
 
 import { AssessmentBadge } from "@/components/assessment/AssessmentBadge";
 import { DashboardGuidance } from "@/components/help/DashboardGuidance";
+import { RequirementFacts } from "@/components/help/RequirementFacts";
 import { ComplianceModeSelector } from "@/components/compliance/ComplianceModeSelector";
 import { IncomeDashboard } from "@/components/income/IncomeDashboard";
 import { CompletionMessage } from "@/components/tracking/CompletionMessage";
@@ -535,6 +536,16 @@ export default function TrackingPage() {
             {error}
           </Alert>
         )}
+
+        {/*
+          W2a § 2.3b: 42 CFR 435.559(c) renewal timing, 435.557(a)-(b) ex parte
+          first, and the caution against a casual negative self-report. Placed
+          above the tracking UI on purpose — a user who may not need to track
+          anything should learn that before being shown a calendar.
+        */}
+        <Box sx={{ mt: 3 }}>
+          <RequirementFacts initiallyCollapsed={false} />
+        </Box>
 
         <Box sx={{ mt: 3 }}>
           <DashboardGuidance dismissible={true} />

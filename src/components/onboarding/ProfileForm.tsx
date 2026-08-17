@@ -192,10 +192,14 @@ export function ProfileForm({
       return rest;
     });
 
-    // Show age exemption hint for users 65+
+    // Gap 15.21. 42 CFR 435.551 defines applicable individuals by reference to the
+    // 435.119 adult group, which is ages 19-64. Someone 65 or over is OUTSIDE that
+    // group — not an applicable individual who happens to be excluded. The old
+    // copy said "you may be exempt from work requirements due to your age", which
+    // names the wrong mechanism. Same error was in lib/exemptions/calculator.ts.
     if (age >= 65) {
       setAgeHint(
-        "Good news! You may be exempt from work requirements due to your age. Check the exemption screening after setup.",
+        "This requirement applies to adults aged 19 to 64, so at 65 or older it likely isn't a condition of your coverage. Ask your state to confirm which coverage group you're in.",
       );
     } else {
       setAgeHint(null);
@@ -680,9 +684,11 @@ export function ProfileForm({
             borderColor: "divider",
           }}
         >
-          <Typography variant="body1" color="text.secondary" paragraph>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+            {/* ADR-0003: was "the easiest way to maintain your coverage". */}
             After setting up your profile, we&apos;ll ask a few questions to
-            help you understand the easiest way to maintain your coverage.
+            work out what may already apply to you and what counts toward this
+            requirement.
           </Typography>
           <Typography variant="body2" color="text.secondary">
             The assessment takes about 5 minutes and will give you personalized

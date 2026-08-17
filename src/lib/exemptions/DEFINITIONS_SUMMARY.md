@@ -140,7 +140,7 @@ No breaking changes to existing code.
 **Definition shown**:
 
 > **Medicare**  
-> Federal health insurance for people 65 or older, or people under 65 with certain disabilities. If you have Medicare, you're exempt from work requirements.
+> Federal health insurance for people 65 or older, or people under 65 with certain disabilities. Part A or Part B both matter here: for any month you have Medicare, your state should treat this requirement as already met. Ask your state to confirm it has your Medicare enrolment on file — that's normally something it can look up itself.
 >
 > Examples:
 >

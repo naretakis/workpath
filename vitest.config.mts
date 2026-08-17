@@ -28,6 +28,20 @@ export default defineConfig({
     setupFiles: ["./vitest.setup.ts"],
 
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
+
+    env: {
+      // Pinned to a NEGATIVE-offset zone deliberately.
+      //
+      // W2a found a real bug where `new Date("2026-07-01")` parses as UTC midnight
+      // and so prints the previous month anywhere behind UTC — it mislabelled the
+      // month heading on the report users hand to a caseworker. The regression test
+      // for it only fails in a negative-offset zone, so under a default of UTC it
+      // would have passed with the bug restored: green on CI, broken for most US
+      // users. Month-boundary timezone drift is the bug class
+      // .kiro/steering/data-migration-standards.md calls out by name, so the suite
+      // runs where it is visible.
+      TZ: "America/New_York",
+    },
   },
   resolve: {
     alias: {

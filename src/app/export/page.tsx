@@ -18,7 +18,7 @@ import {
   Description as DescriptionIcon,
 } from "@mui/icons-material";
 import { db } from "@/lib/db";
-import { format } from "date-fns";
+import { buildTextReport } from "@/lib/export/buildTextReport";
 
 export default function ExportPage() {
   const router = useRouter();
@@ -102,106 +102,17 @@ export default function ExportPage() {
       const incomeEntries = await db.incomeEntries.toArray();
       const complianceModes = await db.complianceModes.toArray();
 
-      const profile = profiles[0];
-
-      // Create readable text format
-      let textContent = "HOURKEEP COMPLIANCE REPORT\n";
-      textContent += "=".repeat(50) + "\n\n";
-
-      if (profile) {
-        textContent += `Name: ${profile.name}\n`;
-        textContent += `State: ${profile.state}\n`;
-        textContent += `Report Date: ${format(new Date(), "MMMM d, yyyy")}\n\n`;
-      }
-
-      textContent += "=".repeat(50) + "\n\n";
-
-      // Get all unique months from both activities and income entries
-      const allMonths = new Set<string>();
-      activities.forEach((a) => allMonths.add(a.date.substring(0, 7)));
-      incomeEntries.forEach((i) => allMonths.add(i.date.substring(0, 7)));
-
-      // Sort months
-      const sortedMonths = Array.from(allMonths).sort().reverse();
-
-      sortedMonths.forEach((month) => {
-        // Get compliance mode for this month
-        const modeRecord = complianceModes.find(
-          (m) => m.month === month && m.userId === profile?.id,
-        );
-        const mode = modeRecord?.mode || "hours";
-
-        textContent += `${format(new Date(month + "-01"), "MMMM yyyy")}\n`;
-        textContent += `-`.repeat(50) + "\n";
-        textContent += `Compliance Mode: ${mode === "hours" ? "Hours Tracking" : "Income Tracking"}\n\n`;
-
-        if (mode === "hours") {
-          // Hours tracking
-          const monthActivities = activities.filter(
-            (a) => a.date.substring(0, 7) === month,
-          );
-          const totalHours = monthActivities.reduce(
-            (sum, a) => sum + a.hours,
-            0,
-          );
-          const isCompliant = totalHours >= 80;
-
-          textContent += `Total Hours: ${totalHours} / 80 ${isCompliant ? "✓ COMPLIANT" : "✗ NOT COMPLIANT"}\n\n`;
-
-          if (monthActivities.length > 0) {
-            const sortedActivities = [...monthActivities].sort((a, b) =>
-              a.date.localeCompare(b.date),
-            );
-
-            sortedActivities.forEach((activity) => {
-              textContent += `  ${format(new Date(activity.date + "T00:00:00"), "MMM d, yyyy")} - `;
-              textContent += `${activity.type.charAt(0).toUpperCase() + activity.type.slice(1)} - `;
-              textContent += `${activity.hours} hours`;
-              if (activity.organization) {
-                textContent += ` - ${activity.organization}`;
-              }
-              textContent += "\n";
-            });
-          } else {
-            textContent += "  No activities recorded\n";
-          }
-        } else {
-          // Income tracking
-          const monthIncomeEntries = incomeEntries.filter(
-            (i) => i.date.substring(0, 7) === month,
-          );
-          const totalIncome = monthIncomeEntries.reduce(
-            (sum, i) => sum + i.monthlyEquivalent,
-            0,
-          );
-          const isCompliant = totalIncome >= 580;
-
-          textContent += `Total Income: $${totalIncome.toFixed(2)} / $580.00 ${isCompliant ? "✓ COMPLIANT" : "✗ NOT COMPLIANT"}\n\n`;
-
-          if (monthIncomeEntries.length > 0) {
-            const sortedEntries = [...monthIncomeEntries].sort((a, b) =>
-              a.date.localeCompare(b.date),
-            );
-
-            sortedEntries.forEach((entry) => {
-              textContent += `  ${format(new Date(entry.date + "T00:00:00"), "MMM d, yyyy")} - `;
-              textContent += `$${entry.amount.toFixed(2)} (${entry.payPeriod}) → $${entry.monthlyEquivalent.toFixed(2)}/month`;
-              if (entry.source) {
-                textContent += ` - ${entry.source}`;
-              }
-              textContent += "\n";
-            });
-          } else {
-            textContent += "  No income entries recorded\n";
-          }
-        }
-
-        textContent += "\n";
+      // The report itself is built by a pure function in lib/export so it can be
+      // asserted directly — see that module's header for why W2a extracted it.
+      // The 80 and 580 literals below are the last two in this file and are
+      // recorded in the W2a -> W2b policy-literal handoff table.
+      const textContent = buildTextReport({
+        profile: profiles[0],
+        activities,
+        incomeEntries,
+        complianceModes,
+        thresholds: { hours: 80, income: 580 },
       });
-
-      if (activities.length === 0 && incomeEntries.length === 0) {
-        textContent += "No activities or income entries recorded yet.\n";
-      }
 
       // Create blob and download
       const blob = new Blob([textContent], { type: "text/plain" });

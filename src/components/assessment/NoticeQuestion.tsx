@@ -355,8 +355,15 @@ export function NoticeFollowUp({
           What would you like to do?
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-          We recommend checking if you&apos;re exempt first—it only takes 2
-          minutes and could save you time.
+          {/*
+            ADR-0003. Also gap 15.20: a self-reported "no, I'm not meeting it"
+            can be accepted at face value and support a denial, so the screening
+            genuinely should come first — the reason is protective, not just
+            time-saving.
+          */}
+          It&apos;s worth checking what may already apply to you before
+          answering anything else. It takes about 2 minutes, and some people
+          find the requirement doesn&apos;t reach them at all.
         </Typography>
       </Box>
 

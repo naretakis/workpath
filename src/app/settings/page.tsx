@@ -200,10 +200,16 @@ export default function SettingsPage() {
             >
               <Box sx={{ flex: 1 }}>
                 <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                  Status:{" "}
+                  {/*
+                    ADR-0003: was Status: "Exempt" / "Must Track Hours". A
+                    screening result is what HourKeep found, not a status.
+                    42 CFR 435.556 makes the applicable-individual question the
+                    state's, and 435.557(a)-(b) requires it to check its own
+                    records first.
+                  */}
                   {exemptionScreening.result.isExempt
-                    ? "Exempt"
-                    : "Must Track Hours"}
+                    ? "Your answers suggest this may not apply to you"
+                    : "Your answers didn't match a set-aside category"}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Screened:{" "}
@@ -243,9 +249,9 @@ export default function SettingsPage() {
           </Box>
         ) : (
           <Box>
-            <Typography variant="body2" color="text.secondary" paragraph>
-              Take a quick screening to see if you qualify for an exemption from
-              work requirements.
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              Take a quick screening to find out what may already apply to you.
+              Some people aren&apos;t covered by this requirement at all.
             </Typography>
             <Button
               variant="contained"

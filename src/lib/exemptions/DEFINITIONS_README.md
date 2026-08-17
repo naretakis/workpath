@@ -18,7 +18,7 @@ The main question uses authoritative terminology from HR1 Section 71119 for lega
 
 Immediately visible text that translates the legal question into everyday language.
 
-**Example:** "Are you currently pregnant or gave birth within the last 60 days? If yes, you're exempt from work requirements."
+**Example:** "Are you pregnant, or covered by Medicaid after giving birth? Postpartum coverage often runs for 12 months rather than 60 days, so say yes if you're unsure and ask your state how long yours lasts."
 
 **Purpose:** Immediate understanding for all users (8th grade reading level)
 
@@ -153,7 +153,14 @@ export const questionDefinitionMap: Record<string, string[]> = {
 
 - Translate the legal question into plain language
 - Explain what the question means in everyday terms
-- Include consequences (e.g., "If yes, you're exempt from work requirements")
+- Say what may follow, without asserting it, and pair it with a next action —
+  e.g. "If yes, this may be one of the categories that are set aside. Tell your state."
+  Do not write the older form, which stated the consequence as a determination about
+  the reader's status. HourKeep does not determine status: states do. See
+  `docs/hr1-readiness/decisions/ADR-0003-evidence-not-adjudication.md` and
+  `.kiro/steering/compliance-copy-standards.md`, which lists the banned phrasings.
+  The no-verdict guard at `src/__tests__/no-verdict.*.test.ts` fails on them, and it
+  scans this file too — so describe the banned form rather than quoting it here
 - Direct users to definition callouts for more detail
 - Example: "Do you have Medicare? Medicare is federal health insurance, usually for people 65 or older..."
 

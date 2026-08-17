@@ -2,8 +2,8 @@
 
 **The holistic home for this effort.** Open this file to remember where we are.
 
-**Last updated:** 2026-08-17 (W0-slice complete)
-**Current wave:** **W2a, truth in copy** — the W0-slice landed 2026-08-17
+**Last updated:** 2026-08-17 (W2a complete)
+**Current wave:** none in progress — **W0 proper** or **W2b** next. W0-slice and W2a both landed 2026-08-17
 **Operative date:** **December 1, 2026** — see [`PRD.md`](PRD.md) § 10
 
 > **This plan was independently validated on 2026-08-16** by five adversarial reviews. The legal analysis
@@ -78,7 +78,7 @@ Sequence and dependencies: [`waves/README.md`](waves/README.md).
 | Wave | Theme | Status |
 |---|---|---|
 | **W0-slice** | Test runner only — Vitest, a `test` script, nothing else | **Done** 2026-08-17 |
-| **W2a** | Truth in copy | **In progress** |
+| **W2a** | Truth in copy | **Done** 2026-08-17 — 10 gap rows closed, 5 partial |
 | [W0](waves/wave-0-safety-net.md) | Safety net, deletion, 4 data-loss fixes | Not started |
 | [W5](waves/wave-5-month-scoping.md) | Month scoping + review periods | Not started |
 | W2b | Policy profile | Not started |
@@ -162,8 +162,13 @@ Deliberately left open. Not defects — decisions to close later.
    execution; clean up before W3.
 3. **Ten specific acceptance criteria are still weak.** A global rule is in the Definition of Done; the
    individual criteria in W3–W10 were not rewritten. Fix each at its wave's start.
-4. **Split wave files don't exist** for W2a/W2b, W6a/W6b, W7a/W7b, W8a/W8b, W9a/W9b. The combined `wave-2`,
+4. **Split wave files don't exist** for W2b, W6a/W6b, W7a/W7b, W8a/W8b, W9a/W9b. The combined `wave-2`,
    `wave-6`, `wave-7`, `wave-8`, `wave-9` files are the source.
+   **W2a now has its own file** — [`waves/wave-2a-truth-in-copy.md`](waves/wave-2a-truth-in-copy.md),
+   written 2026-08-17. Worth reading before the next split: re-verifying wave-2's § 2.5 site table against
+   the code found **nine** errors before any code was written, and running the guard test found **seven
+   more**. The table listed a dead file and omitted a live one, and its 11 sites were really 78 lines
+   across 14 files. Verify a site list against the tree before trusting it.
 5. ~~"No production users" is unverified~~ — **checked 2026-08-16, and the justification is withdrawn.**
    Evidence strongly suggests no real users (site live but the build is dated 2026-01-14; repo has 1 star,
    0 forks, 0 watchers, 0 issues ever, 0 views in 14 days). But the question is **structurally unanswerable**:

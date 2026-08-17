@@ -44,7 +44,20 @@ export function SeasonalWorkerToggle({
             </Typography>
             <HelpTooltip
               title="Seasonal Worker Status"
-              content="If you work in an industry where work is typically available for 6 months or less per year, you can use a 6-month income average instead of just one month to meet work requirements."
+              // W2a § 2.3. The old text imposed a test the rule does not contain:
+              // "work is typically available for 6 months or less per year".
+              // "Seasonal worker" is defined by 26 U.S.C. 45R(d)(5)(B) — labour
+              // performed on a seasonal basis as the Secretary of Labor defines it
+              // (29 CFR 500.20(s)(1)), INCLUDING retail workers employed
+              // exclusively during holiday seasons. rule-extract.md § 2.7 records
+              // that those two are inclusive EXAMPLES, not a closed test, and that
+              // the IFC sets no verification rule for seasonal-worker status. The
+              // invented months-per-year threshold was restrictive in the
+              // user-hostile direction.
+              //
+              // The averaging window itself (6 months PRECEDING the assessed
+              // month, excluding it) is arithmetic and belongs to W7a.
+              content="If your work comes and goes with the season, your state can look at your average monthly income over 6 months instead of a single month. There's no fixed number of months you have to be out of work to qualify, and the list of seasonal jobs isn't closed — if your work is seasonal, say so and ask your state."
               examples={[
                 "Farm work (harvest seasons)",
                 "Holiday retail (November-December)",

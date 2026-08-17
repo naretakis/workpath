@@ -56,7 +56,16 @@ export function ExemptionHistory({ history }: ExemptionHistoryProps) {
               {format(new Date(item.screeningDate), "MMMM d, yyyy")}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {item.isExempt ? "Exempt" : "Must Track Hours"}
+              {/*
+                ADR-0003: was "Exempt" / "Must Track Hours".
+                This surface was MISSING from wave-2 § 2.5's table, which listed
+                the dead components/assessment/AssessmentHistory.tsx instead.
+                This one is live — rendered from app/settings/page.tsx.
+                See wave-2a-truth-in-copy.md finding [F1].
+              */}
+              {item.isExempt
+                ? "Answers suggested this may not apply"
+                : "Answers didn't match a set-aside category"}
             </Typography>
           </Box>
           {item.exemptionCategory && (

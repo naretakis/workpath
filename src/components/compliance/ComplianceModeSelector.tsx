@@ -110,27 +110,43 @@ export function ComplianceModeSelector({
         aria-describedby="mode-switch-warning-description"
       >
         <DialogTitle id="mode-switch-warning-title">
-          Switch Tracking Mode?
+          Change what this month shows?
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="mode-switch-warning-description">
+            {/*
+              W2a § 2.6. Both branches used to say that "only your income" or
+              "only your hours" would count. Neither is true of the rule:
+              42 CFR 435.552(e)(1) requires states to determine hours per
+              activity and ADD THEM TOGETHER, and 435.552(e)(2) lets a state
+              credit income below the threshold AS work hours and combine that
+              with other activities. CMS's worked example is $380 / $7.25 = up to
+              52 hours, needing 28 more.
+
+              So this control changes what HourKeep shows, not what counts. The
+              selector is removed entirely in W7b; until then it must not state
+              something false.
+            */}
             {pendingMode === "income" ? (
               <>
-                You&apos;re about to switch from tracking hours to tracking
-                income for this month.
+                This switches what this month&apos;s summary shows from hours to
+                income.
                 <br />
                 <br />
-                Your hours data will be preserved, but only your income will
-                count toward compliance while in income mode.
+                Your hours stay saved and they still count. Your state adds
+                different activities together, and it may be able to count
+                income alongside them, so nothing is lost by switching the view.
               </>
             ) : (
               <>
-                You&apos;re about to switch from tracking income to tracking
-                hours for this month.
+                This switches what this month&apos;s summary shows from income
+                to hours.
                 <br />
                 <br />
-                Your income data will be preserved, but only your hours will
-                count toward compliance while in hours mode.
+                Your income stays saved and it still counts. Your state adds
+                different activities together, and it may be able to count
+                income alongside hours, so nothing is lost by switching the
+                view.
               </>
             )}
           </DialogContentText>

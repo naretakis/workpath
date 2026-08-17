@@ -91,16 +91,23 @@ export default function AssessmentResultsPage() {
     router.push("/tracking");
   };
 
+  // Five verdict strings lived in this function and wave-2 § 2.5's table listed
+  // only line 349. ADR-0003: "Since you're exempt, you don't need to track this"
+  // asserts both an exclusion and a consequence, neither of which HourKeep
+  // determines — 42 CFR 435.556 makes the applicable-individual question the
+  // state's, and it must exhaust its own records first under 435.557(a)-(b).
+  //
+  // The 80 and $580 literals here move to the policy profile in W2b.
   const getExemptMethodMessage = (method: string): string => {
     if (method === "income-tracking") {
       const income = result?.responses.monthlyIncome || 0;
       if (income >= 580) {
-        return `You're earning $${income}/month, which meets the $580 threshold. Since you're exempt, you don't need to track this.`;
+        return `Recorded: $${income} a month. Threshold: $580. Your answers also suggest a set-aside category may apply, which would mean your state doesn't assess this at all — worth confirming with them either way.`;
       }
-      return "Since you're exempt, you don't need to track income. If your exemption status changes, this would be an option.";
+      return "If a set-aside category applies to you, your state doesn't assess this. Keep income in mind as a route if that changes.";
     }
     if (method === "seasonal-income-tracking") {
-      return "Since you're exempt, you don't need to track seasonal income. If your exemption status changes, this would be an option.";
+      return "If a set-aside category applies to you, your state doesn't assess this. Seasonal averaging stays available as a route if that changes.";
     }
     if (method === "hour-tracking") {
       const totalHours =
@@ -109,9 +116,9 @@ export default function AssessmentResultsPage() {
         (result?.responses.schoolHoursPerMonth || 0) +
         (result?.responses.workProgramHoursPerMonth || 0);
       if (totalHours >= 80) {
-        return `You're at ${totalHours} hours/month, which meets the 80-hour requirement. Since you're exempt, you don't need to track this.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Your answers also suggest a set-aside category may apply, which would mean your state doesn't assess this at all — worth confirming with them either way.`;
       }
-      return "Since you're exempt, you don't need to track hours. If your exemption status changes, this would be an option.";
+      return "If a set-aside category applies to you, your state doesn't assess this. Recording hours stays useful if that changes.";
     }
     return "";
   };
@@ -120,38 +127,39 @@ export default function AssessmentResultsPage() {
     method: string,
     isAlternative: boolean,
   ): string => {
+    // Ranking claims removed throughout: "this easier method", "income tracking
+    // is easier", "might be simpler", "a simpler option", and "which already
+    // meets the threshold". 42 CFR 435.552(a) requires states to make all seven
+    // pathways available and forbids offering a subset, so which one costs least
+    // effort depends on what the state can already see under 435.557(a) and on
+    // elections we don't know. And under 435.552(e) pathways combine rather than
+    // competing, so "instead" is the wrong frame too.
+    //
+    // The 80 and $580 literals here move to the policy profile in W2b.
     if (method === "income-tracking") {
       if (isAlternative) {
-        return "This also works for you, but we recommended hour tracking because it might be simpler given your current situation.";
+        return "This route is open to you as well. Recording income means keeping pay stubs rather than logging time.";
       }
       const income = result?.responses.monthlyIncome || 0;
       const needed = 580 - income;
       if (needed <= 0) {
-        return `You're earning $${income}/month, which already meets the $580 threshold. You could use this method instead.`;
+        return `Recorded: $${income} a month. Threshold: $580. Your state counts your whole household here, so its figure may be higher than yours — ask what it has on file.`;
       } else if (income > 0 && needed <= 100) {
-        return `You're at $${income}/month — just $${needed} away from the $580 threshold. A small income increase would let you use this easier method.`;
+        return `Recorded: $${income} a month. Threshold: $580. Difference: $${needed}. Household income counts toward this, not just yours, so you may be closer than this looks.`;
       } else if (income > 0) {
-        return `You're at $${income}/month. If your income increases to $580 or more, you can switch to this easier method.`;
+        return `Recorded: $${income} a month. Threshold: $580. Difference: $${needed}. Household income counts toward this, and income under the threshold may still be credited as hours, so it isn't wasted.`;
       }
-      return "You're not currently earning $580/month. If your income increases to $580 or more, you can switch to this easier method—just submit one paystub each month instead of tracking hours.";
+      return "No income recorded. This route uses household income against a $580 threshold, so a spouse's earnings count too. Recording it means keeping pay stubs rather than logging time.";
     }
     if (method === "seasonal-income-tracking") {
       if (isAlternative) {
-        return "This also works for you, but we recommended a simpler option based on your situation.";
+        return "This route is open to you as well, if your work comes and goes with the season.";
       }
-      return "This method is for people with seasonal work that averages $580/month over 6 months. If your work becomes seasonal, you can switch to this method.";
+      return "This route averages your income over the 6 months before the month being reviewed, against a $580 threshold. It's for work that comes and goes with the season.";
     }
     if (method === "hour-tracking") {
       if (isAlternative) {
-        if (result?.recommendation.primaryMethod === "income-tracking") {
-          return "This also works for you, but income tracking is easier—just submit one paystub each month instead of tracking hours daily.";
-        }
-        if (
-          result?.recommendation.primaryMethod === "seasonal-income-tracking"
-        ) {
-          return "This also works for you, but seasonal income tracking might be easier for your situation.";
-        }
-        return "This also works for you.";
+        return "This route is open to you as well. Hours from work, volunteering, school, and job training all count toward one monthly total.";
       }
       const totalHours =
         (result?.responses.monthlyWorkHours || 0) +
@@ -160,13 +168,13 @@ export default function AssessmentResultsPage() {
         (result?.responses.workProgramHoursPerMonth || 0);
       const needed = 80 - totalHours;
       if (needed <= 0) {
-        return `You're at ${totalHours} hours/month, which already meets the 80-hour requirement. You could use this method instead.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Keep recording as you go.`;
       } else if (totalHours > 0 && needed <= 20) {
-        return `You're at ${totalHours} hours/month — just ${needed} more hours to reach 80. Adding a bit more work, volunteering, or school time would get you there.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Difference: ${needed}. Work, volunteering, school, and job training all count toward the same total, and income can be counted alongside them.`;
       } else if (totalHours > 0) {
-        return `You're at ${totalHours} hours/month. If you add more work, volunteering, or school hours to reach 80/month, you can use this method.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Difference: ${needed}. Anything counts toward the total — work, volunteering, school, job training — and income may be credited as hours too.`;
       }
-      return "You're not currently at 80 hours/month. If you add more work, volunteering, or school hours to reach 80/month, you can use this method.";
+      return "No hours recorded. Work, volunteering, school, and job training all count toward one monthly total of 80, and income can be counted alongside them.";
     }
     return "";
   };
@@ -290,10 +298,16 @@ export default function AssessmentResultsPage() {
             </AccordionSummary>
             <AccordionDetails sx={{ p: 3 }}>
               <Typography variant="body2" color="text.secondary" paragraph>
-                Here are all the ways you can stay compliant. We recommended{" "}
-                {getComplianceMethodLabel(recommendation.primaryMethod)} because
-                it&apos;s the easiest for your situation, but you can choose any
-                method that works for you.
+                {/*
+                  42 CFR 435.552(a): states must make all seven pathways
+                  available and may not offer a subset, so ranking one as
+                  "easiest" asserts a fit HourKeep can't assess. Under
+                  435.552(e) they combine rather than competing.
+                */}
+                Here are the ways this can be met. We&apos;ve put{" "}
+                {getComplianceMethodLabel(recommendation.primaryMethod)} first
+                based on what you told us, but any of them can work, and they
+                can be combined.
               </Typography>
 
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -346,7 +360,8 @@ export default function AssessmentResultsPage() {
                         </Typography>
                         {isRecommended && (
                           <Chip
-                            label="Easiest for you"
+                            // ADR-0003: was "Easiest for you".
+                            label="Closest to what you told us"
                             size="small"
                             color="primary"
                             sx={{ fontWeight: 600 }}

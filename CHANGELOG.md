@@ -7,6 +7,102 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Truth in Copy (W2a)
+
+The app stopped telling users things that were false, and stopped telling them things only their state
+gets to decide. Details and citations in
+`docs/hr1-readiness/waves/wave-2a-truth-in-copy.md`.
+
+**Income guidance was wrong in the direction that hurts (gap 5.2).** The app said only earned income
+counted and listed SSDI, unemployment, investment income, and rental income as **not** counting. Under
+42 CFR 435.552(f)(2) the threshold is measured against **MAGI-based household income** (435.603(e)), so
+all four generally do count — and so does **tax-exempt interest**, which 26 U.S.C. 36B(d)(2)(B) adds back
+on top of adjusted gross income.
+
+- All four moved to "what counts", plus tax-exempt interest and the non-taxable part of Social Security
+- The "what doesn't count" list was **fixed entry by entry, not deleted** — it kept SSI and child
+  support, which were right, and its gifts entry is now hedged to the narrow 435.603(d)(3) state option
+  (cash support from the person claiming you as a tax dependent, where you are not their spouse or child)
+- **A married user whose spouse works may already satisfy this pathway with zero hours.** That case is
+  now surfaced instead of sending them after 80 hours of volunteering they may not need
+- The message is two-sided: more household income helps this pathway, and separately there is an
+  eligibility ceiling that points at Marketplace subsidies. Nothing implies a spouse's income disqualifies
+- HourKeep still does **not** total household income. Household composition follows tax filing rather
+  than who lives with you, so the app asks three screener questions and names the agency
+
+**Hours and income are not either/or (42 CFR 435.552(e)).** The mode-switch dialog claimed that "only
+your income" or "only your hours" would count, in both branches. States must add activities together, and
+may credit income below the threshold **as** hours on top of that. Corrected in the dialog, in
+`incomeDefinitions.incomeVsHours` ("Income OR Hours - You Choose"), and in the recommendation engine.
+
+**No more asserted determinations (ADR-0003).** "You're Exempt", "✓ COMPLIANT", "Must Track Hours",
+"you automatically meet work requirements", "You don't need to track hours", and the whole
+"this is the easier method" family are gone from **78 lines across 14 files**. Replaced with what was
+recorded, what the threshold is, the difference, and who decides.
+
+**Three reassuring facts the app never mentioned**, now shown above the tracking calendar:
+
+- If you already have Medicaid, this is checked at your **next renewal**, not on the start date
+  (435.559(c))
+- Your state must check **its own records first** — payroll, 12 months of claims, SNAP, TANF, school
+  enrollment — before asking you for anything (435.557(a)–(b))
+- **Be careful about volunteering that you're not meeting it.** A state can take that at face value and
+  use it to deny coverage
+- Plus: a notice gives you about 35 days, your coverage continues while you respond, and every other
+  basis of eligibility must be considered first (435.558)
+
+**Activity guidance corrected.** Work covers in-kind and unpaid work, not just paid employment; unpaid
+internships **do** count and were listed as not counting. Community service can be court-ordered and the
+organisation need not be a registered charity, but it does need someone who can confirm your hours.
+School at half-time or more needs no hours at all, and the **school** decides your enrollment status.
+Job training keeps the job-search exclusion with its actual nuance.
+
+**Scope and dates.** 43 states plus DC are implementing, including Georgia, Tennessee, and Wisconsin;
+the territories are not covered at all; the adult group **includes parents**. Added the two dates that
+were missing entirely: January 1 2028 documentation hardening, and the December 31 2028 ceiling.
+
+**Also fixed:** `SeasonalWorkerToggle` stated a "6 months or less per year" test that appears nowhere in
+the rule. The export report's month heading printed the **previous month** in any timezone behind UTC — a
+pre-existing bug on the artifact users hand to a caseworker.
+
+### Fixed - Review findings (W2a)
+
+The wave review found more than the wave did. Recorded plainly because that is the protocol working.
+
+- **43 wrong CFR citations.** The ten exclusion categories are at 42 CFR 435.554**(c)(1)–(c)(10)**;
+  § 435.554(a) holds the supporting definitions. Every category had been cited as `(a)(N)` and so pointed
+  at an unrelated provision. Also `435.553(a)(5)` → **435.553(b)** for the post-release exception, and
+  `435.552(e)(1)(ii)` → **435.552(a)(5)** for the no-combination rule. The numbering had been inferred
+  from an unnumbered list in a summary rather than read from the rule
+- **Four substantive errors survived in `definitions.ts`**, three of them contradicting corrections made
+  in the same wave: half-time school described as contributing hours with an invented "6 credit hours"
+  test; job search listed as a qualifying work program activity; the SNAP test stated as compliance
+- **The veteran question told unsure users to answer "No"**, and asked about a 100% rating — which
+  excludes veterans paid at the total rate for unemployability. Both fixed
+- **Softened an unverified claim.** "CMS expects *most* people to be cleared" → "*many*". The majority
+  figure could not be tied to a Federal Register page, and under-claiming is the safe direction
+
+### Added - No-verdict guard (W2a)
+
+196 tests. A three-layer guard so this cannot come back: rendered output, content data walked
+recursively, and a source scan over TypeScript **and markdown** under `src/`.
+
+Every layer was proven able to fail before being trusted, and each proof found something:
+
+- Reintroducing `You&apos;re Exempt` went red in the source scan but **passed the render layer** — because
+  `textContent` joins adjacent elements without a separator, so `You're Exempt` + a sibling became
+  `You're ExemptR` and the word boundary died. Now walks text nodes individually
+- The markdown scan was green **for the wrong reason**: a leading `*` was treated as a comment, silently
+  skipping 59 lines, one of which held a banned phrase
+- Test `TZ` is pinned to a negative-offset zone, because the month-heading regression test passed under
+  UTC with the bug restored — green on CI, broken for most US users
+- The dead-file allowlist did not assert **deadness**, so re-importing a dead component would have
+  rendered `You Are Exempt` to users with the suite green
+
+Three dead files are allowlisted with **W0** named as removal owner, plus four tests that go red when W0
+deletes them, when an entry goes stale, or when one gains a live importer — so the handoff is enforced
+rather than remembered.
+
 ### Added - Test Runner (W0-slice)
 
 Stood up a test runner. No user-facing change. See `docs/hr1-readiness/waves/README.md`

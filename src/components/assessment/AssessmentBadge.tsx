@@ -82,8 +82,12 @@ export function AssessmentBadge({
               color="text.secondary"
               sx={{ mb: 2, fontSize: { xs: "0.875rem", sm: "0.875rem" } }}
             >
-              Discover the easiest way to keep your hours, and keep your
-              coverage
+              {/*
+                ADR-0003: was "Discover the easiest way to keep your hours".
+                42 CFR 435.552(a) makes all seven pathways equally available.
+              */}
+              Work out what counts for you, and what your state may already have
+              on file
             </Typography>
             <Button
               variant="contained"
@@ -151,7 +155,13 @@ export function AssessmentBadge({
                 mb: 1.5,
               }}
             >
-              You&apos;re Exempt
+              {/*
+                ADR-0003: was "You&apos;re Exempt". Only the state determines
+                this — 42 CFR 435.557, and the determination is appealable under
+                431.220(a)(1). The next action lives in the reasoning text and
+                the buttons below.
+              */}
+              You may not need to track anything
             </Typography>
             <Typography
               variant="body2"

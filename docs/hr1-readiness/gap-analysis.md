@@ -21,6 +21,29 @@ Every row is classified by **gap type** and **impact**:
 | `incomplete` | Real gap, low risk of active harm |
 | `cosmetic` | Terminology or polish |
 
+### Closure convention
+
+Rows are annotated in place in the **"HourKeep today"** column, because that is the cell a closed row
+makes out of date. The `Gap` and `Impact` columns are left at their original values so the record of what
+was found stays legible.
+
+| Marker | Meaning |
+|---|---|
+| ~~struck text~~ · **CLOSED Wx** | No longer true. The annotation names the artifact, so the claim is checkable |
+| **PARTIAL Wx** | Genuinely improved, genuinely not finished. **Names what is still open and which wave owns it** |
+
+A row is only marked closed when something runnable, readable, or visible was checked — not when a wave
+that intended to close it finished.
+
+**W2a (2026-08-17) closed:** 4.9, 4.10, 5.2, 11.1, 11.2, 11.4, 11.5, 15.7, 15.8, 15.20 — **10 rows**.
+**W2a marked partial:** 4.1, 5.1, 5.3, 5.7, 11.3 — **5 rows**.
+
+> **Row 5.7 was itself wrong and is corrected above.** It described the seasonal-worker test as an
+> "objective test", which is the framing `validation-findings-2026-08.md` § I7 **retracted** from the
+> steering doc as unsupported and restrictive in the user-hostile direction. 26 U.S.C. 45R(d)(5)(B) gives
+> **inclusive examples, not a closed test**, and the IFC provides no verification rule for seasonal-worker
+> status anywhere. The retraction had been applied to `medicaid-domain-knowledge.md` but not here.
+
 ---
 
 ## Summary
@@ -95,7 +118,7 @@ priority. Two whole regimes required by the rule (hardship, noncompliance respon
 
 | # | Rule | HourKeep today | Gap | Impact |
 |---|---|---|---|---|
-| 4.1 | **Work** = for money + **in-kind** + **unpaid** (non-community-service) | `activityDefinitions.work` says "Paid employment"; help text lists unpaid internships as **not** counting | `contradicts` | **harmful** |
+| 4.1 | **Work** = for money + **in-kind** + **unpaid** (non-community-service) | ~~`activityDefinitions.work` says "Paid employment"; help text lists unpaid internships as **not** counting~~ · **PARTIAL W2a** — definition now names all three components, "Unpaid internships" removed from `counterExamples` and moved to `examples`, in-kind example added. **Still open:** `Activity["type"]` cannot store in-kind or unpaid work distinctly (→ **W6b**, v8) | `contradicts` | **harmful** |
 | 4.2 | **Work program** is a qualifying activity type | `Activity["type"]` is `work \| volunteer \| education`. `workProgram` exists in help text, labels, and colors but **cannot be stored** | `missing` | **blocks** |
 | 4.3 | **Education at least half-time = compliant with zero hours**, and may **not** be combined | Asks "How many hours per month do you attend school?" — wrong question for most students | `contradicts` | **harmful** |
 | 4.4 | Less-than-half-time education: `creditHours × 3 × 4.33` | No conversion exists | `missing` | **blocks** |
@@ -103,21 +126,21 @@ priority. Two whole regimes required by the rule (hardship, noncompliance respon
 | 4.6 | Educational program includes high school and State-approved HS equivalency | Help text covers GED loosely; no program-type model | `partial` | incomplete |
 | 4.7 | Community service requires a **structured program**, non-partisan, with org tracking incl. **POC who can confirm hours** | Optional free-text `organization` field only | `partial` | **harmful** (evidence will be rejected) |
 | 4.8 | States **may not** restrict community service to § 501(c)(3) | Not asserted either way | `ok` | — |
-| 4.9 | Court-ordered community service counts | Help text says nothing; a user may assume it doesn't | `missing` | incomplete |
-| 4.10 | Work program excludes standalone job search but allows it as **subsidiary** under half the hours | Help text flatly says job searching doesn't count — right conclusion, missing nuance | `partial` | incomplete |
+| 4.9 | Court-ordered community service counts | ~~Help text says nothing; a user may assume it doesn't~~ · **CLOSED W2a** — stated in `activityDefinitions.volunteer.definition` and listed in `examples`. Also added: not restricted to § 501(c)(3), and the point-of-contact requirement that makes evidence acceptable | `missing` | incomplete |
+| 4.10 | Work program excludes standalone job search but allows it as **subsidiary** under half the hours | ~~Help text flatly says job searching doesn't count — right conclusion, missing nuance~~ · **CLOSED W2a** — the subsidiary-under-half-the-hours nuance and the unemployment-insurance job search route are both stated, in `activityDefinitions.work.edgeCases` and `.workProgram`. Also added: health-provider-operated and Medicaid § 1915(c)/(i) supported employment do **not** qualify | `partial` | incomplete |
 | 4.11 | Combination: hours determined separately then summed | `calculateMonthlySummary` sums work/volunteer/education — structurally close | `partial` | incomplete |
 
 ## 5. Income (§ 435.552(f)–(g)) — the largest cluster
 
 | # | Rule | HourKeep today | Gap | Impact |
 |---|---|---|---|---|
-| 5.1 | Income = **MAGI-based income for the MAGI-based household** (§ 435.603(d)(e)(f)) | Individual earned income from pay stubs | `contradicts` | **harmful** |
-| 5.2 | Countable income includes **unearned** income — unemployment, taxable interest/dividends, rental, SSDI | `helpText.ts:incomeDefinitions.threshold.whatDoesNotCount` lists SSDI, unemployment, investment, and rental income as **not counting** | `contradicts` | **harmful** |
-| 5.3 | Household-wide: a spouse's income counts; a tax dependent uses the claiming taxpayer's household | No household concept | `contradicts` | **harmful** — produces false negatives for married users |
+| 5.1 | Income = **MAGI-based income for the MAGI-based household** (§ 435.603(d)(e)(f)) | Individual earned income from pay stubs · **PARTIAL W2a** — copy now states the household basis, asks the three screener questions, and defers the total. **Still open:** no household concept in the data model, by design (→ **W4** questions, and the total stays Deferred permanently per ADR-0003) | `contradicts` | **harmful** |
+| 5.2 | Countable income includes **unearned** income — unemployment, taxable interest/dividends, rental, SSDI | ~~`helpText.ts:incomeDefinitions.threshold.whatDoesNotCount` lists SSDI, unemployment, investment, and rental income as **not counting**~~ · **CLOSED W2a** — all four moved to `whatCounts`, **plus tax-exempt interest**, which the rule text adds back under 26 U.S.C. 36B(d)(2)(B) and this row itself understated by saying only "taxable". `whatDoesNotCount` kept, fixed entry by entry, now exactly 3 entries | `contradicts` | **harmful** |
+| 5.3 | Household-wide: a spouse's income counts; a tax dependent uses the claiming taxpayer's household | No household concept · **PARTIAL W2a** — the married-spouse false negative is now surfaced as an explicit edge case, and the two-sided message (floor for this pathway, separate 133% FPL ceiling → Marketplace) is stated. **Still open:** the screener questions themselves (→ **W4**) | `contradicts` | **harmful** — produces false negatives for married users |
 | 5.4 | No pay-period conversion exists in the rule. States determine a monthly figure via existing MAGI methodology | `PAY_PERIOD_MULTIPLIERS` = `{daily: 30, weekly: 4.33, "bi-weekly": 2.17, monthly: 1}`, applied per entry | `contradicts` | **harmful** |
 | 5.5 | — | Monthly total sums `monthlyEquivalent` **across every entry**, so four weekly paychecks report ~$2,598 instead of ~$650 | `contradicts` | **harmful** |
 | 5.6 | Threshold = `federalMinimumWage × 80`, dynamic; tipped/youth/State wages prohibited | `INCOME_THRESHOLD` derives correctly from constants, but `580` is also hardcoded in the engine, results page, `GettingStartedContextual`, and export | `partial` | incomplete |
-| 5.7 | Seasonal = objective test per 26 U.S.C. 45R(d)(5)(B) / 29 CFR 500.20(s)(1) | Self-declared toggle plus a question about "seasonal work (construction, agriculture, tourism)" | `partial` | harmful |
+| 5.7 | Seasonal worker per 26 U.S.C. 45R(d)(5)(B) / 29 CFR 500.20(s)(1) — seasonal-basis labour **and** holiday retail, as **inclusive examples, not a closed test**. The IFC sets **no verification rule** for seasonal-worker status | ~~Self-declared toggle plus a question about "seasonal work (construction, agriculture, tourism)"~~ · **PARTIAL W2a** — `SeasonalWorkerToggle.tsx:47` invented a "6 months or less per year" threshold that is nowhere in the rule; removed. **Still open:** the averaging window includes the assessed month (→ **W7a**, rows 5.4/5.5) | `partial` | harmful |
 | 5.8 | Average over the **6 months preceding** the assessed month — assessed month **excluded** | `getLast6Months` returns the current month **plus five prior** | `contradicts` | **harmful** |
 | 5.9 | Divisor is 6, but most States instead use a **reasonably-predictable-changes proration** | Always divides by 6, including months with no data — a 6× understatement in month one, shown as `$0.00` rows as though verified | `partial` | harmful |
 | 5.10 | Income evaluated **per month of the review period** | Only the current month | `partial` | blocks |
@@ -177,11 +200,11 @@ priority. Two whole regimes required by the rule (hardship, noncompliance respon
 
 | # | Rule | HourKeep today | Gap | Impact |
 |---|---|---|---|---|
-| 11.1 | **44 jurisdictions (43 States + DC)** in scope, including **Georgia, Tennessee, Wisconsin** plus § 1115 populations in HI, MA, NY, OR, UT | Steering doc listed GA and WI as out of scope; my first correction said 43 and still omitted Tennessee | `contradicts` | harmful (fixed on validation) |
-| 11.2 | Territories entirely out of scope | Not mentioned | `missing` | cosmetic |
-| 11.3 | "Community engagement requirement"; PL 119-21 = "WFTC legislation" | Uses "work requirements" and "HR1" throughout | `partial` | cosmetic |
-| 11.4 | Adult group includes parents | Not stated; the app implies a childless-adult framing | `partial` | cosmetic |
-| 11.5 | Jan 1, 2027 implementation; Dec 31, 2028 good-faith ceiling | 2027 known; 2028 dates absent | `partial` | cosmetic |
+| 11.1 | **44 jurisdictions (43 States + DC)** in scope, including **Georgia, Tennessee, Wisconsin** plus § 1115 populations in HI, MA, NY, OR, UT | ~~Steering doc listed GA and WI as out of scope; my first correction said 43 and still omitted Tennessee~~ · **CLOSED W2a** — `content/helpText.ts` `programScope.jurisdictions`, rendered by `components/help/RequirementFacts.tsx` | `contradicts` | harmful (fixed on validation) |
+| 11.2 | Territories entirely out of scope | ~~Not mentioned~~ · **CLOSED W2a** — `programScope.territories`, § 435.550 | `missing` | cosmetic |
+| 11.3 | "Community engagement requirement"; PL 119-21 = "WFTC legislation" | ~~Uses "work requirements" and "HR1" throughout~~ · **PARTIAL W2a** — `TermDefinition.source` union re-cited to `42 CFR 435.550-435.563` (20 fields), file headers rewritten with a statute → CFR → tier mapping. **Still open:** ~30 `// HR1 Reference:` comments in `questions.ts` (→ **W4**, which rewrites those questions) and `getComplianceMethodLabel("exemption")` returning `"Exemption"` (→ **W3**, the union is stored in `assessmentResults`) | `partial` | cosmetic |
+| 11.4 | Adult group includes parents | ~~Not stated; the app implies a childless-adult framing~~ · **CLOSED W2a** — `programScope.whoItReaches`, § 435.119; names the 14-or-older case explicitly | `partial` | cosmetic |
+| 11.5 | Jan 1, 2027 implementation; Dec 31, 2028 good-faith ceiling | ~~2027 known; 2028 dates absent~~ · **CLOSED W2a** — `programScope.keyDates` carries all three, each with a CFR citation. Jan 1 2028 is stated **with** the "cannot deny solely for missing documentation" caveat | `partial` | cosmetic |
 | 11.6 | Renewal every 6 months for the adult group | Steering doc had this from § 71107; unchanged and still broadly right | `ok` | — |
 
 ---
@@ -252,8 +275,8 @@ Full detail in `../audit/validation-findings-2026-08.md`.
 | 15.4 | § 435.558(b)(2)/(b)(3): "unable to verify" is a **binary State-plan election** (notice concurrent with the renewal form, or after it) | Not modeled. Determines whether the user gets one ~35-day window or two | `missing` | **blocks** | W9 |
 | 15.5 | **Option 2 carve-out**: if the renewal form isn't returned and other factors are also unverified, the § 435.558(a) protections **do not apply** | Not modeled. Undercuts the "coverage continues" reassurance | `missing` | **harmful** | W9 |
 | 15.6 | § 435.915: applications filed **before** implementation are adjudicated under prior rules | Not modeled | `missing` | incomplete | W5 |
-| 15.7 | § 435.559(c): "renewal **initiated**" = when ex parte review begins; existing enrollees aren't assessed until then | Not modeled, not stated to users. One of the most reassuring facts in the rule | `missing` | **harmful** | W2a |
-| 15.8 | § 435.557(b): **ex parte first** — States must require SNAP/TANF, incarceration, and education data before asking the individual | Never explained. Users may over-collect, or panic unnecessarily | `missing` | harmful | W2a |
+| 15.7 | § 435.559(c): "renewal **initiated**" = when ex parte review begins; existing enrollees aren't assessed until then | ~~Not modeled, not stated to users. One of the most reassuring facts in the rule~~ · **CLOSED W2a (copy)** — `requirementFacts.already-enrolled-timing`, rendered above the tracking UI. Not modeled in data (→ **W5**) | `missing` | **harmful** | W2a |
+| 15.8 | § 435.557(b): **ex parte first** — States must require SNAP/TANF, incarceration, and education data before asking the individual | ~~Never explained. Users may over-collect, or panic unnecessarily~~ · **CLOSED W2a** — `requirementFacts.ex-parte-first`, citing **§ 435.557(a)–(b)** as a pair because the June 29 2026 correction (91 FR 39028) shifted paragraph designations. Also printed on the export artifact | `missing` | harmful | W2a |
 | 15.9 | Medical-frailty documentation may be signed by physicians, NPs, PAs, psychologists, counselors, therapists, clinical social workers, and others credentialed by the State | Not surfaced. Most actionable "what do I go get?" line in the rule | `missing` | harmful | W4 |
 | 15.10 | **Absence of claims cannot defeat** the frailty exclusion; States may not consider information older than 12 months | Not surfaced | `missing` | harmful | W4 |
 | 15.11 | **Reasonable modifications** required under § 504 / § 1557 / ADA for disabled individuals who do *not* qualify for an exclusion | Nothing. The fallback for everyone who screens out of both tiers | `missing` | **harmful** | W4 |
@@ -265,7 +288,7 @@ Full detail in `../audit/validation-findings-2026-08.md`.
 | 15.17 | **Appeal and fair-hearing rights** (§ 431.220(a)(1)); ≥10 days advance notice | Nothing anywhere. For someone just denied, the most actionable fact available | `missing` | **harmful** | W9a |
 | 15.18 | Notice must state **APTC/PTC consequences** — losing Medicaid may open Exchange subsidies | Not captured | `missing` | harmful | W9a |
 | 15.19 | **Hardship expiration** and **loss of exclusion** are each an "action" under § 431.201 requiring notice and fair-hearing rights | Only deselection was noted | `partial` | incomplete | W9 |
-| 15.20 | Self-reported **noncompliance** at application can be accepted at face value and support a denial | The app could encourage casual self-reporting of a "no" | `missing` | **harmful** | W2a |
+| 15.20 | Self-reported **noncompliance** at application can be accepted at face value and support a denial | ~~The app could encourage casual self-reporting of a "no"~~ · **CLOSED W2a** — `requirementFacts.careful-what-you-report`, rendered before the tracking UI. `NoticeQuestion.tsx:358` reframed so the reason to screen first is protective rather than time-saving | `missing` | **harmful** | W2a |
 | 15.21 | **Outside § 435.551 entirely** (age 65+) is neither exclusion nor exception | ADR-0002's four-variant union cannot express it | `missing` | cosmetic | W3 |
 | 15.22 | § 435.557(f): medically-frail reverification at least every 12 months; attestation once per enrollment period from 2028 | No expiry modeled | `missing` | incomplete | W4 |
 | 15.23 | § 435.552(b) work program (iv): **any** DOL or VA veterans program qualifies — CMS dropped the USDA-approval condition | Not surfaced | `missing` | incomplete | W6 |

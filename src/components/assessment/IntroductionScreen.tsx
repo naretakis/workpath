@@ -80,7 +80,11 @@ export function IntroductionScreen({
         >
           {isOnboarding
             ? "Track your work hours to maintain your Medicaid coverage."
-            : "Discover the easiest way to keep your hours, and keep your coverage."}
+            : // ADR-0003: was "Discover the easiest way to keep your hours".
+              // 42 CFR 435.552(a) makes all seven pathways equally available and
+              // forbids states offering a subset, so which one is easiest depends
+              // on facts HourKeep doesn't hold.
+              "Work out what counts for you, and what your state may already have on file."}
         </Typography>
         <Typography variant="body1" align="center" color="text.secondary">
           {isOnboarding
@@ -94,9 +98,13 @@ export function IntroductionScreen({
         <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
           <CheckCircleIcon sx={{ color: "success.main", flexShrink: 0 }} />
           <Typography variant="body2" color="text.secondary">
+            {/*
+              ADR-0003: was "Check if you're exempt from work requirements".
+              The screening finds out what may apply; the state decides.
+            */}
             {isOnboarding
               ? "Understand what you need to do"
-              : "Check if you're exempt from work requirements"}
+              : "Find out whether this even applies to you"}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", gap: 2, mb: 2 }}>

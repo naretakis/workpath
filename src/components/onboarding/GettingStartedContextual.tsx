@@ -56,37 +56,44 @@ export function GettingStartedContextual({
   const daysRemaining = calculateDaysRemaining();
   const isExempt = recommendation?.primaryMethod === "exemption";
 
+  // A near-copy of getNonExemptMethodMessage in
+  // app/how-to-hourkeep/results/page.tsx, and it carried the same ranking claims:
+  // "this easier method", "income tracking is easier", "a simpler option", and
+  // "which already meets the threshold". 42 CFR 435.552(a) requires states to make
+  // all seven pathways available and forbids offering a subset, so ranking them
+  // asserts a fit HourKeep can't assess; under 435.552(e) they combine rather than
+  // competing, so "instead" is the wrong frame as well.
+  //
+  // The duplication itself is real (codebase-audit-2026-08.md § 6) and outlives
+  // W2a — de-duplicating it needs the unified compliance model in W7b. Both copies
+  // are corrected here so neither states something false in the meantime.
+  //
+  // The 80 and $580 literals move to the policy profile in W2b.
   const getMethodMessage = (method: string, isAlternative: boolean): string => {
     if (method === "income-tracking") {
       if (isAlternative) {
-        return "This also works for you, but we recommended hour tracking based on your situation.";
+        return "This route is open to you as well. Recording income means keeping pay stubs rather than logging time.";
       }
       const income = responses?.monthlyIncome || 0;
       const needed = 580 - income;
       if (needed <= 0) {
-        return `You're earning $${income}/month, which already meets the $580 threshold. You could use this method instead.`;
+        return `Recorded: $${income} a month. Threshold: $580. Your state counts your whole household here, so its figure may be higher than yours.`;
       } else if (income > 0 && needed <= 100) {
-        return `You're at $${income}/month — just $${needed} away from the $580 threshold. A small income increase would let you use this easier method.`;
+        return `Recorded: $${income} a month. Threshold: $580. Difference: $${needed}. Household income counts toward this, not just yours, so you may be closer than this looks.`;
       } else if (income > 0) {
-        return `You're at $${income}/month. If your income increases to $580 or more, you can switch to this easier method.`;
+        return `Recorded: $${income} a month. Threshold: $580. Difference: $${needed}. Income under the threshold may still be credited as hours, so it isn't wasted.`;
       }
-      return "You're not currently earning $580/month. If your income increases, you can switch to this easier method.";
+      return "No income recorded. This route uses household income against a $580 threshold, so a spouse's earnings count too.";
     }
     if (method === "seasonal-income-tracking") {
       if (isAlternative) {
-        return "This also works for you, but we recommended a simpler option.";
+        return "This route is open to you as well, if your work comes and goes with the season.";
       }
-      return "This method is for people with seasonal work that averages $580/month over 6 months.";
+      return "This route averages your income over the 6 months before the month being reviewed, against a $580 threshold.";
     }
     if (method === "hour-tracking") {
       if (isAlternative) {
-        if (recommendation?.primaryMethod === "income-tracking") {
-          return "This also works, but income tracking is easier—just submit one paystub each month.";
-        }
-        if (recommendation?.primaryMethod === "seasonal-income-tracking") {
-          return "This also works, but seasonal income tracking might be easier for your situation.";
-        }
-        return "This also works for you.";
+        return "This route is open to you as well. Hours from work, volunteering, school, and job training all count toward one monthly total.";
       }
       const totalHours =
         (responses?.monthlyWorkHours || 0) +
@@ -95,13 +102,13 @@ export function GettingStartedContextual({
         (responses?.workProgramHoursPerMonth || 0);
       const needed = 80 - totalHours;
       if (needed <= 0) {
-        return `You're at ${totalHours} hours/month, which already meets the 80-hour requirement. You could use this method instead.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Keep recording as you go.`;
       } else if (totalHours > 0 && needed <= 20) {
-        return `You're at ${totalHours} hours/month — just ${needed} more hours to reach 80. Adding a bit more work, volunteering, or school time would get you there.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Difference: ${needed}. Work, volunteering, school, and job training all count toward the same total.`;
       } else if (totalHours > 0) {
-        return `You're at ${totalHours} hours/month. If you add more activities to reach 80/month, you can use this method.`;
+        return `Recorded: ${totalHours} hours a month. Threshold: 80 hours. Difference: ${needed}. Anything counts toward the total, and income may be credited as hours too.`;
       }
-      return "You're not currently at 80 hours/month. If you add more activities, you can use this method.";
+      return "No hours recorded. Work, volunteering, school, and job training all count toward one monthly total of 80, and income can be counted alongside them.";
     }
     return "";
   };
@@ -236,10 +243,18 @@ export function GettingStartedContextual({
           </AccordionSummary>
           <AccordionDetails sx={{ p: 2 }}>
             <Typography variant="body2" color="text.secondary" paragraph>
-              Here are all the ways you can stay compliant. We recommended{" "}
-              {getComplianceMethodLabel(recommendation.primaryMethod)} because
-              it&apos;s the easiest for your situation, but you can choose any
-              method that works for you.
+              {/*
+                42 CFR 435.552(a) requires states to make all seven pathways
+                available and forbids offering a subset, so none of them is "the
+                easiest" in a way HourKeep can know — that depends on what the
+                state can already see under 435.557(a) and on elections we
+                don't know. And under 435.552(e) they combine rather than
+                competing.
+              */}
+              Here are the ways this can be met. We&apos;ve put{" "}
+              {getComplianceMethodLabel(recommendation.primaryMethod)} first
+              based on what you told us, but any of them can work, and they can
+              be combined.
             </Typography>
 
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -287,7 +302,8 @@ export function GettingStartedContextual({
                       </Typography>
                       {isRecommended && (
                         <Chip
-                          label="Easiest for you"
+                          // ADR-0003: was "Easiest for you".
+                          label="Closest to what you told us"
                           size="small"
                           color="primary"
                           sx={{ fontWeight: 600 }}
