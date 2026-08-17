@@ -1,0 +1,14 @@
+# Build output
+.next/
+out/
+public/sw.js
+public/workbox-*.js
+
+# Documentation and steering are hand-wrapped at 100 columns for readability.
+# Prettier reflows prose, which fights that and produces enormous diffs on
+# every edit. Formatting here is a review concern, not a tooling one.
+*.md
+
+# Source material — reproduced verbatim from primary sources. Reformatting it
+# would break the "this is what the document says" guarantee.
+docs/domain/

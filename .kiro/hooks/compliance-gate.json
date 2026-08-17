@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Compliance Gate",
+      "trigger": "PostFileSave",
+      "description": "On save under the compliance-critical lib modules: type-check (blocking), run tests (non-blocking, TDD red is expected), and scan for policy literals outside the policy profile (non-blocking warning).",
+      "matcher": "src/lib/(calculations|storage|exemptions|assessment|policy|utils/payPeriodConversion)",
+      "action": {
+        "type": "command",
+        "command": "./scripts/compliance-gate.sh",
+        "timeout": 180
+      }
+    }
+  ]
+}
