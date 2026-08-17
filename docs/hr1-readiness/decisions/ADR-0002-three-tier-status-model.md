@@ -96,7 +96,23 @@ your answers, you may be excluded" — never as determinations.
 
 **Costs**
 
-- Dexie v7 migration. Acceptable — no production users.
+- Dexie v7 migration.
+
+  > **The "no production users" justification is withdrawn.** It appeared in three ADRs and was never
+  > verifiable. Checked 2026-08-16: the site is live at hourkeep.app (build dated 2026-01-14, matching the
+  > last commit), the repo has 1 star, 0 forks, 0 watchers, 0 issues ever filed, and 0 views in the last 14
+  > days. Evidence strongly suggests no real users.
+  >
+  > **But the question is structurally unanswerable, by design.** All data lives in per-browser IndexedDB.
+  > Plausible can report page views; it cannot report whether any visitor completed onboarding and holds
+  > data. A visitor who bounced has nothing to lose; one who onboarded has everything to lose, and no
+  > telemetry distinguishes them.
+  >
+  > **So the migration must preserve data regardless.** Do not write a destructive v7 on the assumption
+  > nobody is affected. Preserve `activities`, `incomeEntries`, all four document tables, `assessmentResults`,
+  > `assessmentProgress`, `assessmentHistory`, and `seasonalWorkerStatus`; drop only `exemptions` and
+  > `exemptionHistory`, which provably never had a writer. The fixture-based migration test is the gate.
+  > This costs almost nothing and removes an unverifiable assumption from the critical path.
 - Screening becomes a maintained profile rather than a one-shot questionnaire, which is a larger change
   to `AssessmentFlow` than adding questions would have been.
 - More states to render. The UI must handle four kinds, not two.

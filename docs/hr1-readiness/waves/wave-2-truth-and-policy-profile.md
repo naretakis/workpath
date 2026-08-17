@@ -143,7 +143,7 @@ survives until W7; this wave only stops it from lying about what it does.
 
 | Risk | Mitigation |
 |---|---|
-| Corrected income guidance reads as "your spouse's income disqualifies you" | Explicit copy: it is a floor, more helps. Review this wording specifically |
+| Corrected income guidance reads as "your spouse's income disqualifies you" | Two-sided copy: it is a floor for this pathway, and separately there is a ceiling for eligibility. Review this wording specifically |
 | Threshold refactor silently changes a value | W0 characterization tests must pass unchanged; that is the gate |
 | Hedged copy becomes vague and unhelpful | Pair every hedge with a concrete next action — what to gather, who to ask |
-| Users mid-flow see changed guidance | No production users; not a concern this cycle |
+| Users mid-flow see changed guidance | Copy changes are non-destructive, so this is low risk regardless of user count. Note that user count is **structurally unverifiable** — see ADR-0002 |

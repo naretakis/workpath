@@ -22,9 +22,13 @@ month**, and stop showing tracking obligations to users who appear excluded.
   child turns 14 mid-period must see it.
 - **Recent-inmate window.** § 435.553(b): excepted if an inmate at any point in the 3-month period ending
   on the first day of the assessed month. Requires a date, not a boolean.
-- **Dexie v7 migration.** New `complianceStatus` table keyed `[userId+month]`. Add `userId` to `Activity`
-  and compound indexes (also needed by W5). Drop the dead `exemptions`, `exemptionHistory`, and
-  `complianceModes` tables. Migration test with realistic v6 fixture data.
+- **Consolidated Dexie v7 migration.** New `complianceStatus` table keyed `[userId+month]`. Add `userId` to
+  `Activity`. Add **all** compound indexes, so W5 needs no migration of its own. Drop **only** `exemptions`
+  and `exemptionHistory` — the two tables that provably never had a writer.
+  **`complianceModes` stays until W7b** (it has five live readers including `lib/storage/income.ts`, and
+  dropping it here would break the W0 test suite that W2b, W5, W6a, and W7 depend on).
+  **Preserve everything else** — the "no production users" justification is withdrawn as unverifiable; see
+  ADR-0002. Fixture-based migration test is the gate, not a follow-up.
 - **Persistence that actually runs.** The old `saveScreening` / `archiveScreening` had zero callers;
   replace them and wire the write path into the screening flow. Surface results in Settings, which
   currently shows a permanent empty state.

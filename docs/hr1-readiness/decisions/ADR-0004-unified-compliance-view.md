@@ -106,7 +106,10 @@ W7's scope handles it separately, but the enumeration here should include it.
 
 **Costs**
 
-- Deletes a shipped feature and its table. Acceptable — no production users.
+- Deletes a shipped feature and its table. `complianceModes` records a per-month user choice, so dropping it
+  discards user intent — but the choice becomes meaningless once both pathways are always evaluated, and
+  ADR-0002's preserve-by-default migration posture applies. Migrate the rows into a read-only note on the
+  month rather than deleting them outright, so nothing a user recorded silently vanishes.
 - A single view must present more information without overwhelming a phone screen. This is the main
   design risk in the wave.
 - The proxy is a State option, so its availability is profile-dependent and the copy must hedge.

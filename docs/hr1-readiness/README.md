@@ -160,8 +160,11 @@ Deliberately left open. Not defects — decisions to close later.
    individual criteria in W3–W10 were not rewritten. Fix each at its wave's start.
 4. **Split wave files don't exist** for W2a/W2b, W6a/W6b, W7a/W7b, W8a/W8b, W9a/W9b. The combined `wave-2`,
    `wave-6`, `wave-7`, `wave-8`, `wave-9` files are the source.
-5. **"No production users" is unverified** and is load-bearing for W0's delete-all and W3's table drops.
-   Plausible has the data. **Check first.**
+5. ~~"No production users" is unverified~~ — **checked 2026-08-16, and the justification is withdrawn.**
+   Evidence strongly suggests no real users (site live but the build is dated 2026-01-14; repo has 1 star,
+   0 forks, 0 watchers, 0 issues ever, 0 views in 14 days). But the question is **structurally unanswerable**:
+   data lives in per-browser IndexedDB, and Plausible can report page views but not whether any visitor
+   completed onboarding. **So migrations must preserve data regardless.** See ADR-0002.
 
 ## Open questions to watch
 
