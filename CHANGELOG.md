@@ -5,6 +5,31 @@ All notable changes to HourKeep will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added - Test Runner (W0-slice)
+
+Stood up a test runner. No user-facing change. See `docs/hr1-readiness/waves/README.md`
+§ "The W0-slice, and why it exists".
+
+The slice exists to break a circular dependency in the wave ordering: W2a ships the no-verdict
+guard test, which ADR-0007 promotes to Tier 1 and assigns to W2a, but the runner was scheduled to
+arrive in W0 — which is sequenced after W2a.
+
+- **Vitest 4.1.10** with `vitest.config.mts`, plus `test`, `test:watch`, and `test:ui` scripts.
+  `npm test` in the definition of done is satisfiable from here on
+- **jsdom, `@testing-library/react`, `@testing-library/jest-dom`, `fake-indexeddb`** installed for
+  the render tests W2a needs and the migration test W0 needs. All pinned to exact versions
+- **`src/lib/utils/__tests__/imageCompression.test.ts` now executes.** It was orphaned: it
+  typechecked only because `@types/jest` was installed, and there was no runner. 10 tests pass
+- **Removed `@types/jest`.** It existed solely to make that non-executing file typecheck, and it
+  declared the same globals as Vitest with incompatible shapes, which broke `npx tsc --noEmit`.
+  Tests import `describe` / `it` / `expect` from `vitest` explicitly instead, so
+  `compilerOptions.types` stays untouched
+
+Deliberately excluded and still owned by W0 proper: characterization tests, the Dexie v6 → v7
+migration test, the dead-code sweep, `/test-compression` removal, and delete-all-data.
+
 ## [7.2.0] - 2025-01-14
 
 ### Fixed - Assessment Flow Routing

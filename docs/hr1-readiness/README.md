@@ -2,8 +2,8 @@
 
 **The holistic home for this effort.** Open this file to remember where we are.
 
-**Last updated:** 2026-08-16 (post-validation, post-W2a-dry-run)
-**Current wave:** none started — next is the **W0-slice** (a test runner, an hour), then **W2a, truth in copy**
+**Last updated:** 2026-08-17 (W0-slice complete)
+**Current wave:** **W2a, truth in copy** — the W0-slice landed 2026-08-17
 **Operative date:** **December 1, 2026** — see [`PRD.md`](PRD.md) § 10
 
 > **This plan was independently validated on 2026-08-16** by five adversarial reviews. The legal analysis
@@ -77,8 +77,8 @@ Sequence and dependencies: [`waves/README.md`](waves/README.md).
 
 | Wave | Theme | Status |
 |---|---|---|
-| **W0-slice** | Test runner only — Vitest, a `test` script, nothing else | **Next** |
-| **W2a** | Truth in copy | After the slice |
+| **W0-slice** | Test runner only — Vitest, a `test` script, nothing else | **Done** 2026-08-17 |
+| **W2a** | Truth in copy | **In progress** |
 | [W0](waves/wave-0-safety-net.md) | Safety net, deletion, 4 data-loss fixes | Not started |
 | [W5](waves/wave-5-month-scoping.md) | Month scoping + review periods | Not started |
 | W2b | Policy profile | Not started |

@@ -3,7 +3,17 @@
  *
  * Note: These tests verify the validation logic. Full compression testing
  * requires a browser environment with Canvas API support.
+ *
+ * ADR-0007 Tier 4: compression against real photos stays manual — see
+ * src/lib/utils/TESTING.md. What runs here is the validation logic only.
+ *
+ * This file was orphaned until the W0-slice: it typechecked because
+ * @types/jest was installed, but there was no runner and it could not
+ * execute. describe/it/expect are now imported explicitly rather than
+ * relying on ambient globals.
  */
+
+import { describe, it, expect } from "vitest";
 
 import {
   validateFileType,
