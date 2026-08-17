@@ -31,7 +31,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # Node 22, not 20. The test toolchain requires it: @testing-library/jest-dom 7
+          # declares `>=22`, undici 8 (via jsdom) declares `>=22.19.0`, and jsdom 30
+          # declares `^22.22.2 || ^24.15.0 || >=26.0.0` — stricter still, though the
+          # suite is verified passing on 22.18.0, so `engines` in package.json states
+          # the `>=22` floor we have actually tested rather than jsdom's declaration.
+          #
+          # On Node 20 all of these were EBADENGINE *warnings*, which npm does not
+          # fail on — so `npm ci` looked fine while `npm test` would break at runtime.
+          # Node 20 is also now deprecated on Actions runners.
+          node-version: "22"
           cache: "npm"
 
       - name: Setup Pages
@@ -39,6 +48,22 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Quality gates run BEFORE the build, so a failure is reported against the
+      # thing that broke rather than as a build error.
+      #
+      # These did not run in CI before, which meant the ADR-0003 no-verdict guard
+      # protected nothing on `main` — it could only fail on a developer's machine.
+      # For an app whose copy tells people whether they may keep their health
+      # coverage, a guard that does not gate deployment is decoration.
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Test
+        run: npm test
+
+      - name: Lint
+        run: npm run lint
 
       - name: Build with Next.js
         run: npm run build

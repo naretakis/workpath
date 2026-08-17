@@ -80,8 +80,26 @@ Two more load on demand:
 
 ## Done means
 
-`npx tsc --noEmit` clean · `npm run lint` clean · `npm run build` succeeds · `npm test` green once W0
-adds the runner · each acceptance criterion checked against an observable · the review protocol
-(`.kiro/hooks/wave-review.kiro.hook`) run before a wave closes.
+`npx tsc --noEmit` clean · `npm run lint` clean · `npm run format:check` clean · `npm test` green ·
+`npm run build` succeeds · **`npm ci` succeeds** · each acceptance criterion checked against an
+observable · the review protocol (`.kiro/hooks/wave-review.kiro.hook`) run before a wave closes.
 
 Commit when verified. Don't push unless asked.
+
+**Why `npm ci` is on that list.** It was added on 2026-08-17 after a CI break: the W0-slice's
+`npm install` produced a lockfile that npm reported as `invalid`, and *every other gate passed anyway* —
+type check, lint, tests, format, build. None of them read the lockfile. The break only appeared on a
+runner, whose npm was a major version behind the one used locally.
+
+Two rules follow:
+
+- **If you add a dependency, run `npm ci` before you call it done.** `npm install` can leave a tree that
+  works while writing a lockfile that a different npm rejects. Optional peer dependencies are the usual
+  cause, since npm versions resolve them differently.
+- **Pin devDependency tooling exactly; don't use caret ranges for linters or formatters.** A fresh install
+  otherwise changes what "clean" means. Regenerating the lockfile once bumped `prettier` and
+  `eslint-plugin-react-hooks` by a patch and a minor, and produced 11 lint errors in files nobody had
+  touched. A quality gate that moves on its own is not a gate.
+
+Check the runner's Node and npm against your own when a build fails only in CI. `EBADENGINE` is a warning
+that npm does not fail on, so an unsupported Node version installs cleanly and breaks at runtime.

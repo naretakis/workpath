@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - CI build (follow-up to the W0-slice)
+
+`npm ci` failed on GitHub Actions with `Missing: yaml@2.9.0 from lock file`. Two defects, both
+introduced by the W0-slice and both invisible to the checks that wave ran.
+
+**The lockfile was not resolvable by the CI toolchain.** `yaml@^2.4.2` is an *optional peer dependency*
+of `vite` 8.2.1 (pulled in by Vitest), and it conflicts with the `yaml@1.10.x` already hoisted for
+`cosmiconfig`. npm 11 and npm 10 resolve that conflict differently, so the lockfile npm 11 writes is one
+npm 10 rejects. Fixed by declaring `yaml` explicitly so neither npm has to guess: root gets 2.x for vite,
+`cosmiconfig` gets a nested 1.10.x. **Verified against npm 10.8.2, 10.9.4, and 11.8.0**, plus a real
+clean-room `npm ci` followed by the full gate set.
+
+The underlying process gap: the definition of done checks `tsc`, `lint`, `test`, `format`, and `build`,
+none of which touch the lockfile. `npm install` had left a tree npm reported as `invalid` and every gate
+still passed. **`npm ci` belongs in the gate list.**
+
+**CI ran Node 20, which the test toolchain does not support.** `@testing-library/jest-dom` 7 requires
+`>=22`, `undici` 8 (via jsdom) requires `>=22.19.0`, and jsdom 30 requires `^22.22.2` or newer. These are
+`EBADENGINE` *warnings*, which npm does not fail on — so the install looked fine and the tests would have
+broken at runtime. Bumped to Node 22, added an `engines` floor of `>=22`, and stated the reasoning in the
+workflow.
+
+**The workflow never ran the tests.** The ADR-0003 no-verdict guard could only fail on a developer's
+machine, so it protected nothing on `main`. Added type-check, test, and lint steps ahead of the build.
+This does mean a failing guard now blocks deployment, which is the intent.
+
+**Pinned the lint and format toolchain.** Regenerating the lockfile silently upgraded `prettier`
+3.6.2 → 3.9.6 and `eslint-plugin-react-hooks` 7.0.1 → 7.1.1, which together produced 11 new lint errors
+and 5 reformatted files across code this work never touched. Caret ranges meant a fresh install changed
+what "clean" means. `eslint`, `prettier`, and `eslint-plugin-react-hooks` are now pinned exactly.
+The 11 React Compiler findings are real and pre-existing — `setState` called synchronously inside
+effects, and use-before-declaration — but they belong to a deliberate upgrade, not to a CI hotfix.
+
 ### Changed - Truth in Copy (W2a)
 
 The app stopped telling users things that were false, and stopped telling them things only their state
