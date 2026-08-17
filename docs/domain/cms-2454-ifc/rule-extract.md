@@ -220,8 +220,11 @@ The threshold is `applicable federal minimum wage × 80`. In 2026 that is **$7.2
 
 - Countable income under § 435.603(e) includes **earned income and countable unearned income**.
 - Household income under § 435.603(d)(1) is the **sum of the MAGI-based income of every individual included
-  in that individual's household** — **but (d)(2) excludes** the income of a child or tax dependent who **is
-  not expected to be required to file a return** under IRC § 6012(a)(1), whether or not they actually file.
+  in that individual's household** — **but (d)(2) excludes** two categories, in each case **whether or not
+  they actually file**: (i) an individual in the household of a **natural, adopted, or step parent** who is
+  **not expected to be required to file** under IRC § 6012(a)(1) *for the taxable year in which eligibility is
+  being determined*, and (ii) a **tax dependent** described in (f)(2)(i) meeting the same filing test. **The
+  test is the filing threshold for that year, not age.**
   And under § 435.603(f) composition follows **tax filing relationships rather than residence**, so it is
   **asymmetric and per-person**: two adults in one dwelling can have different households, and there is no
   "the household," only *this individual's* household.
