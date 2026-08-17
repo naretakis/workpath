@@ -14,7 +14,8 @@ Three reasons this is untenable under the IFC:
 
 1. **The determination belongs to the State** and is appealable (§ 431.220(a)(1)). The State must first
    exhaust ex parte data HourKeep cannot see — payroll records, adjudicated claims from the prior 12
-   months, encounter data (§ 435.557(a)).
+   months, encounter data (§ 435.557(a) defines the set; (b) imposes the duty to exhaust it before asking —
+   **cite the pair**, since the June 29 correction shifted designations inside § 435.557).
 2. **Several definitions turn on facts HourKeep cannot evaluate.** Income is MAGI-based household income
    (§ 435.552(f)(2)). Medically frail depends on a State-maintained condition list
    (§ 435.554(c)(5)(ii)). Enrollment status is determined by the school (§ 435.552(c)).

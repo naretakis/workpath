@@ -65,14 +65,18 @@ asserts more strongly than a sentence would, so it always needs a way back.
 
 ## Which doc applies
 
-| Editing | Read |
-|---|---|
-| `src/content/**`, or any string a user reads | `compliance-copy-standards.md` |
-| `src/lib/**`, especially `db.ts` and `storage/` | `data-migration-standards.md` |
-| `src/components/**`, `src/theme/` | `component-standards.md` |
+`compliance-copy-standards.md` is **always on**, because user-facing strings are spread across `src/content/`,
+`src/lib/exemptions/`, `src/lib/assessment/`, `src/components/`, and `src/app/` — no single file pattern
+catches them.
 
-The copy rules bind wherever strings reach users. Today `lib/exemptions/definitions.ts` and
-`lib/assessment/recommendationEngine.ts` hold more verdict language than `src/content/` does.
+Two more load on demand:
+
+| Editing | Loads |
+|---|---|
+| `src/lib/**`, especially `db.ts` and `storage/` | `data-migration-standards.md` |
+| `src/components/**` | `component-standards.md` |
+
+`src/theme/theme.ts` doesn't match either pattern; read `component-standards.md` by hand when you touch it.
 
 ## Done means
 

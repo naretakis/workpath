@@ -43,11 +43,15 @@ conflicts with user harm reduction, **cut the graph.**
 ```
 ═══════════ SHIPS BY DECEMBER 1, 2026 ═══════════
 
-W2a  Truth in Copy                    ← nothing. Days of work.
+W0-slice  Test runner only            ← nothing. An hour of work.
+       │   Vitest + fake-indexeddb + testing-library, a `test` script,
+       │   the orphaned imageCompression test made to run. Nothing else.
+       ▼
+W2a  Truth in Copy                    ← W0-slice. Days of work.
        │   every wrong statement corrected, every verdict string removed,
        │   ex parte explained, §435.559(c) reassurance, no-verdict render test
        ▼
-W0   Safety Net (scoped down)         ← nothing
+W0   Safety Net (scoped down)         ← W0-slice
        │   4 data-loss fixes, /test-compression out, delete-all-data,
        │   Vitest + migration test + narrow characterization tests,
        │   dead-code deletion
@@ -88,8 +92,9 @@ W1   Dependency Modernization ← W0
 
 | Wave | Requires | Why |
 |---|---|---|
-| W2a | — | Text edits. No arithmetic to preserve |
-| W0 | — | Independent |
+| **W0-slice** | — | **Vitest installed and a `test` script, nothing else.** See below |
+| W2a | **W0-slice** | Text edits need no arithmetic preserved, but W2a ships the no-verdict guard test and touches two Tier-1 modules |
+| W0 | W0-slice | Independent otherwise |
 | W5 | W0 | Migration test before touching the schema |
 | W2b | W0, W5 | Tests prove the refactor is behavior-neutral; W5 first avoids a second pass over the same call sites |
 | W6a | W2b | Thresholds and the credit-hour constant come from the profile |
@@ -105,14 +110,39 @@ W1   Dependency Modernization ← W0
 | W10 | W1, **W5, W6a** | W5 makes `Calendar` controlled and W6a rewrites both forms — rebuilding a11y before those guarantees a second rewrite |
 | W1 | W0 | Deletion first means less to migrate |
 
+### The W0-slice, and why it exists
+
+**Found on the W2a dry run, 2026-08-16.** The ordering as published was circular. W2a was listed as having
+no dependencies, yet it ships the **no-verdict render test** — which ADR-0007 promotes to Tier 1 and
+explicitly assigns to W2a — and there is no test runner: `package.json` has no `test` script and no Vitest.
+W0 adds the runner, and W0 is sequenced *after* W2a.
+
+Compounding it, W2a's copy corrections reach `lib/exemptions/calculator.ts` (the user-facing `explanation`
+strings) and `lib/assessment/recommendationEngine.ts` (which returns `complianceStatus: "compliant"`). Both
+are **Tier-1 TDD modules** where `engineering-standards.md` requires a failing test first. That obligation is
+unsatisfiable with no runner.
+
+**Resolution: a thin slice of W0 runs first.** Scope, deliberately minimal:
+
+- `vitest`, `@vitest/ui`, `fake-indexeddb`, `@testing-library/react`, `@testing-library/jest-dom` installed
+- `vitest.config.ts` and a `test` script in `package.json`
+- the orphaned `src/lib/utils/__tests__/imageCompression.test.ts` adapted so it executes
+- **nothing else.** No characterization tests, no deletions, no `/test-compression` removal, no delete-all
+  feature. Those stay in W0 proper.
+
+This is an ordering correction, not new scope — ADR-0007 already assigns the guard test to W2a. Once the
+slice lands, `npm test` in the Definition of Done becomes satisfiable for every subsequent wave.
+
 **Corrections to the original graph:** W6 → W5 was not a real dependency (nothing in W6 evaluates hours);
 W6 → W4 **was** real and missing; W9 needed W2/W3/W5, not W8; W10 needed W5 and W6; W3/W4 ∥ W5 was **not**
 parallelizable because W5 needed indexes only W3's migration created — resolved by consolidating all
 additive schema work into W3's v7 and having W5 need no migration.
 
 **Migration ownership.** One **v7 in W3** (new table, `userId` on `Activity`, all compound indexes, drop the
-genuinely dead `exemptions` / `exemptionHistory`). **`complianceModes` drops in W7b, not W3** — it has five
-live readers including `lib/storage/income.ts`. W6b takes **v8** for the education backfill.
+genuinely dead `exemptions` / `exemptionHistory`). **`complianceModes` drops in W7b, not W3** — `complianceMode`
+is referenced in **four files**: `lib/db.ts` (definition) plus three consumers, `lib/storage/income.ts`,
+`app/tracking/page.tsx`, and `app/export/page.tsx`. (An earlier note said "five live readers"; that count is
+not reproducible — verified 2026-08-16.) W6b takes **v8** for the education backfill.
 
 ## If time runs short
 
@@ -138,7 +168,8 @@ detail decays with distance, and pretending otherwise produces documents that dr
 
 | Wave | Theme | Ships | Gaps closed |
 |---|---|---|---|
-| **W2a** | **Truth in copy** | Every wrong statement corrected; every verdict string gone; ex parte explained; § 435.559(c) reassurance; no-verdict render test | 5.2, 11.1–11.5, 15.7, 15.8, 15.20, part of 4.1/4.9/4.10 |
+| **W0-slice** | **Test runner** | Vitest, `fake-indexeddb`, testing-library, a `test` script, the orphaned test made to run | — (unblocks W2a) |
+| **W2a** | **Truth in copy** | Every wrong statement corrected; every verdict string gone; ex parte explained; § 435.559(c) reassurance; no-verdict render test | 5.2, 11.1–11.5, 15.7, 15.8, 15.20, part of 4.1/4.9/4.10, **part of 5.1/5.3** (household framing) |
 | **[W0](wave-0-safety-net.md)** | Safety net, deletion, **4** data-loss fixes | Test harness incl. migration test; ~2,700 lines gone; delete-all-data; `/test-compression` out | audit §4.2, §4.6, §4.9, §4.14, §5, §7 |
 | **[W5](wave-5-month-scoping.md)** | Month scoping + review periods | Any month viewable, editable, evaluable; review-period model | 6.4, 7.1–7.4, 15.6 |
 | **W2b** | **Policy profile** | `FEDERAL_DEFAULT`; zero policy literals | 5.6, R8.1 |
@@ -165,17 +196,20 @@ detail decays with distance, and pretending otherwise produces documents that dr
 
 1. `npm run build` succeeds and `npx tsc --noEmit` is clean.
 2. `npm test` passes. Domain changes have tests written **first** (ADR-0007 Tier 1).
-3. `npm run lint` has no new warnings.
+   *Satisfiable from the W0-slice onward; there is no `test` script before it.*
+3. `npm run lint` has no new warnings, and `npm run format:check` is clean.
 4. **Copy review:** no new user-facing text asserts a determination (ADR-0003), and every number carries a
    Computed / Conditional / Deferred label. No new policy literals (ADR-0001).
 5. Any new domain claim carries a **CFR citation plus FR page** in a code comment — the IFC has internal
    cross-reference drift, so a paragraph letter alone can go stale.
 6. Gap-analysis rows closed by the wave are struck through with the wave number. **Rows split across waves
-   may be struck with two numbers** — 2.3, 4.1, 4.9, 4.10, 5.3, 5.6, 8.4, and 8.9 are all split.
+   may be struck with two numbers** — 2.3, 4.1, 4.9, 4.10, **5.1**, 5.3, 5.6, 8.4, and 8.9 are all split.
 7. **Every negative acceptance criterion has a positive twin.** "No content says X" is satisfied by deleting
    the section; pair it with "content affirmatively says Y."
-7. Manual smoke test on a phone viewport, offline.
-8. `CHANGELOG.md` updated.
+8. **The review protocol has been run** — `.kiro/hooks/wave-review.kiro.hook`, four independent reviewers,
+   findings confirmed against the files before they count.
+9. Manual smoke test on a phone viewport, offline.
+10. `CHANGELOG.md` updated.
 
 ---
 

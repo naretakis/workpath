@@ -2,7 +2,12 @@
 
 **Status:** Accepted
 **Date:** 2026-08-16
-**Tension:** deliberately departs from `.kiro/steering/getting-started.md`, which deprioritizes automated testing
+**Tension:** ~~deliberately departs from `.kiro/steering/getting-started.md`, which deprioritizes automated
+testing~~ — **resolved 2026-08-16.** That doc was rewritten: tests required for compliance logic, optional for
+UI.
+**Ordering:** the runner arrives in the **W0-slice**, sequenced ahead of W2a — see `waves/README.md`. Without
+it, this ADR's own instruction to write the guard test in W2a is unsatisfiable, which is how the circularity
+was found on the W2a dry run.
 
 ## Context
 
@@ -53,6 +58,12 @@ rather than rewritten.
 > 2. **The no-verdict render test** — asserting no surface renders "you are exempt" or "compliant."
 >    Previously Tier 3 "encouraged." It mechanically enforces ADR-0003, the load-bearing decision, forever,
 >    and it is the cheapest high-value test in the plan. Write it in W2a.
+>
+>    **Write it as a token list against rendered output, not as a pronoun regex.** The regex originally
+>    specified in wave-2 § 2.5 — `/\b(you are|you're) (exempt|compliant)\b/i` — matches almost none of the
+>    live violations: `You&apos;re Exempt` is an HTML entity in source, `"You were exempt"` is past tense,
+>    `"Exempt"` chips and `✓ COMPLIANT` have no pronoun, and `automatically meet work requirements` shares no
+>    words with the pattern. Normalise entities, then assert on tokens.
 >
 > **The gap-analysis count cited below was wrong** — the actual figure is 16 `contradicts` + `harmful` rows,
 > not eight.

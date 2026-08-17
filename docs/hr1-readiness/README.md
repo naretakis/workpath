@@ -2,8 +2,8 @@
 
 **The holistic home for this effort.** Open this file to remember where we are.
 
-**Last updated:** 2026-08-16 (post-validation)
-**Current wave:** none started — ready for **W2a, truth in copy**
+**Last updated:** 2026-08-16 (post-validation, post-W2a-dry-run)
+**Current wave:** none started — next is the **W0-slice** (a test runner, an hour), then **W2a, truth in copy**
 **Operative date:** **December 1, 2026** — see [`PRD.md`](PRD.md) § 10
 
 > **This plan was independently validated on 2026-08-16** by five adversarial reviews. The legal analysis
@@ -77,7 +77,8 @@ Sequence and dependencies: [`waves/README.md`](waves/README.md).
 
 | Wave | Theme | Status |
 |---|---|---|
-| **W2a** | Truth in copy | **Next** |
+| **W0-slice** | Test runner only — Vitest, a `test` script, nothing else | **Next** |
+| **W2a** | Truth in copy | After the slice |
 | [W0](waves/wave-0-safety-net.md) | Safety net, deletion, 4 data-loss fixes | Not started |
 | [W5](waves/wave-5-month-scoping.md) | Month scoping + review periods | Not started |
 | W2b | Policy profile | Not started |
@@ -151,8 +152,11 @@ they are the source for each half. Write the split halves when they start.
 
 Deliberately left open. Not defects — decisions to close later.
 
-1. **`§ 435.603` is not extracted.** The income claims rest on the IFC's *characterization* of it, not on the
-   text. Goal G1 is unsatisfiable for those claims until this is done. **Do it before W2a's income copy.**
+1. ~~**`§ 435.603` is not extracted.**~~ — **done 2026-08-16, commit `b9b9594`.** Text is at
+   [`../domain/supporting-regs/README.md`](../domain/supporting-regs/README.md) § 1. **Cite that, not
+   `rule-extract.md`, for household-income claims** — the extract carried CMS's preamble gloss ("the total
+   income of everyone in the household"), which overstates income. Found on the W2a dry run and corrected;
+   see `rule-extract.md` § 2.6.
 2. **PRD requirement-to-wave traceability** has known mismatches (R1.6 → W3 not W4; R6.3 and R6.8 both citing
    gap 8.9; R8.2's TDD clause spanning waves; gaps 2.11 and 2.12 with no acceptance criteria). Cosmetic for
    execution; clean up before W3.

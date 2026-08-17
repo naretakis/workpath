@@ -278,17 +278,19 @@ State-approved program does not qualify.
   scholarship income used for education, certain AI/AN income, lump sums counted only in the month received.
 - **Household-based**, following **tax filing relationships**, not residence. A spouse's income counts. A
   person claimed as a tax dependent has the claiming taxpayer's household income counted.
-- **But not literally everyone.** § 435.603(d) **excludes** the MAGI-based income of children and tax
-  dependents who are not expected to be required to file a tax return. A teenager's part-time wages
-  generally do not count. An earlier version of this document said "the total income of everyone in the
-  household" — that was wrong, and wrong in the direction that overstates income.
+- **But not literally everyone.** § 435.603(d)(1) sums the household; **(d)(2) excludes** the MAGI-based
+  income of a child or tax dependent who is **not expected to be required to file a tax return** under IRC
+  § 6012(a)(1) — whether or not they actually file. **The test is the filing threshold, not age:** a
+  16-year-old earning above it *is* counted; a 30-year-old dependent below it is not. An earlier version of
+  this document said "the total income of everyone in the household" — that was wrong, and wrong in the
+  direction that overstates income.
 - **Composition is per-person and asymmetric** (§ 435.603(f)). There is no single "the household," only
   *the applicant's* household. Two adults in one dwelling can have different MAGI households.
 - Evaluated **for each month of the review period**, not the month of application.
 
-> **§ 435.603 is pre-existing regulation and is not extracted in this repo.** These claims trace to the
-> IFC's characterization of it. Verify against § 435.603 itself before relying on any specific inclusion or
-> exclusion in user-facing copy.
+> **§ 435.603's text is extracted at `docs/domain/supporting-regs/README.md` § 1** (added 2026-08-16).
+> **Cite that for household-income claims, not `rule-extract.md`** — the extract carries the IFC's
+> *characterization* of § 435.603, and one such gloss was wrong in the user-unfavorable direction.
 
 CMS explicitly **considered and rejected** counting only earned income.
 
@@ -296,10 +298,16 @@ CMS explicitly **considered and rejected** counting only earned income.
 satisfy the income pathway **without working a single hour**. Telling that person to go find 80 hours
 of volunteering is a harmful false negative.
 
-**HourKeep must not compute a household MAGI figure.** It lacks household composition and tax data,
-and a confidently wrong number is worse than silence. Ask the three screener questions (married?
-claimed as a tax dependent? others in your tax household?), explain that the pathway is household-based,
-and direct the user to ask their agency.
+**HourKeep must not compute a household MAGI figure.** The reason is **elicitation, not arithmetic**:
+§ 435.603(f) composition follows tax filing relationships rather than residence, is asymmetric and
+per-person, and (d)(2) excludes some members entirely — so you would have to correctly elicit the user's
+whole tax filing structure before summing anything. Ask the three screener questions (married? claimed as a
+tax dependent? others in your tax household?), explain that the pathway is household-based, and direct the
+user to ask their agency.
+
+> Do **not** justify this with "a wrong number is worse than silence." That reason proves too much — it would
+> also ban the § 435.552(d) credit-hour conversion, which is arithmetic CMS published and which the app
+> should show. See ADR-0003's Computed / Conditional / Deferred split.
 
 **Threshold:** `federalMinimumWage × 80`. In 2026 that is **$7.25 × 80 = $580**. The value is dynamic
 if the FLSA is amended. States **may not** use the tipped wage, the $4.25 youth wage, or a State
@@ -307,9 +315,14 @@ minimum wage even if higher.
 
 ### Seasonal workers
 
-**Seasonal worker** is an objective legal test under 26 U.S.C. 45R(d)(5)(B) → 29 CFR 500.20(s)(1):
-labor exclusively performed at certain seasons or periods of the year that by its nature may not be
-continuous, plus retail workers employed exclusively during holiday seasons. **Not self-declaration.**
+**Seasonal worker** is defined by 26 U.S.C. 45R(d)(5)(B): labor performed on a seasonal basis **as defined by
+the Secretary of Labor**, *including* work that by its nature pertains to certain seasons and may not be
+continuous (29 CFR 500.20(s)(1)), **and** retail workers employed exclusively during holiday seasons.
+
+> **Those two categories are inclusive examples, not a closed test, and the IFC provides no verification rule
+> for seasonal-worker status anywhere.** An earlier version of this document called it "an objective legal
+> test… not self-declaration" — that was **unsupported**, and restrictive in the user-hostile direction. The
+> category is broader and softer than that. Do not gate it behind a test the rule does not impose.
 
 Two computation paths:
 

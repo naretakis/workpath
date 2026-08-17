@@ -1,6 +1,5 @@
 ---
-inclusion: fileMatch
-fileMatchPattern: 'src/content/**'
+inclusion: always
 ---
 
 # Compliance Copy Standards
@@ -8,10 +7,22 @@ fileMatchPattern: 'src/content/**'
 Rules for every string a user reads. Operationalizes
 `docs/hr1-readiness/decisions/ADR-0003-evidence-not-adjudication.md`.
 
-These rules bind wherever user-facing text lives, not only under `src/content/`. Today the heaviest
-concentrations are `src/lib/exemptions/definitions.ts` (15 occurrences of "exempt from work requirements"),
-`src/lib/exemptions/questions.ts` (7), and `src/lib/assessment/recommendationEngine.ts`, which returns
-`complianceStatus: "compliant"` outright.
+> **This was scoped to `src/content/**` and that was wrong.** User-facing copy is spread across `src/content/`,
+> `src/lib/exemptions/`, `src/lib/assessment/`, `src/components/`, and `src/app/` — so a `fileMatch` trigger
+> on any one of them fails to load exactly where most of the work is. Always-on instead. It costs tokens every
+> turn; the alternative was a rule that doesn't fire when it's needed.
+
+Verified concentrations, 2026-08-16:
+
+| File | Count |
+|---|---|
+| `src/lib/exemptions/definitions.ts` | **15** × "exempt from work requirements" |
+| `src/lib/exemptions/questions.ts` | **4** × "exempt from work requirements", **6** × "you're exempt" |
+| `src/content/helpText.ts` | **3** × "automatically meet work requirements" |
+| `src/lib/assessment/recommendationEngine.ts` | returns `complianceStatus: "compliant"` outright |
+
+(An earlier version of this table said `questions.ts` (7). That was two overlapping patterns summed — the
+kind of count `engineering-standards.md` exists to prevent.)
 
 ## Label every number
 
@@ -76,10 +87,16 @@ Authoritative text: `docs/domain/supporting-regs/`. The IFC's characterization o
 
 ## Say the reassuring true things
 
-Under-communicated and free. CMS estimates most users will be verified without doing anything
-(§ 435.557(b) ex parte). Beneficiaries enrolled as of the implementation date aren't assessed until their
-first renewal on or after it (§ 435.559(c)). The state must consider every other basis of eligibility
-before denying (§ 435.558(d)(1)). Determinations are appealable (§ 431.220(a)(1)).
+Under-communicated and free. CMS estimates most users will be verified without doing anything — ex parte,
+where **§ 435.557(a)** defines the data the state must use and **(b)** imposes the obligation to use it before
+asking. **Cite the pair**; the June 29 correction shifted paragraph designations inside § 435.557.
+Beneficiaries enrolled as of the implementation date aren't assessed until their first renewal *initiated* on
+or after it (§ 435.559(c)). The state must consider every other basis of eligibility before denying
+(§ 435.558(d)(1)). Determinations are appealable (§ 431.220(a)(1)).
+
+**And be careful what you invite a user to volunteer.** A self-reported "no, I'm not meeting it" can be
+accepted at face value and support a denial. Never nudge a casual negative self-report: say what the answer is
+used for, and surface the exception, hardship, and ex parte paths *before* the question.
 
 ## When you delete, replace
 

@@ -1,6 +1,9 @@
 # Wave 2 — Truth in Copy and the Policy Profile
 
-**Depends on:** W0 (tests prove the threshold refactor changes nothing), W1 (write against current APIs)
+**Depends on:** **W2a** needs only the **W0-slice** (a test runner — see `README.md`). **W2b** needs W0 in
+full (characterization tests prove the threshold refactor changes nothing) and W5.
+**Superseded header:** this file originally declared "Depends on: W0, W1." W1 is now sequenced **last**, so
+neither half depends on it. Write against MUI 7 and migrate in W1.
 **Blocks:** W3, W5 — both read policy values from the profile
 **Decision records:** ADR-0001, ADR-0003
 **User-visible outcome:** the app stops telling users things that are false. Highest harm-reduction per
@@ -72,8 +75,21 @@ Corrected content:
   spouse's earnings are disqualifying.
 - **Your state calculates this.** HourKeep organizes pay stubs; it does not compute the figure.
 
-Delete `whatDoesNotCount` in its current form rather than editing around it — it is wrong in structure,
-not just in items.
+> **Corrected on the W2a dry run: fix `whatDoesNotCount` entry by entry. Do not delete it.**
+>
+> This section previously said "delete `whatDoesNotCount` in its current form rather than editing around it."
+> That contradicts `.kiro/steering/compliance-copy-standards.md`, which names this exact field as its live
+> example of why deletion is the wrong move. **The steering doc wins.** Of the seven current entries, **two
+> are correct** — SSI (Title XVI, not a Title II Social Security benefit) and child support — and deleting
+> the field destroys them. One, gifts and loans, is defensible but needs hedging.
+>
+> The field keeps its name and structure. Its `description` changes from "unearned income does not count,"
+> which is the actual error, and four entries move to `whatCounts`. This is also DoD item 7: the negative
+> criterion needs a positive twin.
+>
+> **Authority for the household claims is `docs/domain/supporting-regs/README.md` § 1, not
+> `rule-extract.md`.** The extract carried CMS's preamble gloss ("the total income of everyone in the
+> household"), which overstates income; it is corrected and marked as of 2026-08-16.
 
 ### 2.3 Correct the activity content
 
@@ -90,6 +106,34 @@ not just in items.
   activity within a qualifying program if under half the required hours, and unemployment-insurance job
   search can count if conducted consistently with work program requirements.
 
+### 2.3b Say the reassuring true things — gaps 15.7, 15.8, 15.20
+
+> **Added on the W2a dry run.** `waves/README.md` assigned rows **15.7, 15.8, and 15.20** to W2a, and listed
+> "ex parte explained" and "§ 435.559(c) reassurance" among what it ships — but no wave file contained any
+> scope for them. All three are rated **harmful**. Three orphaned rows, now homed.
+
+Three facts that are true, reassuring, currently absent, and cost only copy. New content, not corrections.
+
+- **You are probably not being assessed in January (§ 435.559(c)).** Beneficiaries enrolled as of the State's
+  implementation date are not assessed until their **first renewal initiated on or after** it. "Initiated"
+  means when the State's ex parte review begins. For most current enrollees the first review period does not
+  start in January 2027. Currently nothing tells them this, so the app implies a deadline that isn't theirs.
+
+- **Your state has to check its own records first (§ 435.557(b)).** Before asking anything of the individual,
+  the State must exhaust reliable information it already holds or can obtain — payroll data, adjudicated
+  claims from the preceding 12 months, encounter data, SNAP and TANF enrollment, incarceration data, and
+  education data (§ 435.557(a) defines the set; (b) imposes the obligation — **cite the pair**, the June 29
+  correction shifted designations inside this section). CMS estimates a majority are verified this way. This
+  reframes the whole app: HourKeep is the backstop for what payroll data misses, not a mandatory chore.
+
+- **Be careful what you volunteer (15.20).** A self-reported "no, I'm not meeting it" can be **accepted at
+  face value and support a denial**. So the app must never nudge a casual negative self-report. Anywhere a
+  user could assert noncompliance, say what the answer is used for first, and route them to the exception,
+  hardship, and ex parte paths *before* the question, not after.
+
+Where this lands: `dashboardGuidance` and the onboarding introduction for the first two; a review of every
+question that lets a user assert a negative for the third.
+
 ### 2.4 Terminology (R8.7)
 
 Adopt CMS terminology in the domain model: **community engagement requirement**, and PL 119-21 /
@@ -105,20 +149,42 @@ scope**; **January 1, 2028** documentation hardening; **December 31, 2028** good
 
 The full repositioning is W7, but the outright verdicts go now, because they are false today:
 
+Line numbers verified 2026-08-16.
+
 | Location | Now | Becomes |
 |---|---|---|
-| `AssessmentBadge.tsx:161` | "You're Exempt" | "You may not need to track" |
-| `export/page.tsx` | "✓ COMPLIANT" / "✗ NOT COMPLIANT" | "Logged: 46 hours · Threshold: 80 hours" |
-| `settings/page.tsx` | "Status: Exempt" / "Must Track Hours" | "Based on your answers: you may be excluded" |
-| `results/page.tsx` chip | "Easiest for you" | "May be simplest for you" |
+| `AssessmentBadge.tsx:154` | `You&apos;re Exempt` | "You may not need to track" |
+| `export/page.tsx:149`, `:179` | "✓ COMPLIANT" / "✗ NOT COMPLIANT" — **both branches** | "Logged: 46 hours · Threshold: 80 hours · Difference: 34" |
+| `settings/page.tsx:205–206` | "Exempt" / "Must Track Hours" | "Based on your answers: you may be excluded" |
+| `results/page.tsx:349` | `label="Easiest for you"` | "May be simplest for you" |
+| `helpText.ts` ×3 | "you automatically meet work requirements" | "This may be enough on its own. Your state decides." |
+| `definitions.ts` ×15 | "…you're exempt from work requirements" | Hedge **plus a next action**, per the copy standard |
+| `questions.ts` | 4 × "exempt from work requirements", 6 × "you're exempt" | Same |
+| `AssessmentHistory.tsx:48`, `:57` | "Exempt" chip; "You were exempt from work requirements" | Past-tense verdicts count too |
+| `IntroductionScreen.tsx:99` | verdict framing | Hedge plus next action |
+| `ProfileForm.tsx:198` | "Good news! You may be exempt… due to your age" | **Also substantively wrong** — 65+ are *outside* § 435.551's adult group, not excluded within it. Different sentence, not a hedge |
 
-Add the ADR-0003 guard test: no rendered string matches `/\b(you are|you're) (exempt|compliant)\b/i`.
+> **The originally specified guard regex does not work.** It was
+> `/\b(you are|you're) (exempt|compliant)\b/i`, and against the code above it matches **almost nothing**:
+> `You&apos;re Exempt` is an HTML entity in source, `"You were exempt"` is past tense, `"Exempt"` chips have
+> no pronoun, `✓ COMPLIANT` has no pronoun, and `automatically meet work requirements` shares no words with
+> the pattern.
+>
+> **Write it as a token list instead**, run against rendered output with HTML entities normalised first:
+> `exempt`, `compliant`, `automatically meet`, `you qualify`, `you meet`, `not compliant`, `on track`. Assert
+> the *rendered* text of each surface in the table above. Where a token is legitimately needed — explaining
+> what "exempt" means as a term — allow it only inside a definition context, and say so in the test name.
 
 ### 2.6 Fix the misleading mode dialog
 
-`ComplianceModeSelector`'s confirmation says "only your income will count toward compliance while in
-income mode." That is not true of the law — § 435.552(e) requires combination. The selector is removed
-entirely in W7; until then, correct the dialog text so it doesn't state something false.
+`ComplianceModeSelector` makes the false exclusivity claim **twice**, not once — verified 2026-08-16:
+
+- **line 123:** "Your hours data will be preserved, but only your income will…" (switching to income mode)
+- **line 132:** "Your income data will be preserved, but only your hours will…" (switching to hours mode)
+
+Neither is true of the law — § 435.552(e) **requires** combination, and § 435.552(e)(2) adds the
+income-to-hours proxy on top. Both branches change. The selector is removed entirely in W7b; until then it
+must not state something false.
 
 ## Out of scope
 
@@ -127,17 +193,47 @@ survives until W7; this wave only stops it from lying about what it does.
 
 ## Acceptance criteria
 
-- [ ] `src/lib/policy/` exists with `FEDERAL_DEFAULT` and a mandatory `source` citation
-- [ ] Guardrail test fails if a policy literal appears outside `src/lib/policy/`
-- [ ] W0 characterization tests pass **unchanged**
-- [ ] No user-facing content states that unemployment, investment, rental income, or SSDI fail to count
-- [ ] Income help explains household-based counting and that more household income helps
-- [ ] Work is described as including in-kind and unpaid work
-- [ ] No activity definition implies a per-activity 80-hour requirement
-- [ ] Guard test rejects "you are exempt" / "you're compliant" strings
-- [ ] Export prints logged totals and thresholds, not verdicts
-- [ ] Georgia and Wisconsin are not described as out of scope anywhere
-- [ ] `ComplianceModeSelector`'s dialog no longer claims income-only counting
+> **Rewritten on the W2a dry run.** The originals were largely **negative-only**, which DoD item 7 forbids:
+> "no content states that unemployment fails to count" is satisfied by deleting the section, destroying the
+> two entries that are correct. Each criterion below pairs a negative with a positive twin and names an
+> observable. Split by half.
+
+**W2a — truth in copy**
+
+- [ ] `whatDoesNotCount` **still exists as a field**, contains exactly **2** entries (SSI, child support) plus
+      a hedged gifts/loans entry, **and** its `description` no longer says unearned income doesn't count
+- [ ] `whatCounts` affirmatively lists unemployment compensation, taxable interest and dividends, rental
+      income, and Social Security including the non-taxable portion — **grep each of the four**
+- [ ] `incomeDefinitions.threshold` states the household basis and the three screener questions, **and**
+      contains no summed or computed household figure
+- [ ] Zero occurrences of `automatically meet` in `src/` (currently 3), **and** each replacement site says
+      the state decides
+- [ ] Every surface in the § 2.5 table renders none of the guard tokens, **and** the export prints
+      `Logged: N · Threshold: T · Difference: D` for both the hours and income blocks
+- [ ] The guard test is a **token list against rendered output** with entities normalised, not the original
+      regex, and it fails when `You&apos;re Exempt` is reintroduced
+- [ ] All 15 `definitions.ts` entries and the `questions.ts` help text pair their hedge with a **next action**
+- [ ] `activityDefinitions.work.counterExamples` no longer contains "Unpaid internships", **and**
+      `.definition` names in-kind and unpaid work with a § 435.552(b) citation comment
+- [ ] No `activityDefinitions.*.definition` contains "80 hours" (currently 3 do), **and** exactly one place
+      states it as a monthly total across activities
+- [ ] **Both** `ComplianceModeSelector` branches (123, 132) drop the exclusivity claim, **and** both state
+      that hours and income may combine (§ 435.552(e))
+- [ ] Content affirmatively states § 435.559(c), § 435.557(a)–(b) ex parte, and the 15.20 self-report
+      caution, each with a citation comment
+- [ ] Georgia, Tennessee, and Wisconsin are affirmatively listed **in** scope; 44 jurisdictions stated
+- [ ] No **new** policy literal is introduced; every literal left in place is listed in the W2b handoff table
+      with file and line, and the row count equals the grep count
+
+**W2b — policy profile**
+
+- [ ] `src/lib/policy/` exists with `FEDERAL_DEFAULT`, a mandatory `source` citation, and the `confidence`
+      discriminator
+- [ ] The scoped policy-literal check (`scripts/compliance-gate.sh`) reports **zero** hits across the five
+      compliance-critical modules
+- [ ] W0 characterization tests pass **unchanged** — the proof the refactor is behavior-neutral
+- [ ] The Carnegie constant `4.33` remains in the education module with its § 435.552(d) citation and is
+      **not** moved into the profile
 
 ## Risks
 

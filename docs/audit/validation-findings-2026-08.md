@@ -828,9 +828,9 @@ burn it on the wrong document.
 
 Not defects, but real gaps I am choosing not to close in planning:
 
-1. **`§ 435.603` is still not extracted.** PRD goal G1 ("every user-facing claim traces to a citation in
-   `rule-extract.md`") remains unsatisfiable for the income claims. **Do this before W2a's income copy is
-   written** — it is the wave that rewrites the guidance those claims support.
+1. ~~**`§ 435.603` is still not extracted.**~~ — **done, commit `b9b9594`.** But see **§ I1**: extracting it
+   was not sufficient, because `rule-extract.md` kept the retracted gloss and is what the wave prompt points
+   at. Household claims cite `supporting-regs/README.md` § 1.
 2. **PRD requirement-to-wave traceability** still has the mismatches the coherence review found (R1.6 → W3
    not W4; R6.3/R6.8 both citing gap 8.9; R8.2's TDD clause spanning waves; R1.5 assigning export work to
    W3; 2.11 and 2.12 with no acceptance criteria). Cosmetic for execution, worth a pass before W3.
@@ -841,3 +841,123 @@ Not defects, but real gaps I am choosing not to close in planning:
    `wave-2`, `wave-6`, `wave-7`, `wave-8`, `wave-9` files are the source. Write each half at its start.
 5. **"No production users" is still unverified.** Plausible has the data. **Check before W0's delete-all and
    W3's table drops** — both are destructive if the assumption is wrong.
+
+---
+
+## I. W2a dry run (2026-08-16, later still)
+
+**Method:** the W2a kickoff prompt was handed to an independent sub-agent under a read-only constraint,
+instructed to do the reading, form the plan, and attack the prompt, the steering docs, and the wave ordering.
+No files were modified. Every finding below was then re-verified against the files before being accepted —
+two were rejected.
+
+**Why it mattered:** twelve real problems, one of which would have written a legally wrong statement into the
+most harmful field in the app. The steering docs' verification discipline is what found it, applied to the
+document the steering docs point at.
+
+### I1. `rule-extract.md` carried the retracted household-income claim — **highest severity**
+
+Line 217 read: "Household income under § 435.603(d) and (f) is the **total income of everyone in the
+household**." That is the exact claim § A5 above identified as wrong and user-unfavorable. It survived because
+§ A5's correction was applied to the **steering doc** and never to the **extract** — and the extract is what
+the W2a prompt designated as "the authority. Every claim you write traces to a citation here."
+
+The line is a faithful quote of CMS's preamble at `2026-11094.txt:674`, which makes it a **source-tier**
+error, not a transcription error: preamble gloss presented as regulatory text.
+
+**Fixed.** § 2.6 now states (d)(1) plus the (d)(2) filing-threshold exclusion and (f)'s asymmetry, carries a
+source-tier warning, and routes household claims to `supporting-regs/README.md` § 1. The header caveat, which
+still said § 435.603 was "not present in this repo," is corrected too.
+
+### I2. The wave ordering was circular
+
+`waves/README.md` listed W2a as having **no dependencies**. It also listed W2a as shipping the
+**no-verdict render test**, which ADR-0007 promotes to Tier 1 and assigns explicitly to W2a. There is no test
+runner — W0 adds it, and W0 is sequenced *after* W2a.
+
+Compounding: W2a's copy work reaches `lib/exemptions/calculator.ts` and
+`lib/assessment/recommendationEngine.ts`, both Tier-1 TDD modules where a failing test is required first.
+
+**Fixed** by extracting a **W0-slice** — Vitest, `fake-indexeddb`, testing-library, a `test` script, and the
+orphaned `imageCompression.test.ts` made to run. Nothing else. Recorded in `waves/README.md`, ADR-0007, and
+the wave-2 header.
+
+### I3. Three harmful gap rows had no scope anywhere
+
+`waves/README.md:141` assigned **15.7** (§ 435.559(c) — existing enrollees aren't assessed until their first
+initiated renewal), **15.8** (§ 435.557(a)–(b) ex parte first), and **15.20** (self-reported noncompliance can
+support a denial) to W2a, and listed "ex parte explained" and "§ 435.559(c) reassurance" among what it ships.
+Grepping the wave-2 file for all three returned **zero hits**. All three are rated harmful.
+
+**Fixed:** new wave-2 § 2.3b writes the scope, including the 15.20 consequence — never nudge a casual negative
+self-report.
+
+### I4. The steering doc and the wave file gave opposite orders
+
+Wave-2 § 2.2 said **delete** `whatDoesNotCount`; `compliance-copy-standards.md` says **fix it entry by entry**
+and names that exact field as its example. Deleting destroys the two correct entries (SSI, child support).
+
+**Fixed:** the steering doc wins, stated explicitly in the wave file.
+
+### I5. `compliance-copy-standards.md` didn't load where the work is
+
+Its `fileMatchPattern` was `src/content/**`. Its own second sentence named
+`src/lib/exemptions/definitions.ts`, `questions.ts`, and `recommendationEngine.ts` as the heaviest
+concentrations of verdict language. **None match the pattern.** The rules governing most of W2a's work would
+not have loaded.
+
+**Fixed:** promoted to `inclusion: always`. Copy is spread across five directories; no single pattern catches
+it. Accepted cost: always-on steering grows.
+
+### I6. The specified guard regex caught almost nothing
+
+Wave-2 § 2.5 specified `/\b(you are|you're) (exempt|compliant)\b/i`. Against the actual code it misses
+`You&apos;re Exempt` (HTML entity, `AssessmentBadge:154`), `"You were exempt…"` (past tense,
+`AssessmentHistory:57`), bare `"Exempt"` chips, `✓ COMPLIANT` / `✗ NOT COMPLIANT`, and
+`automatically meet work requirements` (×3, banned by name in the copy standard).
+
+**Fixed:** respecified as a token list against rendered output with entities normalised, in both wave-2 § 2.5
+and ADR-0007.
+
+### I7. Stale claims in always-on steering
+
+- `medicaid-domain-knowledge.md` called the seasonal test "an objective legal test… **Not self-declaration**,"
+  which `rule-extract.md` § 2.7 retracts as unsupported. The steering doc was **stricter than the law, against
+  the user.** `PRD.md` R3.7 carried the same retracted claim as a requirement. Both fixed.
+- The same doc said § 435.603 "is not extracted in this repo" — stale since commit `b9b9594`. Fixed, and the
+  `README.md` known-gap entry is struck.
+- It justified refusing household MAGI with "a confidently wrong number is worse than silence," which ADR-0003
+  had already replaced because that reason **proves too much** — it would also ban the credit-hour conversion.
+  Fixed to the elicitation reason.
+
+### I8. Smaller confirmed items
+
+| Item | Status |
+|---|---|
+| `AssessmentBadge` verdict is line **154**, not 161 (161 is `{recommendation.reasoning}`) | fixed in wave-2 |
+| `ComplianceModeSelector` states the false exclusivity claim **twice** (123, 132); wave-2 named one | fixed |
+| `waves/README.md` numbered **two** DoD items 7 | fixed; renumbered to 10, review protocol added as 8 |
+| DoD item 2 (`npm test` passes) was unsatisfiable — no `test` script | fixed with a W0-slice caveat |
+| `complianceMode` "five live readers" not reproducible — it is **four files**: `db.ts` plus three consumers | fixed |
+| `compliance-copy-standards.md` said `questions.ts` (7) — actually **4** exact-phrase, **6** "you're exempt" | fixed |
+| Wave-2 header declared a W1 dependency; W1 is now last | fixed |
+| Gap 5.1 household framing partly belongs to W2a; the split-row list omitted it | fixed |
+| Acceptance criteria were largely negative-only | rewritten, split W2a/W2b, each with a positive twin |
+
+### I9. Two findings rejected on verification
+
+- **"`wave-review.kiro.hook` names `general-task-execution`, which doesn't exist."** It exists for the *main*
+  agent, which is what executes an `askAgent` hook. The sub-agent generalised from its own narrower roster.
+  No change.
+- **"ADR-0003 cites § 435.557(a); the copy standard cites (b) — one is wrong."** Both are right and cite
+  different provisions: (a) defines the reliable-information set, (b) imposes the duty to exhaust it. Changed
+  both to **cite the pair**, per the extract's own warning that the June 29 correction shifted designations
+  inside § 435.557.
+
+### I10. What the dry run says about the method
+
+Every significant finding came from a discipline this repo wrote down for itself — the source-tier rule, the
+computed-counts rule, the negative-criterion rule. The failure mode was narrow and worth naming: **corrections
+landed in the steering docs and the audit record but not in the two artifacts an executing agent reads first,**
+`rule-extract.md` and the wave files. Worth re-running this dry run at the start of any wave whose copy makes
+legal claims.

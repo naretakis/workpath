@@ -151,7 +151,7 @@ Grouped by capability. Each maps to gap-analysis rows and a wave.
 | R3.4 | Remove pay-period multiplication as a compliance input; retain it only as an optional user-facing estimate, clearly labeled | 5.4, 5.5 | W7 |
 | R3.5 | Fix the double-counting semantics | 5.5 | W7 |
 | R3.6 | Derive the threshold from the policy profile everywhere | 5.6 | W2 |
-| R3.7 | Present the seasonal test as an objective legal standard, not self-declaration | 5.7 | W7 |
+| R3.7 | ~~Present the seasonal test as an objective legal standard, not self-declaration~~ → **Present seasonal status as a broad category with inclusive examples, and do not gate it behind a verification test the IFC does not impose.** The original wording was retracted as unsupported and user-hostile — see `rule-extract.md` § 2.7 | 5.7 | W7a |
 | R3.8 | Correct seasonal averaging to the 6 months **preceding** the assessed month | 5.8 | W7 |
 | R3.9 | Handle insufficient history explicitly instead of dividing by 6 and showing `$0.00` | 5.9 | W7 |
 | R3.10 | Support the reasonably-predictable-changes alternative via the policy profile | 5.9 | W7 |

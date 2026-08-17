@@ -14,11 +14,16 @@ merged-word typo), but **paragraph designations inside § 435.557 shifted.** Cit
 folded in and for content this extract still omits.
 
 > **Two caveats on using this document.**
-> 1. It extracts the **IFC only.** The income pathway depends on **§ 435.603** (MAGI methodology), which
->    is pre-existing regulation **not present in this repo**. Income claims here are traceable to the IFC's
->    characterization of § 435.603, not to § 435.603 itself.
+> 1. It extracts the **IFC only.** The income pathway depends on **§ 435.603** (MAGI methodology), which is
+>    pre-existing regulation. **Its text is now extracted at
+>    [`../supporting-regs/README.md`](../supporting-regs/README.md) § 1** (added 2026-08-16, commit
+>    `b9b9594`). **For any household-income or countable-income claim, cite that document, not this one.**
+>    Anything § 435.603-related in this file is the IFC's *characterization* of § 435.603 and is one source
+>    tier down.
 > 2. Where this document breaks out § 435.603 into `(d)`, `(e)`, `(f)`, that breakdown is **preamble**.
 >    The regulatory text at § 435.552(f)(2) and (g)(2) says only "as defined at § 435.603."
+>    One such gloss — "the total income of everyone in the household" — was **wrong and user-unfavorable**,
+>    and is corrected in § 2.6 below. Treat every other (d)/(e)/(f) breakdown here with the same suspicion.
 
 > **Terminology note.** CMS calls Public Law 119-21 the "Working Families Tax Cut (WFTC) legislation."
 > The requirement is the **community engagement requirement**, not "work requirements." Use CMS
@@ -214,7 +219,22 @@ The threshold is `applicable federal minimum wage × 80`. In 2026 that is **$7.2
 > household as defined at § 435.603(d) and (f).
 
 - Countable income under § 435.603(e) includes **earned income and countable unearned income**.
-- Household income under § 435.603(d) and (f) is the **total income of everyone in the household**.
+- Household income under § 435.603(d)(1) is the **sum of the MAGI-based income of every individual included
+  in that individual's household** — **but (d)(2) excludes** the income of a child or tax dependent who **is
+  not expected to be required to file a return** under IRC § 6012(a)(1), whether or not they actually file.
+  And under § 435.603(f) composition follows **tax filing relationships rather than residence**, so it is
+  **asymmetric and per-person**: two adults in one dwelling can have different households, and there is no
+  "the household," only *this individual's* household.
+
+  > ⚠️ **Source tier.** An earlier version of this line read "the total income of everyone in the household."
+  > That is **CMS's preamble gloss** (91 FR 33348, at `2026-11094.txt:674`), **not the regulation**, and it
+  > overstates income — the user-unfavorable direction, and exactly the error ADR-0003 exists to prevent. The
+  > regulatory text is extracted at
+  > [`../supporting-regs/README.md` § 1.1](../supporting-regs/README.md). **Cite that, not this section, for
+  > any household-income claim.**
+  >
+  > This is also why HourKeep must not compute a household figure: the blocker is **eliciting** the user's
+  > tax filing structure, not summing. See ADR-0003.
 - CMS explicitly **considered and rejected** counting only earned income, reasoning that
   § 1902(e)(14)(A) mandates MAGI for "any other purpose applicable under the plan for which a
   determination of income is required," and § 1902(xx) does not override it.
