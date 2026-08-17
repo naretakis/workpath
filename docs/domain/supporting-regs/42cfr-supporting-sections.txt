@@ -1,0 +1,645 @@
+==========================================================================================
+42 CFR 435.603
+==========================================================================================
+
+## § 435.603 Application of modified adjusted gross income (MAGI).
+
+(a) Basis, scope, and implementation. (1) This section implements section 1902(e)(14) of the Act.
+
+(2) Effective January 1, 2014, the agency must apply the financial methodologies set forth in this section in determining the financial eligibility of all individuals for Medicaid, except for individuals identified in paragraph (j) of this section and as provided in paragraph (a)(3) of this section.
+
+(3) In the case of determining ongoing eligibility for beneficiaries determined eligible for Medicaid coverage to begin on or before December 31, 2013, application of the financial methodologies set forth in this section will not be applied until March 31, 2014 or the next regularly-scheduled renewal of eligibility for such individual under § 435.916 of this part, whichever is later.
+
+(b) Definitions. For purposes of this section—
+
+Child means a natural or biological, adopted or step child.
+
+Code means the Internal Revenue Code.
+
+Family size means the number of persons counted as members of an individual's household. In the case of determining the family size of a pregnant woman, the pregnant woman is counted as herself plus the number of children she is expected to deliver. In the case of determining the family size of other individuals who have a pregnant woman in their household, the pregnant woman is counted, at State option, as either 1 or 2 person(s) or as herself plus the number of children she is expected to deliver.
+
+Parent means a natural or biological, adopted or step parent.
+
+Sibling means natural or biological, adopted, half, or step sibling.
+
+Tax dependent has the meaning provided in § 435.4 of this part.
+
+(c) Basic rule. Except as specified in paragraph (i), (j), and (k) of this section, the agency must determine financial eligibility for Medicaid based on “household income” as defined in paragraph (d) of this section.
+
+(d) Household income—(1) General rule. Except as provided in paragraphs (d)(2) through (d)(4) of this section, household income is the sum of the MAGI-based income, as defined in paragraph (e) of this section, of every individual included in the individual's household.
+
+(2) Income of children and tax dependents. (i) The MAGI-based income of an individual who is included in the household of his or her natural, adopted or step parent and is not expected to be required to file a tax return under section 6012(a)(1) of the Code for the taxable year in which eligibility for Medicaid is being determined, is not included in household income whether or not the individual files a tax return.
+
+(ii) The MAGI-based income of a tax dependent described in paragraph (f)(2)(i) of this section who is not expected to be required to file a tax return under section 6012(a)(1) of the Code for the taxable year in which eligibility for Medicaid is being determined is not included in the household income of the taxpayer whether or not such tax dependent files a tax return.
+
+(3) In the case of individuals described in paragraph (f)(2)(i) of this section, household income may, at State option, also include actually available cash support, exceeding nominal amounts, provided by the person claiming such individual as a tax dependent.
+
+(4) Effective January 1, 2014, in determining the eligibility of an individual using MAGI-based income, a state must subtract an amount equivalent to 5 percentage points of the Federal poverty level for the applicable family size only to determine the eligibility of an individual for medical assistance under the eligibility group with the highest income standard using MAGI-based methodologies in the applicable Title of the Act, but not to determine eligibility for a particular eligibility group.
+
+(e) MAGI-based income. For the purposes of this section, MAGI-based income means income calculated using the same financial methodologies used to determine modified adjusted gross income as defined in section 36B(d)(2)(B) of the Code, with the following exceptions—
+
+(1) An amount received as a lump sum is counted as income only in the month received.
+
+(2) Scholarships, awards, or fellowship grants used for education purposes and not for living expenses are excluded from income.
+
+(3) American Indian/Alaska Native exceptions. The following are excluded from income:
+
+(i) Distributions from Alaska Native Corporations and Settlement Trusts;
+
+(ii) Distributions from any property held in trust, subject to Federal restrictions, located within the most recent boundaries of a prior Federal reservation, or otherwise under the supervision of the Secretary of the Interior;
+
+(iii) Distributions and payments from rents, leases, rights of way, royalties, usage rights, or natural resource extraction and harvest from—
+
+(A) Rights of ownership or possession in any lands described in paragraph (e)(3)(ii) of this section; or
+
+(B) Federally protected rights regarding off-reservation hunting, fishing, gathering, or usage of natural resources;
+
+(iv) Distributions resulting from real property ownership interests related to natural resources and improvements—
+
+(A) Located on or near a reservation or within the most recent boundaries of a prior Federal reservation; or
+
+(B) Resulting from the exercise of federally-protected rights relating to such real property ownership interests;
+
+(v) Payments resulting from ownership interests in or usage rights to items that have unique religious, spiritual, traditional, or cultural significance or rights that support subsistence or a traditional lifestyle according to applicable Tribal Law or custom;
+
+(vi) Student financial assistance provided under the Bureau of Indian Affairs education programs.
+
+(f) Household—(1) Basic rule for taxpayers not claimed as a tax dependent. In the case of an individual who expects to file a tax return for the taxable year in which an initial determination or renewal of eligibility is being made, and who does not expect to be claimed as a tax dependent by another taxpayer, the household consists of the taxpayer and, subject to paragraph (f)(5) of this section, all persons whom such individual expects to claim as a tax dependent.
+
+(2) Basic rule for individuals claimed as a tax dependent. In the case of an individual who expects to be claimed as a tax dependent by another taxpayer for the taxable year in which an initial determination or renewal of eligibility is being made, the household is the household of the taxpayer claiming such individual as a tax dependent, except that the household must be determined in accordance with paragraph (f)(3) of this section in the case of—
+
+(i) Individuals other than a spouse or child who expect to be claimed as a tax dependent by another taxpayer; and
+
+(ii) Individuals under the age specified by the State under paragraph (f)(3)(iv) of this section who expect to be claimed by one parent as a tax dependent and are living with both parents but whose parents do not expect to file a joint tax return; and
+
+(iii) Individuals under the age specified by the State under paragraph (f)(3)(iv) of this section who expect to be claimed as a tax dependent by a non-custodial parent. For purposes of this section—
+
+(A) A court order or binding separation, divorce, or custody agreement establishing physical custody controls; or
+
+(B) If there is no such order or agreement or in the event of a shared custody agreement, the custodial parent is the parent with whom the child spends most nights.
+
+(3) Rules for individuals who neither file a tax return nor are claimed as a tax dependent. In the case of individuals who do not expect to file a Federal tax return and do not expect to be claimed as a tax dependent for the taxable year in which an initial determination or renewal of eligibility is being made, or who are described in paragraph (f)(2)(i), (f)(2)(ii), or (f)(2)(iii) of this section, the household consists of the individual and, if living with the individual—
+
+(i) The individual's spouse;
+
+(ii) The individual's children under the age specified in paragraph (f)(3)(iv) of this section; and
+
+(iii) In the case of individuals under the age specified in paragraph (f)(3)(iv) of this section, the individual's parents and siblings under the age specified in paragraph (f)(3)(iv) of this section.
+
+(iv) The age specified in this paragraph is either of the following, as elected by the agency in the State plan—
+
+(A) Age 19; or
+
+(B) Age 19 or, in the case of full-time students, age 21.
+
+(4) Married couples. In the case of a married couple living together, each spouse will be included in the household of the other spouse, regardless of whether they expect to file a joint tax return under section 6013 of the Code or whether one spouse expects to be claimed as a tax dependent by the other spouse.
+
+(5) For purposes of paragraph (f)(1) of this section, if, consistent with the procedures adopted by the State in accordance with § 435.956(f) of this part, a taxpayer cannot reasonably establish that another individual is a tax dependent of the taxpayer for the tax year in which Medicaid is sought, the inclusion of such individual in the household of the taxpayer is determined in accordance with paragraph (f)(3) of this section.
+
+(g) No resource test or income disregards. In the case of individuals whose financial eligibility for Medicaid is determined in accordance with this section, the agency must not—
+
+(1) Apply any assets or resources test; or
+
+(2) Apply any income or expense disregards under sections 1902(r)(2) or 1931(b)(2)(C), or otherwise under title XIX of the Act, except as provided in paragraph (d)(1) of this section.
+
+(h) Budget period—(1) Applicants and new enrollees. Financial eligibility for Medicaid for applicants, and other individuals not receiving Medicaid benefits at the point at which eligibility for Medicaid is being determined, must be based on current monthly household income and family size.
+
+(2) Current beneficiaries. For individuals who have been determined financially-eligible for Medicaid using the MAGI-based methods set forth in this section, a State may elect in its State plan to base financial eligibility either on current monthly household income and family size or income based on projected annual household income and family size for the remainder of the current calendar year.
+
+(3) In determining current monthly or projected annual household income and family size under paragraphs (h)(1) or (h)(2) of this section, the agency may adopt a reasonable method to include a prorated portion of reasonably predictable future income, to account for a reasonably predictable increase or decrease in future income, or both, as evidenced by a signed contract for employment, a clear history of predictable fluctuations in income, or other clear indicia of such future changes in income. Such future increase or decrease in income or family size must be verified in the same manner as other income and eligibility factors, in accordance with the income and eligibility verification requirements at § 435.940 through § 435.965, including by self-attestation if reasonably compatible with other electronic data obtained by the agency in accordance with such sections.
+
+(i) If the household income of an individual determined in accordance with this section results in financial ineligibility for Medicaid and the household income of such individual determined in accordance with 26 CFR 1.36B-1(e) is below 100 percent FPL, Medicaid financial eligibility will be determined in accordance with 26 CFR 1.36B-1(e).
+
+(j) Eligibility Groups for which MAGI-based methods do not apply. The financial methodologies described in this section are not applied in determining the Medicaid eligibility of individuals described in this paragraph. The agency must use the financial methods described in § 435.601 and § 435.602 of this subpart.
+
+(1) Individuals whose eligibility for Medicaid does not require a determination of income by the agency, including, but not limited to, individuals receiving Supplemental Security Income (SSI) eligible for Medicaid under § 435.120 of this part, individuals deemed to be receiving SSI and eligible for Medicaid under § 435.135, § 435.137 or § 435.138 of this part and individuals for whom the State relies on a finding of income made by an Express Lane agency, in accordance with section 1902(e)(13) of the Act.
+
+(2) Individuals who are age 65 or older when age is a condition of eligibility.
+
+(3) Individuals whose eligibility is being determined on the basis of being blind or disabled, or on the basis of being treated as being blind or disabled, including, but not limited to, individuals eligible under § 435.121, § 435.232 or § 435.234 of this part or under section 1902(e)(3) of the Act, but only for the purpose of determining eligibility on such basis.
+
+(4) Individuals who request coverage for long-term care services and supports for the purpose of being evaluated for an eligibility group under which long-term care services and supports not covered for individuals determined eligible using MAGI-based financial methods are covered, or for individuals being evaluated for an eligibility group for which being institutionalized, meeting an institutional level of care or satisfying needs-based criteria for home and community based services is a condition of eligibility. For purposes of this paragraph, “long-term care services and supports” include nursing facility services, a level of care in any institution equivalent to nursing facility services; and home and community-based services furnished under a waiver or State plan under sections 1915 or 1115 of the Act; home health services as described in sections 1905(a)(7) of the Act and personal care services described in sections 1905(a)(24) of the Act.
+
+(5) Individuals who are being evaluated for eligibility for Medicare cost sharing assistance under section 1902(a)(10)(E) of the Act, but only for purposes of determining eligibility for such assistance.
+
+(6) Individuals who are being evaluated for coverage as medically needy under subparts D and I of this part, but only for the purpose of determining eligibility on such basis.
+
+(k) Eligibility. In the case of an individual whose eligibility is being determined under § 435.214, the agency may—
+
+(1) Consider the household to consist of only the individual for purposes of paragraph (f) of this section;
+
+(2) Count only the MAGI-based income of the individual for purposes of paragraph (d) of this section.
+
+(3) Increase the family size of the individual, as defined in paragraph (b) of the section, by one.
+
+[77 FR 17206, Mar. 23, 2012, as amended at 78 FR 42302, July 15, 2013; 81 FR 86456, Nov. 30, 2016]
+
+
+==========================================================================================
+42 CFR 435.4
+==========================================================================================
+
+## § 435.4 Definitions and use of terms.
+
+As used in this part—
+
+AABD means aid to the aged, blind, and disabled under title XVI of the Act;
+
+AB means aid to the blind under title X of the Act;
+
+Advance payments of the premium tax credit (APTC) has the meaning given the term in 45 CFR 155.20.
+
+AFDC means aid to families with dependent children under title IV-A of the Act;
+
+Affordable Care Act means the Patient Protection and Affordable Care Act of 2010 (Pub. L. 111-148), as amended by the Health Care and Education Reconciliation Act of 2010 (Pub. L. 111-152), as amended by the Three Percent Withholding Repeal and Job Creation Act (Pub. L. 112-56).
+
+Affordable Insurance Exchanges (Exchanges) has the meaning given the term “Exchanges” in 45 CFR 155.20.
+
+Agency means a single State agency designated or established by a State in accordance with § 431.10(b) of this subchapter.
+
+Applicable modified adjusted gross income (MAGI) standard has the meaning provided in § 435.911(b)(1) of this part.
+
+Applicant means an individual who is seeking an eligibility determination for himself or herself through an application submission or a transfer from another agency or insurance affordability program.
+
+Application means the single streamlined application described at § 435.907(b) of this part or an application described in § 435.907(c)(2) of this part submitted by or on behalf of an individual.
+
+APTD means aid to the permanently and totally disabled under title XIV of the Act;
+
+Beneficiary means an individual who has been determined eligible and is currently receiving Medicaid.
+
+Caretaker relative means a relative of a dependent child by blood, adoption, or marriage with whom the child is living, who assumes primary responsibility for the child's care (as may, but is not required to, be indicated by claiming the child as a tax dependent for Federal income tax purposes), and who is one of the following—
+
+(1) The child's father, mother, grandfather, grandmother, brother, sister, stepfather, stepmother, stepbrother, stepsister, uncle, aunt, first cousin, nephew, or niece.
+
+(2) The spouse of such parent or relative, even after the marriage is terminated by death or divorce.
+
+(3) At State option, another relative of the child based on blood (including those of half-blood), adoption, or marriage; the domestic partner of the parent or other caretaker relative; or an adult with whom the child is living and who assumes primary responsibility for the dependent child's care.
+
+Categorically needy refers to families and children, aged, blind, or disabled individuals, and pregnant women, described under subparts B and C of this part who are eligible for Medicaid. Subpart B of this part describes the mandatory eligibility groups who, generally, are receiving or deemed to be receiving cash assistance under the Act. These mandatory groups are specified in sections 1902(a)(10)(A)(i), 1902(e), 1902(f), and 1928 of the Act. Subpart C of this part describes the optional eligibility groups of individuals who, generally, meet the categorical requirements or income or resource requirements that are the same as or less restrictive than those of the cash assistance programs and who are not receiving cash payments. These optional groups are specified in sections 1902(a)(10)(A)(ii), 1902(e), and 1902(f) of the Act.
+
+Citizenship includes status as a “national of the United States,” and includes both citizens of the United States and noncitizen nationals of the United States described in 8 U.S.C. 1101(a)(22).
+
+Combined eligibility notice means an eligibility notice that informs an individual or multiple family members of a household of eligibility for each of the insurance affordability programs and enrollment in a qualified health plan through the Exchange, for which a determination or denial of eligibility was made, as well as any right to request a fair hearing or appeal related to the determination made for each program. A combined notice must meet the requirements of § 435.917(a) and contain the content described in § 435.917(b) and (c), except that information described in § 435.917(b)(1)(iii) and (iv) may be included in a combined notice issued by another insurance affordability program or in a supplemental notice provided by the agency. A combined eligibility notice must be issued in accordance with the agreement(s) consummated by the agency in accordance with § 435.1200(b)(3).
+
+Coordinated content means information included in an eligibility notice regarding, if applicable -
+
+(1) The transfer of an individual's or household's electronic account to another insurance affordability program;
+
+(2) Any notice sent by the agency to another insurance affordability program regarding an individual's eligibility for Medicaid;
+
+(3) The potential impact, if any, of—
+
+(i) The agency's determination of eligibility or ineligibility for Medicaid on eligibility for another insurance affordability program; or
+
+(ii) A determination of eligibility for, or enrollment in, another insurance affordability program on an individual's eligibility for Medicaid; and
+
+(4) The status of household members on the same application or renewal form whose eligibility is not yet determined.
+
+Dependent child means a child who meets both of the following criteria:
+
+(1) Is under the age of 18, or, at State option, is age 18 and a full-time student in secondary school (or equivalent vocational or technical training), if before attaining age 19 the child may reasonably be expected to complete such school or training.
+
+(2) Is deprived of parental support by reason of the death, absence from the home, physical or mental incapacity, or unemployment of at least one parent, unless the State has elected in its State plan to eliminate such deprivation requirement. A parent is considered to be unemployed if he or she is working less than 100 hours per month, or such higher number of hours as the State may elect in its State plan.
+
+Effective income level means the income standard applicable under the State plan for an eligibility group, after taking into consideration any disregard of a block of income applied in determining financial eligibility for such group.
+
+Electronic account means an electronic file that includes all information collected and generated by the agency regarding each individual's Medicaid eligibility and enrollment, including all documentation required under § 435.914 and including any information collected or generated as part of a fair hearing process conducted under subpart E of this part, the Exchange appeals process conducted under 45 CFR part 155, subpart F or other insurance affordability program appeals process.
+
+Eligibility determination means an approval or denial of eligibility in accordance with § 435.911 as well as a renewal or termination of eligibility in accordance with § 435.916 of this part.
+
+Family size has the meaning provided in § 435.603(b) of this part.
+
+Federal poverty level (FPL) means the Federal poverty level updated periodically in the Federal Register by the Secretary of Health and Human Services under the authority of 42 U.S.C. 9902(2), as in effect for the applicable budget period used to determine an individual's eligibility in accordance with § 435.603(h) of this part.
+
+Household income has the meaning provided in § 435.603(d) of this part.
+
+Insurance affordability program means a program that is one of the following:
+
+(1) A State Medicaid program under title XIX of the Act.
+
+(2) A State children's health insurance program (CHIP) under title XXI of the Act.
+
+(3) A State basic health program established under section 1331 of the Affordable Care Act.
+
+(4) A program that makes coverage in a qualified health plan through the Exchange with advance payments of the premium tax credit established under section 36B of the Internal Revenue Code available to qualified individuals.
+
+(5) A program that makes available coverage in a qualified health plan through the Exchange with cost-sharing reductions established under section 1402 of the Affordable Care Act.
+
+Low-Income Subsidy Application data (LIS leads data) means data from an individual's application for low-income subsidies under section 1860D-14 of the Act that the Social Security Administration electronically transmits to the appropriate State Medicaid agency as described in section 1144(c)(1) of the Act.
+
+MAGI-based income has the meaning provided in § 435.603(e) of this part.
+
+Mandatory State supplement means a cash payment a State is required to make under section 212, Pub. L. 93-66 (July 9, 1973) to an aged, blind, or disabled individual. Its purpose is to provide an individual with the same amount of cash assistance he was receiving under OAA, AB, APTD, or AABD if his SSI payment is less than that amount;
+
+Medically needy refers to families, children, aged, blind, or disabled individuals, and pregnant women listed under subpart D of this part who are not listed in subparts B and C of this part as categorically needy but who may be eligible for Medicaid under this part because their income and resources are within limits set by the State under its Medicaid plan (including persons whose income and resources fall within these limits after their incurred expenses for medical or remedial care are deducted) (Specific financial requirements for determining eligibility of the medically needy appear in subpart I of this part.);
+
+Medicare Savings Programs means four Medicaid eligibility groups authorized under section 1902(a)(10)(E) and 1905(p) and (s) of the Act that serve certain low-income Medicare beneficiaries. These groups include the Qualified Medicare Beneficiary, Specified Low-Income Medicare Beneficiary, Qualifying Individual, and Qualified Disabled and Working Individual eligibility groups, each separately codified in §§ 435.123 through 435.126.
+
+Minimum essential coverage means coverage defined in section 5000A(f) of subtitle D of the Internal Revenue Code, as added by section 1401 of the Affordable Care Act, and implementing regulations of such section issued by the Secretary of the Treasury.
+
+Modified adjusted gross income (MAGI) has the meaning provided at 26 CFR 1.36B-1(e)(2).
+
+Non-applicant means an individual who is not seeking an eligibility determination for himself or herself and is included in an applicant's or beneficiary's household to determine eligibility for such applicant or beneficiary.
+
+Noncitizen has the same meaning as the term “alien,” as defined at 8 U.S.C. 1101(a)(3) and includes any individual who is not a citizen or national of the United States, defined at 8 U.S.C. 1101(a)(22).
+
+OAA means old age assistance under title I of the Act;
+
+OASDI means old age, survivors, and disability insurance under title II of the Act;
+
+Optional State supplement means a cash payment made by a State, under section 1616 of the Act, to an aged, blind, or disabled individual;
+
+Optional targeted low-income child means a child under age 19 who meets the financial and categorical standards described below.
+
+(1) Financial need. An optional targeted low-income child:
+
+(i) Has a household income at or below 200 percent of the Federal poverty line for a family of the size involved; and
+
+(ii) Resides in a State with no Medicaid applicable income level (as defined at § 457.10 of this chapter); or
+
+(iii) Resides in a State that has a Medicaid applicable income level (as defined at § 457.10 of this chapter) and has household income that either:
+
+(A) Exceeds the Medicaid applicable income level for the age of such child, but not by more than 50 percentage points; or
+
+(B) Does not exceed the income level specified for such child to be eligible for medical assistance under the policies of the State plan under title XIX on June 1, 1997.
+
+(2) No other coverage and State maintenance of effort. An optional targeted low-income child is not covered under a group health plan or health insurance coverage, or would not be eligible for Medicaid under the policies of the State plan in effect on March 31, 1997; except that, for purposes of this standard—
+
+(i) A child shall not be considered to be covered by health insurance coverage based on coverage offered by the State under a program in operation prior to July 1, 1997 if that program received no Federal financial participation;
+
+(ii) A child shall not be considered to be covered under a group health plan or health insurance coverage if the child did not have reasonable geographic access to care under that coverage.
+
+(3) For purposes of this section, policies of the State plan a under title XIX plan include policies under a Statewide demonstration project under section 1115(a) of the Act other than a demonstration project that covered an expanded group of eligible children but that either—
+
+(i) Did not provide inpatient hospital coverage; or
+
+(ii) Limited eligibility to children previously enrolled in Medicaid, imposed premiums as a condition of initial or continued enrollment, and did not impose a general time limit on eligibility.
+
+Pregnant woman means a woman during pregnancy and the post partum period, which begins on the date the pregnancy ends, extends 60 days, and then ends on the last day of the month in which the 60-day period ends.
+
+Qualified noncitizen means:
+
+(1) a “Qualified alien,” as defined in 8 U.S.C. 1641(b) and (c); who is:
+
+(i) A noncitizen who is lawfully admitted for permanent residence under the Immigration and Nationality Act [8 U.S.C. 1101 et seq.];
+
+(ii) A noncitizen who is granted asylum under section 208 of such Act [8 U.S.C. 1158];
+
+(iii) A refugee who is admitted to the United States under section 207 of such Act [8 U.S.C. 1157];
+
+(iv) A noncitizen who is paroled into the United States under section 212(d)(5) of such Act [8 U.S.C. 1182(d)(5)] for a period of at least 1 year;
+
+(v) A noncitizen whose deportation is being withheld under section 243(h) of such Act [8 U.S.C. 1253] (as in effect immediately before the effective date of section 307 of division C of Public Law 104-208) or section 241(b)(3) of such Act [8 U.S.C. 1231(b)(3)] (as amended by section 305(a) of division C of Public Law 104-208);
+
+(vi) A noncitizen who is granted conditional entry pursuant to section 203(a)(7) of such Act [8 U.S.C. 1153(a)(7)] as in effect prior to April 1, 1980;
+
+(vii) A noncitizen who is a Cuban and Haitian entrant (as defined in section 501(e) of the Refugee Education Assistance Act of 1980);
+
+(viii) An individual who lawfully resides in the United States in accordance with a Compact of Free Association referred to in 8 U.S.C. 1612(b)(2)(G);
+
+(ix) A noncitizen who—
+
+(A) Has been battered or subjected to extreme cruelty in the United States by a spouse or a parent, or by a member of the spouse or parent's family residing in the same household as the alien and the spouse or parent consented to, or acquiesced in, such battery or cruelty, but only if (in the opinion of the agency providing such benefits) there is a substantial connection between such battery or cruelty and the need for the benefits to be provided; and
+
+(B) Has been approved or has a petition pending which sets forth a prima facie case for—
+
+(1) Status as a spouse or a child of a United States citizen pursuant to clause (ii), (iii), or (iv) of section 204(a)(1)(A) of the Immigration and Nationality Act [8 U.S.C. 1154(a)(1)(A)(ii), (iii), (iv)];
+
+(2) Classification pursuant to clause (ii) or (iii) of section 204(a)(1)(B) of the Act [8 U.S.C. 1154(a)(1)(B)(ii), (iii)];
+
+(3) Suspension of deportation under section 244(a)(3) of the Immigration and Nationality Act [8 U.S.C. 1254(a)(3)] (as in effect before the title III-A effective date in section 309 of the Illegal Immigration Reform and Immigrant Responsibility Act of 1996);
+
+(4) Status as a spouse or child of a United States citizen pursuant to clause (i) of section 204(a)(1)(A) of such Act [8 U.S.C. 1154(a)(1)(A)(i)], or classification pursuant to clause (i) of section 204(a)(1)(B) of such Act [8 U.S.C. 1154(a)(1)(B)(i)]; or
+
+(5) Cancellation of removal pursuant to section 240A(b)(2) of such Act [8 U.S.C. 1229b(b)(2)];
+
+(x) A noncitizen—
+
+(A) Whose child has been battered or subjected to extreme cruelty in the United States by a spouse or a parent of the alien (without the active participation of the alien in the battery or cruelty), or by a member of the spouse or parent's family residing in the same household as the alien and the spouse or parent consented or acquiesced to such battery or cruelty, and the alien did not actively participate in such battery or cruelty, but only if (in the opinion of the agency providing such benefits) there is a substantial connection between such battery or cruelty and the need for the benefits to be provided; and
+
+(B) Who meets the requirement of 8 U.S.C. 1641(c)(1)(B);
+
+(xi) A noncitizen child who—
+
+(A) Resides in the same household as a parent who has been battered or subjected to extreme cruelty in the United States by that parent's spouse or by a member of the spouse's family residing in the same household as the parent and the spouse consented or acquiesced to such battery or cruelty, but only if (in the opinion of the agency providing such benefits) there is a substantial connection between such battery or cruelty and the need for the benefits to be provided; and
+
+(B) Who meets the requirement of 8 U.S.C. 1641(c)(1)(B); or
+
+(xii) A noncitizen who has been granted nonimmigrant status under section 101(a)(15)(T) of the Immigration and Nationality Act (8 U.S.C. 1101(a)(15)(T)) or who has a pending application that sets forth a prima facie case for eligibility for such nonimmigrant status.
+
+(2) Noncitizens who are treated as refugees under other Federal statutes:
+
+(i) Noncitizens who are victims of a severe form of trafficking in persons, as described in 22 U.S.C. 7105(b)(1)(C), or who are classified as nonimmigrants under section 101(a)(15)(T)(ii) of the Immigration and Nationality Act (8 U.S.C. 1101(a)(15)(T)(ii)), pursuant to 22 U.S.C. 7105(b)(1)(A);
+
+(ii) Iraqi and Afghan special immigrants, as described in Public Law 110-181, section 1244(g) (2008), Public Law 111-8, section 602(b)(8) (2009), Public Law 111-118, section 8120(b) (2010), and Public Law 113-291, section 1227 (2014);
+
+(iii) Amerasian immigrants, described in Public Law 100-202, section 101(e) (8 U.S.C. 1101 note);
+
+(iv) Certain Afghan parolees, in accordance with Section 2502 of Public Law 117-43, as amended; and
+
+(v) Certain Ukrainian parolees, in accordance with Section 401 of Public Law 117-128, as amended.
+
+Secure electronic interface means an interface which allows for the exchange of data between Medicaid and other insurance affordability programs and adheres to the requirements in part 433, subpart C of this chapter.
+
+Shared eligibility service means a common or shared eligibility system or service used by a State to determine individuals' eligibility for insurance affordability programs.
+
+SSI means supplemental security income under title XVI of the Act.
+
+SWICA means the State Wage Information Collection Agency under section 1137(a) of the Act. It is the State agency administering the State unemployment compensation law; a separate agency administering a quarterly wage reporting system; or a State agency administering an alternative system which has been determined by the Secretary of Labor, in consultation with the Secretary of Agriculture and the Secretary of Health and Human Services, to be as effective and timely in providing employment related income and eligibility data.
+
+Tax dependent has the same meaning as the term “dependent” under section 152 of the Internal Revenue Code, as an individual for whom another individual claims a deduction for a personal exemption under section 151 of the Internal Revenue Code for a taxable year.
+
+[43 FR 45204, Sept. 29, 1978, as amended at 45 FR 24883, Apr. 11, 1980; 46 FR 6909, Jan. 22, 1981; 46 FR 47984, Sept. 30, 1981; 51 FR 7211, Feb. 28, 1986; 58 FR 4925, Jan. 19, 1993; 66 FR 2666, Jan. 11, 2001; 77 FR 17203, Mar. 23, 2012; 81 FR 86450, Nov. 30, 2016; 87 FR 66510, Nov. 3, 2022; 88 FR 65260, Sept. 21, 2023; 89 FR 39435, May 8, 2024]
+
+
+==========================================================================================
+42 CFR 435.907
+==========================================================================================
+
+## § 435.907 Application.
+
+(a) Basis and implementation. In accordance with section 1413(b)(1)(A) of the Affordable Care Act, the agency must accept an application from the applicant, an adult who is in the applicant's household, as defined in § 435.603(f), or family, as defined in section 36B(d)(1) of the Code, an authorized representative, or if the applicant is a minor or incapacitated, someone acting responsibly for the applicant, and any documentation required to establish eligibility—
+
+(1) Via the internet Web site described in § 435.1200(f) of this part;
+
+(2) By telephone;
+
+(3) Via mail;
+
+(4) In person; and
+
+(5) Through other commonly available electronic means.
+
+(b) The application must be—
+
+(1) The single, streamlined application for all insurance affordability programs developed by the Secretary; or
+
+(2) An alternative single, streamlined application for all insurance affordability programs, which may be no more burdensome on the applicant than the application described in paragraph (b)(1) of this section, approved by the Secretary.
+
+(c) For individuals applying, or who may be eligible, for assistance on a basis other than the applicable MAGI standard in accordance with § 435.911(c)(2) of this part, the agency may use either—
+
+(1) An application described in paragraph (b) of this section and supplemental forms to collect additional information needed to determine eligibility on such other basis; or
+
+(2) An application designed specifically to determine eligibility on a basis other than the applicable MAGI standard. Such application must minimize burden on applicants.
+
+(3) Any MAGI-exempt applications and supplemental forms in use by the agency must be submitted to the Secretary.
+
+(d) Prohibition on requiring in-person interviews. The agency may not require an in-person interview as part of the application process for a determination of eligibility using MAGI-based income. This paragraph (d) sunsets on October 1, 2034. CMS will follow applicable rulemaking procedures to ensure that policy governing in-person interviews are implemented and effective on October 1, 2034, replacing the policy scheduled to sunset on that date for the period until October 1, 2034.
+
+(e) Limits on information. (1) The agency may only require an applicant to provide the information necessary to make an eligibility determination or for a purpose directly connected to the administration of the State plan.
+
+(2) The agency may request information necessary to determine eligibility for other insurance affordability or benefit programs.
+
+(3) The agency may request a non-applicant's SSN provided that—
+
+(i) Provision of such SSN is voluntary;
+
+(ii) Such SSN is used only to determine an applicant's or beneficiary's eligibility for Medicaid or other insurance affordability program or for a purpose directly connected to the administration of the State plan; and
+
+(iii) At the time such SSN is requested, the agency provides clear notice to the individual seeking assistance, or person acting on such individual's behalf, that provision of the non-applicant's SSN is voluntary and information regarding how the SSN will be used.
+
+(f) The agency must require that all initial applications are signed under penalty of perjury. Electronic, including telephonically recorded, signatures and handwritten signatures transmitted via any other electronic transmission must be accepted.
+
+(g) Any application or supplemental form must be accessible to persons who are limited English proficient and persons who have disabilities, consistent with § 435.905(b) of this subpart.
+
+(h) Reinstatement of withdrawn applications. (1) In the case of individuals described in paragraph (h)(2) of this section, the agency must reinstate the application submitted by the individual, effective as of the date the application was first received by the Exchange.
+
+(2) Individuals described in this paragraph are individuals who—
+
+(i) Submitted an application described in paragraph (b) of this section to the Exchange;
+
+(ii) Withdrew their application for Medicaid in accordance with 45 CFR 155.302(b)(4)(A);
+
+(iii) Are assessed as potentially eligible for Medicaid by the Exchange appeals entity.
+
+[77 FR 17208, Mar. 23, 2012, as amended at 78 FR 42302, July 15, 2013; 89 FR 22867, Apr. 2, 2024; 91 FR 33480, June 3, 2026]
+
+
+==========================================================================================
+42 CFR 435.916
+==========================================================================================
+
+## § 435.916 Periodic renewal of Medicaid eligibility.
+
+(a) Renewal of individuals whose Medicaid eligibility is based on modified adjusted gross income methods (MAGI). (1) Except as provided in paragraph (d) of this section, the eligibility of Medicaid beneficiaries whose financial eligibility is determined using MAGI-based income must be renewed once every 12 months, and no more frequently than once every 12 months.
+
+(2) Renewal on basis of information available to agency. The agency must make a redetermination of eligibility without requiring information from the individual if able to do so based on reliable information contained in the individual's account or other more current information available to the agency, including but not limited to information accessed through any data bases accessed by the agency under §§ 435.948, 435.949, and 435.956. If the agency is able to renew eligibility based on such information, the agency must, consistent with the requirements of this subpart and part 431, subpart E of this subchapter, and notify the individual—
+
+(i) Of the eligibility determination, and basis; and
+
+(ii) That the individual must inform the agency, through any of the modes permitted for submission of applications under § 435.907(a), if any of the information contained in such notice is inaccurate, but that the individual is not required to sign and return such notice if all information provided on such notice is accurate.
+
+(3) Use of a pre-populated renewal form. If the agency cannot renew eligibility in accordance with paragraph (a)(2) of this section, the agency must—
+
+(i) Provide the individual with—
+
+(A) A renewal form containing information, as specified by the Secretary, available to the agency that is needed to renew eligibility.
+
+(B) At least 30 days from the date of the renewal form to respond and provide any necessary information through any of the modes of submission specified in § 435.907(a), and to sign the renewal form in a manner consistent with § 435.907(f);
+
+(C) Notice of the agency's decision concerning the renewal of eligibility in accordance with part 431, subpart E of this subchapter;
+
+(ii) Verify any information provided by the beneficiary in accordance with §§ 435.945 through 435.956;
+
+(iii) Reconsider in a timely manner the eligibility of an individual who is terminated for failure to submit the renewal form or necessary information, if the individual subsequently submits the renewal form within 90 days after the date of termination, or a longer period elected by the State, without requiring a new application; and
+
+(iv) Not require an individual to complete an in-person interview as part of the renewal process.
+
+(b) Redetermination of individuals whose Medicaid eligibility is determined on a basis other than modified adjusted gross income. The agency must redetermine the eligibility of Medicaid beneficiaries excepted from modified adjusted gross income under § 435.603(j), or circumstances that may change, at least every 12 months. The agency must make a redetermination of eligibility in accordance with the provisions of paragraph (a)(2) of this section, if sufficient information is available to do so. The agency may adopt the procedures described at paragraph (a)(3) of this section for individuals whose eligibility cannot be renewed in accordance with paragraph (a)(2) of this section.
+
+(1) The agency may consider blindness as continuing until the reviewing physician under § 435.531 determines that a beneficiary's vision has improved beyond the definition of blindness contained in the plan; and
+
+(2) The agency may consider disability as continuing until the review team, under § 435.541, determines that a beneficiary's disability no longer meets the definition of disability contained in the plan.
+
+(c) Procedures for reporting changes. The agency must have procedures designed to ensure that beneficiaries make timely and accurate reports of any change in circumstances that may affect their eligibility and that such changes may be reported through any of the modes for submission of applications described in § 435.907(a).
+
+(d) Agency action on information about changes. (1) Consistent with the requirements of § 435.952, the agency must promptly redetermine eligibility between regular renewals of eligibility described in paragraphs (b) and (c) of this section whenever it receives information about a change in a beneficiary's circumstances that may affect eligibility.
+
+(i) For renewals of Medicaid beneficiaries whose financial eligibility is determined using MAGI-based income, the agency must limit any requests for additional information from the individual to information relating to such change in circumstance.
+
+(ii) If the agency has enough information available to it to renew eligibility with respect to all eligibility criteria, the agency may begin a new 12-month renewal period under paragraph (a) or (b) of this section.
+
+(2) If the agency has information about anticipated changes in a beneficiary's circumstances that may affect his or her eligibility, it must redetermine eligibility at the appropriate time based on such changes.
+
+(e) Information requests. The agency may request from beneficiaries only the information needed to renew eligibility. Requests for non-applicant information must be conducted in accordance with § 435.907(e).
+
+(f) Consideration for other bases of eligibility and other insurance affordability programs. Determination of ineligibility and transmission of data pertaining to individuals no longer eligible for Medicaid.
+
+(1) Prior to making a determination of ineligibility, the agency must consider all bases of eligibility, consistent with § 435.911.
+
+(2) For individuals determined ineligible for Medicaid, the agency must determine potential eligibility for other insurance affordability programs and comply with the procedures set forth in § 435.1200(e).
+
+(g) Renewal form and notice format. Any renewal form or notice must be accessible to persons who are limited English proficient and persons with disabilities, consistent with § 435.905(b).
+
+(h) Sunset date. The provisions of this section sunset on October 1, 2034. CMS will follow applicable rulemaking procedures to ensure that policies governing the periodic renewals of Medicaid eligibility and redeterminations based on changes in circumstances are implemented and effective on October 1, 2034, replacing the policies scheduled to sunset on that date.
+
+[91 FR 33480, June 3, 2026]
+
+
+==========================================================================================
+42 CFR 435.1010
+==========================================================================================
+
+## § 435.1010 Definitions relating to institutional status.
+
+For purposes of FFP, the following definitions apply:
+
+Active treatment in intermediate care facilities for individuals with intellectual disabilities means treatment that meets the requirements specified in the standard concerning active treatment for intermediate care facilities for persons with Intellectual Disability under § 483.440(a) of this subchapter.
+
+Child-care institution means a nonprofit private child-care institution, or a public child-care institution that accommodates no more than twenty-five children, which is licensed by the State in which it is situated, or has been approved by the agency of the State responsible for licensing or approval of institutions of this type, as meeting the standards established for licensing. The term does not include detention facilities, forestry camps, training schools or any other facility operated primarily for the detention of children who are determined to be delinquent.
+
+In an institution refers to an individual who is admitted to live there and receive treatment or services provided there that are appropriate to his requirements.
+
+Inmate of a public institution means a person who is living in a public institution. An individual is not considered an inmate if—
+
+(a) He is in a public educational or vocational training institution for purposes of securing education or vocational training; or
+
+(b) He is in a public institution for a temporary period pending other arrangements appropriate to his needs.
+
+Inpatient means a patient who has been admitted to a medical institution as an inpatient on recommendation of a physician or dentist and who—
+
+(1) Receives room, board and professional services in the institution for a 24 hour period or longer, or
+
+(2) Is expected by the institution to receive room, board and professional services in the institution for a 24 hour period or longer even though it later develops that the patient dies, is discharged or is transferred to another facility and does not actually stay in the institution for 24 hours.
+
+Institution means an establishment that furnishes (in single or multiple facilities) food, shelter, and some treatment or services to four or more persons unrelated to the proprietor.
+
+Institution for mental diseases means a hospital, nursing facility, or other institution of more than 16 beds that is primarily engaged in providing diagnosis, treatment or care of persons with mental diseases, including medical attention, nursing care and related services. Whether an institution is an institution for mental diseases is determined by its overall character as that of a facility established and maintained primarily for the care and treatment of individuals with mental diseases, whether or not it is licensed as such. An institution for Individuals with Intellectual Disabilities is not an institution for mental diseases.
+
+Institution for Individuals with Intellectual Disabilities or persons with related conditions means an institution (or distinct part of an institution) that—
+
+(a) Is primarily for the diagnosis, treatment, or rehabilitation of Individuals with Intellectual Disabilities or persons with related conditions; and
+
+(b) Provides, in a protected residential setting, ongoing evaluation, planning, 24-hour supervision, coordination, and integration of health or rehabilitative services to help each individual function at his greatest ability.
+
+Institution for tuberculosis means an institution that is primarily engaged in providing diagnosis, treatment, or care of persons with tuberculosis, including medical attention, nursing care, and related services. Whether an institution is an institution for tuberculosis is determined by its overall character as that of a facility established and maintained primarily for the care and treatment of tuberculosis, whether or not it is licensed as such.
+
+Medical institution means an institution that—
+
+(a) Is organized to provide medical care, including nursing and convalescent care;
+
+(b) Has the necessary professional personnel, equipment, and facilities to manage the medical, nursing, and other health needs of patients on a continuing basis in accordance with accepted standards;
+
+(c) Is authorized under State law to provide medical care; and
+
+(d) Is staffed by professional personnel who are responsible to the institution for professional medical and nursing services. The services must include adequate and continual medical care and supervision by a physician; registered nurse or licensed practical nurse supervision and services and nurses' aid services, sufficient to meet nursing care needs; and a physician's guidance on the professional aspects of operating the institution.
+
+Outpatient means a patient of an organized medical facility or distinct part of that facility who is expected by the facility to receive, and who does receive, professional services for less than a 24-hour period regardless of the hour of admission, whether or not a bed is used or whether or not the patient remains in the facility past midnight.
+
+Patient means an individual who is receiving needed professional services that are directed by a licensed practitioner of the healing arts toward maintenance, improvement, or protection of health, or lessening of illness, disability, or pain.
+
+Persons with related conditions means individuals who have a severe, chronic disability that meets all of the following conditions:
+
+(a) It is attributable to—
+
+(1) Cerebral palsy or epilepsy; or
+
+(2) Any other condition, other than mental illness, found to be closely related to Intellectual Disability because this condition results in impairment of general intellectual functioning or adaptive behavior similar to that of mentally retarded persons, and requires treatment or services similar to those required for these persons.
+
+(b) It is manifested before the person reaches age 22.
+
+(c) It is likely to continue indefinitely.
+
+(d) It results in substantial functional limitations in three or more of the following areas of major life activity:
+
+(1) Self-care.
+
+(2) Understanding and use of language.
+
+(3) Learning.
+
+(4) Mobility.
+
+(5) Self-direction.
+
+(6) Capacity for independent living.
+
+Public institution means an institution that is the responsibility of a governmental unit or over which a governmental unit exercises administrative control. The term “public institution” does not include—
+
+(a) A medical institution as defined in this section;
+
+(b) An intermediate care facility as defined in §§ 440.140 and 440.150 of this chapter;
+
+(c) A publicly operated community residence that serves no more than 16 residents, as defined in this section; or
+
+(d) A child-care institution as defined in this section with respect to—
+
+(1) Children for whom foster care maintenance payments are made under title IV-E of the Act; and
+
+(2) Children receiving AFDC—foster care under title IV-A of the Act.
+
+Publicly operated community residence that serves no more than 16 residents is defined in 20 CFR 416.231(b)(6)(i). A summary of that definition is repeated here for the information of readers.
+
+(a) In general, a publicly operated community residence means—
+
+(1) It is publicly operated as defined in 20 CFR 416.231(b)(2).
+
+(2) It is designed or has been changed to serve no more than 16 residents and it is serving no more than 16; and
+
+(3) It provides some services beyond food and shelter such as social services, help with personal living activities, or training in socialization and life skills. Occasional medical or remedial care may also be provided as defined in 45 CFR 228.1; and
+
+(b) A publicly operated community residence does not include the following facilities, even though they accommodate 16 or fewer residents:
+
+(1) Residential facilities located on the grounds of, or immediately adjacent to, any large institution or multiple purpose complex.
+
+(2) Educational or vocational training institutions that primarily provide an approved, accredited, or recognized program to individuals residing there.
+
+(3) Correctional or holding facilities for individuals who are prisoners, have been arrested or detained pending disposition of charges, or are held under court order as material witnesses or juveniles.
+
+(4) Hospitals, nursing facilities, and intermediate care facilities for individuals with intellectual disabilities.
+
+[43 FR 45204, Sept. 29, 1978, as amended at 47 FR 28655, July 1, 1982; 47 FR 31532, July 20, 1982; 51 FR 19181, May 28, 1986; 52 FR 47934, Dec. 17, 1987; 53 FR 657, Jan. 11, 1988; 53 FR 20495, June 3, 1988; 56 FR 8854, Mar. 1, 1991; 56 FR 23022, May 20, 1991; 59 FR 56233, Nov. 10, 1994. Redesignated at 71 FR 39225, July 12, 2006]
+
+
+==========================================================================================
+42 CFR 435.119
+==========================================================================================
+
+## § 435.119 Coverage for individuals age 19 or older and under age 65 at or below 133 percent FPL.
+
+(a) Basis. This section implements section 1902(a)(10)(A)(i)(VIII) of the Act.
+
+(b) Eligibility. Effective January 1, 2014, the agency must provide Medicaid to individuals who:
+
+(1) Are age 19 or older and under age 65;
+
+(2) Are not pregnant;
+
+(3) Are not entitled to or enrolled for Medicare benefits under part A or B of title XVIII of the Act;
+
+(4) Are not otherwise eligible for and enrolled for mandatory coverage under a State's Medicaid State plan in accordance with subpart B of this part; and
+
+(5) Have household income that is at or below 133 percent FPL for the applicable family size.
+
+(c) Coverage for dependent children. (1) A State may not provide Medicaid under this section to a parent or other caretaker relative living with a dependent child if the child is under the age specified in paragraph (c)(2) of this section, unless such child is receiving benefits under Medicaid, the Children's Health Insurance Program under subchapter D of this chapter, or otherwise is enrolled in minimum essential coverage as defined in § 435.4 of this part.
+
+(2) For the purpose of paragraph (c)(1) of this section, the age specified is under age 19, unless the State had elected as of March 23, 2010 to provide Medicaid to individuals under age 20 or 21 under § 435.222 of this part, in which case the age specified is such higher age.
+
+(d) Community engagement. As of the implementation date in accordance with § 435.559, the 50 States and the District of Columbia must provide that eligibility under this section is subject to the community engagement requirement described at §§ 435.550 through 435.563.
+
+[58 FR 48614, Sept. 17, 1993, as amended at 77 FR 17205, Mar. 23, 2012; 78 FR 42302, July 15, 2013; 91 FR 33469, June 3, 2026]
+
+
+==========================================================================================
+42 CFR 435.110
+==========================================================================================
+
+## § 435.110 Parents and other caretaker relatives.
+
+(a) Basis. This section implements sections 1931(b) and (d) of the Act.
+
+(b) Scope. The agency must provide Medicaid to parents and other caretaker relatives, as defined in § 435.4, and, if living with such parent or other caretaker relative, his or her spouse, whose household income is at or below the income standard established by the agency in the State plan, in accordance with paragraph (c) of this section.
+
+(c) Income standard. The agency must establish in its State plan the income standard as follows:
+
+(1) The minimum income standard is a State's AFDC income standard in effect as of May 1, 1988 for the applicable family size converted to a MAGI-equivalent standard in accordance with guidance issued by the Secretary under section 1902(e)(14)(A) and (E) of the Act.
+
+(2) The maximum income standard is the higher of—
+
+(i) The effective income level in effect for section 1931 low-income families under the Medicaid State plan or waiver of the State plan as of March 23, 2010 or December 31, 2013, if higher, converted to a MAGI-equivalent standard in accordance with guidance issued by the Secretary under section 1902(e)(14)(A) and (E) of the Act; or
+
+(ii) A State's AFDC income standard in effect as of July 16, 1996 for the applicable family size, increased by no more than the percentage increase in the Consumer Price Index for all urban consumers between July 16, 1996 and the effective date of such increase.
+
+[77 FR 17204, Mar. 23, 2012, as amended at 78 FR 42302, July 15, 2013]
+
+
