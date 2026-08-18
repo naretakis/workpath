@@ -42,7 +42,6 @@ import { db } from "@/lib/db";
 import {
   saveIncomeEntry,
   updateIncomeEntry,
-  deleteIncomeEntry,
   getIncomeEntryById,
   getIncomeEntriesByMonth,
   getIncomeEntriesForLast6Months,
@@ -144,42 +143,26 @@ describe("income entry round-trip", () => {
     expect(await getIncomeEntryById(9999)).toBeUndefined();
   });
 
-  it("CHARACTERIZATION: deleteIncomeEntry removes only the entry row — no cascade", async () => {
-    // This is W0 § 0.3's second data-loss bug, pinned as CURRENT behaviour before
-    // it is fixed later in this same wave. `deleteActivityWithDocuments` cascades;
-    // this does not, so `incomeDocuments` and `incomeDocumentBlobs` are orphaned.
-    // There is also no income counterpart to `cleanupOrphanedDocuments`, so nothing
-    // ever reclaims them.
-    //
-    // When § 0.3.2 lands, `deleteIncomeEntryWithDocuments` becomes the cascading
-    // path and THIS function keeps its narrow behaviour. That is why the test is
-    // written against the row count rather than against "delete works".
-    const id = await saveIncomeEntry(entry("2026-07-10", 400, "bi-weekly"));
-    const blobId = await db.incomeDocumentBlobs.add({
-      blob: new Blob(["paystub"], { type: "image/jpeg" }),
-      createdAt: new Date(),
-    });
-    await db.incomeDocuments.add({
-      incomeEntryId: id,
-      blobId,
-      type: "pay_stub",
-      fileSize: 7,
-      mimeType: "image/jpeg",
-      captureMethod: "camera",
-      createdAt: new Date(),
-    });
-
-    await deleteIncomeEntry(id);
-
-    expect(await getIncomeEntryById(id)).toBeUndefined();
-    expect(await db.incomeDocuments.where({ incomeEntryId: id }).count()).toBe(
-      1,
-    );
-    expect(await db.incomeDocumentBlobs.get(blobId)).toBeDefined();
-
-    await db.incomeDocuments.clear();
-    await db.incomeDocumentBlobs.clear();
-  });
+  /**
+   * REMOVED, and replaced rather than simply deleted.
+   *
+   * A characterization test here pinned that `deleteIncomeEntry` removed only the
+   * entry row, orphaning `incomeDocuments` and `incomeDocumentBlobs` — W0 § 0.3's
+   * second data-loss bug. It was written expecting the narrow function to SURVIVE
+   * alongside a new cascading sibling, as on the activity side.
+   *
+   * It does not survive. `src/lib/storage/activities.ts` exports no narrow
+   * `deleteActivity` — the bare row delete is internal to
+   * `deleteActivityWithDocuments` — so exact symmetry meant removing the narrow
+   * income export too. Keeping it would have left a trap: same argument, reads as
+   * the obvious choice, silently orphans blobs that nothing reclaims (there is no
+   * income counterpart to `cleanupOrphanedDocuments`).
+   *
+   * The behaviour it pinned is now covered from the other side, in
+   * `deleteIncomeEntryWithDocuments.test.ts`: the cascade removes documents and
+   * blobs, spares other entries' documents, and preserves the entry when a
+   * document delete fails.
+   */
 });
 
 describe("getIncomeEntriesByMonth: string-range query scoped by user", () => {

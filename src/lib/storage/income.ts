@@ -7,6 +7,10 @@
 import { db } from "@/lib/db";
 import { IncomeEntry, MonthlyIncomeSummary } from "@/types/income";
 import { INCOME_THRESHOLD } from "@/lib/utils/payPeriodConversion";
+import {
+  getDocumentsByIncomeEntry,
+  deleteIncomeDocument,
+} from "@/lib/storage/incomeDocuments";
 
 /**
  * Save a new income entry
@@ -36,10 +40,69 @@ export async function updateIncomeEntry(
 }
 
 /**
- * Delete an income entry
+ * Delete an income entry together with its documents and their image blobs.
+ *
+ * Added by W0 § 0.3.2. `deleteIncomeEntry` was a bare row delete, so pay stubs and
+ * their blobs stayed in IndexedDB with a dangling `incomeEntryId` and nothing ever
+ * reclaimed them — there is no income counterpart to `cleanupOrphanedDocuments`,
+ * and blobs are the largest rows in the database.
+ *
+ * `.kiro/steering/data-migration-standards.md`: deletes cascade explicitly, and
+ * orphaned blobs are invisible and unbounded.
+ *
+ * Mirrors `deleteActivityWithDocuments` in `./activities.ts`, including its
+ * ordering contract: **documents first, entry last, and the entry is not deleted
+ * if any document failed.** A user left with a visible error can retry; a user
+ * left with orphaned pay stubs and no entry to reach them from cannot.
+ *
+ * The symmetry is exact: there is no narrow `deleteIncomeEntry` export, just as
+ * there is no narrow `deleteActivity`. The bare row delete is internal to the
+ * cascade. An exported narrow delete would be a trap — it takes the same argument,
+ * reads as the obvious choice, and silently orphans blobs that nothing reclaims.
+ * That export existed until W0 § 0.3.2 and was the bug.
+ *
+ * Not wrapped in a Dexie transaction, matching the activity path. Doing so would
+ * be an improvement, but it is a behaviour change to the activity side as well and
+ * belongs with the transactional-write work in § 0.6 rather than here.
+ *
+ * @param incomeEntryId - The entry to remove.
+ * @throws If any attached document could not be deleted. The message names how
+ *   many failed, so the UI can say something specific.
  */
-export async function deleteIncomeEntry(id: number): Promise<void> {
-  await db.incomeEntries.delete(id);
+export async function deleteIncomeEntryWithDocuments(
+  incomeEntryId: number,
+): Promise<void> {
+  try {
+    const documents = await getDocumentsByIncomeEntry(incomeEntryId);
+
+    const failedDeletions: number[] = [];
+
+    // Each deleteIncomeDocument removes the blob and then the metadata row.
+    for (const doc of documents) {
+      if (doc.id) {
+        try {
+          await deleteIncomeDocument(doc.id);
+        } catch (docError) {
+          console.error(
+            `Failed to delete income document ${doc.id}:`,
+            docError,
+          );
+          failedDeletions.push(doc.id);
+        }
+      }
+    }
+
+    if (failedDeletions.length > 0) {
+      throw new Error(
+        `Failed to delete ${failedDeletions.length} document(s). Income entry not deleted.`,
+      );
+    }
+
+    await db.incomeEntries.delete(incomeEntryId);
+  } catch (error) {
+    console.error("Error deleting income entry with documents:", error);
+    throw error;
+  }
 }
 
 /**
