@@ -915,6 +915,8 @@ export function ActivityForm({
       {viewingDocumentId !== null && (
         <DocumentViewer
           documentId={viewingDocumentId}
+          // Ids here come from getDocumentsByActivity, i.e. db.documents.
+          context="activity"
           onClose={handleCloseDocumentViewer}
           onDelete={async (deletedId) => {
             setDocuments((prev) => prev.filter((doc) => doc.id !== deletedId));

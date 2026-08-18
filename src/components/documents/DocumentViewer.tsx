@@ -23,34 +23,57 @@ import {
 } from "@mui/icons-material";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { format } from "date-fns";
-import { Document } from "@/types/documents";
 import {
-  getDocument,
-  getDocumentBlob,
-  deleteDocument,
-} from "@/lib/storage/documents";
+  getDocumentAccessor,
+  type DocumentContext,
+  type ViewableDocument,
+} from "@/lib/storage/documentAccess";
 import { formatFileSize } from "@/lib/utils/imageCompression";
 
 interface DocumentViewerProps {
   documentId: number | null;
+  /**
+   * Which document table `documentId` belongs to.
+   *
+   * REQUIRED, deliberately. This component previously imported the activity
+   * storage functions unconditionally while `IncomeEntryForm` fed it ids from
+   * `db.incomeDocuments` — separate object stores with independent `++id`
+   * sequences, so the viewer showed an unrelated document and Delete destroyed
+   * it. See `src/lib/storage/documentAccess.ts` and W0 § 0.3.1.
+   *
+   * An optional prop defaulting to "activity" would have kept the old call sites
+   * compiling and left the bug live at any new one. Both callers state it.
+   */
+  context: DocumentContext;
   onClose: () => void;
   onDelete?: (documentId: number) => void;
 }
 
 const DOCUMENT_TYPE_LABELS: Record<string, string> = {
+  // Activity document types (`DocumentType`, src/types/documents.ts).
   "pay-stub": "Pay Stub",
   "volunteer-verification": "Volunteer Verification",
   "school-enrollment": "School Enrollment",
   "medical-documentation": "Medical Documentation",
   other: "Other",
+  // Income document types (`IncomeDocument["type"]`, src/types/income.ts). Added
+  // with the § 0.3.1 fix rather than separately: before it, an income document
+  // never resolved, so its label was never reached. Now that it renders, the
+  // unlabelled fallback would print the raw key — "pay_stub" with an underscore.
+  // Note the activity set uses hyphens and the income set uses underscores, so
+  // "pay-stub" and "pay_stub" are distinct keys and neither shadows the other.
+  pay_stub: "Pay Stub",
+  bank_statement: "Bank Statement",
+  app_screenshot: "App Screenshot",
 };
 
 export function DocumentViewer({
   documentId,
+  context,
   onClose,
   onDelete,
 }: DocumentViewerProps) {
-  const [document, setDocument] = useState<Document | null>(null);
+  const [document, setDocument] = useState<ViewableDocument | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -75,8 +98,10 @@ export function DocumentViewer({
         URL.revokeObjectURL(imageUrl);
       }
     };
+    // `context` is included because switching it must reload from the other
+    // table. It is stable per call site in practice, so this adds no re-runs.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [documentId]);
+  }, [documentId, context]);
 
   const loadDocument = async () => {
     if (documentId === null) return;
@@ -85,8 +110,11 @@ export function DocumentViewer({
     setError(null);
 
     try {
+      // Resolve against the table this id actually belongs to. W0 § 0.3.1.
+      const accessor = getDocumentAccessor(context);
+
       // Load document metadata
-      const doc = await getDocument(documentId);
+      const doc = await accessor.getMetadata(documentId);
       if (!doc) {
         setError("Document not found");
         return;
@@ -94,7 +122,7 @@ export function DocumentViewer({
       setDocument(doc);
 
       // Load document blob
-      const blobData = await getDocumentBlob(doc.blobId);
+      const blobData = await accessor.getBlob(doc.blobId);
       if (!blobData) {
         setError("Document image not found");
         return;
@@ -116,7 +144,10 @@ export function DocumentViewer({
 
     setDeleting(true);
     try {
-      await deleteDocument(document.id);
+      // Delete from the table this id belongs to. Before W0 § 0.3.1 this always
+      // called the activity module, so deleting an income document destroyed the
+      // activity document that happened to share its id.
+      await getDocumentAccessor(context).remove(document.id);
       if (onDelete) {
         onDelete(document.id);
       }

@@ -773,6 +773,11 @@ export function IncomeEntryForm({
       {viewingDocumentId !== null && (
         <DocumentViewer
           documentId={viewingDocumentId}
+          // THE FIX. Ids here come from getDocumentsByIncomeEntry, i.e.
+          // db.incomeDocuments. Without this the viewer resolved them against
+          // db.documents and Delete destroyed an unrelated activity document.
+          // W0 § 0.3.1.
+          context="income"
           onClose={handleCloseDocumentViewer}
           onDelete={async (deletedId) => {
             // Remove from documents list and refresh
