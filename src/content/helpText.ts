@@ -713,15 +713,16 @@ export const dashboardGuidance: DashboardGuidance = {
 /**
  * Three facts that are true, reassuring or protective, and were absent.
  *
- * A large share of the adult group is expected to be verified without being asked
- * for anything, because 42 CFR 435.557(b) requires states to exhaust their own
- * records first. An app that opens with a tracking calendar and says nothing about
- * that implies an obligation many users may not have.
+ * CMS estimates about 56% of the roughly 20 million applicable individuals due for
+ * renewal will have compliance, or an exception or exclusion, verified ex parte —
+ * without being asked for anything — because 42 CFR 435.557(b) requires states to
+ * exhaust their own records first. An app that opens with a tracking calendar and
+ * says nothing about that implies an obligation more than half of its users may not
+ * have.
  *
- * NOTE ON SOURCING: the stronger "a majority" framing is asserted in
- * .kiro/steering/compliance-copy-standards.md but was not tied to a Federal
- * Register page on review, so the copy says "many" rather than "most". Pin it to a
- * page in the Regulatory Impact Analysis before strengthening it.
+ * The residual ~8.8 million are defined by what payroll data misses: unpaid and
+ * in-kind work, family caregiving, community service, unmatched gig income,
+ * less-than-half-time school. That is the population HourKeep is for.
  */
 export const requirementFacts: RequirementFact[] = [
   {
@@ -749,14 +750,18 @@ export const requirementFacts: RequirementFact[] = [
     // 435.557 and shifted paragraph designations inside it. Gap 15.8.
     title:
       "Your state has to check its own records before it asks you anything",
-    // "CMS expects MOST people" was softened to "many" on review: the majority
-    // estimate is asserted in .kiro/steering/compliance-copy-standards.md but could
-    // not be tied to a Federal Register page. Adjudicated claims from the preceding
-    // 12 months and encounter data ARE confirmed in 435.557(a); SNAP/TANF and
-    // school enrollment come from the preamble discussion and were not confirmed in
-    // the regulatory text. Under-claiming a user-favourable fact is the safe
-    // direction for an unverified cite.
-    body: "Before your state asks you for a single document, it has to look at what it already holds: payroll records, Medicaid claims from the last 12 months, and information from other programmes such as SNAP, TANF, and schools. CMS expects many people to be cleared this way without doing anything. HourKeep is for what those records miss — unpaid work, caregiving, community service, gig income, part-time school.",
+    // The majority estimate IS in the primary source, and the review's inability to
+    // locate it was a false negative on my part, not a missing cite. CMS's own
+    // burden estimate in the IFC: "Based on State-reported renewal data from
+    // calendar year 2025, we estimate that approximately 56 percent of the
+    // approximately 20 million total applicable individuals that will be due for
+    // renewal will have their compliance with, or exception or exclusion from, the
+    // community engagement requirement verified" ex parte. So "more than half" is
+    // stated rather than hedged, and the figure is given.
+    //
+    // The residual ~8.8 million are defined by what payroll data misses — which is
+    // exactly the population this app is for.
+    body: "Before your state asks you for a single document, it has to look at what it already holds: payroll records, Medicaid claims from the last 12 months, and information from other programmes such as SNAP, TANF, and schools. CMS expects more than half of people to be cleared this way without doing anything at all. HourKeep is for what those records miss — unpaid work, caregiving, community service, gig income, part-time school.",
     nextAction:
       "Ask your state what it already has on file for you. You may not need to send anything.",
     citation: "42 CFR 435.557(a)–(b), as corrected at 91 FR 39028",

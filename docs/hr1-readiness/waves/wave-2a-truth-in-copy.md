@@ -691,12 +691,17 @@ the unreachable chain does not count as liveness. Verified by adding the import,
 
 Both reviewers were asked to say what they could not confirm, and two items matter:
 
-1. **"CMS expects most people to be cleared this way without doing anything"**
-   (`requirementFacts.ex-parte-first`). The reviewer searched the IFC text and **could not locate a
-   majority estimate**. It is asserted in `compliance-copy-standards.md` but not tied to a Federal
-   Register page. It is load-bearing and **user-favourable**, which is the direction that needs the most
-   care. **Softened to "CMS expects many people"** pending a page cite — noted here rather than left as an
-   unsourced reassurance.
+1. ~~**"CMS expects most people to be cleared this way without doing anything."**~~
+   **RESOLVED 2026-08-17 — the reviewer's finding was a false negative, and so was my acceptance of it.**
+   The estimate is in the primary source: *"Based on State-reported renewal data from calendar year 2025,
+   we estimate that approximately **56 percent** of the approximately 20 million total applicable
+   individuals that will be due for renewal will have their compliance with, or exception or exclusion
+   from, the community engagement requirement verified"* ex parte. It is also in `rule-extract.md` § 10 and
+   `validation-findings-2026-08.md`, and the figure drives the wave ordering in `waves/README.md`.
+   I softened the copy to "many" on the reviewer's word without searching for the figure myself — which
+   is the **sub-agent-summary-as-finding** error, running in the unusual direction of accepting a
+   *negative* claim unverified. Copy now states "more than half" and the comment carries the quotation.
+   **A reviewer's "I could not find it" needs the same verification as their "I found it."**
 2. **Whether § 435.557(a) names SNAP/TANF and school enrollment specifically.** Adjudicated claims from
    the preceding 12 months and encounter data are confirmed. The other two are stated in the extract's
    preamble discussion; I did not confirm them in the regulatory text. Left in place, flagged.
