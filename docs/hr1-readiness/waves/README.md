@@ -133,6 +133,33 @@ unsatisfiable with no runner.
 This is an ordering correction, not new scope — ADR-0007 already assigns the guard test to W2a. Once the
 slice lands, `npm test` in the Definition of Done becomes satisfiable for every subsequent wave.
 
+> #### W0-slice status: COMPLETE — 2026-08-17, commit `5b4b27f`
+>
+> The slice has no wave file of its own; this is its completion record. Verified at closeout, not from
+> memory.
+>
+> | Deliverable | Status | Observable |
+> |---|---|---|
+> | Five packages installed | **Done, plus one** | `vitest` 4.1.10, `@vitest/ui` 4.1.10, `fake-indexeddb` 6.2.5, `@testing-library/react` 16.3.2, `@testing-library/jest-dom` 7.0.1 — all pinned exact. **`jsdom` 30.0.1 was missing from this list** and is required: the code under test uses `FileReader`, `Image`, and `canvas`, and RTL brings no DOM |
+> | Config and `test` script | **Done, as `.mts`** | `vitest.config.mts`, `test` = `vitest --run`, plus `test:watch` and `test:ui`. `.mts` rather than `.ts` avoids Vite's native config-loader CJS/ESM warning without making the package ESM, which would break `next.config.ts` and `scripts/*.js` |
+> | Orphaned test executes | **Done** | `npm test -- src/lib/utils` → **10 passed**. It had only ever typechecked |
+> | Nothing else | **Held, with one authorized addition** | `@types/jest` was **removed** — it existed solely to make that non-executing file typecheck and declared the same globals as Vitest with incompatible shapes, breaking `npx tsc --noEmit`. Approved explicitly rather than taken as licence |
+>
+> **Gates at closeout:** `npm test` 10/10 and **exits 1 on failure** — proven with a throwaway failing
+> test, since a runner that cannot go red gates nothing · `npx tsc --noEmit` clean · `npm run lint`
+> 0 errors, 4 pre-existing warnings · `npm run format:check` clean · `npm run build` succeeds.
+>
+> **Two defects this slice introduced and did not catch**, both fixed later in `f45080a`:
+>
+> 1. **The lockfile was not resolvable by CI's npm.** `yaml@^2.4.2` is an *optional peer* of `vite` 8.2.1
+>    and conflicts with the `yaml@1.10.x` hoisted for `cosmiconfig`; npm 10 and npm 11 resolve that
+>    differently, so `npm ci` failed on Actions with `Missing: yaml@2.9.0`. **Every other gate passed
+>    against a tree npm itself reported as `invalid`**, because none of them read the lockfile. `npm ci`
+>    is now in the Definition of Done for exactly this reason.
+> 2. **The new test toolchain requires Node ≥ 22 and CI ran Node 20.** `EBADENGINE` is a warning npm does
+>    not fail on, so the install looked clean and the tests would have broken at runtime. The `undici`
+>    warning was visible during the original install and went unactioned.
+
 **Corrections to the original graph:** W6 → W5 was not a real dependency (nothing in W6 evaluates hours);
 W6 → W4 **was** real and missing; W9 needed W2/W3/W5, not W8; W10 needed W5 and W6; W3/W4 ∥ W5 was **not**
 parallelizable because W5 needed indexes only W3's migration created — resolved by consolidating all

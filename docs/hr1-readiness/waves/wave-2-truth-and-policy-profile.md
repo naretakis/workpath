@@ -198,32 +198,19 @@ survives until W7; this wave only stops it from lying about what it does.
 > two entries that are correct. Each criterion below pairs a negative with a positive twin and names an
 > observable. Split by half.
 
-**W2a — truth in copy**
+**W2a — truth in copy · SUPERSEDED. The 13 criteria that were here are closed out in
+[`wave-2a-truth-in-copy.md`](wave-2a-truth-in-copy.md), which carries 46 and reports 44 met.**
 
-- [ ] `whatDoesNotCount` **still exists as a field**, contains exactly **2** entries (SSI, child support) plus
-      a hedged gifts/loans entry, **and** its `description` no longer says unearned income doesn't count
-- [ ] `whatCounts` affirmatively lists unemployment compensation, taxable interest and dividends, rental
-      income, and Social Security including the non-taxable portion — **grep each of the four**
-- [ ] `incomeDefinitions.threshold` states the household basis and the three screener questions, **and**
-      contains no summed or computed household figure
-- [ ] Zero occurrences of `automatically meet` in `src/` (currently 3), **and** each replacement site says
-      the state decides
-- [ ] Every surface in the § 2.5 table renders none of the guard tokens, **and** the export prints
-      `Logged: N · Threshold: T · Difference: D` for both the hours and income blocks
-- [ ] The guard test is a **token list against rendered output** with entities normalised, not the original
-      regex, and it fails when `You&apos;re Exempt` is reintroduced
-- [ ] All 15 `definitions.ts` entries and the `questions.ts` help text pair their hedge with a **next action**
-- [ ] `activityDefinitions.work.counterExamples` no longer contains "Unpaid internships", **and**
-      `.definition` names in-kind and unpaid work with a § 435.552(b) citation comment
-- [ ] No `activityDefinitions.*.definition` contains "80 hours" (currently 3 do), **and** exactly one place
-      states it as a monthly total across activities
-- [ ] **Both** `ComplianceModeSelector` branches (123, 132) drop the exclusivity claim, **and** both state
-      that hours and income may combine (§ 435.552(e))
-- [ ] Content affirmatively states § 435.559(c), § 435.557(a)–(b) ex parte, and the 15.20 self-report
-      caution, each with a citation comment
-- [ ] Georgia, Tennessee, and Wisconsin are affirmatively listed **in** scope; 44 jurisdictions stated
-- [ ] No **new** policy literal is introduced; every literal left in place is listed in the W2b handoff table
-      with file and line, and the row count equals the grep count
+They are removed rather than ticked, because leaving them would leave two traps:
+
+1. **One of them was wrong.** It required `whatDoesNotCount` to contain "exactly **2** entries (SSI, child
+   support) **plus** a hedged gifts/loans entry" — two or three? A test asserting `length === 2` fails the
+   moment the gifts entry exists. The arithmetic settles it at **3**, and the split file states that.
+2. **Several undercounted the work.** "Every surface in the § 2.5 table" was 11 sites; the real figure was
+   **78 lines across 14 live files**, and the table both named a dead file and omitted a live one.
+
+W2a is **complete as of 2026-08-17** (`de36a3d`). Two criteria are recorded unmet there: the review
+protocol ran with two of four reviewers, and the phone-viewport smoke test still needs a person.
 
 **W2b — policy profile**
 
