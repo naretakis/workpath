@@ -351,6 +351,15 @@ export function AssessmentFlow({
           : undefined,
     } as AssessmentResponses;
 
+    // Commit the merged responses to state. W0 § 0.3.4.
+    //
+    // `finalResponses` was previously a local that only `saveAssessmentResult`
+    // below ever saw, so `noticeContext` existed in the stored row but never in
+    // component state — and `handleStartTracking` hands `responses` to
+    // `onComplete`. Any consumer that persisted that payload wrote a strictly
+    // worse record than the one saved here, which is exactly what onboarding did.
+    setResponses(finalResponses);
+
     const calculatedRecommendation = calculateRecommendation(finalResponses);
     setRecommendation(calculatedRecommendation);
 
@@ -374,6 +383,11 @@ export function AssessmentFlow({
 
   const handleStartTracking = () => {
     if (!recommendation) return;
+    // `responses` now carries `noticeContext`, because `completeAssessment`
+    // commits its merged result to state. The third argument stays for the
+    // consumers that build `profile.onboardingContext` from it — note it uses a
+    // different shape from the stored one (`deadline` is still a string here,
+    // and `hasNotice` is only present in this shape). W0 § 0.3.4.
     const noticeContext = { hasNotice, monthsRequired, deadline };
     onComplete(responses as AssessmentResponses, recommendation, noticeContext);
   };

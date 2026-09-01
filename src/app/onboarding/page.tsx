@@ -9,7 +9,7 @@ import { saveProfile } from "@/lib/storage/profile";
 import { PrivacyNotice } from "@/components/onboarding/PrivacyNotice";
 import { ProfileForm } from "@/components/onboarding/ProfileForm";
 import { AssessmentFlow } from "@/components/assessment/AssessmentFlow";
-import { saveAssessmentResult } from "@/lib/storage/assessment";
+
 import {
   setComplianceMode,
   setSeasonalWorkerStatus,
@@ -102,8 +102,21 @@ export default function OnboardingPage() {
 
       await saveProfile(fullProfile);
 
-      // Save assessment result
-      await saveAssessmentResult(profileId, responses, recommendation);
+      // The assessment result is NOT saved here. W0 § 0.3.4.
+      //
+      // `AssessmentFlow.completeAssessment` already saved it, with the merged
+      // responses that include `noticeContext`. This function used to call
+      // `saveAssessmentResult` a second time, and because that function archives
+      // any existing result before inserting, the second call moved the good row
+      // into `assessmentHistory` and replaced it with one missing `noticeContext`
+      // — the field holding the response deadline and the months the state named
+      // (42 CFR 435.556, 435.558).
+      //
+      // Safe to omit rather than reorder: `advanceStep("gettingStarted")` is the
+      // only way to reach the step whose button calls `onComplete`, and it runs
+      // only after `saveAssessmentResult` has already succeeded. This also makes
+      // the two AssessmentFlow consumers symmetric — `how-to-hourkeep`'s
+      // `handleComplete` never wrote one either.
 
       // Configure dashboard based on recommendation
       const currentMonth = format(new Date(), "yyyy-MM");
