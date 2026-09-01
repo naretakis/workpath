@@ -888,12 +888,21 @@ parentheses were computed on 2026-08-17.
       the sourcing note below. Two of four is below what the hook specifies; recorded rather than
       rounded up
 - [x] `CHANGELOG.md` updated
-- [ ] **NOT MET — manual smoke test on a phone viewport, offline.** Requires a browser and a human;
-      not attempted. `npm run build` succeeds and produces all 13 static routes, and the new
-      `RequirementFacts` component is asserted as *rendered* by the render test — but nobody has looked
-      at the corrected copy on a 375px viewport or with the service worker offline. **The one criterion
-      in this wave that still needs a person.** W2a added a collapsible panel above the tracking
-      calendar, which is exactly the kind of change that reads differently on a phone
+- [~] **PARTIALLY MET as of 2026-09-01 — phone viewport now automated, offline still not.**
+
+      Originally: not met, "requires a browser and a human". A browser arrived after W0 —
+      `@playwright/test` against the real static export, with a 375×812 project (ADR-0007 Tier 3b).
+
+      **Now covered:** every route renders and hydrates cleanly at 375px with no console error
+      (`e2e/console-clean.spec.ts`), and no page scrolls horizontally at that width. That closes the
+      viewport half, and it immediately found a hydration failure on most routes that nobody would have
+      spotted by looking — React #418, caused by the pages-router emotion pattern in an App Router app.
+      So the criterion was worth keeping open.
+
+      **Still not met:** nobody has read W2a's corrected copy on a phone with a human eye, and the
+      **offline** half is untested — the service worker is available in Playwright but no spec exercises
+      it yet. W2a's collapsible panel above the tracking calendar is the specific thing still unreviewed
+      at phone width.
 
 ---
 

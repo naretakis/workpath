@@ -198,10 +198,19 @@ drafted they named nothing checkable, and one was unmeetable as written.
 
 ### Not met
 
-- [ ] **Phone-viewport check on the delete-all flow.** Not done, and it is the criterion this wave most
-      wanted: § 0.5 ships a destructive Settings action, and the worst place to ship one unseen is a
-      375px viewport. The dialog sets `fullScreen` below `sm` with `noSsr`, and the tests assert
-      behaviour rather than layout. Recorded unmet rather than rounded up. Same gap W2a recorded.
+- [x] **Phone-viewport check on the delete-all flow.** ~~Not met at closeout~~ — **closed 2026-09-01**,
+      after the wave, by `e2e/delete-all-mobile.spec.ts`.
+
+      Recorded unmet at the time because it was the one criterion needing a person rather than a command:
+      § 0.5 ships a destructive Settings action and the worst place to ship one unseen is a 375px
+      viewport. Now a runnable observable — 10 specs at 375×812 asserting the control is reachable
+      without horizontal scroll, that touch targets clear the project's 44px standard, that the dialog
+      actually goes full-screen (a `fullScreen`/`noSsr` prop with no observable effect in jsdom), that
+      both choices stay in the viewport, and that the full flow deletes and lands on onboarding while
+      cancelling keeps everything — verified against a **real** IndexedDB, not `fake-indexeddb`.
+
+      Worth noting what closing it took: a browser. `engineering-standards.md` asks every criterion to
+      name an observable, and this one could not until the tooling existed. Two waves carried it as debt.
 
 ## Risks
 
@@ -349,9 +358,23 @@ Probed 2026-08-17: a `Blob` written and read back arrives as a plain `Object` �
 under this harness asserts on nothing.**
 
 `data-migration-standards.md` requires the v6 → v7 migration test to assert "blobs survived". Under
-`fake-indexeddb` that can only mean *the row is still reachable and its `blobId` still resolves*. **State
-that limit rather than claiming coverage you do not have**, and confirm real blob survival by hand in
-DevTools → Application → IndexedDB.
+`fake-indexeddb` that can only mean *the row is still reachable and its `blobId` still resolves*.
+
+> **SUPERSEDED IN PART, 2026-09-01.** This originally said to state the limit and confirm blob survival by
+> hand in DevTools. **Do not do that** — Playwright landed after W0 closed and removes the need.
+> `e2e/browser-capabilities.spec.ts` proves a real `Blob` survives both a round trip and a version upgrade
+> with its bytes intact, in a real browser against a real IndexedDB.
+>
+> So W3 should split the migration test across both harnesses:
+>
+> - **Vitest / `fake-indexeddb`** — row counts per table, every seeded field reachable, new fields hold
+>   their defaults, upgrade is idempotent. Fast, runs on every change. Cannot speak to blob bytes.
+> - **Playwright** — that a photographed pay stub still decodes to the same bytes after the v6 → v7
+>   upgrade. Slow, runs on demand, and the one thing worth running twice: there is no server and no
+>   backup, and this is the evidence a user hands an agency under 42 CFR 435.557.
+>
+> ADR-0007 Tier 2 has been amended to say the same. The two harness facts below still stand and still
+> matter for the Vitest half.
 
 Two more harness facts, both learned the hard way:
 

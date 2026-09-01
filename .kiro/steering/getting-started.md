@@ -23,6 +23,7 @@ months *preceding* application, so the operative date is roughly **December 1, 2
 | What's wrong with the app today? | `docs/hr1-readiness/gap-analysis.md` |
 | Why is it built this way? | `docs/hr1-readiness/decisions/` |
 | What am I working on? | `docs/hr1-readiness/waves/` |
+| Which test suite does this belong in? | `docs/hr1-readiness/decisions/ADR-0007-test-strategy.md` — Tier 3b is the browser rule |
 
 Domain rules live in `medicaid-domain-knowledge.md`. Engineering rules live in
 `engineering-standards.md`. Both are always in context.
@@ -47,10 +48,24 @@ npm run build        # static export to out/
 npx tsc --noEmit     # type check
 npm run lint
 npm run format
+npm test             # Vitest, ~5s, 423 tests
+npm run test:e2e     # Playwright against the built export, ~90s
 ```
 
 Note: `npm run dev` and any watcher will block your terminal. Run them yourself rather than through an
-agent.
+agent. `npm run test:e2e` does **not** block — it builds, starts its own server on port 4399, and exits.
+
+**Two test suites, and the split is deliberate.** Vitest for logic, Playwright only for what jsdom
+physically cannot do — hydration, real `Blob` bytes, Canvas, service workers, phone-viewport layout.
+ADR-0007 Tier 3b has the rule and the reason. **If a test could run in Vitest, it belongs in Vitest**;
+423 tests in five seconds is worth protecting.
+
+Playwright earned its place immediately: within an hour it found two bugs that had been shipping to
+production and were invisible to all 423 Vitest tests *and* to `npm run dev` — a dead PWA manifest link
+(`/hourkeep/manifest.json`, a 404 left over from GitHub Pages hosting, so the app was not installable)
+and a React hydration failure on most routes. Both are fixed.
+
+First run needs a browser: `npx playwright install chromium`.
 
 ## Working rhythm
 
@@ -87,6 +102,14 @@ they could have answered. That is the one failure this project cannot absorb.
 
 So: **tests are required for compliance logic and optional for UI.** ADR-0007 has the exact scope. Everywhere
 else, the old advice still stands — build it, click around, ship it.
+
+One amendment, 2026-09-01: **"click around" now has a tool, and you should use it.** The Playwright MCP lets
+you navigate the built app, snapshot the accessibility tree, screenshot a 375px viewport, and read the
+console — while you are building, not after. That is a better loop than describing UI you cannot see, and it
+is how both of the shipped bugs above were found. `npm run build`, serve `out/`, and drive it.
+
+The committed browser suite is a different thing from that interactive use: it is a small set of durable
+assertions, not a replacement for looking.
 
 ## When you're stuck
 

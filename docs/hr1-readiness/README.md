@@ -13,10 +13,11 @@
 >
 > Recorded here because they are the kind of thing that disappears if it only lives in a closed wave file.
 >
-> 1. **A phone-viewport smoke test, offline.** Now owed by two waves. W2a put a new collapsible panel above
->    the tracking calendar and rewrote copy across 14 files; W0 added a **destructive** Settings action.
->    None of it has been seen at 375px or with the service worker offline, and a delete-everything button
->    is the worst thing to ship unseen on a phone.
+> 1. **Offline behaviour, and a human read of the copy on a phone.** Reduced 2026-09-01. The
+>    **phone-viewport half is now automated** — `@playwright/test` runs every route at 375×812 and drives
+>    the destructive delete-all flow there (ADR-0007 Tier 3b). What remains: no spec exercises the
+>    **service worker offline** yet, and nobody has read W2a's corrected copy on a phone with a human eye.
+>    Setting this up found two bugs that had been shipping — see the Playwright section below.
 > 2. **The review protocol has now failed twice, and is getting worse.** W2a lost two of four reviewers to
 >    sub-agent failures; **W0 lost all four**, on the parallel fan-out and again on a shortened retry
 >    (`Model stream stalled`). W0's checklists were hand-run and labelled as such, which is self-review —

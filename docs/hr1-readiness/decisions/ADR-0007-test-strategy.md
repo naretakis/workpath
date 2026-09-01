@@ -92,15 +92,74 @@ most valuable step in Wave 0.
 Storage layer round-trips and Dexie migrations. A v6 → v7 migration test with realistic fixture data,
 asserting nothing is silently dropped. Uses `fake-indexeddb`.
 
+> **Amended 2026-09-01: the migration test needs BOTH harnesses.** `fake-indexeddb` does not preserve
+> `Blob` — a stored blob returns as a plain empty object, with `instanceof Blob` false and no `size`,
+> `type`, `text()` or `arrayBuffer()`. Probed during W0. So the "blobs survived" assertion this tier
+> requires **cannot be made in Vitest**; it can only prove a row is reachable and its `blobId` resolves.
+>
+> W0 wrote a handoff to W3 telling it to state that limit rather than claim coverage it lacked.
+> **That limit is now removed:** `e2e/browser-capabilities.spec.ts` proves a real `Blob` survives both a
+> round trip and a version upgrade with its bytes intact. W3 should assert row-and-field preservation in
+> Vitest (fast, runs on every change) and **blob byte survival in Playwright** (slow, runs on demand).
+> Blobs are photographs of pay stubs — the evidence a user hands an agency under 42 CFR 435.557 — and
+> there is no server and no backup, so this is the one assertion worth running in two places.
+
 ### Tier 3 — Encouraged, not required
 
 Component behavior for question flows and the status surfaces, focused on **what the user is told**.
 A test that asserts the app never renders "You are exempt" is a cheap guard on ADR-0003.
 
+### Tier 3b — Browser tests, required only for what jsdom cannot reach
+
+**Added 2026-09-01.** `@playwright/test` against the real static export in `out/` — the exact artifact
+deployed to Pages. `npm run test:e2e`. Config and scope rules in `playwright.config.ts`.
+
+**The bar for adding a spec here is a single question: is this impossible in jsdom?** If it could run in
+Vitest, it belongs in Vitest. 423 Vitest tests in ~5 seconds is worth protecting; the browser suite is
+~90 seconds and inherently flakier. This tier exists to be *small*.
+
+What qualifies, because jsdom genuinely cannot do it:
+
+| Concern | Why Vitest cannot |
+|---|---|
+| Hydration mismatches | jsdom mounts fresh; there is no server HTML to disagree with |
+| Build-output correctness (asset paths, manifest) | jsdom never loads real HTML from a real server |
+| `Blob` byte survival | `fake-indexeddb` discards blob content |
+| Image compression against a real photo | no Canvas |
+| Service worker / offline | not implemented |
+| Phone-viewport layout, touch-target size | every element reports zero width |
+
+**Why this tier was added.** The first hour of browser testing found two bugs that had been shipping to
+production and were invisible to all 423 Vitest tests *and* to `next dev`:
+
+1. `layout.tsx` emitted `/hourkeep/manifest.json` in production builds, left over from GitHub Pages
+   project-site hosting. Verified against the live site: that URL returned **404** while
+   `/manifest.json` returned 200. The PWA manifest link had been dead in production — no "Add to Home
+   Screen", no app icon, on an app whose premise is offline-first installability.
+2. React #418 hydration failure on most routes, because the layout used the **pages-router** emotion
+   pattern inside an App Router app. Fixed with `AppRouterCacheProvider`.
+
+Neither was reachable from the existing suite. That is the argument for this tier, and also the reason
+it must not grow beyond it.
+
+**Not in the deploy gate, for now.** `npm test` still gates Pages and stays Vitest-only: browsers are an
+~82MB install and this project has already had one CI break from a lockfile disagreement between npm
+versions. Revisit once the suite has proven stable.
+
 ### Tier 4 — Not automated
 
-Camera capture, image compression against real photos, print stylesheets, PWA install and offline
-behavior, and screen-reader passes. These stay manual; `src/lib/utils/TESTING.md` remains the record.
+Camera capture (needs real hardware), print stylesheets, PWA install prompts, and screen-reader passes.
+These stay manual; `src/lib/utils/TESTING.md` remains the record.
+
+> **Amended 2026-09-01: two items moved out of this tier into 3b.**
+>
+> - **Image compression against real photos.** Was listed here because jsdom has no Canvas. Playwright
+>   has one — proven by `e2e/browser-capabilities.spec.ts`, which encodes a JPEG. The `compressForStorage`
+>   size logic is already covered in Vitest via an injected compressor; what belongs in 3b is compression
+>   against a genuine image, which no longer needs a person.
+> - **Offline behaviour.** The service worker is available in Playwright.
+>
+> Camera capture stays manual: it needs a physical camera, not a browser API.
 
 ### Guardrails
 

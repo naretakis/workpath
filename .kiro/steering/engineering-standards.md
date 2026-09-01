@@ -81,6 +81,9 @@ Two more load on demand:
 ## Done means
 
 `npx tsc --noEmit` clean · `npm run lint` clean · `npm run format:check` clean · `npm test` green ·
+**`npm run test:e2e` green when the wave touched anything a browser can see** — UI, layout, the document
+head, build output, or storage; ADR-0007 Tier 3b. Not in the CI deploy gate, so nothing forces it: run it
+deliberately. It is the only gate that sees hydration, real `Blob` bytes, or a 375px viewport ·
 `npm run build` succeeds · **`npm ci` succeeds** · each acceptance criterion checked against an
 observable · the review protocol (`.kiro/hooks/wave-review.kiro.hook`) run before a wave closes.
 
