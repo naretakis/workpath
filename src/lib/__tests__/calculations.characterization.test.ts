@@ -262,11 +262,12 @@ describe("calculateMonthlySummary: threshold comparison and difference arithmeti
     expect(summary.isCompliant).toBe(true);
   });
 
-  it("CHARACTERIZATION: education hours are combined, which 42 CFR 435.552(a)(5) forbids for half-time enrolment", () => {
-    // Current behaviour is incorrect per 42 CFR 435.552(a)(4) and (a)(5).
-    // Enrolment at least half-time qualifies with ZERO hours and may NOT be
-    // combined with other activities. Less-than-half-time converts to hours at
-    // `creditHours x 3 x 4.33` (42 CFR 435.552(d)) and may be combined.
+  it("CHARACTERIZATION: education hours are combined, which 42 CFR 435.552(e) forbids at half-time", () => {
+    // Current behaviour is incorrect per 42 CFR 435.552(a)(4) and (e).
+    // Enrolment at least half-time qualifies with ZERO hours under (a)(4), and
+    // § 435.552(e) then forbids combining it — because (a)(4) is already satisfied.
+    // Less-than-half-time converts at `creditHours x 3 x 4.33` (42 CFR 435.552(d))
+    // and may be combined.
     //
     // This module has one undifferentiated `education` bucket and always combines
     // it, so it cannot express the half-time cliff at all. That is a model gap,

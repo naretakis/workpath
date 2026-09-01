@@ -13,9 +13,14 @@
 >    the tracking calendar and rewrote copy across 14 files; W0 added a **destructive** Settings action.
 >    None of it has been seen at 375px or with the service worker offline, and a delete-everything button
 >    is the worst thing to ship unseen on a phone.
-> 2. **W2a's two missing reviewers** — data integrity and semantic review, lost to sub-agent failures. The
->    two that did run found **seven** issues W2a had missed, including 43 wrong CFR citations. Still worth
->    running against W2a's diff.
+> 2. **The review protocol has now failed twice, and is getting worse.** W2a lost two of four reviewers to
+>    sub-agent failures; **W0 lost all four**, on the parallel fan-out and again on a shortened retry
+>    (`Model stream stalled`). W0's checklists were hand-run and labelled as such, which is self-review —
+>    the thing the protocol exists to prevent. Between the two waves, **data integrity and semantic review
+>    have never once been run independently**, and W0 is the wave that shipped a delete-everything button.
+>    The hand-run still found two real CFR citation errors, so this is a coverage gap rather than a
+>    formality. **Before W1 closes, either get the sub-agents working or agree a different second pair of
+>    eyes.**
 > 3. **Ten React Compiler errors are suppressed by a version pin**, deferred from W0 to W1 deliberately.
 >    Measured: 11 errors across 8 files under `eslint-plugin-react-hooks` 7.1.1 with inline disables
 >    respected; W0 removed one by deleting `DocumentMetadataForm.tsx`. `package.json`'s `overrides` pins

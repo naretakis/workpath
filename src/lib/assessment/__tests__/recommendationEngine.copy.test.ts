@@ -526,11 +526,11 @@ describe("W0 § 0.2: threshold gates and calculateTotalHours", () => {
     }
   });
 
-  it("CHARACTERIZATION: education hours are combined, which 42 CFR 435.552(a)(5) forbids at half-time", () => {
+  it("CHARACTERIZATION: education hours are combined, which 42 CFR 435.552(e) forbids at half-time", () => {
     // `schoolHoursPerMonth` is summed with everything else. Under
     // 42 CFR 435.552(a)(4) enrolment at least half-time qualifies with ZERO hours,
-    // and (a)(5) forbids combining it with other activities; less-than-half-time
-    // converts at `creditHours x 3 x 4.33` under (d) and may be combined. The
+    // and § 435.552(e) then forbids combining it; less-than-half-time converts at
+    // `creditHours x 3 x 4.33` under (d) and may be combined. The
     // engine has one undifferentiated school-hours field and cannot express the
     // cliff. Owned by W6a.
     const result = calculateRecommendation({

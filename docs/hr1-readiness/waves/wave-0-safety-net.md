@@ -424,3 +424,102 @@ throwing query spy is swallowed by the hook's own `catch`, which then re-trigger
 per-test timeout never fires because the loop starves the event loop. A regression does fail CI (exit 1)
 after ~95 seconds with "Worker exited unexpectedly" — a gate, but not a diagnosis. The reasoning is in
 the test file header.
+
+---
+
+## Review protocol outcome
+
+**Run 2026-09-01 against `git diff c32885f..HEAD` (59 files, +7485/-3186).**
+
+### Zero of four reviewers ran
+
+All four sub-agents failed with `Model stream stalled: no data received for 300000ms`, on the initial
+parallel fan-out and again on a retry with a shortened prompt. The four checklists were therefore
+**run by hand**, and this section is labelled accordingly — it is self-review, which is precisely what
+the protocol exists to avoid.
+
+This is worse than W2a, which lost two of four. Between the two waves, **data integrity and semantic
+review have now never been run by an independent reviewer**, and W0 is the wave that ships a
+delete-everything button. That is the single biggest gap in this wave's verification and it is carried
+forward in the readiness README.
+
+### What the hand-run review actually found
+
+Two real citation errors, both mine, both fixed:
+
+1. **`42 CFR 435.552(f)(1)` does not exist in any source.** I used it twice in
+   `payPeriodConversion.characterization.test.ts` for the wage × 80 threshold. `rule-extract.md` writes
+   § 435.552(f) for the threshold and (f)(2) only for the § 435.603 cross-reference; `(f)(1)` appears
+   **zero** times in the extract, zero times in the steering doc, and the rest of `src/` cites
+   § 435.552(f). Corrected to § 435.552(f).
+
+2. **`42 CFR 435.552(a)(5)` was cited for a prohibition it does not contain.** I wrote that (a)(5)
+   "forbids combining" at-least-half-time education. (a)(5) is the combination *pathway*. The
+   prohibition is in **§ 435.552(e)**, and `rule-extract.md` § 2.5 attributes the reason to (a)(4)
+   already being satisfied. W2a's `no-verdict.content.test.ts` had already established the more precise
+   `(a)(4), (e)(1)(ii)` form; mine was less accurate than the convention already in the repo. Corrected
+   across three sites in two files.
+
+Worth noting what this implies about the rest: `435.553(a)(1)`, `435.552(a)(4)` and `435.552(d)` were
+**already established by W2a** across `calculator.ts`, `definitions.ts`, `questions.ts` and
+`helpText.ts`, and W2a's review scrutinised exactly this surface (it corrected 43 wrong citations). W0's
+use of them follows that vetted convention. The two errors above are both places where I departed from it.
+
+### Verified clean
+
+- **No verdict-shaped addition outside tests.** Every added `isCompliant` / `complianceStatus` /
+  `isExempt` line is inside a `__tests__` file, pinning existing behaviour and annotated as W7b's to
+  remove. Checked by filtering added lines with `:(exclude)*__tests__*` — empty result.
+- **No new user-facing verdict copy.** `DeleteAllDataDialog`, the income delete dialog, the results-page
+  dialog and `compressForStorage`'s error message are all clean against the project's banned-phrase list.
+- **`src/lib/db.ts` untouched** — no Dexie version bump, confirmed by an empty diff and by a test
+  asserting `db.verno` is unchanged after `deleteAllData`.
+- **Quota checks precede the new transactions** in both `saveDocument` and `saveIncomeDocument`
+  (checks at lines 7–22 of the function, transaction opens at 37).
+- **The cascade cannot half-complete destructively**: documents are deleted first, and a failure throws
+  before `db.incomeEntries.delete`.
+- **`context` is a required prop** on `DocumentViewer`, so `tsc` — not vigilance — enforces both call
+  sites naming a table.
+- **Credit-hour formula matches the extract**: `creditHours × 3 × 4.33`, rule-extract lines 173–174.
+- **No raw `Date` month arithmetic added.** The only `new Date()` additions are `createdAt` timestamps in
+  fixtures.
+- **The blob tests do not give false confidence.** Given `fake-indexeddb` discards `Blob`, every blob
+  assertion in this wave is a row count or a `createdAt` identity check — never content. Verified by
+  grepping the three relevant test files for content assertions: none.
+
+### One finding recorded, not fixed
+
+**A failed assessment save is silent.** `AssessmentFlow.completeAssessment`'s `catch` logs to the console
+and does nothing else: `advanceStep("gettingStarted")` never runs, so the user sits on the last question
+with no message and a button that appears dead.
+
+Traced carefully, because W0 removed the duplicate write and the obvious worry is that it made this
+worse. It did not: `advanceStep` was already inside the same `try` after the save, so pre-W0 a failed
+first write also blocked the flow, meaning `onComplete` never fired and onboarding's second write was
+unreachable. The removed write was redundant *precisely when it would have mattered*. Outcome identical
+before and after — a pre-existing gap, neither caused nor closed here.
+
+Left alone because a fix means new error UI, which is out of a wave scoped "no behaviour changes to
+compliance math, no copy changes". Belongs with W4's screening rebuild.
+
+### Mechanical checks
+
+`npx tsc --noEmit` clean · `npm test` 423/423 across 22 files, run twice · `npm run lint` 0 errors and
+the 4 pre-existing unused-import warnings · `npm run format:check` clean · `npm run build` compiles ·
+`npm ci` clean.
+
+### Negative-criterion check
+
+Two criteria could have been satisfied by deletion. Neither was:
+
+- **"Every listed dead file is gone"** would be satisfied by deleting the post-compression size check
+  along with `DocumentMetadataForm.tsx`. It was rescued into `compressForStorage` first, and the
+  criterion was rewritten to name all five live sites rather than the two it originally claimed.
+- **"The allowlist is empty"** would be satisfied by deleting the tests that police it. The entries went;
+  the tests stayed, with the meta-test inverted to assert emptiness — so adding a new entry is still a
+  deliberate, visible act.
+
+One thing genuinely was lost and is recorded rather than glossed: `questionFlow.ts`'s
+resume-without-re-asking logic. Not ported, because W4 replaces the flow it would have been ported into.
+Captured in `wave-4-screening-rebuild.md` with the reasoning and three things W4 should fix rather than
+reproduce.

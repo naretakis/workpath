@@ -19,7 +19,7 @@
  * Second, and more concretely: `4.33`, `7.25`, `80` and `580` are exactly the
  * policy literals ADR-0001 requires to live in `src/lib/policy/`, and W2b moves
  * them there. `$7.25 x 80 = $580` is the FLSA federal minimum wage times the
- * monthly hours threshold (42 CFR 435.552(f)(1)); the value is statutory but
+ * monthly hours threshold (42 CFR 435.552(f)); the value is statutory but
  * DYNAMIC — it changes if the FLSA is amended, and states may not substitute the
  * tipped wage, the $4.25 youth wage, or a higher state minimum wage. A test that
  * asserts `INCOME_THRESHOLD === 580` as a permanent truth encodes the opposite.
@@ -122,7 +122,7 @@ describe("the arithmetic contract: conversion is amount x multiplier, rounded to
 
 describe("the arithmetic contract: the threshold is minimum wage x required hours", () => {
   it("derives INCOME_THRESHOLD as FEDERAL_MINIMUM_WAGE x REQUIRED_HOURS", () => {
-    // 42 CFR 435.552(f)(1): monthly income at least equal to the federal minimum
+    // 42 CFR 435.552(f): monthly income at least equal to the federal minimum
     // wage multiplied by 80. This RELATIONSHIP is the rule and must survive W2b.
     // The operands are policy values and are expected to move.
     expect(INCOME_THRESHOLD).toBe(FEDERAL_MINIMUM_WAGE * REQUIRED_HOURS);
