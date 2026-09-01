@@ -159,7 +159,7 @@ arrive in W0 — which is sequenced after W2a.
 Deliberately excluded and still owned by W0 proper: characterization tests, the Dexie v6 → v7
 migration test, the dead-code sweep, `/test-compression` removal, and delete-all-data.
 
-## [7.2.0] - 2025-01-14
+## [7.2.0] - 2026-01-14
 
 ### Fixed - Assessment Flow Routing
 

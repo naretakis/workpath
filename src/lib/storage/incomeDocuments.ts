@@ -43,19 +43,29 @@ export async function saveIncomeDocument(
       );
     }
 
-    // Store blob first
-    const blobId = await db.incomeDocumentBlobs.add({
-      blob,
-      createdAt: new Date(),
-    });
+    // Both writes in ONE transaction. W0 § 0.6.
+    //
+    // Same defect as saveDocument, and worse here: there is no income counterpart to
+    // cleanupOrphanedDocuments, so an orphaned income blob would never be reclaimed
+    // by anything at all.
+    const documentId = await db.transaction(
+      "rw",
+      db.incomeDocumentBlobs,
+      db.incomeDocuments,
+      async () => {
+        const blobId = await db.incomeDocumentBlobs.add({
+          blob,
+          createdAt: new Date(),
+        });
 
-    // Store document metadata
-    const documentId = await db.incomeDocuments.add({
-      ...metadata,
-      incomeEntryId,
-      blobId,
-      createdAt: new Date(),
-    });
+        return await db.incomeDocuments.add({
+          ...metadata,
+          incomeEntryId,
+          blobId,
+          createdAt: new Date(),
+        });
+      },
+    );
 
     return documentId;
   } catch (error) {

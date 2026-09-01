@@ -85,15 +85,11 @@ export function DocumentMetadataFormSimple({
     }
 
     try {
-      console.log("DocumentMetadataFormSimple - Creating URL for blob:", {
-        size: blob.size,
-        type: blob.type,
-        constructor: blob.constructor.name,
-      });
-
-      const url = URL.createObjectURL(blob);
-      console.log("Created object URL successfully:", url);
-      return url;
+      // Three console.log calls were removed here and one below by W0 § 0.6. They
+      // shipped to production and printed blob sizes and object URLs to the console
+      // on every document capture. console.error is kept: a failure to create the
+      // URL means the user's photo will not display, which is worth reporting.
+      return URL.createObjectURL(blob);
     } catch (error) {
       console.error("Error creating object URL:", error);
       return null;
@@ -104,7 +100,6 @@ export function DocumentMetadataFormSimple({
   useEffect(() => {
     return () => {
       if (imageUrl) {
-        console.log("Cleaning up object URL:", imageUrl);
         URL.revokeObjectURL(imageUrl);
       }
     };
@@ -168,7 +163,6 @@ export function DocumentMetadataFormSimple({
                   setImageError(true);
                 }}
                 onLoad={() => {
-                  console.log("Image loaded successfully from URL:", imageUrl);
                   setImageError(false);
                 }}
               />

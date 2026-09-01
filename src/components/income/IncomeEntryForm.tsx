@@ -307,11 +307,9 @@ export function IncomeEntryForm({
   };
 
   const handleDocumentCaptured = (blob: Blob) => {
-    console.log("IncomeEntryForm - Document captured:", {
-      size: blob.size,
-      type: blob.type,
-      constructor: blob.constructor.name,
-    });
+    // A console.log here printed blob size and type on every capture. W0 § 0.6.
+    // The audit counted four such calls, all in DocumentMetadataFormSimple; this
+    // was a fifth, in a different file, and was not on the list.
     setCapturedBlob(blob);
     setShowDocumentCapture(false);
     setShowMetadataForm(true);

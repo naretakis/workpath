@@ -33,19 +33,35 @@ export async function saveDocument(
       );
     }
 
-    // Store blob first
-    const blobId = await db.documentBlobs.add({
-      blob,
-      createdAt: new Date(),
-    });
+    // Both writes in ONE transaction. W0 § 0.6.
+    //
+    // These used to be two independent awaits, blob first. If the metadata write
+    // failed the blob stayed behind with nothing pointing at it — invisible to the
+    // UI, uncounted by StorageInfo, and unreachable by every delete path, since all
+    // of them start from the metadata row to find the blobId. Blobs are the largest
+    // rows in the database and orphans accumulate on each retry.
+    //
+    // cleanupOrphanedDocuments cannot reclaim these: it scans db.documents against
+    // db.activities, so it finds documents whose activity is gone, not blobs whose
+    // document never existed.
+    const documentId = await db.transaction(
+      "rw",
+      db.documentBlobs,
+      db.documents,
+      async () => {
+        const blobId = await db.documentBlobs.add({
+          blob,
+          createdAt: new Date(),
+        });
 
-    // Store document metadata
-    const documentId = await db.documents.add({
-      ...metadata,
-      activityId,
-      blobId,
-      createdAt: new Date(),
-    });
+        return await db.documents.add({
+          ...metadata,
+          activityId,
+          blobId,
+          createdAt: new Date(),
+        });
+      },
+    );
 
     return documentId;
   } catch (error) {
