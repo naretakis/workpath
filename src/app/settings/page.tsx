@@ -21,6 +21,7 @@ import { StorageInfo } from "@/components/settings/StorageInfo";
 import { ProfileDisplay } from "@/components/settings/ProfileDisplay";
 import { ProfileEditor } from "@/components/settings/ProfileEditor";
 import { PrivacyPolicy } from "@/components/settings/PrivacyPolicy";
+import { DeleteAllDataDialog } from "@/components/settings/DeleteAllDataDialog";
 import { ExemptionHistory } from "@/components/exemptions/ExemptionHistory";
 import { RescreenDialog } from "@/components/exemptions/RescreenDialog";
 import {
@@ -54,6 +55,8 @@ export default function SettingsPage() {
   >([]);
   const [rescreenDialogOpen, setRescreenDialogOpen] = useState(false);
   const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
+  // W0 § 0.5
+  const [deleteAllOpen, setDeleteAllOpen] = useState(false);
 
   const loadProfile = async () => {
     try {
@@ -310,6 +313,29 @@ export default function SettingsPage() {
         >
           View Privacy Policy
         </Button>
+
+        {/*
+          W0 § 0.5. "Export or delete anytime" is promised in PrivacyNotice.tsx:71,
+          which the user must accept before onboarding, and again in
+          PrivacyPolicy.tsx:77. Until now nothing in the app deleted anything.
+
+          Placed here rather than in a separate "danger zone" section because this
+          is where the promise is made and so where a user will look for it.
+        */}
+        <Divider sx={{ my: 2 }} />
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+          You can delete everything HourKeep has saved on this device. It
+          can&apos;t be undone.
+        </Typography>
+        <Button
+          variant="outlined"
+          color="error"
+          onClick={() => setDeleteAllOpen(true)}
+          fullWidth
+          sx={{ minHeight: 48 }}
+        >
+          Delete all my data
+        </Button>
       </Paper>
 
       {/* About Section */}
@@ -371,6 +397,20 @@ export default function SettingsPage() {
         open={privacyPolicyOpen}
         onClose={handlePrivacyPolicyClose}
         acknowledgedAt={profile?.privacyNoticeAcknowledgedAt}
+      />
+
+      {/* W0 § 0.5 */}
+      <DeleteAllDataDialog
+        open={deleteAllOpen}
+        onClose={() => setDeleteAllOpen(false)}
+        onDeleted={() => {
+          setDeleteAllOpen(false);
+          // Everything is gone, including the profile, so every other route
+          // redirects to onboarding anyway. `replace` rather than `push` so Back
+          // cannot return to a settings page rendering a profile that no longer
+          // exists.
+          router.replace("/onboarding");
+        }}
       />
     </Container>
   );
