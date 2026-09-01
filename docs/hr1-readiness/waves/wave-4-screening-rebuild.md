@@ -72,3 +72,68 @@ help, definitions accordion. Add CFR citations alongside the existing HR1 ones.
 | The caregiver cluster is genuinely hard to ask plainly | Draft and review copy separately from implementation; it may need several passes |
 | Users self-assess medically frail incorrectly in either direction | The functional gate is the question, not the diagnosis; hedge per ADR-0003; always mention the request path |
 | 42 CFR part 2 obligations on SUD data | Data stays local; document the reasoning; do not include SUD detail in exports without explicit consent |
+
+---
+
+## Inherited from W0 § 0.4 — the skip-answered logic, recorded before deletion
+
+W0 deleted `src/lib/exemptions/questionFlow.ts` (324 lines) as dead code: its only
+importer was the equally dead `components/exemptions/QuestionFlow.tsx`. The audit
+noted it "ironically implements the skip-answered logic the live flow lacks," and
+W0's § 0.4 required that logic be ported or recorded before removal. It is recorded
+here rather than ported, because W4 rebuilds the question set and porting into a
+flow that is about to be replaced would be work done twice.
+
+Two mechanisms worth having. Both are reconstructable from this note; the deleted
+file is in git history at `132ceff~1` if the original is wanted.
+
+**1. Short-circuit on exclusion.** `getNextQuestion` called `calculateExemption` on
+the answers so far and returned `null` the moment anything matched, stopping the
+questionnaire. The live `AssessmentFlow` does the same thing by a different route
+(`handleExemptionContinue` calls `completeAssessment` on a match), so this part is
+not actually missing — the audit's phrasing overstates it. Verified 2026-09-01.
+
+**2. Resume without re-asking.** This part IS missing from the live flow.
+`getNextQuestion(responses, currentQuestionId)` scanned forward from the current
+question and returned the first one whose answer was still `undefined`, so a
+returning user was never asked something they had already answered.
+`AssessmentFlow` instead walks a fixed index (`exemptionQuestionIndex`) and re-asks
+everything from the top.
+
+The predicate was a 12-arm switch mapping question id to response field, with a
+silent `default: return false`:
+
+| Question id | Response field |
+|---|---|
+| `age-dob` | `dateOfBirth` |
+| `family-pregnant` | `isPregnantOrPostpartum` |
+| `family-child` | `hasDependentChild13OrYounger` |
+| `family-disabled-dependent` | `isParentGuardianOfDisabled` |
+| `health-medicare` | `isOnMedicare` |
+| `health-non-magi` | `isEligibleForNonMAGI` |
+| `health-disabled-veteran` | `isDisabledVeteran` |
+| `health-medically-frail` | `isMedicallyFrail` |
+| `program-snap-tanf` | `isOnSNAPOrTANFMeetingRequirements` |
+| `program-rehab` | `isInRehabProgram` |
+| `other-incarcerated` | `isIncarceratedOrRecentlyReleased` |
+| `other-tribal` | `hasTribalStatus` |
+
+**Three things to fix rather than reproduce.**
+
+- **This is the fifth copy of that mapping.** Audit § 6 counts the same 12-way
+  switch 5–7 times across `AssessmentFlow` (×3), `questionFlow.ts` (×2), and
+  `QuestionFlow.tsx` (×2), none exhaustiveness-checked and all with a silent
+  `default`. Deleting two files removed two copies. W4's acceptance criterion
+  already requires the mapping to exist in exactly one place with exhaustiveness
+  checking — that criterion is what makes reproducing this note's table wrong.
+- **`!== undefined` cannot distinguish "answered no" from "never asked."** W0's
+  characterization tests pinned that `calculateExemption`'s guards are bare
+  truthiness checks, so `false` and `undefined` behave identically there. The
+  skip logic used `!== undefined` and so was *more* precise than the calculator it
+  fed. Under 42 CFR 435.554(c)(5)(ii) states must offer a route to have an off-list
+  condition considered, and "I said no" versus "nobody asked me" are different
+  evidentiary positions. W4 should keep the three-state distinction end to end.
+- **`getPreviousQuestion` took a `questionHistory: string[]`** and read the last
+  entry, i.e. back-navigation was a caller-maintained stack rather than derived.
+  `AssessmentFlow` already keeps a `stepHistory` array; one history mechanism, not
+  two.

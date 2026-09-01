@@ -198,26 +198,16 @@ export function ActivityForm({
         // If there's a pending document, save it
         if (pendingDocument && existingActivity.id) {
           const { saveDocument } = await import("@/lib/storage/documents");
-          const { compressImage } = await import(
+          const { compressForStorage } = await import(
             "@/lib/utils/imageCompression"
           );
 
-          let finalBlob = pendingDocument.blob;
-          let compressedSize: number | undefined;
-
-          const fiveMB = 5 * 1024 * 1024;
-          if (pendingDocument.blob.size > fiveMB) {
-            const compressed = await compressImage(
-              pendingDocument.blob as File,
-              {
-                maxSizeMB: 5,
-                quality: 0.8,
-                maxDimension: 1920,
-              },
-            );
-            finalBlob = compressed.blob;
-            compressedSize = compressed.compressedSize;
-          }
+          // Compresses above 5MB and REFUSES anything still over 10MB. That
+          // second check existed only in the dead DocumentMetadataForm; W0 § 0.4
+          // rescued it into compressForStorage before deleting that file.
+          const { blob: finalBlob, compressedSize } = await compressForStorage(
+            pendingDocument.blob,
+          );
 
           await saveDocument(existingActivity.id, finalBlob, {
             type: pendingDocument.type as Document["type"],
@@ -257,26 +247,16 @@ export function ActivityForm({
         // If there's a pending document, attach it to the first entry
         if (pendingDocument && firstActivityId) {
           const { saveDocument } = await import("@/lib/storage/documents");
-          const { compressImage } = await import(
+          const { compressForStorage } = await import(
             "@/lib/utils/imageCompression"
           );
 
-          let finalBlob = pendingDocument.blob;
-          let compressedSize: number | undefined;
-
-          const fiveMB = 5 * 1024 * 1024;
-          if (pendingDocument.blob.size > fiveMB) {
-            const compressed = await compressImage(
-              pendingDocument.blob as File,
-              {
-                maxSizeMB: 5,
-                quality: 0.8,
-                maxDimension: 1920,
-              },
-            );
-            finalBlob = compressed.blob;
-            compressedSize = compressed.compressedSize;
-          }
+          // Compresses above 5MB and REFUSES anything still over 10MB. That
+          // second check existed only in the dead DocumentMetadataForm; W0 § 0.4
+          // rescued it into compressForStorage before deleting that file.
+          const { blob: finalBlob, compressedSize } = await compressForStorage(
+            pendingDocument.blob,
+          );
 
           await saveDocument(firstActivityId, finalBlob, {
             type: pendingDocument.type as Document["type"],
@@ -869,26 +849,15 @@ export function ActivityForm({
                       const { saveDocument } = await import(
                         "@/lib/storage/documents"
                       );
-                      const { compressImage } = await import(
+                      const { compressForStorage } = await import(
                         "@/lib/utils/imageCompression"
                       );
 
-                      let finalBlob = capturedBlob;
-                      let compressedSize: number | undefined;
-
-                      const fiveMB = 5 * 1024 * 1024;
-                      if (capturedBlob.size > fiveMB) {
-                        const compressed = await compressImage(
-                          capturedBlob as File,
-                          {
-                            maxSizeMB: 5,
-                            quality: 0.8,
-                            maxDimension: 1920,
-                          },
-                        );
-                        finalBlob = compressed.blob;
-                        compressedSize = compressed.compressedSize;
-                      }
+                      // Compresses above 5MB and REFUSES anything still over
+                      // 10MB — rescued from the dead DocumentMetadataForm by
+                      // W0 § 0.4.
+                      const { blob: finalBlob, compressedSize } =
+                        await compressForStorage(capturedBlob);
 
                       await saveDocument(existingActivity.id, finalBlob, {
                         type: metadata.type as Document["type"],

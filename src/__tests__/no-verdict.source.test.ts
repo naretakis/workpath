@@ -61,53 +61,46 @@ interface AllowlistEntry {
   reason: string;
 }
 
-const DEAD_FILE_ALLOWLIST: readonly AllowlistEntry[] = [
-  {
-    file: "components/exemptions/ExemptionBadge.tsx",
-    removalOwner: "W0",
-    reason:
-      "Zero importers. 308 lines, head of a dead chain. Renders `You Are Exempt` (:150) and `Must Track Hours` (:249)",
-  },
-  // NOTE: components/exemptions/ExemptionDetailsDialog.tsx is dead too, and W0
-  // deletes it as part of the same chain, but it asserts no verdict of its own.
-  // It is deliberately NOT allowlisted — the "cannot rot" test below rejects an
-  // entry with nothing to suppress, and it caught this one on 2026-08-17.
-  {
-    file: "components/exemptions/ExemptionResults.tsx",
-    removalOwner: "W0",
-    reason:
-      "Imported only by the dead ExemptionDetailsDialog. Renders `You Are Exempt` / `You Must Track Hours` (:73)",
-  },
-  {
-    file: "components/assessment/AssessmentHistory.tsx",
-    removalOwner: "W0",
-    reason:
-      "Zero importers; getAssessmentHistory has no caller. Renders an `Exempt` chip and `You were exempt from work requirements`",
-  },
-] as const;
+/**
+ * EMPTY BY CONSTRUCTION, as of W0 § 0.4 (2026-09-01).
+ *
+ * This held three entries, all `removalOwner: "W0"`:
+ * `components/exemptions/ExemptionBadge.tsx`,
+ * `components/exemptions/ExemptionResults.tsx`, and
+ * `components/assessment/AssessmentHistory.tsx`. Each was dead code that still
+ * rendered a verdict — "You Are Exempt", "You Must Track Hours", an `Exempt` chip
+ * — and each was suppressed only until W0 deleted it.
+ *
+ * W0 deleted all three. The `removalOwner` type is `"W0"` and nothing else, so no
+ * further entry can be added without a deliberate type change — which is the point:
+ * an allowlist that can be extended becomes a place to put new verdict copy.
+ *
+ * The three tests below still run and still matter. They now assert that this list
+ * stays empty, rather than policing its contents.
+ */
+const DEAD_FILE_ALLOWLIST: readonly AllowlistEntry[] = [] as const;
 
 const ALLOWLISTED = new Set(
   DEAD_FILE_ALLOWLIST.map((e) => e.file.split("/").join(sep)),
 );
 
 /**
- * The whole dead chain W0 removes, including the one member that asserts no
- * verdict of its own and so is not allowlisted.
+ * The dead chain W0 removed. Kept as a record, now empty of surviving files.
  *
- * The deadness test below asks whether an allowlisted file is reachable from LIVE
- * code — not whether it has zero importers. `ExemptionResults` is imported by
- * `ExemptionDetailsDialog`, which is itself dead and imported only by
- * `ExemptionBadge`, which has no importers at all. The chain is unreachable as a
- * whole, so an import from inside it does not make anything live.
+ * It existed because the deadness test asks whether an allowlisted file is
+ * reachable from LIVE code, not whether it has zero importers: `ExemptionResults`
+ * was imported by `ExemptionDetailsDialog`, itself imported only by
+ * `ExemptionBadge`, which had no importers at all. An import from inside an
+ * unreachable chain does not make anything live.
+ *
+ * All four members are gone as of W0 § 0.4 —
+ * `ExemptionBadge.tsx`, `ExemptionDetailsDialog.tsx`, `ExemptionResults.tsx`,
+ * `AssessmentHistory.tsx` — so the set is empty and the reachability carve-out it
+ * supported no longer applies to anything. Left in place rather than deleted
+ * because the next allowlist entry, if there ever is one, will need the same
+ * reasoning, and the comment is the part worth keeping.
  */
-const DEAD_CHAIN = new Set(
-  [
-    "components/exemptions/ExemptionBadge.tsx",
-    "components/exemptions/ExemptionDetailsDialog.tsx",
-    "components/exemptions/ExemptionResults.tsx",
-    "components/assessment/AssessmentHistory.tsx",
-  ].map((f) => f.split("/").join(sep)),
-);
+const DEAD_CHAIN = new Set<string>([]);
 
 function sourceFiles(dir: string, out: string[] = []): string[] {
   for (const entry of readdirSync(dir)) {
@@ -300,12 +293,23 @@ describe("W0 handoff: the dead-file allowlist", () => {
     }
   });
 
-  it("holds exactly the three dead files that assert a verdict", () => {
-    expect(DEAD_FILE_ALLOWLIST.map((e) => e.file)).toEqual([
-      "components/exemptions/ExemptionBadge.tsx",
-      "components/exemptions/ExemptionResults.tsx",
-      "components/assessment/AssessmentHistory.tsx",
-    ]);
+  it("is empty, because W0 deleted every file it covered", () => {
+    // Was: "holds exactly the three dead files that assert a verdict", listing
+    // ExemptionBadge.tsx, ExemptionResults.tsx and AssessmentHistory.tsx. W0 § 0.4
+    // deleted all three, so the assertion inverts — this list must now stay empty.
+    //
+    // Keeping the test rather than deleting it with the entries: an empty allowlist
+    // is a property worth guarding, and this is the assertion that makes adding a
+    // new entry a deliberate, visible act rather than a quiet one. The suppression
+    // mechanism existed for exactly one wave, and this records that it is closed.
+    expect(DEAD_FILE_ALLOWLIST).toEqual([]);
+  });
+
+  it("has no remaining dead-chain carve-out either", () => {
+    // DEAD_CHAIN existed so that an import from inside an unreachable chain did not
+    // count as making a file live. Every member is deleted, so the carve-out
+    // applies to nothing and must not quietly acquire new members.
+    expect(DEAD_CHAIN.size).toBe(0);
   });
 
   it("FAILS once W0 deletes a file, so the allowlist cannot outlive its subject", () => {

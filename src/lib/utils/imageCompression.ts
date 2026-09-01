@@ -218,3 +218,88 @@ export function validateFile(file: File, maxMB: number = 10): boolean {
   validateFileSize(file, maxMB);
   return true;
 }
+
+/**
+ * Compress a blob above this size before storing it.
+ *
+ * NOT a policy value. ADR-0001 governs values CMS publishes — 80 hours, $580,
+ * lookback lengths — and requires them to live in `src/lib/policy/`. These two are
+ * device storage limits with no CFR source, so they belong here.
+ */
+export const COMPRESSION_THRESHOLD_BYTES = 5 * 1024 * 1024;
+
+/** Refuse to store a blob larger than this, even after compression. */
+export const MAX_STORED_BYTES = 10 * 1024 * 1024;
+
+export interface CompressForStorageOptions {
+  /** Progress callback, forwarded to the compressor. */
+  onProgress?: (progress: number) => void;
+  /**
+   * Compressor override, for tests. Real compression needs the Canvas API, which
+   * jsdom does not implement, so the size-checking logic could not otherwise be
+   * tested at all. Production callers omit this.
+   */
+  compress?: (
+    file: File,
+    options: CompressionOptions,
+  ) => Promise<CompressionResult>;
+}
+
+export interface CompressForStorageResult {
+  /** The blob to store — the original, or the compressed version. */
+  blob: Blob;
+  /** Size after compression, or undefined if no compression was needed. */
+  compressedSize?: number;
+}
+
+/**
+ * Compress a blob if it is too large to store, and refuse it if compression was
+ * not enough.
+ *
+ * Added by W0 § 0.4 to preserve behaviour that was about to be deleted.
+ * `DocumentMetadataForm.tsx:163-171` was the ONLY place that re-checked size after
+ * compressing, and that component has zero importers and is removed in this wave.
+ * The five live sites — `ActivityForm.tsx` (3) and `IncomeEntryForm.tsx` (2) —
+ * compressed and then handed the result straight to `saveDocument` without looking
+ * at it, so an image that was still too big surfaced as a storage-quota error
+ * instead of an actionable message about the photo.
+ *
+ * A single helper rather than the check copied into five places:
+ * `codebase-audit-2026-08.md` § 6 records this codebase's duplication as a defect
+ * in its own right, and the five blocks were already near-identical.
+ *
+ * Behaviour is preserved exactly, including the strict `>` comparison — a blob of
+ * precisely 5MB is not compressed, as before — and the `maxSizeMB: 5` option, which
+ * the audit notes is passed by every call site and never read. It stays so this is
+ * a refactor rather than a change; W6a can drop it with the field.
+ *
+ * @throws If the blob is still larger than {@link MAX_STORED_BYTES} after
+ *   compression, with a message naming the size, the limit, and what to try.
+ */
+export async function compressForStorage(
+  blob: Blob,
+  options: CompressForStorageOptions = {},
+): Promise<CompressForStorageResult> {
+  const { onProgress, compress = compressImage } = options;
+
+  if (blob.size <= COMPRESSION_THRESHOLD_BYTES) {
+    return { blob };
+  }
+
+  const result = await compress(blob as File, {
+    maxSizeMB: 5,
+    quality: 0.8,
+    maxDimension: 1920,
+    ...(onProgress ? { onProgress } : {}),
+  });
+
+  if (result.blob.size > MAX_STORED_BYTES) {
+    const sizeMB = (result.blob.size / (1024 * 1024)).toFixed(1);
+    const limitMB = Math.round(MAX_STORED_BYTES / (1024 * 1024));
+    throw new Error(
+      `This image is too large to save (${sizeMB}MB even after shrinking it). The most we can store is ${limitMB}MB.\n\nTry one of these:\n• Take a new photo in better light\n• Use a different camera or app\n• Pick a smaller image`,
+    );
+  }
+
+  return { blob: result.blob, compressedSize: result.compressedSize };
+}
