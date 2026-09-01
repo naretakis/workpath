@@ -26,7 +26,15 @@
 
 import "fake-indexeddb/auto";
 
-import { describe, it, expect, beforeEach, afterAll, vi } from "vitest";
+import {
+  describe,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  afterAll,
+  vi,
+} from "vitest";
 
 import { db } from "@/lib/db";
 import {
@@ -81,6 +89,12 @@ beforeEach(async () => {
     db.incomeDocuments.clear(),
     db.incomeDocumentBlobs.clear(),
   ]);
+});
+
+afterEach(() => {
+  // A test that FAILS never reaches its own spy.mockRestore(), so a throw-stub
+  // would survive into the next test and report one real failure as two.
+  vi.restoreAllMocks();
 });
 
 afterAll(async () => {

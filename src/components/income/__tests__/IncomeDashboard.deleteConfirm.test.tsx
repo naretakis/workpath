@@ -116,6 +116,9 @@ beforeEach(async () => {
 
 afterEach(() => {
   vi.unstubAllGlobals();
+  // A test that FAILS never reaches its own spy.mockRestore(), so a throw-stub
+  // would survive into the next test and report one real failure as two.
+  vi.restoreAllMocks();
 });
 
 afterAll(async () => {

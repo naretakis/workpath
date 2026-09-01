@@ -15,6 +15,11 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@mui/material";
 import {
   CheckCircle as CheckCircleIcon,
@@ -22,8 +27,11 @@ import {
   ArrowForward as ArrowForwardIcon,
   ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material";
-import { db } from "@/lib/db";
-import { getLatestAssessmentResult } from "@/lib/storage/assessment";
+import { getFirstProfile } from "@/lib/storage/profile";
+import {
+  getLatestAssessmentResult,
+  archiveAssessmentResult,
+} from "@/lib/storage/assessment";
 import { AssessmentResult } from "@/types/assessment";
 import {
   getComplianceMethodLabel,
@@ -34,17 +42,21 @@ export default function AssessmentResultsPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState<AssessmentResult | null>(null);
+  // Start-over confirmation. W0 § 0.3.3.
+  const [startOverOpen, setStartOverOpen] = useState(false);
+  const [startingOver, setStartingOver] = useState(false);
+  const [startOverError, setStartOverError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadResult = async () => {
       try {
-        const profiles = await db.profiles.toArray();
-        if (profiles.length === 0) {
+        const profile = await getFirstProfile();
+        if (!profile) {
           router.push("/onboarding");
           return;
         }
 
-        const latestResult = await getLatestAssessmentResult(profiles[0].id);
+        const latestResult = await getLatestAssessmentResult(profile.id);
         if (!latestResult) {
           router.push("/how-to-hourkeep");
           return;
@@ -61,27 +73,59 @@ export default function AssessmentResultsPage() {
     loadResult();
   }, [router]);
 
+  /**
+   * Discard the current result and go back to a blank assessment. W0 § 0.3.3.
+   *
+   * Routes through `archiveAssessmentResult` rather than
+   * `db.assessmentResults.delete`, which is what this page used to call. The
+   * archive writes an `assessmentHistory` row before removing the current result,
+   * so the fact that a screening happened survives.
+   *
+   * That archive is itself lossy — it keeps `userId`, `completedAt`,
+   * `exemptionStatus` and `recommendedMethod`, and discards `responses` and the
+   * full `recommendation`. Strictly better than a hard delete, which keeps
+   * nothing, but not a true archive. Widening the history record is a schema
+   * change and belongs to W3's consolidated v7 (ADR-0002).
+   */
+  const handleConfirmStartOver = async () => {
+    if (!result?.id) return;
+
+    setStartingOver(true);
+    setStartOverError(null);
+    try {
+      await archiveAssessmentResult(result.id);
+      router.push("/how-to-hourkeep");
+    } catch (error) {
+      console.error("Error archiving assessment result:", error);
+      setStartOverError(
+        "We couldn't clear your answers. Nothing was removed — they're still here. Try again, or just choose \u201cReview my answers\u201d to change them instead.",
+      );
+    } finally {
+      setStartingOver(false);
+    }
+  };
+
   const handleStartMethod = async () => {
     if (!result) return;
 
     try {
-      const profiles = await db.profiles.toArray();
-      if (profiles.length > 0) {
+      const profile = await getFirstProfile();
+      if (profile) {
         const { setComplianceMode, setSeasonalWorkerStatus } = await import(
           "@/lib/storage/income"
         );
         const currentMonth = new Date().toISOString().slice(0, 7);
 
         if (result.recommendation.primaryMethod === "income-tracking") {
-          await setComplianceMode(profiles[0].id, currentMonth, "income");
-          await setSeasonalWorkerStatus(profiles[0].id, currentMonth, false);
+          await setComplianceMode(profile.id, currentMonth, "income");
+          await setSeasonalWorkerStatus(profile.id, currentMonth, false);
         } else if (
           result.recommendation.primaryMethod === "seasonal-income-tracking"
         ) {
-          await setComplianceMode(profiles[0].id, currentMonth, "income");
-          await setSeasonalWorkerStatus(profiles[0].id, currentMonth, true);
+          await setComplianceMode(profile.id, currentMonth, "income");
+          await setSeasonalWorkerStatus(profile.id, currentMonth, true);
         } else if (result.recommendation.primaryMethod === "hour-tracking") {
-          await setComplianceMode(profiles[0].id, currentMonth, "hours");
+          await setComplianceMode(profile.id, currentMonth, "hours");
         }
       }
     } catch (error) {
@@ -452,38 +496,95 @@ export default function AssessmentResultsPage() {
               ? "Go to Dashboard"
               : `Start ${getComplianceMethodLabel(recommendation.primaryMethod)}`}
           </Button>
+          {/*
+            W0 § 0.3.3. These two buttons used to do the opposite of what they
+            said: "Back to Assessment" called db.assessmentResults.delete()
+            directly — a hard delete, no history row, straight into Dexie from a
+            component — while "Start Fresh" deleted nothing and only navigated.
+
+            They now differ in a way that matches their labels, and the difference
+            is real rather than cosmetic: /how-to-hourkeep prefills the assessment
+            from getLatestAssessmentResult, so keeping the result preserves the
+            prefill and archiving it clears it.
+          */}
           <Button
             variant="outlined"
             size="large"
-            onClick={async () => {
-              if (result?.id) {
-                try {
-                  await db.assessmentResults.delete(result.id);
-                } catch (error) {
-                  console.error("Error deleting result:", error);
-                }
-              }
-              router.push("/how-to-hourkeep");
-            }}
+            onClick={() => router.push("/how-to-hourkeep")}
             fullWidth
             sx={{ py: 1.5 }}
           >
-            Back to Assessment
+            Review my answers
           </Button>
           <Button
             variant="text"
             size="large"
-            onClick={() => router.push("/how-to-hourkeep")}
+            onClick={() => setStartOverOpen(true)}
             fullWidth
             sx={{
               color: "text.secondary",
               "&:hover": { bgcolor: "action.hover" },
             }}
           >
-            Start Fresh
+            Start over
           </Button>
         </Box>
       </Box>
+
+      {/* Start-over confirmation. W0 § 0.3.3. */}
+      <Dialog
+        open={startOverOpen}
+        onClose={
+          startingOver
+            ? undefined
+            : () => {
+                setStartOverOpen(false);
+                setStartOverError(null);
+              }
+        }
+        aria-labelledby="start-over-title"
+        aria-describedby="start-over-description"
+        fullWidth
+        maxWidth="xs"
+      >
+        <DialogTitle id="start-over-title">
+          Start over with a blank assessment?
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="start-over-description">
+            Your answers won&apos;t be filled in next time, so you&apos;ll go
+            through the questions again. Anything you&apos;ve recorded on the
+            tracking or income pages stays where it is.
+          </DialogContentText>
+          {startOverError && (
+            <Alert severity="error" sx={{ mt: 2 }}>
+              {startOverError}
+            </Alert>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={() => {
+              setStartOverOpen(false);
+              setStartOverError(null);
+            }}
+            disabled={startingOver}
+          >
+            Keep my answers
+          </Button>
+          <Button
+            onClick={handleConfirmStartOver}
+            color="error"
+            variant="contained"
+            disabled={startingOver}
+            startIcon={
+              startingOver ? <CircularProgress size={16} /> : undefined
+            }
+          >
+            {startingOver ? "Clearing..." : "Start over"}
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 }
