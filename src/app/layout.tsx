@@ -1,21 +1,33 @@
 "use client";
 
 import { ThemeProvider } from "@mui/material/styles";
-import { CacheProvider } from "@emotion/react";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
 import { theme } from "@/theme/theme";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
 import { StorageWarning } from "@/components/settings/StorageWarning";
-import createEmotionCache from "@/lib/emotion-cache";
 import "./globals.css";
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache();
-
-// Get the base path from the environment
-// In production (GitHub Pages), this will be "/hourkeep"
-// In development, this will be ""
-const basePath = process.env.NODE_ENV === "production" ? "/hourkeep" : "";
+/**
+ * No base path. The site is served from the root of a custom domain.
+ *
+ * This used to be `process.env.NODE_ENV === "production" ? "/hourkeep" : ""`,
+ * dating from when the app was hosted at `naretakis.github.io/hourkeep`. The custom
+ * domain (`out/CNAME` → hourkeep.app) removed the prefix and `next.config.ts` drops
+ * `basePath` accordingly — but this constant was left behind, so every production
+ * build emitted links to a directory that does not exist.
+ *
+ * Verified against the live site before fixing: `hourkeep.app/hourkeep/manifest.json`
+ * returned **404** while `hourkeep.app/manifest.json` returned 200. The manifest link
+ * had been dead in production, which means no "Add to Home Screen" and no app icon —
+ * for an offline-first PWA, the most important non-functional requirement, broken.
+ *
+ * Invisible to every existing test: dev builds set this to `""` so it never
+ * reproduces locally, and jsdom never loads real HTML from a real server. Found by
+ * the Playwright work; `e2e/pwa-assets.spec.ts` now asserts every `<link href>`
+ * resolves.
+ */
+const basePath = "";
 
 export default function RootLayout({
   children,
@@ -25,7 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="emotion-insertion-point" content="" />
+        {/*
+          No `emotion-insertion-point` meta. AppRouterCacheProvider manages style
+          insertion itself; leaving the meta tag here would reintroduce the pages-router
+          pattern this replaced. See the comment on the provider below.
+        */}
         <meta name="application-name" content="HourKeep" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -70,14 +86,37 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <CacheProvider value={clientSideEmotionCache}>
+        {/*
+          AppRouterCacheProvider, not a hand-rolled `CacheProvider`.
+          Fixes React #418 (hydration failed) on every route.
+
+          What was wrong: this layout used the **pages-router** emotion pattern — a
+          module-scope `createEmotionCache()` plus a `<meta name="emotion-insertion-point">`
+          — inside an **App Router** app. The server HTML already shipped
+          `<style data-emotion>` tags, then the client built a fresh cache that did not
+          know about them and re-inserted at the meta tag, mutating `<head>` during
+          hydration. React saw HTML that did not match, discarded the affected subtree,
+          and re-rendered it client-side.
+
+          Symptoms it produced: `Minified React error #418; args[]=HTML` on most routes,
+          nondeterministically — whether it fired depended on a race between emotion's
+          insertion and React's hydration commit, which is why it appeared on different
+          routes in different runs. On the target device, an old phone, the visible
+          result is a flash of unstyled or re-rendered content, and it discards the one
+          advantage a static export has.
+
+          Found by the Playwright suite (`e2e/console-clean.spec.ts`). Unreachable from
+          Vitest — jsdom mounts fresh, so there is no server HTML to disagree with — and
+          invisible in `next dev`, which reported zero errors on the same routes.
+        */}
+        <AppRouterCacheProvider options={{ key: "mui-style" }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <OfflineIndicator />
             <StorageWarning />
             {children}
           </ThemeProvider>
-        </CacheProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
