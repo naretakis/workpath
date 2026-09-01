@@ -13,6 +13,14 @@
 # testing
 /coverage
 
+# Playwright MCP scratch output — snapshots, console logs, screenshots.
+# Currently written to $HOME because the MCP server cds there on start, but it
+# lands in the cwd if that ever changes. Ignored pre-emptively; a committed
+# snapshot dump is noise, and screenshots are large.
+.playwright-mcp/
+/test-results
+/playwright-report
+
 # next.js
 /.next/
 /out/
