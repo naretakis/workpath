@@ -2,32 +2,40 @@
 
 **The holistic home for this effort.** Open this file to remember where we are.
 
-**Last updated:** 2026-08-17 (W2a closed out)
-**Current wave:** none in progress — **W0** is next in sequence. W0-slice and W2a both landed 2026-08-17
+**Last updated:** 2026-09-01 (W0 closed out)
+**Current wave:** none in progress — **W1** is next in sequence. W0 landed 2026-09-01
 
-> ### Carried forward — two items W2a could not close
+> ### Carried forward — three items still open
 >
 > Recorded here because they are the kind of thing that disappears if it only lives in a closed wave file.
 >
-> 1. **A phone-viewport smoke test, offline.** The one W2a criterion that needs a person rather than a
->    command. W2a put a new collapsible panel above the tracking calendar and rewrote copy across 14 files;
->    none of it has been seen at 375px or with the service worker offline.
-> 2. **Two of four reviewers did not run** in W2a's review protocol — data integrity and semantic review,
->    lost to repeated sub-agent failures. The two that did run found **seven** issues the wave had missed,
->    including 43 wrong CFR citations, so this is a coverage gap rather than a formality. Worth running
->    both against W2a's diff when convenient, or folding into W0's review.
+> 1. **A phone-viewport smoke test, offline.** Now owed by two waves. W2a put a new collapsible panel above
+>    the tracking calendar and rewrote copy across 14 files; W0 added a **destructive** Settings action.
+>    None of it has been seen at 375px or with the service worker offline, and a delete-everything button
+>    is the worst thing to ship unseen on a phone.
+> 2. **W2a's two missing reviewers** — data integrity and semantic review, lost to sub-agent failures. The
+>    two that did run found **seven** issues W2a had missed, including 43 wrong CFR citations. Still worth
+>    running against W2a's diff.
+> 3. **Ten React Compiler errors are suppressed by a version pin**, deferred from W0 to W1 deliberately.
+>    Measured: 11 errors across 8 files under `eslint-plugin-react-hooks` 7.1.1 with inline disables
+>    respected; W0 removed one by deleting `DocumentMetadataForm.tsx`. `package.json`'s `overrides` pins
+>    7.0.1, which is what keeps them invisible. **W1 owns lifting the pin.** Details in
+>    [`waves/wave-0-safety-net.md`](waves/wave-0-safety-net.md) § Handoffs.
 >
-> ### Two things W0 inherits from W2a
+> ### Both things W0 inherited from W2a are now closed
 >
-> 1. **Deleting the dead `components/exemptions` chain will turn the test suite red**, by design. Three of
->    those files are allowlisted in `src/__tests__/no-verdict.source.test.ts`, and a test asserts every
->    allowlisted file still exists. When W0 deletes them, that test fails until the entries are removed —
->    which is the forcing function that makes the handoff enforced rather than remembered. **Deleting the
->    allowlist entries is the fix, not a workaround.** Once all three are gone the allowlist is empty by
->    construction. `AssessmentHistory.tsx` is in the same chain and W0 deletes it too.
-> 2. **`npm test` now gates deployment.** The Pages workflow runs type-check, test, and lint before the
->    build, so any red test blocks the deploy. That was added on 2026-08-17 after the discovery that CI had
->    never run the tests at all, which meant the ADR-0003 guard protected nothing on `main`.
+> 1. **The dead-chain allowlist is empty by construction.** Deleting the chain turned the suite red exactly
+>    as designed, with a message naming the fix. `DEAD_FILE_ALLOWLIST` and `DEAD_CHAIN` are both empty, and
+>    the meta-test inverted to assert emptiness rather than being deleted with the entries.
+> 2. **`npm test` gates deployment**, and now runs 423 tests rather than 196.
+>
+> ### What W1 should read first
+>
+> W0's **Found during execution** section, which lists ten places the planning documents were wrong —
+> including three audit claims. Two are load-bearing for later waves: `INCOME_THRESHOLD` is **not** unused
+> (W2b needs its three real importers), and `storage/income.ts` has **three** `monthlyEquivalent` summing
+> sites rather than one (W7a). There are also three `fake-indexeddb` limitations W3's migration test must
+> work around, the most important being that **it does not preserve `Blob` at all**.
 **Operative date:** **December 1, 2026** — see [`PRD.md`](PRD.md) § 10
 
 > **This plan was independently validated on 2026-08-16** by five adversarial reviews. The legal analysis
@@ -103,7 +111,7 @@ Sequence and dependencies: [`waves/README.md`](waves/README.md).
 |---|---|---|
 | **W0-slice** | Test runner only — Vitest, a `test` script, nothing else | **Done** 2026-08-17 |
 | **W2a** | Truth in copy | **Done** 2026-08-17 — 10 gap rows closed, 5 partial |
-| [W0](waves/wave-0-safety-net.md) | Safety net, deletion, 4 data-loss fixes | Not started |
+| [W0](waves/wave-0-safety-net.md) | Safety net, deletion, 4 data-loss fixes | **Done** 2026-09-01 — 4 data-loss fixes, delete-all-data, 14 files deleted, 196 → 423 tests. 1 criterion unmet (phone viewport) |
 | [W5](waves/wave-5-month-scoping.md) | Month scoping + review periods | Not started |
 | W2b | Policy profile | Not started |
 | W6a | Evidence capture | Not started |

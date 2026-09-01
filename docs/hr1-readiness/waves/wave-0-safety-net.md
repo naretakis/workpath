@@ -11,7 +11,8 @@ Three reasons, in order.
 1. **We are about to change compliance math with zero test coverage.** Five modules decide whether a user
    believes they will keep their coverage, and none of them have an executable test. Changing them blind
    is how you ship a bug that says "you're fine" to someone who isn't. See ADR-0007.
-2. **Three confirmed data-loss bugs are live.** The worst deletes an unrelated document.
+2. **Four confirmed data-loss bugs are live.** The worst deletes an unrelated document. (Was "three"
+   here while § 0.3 listed four; corrected during execution.)
 3. **~2,500 lines of dead code slows everything downstream** and includes a parallel, unused exemption
    flow that is easy to edit by mistake. Deleting now means less to migrate in W1.
 
@@ -117,7 +118,8 @@ type-to-confirm gate, then delete all Dexie tables, remove the `hourkeep-encrypt
 - Remove `/test-compression` from the production build — it is publicly reachable at
   `hourkeep.app/test-compression` and precached by the service worker. Either delete the route or gate it
   on `NODE_ENV !== "production"`.
-- Remove the four `console.log` calls in `DocumentMetadataFormSimple.tsx`.
+- Remove the four `console.log` calls in `DocumentMetadataFormSimple.tsx`. (There was a fifth, in
+  `IncomeEntryForm.handleDocumentCaptured`, that no list had counted. Removed too.)
 - Fix `APP_CONFIG.version` falling back to `"4.2.0"`.
 - Fix the `useActivityDocumentCounts` dependency array so the Dexie query stops re-running every render.
 - Fix `CHANGELOG.md`'s 7.2.0 date (`2025-01-14` → `2026-01-14`).
@@ -131,17 +133,75 @@ wave establishes the floor; W2 starts correcting content.
 
 ## Acceptance criteria
 
-- [ ] `npm test` runs and passes; CI gates deploy on it
-- [ ] All five compliance-critical modules have characterization tests, with known-wrong behaviors
-      annotated and referencing the wave that fixes them
-- [ ] Viewing and deleting an income document affects **only** income tables — proven by test
-- [ ] Deleting an income entry removes its documents and blobs — proven by test
-- [ ] Every listed dead file is gone; `tsc --noEmit` and `npm run build` still pass
-- [ ] Post-compression size check exists in both live document paths
-- [ ] A user can delete all their data from Settings, and the encryption key is removed with it
-- [ ] `/test-compression` is not in the production build output
-- [ ] Settings → About shows the real version
-- [ ] Line count in `src/` drops by roughly 2,500
+Closed out 2026-09-01. Each is checked against a named observable; three were rewritten because as
+drafted they named nothing checkable, and one was unmeetable as written.
+
+- [x] **`npm test` runs and passes; CI gates deploy on it.**
+      `npm test` → 423 passing across 22 files, run twice for stability. `deploy.yml:63` runs `npm test`
+      between the type check and lint. Was already true from the W0-slice; re-verified.
+- [x] **All five compliance-critical modules have characterization tests, with known-wrong behaviours
+      annotated and referencing the wave that fixes them.**
+      `calculations.ts` (16), `payPeriodConversion.ts` (23), `storage/income.ts` (36) are new;
+      `exemptions/calculator.ts` (43→64) and `assessment/recommendationEngine.ts` (45→70) extend W2a's
+      files rather than duplicating their fixtures. Every known-wrong test names its CFR section and its
+      owning wave. Coverage report confirms the first three had **zero** coverage before — they did not
+      appear in it at all.
+- [x] **Viewing and deleting an income document affects only income tables — proven by test.**
+      Two layers, because neither alone is sufficient: `documentAccess.test.ts` (19) proves the dispatch
+      under a constructed id collision, and `DocumentViewer.context.test.tsx` (6) proves the component
+      threads the prop — a viewer that accepted `context` and ignored it would leave the first suite
+      green. Both proven red by reintroducing the original bug (6 and 4 failures).
+- [x] **Deleting an income entry removes its documents and blobs — proven by test.**
+      `deleteIncomeEntryWithDocuments.test.ts` (7). Plus `IncomeDashboard.deleteConfirm.test.tsx` (7) for
+      the confirmation gate, which was not optional: making the delete cascade without a gate would have
+      made this wave strictly more destructive than the bug it fixed.
+- [x] **Every listed dead file is gone; `tsc --noEmit` and `npm run build` still pass.**
+      14 files removed. Deadness re-verified at deletion time with a resolved import graph, not the
+      audit's list — see "Found during execution" for why that mattered. Both gates clean.
+- [x] **Post-compression size check exists in ~~both~~ all five live document paths.**
+      Criterion undercounted the sites: there are five, not two — `ActivityForm.tsx` ×3 and
+      `IncomeEntryForm.tsx` ×2. All five now route through `compressForStorage`, verified by grep at 5
+      call sites and 0 remaining `compressImage` uses in those files. 11 tests.
+- [x] **A user can delete all their data from Settings, and the encryption key is removed with it.**
+      `deleteAllData.test.ts` (11), `DeleteAllDataDialog.test.tsx` (13),
+      `deleteAllReachable.test.tsx` (4) — the last exists because "reachable from Settings" needed its own
+      observable; a dialog nobody can open satisfies the other two suites.
+- [x] **`/test-compression` is not in the production build output.**
+      Absent from `npm run build`'s route list, from `out/`, and from the service worker precache. Route
+      deleted rather than gated on `NODE_ENV`, since a gated route still ships a file the service worker
+      can precache.
+- [x] **Settings → About shows the real version.**
+      Fallback was `"4.2.0"` against a `package.json` of `7.2.0`. Now `"unknown"`.
+      `next.config.ts:27` already injects `packageJson.version`, so the fallback rarely fires — it was a
+      trap rather than a live bug, and a fallback that lies is still worse than one that admits it.
+- [x] ~~Line count in `src/` drops by roughly 2,500~~ → **Deletion removes at least 2,500 lines of
+      non-test code, measured against a stated baseline.**
+      Rewritten: the original had no baseline and was unmeetable, because this wave adds far more test
+      code than it deletes. Measured — deletion removed **2,566** lines of `src/` ts+tsx plus **358**
+      lines of markdown. Total `src/` ts+tsx went **26,300 → 29,721**, up 3,421, because tests under
+      `__tests__` went **2,235 → 7,397**. Non-test code fell from 24,065 to 22,324.
+
+### Added during closeout — § 0.6 items the criteria never checked
+
+- [x] **No `console.log` in production component code.** Five removed. `grep` finds none outside
+      `db.ts`'s `.upgrade()` callbacks, which are left deliberately: migration logging is defensible and
+      W3 rewrites them.
+- [x] **`CHANGELOG.md` dates are internally consistent.** 7.2.0 was `2025-01-14`, which placed it before
+      7.1.0's `2025-11-18`. Real date `2026-01-14`, established from git rather than guessed. All 13
+      dated entries checked for ordering: 1 violation before, 0 after.
+- [x] **A document write cannot orphan a blob.** `documentWritesAreAtomic.test.ts` (8), proven red by
+      unwrapping both transactions (5 failures). A test also proves orphans *accumulate* — three retries
+      left three unreachable blobs.
+- [x] **The `useActivityDocumentCounts` effect runs once per id set, not once per render.**
+      `useActivityDocumentCounts.test.tsx` (7). See "Found during execution" — this was not the nit the
+      criterion implied.
+
+### Not met
+
+- [ ] **Phone-viewport check on the delete-all flow.** Not done, and it is the criterion this wave most
+      wanted: § 0.5 ships a destructive Settings action, and the worst place to ship one unseen is a
+      375px viewport. The dialog sets `fullScreen` below `sm` with `noSsr`, and the tests assert
+      behaviour rather than layout. Recorded unmet rather than rounded up. Same gap W2a recorded.
 
 ## Risks
 
@@ -149,4 +209,218 @@ wave establishes the floor; W2 starts correcting content.
 |---|---|
 | A "dead" file turns out to be referenced dynamically | Grep for string-literal imports and `import()` before each deletion; build after each |
 | Characterization tests calcify bugs into expectations | Every known-wrong test is annotated with its CFR citation and the fixing wave |
-| Delete-all is irreversible | Type-to-confirm, plus an export prompt first |
+| Delete-all is irreversible | ~~Type-to-confirm, plus an export prompt first~~ → **Type-to-confirm only.** `gap-analysis.md:298` (gap 15.27) rates "export first" `harmful`: there is no import path, so an export cannot restore anything. Calling it a mitigation would be an unverified claim. See "Found during execution" § 11 |
+
+---
+
+## Found during execution
+
+Same pattern W2a reported: the legal analysis held, the bookkeeping around it did not. Ten items, each
+verified against code or a command rather than inferred.
+
+### The wave file was wrong in four places
+
+1. **"Three confirmed data-loss bugs" in § "Why first" vs four in § 0.3.** Corrected above.
+
+2. **§ 0.3.4's prescribed fix could not be applied.** It said to "pass `finalResponses` rather than
+   `responses`" at `onboarding/page.tsx:106`. `finalResponses` is a local `const` inside
+   `AssessmentFlow.completeAssessment` and that identifier does not appear anywhere in
+   `onboarding/page.tsx`. The real loss site was `AssessmentFlow.tsx:378`.
+
+3. **"Post-compression size check in both live document paths" undercounted.** Five sites, not two. And a
+   **sixth** compression site exists that no document mentions — `FileUpload.tsx`, live via
+   `DocumentCapture`. It needs no change, because its output flows through `DocumentCapture.onCapture`
+   into the five guarded sites, so `compressForStorage` covers the upload path downstream. Verified the
+   chain rather than assuming it.
+
+4. **The line-count criterion had no baseline and was unmeetable.** Rewritten above with measured figures.
+
+### The audit was wrong in three places
+
+5. **`INCOME_THRESHOLD` is not unused.** Audit § 6 says "`REQUIRED_HOURS` and `INCOME_THRESHOLD` sit
+   unused in `payPeriodConversion.ts`". `INCOME_THRESHOLD` has three live importers —
+   `storage/income.ts:9`, `IncomeStatusIndicator.tsx:11`, `SeasonalWorkerView.tsx:16`. Only
+   `REQUIRED_HOURS` and `FEDERAL_MINIMUM_WAGE` are module-internal. **W2b needs the real number.**
+
+6. **`AssessmentHistory.tsx` was 64 lines, not ~180.**
+
+7. **The audit's "12-way exemption switch" is not the calculator's branch count.** `calculator.ts` has
+   **13** returning branches plus a fall-through (14 `nextSteps` strings). The audit's 12 counts question
+   IDs in `AssessmentFlow`, a different file. § 0.2's "all 12 checks" inherited the wrong number.
+
+8. **`questionFlow.ts` did not implement a short-circuit the live flow lacks.** The audit says it
+   "ironically implements the skip-answered logic the live flow lacks." Half right: the live flow *does*
+   short-circuit on exclusion, by a different route. What it genuinely lacks is
+   resume-without-re-asking. Recorded in `wave-4-screening-rebuild.md`.
+
+### Two § 0.6 items were not housekeeping
+
+9. **The `useActivityDocumentCounts` dependency array was a render loop.** Both the audit and § 0.6
+   described it as a query re-running each render. It is worse: the effect ends in
+   `setCounts(new Map(...))`, a fresh object that never bails out of re-rendering, which produces a fresh
+   `activityIds` identity, which re-runs the effect — unbounded, paced only by IndexedDB. The primary
+   symptom is battery and heat on an old phone, which is why nobody saw it. Found by writing the test:
+   the Vitest worker died after 83 seconds.
+
+   **`exhaustive-deps` cannot catch this.** The rule reports *missing* dependencies; this array was
+   over-specified, which satisfies it. Measured against `eslint-plugin-react-hooks` 7.1.1 with inline
+   disables ignored — 11 errors across 8 files — and this hook raised none of them.
+
+10. **Document saves orphaned blobs, and the orphans accumulate.** `saveDocument` and
+    `saveIncomeDocument` wrote blob then metadata as two independent awaits. A failed metadata write left
+    a blob nothing could reach: invisible to the UI, uncounted by `StorageInfo`, and unreachable by every
+    delete path, since all of them start from the metadata row to find the `blobId`.
+    `cleanupOrphanedDocuments` cannot reclaim these — it scans `db.documents` against `db.activities`, so
+    it finds documents whose activity is gone, not blobs whose document never existed. There is no income
+    counterpart at all. A test proves three retries left three unreachable blobs.
+
+### Contradiction between documents, surfaced rather than resolved quietly
+
+11. **§ 0.5's "export first" mitigation contradicts gap 15.27.** The Risks table said "Type-to-confirm,
+    plus an export prompt first." `gap-analysis.md:298` rates the same idea `harmful`, because **there is
+    no import path** — an export is a printout, not a backup. The type-to-confirm gate is therefore the
+    entire protection. A test asserts the dialog never says backup, restore, or recover; it does say to
+    save or print an export if the information may still be needed for the state, which is true without
+    being a promise.
+
+---
+
+## Deviations from the plan, and why
+
+Four, all deliberate.
+
+1. **`payPeriodConversion` pins the arithmetic contract, not the constants.** § 0.2 asked for "all four
+   multipliers; `580`". Those are exactly the policy literals ADR-0001 moves to `src/lib/policy/` in W2b,
+   and ADR-0007 warns against pinning behaviour we intend to change. Split instead into a contract block
+   that references `PAY_PERIOD_MULTIPLIERS` rather than restating it, and a named
+   `W2b POLICY-LITERAL SNAPSHOT` block. Proven to work as intended: changing `weekly` 4.33 → 4.35 fails 3
+   snapshot tests and 0 contract tests; changing `Math.round` → `Math.floor` fails 3 contract tests and 0
+   snapshot tests. After W2b a snapshot failure means the refactor did its job; a contract failure means
+   it broke something. *Approved before implementation.*
+
+2. **The narrow `deleteIncomeEntry` export was removed, not kept.** § 0.3.2 implied a cascading sibling
+   alongside it. But `activities.ts` exports only `deleteActivityWithDocuments` and keeps its bare
+   `db.activities.delete` internal — so once `IncomeDashboard` switched over, the narrow export had zero
+   production callers and was a trap: same single-number argument, reads as the obvious choice, silently
+   orphans blobs. Two tests now assert each storage module exposes exactly one `delete*` export.
+
+3. **The income delete confirmation is an MUI `Dialog`, not `window.confirm`.** § 0.3.2 said "matching
+   the activity flow". This matches its *message* — the photo count, which is the fact that changes
+   someone's mind — but not its primitive. `window.confirm` is unstylable, cannot go full-screen on a
+   phone, and offers nowhere to report the partial-failure case this cascade needs. MUI dialogs are
+   already the income idiom.
+
+4. **The post-compression check became a shared helper rather than five copies.** Audit § 6 lists this
+   codebase's duplication as a defect in its own right and those five blocks were already
+   near-identical; six copies of one rule would have drifted.
+
+Also, two things the closeout did that § 0.4 did not ask for, both small and both because leaving them
+would have been incoherent: the results page's two `db.profiles.toArray()` reads were swapped for the
+existing `getFirstProfile()` (leaving a direct Dexie read beside a comment about routing through the
+storage layer made no sense), and three income document type labels were added to
+`DOCUMENT_TYPE_LABELS` (before § 0.3.1 an income document never resolved, so its label was never reached;
+now that it renders, the fallback would print the raw key `pay_stub`).
+
+---
+
+## Handoffs
+
+### To W1 — the ten remaining React Compiler errors
+
+**Measured, not recalled.** Installed `eslint-plugin-react-hooks@7.1.1` out-of-tree and ran it against
+`src/` with inline disables respected: **11 errors across 8 files** — 6 `set-state-in-effect`, 5
+`immutability`. `eslint-config-next` wants `^7.0.0`; `package.json`'s `overrides` pins 7.0.1, which is
+what keeps them invisible today.
+
+W0 removed **one** for free by deleting `DocumentMetadataForm.tsx`. **Ten remain**, in
+`app/settings/page.tsx`, `app/tracking/page.tsx`, `ActivityForm.tsx`, `DocumentViewer.tsx`,
+`IncomeDashboard.tsx`, `IncomeEntryForm.tsx`, `StorageInfo.tsx`.
+
+Left to W1 deliberately: they produce zero output today, fixing them changes render timing in a wave
+scoped "no behavior changes", and every affected file is rewritten by W5 or W6a. W1 owns lifting the pin.
+
+Note `exhaustive-deps` is a *warning* under 7.1.1, not an error — and finding 9 above is the case it
+cannot see at all.
+
+### To W3 — `fake-indexeddb` does not preserve `Blob`
+
+Probed 2026-08-17: a `Blob` written and read back arrives as a plain `Object` — `instanceof Blob` is
+`false`, and `size`, `type`, `text()` and `arrayBuffer()` are all absent. **Any assertion on blob content
+under this harness asserts on nothing.**
+
+`data-migration-standards.md` requires the v6 → v7 migration test to assert "blobs survived". Under
+`fake-indexeddb` that can only mean *the row is still reachable and its `blobId` still resolves*. **State
+that limit rather than claiming coverage you do not have**, and confirm real blob survival by hand in
+DevTools → Application → IndexedDB.
+
+Two more harness facts, both learned the hard way:
+
+- **`clear()` does not reset autoincrement counters**, and tables advance independently. Use explicit ids
+  (`put` with an `id`) when a fixture needs a collision; a first version hardcoded `1` and silently
+  stopped colliding.
+- **jsdom needs stubs for `URL.createObjectURL`, `URL.revokeObjectURL` and `ResizeObserver`** (the last
+  for `react-zoom-pan-pinch` inside `DocumentViewer`).
+
+### To W7a — three summing sites, not one
+
+Found by mutation while pinning the `monthlyEquivalent` double-count. Replacing both `reduce`
+accumulators in `storage/income.ts` (lines 103 and 142) left the per-source breakdown still inflated,
+because `incomeBySource` accumulates separately via `existing.monthlyEquivalent +=` (lines ~152-154). A
+fix applied only to the reduces leaves wrong the number a user reads when deciding which pay stub to
+photograph. Grep `monthlyEquivalent`; do not trust the type checker.
+
+Also pinned, and user-unfavourable: `recommendationEngine`'s seasonal gate is
+`isSeasonalWork && monthlyIncome >= 580`, so 42 CFR 435.552(g) averaging is offered **only** to workers
+whose single month already clears the threshold — inverting its purpose, since averaging exists for the
+worker whose months are uneven.
+
+### Smaller things, recorded so they are not rediscovered
+
+- **Four pages still read `db.profiles` directly**, against `data-migration-standards.md`:
+  `app/page.tsx`, `tracking/page.tsx`, `export/page.tsx`, `how-to-hourkeep/page.tsx`. `getFirstProfile()`
+  already exists. The results page was fixed because W0 was already in it.
+- **Activity deletion from the *form* has no confirmation** (`tracking/page.tsx` `handleDeleteActivity`)
+  while the *list* path does. Not among § 0.3's four bugs; now the only unconfirmed destructive path left.
+- **`hasJob` is read by nothing** in `recommendationEngine`. Passed by every caller, branched on nowhere,
+  and absent from the audit's dead-type-surface list. Matters to W4, which rewrites the questions.
+- **`complianceStatus` never returns its declared `"unknown"` variant** — confirms an audit entry.
+- **An explicit `false` answer is indistinguishable from no answer** in `calculator.ts` (bare truthiness
+  guards). Matters under 42 CFR 435.554(c)(5)(ii), where "I said no" and "nobody asked me" are different
+  evidentiary positions.
+- **`archiveAssessmentResult` is lossy** — it keeps four scalars and discards `responses` and the full
+  `recommendation`. Better than the hard delete it replaced, but "archive" overstates it. Widening the
+  history record is a schema change, so W3.
+- **Pre-existing `EBADENGINE`, not introduced here.** `jsdom@30.0.1` requires
+  `^22.22.2 || ^24.15.0 || >=26.0.0` and its `undici@8.10.0` requires `>=22.19.0`; local Node is
+  v22.18.0 and `package.json` `engines` says only `>=22`. Latent — tests pass — but it is the same class
+  the W0-slice recorded as fixed, and `engines: ">=22"` was insufficient for jsdom's floor.
+- **After deleting a route, `tsc` reports stale errors** from `.next/types/validator.ts` until you
+  `rm -rf .next` and rebuild. The gate lies to you otherwise.
+
+---
+
+## Process notes worth keeping
+
+Three things that cost real time and would cost it again.
+
+1. **A mutation that does not apply looks exactly like a test that does not care.** Proving the
+   "export is not a backup" assertion, the mutation silently failed because Prettier had line-wrapped the
+   string being searched for — so the test stayed green and appeared insensitive. Always assert the edit
+   changed the file before believing a green result.
+
+2. **A failing test never reaches its own `spy.mockRestore()`.** A throw-stub survived into the next test
+   and broke it too, reporting one real failure as two with the second pointing at innocent code.
+   `vi.restoreAllMocks()` now runs in `afterEach` in every file that uses spies.
+
+3. **A test can pass for the wrong reason and look right.** Asserting `toBe("2026-07")` against a July
+   fake clock stayed green when the wall-clock default was replaced by a hardcoded `"2026-07"`. Derive
+   the expectation from the input, not from a literal that happens to match. A second instance: an
+   equivalence sweep over 2026 was insensitive until extended to 2027, where the fixtures straddle the
+   boundary that matters.
+
+And one dead end, recorded so nobody repeats it: **three attempts to make the render-loop regression fail
+cleanly all failed.** A render counter is rejected by `react-hooks/globals` as a side effect in render; a
+throwing query spy is swallowed by the hook's own `catch`, which then re-triggers the loop; and a short
+per-test timeout never fires because the loop starves the event loop. A regression does fail CI (exit 1)
+after ~95 seconds with "Worker exited unexpectedly" — a gate, but not a diagnosis. The reasoning is in
+the test file header.
