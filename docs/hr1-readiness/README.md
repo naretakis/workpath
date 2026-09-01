@@ -3,7 +3,11 @@
 **The holistic home for this effort.** Open this file to remember where we are.
 
 **Last updated:** 2026-09-01 (W0 closed out)
-**Current wave:** none in progress — **W1** is next in sequence. W0 landed 2026-09-01
+**Current wave:** none in progress — **W5 (Month Scoping)** is next. W0 landed 2026-09-01
+
+> A first version of this line said W1 was next. Wrong: ADR-0009's reordering moved **W1 to the very end**,
+> after the December date. `waves/README.md` § Sequence is authoritative — the pre-date order is
+> W0-slice → W2a → **W0** → **W5** → W2b → W6a → W8a → W7a.
 
 > ### Carried forward — three items still open
 >
@@ -24,7 +28,10 @@
 > 3. **Ten React Compiler errors are suppressed by a version pin**, deferred from W0 to W1 deliberately.
 >    Measured: 11 errors across 8 files under `eslint-plugin-react-hooks` 7.1.1 with inline disables
 >    respected; W0 removed one by deleting `DocumentMetadataForm.tsx`. `package.json`'s `overrides` pins
->    7.0.1, which is what keeps them invisible. **W1 owns lifting the pin.** Details in
+>    7.0.1, which is what keeps them invisible. **W1 owns lifting the pin — and W1 is sequenced last**, so
+>    the pin stays put for most of this plan. Worth knowing that `set-state-in-effect` and `immutability`
+>    violations in `ActivityForm`, `IncomeEntryForm`, `DocumentViewer`, `IncomeDashboard` and
+>    `StorageInfo` will go unreported while W5, W6a and W7a rewrite exactly those files. Details in
 >    [`waves/wave-0-safety-net.md`](waves/wave-0-safety-net.md) § Handoffs.
 >
 > ### Both things W0 inherited from W2a are now closed
@@ -34,13 +41,29 @@
 >    the meta-test inverted to assert emptiness rather than being deleted with the entries.
 > 2. **`npm test` gates deployment**, and now runs 423 tests rather than 196.
 >
-> ### What W1 should read first
+> ### What W5 should read first
 >
-> W0's **Found during execution** section, which lists ten places the planning documents were wrong —
-> including three audit claims. Two are load-bearing for later waves: `INCOME_THRESHOLD` is **not** unused
-> (W2b needs its three real importers), and `storage/income.ts` has **three** `monthlyEquivalent` summing
-> sites rather than one (W7a). There are also three `fake-indexeddb` limitations W3's migration test must
-> work around, the most important being that **it does not preserve `Blob` at all**.
+> W0's **Found during execution** section in [`waves/wave-0-safety-net.md`](waves/wave-0-safety-net.md).
+> Ten places the planning documents were wrong, three of them audit claims. Directly relevant to W5:
+>
+> - **`calculations.ts`'s `month` parameter is optional and falls back to the wall clock**, and
+>   `tracking/page.tsx:138` is the caller that forgets — it passes no month at all. Both are pinned by
+>   characterization tests that assert the *current* wrong behaviour, including one proving identical
+>   input gives different output depending on today's date. W5's diff should turn those red; that is the
+>   signal the fix landed.
+> - **The `startsWith` month filter is immune to timezone drift**, and a test records that as a property
+>   to preserve. Whatever replaces it must keep it — this is the bug class
+>   `data-migration-standards.md` names.
+> - **W5 needs no Dexie version bump.** `data-migration-standards.md` puts month-scoping columns in
+>   **W3's** consolidated v7, and `wave-5-month-scoping.md:33` says W5 does in-memory `userId` filtering
+>   precisely because the column is not there yet. Note `waves/README.md:98` justifies W5's dependency on
+>   W0 as "migration test before touching the schema", which reads as though W5 touches schema — it does
+>   not. Minor doc tension, flagged rather than silently edited.
+>
+> Load-bearing for waves after that: `INCOME_THRESHOLD` is **not** unused, so W2b needs its three real
+> importers; `storage/income.ts` has **three** `monthlyEquivalent` summing sites rather than one (W7a);
+> and there are three `fake-indexeddb` limitations W3's migration test must work around, the most
+> important being that **it does not preserve `Blob` at all**.
 **Operative date:** **December 1, 2026** — see [`PRD.md`](PRD.md) § 10
 
 > **This plan was independently validated on 2026-08-16** by five adversarial reviews. The legal analysis

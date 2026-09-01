@@ -2,7 +2,17 @@
 
 ## Manual Testing
 
-The image compression utility can be tested using the test page at `/test-compression`.
+> **The `/test-compression` page is gone.** W0 § 0.6 deleted the route: it was publicly reachable at
+> `hourkeep.app/test-compression` and precached by the service worker, so every user was shipping a
+> developer harness. Test through the real capture flow instead — see "Testing steps" below.
+>
+> Compression against real photographs is still a **manual** check, and deliberately so (ADR-0007
+> Tier 4): it needs the Canvas API, which jsdom does not implement. What *is* automated:
+>
+> - `src/lib/utils/__tests__/imageCompression.test.ts` — the validation logic.
+> - `src/lib/utils/__tests__/compressForStorage.test.ts` — the compress-if-over-5MB decision and the
+>   refuse-if-still-over-10MB check, using an injected compressor so the size logic is testable without
+>   a real canvas. That second check is the one W0 rescued out of a dead component before deleting it.
 
 ### Test Cases
 
@@ -34,10 +44,13 @@ The image compression utility can be tested using the test page at `/test-compre
 ### Testing Steps
 
 1. Start the development server: `npm run dev`
-2. Navigate to `http://localhost:3000/test-compression`
+2. Go to `/tracking`, open an activity, and use **Add document** — or `/income` and an income entry.
+   Both routes reach `DocumentCapture`, which is where uploads and camera captures now converge.
 3. Test each scenario above by selecting appropriate image files
 4. Verify compression results match expected behavior
 5. Check that quality is acceptable for document verification purposes
+6. Confirm an image still over 10MB after compression is **refused with a message naming the size and
+   what to try**, rather than failing later as a storage-quota error
 
 ### Validation Tests
 

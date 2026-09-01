@@ -51,10 +51,11 @@ W2a  Truth in Copy                    ← W0-slice. Days of work.
        │   every wrong statement corrected, every verdict string removed,
        │   ex parte explained, §435.559(c) reassurance, no-verdict render test
        ▼
-W0   Safety Net (scoped down)         ← W0-slice
+W0   Safety Net (scoped down)         ← W0-slice   ✅ DONE 2026-09-01
        │   4 data-loss fixes, /test-compression out, delete-all-data,
-       │   Vitest + migration test + narrow characterization tests,
-       │   dead-code deletion
+       │   characterization tests for all five compliance-critical modules,
+       │   dead-code deletion. NO migration test — W0 bumped no Dexie
+       │   version, so there was nothing to migrate; that lands with W3's v7
        ▼
 W5   Month Scoping                    ← W0
        │   lift the month, make the parameter required, review-period model
