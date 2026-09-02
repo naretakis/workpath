@@ -281,6 +281,16 @@ Deliberately left open. Not defects — decisions to close later.
    individual criteria in W3–W10 were not rewritten. Fix each at its wave's start.
 4. **Split wave files don't exist** for W2b, W6a/W6b, W7a/W7b, W8a/W8b, W9a/W9b. The combined `wave-2`,
    `wave-6`, `wave-7`, `wave-8`, `wave-9` files are the source.
+   **W2b is next and needs its file written first** — `wave-2-truth-and-policy-profile.md` is the source,
+   and W2a's precedent below is the reason to verify its site tables before trusting them.
+
+   > **A related mismatch W5 surfaced, 2026-09-02.** Closing a wave against its own acceptance criteria is
+   > not the same as closing the `gap-analysis.md` rows assigned to it. W5 met every live criterion in its
+   > file while leaving **gaps 15.6 and 15.7** untouched — because neither appears anywhere in W5's scope,
+   > and both need a State implementation date that only W2b's policy profile can supply. Both reassigned
+   > to W2b with the reasoning recorded in `gap-analysis.md`. **When a wave closes, check the gap rows
+   > assigned to it as well as its own criteria**, and reassign with a reason rather than leaving them
+   > looking abandoned.
    **W2a now has its own file** — [`waves/wave-2a-truth-in-copy.md`](waves/wave-2a-truth-in-copy.md),
    written 2026-08-17. Worth reading before the next split: re-verifying wave-2's § 2.5 site table against
    the code found **nine** errors before any code was written, and running the guard test found **seven

@@ -274,8 +274,40 @@ Full detail in `../audit/validation-findings-2026-08.md`.
 | 15.3 | § 435.555(d)(3) unemployment hardship is a **second independent State election** on top of electing hardship | Not modeled; earlier docs said all-four-or-none | `missing` | harmful | W9 |
 | 15.4 | § 435.558(b)(2)/(b)(3): "unable to verify" is a **binary State-plan election** (notice concurrent with the renewal form, or after it) | Not modeled. Determines whether the user gets one ~35-day window or two | `missing` | **blocks** | W9 |
 | 15.5 | **Option 2 carve-out**: if the renewal form isn't returned and other factors are also unverified, the § 435.558(a) protections **do not apply** | Not modeled. Undercuts the "coverage continues" reassurance | `missing` | **harmful** | W9 |
-| 15.6 | § 435.915: applications filed **before** implementation are adjudicated under prior rules | Not modeled | `missing` | incomplete | W5 |
-| 15.7 | § 435.559(c): "renewal **initiated**" = when ex parte review begins; existing enrollees aren't assessed until then | ~~Not modeled, not stated to users. One of the most reassuring facts in the rule~~ · **CLOSED W2a (copy)** — `requirementFacts.already-enrolled-timing`, rendered above the tracking UI. Not modeled in data (→ **W5**) | `missing` | **harmful** | W2a |
+| 15.6 | § 435.915: applications filed **before** implementation are adjudicated under prior rules | Not modeled. **Reassigned W5 → W2b on 2026-09-02**, see note below | `missing` | incomplete | ~~W5~~ **W2b** |
+| 15.7 | § 435.559(c): "renewal **initiated**" = when ex parte review begins; existing enrollees aren't assessed until then | ~~Not modeled, not stated to users. One of the most reassuring facts in the rule~~ · **CLOSED W2a (copy)** — `requirementFacts.already-enrolled-timing`, rendered above the tracking UI. Data modelling **reassigned W5 → W2b on 2026-09-02**, see note below | `missing` | **harmful** | W2a (copy) · **W2b** (data) |
+
+> ### 15.6 and 15.7 were assigned to W5 and W5 could not do them — reassigned to W2b, 2026-09-02
+>
+> Recorded rather than quietly reassigned, because "the wave closed with all criteria met"
+> and "the wave closed the gap rows assigned to it" turned out to be different statements,
+> and only the first was true.
+>
+> **Neither row appears anywhere in `wave-5-month-scoping.md`'s scope or criteria.** W5 was
+> scoped as month state, the review-period model, multi-month progress and month
+> navigation. The transition rules were never in it. This is an instance of the
+> traceability mismatch the readiness README already lists as known gap 2.
+>
+> **And W5 could not have done them anyway, because both turn on a date W5 has no access
+> to.** § 435.915 asks whether an application was filed *before the State's implementation
+> date*, and § 435.559(c) asks whether a renewal is the first *initiated on or after* it.
+> The implementation date is a **State election** — `state-options.md` lists it, ranging
+> from Nebraska's May 1 2026 to the January 1 2027 default — so both comparisons need the
+> policy profile that W2b creates. There is nothing to compare against until then.
+>
+> **Two design notes W2b should carry, both discovered in W5:**
+>
+> 1. **W5's anchor stores a MONTH (`YYYY-MM`), and § 435.915 turns on a filing DATE.**
+>    CMS's own example is an application filed December 15, 2026 and decided January 15,
+>    2027, where the State must not evaluate November 2026. A month-granular anchor cannot
+>    express "the 15th", so W2b needs either a date-granular filing field or an explicit
+>    decision that month granularity is sufficient and why.
+> 2. **"Renewal due" and "renewal initiated" are different months, and W5 stores the
+>    former.** `ReviewPeriodAnchor.kind === "renewal"` holds the month the renewal is
+>    *due*, which is what a user knows. § 435.559(c) triggers on *initiation*, which CMS
+>    notes can precede the due date by 60–90 days — so a January 2027 due date can mean a
+>    November 2026 initiation. Comparing the stored anchor directly against an
+>    implementation date would give the wrong answer in the user-unfavourable direction.
 | 15.8 | § 435.557(b): **ex parte first** — States must require SNAP/TANF, incarceration, and education data before asking the individual | ~~Never explained. Users may over-collect, or panic unnecessarily~~ · **CLOSED W2a** — `requirementFacts.ex-parte-first`, citing **§ 435.557(a)–(b)** as a pair because the June 29 2026 correction (91 FR 39028) shifted paragraph designations. Also printed on the export artifact | `missing` | harmful | W2a |
 | 15.9 | Medical-frailty documentation may be signed by physicians, NPs, PAs, psychologists, counselors, therapists, clinical social workers, and others credentialed by the State | Not surfaced. Most actionable "what do I go get?" line in the rule | `missing` | harmful | W4 |
 | 15.10 | **Absence of claims cannot defeat** the frailty exclusion; States may not consider information older than 12 months | Not surfaced | `missing` | harmful | W4 |
