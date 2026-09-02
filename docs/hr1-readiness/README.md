@@ -42,6 +42,26 @@
 >    the meta-test inverted to assert emptiness rather than being deleted with the entries.
 > 2. **`npm test` gates deployment**, and now runs 423 tests rather than 196.
 >
+> ### W5's two blockers are resolved — 2026-09-01
+>
+> Both are written up at the top of [`waves/wave-5-month-scoping.md`](waves/wave-5-month-scoping.md).
+> In short: **W5 bumps no Dexie version** (the compound indexes moved to W3's v7, since
+> `data-migration-standards.md` assigns v7 to W3), and **W5 does not wait for the policy profile** — it
+> derives `ReviewPeriod` from one named federal-default constant that W2b later moves into
+> `src/lib/policy/`. Both problems had the same root cause: W5's header predated W2 being split into W2a
+> and W2b, and nobody revisited it.
+>
+> ### Playwright is available, and you should use it
+>
+> `npm run test:e2e` — 62 specs against the real static export (ADR-0007 **Tier 3b**). The rule for adding
+> one: only if it is impossible in jsdom. W5 rewrites month navigation and makes `Calendar` controlled,
+> which is heavily visual, so this is the wave where a browser earns its keep. The Playwright MCP also
+> lets you *look* at the app while building rather than after.
+>
+> Setting it up found two bugs that had been shipping and were invisible to all 423 Vitest tests and to
+> `next dev`: a dead PWA manifest link (`/hourkeep/manifest.json` → 404, so the app was not installable)
+> and a React #418 hydration failure on most routes. Both fixed.
+>
 > ### What W5 should read first
 >
 > W0's **Found during execution** section in [`waves/wave-0-safety-net.md`](waves/wave-0-safety-net.md).

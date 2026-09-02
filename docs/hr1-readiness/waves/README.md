@@ -57,8 +57,10 @@ W0   Safety Net (scoped down)         ← W0-slice   ✅ DONE 2026-09-01
        │   dead-code deletion. NO migration test — W0 bumped no Dexie
        │   version, so there was nothing to migrate; that lands with W3's v7
        ▼
-W5   Month Scoping                    ← W0
-       │   lift the month, make the parameter required, review-period model
+W5   Month Scoping                    ← W0            ◀ NEXT
+       │   lift the month, make the parameter required, review-period model.
+       │   NO Dexie version bump — compound indexes moved to W3's v7 (2026-09-01).
+       │   ReviewPeriod uses a hardcoded federal default; W2b moves it to the profile
        ▼
 W2b  Policy Profile                   ← W0, W5
        │   FEDERAL_DEFAULT, remove every policy literal
@@ -96,7 +98,7 @@ W1   Dependency Modernization ← W0
 | **W0-slice** | — | **Vitest installed and a `test` script, nothing else.** See below |
 | W2a | **W0-slice** | Text edits need no arithmetic preserved, but W2a ships the no-verdict guard test and touches two Tier-1 modules |
 | W0 | W0-slice | Independent otherwise |
-| W5 | W0 | Migration test before touching the schema |
+| W5 | W0 | W0's characterization tests are what make it safe to change `calculations.ts` — whose optional `month` parameter is the defect W5 exists to fix. **Corrected 2026-09-01:** this said "migration test before touching the schema", which wrongly implied W5 touches schema. It does not; the compound indexes moved to W3's v7 |
 | W2b | W0, W5 | Tests prove the refactor is behavior-neutral; W5 first avoids a second pass over the same call sites |
 | W6a | W2b | Thresholds and the credit-hour constant come from the profile |
 | W8a | W6a | Export must carry the corrected record shapes |

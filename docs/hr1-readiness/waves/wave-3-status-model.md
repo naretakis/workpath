@@ -57,3 +57,43 @@ month**, and stop showing tracking obligations to users who appear excluded.
 | Migration drops data | Fixture-based migration test is a gate, not a follow-up |
 | Suppressing tracking strands a user who is wrong about their status | Always offer "this doesn't sound right" leading back to screening |
 | Four rendered states balloon UI complexity | One shared status card component, four content variants |
+
+---
+
+## Inherited 2026-09-01 — two things folded into v7
+
+### From W5: the compound indexes
+
+W5's scope originally included `[userId+date]` on `activities` and `incomeEntries`, and
+`[userId+month]` on the status tables. Those need a `.stores()` change and therefore a version
+bump, and `.kiro/steering/data-migration-standards.md` assigns **v7 to W3** — explicitly
+including "month-scoping columns". Giving W5 a version would have recreated the defect that
+table exists to prevent: three waves once each believed they owned v7.
+
+So **v7 adds these indexes** alongside the `userId` column it already adds to `Activity`. Until
+then W5 filters `userId` in memory, which is correct for a single-profile app and is what its own
+scope bullet already assumed.
+
+### From W0: the migration test needs BOTH harnesses
+
+W0's handoff told W3 that a migration test cannot assert blobs survived — only that a row is
+reachable — because `fake-indexeddb` returns a stored `Blob` as a plain empty object with
+`instanceof Blob` false and no `size`, `type`, `text()` or `arrayBuffer()`. It said to confirm by
+hand in DevTools.
+
+**Do not do that.** Playwright landed after W0 closed. `e2e/browser-capabilities.spec.ts` already
+proves a real `Blob` survives both a round trip *and* a version upgrade with its bytes intact, and
+includes a miniature write-at-v1 / upgrade-to-v2 / read-back test that is the shape of the real
+one. Split the migration test:
+
+| Harness | Asserts | When it runs |
+|---|---|---|
+| Vitest + `fake-indexeddb` | row counts per table, every seeded field reachable, new fields hold defaults, upgrade is idempotent | every change, ~5s |
+| Playwright | a photographed pay stub still decodes to the same bytes after v6 → v7 | on demand, `npm run test:e2e` |
+
+Worth running in two places because there is no server and no backup, and those blobs are the
+evidence a user hands an agency under 42 CFR 435.557. ADR-0007 Tier 2 is amended to match.
+
+Two `fake-indexeddb` facts for the Vitest half: `clear()` does **not** reset autoincrement
+counters and tables advance independently, so use explicit ids when a fixture needs a collision;
+and jsdom needs stubs for `URL.createObjectURL`, `URL.revokeObjectURL` and `ResizeObserver`.
