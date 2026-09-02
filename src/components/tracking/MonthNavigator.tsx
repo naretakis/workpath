@@ -118,8 +118,12 @@ export function MonthNavigator({
               />
             )}
             {inReviewPeriod && (
+              // Short label deliberately. "Your state may review this month" was
+              // ellipsized to "Your state may review this…" at 375px, which is worse
+              // than a shorter phrase — a truncated hedge reads as a truncated claim.
+              // The full explanation lives in ReviewPeriodPanel directly below.
               <Chip
-                label="Your state may review this month"
+                label="In your review period"
                 size="small"
                 color="primary"
                 variant="outlined"

@@ -48,3 +48,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Semantic review output, written by the review sub-agent. Scratch.
+/semantic-review

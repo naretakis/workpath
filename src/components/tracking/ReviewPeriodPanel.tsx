@@ -116,6 +116,32 @@ export function ReviewPeriodPanel({
   );
   const [draftMonth, setDraftMonth] = useState<string>(todayMonth);
 
+  /**
+   * Open the form seeded from what is already stored.
+   *
+   * Review found the bug this fixes, and it was a data problem rather than a
+   * cosmetic one: the draft state was initialised once at mount and never synced,
+   * so a renewal user pressing "Change these dates" saw "I'm applying" preselected
+   * and today's month — and saving silently converted their renewal anchor into an
+   * application anchor, which computes an entirely different set of months.
+   *
+   * Seeding on open rather than with an effect keeps the state local and avoids a
+   * `set-state-in-effect` violation of the kind W1 already owes ten fixes for.
+   */
+  const startEditing = () => {
+    if (reviewPeriod?.kind === "application") {
+      setDraftKind("application");
+      setDraftMonth(reviewPeriod.applicationMonth);
+    } else if (reviewPeriod?.kind === "renewal") {
+      setDraftKind("renewal");
+      setDraftMonth(reviewPeriod.periodEnd);
+    } else {
+      setDraftKind("application");
+      setDraftMonth(todayMonth);
+    }
+    setEditing(true);
+  };
+
   const save = () => {
     // `isValidMonth`, not just a truthiness check. Review found that a malformed
     // value could be persisted and would then throw inside the tracking page's render
@@ -146,7 +172,7 @@ export function ReviewPeriodPanel({
           <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
             <Button
               variant="contained"
-              onClick={() => setEditing(true)}
+              onClick={startEditing}
               sx={{ minHeight: 44 }}
             >
               Tell us your dates
@@ -332,7 +358,7 @@ export function ReviewPeriodPanel({
           <Button
             size="small"
             variant="outlined"
-            onClick={() => setEditing(true)}
+            onClick={startEditing}
             sx={{ minHeight: 44 }}
           >
             Change these dates

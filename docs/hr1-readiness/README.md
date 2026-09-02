@@ -2,8 +2,8 @@
 
 **The holistic home for this effort.** Open this file to remember where we are.
 
-**Last updated:** 2026-09-01 (W0 closed out)
-**Current wave:** none in progress — **W5 (Month Scoping)** is next. W0 landed 2026-09-01
+**Last updated:** 2026-09-02 (W5 closed out)
+**Current wave:** none in progress — **W2b (Policy Profile)** is next. W5 landed 2026-09-02
 
 > A first version of this line said W1 was next. Wrong: ADR-0009's reordering moved **W1 to the very end**,
 > after the December date. `waves/README.md` § Sequence is authoritative — the pre-date order is
@@ -18,14 +18,22 @@
 >    the destructive delete-all flow there (ADR-0007 Tier 3b). What remains: no spec exercises the
 >    **service worker offline** yet, and nobody has read W2a's corrected copy on a phone with a human eye.
 >    Setting this up found two bugs that had been shipping — see the Playwright section below.
-> 2. **The review protocol has now failed twice, and is getting worse.** W2a lost two of four reviewers to
->    sub-agent failures; **W0 lost all four**, on the parallel fan-out and again on a shortened retry
->    (`Model stream stalled`). W0's checklists were hand-run and labelled as such, which is self-review —
->    the thing the protocol exists to prevent. Between the two waves, **data integrity and semantic review
->    have never once been run independently**, and W0 is the wave that shipped a delete-everything button.
->    The hand-run still found two real CFR citation errors, so this is a coverage gap rather than a
->    formality. **Before W1 closes, either get the sub-agents working or agree a different second pair of
->    eyes.**
+> 2. ~~**The review protocol has now failed twice, and is getting worse.**~~ — **CLOSED
+>    2026-09-02. All four reviewers ran independently on W5**, including data integrity and
+>    semantic review, which had never once run independently across W2a and W0.
+>
+>    It was worth the wait. The four found **four blocking defects** in work that had
+>    already passed 509 tests, six mechanical gates and a manual browser pass — including
+>    one that told income-pathway users they were failing to meet an hours threshold they
+>    were not using, which is the harm ADR-0003 § Context names in as many words. Two of
+>    the four were verdicts I had introduced *while fixing verdicts*.
+>
+>    Two lessons for the next run, both in `waves/wave-5-month-scoping.md`:
+>    **a sub-agent finding really is a lead** — two of the fourteen were dropped after
+>    checking, one of them a confidently-cited claim about functions that do not exist in
+>    the file named. And **the most valuable finding was structural, not textual**: W5
+>    created five components and put none of them in the no-verdict render guard, which is
+>    why two verdicts got through. Fix the guard, not just the copy.
 > 3. **Ten React Compiler errors are suppressed by a version pin**, deferred from W0 to W1 deliberately.
 >    Measured: 11 errors across 8 files under `eslint-plugin-react-hooks` 7.1.1 with inline disables
 >    respected; W0 removed one by deleting `DocumentMetadataForm.tsx`. `package.json`'s `overrides` pins
@@ -41,6 +49,34 @@
 >    as designed, with a message naming the fix. `DEAD_FILE_ALLOWLIST` and `DEAD_CHAIN` are both empty, and
 >    the meta-test inverted to assert emptiness rather than being deleted with the entries.
 > 2. **`npm test` gates deployment**, and now runs 423 tests rather than 196.
+>
+> ### What W2b should read first — added 2026-09-02
+>
+> W5's **Found during execution** and **Review protocol outcome** sections in
+> [`waves/wave-5-month-scoping.md`](waves/wave-5-month-scoping.md). Directly load-bearing
+> for W2b:
+>
+> - **`FEDERAL_DEFAULT_REVIEW_PERIOD` in `src/lib/reviewPeriod.ts` is the constant to
+>   move.** One object, one export, every consumer already takes it as an optional
+>   parameter, so the move is a two-line diff. It carries a `source` string *and* a
+>   separate `renewalPeriodMonthsSource`, because that one value has worse provenance than
+>   the rest — the IFC amends § 435.916 to say 12-month renewals while its own preamble
+>   says 6 for the adult group under § 1902(e)(14)(L). Keep them separate.
+> - **`monthlyThreshold` is derived, not literal — and that is a trick, not a fix.**
+>   `tracking/page.tsx` computes it as `calculateMonthlySummary([], month).hoursNeeded`,
+>   which avoids writing `80` but only works because `hoursNeeded` is
+>   `isCompliant ? 0 : 80 - totalHours`. **W2b should export a named threshold from the
+>   policy profile and delete that derivation.** The real `80` still lives at
+>   `calculations.ts:78,81`.
+> - **`Dashboard` now takes `threshold` as a required prop**, so W2b reaches it without
+>   editing it. Three literals of `80` went with it.
+> - **Three `/ 80 hours` literals remain in `e2e/month-scoping.spec.ts`** and will fail
+>   when the threshold changes. That is the intended signal, but budget for it.
+> - **The compliance-gate script scans five files for policy literals and `reviewPeriod.ts`
+>   is not one of them.** Worth adding when W2b creates `src/lib/policy/`.
+> - **A policy value can hide as an English word.** W5 shipped "We've assumed six" in
+>   user-facing copy, invisible to every numeric scan, and review caught it. Grep for spelt
+>   numbers as well as digits.
 >
 > ### W5's two blockers are resolved — 2026-09-01
 >
@@ -161,7 +197,7 @@ Sequence and dependencies: [`waves/README.md`](waves/README.md).
 | **W0-slice** | Test runner only — Vitest, a `test` script, nothing else | **Done** 2026-08-17 |
 | **W2a** | Truth in copy | **Done** 2026-08-17 — 10 gap rows closed, 5 partial |
 | [W0](waves/wave-0-safety-net.md) | Safety net, deletion, 4 data-loss fixes | **Done** 2026-09-01 — 4 data-loss fixes, delete-all-data, 14 files deleted, 196 → 423 tests. 1 criterion unmet (phone viewport) |
-| [W5](waves/wave-5-month-scoping.md) | Month scoping + review periods | Not started |
+| [W5](waves/wave-5-month-scoping.md) | Month scoping + review periods | **Done** 2026-09-02 — `ReviewPeriod` model, month required and validated, `Calendar` controlled, 423 → 525 tests, 62 → 72 e2e. All 9 live criteria met; 1 struck to W3. First wave with 4/4 reviewers |
 | W2b | Policy profile | Not started |
 | W6a | Evidence capture | Not started |
 | W8a | Print evidence export | Not started |

@@ -18,7 +18,7 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import { AssessmentBadge } from "@/components/assessment/AssessmentBadge";
 import { ExemptionHistory } from "@/components/exemptions/ExemptionHistory";
@@ -595,6 +595,46 @@ describe("ADR-0003 no-verdict guard: W5 month-scoped surfaces", () => {
       const text = document.body.textContent ?? "";
       expect(text).toMatch(/Logged: 46 hours/);
       expect(text).toMatch(/Difference: 34/);
+    });
+
+    it("seeds the edit form from the stored anchor, so a renewal cannot become an application", () => {
+      // A data-correctness bug review found: the draft state was initialised once at
+      // mount and never synced, so a renewal user pressing "Change these dates" saw
+      // "I'm applying" preselected with today's month — and saving silently converted
+      // their anchor kind, which computes a completely different set of months under
+      // 42 CFR 435.556(a)(1) versus (a)(2)(i).
+      render(
+        <ReviewPeriodPanel
+          reviewPeriod={renewalReviewPeriodEndingAt("2026-06")}
+          monthHours={hours}
+          monthlyThreshold={80}
+          pathway="hours"
+          selectedMonth="2026-06"
+          todayMonth="2026-09"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+
+      // `fireEvent`, not a native `.click()`: a bare DOM click does not flush the
+      // React state update, so the form never opened and the assertion below failed
+      // looking for a control that had not rendered yet.
+      fireEvent.click(
+        screen.getByRole("button", { name: /change these dates/i }),
+      );
+
+      // The renewal toggle is the selected one, not "I'm applying".
+      const renewalToggle = screen.getByRole("button", {
+        name: /i'm renewing/i,
+      });
+      expect(renewalToggle).toHaveAttribute("aria-pressed", "true");
+
+      // And the month is the stored renewal-due month, not today.
+      const monthInput = document.querySelector<HTMLInputElement>(
+        'input[type="month"]',
+      );
+      expect(monthInput?.value).toBe("2026-06");
     });
 
     it("says so when the app disagrees with the user's notice", () => {
