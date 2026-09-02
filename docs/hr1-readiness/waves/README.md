@@ -57,13 +57,20 @@ W0   Safety Net (scoped down)         ← W0-slice   ✅ DONE 2026-09-01
        │   dead-code deletion. NO migration test — W0 bumped no Dexie
        │   version, so there was nothing to migrate; that lands with W3's v7
        ▼
-W5   Month Scoping                    ← W0            ◀ NEXT
+W5   Month Scoping                    ← W0          ✅ DONE 2026-09-02
        │   lift the month, make the parameter required, review-period model.
-       │   NO Dexie version bump — compound indexes moved to W3's v7 (2026-09-01).
-       │   ReviewPeriod uses a hardcoded federal default; W2b moves it to the profile
+       │   NO Dexie version bump — compound indexes moved to W3's v7 (2026-09-01),
+       │   confirmed at execution: git diff src/lib/db.ts empty.
+       │   ReviewPeriod derives from FEDERAL_DEFAULT_REVIEW_PERIOD in
+       │   src/lib/reviewPeriod.ts — one object, one export, W2b moves it.
+       │   423 → 526 tests, 62 → 72 e2e. First wave with 4/4 reviewers
        ▼
-W2b  Policy Profile                   ← W0, W5
-       │   FEDERAL_DEFAULT, remove every policy literal
+W2b  Policy Profile                   ← W0, W5        ◀ NEXT
+       │   FEDERAL_DEFAULT, remove every policy literal.
+       │   Its wave file does not exist yet — wave-2-truth-and-policy-profile.md
+       │   is the source. Start by writing the split file, as W2a did.
+       │   Inherits gaps 15.6 and 15.7 from W5 (§ 435.915 / § 435.559(c) both
+       │   need a State implementation date) — see gap-analysis.md
        ▼
 W6a  Evidence Capture                 ← W2b
        │   community service record schema, caregiving log,
