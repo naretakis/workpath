@@ -42,6 +42,7 @@ import {
   monthToDate,
   formatMonthLong,
   currentMonth,
+  calendarGridDays,
 } from "@/lib/month";
 
 describe("isValidMonth", () => {
@@ -296,5 +297,145 @@ describe("currentMonth", () => {
     const expected = currentMonth(new Date());
     expect(currentMonth()).toBe(expected);
     expect(isValidMonth(currentMonth())).toBe(true);
+  });
+});
+
+describe("calendarGridDays", () => {
+  // Moved here from `Calendar.tsx` in W5, and the move is the point rather than a
+  // tidy-up. The component owned `useState(new Date())` plus five date-fns
+  // boundary calls, which is what let the user page to March while the summary,
+  // activity list and income view all stayed on today. Centralising the arithmetic
+  // also means `src/__tests__/no-wall-clock-month.test.ts` can ban
+  // startOfMonth/endOfMonth/eachDayOfInterval outright, with one exempt file, and
+  // never need to chase a `now` variable across lines.
+  //
+  // Every expectation below was computed by running date-fns under
+  // TZ=America/New_York rather than reasoned about. Grid boundaries are exactly
+  // the kind of thing that looks right and is off by a week.
+
+  it("spans whole weeks, Sunday to Saturday, padded from the adjacent months", () => {
+    const days = calendarGridDays("2026-07", new Date(2026, 6, 15));
+
+    expect(days).toHaveLength(35);
+    expect(days[0].date).toBe("2026-06-28");
+    expect(days[days.length - 1].date).toBe("2026-08-01");
+  });
+
+  it("always returns a whole number of weeks", () => {
+    for (const month of [
+      "2026-02",
+      "2026-07",
+      "2026-11",
+      "2027-01",
+      "2028-02",
+    ]) {
+      const days = calendarGridDays(month, new Date(2026, 6, 15));
+      expect(days.length % 7, month).toBe(0);
+    }
+  });
+
+  it("needs six weeks for some months and four for others", () => {
+    // 2026-02 starts on a Sunday and has 28 days, so it fits exactly with NO
+    // padding at all — the case where an off-by-one in the padding logic is
+    // invisible. 2027-01 needs 42 cells and straddles two year boundaries.
+    expect(calendarGridDays("2026-02", new Date(2026, 1, 1))).toHaveLength(28);
+    expect(calendarGridDays("2027-01", new Date(2027, 0, 1))).toHaveLength(42);
+  });
+
+  it("marks exactly the month's own days as inMonth, leap years included", () => {
+    const cases: Array<[string, number]> = [
+      ["2026-02", 28],
+      ["2028-02", 29], // leap
+      ["2026-07", 31],
+      ["2026-11", 30],
+    ];
+
+    for (const [month, expectedDays] of cases) {
+      const days = calendarGridDays(month, new Date(2026, 6, 15));
+      expect(
+        days.filter((d) => d.inMonth),
+        month,
+      ).toHaveLength(expectedDays);
+      // And every in-month day carries this month's prefix, which is the property
+      // the grid exists to get right.
+      for (const day of days.filter((d) => d.inMonth)) {
+        expect(monthOfDate(day.date)).toBe(month);
+      }
+    }
+  });
+
+  it("marks padding days as not inMonth, and they belong to the neighbouring months", () => {
+    const days = calendarGridDays("2026-07", new Date(2026, 6, 15));
+    const padding = days.filter((d) => !d.inMonth);
+
+    expect(padding).toHaveLength(4); // 3 from June, 1 from August
+    expect(padding.map((d) => d.date)).toEqual([
+      "2026-06-28",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-08-01",
+    ]);
+  });
+
+  it("numbers days within their own month, not within the grid", () => {
+    const days = calendarGridDays("2026-07", new Date(2026, 6, 15));
+    expect(days[0].dayOfMonth).toBe(28); // 28 June, not grid position 1
+    expect(days[3].dayOfMonth).toBe(1); // 1 July
+  });
+
+  it("produces contiguous dates with no gap or repeat at a month boundary", () => {
+    // The timezone-drift symptom would be a duplicated or skipped day where the
+    // grid crosses a month end. Asserted as a property across a year, because a
+    // single month would not catch a DST transition.
+    for (let m = 1; m <= 12; m++) {
+      const month = `2026-${String(m).padStart(2, "0")}`;
+      const days = calendarGridDays(month, new Date(2026, 6, 15));
+      const dates = days.map((d) => d.date);
+
+      expect(new Set(dates).size, `${month} has a repeated date`).toBe(
+        dates.length,
+      );
+      // Ascending, and each step exactly one day.
+      for (let i = 1; i < dates.length; i++) {
+        const previous = new Date(dates[i - 1] + "T12:00:00");
+        const current = new Date(dates[i] + "T12:00:00");
+        const gapDays = Math.round(
+          (current.getTime() - previous.getTime()) / 86_400_000,
+        );
+        expect(gapDays, `${month}: ${dates[i - 1]} -> ${dates[i]}`).toBe(1);
+      }
+    }
+  });
+
+  it("flags exactly one day as today when the clock falls inside the grid", () => {
+    const days = calendarGridDays("2026-07", new Date(2026, 6, 15, 9, 30));
+    const today = days.filter((d) => d.isToday);
+
+    expect(today).toHaveLength(1);
+    expect(today[0].date).toBe("2026-07-15");
+  });
+
+  it("flags nothing as today when the clock is outside the grid", () => {
+    // The retrospective case, which ADR-0005 § 5 calls the one the product exists
+    // to serve: someone documenting December from the following August. No cell
+    // should be highlighted.
+    const days = calendarGridDays("2026-12", new Date(2027, 7, 15));
+    expect(days.filter((d) => d.isToday)).toHaveLength(0);
+  });
+
+  it("can flag a padding day as today, since the grid shows it", () => {
+    // 1 August 2026 is the last cell of July's grid. If the user is looking at
+    // July on 1 August, that cell is genuinely today and highlighting it is
+    // correct — but it must still be inMonth: false, so it stays unclickable.
+    const days = calendarGridDays("2026-07", new Date(2026, 7, 1, 10, 0));
+    const today = days.filter((d) => d.isToday);
+
+    expect(today).toHaveLength(1);
+    expect(today[0].date).toBe("2026-08-01");
+    expect(today[0].inMonth).toBe(false);
+  });
+
+  it("rejects a malformed month", () => {
+    expect(() => calendarGridDays("2026", new Date(2026, 6, 15))).toThrow();
   });
 });

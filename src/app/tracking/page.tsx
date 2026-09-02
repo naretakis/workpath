@@ -38,27 +38,49 @@ import { calculateMonthlySummary } from "@/lib/calculations";
 import { deleteActivityWithDocuments } from "@/lib/storage/activities";
 import { getLatestAssessmentResult } from "@/lib/storage/assessment";
 import {
-  getComplianceMode,
+  getStoredComplianceMode,
   setComplianceMode,
   getSeasonalWorkerStatus,
   setSeasonalWorkerStatus,
 } from "@/lib/storage/income";
-import { format, startOfMonth, endOfMonth } from "date-fns";
+import { updateProfile } from "@/lib/storage/profile";
+import { currentMonth } from "@/lib/month";
+import {
+  applicationReviewPeriod,
+  renewalReviewPeriodEndingAt,
+  FEDERAL_DEFAULT_REVIEW_PERIOD,
+  includesMonth,
+  monthsInReviewPeriod,
+  monthsRequiredFor,
+  type ReviewPeriod,
+} from "@/lib/reviewPeriod";
+import { MonthNavigator } from "@/components/tracking/MonthNavigator";
+import { ReviewPeriodPanel } from "@/components/tracking/ReviewPeriodPanel";
+import { format, parseISO } from "date-fns";
 
 export default function TrackingPage() {
   const router = useRouter();
+  /**
+   * THE MONTH BEING LOOKED AT. One value, at page level, passed down — ADR-0005's
+   * first decision, and the reason this wave exists.
+   *
+   * Before W5 there was no such state. `Calendar` owned `useState(new Date())` and
+   * never told anyone, while the summary, activity list, income view and both
+   * per-month toggles each re-derived "now" independently, six of them via
+   * `format(new Date(), "yyyy-MM")` and one via UTC. So paging the calendar to
+   * March let you log March hours into a page that went on reporting today, and the
+   * hours looked as though they had vanished.
+   *
+   * `currentMonth()` is the initial value and the only wall-clock read left in this
+   * file; `src/__tests__/no-wall-clock-month.test.ts` enforces that.
+   */
+  const [selectedMonth, setSelectedMonth] = useState<string>(() =>
+    currentMonth(),
+  );
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [formOpen, setFormOpen] = useState(false);
   const [menuAnchor, setMenuAnchor] = useState<HTMLElement | null>(null);
   const [activities, setActivities] = useState<Activity[]>([]);
-  const [currentMonthActivities, setCurrentMonthActivities] = useState<
-    Activity[]
-  >([]);
-  const [activeDates, setActiveDates] = useState<Set<string>>(new Set());
-  const [dateHours, setDateHours] = useState<Map<string, number>>(new Map());
-  const [dateActivityCount, setDateActivityCount] = useState<
-    Map<string, number>
-  >(new Map());
   const [selectedDateActivities, setSelectedDateActivities] = useState<
     Activity[]
   >([]);
@@ -68,15 +90,6 @@ export default function TrackingPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [monthlySummary, setMonthlySummary] = useState<MonthlySummary>({
-    month: format(new Date(), "yyyy-MM"),
-    totalHours: 0,
-    workHours: 0,
-    volunteerHours: 0,
-    educationHours: 0,
-    isCompliant: false,
-    hoursNeeded: 80,
-  });
   const [duplicateDialogOpen, setDuplicateDialogOpen] = useState(false);
   const [activityToDuplicate, setActivityToDuplicate] =
     useState<Activity | null>(null);
@@ -89,10 +102,129 @@ export default function TrackingPage() {
   const [userId, setUserId] = useState<string>("");
   const [isSeasonalWorker, setIsSeasonalWorker] = useState(false);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  const [monthlyCompliance, setMonthlyCompliance] = useState<
-    Map<string, boolean>
-  >(new Map());
 
+  /**
+   * DERIVED, NOT STATE. Five `useState` hooks used to hold these — the monthly
+   * summary, the month's activities, and the three per-date maps — written by the
+   * loader and therefore correct only when the loader was.
+   *
+   * Making them derivations is what actually satisfies "selecting any month updates
+   * the summary, activity list, income view and status together": they cannot
+   * disagree with `selectedMonth`, because they are functions of it. The React
+   * Compiler is on, so no memoisation is needed
+   * (`.kiro/steering/component-standards.md`).
+   */
+  const monthlySummary: MonthlySummary = calculateMonthlySummary(
+    activities,
+    selectedMonth,
+  );
+
+  const monthActivities = activities.filter((activity) =>
+    activity.date.startsWith(selectedMonth),
+  );
+
+  // Deliberately across ALL months, not just the selected one: the grid shows
+  // padding days from the neighbouring months and should mark activity on them.
+  const activeDates = new Set(activities.map((a) => a.date));
+  const dateHours = new Map<string, number>();
+  const dateActivityCount = new Map<string, number>();
+  for (const activity of activities) {
+    dateHours.set(
+      activity.date,
+      (dateHours.get(activity.date) || 0) + activity.hours,
+    );
+    dateActivityCount.set(
+      activity.date,
+      (dateActivityCount.get(activity.date) || 0) + 1,
+    );
+  }
+
+  /**
+   * The review period, when the user has told us what to measure from.
+   *
+   * `undefined` is a real and common answer, and the UI says so rather than
+   * guessing. See `ReviewPeriodAnchor` for why nothing is inferred from the notice
+   * deadline.
+   */
+  const anchor = userProfile?.onboardingContext?.reviewPeriodAnchor;
+  const monthsRequiredFromNotice =
+    userProfile?.onboardingContext?.monthsRequired;
+
+  let reviewPeriod: ReviewPeriod | undefined;
+  if (anchor?.kind === "application") {
+    // § 435.556(a)(1) permits 1-3 months. A notice-derived `monthsRequired` can be
+    // up to 6, which is a renewal figure; clamping rather than throwing keeps a
+    // mismatched answer from blanking the page.
+    const bounds = FEDERAL_DEFAULT_REVIEW_PERIOD.applicationLookbackBounds;
+    reviewPeriod = applicationReviewPeriod(anchor.month, {
+      ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+      applicationLookbackMonths: Math.min(
+        Math.max(monthsRequiredFromNotice ?? bounds.min, bounds.min),
+        bounds.max,
+      ),
+    });
+  } else if (anchor?.kind === "renewal") {
+    reviewPeriod = renewalReviewPeriodEndingAt(anchor.month, {
+      ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+      renewalMonthsRequired:
+        monthsRequiredFromNotice ??
+        FEDERAL_DEFAULT_REVIEW_PERIOD.renewalMonthsRequired,
+    });
+  }
+
+  const reviewPeriodMonths = reviewPeriod
+    ? monthsInReviewPeriod(reviewPeriod)
+    : [];
+
+  /**
+   * Hours logged per month of the review period.
+   *
+   * Replaces `monthlyCompliance`, a `Map<string, boolean>` that held exactly one
+   * entry — the wall-clock month — under the comment "For now, just check current
+   * month". That made `CompletionMessage` unreachable for five of the six valid
+   * `monthsRequired` values, by construction rather than by data.
+   *
+   * Carries HOURS rather than a boolean deliberately. The old map stored
+   * `summary.isCompliant`, and `engineering-standards.md` is explicit that
+   * "`isCompliant: boolean` is a verdict regardless of what renders it". W7b renames
+   * that field; building new code on it would have widened what W7b has to unpick.
+   */
+  const reviewPeriodHours = reviewPeriodMonths.map((month) => ({
+    month,
+    totalHours: calculateMonthlySummary(activities, month).totalHours,
+  }));
+
+  /**
+   * The monthly hours threshold, WITHOUT writing the number down.
+   *
+   * `hoursNeeded` for a month with no activities *is* the threshold, so this reads it
+   * out of the compliance module rather than restating it. ADR-0001 forbids policy
+   * literals outside `src/lib/policy/`, which does not exist until W2b — and a
+   * literal `80` here would be one more site for W2b to find. When W2b injects the
+   * threshold, this picks the new value up with no edit.
+   */
+  const monthlyThreshold = calculateMonthlySummary(
+    [],
+    selectedMonth,
+  ).hoursNeeded;
+
+  /**
+   * The real current month, read once and passed down.
+   *
+   * Components get it as a prop rather than calling `currentMonth()` themselves, so
+   * every part of the page agrees about what "this month" means even across a
+   * midnight boundary, and so they stay testable without a fake clock.
+   */
+  const todayMonth = currentMonth();
+
+  /**
+   * Everything that does not depend on which month is selected.
+   *
+   * Split from the per-month reads below, and the split is why paging a month is
+   * instant and does not flash the full-page spinner: the profile, the assessment
+   * and the whole activity list are month-independent, and the month-scoped values
+   * are now derivations rather than fetches.
+   */
   const loadActivities = React.useCallback(async () => {
     try {
       setLoading(true);
@@ -105,67 +237,14 @@ export default function TrackingPage() {
         return;
       }
 
-      const allActivities = await db.activities.toArray();
-      setActivities(allActivities);
+      setActivities(await db.activities.toArray());
 
-      // Create set of dates that have activities
-      const dates = new Set(allActivities.map((a) => a.date));
-      setActiveDates(dates);
-
-      // Calculate hours per date
-      const hoursMap = new Map<string, number>();
-      const countMap = new Map<string, number>();
-      allActivities.forEach((activity) => {
-        const current = hoursMap.get(activity.date) || 0;
-        hoursMap.set(activity.date, current + activity.hours);
-
-        const currentCount = countMap.get(activity.date) || 0;
-        countMap.set(activity.date, currentCount + 1);
-      });
-      setDateHours(hoursMap);
-      setDateActivityCount(countMap);
-
-      // Filter activities for current month
-      const now = new Date();
-      const monthStart = format(startOfMonth(now), "yyyy-MM-dd");
-      const monthEnd = format(endOfMonth(now), "yyyy-MM-dd");
-      const currentMonthActivities = allActivities.filter(
-        (a) => a.date >= monthStart && a.date <= monthEnd,
-      );
-      setCurrentMonthActivities(currentMonthActivities);
-
-      // Calculate monthly summary
-      const summary = calculateMonthlySummary(allActivities);
-      setMonthlySummary(summary);
-
-      // Load exemption screening, assessment result, compliance mode, and seasonal worker status
       const profile = profiles[0];
       setUserId(profile.id);
       setUserProfile(profile);
 
-      // Load assessment result
       const assessment = await getLatestAssessmentResult(profile.id);
       setAssessmentResult(assessment || null);
-
-      // Load compliance mode and seasonal worker status for current month
-      const currentMonthStr = format(new Date(), "yyyy-MM");
-      const mode = await getComplianceMode(profile.id, currentMonthStr);
-      setComplianceModeState(mode);
-
-      const seasonalStatus = await getSeasonalWorkerStatus(
-        profile.id,
-        currentMonthStr,
-      );
-      setIsSeasonalWorker(seasonalStatus);
-
-      // Calculate monthly compliance for goal tracking
-      if (profile.onboardingContext?.monthsRequired) {
-        const complianceMap = new Map<string, boolean>();
-        // For now, just check current month
-        // In a full implementation, this would check all required months
-        complianceMap.set(currentMonthStr, summary.isCompliant);
-        setMonthlyCompliance(complianceMap);
-      }
     } catch (err) {
       console.error("Error loading activities:", err);
       setError("Failed to load activities");
@@ -198,22 +277,113 @@ export default function TrackingPage() {
         handleAssessmentCompleted,
       );
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loadActivities]);
+
+  /**
+   * The two genuinely per-month reads: `complianceModes` and `seasonalWorkerStatus`
+   * are both stored per user per month, so changing month changes which row applies.
+   *
+   * The compliance mode uses `getStoredComplianceMode`, which returns `undefined`
+   * when the month has no row, rather than `getComplianceMode`, which returns
+   * "hours". That distinction is the difference between leaving the view as the user
+   * left it and silently flipping someone tracking income into hours tracking the
+   * moment they page to a month they have not opened before — with their income
+   * entries apparently gone and nothing on screen explaining why.
+   */
+  useEffect(() => {
+    if (!userId) return;
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const [storedMode, seasonal] = await Promise.all([
+          getStoredComplianceMode(userId, selectedMonth),
+          getSeasonalWorkerStatus(userId, selectedMonth),
+        ]);
+        if (cancelled) return;
+        // Only follow a stored preference. No row means "no preference expressed
+        // for this month", so keep showing whatever the user is already looking at.
+        if (storedMode) setComplianceModeState(storedMode);
+        setIsSeasonalWorker(seasonal);
+      } catch (err) {
+        console.error("Error loading month settings:", err);
+        if (!cancelled) {
+          setError(
+            `Could not load your settings for ${selectedMonth}. Your logged hours are unaffected.`,
+          );
+        }
+      }
+    })();
+
+    return () => {
+      // Paging quickly must not let an earlier month's response land last.
+      cancelled = true;
+    };
+  }, [userId, selectedMonth]);
 
   const handleDateClick = async (
-    date: Date,
+    dateStr: string,
     event: React.MouseEvent<HTMLElement>,
   ) => {
-    setSelectedDate(date);
+    // `Calendar` now hands over a YYYY-MM-DD string rather than a Date, so the
+    // records and the grid speak the same language and nobody reparses. The one
+    // place a Date is still needed is `ActivityForm`, whose props W6a rewrites;
+    // `parseISO` is the local-time parse (unlike `new Date("2026-07-01")`, which is
+    // UTC) and is already the idiom in DuplicateActivityDialog.
+    setSelectedDate(parseISO(dateStr));
 
-    // Get activities for this date
-    const dateStr = format(date, "yyyy-MM-dd");
     const dateActivities = activities.filter((a) => a.date === dateStr);
     setSelectedDateActivities(dateActivities);
 
     // Open menu to choose action
     setMenuAnchor(event.currentTarget);
+  };
+
+  /**
+   * Paging the month.
+   *
+   * Also closes the date menu: it is anchored to a cell that is about to be
+   * replaced by a different date, and leaving it open would attach yesterday's
+   * activity list to a new month's grid.
+   */
+  const handleMonthChange = (month: string) => {
+    setSelectedMonth(month);
+    setMenuAnchor(null);
+    setSelectedDateActivities([]);
+  };
+
+  /** Record what the review period is measured from. Persisted on the profile. */
+  const handleAnchorChange = async (
+    kind: "application" | "renewal",
+    month: string,
+  ) => {
+    if (!userProfile) return;
+    try {
+      const nextContext = {
+        ...userProfile.onboardingContext,
+        reviewPeriodAnchor: { kind, month },
+      };
+      await updateProfile(userProfile.id, { onboardingContext: nextContext });
+      setUserProfile({ ...userProfile, onboardingContext: nextContext });
+      setError(null);
+    } catch (err) {
+      console.error("Error saving review period:", err);
+      setError("Could not save your review period. Please try again.");
+    }
+  };
+
+  const handleClearAnchor = async () => {
+    if (!userProfile) return;
+    try {
+      const nextContext = { ...userProfile.onboardingContext };
+      delete nextContext.reviewPeriodAnchor;
+      await updateProfile(userProfile.id, { onboardingContext: nextContext });
+      setUserProfile({ ...userProfile, onboardingContext: nextContext });
+      setError(null);
+    } catch (err) {
+      console.error("Error clearing review period:", err);
+      setError("Could not update your review period. Please try again.");
+    }
   };
 
   const handleAddNewActivity = () => {
@@ -222,8 +392,10 @@ export default function TrackingPage() {
   };
 
   const handleEditActivity = (activity: Activity) => {
-    const date = new Date(activity.date + "T00:00:00");
-    setSelectedDate(date);
+    // Was `new Date(activity.date + "T00:00:00")` — a hand-rolled local parse that
+    // worked, but was a third idiom for the same operation in one codebase.
+    // `parseISO` is what DuplicateActivityDialog already uses.
+    setSelectedDate(parseISO(activity.date));
     setExistingActivity(activity);
     setFormOpen(true);
   };
@@ -376,8 +548,11 @@ export default function TrackingPage() {
     if (!userId) return;
 
     try {
-      const currentMonth = format(new Date(), "yyyy-MM");
-      await setComplianceMode(userId, currentMonth, mode);
+      // Writes the month the user is LOOKING AT, not today. `complianceModes` is a
+      // per-user-per-month table, so that is what the row means — but it also means
+      // the control has to say which month it affects, which is why the selector
+      // below is given `selectedMonth` rather than the wall clock.
+      await setComplianceMode(userId, selectedMonth, mode);
       setComplianceModeState(mode);
     } catch (error) {
       console.error("Error changing compliance mode:", error);
@@ -389,8 +564,7 @@ export default function TrackingPage() {
     if (!userId) return;
 
     try {
-      const currentMonth = format(new Date(), "yyyy-MM");
-      await setSeasonalWorkerStatus(userId, currentMonth, checked);
+      await setSeasonalWorkerStatus(userId, selectedMonth, checked);
       setIsSeasonalWorker(checked);
     } catch (error) {
       console.error("Error updating seasonal worker status:", error);
@@ -398,10 +572,12 @@ export default function TrackingPage() {
     }
   };
 
-  const handleAddMonth = () => {
-    // Navigate to settings to add another month
-    router.push("/settings");
-  };
+  // `handleAddMonth` was deleted here. W0 § 0.4 listed it for deletion — "plus
+  // tracking/page.tsx's handleAddMonth and the empty handleContinueTracking" — and it
+  // survived that wave, still zero-caller and still raising an unused-variable
+  // warning. Swept up because W5 rewrites this file and because the month navigator
+  // above is now the actual answer to "show me another month", which is what the
+  // dead function pretended to do by routing to Settings.
 
   const handleContinueTracking = () => {
     // Just close the completion message and continue tracking
@@ -562,10 +738,37 @@ export default function TrackingPage() {
         </Box>
 
         {/* Compliance Mode Selector - show for all users, but note exempt users don't need to track */}
+        {/*
+          W5: the month selector sits ABOVE everything month-scoped, because it
+          governs all of it. Before this, the only month control was buried in the
+          calendar further down the page and changed nothing but the grid.
+        */}
+        <Box sx={{ mt: 3 }}>
+          <MonthNavigator
+            month={selectedMonth}
+            today={todayMonth}
+            onMonthChange={handleMonthChange}
+            reviewPeriodMonths={reviewPeriodMonths}
+          />
+        </Box>
+
+        <Box sx={{ mt: 3 }}>
+          <ReviewPeriodPanel
+            reviewPeriod={reviewPeriod}
+            monthHours={reviewPeriodHours}
+            monthlyThreshold={monthlyThreshold}
+            selectedMonth={selectedMonth}
+            todayMonth={todayMonth}
+            onSelectMonth={handleMonthChange}
+            onAnchorChange={handleAnchorChange}
+            onClearAnchor={handleClearAnchor}
+          />
+        </Box>
+
         <Box sx={{ mt: 3 }}>
           <ComplianceModeSelector
             currentMode={complianceMode}
-            currentMonth={format(new Date(), "yyyy-MM")}
+            currentMonth={selectedMonth}
             onModeChange={handleModeChange}
           />
         </Box>
@@ -573,16 +776,22 @@ export default function TrackingPage() {
         {/* Hours Tracking UI */}
         {complianceMode === "hours" && (
           <>
-            {/* Completion Message - show if goal is complete */}
-            {userProfile?.onboardingContext?.monthsRequired && (
+            {/*
+              W5: driven by the real review period rather than by a one-entry map of
+              the wall-clock month. `monthsRequired` still gates it, because without
+              a review period there is no "how many months" to report against.
+            */}
+            {reviewPeriod && (
               <Box sx={{ mt: 3 }}>
                 <CompletionMessage
-                  monthsCompleted={
-                    Array.from(monthlyCompliance.values()).filter(
-                      (isCompliant) => isCompliant,
+                  monthsAtOrOverThreshold={
+                    reviewPeriodHours.filter(
+                      (m) => m.totalHours >= monthlyThreshold,
                     ).length
                   }
-                  monthsRequired={userProfile.onboardingContext.monthsRequired}
+                  monthsRequired={monthsRequiredFor(reviewPeriod)}
+                  monthlyThreshold={monthlyThreshold}
+                  reviewPeriodKind={reviewPeriod.kind}
                   onExport={handleExport}
                   onContinueTracking={handleContinueTracking}
                   onSetReminder={handleSetReminder}
@@ -591,13 +800,16 @@ export default function TrackingPage() {
             )}
 
             <Box sx={{ mt: 3 }}>
-              <Dashboard summary={monthlySummary} />
+              <Dashboard
+                summary={monthlySummary}
+                threshold={monthlyThreshold}
+              />
             </Box>
 
             {/* Hour Log - moved up */}
             <Box sx={{ mt: 3 }}>
               <ActivityList
-                activities={currentMonthActivities}
+                activities={monthActivities}
                 onEdit={handleEditActivity}
                 onDelete={handleDeleteActivityFromList}
                 onDuplicate={handleDuplicateActivity}
@@ -618,10 +830,17 @@ export default function TrackingPage() {
                 Calendar View
               </Typography>
               <Calendar
+                month={selectedMonth}
+                onMonthChange={handleMonthChange}
                 onDateClick={handleDateClick}
                 activeDates={activeDates}
                 dateHours={dateHours}
                 dateActivityCount={dateActivityCount}
+                inReviewPeriod={
+                  reviewPeriod
+                    ? includesMonth(reviewPeriod, selectedMonth)
+                    : undefined
+                }
               />
             </Box>
 
@@ -646,7 +865,7 @@ export default function TrackingPage() {
           <Box sx={{ mt: 3 }}>
             <IncomeDashboard
               userId={userId}
-              currentMonth={format(new Date(), "yyyy-MM")}
+              currentMonth={selectedMonth}
               isSeasonalWorker={isSeasonalWorker}
               onSeasonalWorkerToggle={handleSeasonalWorkerToggle}
             />

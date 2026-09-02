@@ -49,6 +49,7 @@ import {
   getMonthlyIncomeSummary,
   setComplianceMode,
   getComplianceMode,
+  getStoredComplianceMode,
   setSeasonalWorkerStatus,
   getSeasonalWorkerStatus,
 } from "@/lib/storage/income";
@@ -557,6 +558,38 @@ describe("complianceMode and seasonalWorkerStatus: per-user, per-month upserts",
 
   it("defaults the compliance mode to 'hours' when nothing is stored", async () => {
     expect(await getComplianceMode(USER, "2026-07")).toBe("hours");
+  });
+
+  it("W5: getStoredComplianceMode distinguishes 'no row' from a stored 'hours'", async () => {
+    // Added by W5, and the distinction is load-bearing rather than pedantic.
+    //
+    // `getComplianceMode` collapses both cases to "hours". Once the tracking page
+    // reads the mode for the SELECTED month rather than for today, that collapse
+    // becomes a visible defect: a user tracking income in July who pages back to
+    // June — a month they have never opened, so it has no row — would have the
+    // entire surface silently flip to hours tracking mid-navigation. Nothing
+    // announces it, and their income entries appear to be gone.
+    //
+    // So the page needs to tell "this month is set to hours" apart from "this
+    // month has no preference", and keep showing what the user was looking at in
+    // the second case.
+    //
+    // Added ALONGSIDE getComplianceMode rather than changing it, because
+    // .kiro/steering/data-migration-standards.md is explicit that complianceMode
+    // must not be tidied before W7b. Both go together when ADR-0004's unified
+    // compliance view lands and the hours/income fork stops existing.
+    expect(await getStoredComplianceMode(USER, "2026-06")).toBeUndefined();
+
+    await setComplianceMode(USER, "2026-06", "hours");
+    expect(await getStoredComplianceMode(USER, "2026-06")).toBe("hours");
+
+    await setComplianceMode(USER, "2026-07", "income");
+    expect(await getStoredComplianceMode(USER, "2026-07")).toBe("income");
+
+    // Still scoped per user, like its sibling.
+    expect(
+      await getStoredComplianceMode(OTHER_USER, "2026-07"),
+    ).toBeUndefined();
   });
 
   it("upserts rather than inserting a second row for the same user and month", async () => {

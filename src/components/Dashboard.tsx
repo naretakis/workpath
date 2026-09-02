@@ -2,33 +2,66 @@
 
 import { Box, Paper, Typography, LinearProgress, Chip } from "@mui/material";
 import {
-  CheckCircle as CheckCircleIcon,
+  FactCheck as FactCheckIcon,
   Warning as WarningIcon,
 } from "@mui/icons-material";
 import { MonthlySummary } from "@/types";
-import { format, parseISO } from "date-fns";
+import { formatMonthLong } from "@/lib/month";
 import { HourTrackingHelpIcon } from "@/components/help/HourTrackingHelp";
 
+/**
+ * A month's logged hours against the threshold.
+ *
+ * ───────────────────────────────────────────────────────────────────────────────
+ * COPY REWRITTEN IN W5, and it was not on the wave's list. Found by opening the
+ * built app in a browser at 375px, which is the only reason it was found at all.
+ *
+ * This component rendered **"Compliant"** in green beside a tick, over "You've met
+ * the 80-hour requirement!" — a verdict on eligibility, which is the state's to
+ * reach and not HourKeep's (ADR-0003, and row 2 of the banned table in
+ * `compliance-copy-standards.md`).
+ *
+ * W2a's no-verdict guard missed it for a specific and instructive reason: the guard
+ * lists `COMPLIANT` **case-sensitively**, to spare the `isCompliant` identifier from
+ * matching. That carve-out also spared a bare title-case `Compliant`. Every other
+ * banned phrase carries a pronoun, so nothing in the list came close. The guard has
+ * since been given `Compliant` and `you've met` as separate case-sensitive entries,
+ * which is the more valuable half of this fix.
+ *
+ * W5 is what made it urgent rather than merely wrong. Before, this could only show
+ * the wall-clock month; now it shows whichever month the user pages to, so the
+ * verdict was about to be asserted over arbitrary months a state may be assessing.
+ *
+ * The threshold also became a prop. The old code wrote `80` three times — the
+ * progress percentage, the "/ 80 hours" label, and the sentence above — and the
+ * replacement copy has to state the threshold, so passing it in was cheaper than
+ * adding a fourth. The page derives it from the calculation module rather than
+ * restating it, so W2b's policy profile will reach here with no further edit
+ * (ADR-0001).
+ * ───────────────────────────────────────────────────────────────────────────────
+ */
 interface DashboardProps {
   summary: MonthlySummary;
+  /**
+   * The monthly hours total for this month. Required, so no call site can quietly
+   * fall back to a hardcoded figure.
+   */
+  threshold: number;
 }
 
-export function Dashboard({ summary }: DashboardProps) {
-  const {
-    totalHours,
-    workHours,
-    volunteerHours,
-    educationHours,
-    isCompliant,
-    hoursNeeded,
-  } = summary;
+export function Dashboard({ summary, threshold }: DashboardProps) {
+  const { totalHours, workHours, volunteerHours, educationHours, hoursNeeded } =
+    summary;
+
+  const meetsThreshold = totalHours >= threshold;
 
   // Calculate progress percentage (capped at 100%)
-  const progressPercentage = Math.min((totalHours / 80) * 100, 100);
+  const progressPercentage =
+    threshold > 0 ? Math.min((totalHours / threshold) * 100, 100) : 100;
 
-  // Format month for display
-  const monthDate = parseISO(summary.month + "-01");
-  const monthDisplay = format(monthDate, "MMMM yyyy");
+  // Was `parseISO(summary.month + "-01")` — a hand-rolled parse of a month string.
+  // W5 routes month formatting through @/lib/month so there is one implementation.
+  const monthDisplay = formatMonthLong(summary.month);
 
   return (
     <Paper sx={{ p: { xs: 2, sm: 3 } }}>
@@ -59,15 +92,19 @@ export function Dashboard({ summary }: DashboardProps) {
           mb: 3,
         }}
       >
-        {isCompliant ? (
+        {meetsThreshold ? (
           <>
-            <CheckCircleIcon sx={{ fontSize: 40, color: "success.main" }} />
+            {/* The icon still says "good news", because reaching the threshold IS
+                good news. What changed is that the words report the record rather
+                than announcing an outcome. */}
+            <FactCheckIcon sx={{ fontSize: 40, color: "success.main" }} />
             <Box>
               <Typography variant="h6" color="success.main">
-                Compliant
+                {totalHours} hours logged
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                You&apos;ve met the 80-hour requirement!
+                That&apos;s at or over the {threshold}-hour total for this
+                month. Your state decides what counts.
               </Typography>
             </Box>
           </>
@@ -79,7 +116,7 @@ export function Dashboard({ summary }: DashboardProps) {
                 {hoursNeeded} hours needed
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Keep logging to reach 80 hours
+                Keep logging to reach {threshold} hours
               </Typography>
             </Box>
           </>
@@ -99,7 +136,7 @@ export function Dashboard({ summary }: DashboardProps) {
             Total Hours
           </Typography>
           <Typography variant="body2" fontWeight="bold">
-            {totalHours} / 80 hours
+            {totalHours} / {threshold} hours
           </Typography>
         </Box>
         <LinearProgress
@@ -110,7 +147,7 @@ export function Dashboard({ summary }: DashboardProps) {
             borderRadius: 5,
             backgroundColor: "grey.200",
             "& .MuiLinearProgress-bar": {
-              backgroundColor: isCompliant ? "success.main" : "primary.main",
+              backgroundColor: meetsThreshold ? "success.main" : "primary.main",
             },
           }}
         />

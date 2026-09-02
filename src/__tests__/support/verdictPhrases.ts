@@ -82,6 +82,34 @@ export const VERDICT_PHRASES: readonly VerdictPhrase[] = [
     why: "ADR-0003: the export's ✓ COMPLIANT / ✗ NOT COMPLIANT verdict",
   },
   {
+    // ADDED IN W5, and it closes a hole this list had since W2a.
+    //
+    // The case-sensitivity carve-out above exists to spare the `isCompliant`
+    // identifier. It also spared a bare title-case `Compliant`, which is exactly
+    // what `Dashboard.tsx` rendered — in green, next to a tick, as the headline of
+    // the main tracking surface. Every other entry either carries a pronoun or is
+    // all-caps, so nothing caught it.
+    //
+    // Found by looking at the built app in a browser, not by reading code. W5 is
+    // what made it worth finding: before, the Dashboard could only ever show the
+    // wall-clock month, and now it shows whichever month the user pages to, so the
+    // verdict is asserted about arbitrary months a state may be assessing.
+    //
+    // Word boundaries are what make this safe: `\bCompliant\b` does not match
+    // inside `isCompliant`, because there is no boundary between `s` and `C`. The
+    // all-caps entry above stays, since these are case-sensitive and distinct.
+    phrase: "Compliant",
+    caseSensitive: true,
+    why: "ADR-0003: a bare title-case verdict. State Logged / Threshold / Difference instead",
+  },
+  {
+    // Same discovery. "You've met the 80-hour requirement!" shares no words with
+    // "you meet requirements", so the entries below missed it — and it asserts the
+    // threshold satisfied AND hardcodes the policy value in the same breath.
+    phrase: "you've met",
+    why: "ADR-0003: declares a threshold met. Also tends to carry a hardcoded policy value (ADR-0001)",
+  },
+  {
     phrase: "automatically meet",
     why: "compliance-copy-standards.md banned phrase. Nothing is automatic: 42 CFR 435.557 ex parte review comes first and the State decides",
   },

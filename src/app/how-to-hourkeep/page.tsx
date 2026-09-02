@@ -12,7 +12,7 @@ import {
   setComplianceMode,
   setSeasonalWorkerStatus,
 } from "@/lib/storage/income";
-import { format } from "date-fns";
+import { currentMonth } from "@/lib/month";
 import { OnboardingContext } from "@/types";
 
 export default function HowToHourKeepPage() {
@@ -105,18 +105,22 @@ export default function HowToHourKeepPage() {
     },
   ) => {
     try {
-      // Configure dashboard based on recommendation
-      const currentMonth = format(new Date(), "yyyy-MM");
+      // Configure dashboard based on recommendation.
+      //
+      // A genuine "current month" use — the assessment sets up tracking for the month
+      // the user is in — so it goes through `currentMonth()` rather than formatting
+      // the clock here. W5: one helper, one mechanism, one answer.
+      const month = currentMonth();
       const { primaryMethod } = recommendation;
 
       if (primaryMethod === "income-tracking") {
-        await setComplianceMode(userId, currentMonth, "income");
-        await setSeasonalWorkerStatus(userId, currentMonth, false);
+        await setComplianceMode(userId, month, "income");
+        await setSeasonalWorkerStatus(userId, month, false);
       } else if (primaryMethod === "seasonal-income-tracking") {
-        await setComplianceMode(userId, currentMonth, "income");
-        await setSeasonalWorkerStatus(userId, currentMonth, true);
+        await setComplianceMode(userId, month, "income");
+        await setSeasonalWorkerStatus(userId, month, true);
       } else if (primaryMethod === "hour-tracking") {
-        await setComplianceMode(userId, currentMonth, "hours");
+        await setComplianceMode(userId, month, "hours");
       }
 
       // Update profile's onboarding context with notice details

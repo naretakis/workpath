@@ -286,6 +286,31 @@ export async function getComplianceMode(
 }
 
 /**
+ * The stored compliance mode for a month, or `undefined` if the user has never
+ * chosen one for that month.
+ *
+ * Added by W5. `getComplianceMode` collapses "no preference" into "hours", which is
+ * a sensible default for a single fixed month and a defect once the page follows a
+ * SELECTED month: a user tracking income in July who pages back to a June they have
+ * never opened would have the whole surface flip to hours tracking, silently, with
+ * their income entries apparently gone. The caller needs to tell the two apart so it
+ * can leave the view as the user left it.
+ *
+ * Added alongside `getComplianceMode` rather than replacing it, because
+ * `.kiro/steering/data-migration-standards.md` is explicit that `complianceMode`
+ * must not be tidied before W7b. Both disappear together when ADR-0004's unified
+ * compliance view removes the hours/income fork.
+ */
+export async function getStoredComplianceMode(
+  userId: string,
+  month: string,
+): Promise<"hours" | "income" | undefined> {
+  const mode = await db.complianceModes.where({ userId, month }).first();
+
+  return mode?.mode;
+}
+
+/**
  * Set seasonal worker status for a specific user and month
  */
 export async function setSeasonalWorkerStatus(

@@ -14,7 +14,7 @@ import {
   setComplianceMode,
   setSeasonalWorkerStatus,
 } from "@/lib/storage/income";
-import { format } from "date-fns";
+import { currentMonth } from "@/lib/month";
 
 type OnboardingStep = "privacy" | "profile" | "assessment";
 
@@ -118,18 +118,19 @@ export default function OnboardingPage() {
       // the two AssessmentFlow consumers symmetric — `how-to-hourkeep`'s
       // `handleComplete` never wrote one either.
 
-      // Configure dashboard based on recommendation
-      const currentMonth = format(new Date(), "yyyy-MM");
+      // Configure dashboard based on recommendation. W5: via `currentMonth()`, so
+      // this and the two other assessment-completion paths agree on the month.
+      const month = currentMonth();
       const { primaryMethod } = recommendation;
 
       if (primaryMethod === "income-tracking") {
-        await setComplianceMode(profileId, currentMonth, "income");
-        await setSeasonalWorkerStatus(profileId, currentMonth, false);
+        await setComplianceMode(profileId, month, "income");
+        await setSeasonalWorkerStatus(profileId, month, false);
       } else if (primaryMethod === "seasonal-income-tracking") {
-        await setComplianceMode(profileId, currentMonth, "income");
-        await setSeasonalWorkerStatus(profileId, currentMonth, true);
+        await setComplianceMode(profileId, month, "income");
+        await setSeasonalWorkerStatus(profileId, month, true);
       } else if (primaryMethod === "hour-tracking") {
-        await setComplianceMode(profileId, currentMonth, "hours");
+        await setComplianceMode(profileId, month, "hours");
       }
 
       // Dispatch event to notify dashboard

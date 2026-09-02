@@ -130,76 +130,118 @@ describe("calculateMonthlySummary: month filtering by string prefix", () => {
     expect(lastOfMonth.totalHours).toBe(8);
   });
 
-  it("CHARACTERIZATION: a bare YYYY prefix matches the whole year, because the filter is textual", () => {
-    // Not currently reachable from the UI, but it records that the parameter is
-    // an untyped string prefix rather than a validated calendar month. W5 makes
-    // the month an explicit required parameter (ADR-0005); a typed month value
-    // would make this input impossible to express.
-    const summary = calculateMonthlySummary(
-      [
-        activity("2026-01-15", "work", 10),
-        activity("2026-12-15", "work", 10),
-        activity("2027-01-15", "work", 10),
-      ],
-      "2026",
-    );
-
-    expect(summary.totalHours).toBe(20);
-    expect(summary.month).toBe("2026");
+  it("W5: rejects a bare YYYY prefix instead of silently summing a whole year", () => {
+    // ───────────────────────────────────────────────────────────────────────────
+    // INVERTED BY W5, 2026-09-02. Was:
+    //
+    //   it("CHARACTERIZATION: a bare YYYY prefix matches the whole year, because
+    //       the filter is textual")
+    //
+    // and it asserted `totalHours === 20` and `month === "2026"` — a year's worth
+    // of activities summed under a label claiming to be a month.
+    //
+    // The old test's own comment set this up: "W5 makes the month an explicit
+    // required parameter (ADR-0005); a typed month value would make this input
+    // impossible to express." Required is not the same as valid, though. A
+    // required `"2026"` is exactly as wrong as an optional one, so W5 validates
+    // the shape as well as demanding the argument.
+    // ───────────────────────────────────────────────────────────────────────────
+    expect(() =>
+      calculateMonthlySummary(
+        [
+          activity("2026-01-15", "work", 10),
+          activity("2026-12-15", "work", 10),
+          activity("2027-01-15", "work", 10),
+        ],
+        "2026",
+      ),
+    ).toThrow(/2026/);
   });
 });
 
-describe("calculateMonthlySummary: the month parameter is optional and defaults to today", () => {
-  // CHARACTERIZATION: current behaviour is a live defect.
+describe("calculateMonthlySummary: the month parameter is REQUIRED and the clock is not read", () => {
+  // ─────────────────────────────────────────────────────────────────────────────
+  // INVERTED BY W5, 2026-09-02. These two tests used to pin the OPPOSITE
+  // behaviour, and turning them red was the signal that the fix landed.
   //
-  // `month` is optional and falls back to `format(new Date(), "yyyy-MM")`.
-  // ADR-0005 requires month to be an EXPLICIT REQUIRED parameter for exactly this
-  // reason: "an optional month argument hides the bug where a caller forgets to
-  // pass one and silently gets today."
+  // What they pinned before:
   //
-  // The caller that forgets is real: src/app/tracking/page.tsx:138 calls
-  // `calculateMonthlySummary(allActivities)` with no month. Every use of this app
-  // is retrospective — 42 CFR 435.556(a)(1) assesses the months PRECEDING
-  // application, and 42 CFR 435.558 gives ~35 days to document months already
-  // past — so a silent "current month" default is wrong in the direction that
-  // matters. CMS-2454-IFC, 91 FR 33348 (June 3, 2026).
+  //   it("currently defaults to the current calendar month when no month is
+  //       passed")
+  //   it("currently returns a DIFFERENT answer for the same activities depending
+  //       on today's date")
   //
-  // Corrected in W5 (month scoping). Pinned here so W5's diff shows the change.
+  // `month` was optional and fell back to `format(new Date(), "yyyy-MM")`, and
+  // `src/app/tracking/page.tsx:138` was the caller that forgot it entirely.
+  // ADR-0005 required month to become explicit for exactly that reason: "an
+  // optional month argument hides the bug where a caller forgets to pass one and
+  // silently gets today."
+  //
+  // Why it mattered rather than merely being untidy: every use of this app is
+  // retrospective. 42 CFR 435.556(a)(1) assesses the months PRECEDING
+  // application, and 42 CFR 435.558 gives roughly 35 days to document months
+  // already past. A silent "current month" default was wrong in the direction
+  // that costs someone coverage. CMS-2454-IFC, 91 FR 33348 (June 3, 2026).
+  //
+  // Updated deliberately rather than deleted, so the record of what was fixed
+  // survives in the file that proved it was broken.
+  // ─────────────────────────────────────────────────────────────────────────────
 
-  it("currently defaults to the current calendar month when no month is passed", () => {
-    // The expected month is DERIVED from the faked clock, not written as a
-    // literal. Asserting `toBe("2026-07")` against a July system time would pass
-    // for any implementation that happens to return July — including a hardcoded
-    // one — so it would not actually pin "defaults to today". Proven: replacing
-    // the wall-clock default with a literal `"2026-07"` left that version green.
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date("2026-03-15T12:00:00"));
-    const expectedMonth = "2026-03";
-
-    const summary = calculateMonthlySummary([
-      activity("2026-03-10", "work", 20),
-      activity("2026-02-10", "work", 99),
-    ]);
-
-    expect(summary.month).toBe(expectedMonth);
-    expect(summary.totalHours).toBe(20);
+  it("ADR-0005: will not compile without a month, and throws rather than defaulting if called anyway", () => {
+    // Two layers, because neither alone is sufficient.
+    //
+    // The TYPE CHECKER is the observable for "the parameter is required":
+    // `@ts-expect-error` makes `tsc --noEmit` fail if the error ever stops
+    // occurring, which is what would happen if someone reintroduced the optional
+    // parameter. No runtime assertion can express that, and no comment can
+    // enforce it.
+    //
+    // The runtime throw matters separately. This app statically exports to a
+    // browser, where types are gone; a call from untyped code must fail loudly
+    // rather than quietly assume today. Failing loudly is the safe direction —
+    // a thrown error is visible, whereas a silent wrong month reads as a real
+    // answer.
+    expect(() =>
+      // @ts-expect-error month is a required parameter as of W5 (ADR-0005)
+      calculateMonthlySummary([activity("2026-03-10", "work", 20)]),
+    ).toThrow();
   });
 
-  it("currently returns a DIFFERENT answer for the same activities depending on today's date", () => {
-    // The clearest statement of why the default is a defect: identical input,
-    // different output, decided by the wall clock.
+  it("ADR-0005: returns the SAME answer for the same activities whatever today's date is", () => {
+    // The exact inverse of the test this replaces. Same fixture, same two clocks,
+    // opposite expectation. Previously June returned 90 and July returned 0 for
+    // identical input; now the explicit month decides and the clock is inert.
     const activities = [activity("2026-06-10", "work", 90)];
 
     vi.useFakeTimers();
     vi.setSystemTime(new Date("2026-06-15T12:00:00"));
-    const inJune = calculateMonthlySummary(activities);
+    const readInJune = calculateMonthlySummary(activities, "2026-06");
 
     vi.setSystemTime(new Date("2026-07-15T12:00:00"));
-    const inJuly = calculateMonthlySummary(activities);
+    const readInJuly = calculateMonthlySummary(activities, "2026-06");
 
-    expect(inJune.totalHours).toBe(90);
-    expect(inJuly.totalHours).toBe(0);
-    expect(inJune.month).not.toBe(inJuly.month);
+    expect(readInJune).toEqual(readInJuly);
+    expect(readInJune.totalHours).toBe(90);
+    expect(readInJuly.totalHours).toBe(90);
+    expect(readInJuly.month).toBe("2026-06");
+  });
+
+  it("ADR-0005: a month in the past is readable a year later without changing", () => {
+    // The case the product exists for. Under 42 CFR 435.558 someone has ~35 days
+    // to document months already gone, and ADR-0005 § 5 says the retrospective
+    // case is the primary one. Reading December from the following August must
+    // give December's answer.
+    const activities = [
+      activity("2026-12-05", "work", 40),
+      activity("2026-12-19", "volunteer", 45),
+    ];
+
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2027-08-15T12:00:00"));
+    const summary = calculateMonthlySummary(activities, "2026-12");
+
+    expect(summary.month).toBe("2026-12");
+    expect(summary.totalHours).toBe(85);
   });
 });
 

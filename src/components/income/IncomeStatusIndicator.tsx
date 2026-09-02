@@ -2,7 +2,7 @@
 
 import { Box, Paper, Typography, LinearProgress, Chip } from "@mui/material";
 import {
-  CheckCircle as CheckCircleIcon,
+  FactCheck as FactCheckIcon,
   Warning as WarningIcon,
 } from "@mui/icons-material";
 import { MonthlyIncomeSummary } from "@/types/income";
@@ -74,13 +74,29 @@ export function IncomeStatusIndicator({ summary }: IncomeStatusIndicatorProps) {
       >
         {isCompliant ? (
           <>
-            <CheckCircleIcon sx={{ fontSize: 40, color: "success.main" }} />
+            {/*
+              W5: was "Compliant" over "You've met the $580 requirement!". Same
+              verdict as Dashboard.tsx, same reason W2a's guard missed it — the
+              banned-phrase list matched `COMPLIANT` case-sensitively to spare the
+              `isCompliant` identifier, which also spared title case. Found by
+              looking at the built app rather than by reading code.
+
+              The income pathway needs a stronger hedge than the hours pathway, not
+              a weaker one. 42 CFR 435.552(f)(2) measures MAGI-based income for the
+              MAGI-BASED HOUSEHOLD, and HourKeep stores one person's records — so
+              this figure is not even the number the state will compare. Saying a
+              threshold was met on this surface was the least defensible verdict in
+              the app. W7a corrects the arithmetic; W5 stops it announcing a result.
+            */}
+            <FactCheckIcon sx={{ fontSize: 40, color: "success.main" }} />
             <Box>
               <Typography variant="h6" color="success.main">
-                Compliant
+                {formatCurrency(effectiveIncome)} recorded
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                You&apos;ve met the $580 requirement!
+                That&apos;s at or over {formatCurrency(INCOME_THRESHOLD)} for
+                this month. Your state counts your whole household&apos;s income
+                here, not just yours — ask them what they have on file.
               </Typography>
             </Box>
           </>
@@ -92,7 +108,7 @@ export function IncomeStatusIndicator({ summary }: IncomeStatusIndicatorProps) {
                 {formatCurrency(amountNeeded)} needed
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Keep logging to reach $580
+                Keep logging to reach {formatCurrency(INCOME_THRESHOLD)}
               </Typography>
               {isCloseToThreshold && (
                 <Typography

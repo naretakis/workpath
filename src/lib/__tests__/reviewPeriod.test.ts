@@ -26,6 +26,7 @@ import {
   FEDERAL_DEFAULT_REVIEW_PERIOD,
   applicationReviewPeriod,
   renewalReviewPeriod,
+  renewalReviewPeriodEndingAt,
   verificationReviewPeriod,
   newlyApplicableReviewPeriod,
   monthsInReviewPeriod,
@@ -351,5 +352,109 @@ describe("the ReviewPeriod value carries no verdict", () => {
         expect(key, `${period.kind}.${key}`).not.toMatch(banned);
       }
     }
+  });
+});
+
+describe("renewalReviewPeriodEndingAt — deriving a renewal period from the due month", () => {
+  // WHY THIS EXISTS, and why it is the shakiest thing in this module.
+  //
+  // § 435.556(a)(2)(i) makes the renewal review period "the period between the
+  // effective date of such individual's most recent determination or
+  // redetermination at renewal ... and the date the individual's renewal is due".
+  // A user can reasonably be expected to know when their renewal is due. Almost
+  // nobody knows the effective date of their last redetermination, and nothing in
+  // HourKeep's schema recorded it.
+  //
+  // So the start is derived from an assumed renewal frequency, and that figure does
+  // NOT come from this rule. The IFC amends § 435.916 to say MAGI renewals happen
+  // every 12 months and no more often; its own preamble says the adult group is
+  // subject to 6-month renewals from January 1, 2027 under § 1902(e)(14)(L) — a
+  // different section of PL 119-21 that this rule does not implement, and which
+  // does not apply to American Indians or most § 1115 enrollees. The two do not
+  // agree, and no reconciling rulemaking has landed.
+  //
+  // `.kiro/steering/medicaid-domain-knowledge.md` § "Renewal frequency — a known
+  // ambiguity" gives the instruction directly: treat 6 months as operative for the
+  // adult group, flag it as sourced elsewhere, and watch for the reconciling
+  // rulemaking. That is what this does. The number lives in the policy constant
+  // with the ambiguity recorded in `source`, so W2b moves a documented assumption
+  // rather than an anonymous 6.
+  //
+  // ADR-0003 classification: Conditional, and specifically a conditional whose
+  // condition we are least sure of. Any UI built on it must say the state decides.
+
+  it("42 CFR 435.556(a)(2)(i): the due month is the last month of the period, inclusive", () => {
+    const period = renewalReviewPeriodEndingAt("2027-06");
+    const months = monthsInReviewPeriod(period);
+
+    expect(months[months.length - 1]).toBe("2027-06");
+  });
+
+  it("spans the assumed renewal frequency, six months by default", () => {
+    const period = renewalReviewPeriodEndingAt("2027-06");
+
+    expect(monthsInReviewPeriod(period)).toEqual([
+      "2027-01",
+      "2027-02",
+      "2027-03",
+      "2027-04",
+      "2027-05",
+      "2027-06",
+    ]);
+  });
+
+  it("crosses a year boundary", () => {
+    const period = renewalReviewPeriodEndingAt("2027-02");
+    expect(monthsInReviewPeriod(period)).toEqual([
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12",
+      "2027-01",
+      "2027-02",
+    ]);
+  });
+
+  it("follows the policy when a state's renewal frequency is different", () => {
+    const period = renewalReviewPeriodEndingAt("2027-06", {
+      ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+      renewalPeriodMonths: 12,
+    });
+    expect(monthsInReviewPeriod(period)).toHaveLength(12);
+    expect(monthsInReviewPeriod(period)[0]).toBe("2026-07");
+  });
+
+  it("91 FR 33389: still does not require consecutive months", () => {
+    // The derived SPAN is an assumption. The non-consecutive rule is not — it is
+    // CMS's reading of statutory text, and it survives however the span is
+    // computed.
+    const period = renewalReviewPeriodEndingAt("2027-06");
+    expect(requiresConsecutiveMonths(period)).toBe(false);
+  });
+
+  it("42 CFR 435.556(a)(2): requires only 1 of those months by default", () => {
+    // The user-favourable half, and the half that gets under-communicated: a
+    // six-month period with one month required means any single qualifying month
+    // in six is enough under the federal default.
+    const period = renewalReviewPeriodEndingAt("2027-06");
+    expect(monthsRequiredFor(period)).toBe(1);
+    expect(monthsInReviewPeriod(period)).toHaveLength(6);
+  });
+
+  it("records the § 435.916 / § 1902(e)(14)(L) conflict in the policy source", () => {
+    // The assumption must not be able to travel without its caveat. If someone
+    // later reads `renewalPeriodMonths: 6` and takes it for a finding of this rule,
+    // that is the failure this test exists to prevent.
+    expect(FEDERAL_DEFAULT_REVIEW_PERIOD.renewalPeriodMonths).toBe(6);
+    expect(FEDERAL_DEFAULT_REVIEW_PERIOD.renewalPeriodMonthsSource).toMatch(
+      /1902\(e\)\(14\)\(L\)/,
+    );
+    expect(FEDERAL_DEFAULT_REVIEW_PERIOD.renewalPeriodMonthsSource).toMatch(
+      /435\.916/,
+    );
+  });
+
+  it("rejects a malformed due month", () => {
+    expect(() => renewalReviewPeriodEndingAt("2027")).toThrow();
   });
 });

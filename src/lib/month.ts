@@ -25,7 +25,13 @@
  *    different months for the same instant.
  */
 
-import { format } from "date-fns";
+import {
+  eachDayOfInterval,
+  endOfMonth,
+  endOfWeek,
+  format,
+  startOfWeek,
+} from "date-fns";
 
 /** Strict `YYYY-MM`: four digits, a hyphen, and a zero-padded month 01-12. */
 const MONTH_PATTERN = /^\d{4}-(0[1-9]|1[0-2])$/;
@@ -158,6 +164,57 @@ export function monthToDate(month: string): Date {
 /** `"2026-07"` to `"July 2026"`. */
 export function formatMonthLong(month: string): string {
   return format(monthToDate(month), "MMMM yyyy");
+}
+
+/** One cell of a month's calendar grid. */
+export interface CalendarDay {
+  /** `YYYY-MM-DD`, local. */
+  date: string;
+  /** Day number within its OWN month, so padding cells read 28, 29, 30, 1. */
+  dayOfMonth: number;
+  /** False for the padding days borrowed from the adjacent months. */
+  inMonth: boolean;
+  /** Whether this cell is the current local date. Padding cells can be today. */
+  isToday: boolean;
+}
+
+/**
+ * The calendar grid for a month: whole weeks, Sunday to Saturday, padded from the
+ * neighbouring months. 28, 35 or 42 cells.
+ *
+ * Lifted out of `Calendar.tsx` in W5, and the move is the point rather than
+ * housekeeping. That component owned `useState(new Date())` plus five date-fns
+ * boundary calls, which is how the user could page it to March while the summary,
+ * the activity list and the income view all stayed on today. Centralising the
+ * arithmetic here also lets `src/__tests__/no-wall-clock-month.test.ts` ban
+ * `startOfMonth`, `endOfMonth` and `eachDayOfInterval` outright with a single
+ * exempt file, instead of trying to follow a `now` variable across lines with a
+ * regular expression.
+ *
+ * `now` is injectable for the same reason it is on `currentMonth`: `isToday` is the
+ * only clock-dependent thing about a grid, and a test should be able to fix it.
+ */
+export function calendarGridDays(
+  month: string,
+  now: Date = new Date(),
+): CalendarDay[] {
+  const monthStart = monthToDate(month); // validates, and is built from integers
+  const gridStart = startOfWeek(monthStart);
+  const gridEnd = endOfWeek(endOfMonth(monthStart));
+
+  const today = format(now, "yyyy-MM-dd");
+
+  return eachDayOfInterval({ start: gridStart, end: gridEnd }).map((day) => {
+    // `format` reads local calendar fields, and `day` came from local arithmetic
+    // on a locally-constructed Date, so no UTC reinterpretation can occur here.
+    const date = format(day, "yyyy-MM-dd");
+    return {
+      date,
+      dayOfMonth: day.getDate(),
+      inMonth: date.slice(0, 7) === month,
+      isToday: date === today,
+    };
+  });
 }
 
 /**

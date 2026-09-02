@@ -1,27 +1,62 @@
 "use client";
 
-import { useState } from "react";
-import { Box, Paper, Typography, IconButton, styled } from "@mui/material";
+import {
+  Box,
+  Paper,
+  Typography,
+  IconButton,
+  Chip,
+  styled,
+} from "@mui/material";
 import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
 } from "@mui/icons-material";
 import {
-  format,
-  startOfMonth,
-  endOfMonth,
-  eachDayOfInterval,
-  isSameMonth,
-  isToday,
-  startOfWeek,
-  endOfWeek,
-} from "date-fns";
+  calendarGridDays,
+  formatMonthLong,
+  nextMonth,
+  previousMonth,
+} from "@/lib/month";
 
+/**
+ * A month grid, CONTROLLED by whoever renders it.
+ *
+ * W5 (ADR-0005). This component used to own `useState(new Date())` and page itself,
+ * telling nobody. The visible symptom: you could move the calendar back to March,
+ * log hours into March, and the summary, activity list and income view would all
+ * stay on today — so the hours appeared to vanish. That is the bug the wave exists
+ * to fix, and it could not be fixed inside this file, because the month has to live
+ * where the sibling components can see it.
+ *
+ * All date arithmetic now comes from `@/lib/month`. This file imports nothing from
+ * `date-fns`, which is enforced rather than merely intended:
+ * `src/__tests__/no-wall-clock-month.test.ts` bans `startOfMonth`, `endOfMonth`,
+ * `eachDayOfInterval` and `useState(new Date())` everywhere but `src/lib/month.ts`.
+ */
 interface CalendarProps {
-  onDateClick: (date: Date, event: React.MouseEvent<HTMLElement>) => void;
-  activeDates?: Set<string>; // Set of YYYY-MM-DD strings
-  dateHours?: Map<string, number>; // Map of date to total hours
-  dateActivityCount?: Map<string, number>; // Map of date to activity count
+  /** The month to display, `YYYY-MM`. Controlled — this component holds no month state. */
+  month: string;
+  /** Called with the new `YYYY-MM` when the user pages. */
+  onMonthChange: (month: string) => void;
+  /**
+   * Called with a `YYYY-MM-DD` date string, not a `Date`.
+   *
+   * A string because that is what the grid and the stored records both use;
+   * handing out a `Date` invited each caller to reparse it, and
+   * `new Date("2026-07-01")` parses as UTC.
+   */
+  onDateClick: (date: string, event: React.MouseEvent<HTMLElement>) => void;
+  activeDates?: Set<string>;
+  /** `YYYY-MM-DD` to total hours logged that day. */
+  dateHours?: Map<string, number>;
+  /** `YYYY-MM-DD` to number of separate activities that day. */
+  dateActivityCount?: Map<string, number>;
+  /**
+   * Whether the displayed month falls in the state's review period, when that is
+   * known. Presentational only — the component decides nothing.
+   */
+  inReviewPeriod?: boolean;
 }
 
 const DayCell = styled(Box, {
@@ -54,31 +89,17 @@ const DayCell = styled(Box, {
 }));
 
 export function Calendar({
+  month,
+  onMonthChange,
   onDateClick,
   activeDates = new Set(),
   dateHours = new Map(),
   dateActivityCount = new Map(),
+  inReviewPeriod,
 }: CalendarProps) {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-
-  const monthStart = startOfMonth(currentMonth);
-  const monthEnd = endOfMonth(currentMonth);
-  const calendarStart = startOfWeek(monthStart);
-  const calendarEnd = endOfWeek(monthEnd);
-
-  const days = eachDayOfInterval({ start: calendarStart, end: calendarEnd });
-
-  const handlePrevMonth = () => {
-    setCurrentMonth(
-      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1),
-    );
-  };
-
-  const handleNextMonth = () => {
-    setCurrentMonth(
-      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1),
-    );
-  };
+  const days = calendarGridDays(month);
+  const previous = previousMonth(month);
+  const next = nextMonth(month);
 
   const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -93,16 +114,44 @@ export function Calendar({
           mb: 2,
         }}
       >
-        <IconButton onClick={handlePrevMonth} size="small">
+        <IconButton
+          onClick={() => onMonthChange(previous)}
+          // Names the destination rather than the direction. "Previous month" tells
+          // a screen-reader user nothing about where they will land, and this
+          // control is the primary way to reach the months a state actually
+          // assesses. component-standards.md requires a label on every icon-only
+          // control; 44px is this project's touch-target standard (WCAG 2.2 AAA
+          // SC 2.5.5) and the theme sets no minimum yet — that fix is W10's.
+          aria-label={`Go to ${formatMonthLong(previous)}`}
+          sx={{ minWidth: 44, minHeight: 44 }}
+        >
           <ChevronLeftIcon />
         </IconButton>
-        <Typography
-          variant="h6"
-          sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+
+        <Box sx={{ textAlign: "center" }}>
+          <Typography
+            variant="h6"
+            component="h3"
+            sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+          >
+            {formatMonthLong(month)}
+          </Typography>
+          {inReviewPeriod && (
+            <Chip
+              label="In your review period"
+              size="small"
+              color="primary"
+              variant="outlined"
+              sx={{ mt: 0.5 }}
+            />
+          )}
+        </Box>
+
+        <IconButton
+          onClick={() => onMonthChange(next)}
+          aria-label={`Go to ${formatMonthLong(next)}`}
+          sx={{ minWidth: 44, minHeight: 44 }}
         >
-          {format(currentMonth, "MMMM yyyy")}
-        </Typography>
-        <IconButton onClick={handleNextMonth} size="small">
           <ChevronRightIcon />
         </IconButton>
       </Box>
@@ -142,33 +191,30 @@ export function Calendar({
         }}
       >
         {days.map((day) => {
-          const dateStr = format(day, "yyyy-MM-dd");
-          const isCurrentMonth = isSameMonth(day, currentMonth);
-          const isTodayDate = isToday(day);
-          const hasActivity = activeDates.has(dateStr);
-          const hours = dateHours.get(dateStr);
-          const activityCount = dateActivityCount.get(dateStr) || 0;
+          const hasActivity = activeDates.has(day.date);
+          const hours = dateHours.get(day.date);
+          const activityCount = dateActivityCount.get(day.date) || 0;
 
           return (
             <DayCell
-              key={day.toISOString()}
-              isCurrentMonth={isCurrentMonth}
-              isToday={isTodayDate}
+              key={day.date}
+              isCurrentMonth={day.inMonth}
+              isToday={day.isToday}
               hasActivity={hasActivity}
-              onClick={(e) => isCurrentMonth && onDateClick(day, e)}
+              onClick={(e) => day.inMonth && onDateClick(day.date, e)}
             >
               <Typography
                 variant="body2"
                 sx={{ fontWeight: hasActivity ? 600 : 400 }}
               >
-                {format(day, "d")}
+                {day.dayOfMonth}
               </Typography>
               {hasActivity && hours !== undefined && (
                 <Typography
                   variant="caption"
                   sx={{
                     fontSize: "0.65rem",
-                    color: isTodayDate ? "inherit" : "success.main",
+                    color: day.isToday ? "inherit" : "success.main",
                     fontWeight: 600,
                     lineHeight: 1,
                   }}

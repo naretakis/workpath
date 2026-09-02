@@ -57,6 +57,18 @@ export interface ReviewPeriodPolicy {
   /** § 435.556(a)(2)(ii). Months required between more-frequent verifications. */
   verificationMonthsRequired: number;
   /**
+   * How LONG the eligibility period is assumed to be, in months.
+   *
+   * The weakest number in this object, and it does not come from this rule. See
+   * `renewalPeriodMonthsSource` and `renewalReviewPeriodEndingAt`.
+   */
+  renewalPeriodMonths: number;
+  /**
+   * Its own separate citation, because it has a different and worse provenance
+   * than everything else here and must not travel without the caveat.
+   */
+  renewalPeriodMonthsSource: string;
+  /**
    * Where these numbers come from. Mandatory, per ADR-0001: "a profile without a
    * citation is a guess, and guesses don't belong in compliance logic."
    */
@@ -80,6 +92,16 @@ export const FEDERAL_DEFAULT_REVIEW_PERIOD: ReviewPeriodPolicy = {
   applicationLookbackBounds: { min: 1, max: 3 },
   renewalMonthsRequired: 1,
   verificationMonthsRequired: 1,
+  renewalPeriodMonths: 6,
+  renewalPeriodMonthsSource:
+    "NOT from CMS-2454-IFC. The IFC amends 42 CFR 435.916 to say MAGI renewals " +
+    "occur every 12 months and no more often, while its own preamble states the " +
+    "adult group is subject to 6-month renewals from January 1, 2027 under SSA " +
+    "1902(e)(14)(L) — a different section of PL 119-21 that this rule does not " +
+    "implement, and which does not reach American Indians or most 1115 enrollees. " +
+    "The two do not agree and no reconciling rulemaking has issued. 6 is treated as " +
+    "operative for the adult group per .kiro/steering/medicaid-domain-knowledge.md, " +
+    "flagged as sourced elsewhere.",
   source:
     "42 CFR 435.556(a)(1) and (a)(2), CMS-2454-IFC, 91 FR 33473-74 (June 3, 2026); " +
     "statutory minimum, pending per-state election data",
@@ -217,6 +239,38 @@ export function renewalReviewPeriod(
       months.length,
     ),
   };
+}
+
+/**
+ * A renewal review period ending at the month the renewal is due, with the start
+ * derived from the assumed renewal frequency.
+ *
+ * READ THE CAVEAT BEFORE USING THIS. § 435.556(a)(2)(i) runs the period from "the
+ * effective date of such individual's most recent determination or redetermination
+ * at renewal" to "the date the individual's renewal is due". A user can reasonably
+ * be expected to know the second date. Almost nobody knows the first, and HourKeep
+ * never stored it.
+ *
+ * So the start is **assumed**, from `policy.renewalPeriodMonths`, and that figure
+ * does not come from this rule — see `renewalPeriodMonthsSource`, which records the
+ * § 435.916 versus § 1902(e)(14)(L) conflict in full. Treat the resulting month list
+ * as Conditional in ADR-0003's sense, and the weakest such value in the app: the
+ * user's state decides, and the user should be told to ask which months.
+ *
+ * What is NOT assumed, and is worth saying loudly to the user either way: the months
+ * need not be consecutive, the state may not dictate which ones count, and under the
+ * federal default only one month in the whole period is required.
+ */
+export function renewalReviewPeriodEndingAt(
+  renewalDueMonth: string,
+  policy: ReviewPeriodPolicy = FEDERAL_DEFAULT_REVIEW_PERIOD,
+): ReviewPeriod {
+  parseMonth(renewalDueMonth);
+
+  const span = Math.max(policy.renewalPeriodMonths, 1);
+  const periodStart = addMonths(renewalDueMonth, -(span - 1));
+
+  return renewalReviewPeriod(periodStart, renewalDueMonth, policy);
 }
 
 /**

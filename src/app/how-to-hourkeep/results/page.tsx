@@ -37,6 +37,7 @@ import {
   getComplianceMethodLabel,
   getComplianceMethodDescription,
 } from "@/lib/assessment/recommendationEngine";
+import { currentMonth } from "@/lib/month";
 
 export default function AssessmentResultsPage() {
   const router = useRouter();
@@ -114,18 +115,25 @@ export default function AssessmentResultsPage() {
         const { setComplianceMode, setSeasonalWorkerStatus } = await import(
           "@/lib/storage/income"
         );
-        const currentMonth = new Date().toISOString().slice(0, 7);
+        // W5: was `new Date().toISOString().slice(0, 7)` — UTC, while the nine other
+        // month derivations in the app were local. That is a live defect, not just an
+        // inconsistency: UTC runs ahead of any negative-offset zone, so late on the
+        // last day of a month this wrote the tracking mode into the FOLLOWING month's
+        // row while the tracking page read the current one. To the user their choice
+        // simply had not saved, with nothing on screen to explain it. No test could
+        // have caught it either — the app held two mechanisms and only one was wrong.
+        const month = currentMonth();
 
         if (result.recommendation.primaryMethod === "income-tracking") {
-          await setComplianceMode(profile.id, currentMonth, "income");
-          await setSeasonalWorkerStatus(profile.id, currentMonth, false);
+          await setComplianceMode(profile.id, month, "income");
+          await setSeasonalWorkerStatus(profile.id, month, false);
         } else if (
           result.recommendation.primaryMethod === "seasonal-income-tracking"
         ) {
-          await setComplianceMode(profile.id, currentMonth, "income");
-          await setSeasonalWorkerStatus(profile.id, currentMonth, true);
+          await setComplianceMode(profile.id, month, "income");
+          await setSeasonalWorkerStatus(profile.id, month, true);
         } else if (result.recommendation.primaryMethod === "hour-tracking") {
-          await setComplianceMode(profile.id, currentMonth, "hours");
+          await setComplianceMode(profile.id, month, "hours");
         }
       }
     } catch (error) {
