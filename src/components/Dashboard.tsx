@@ -74,8 +74,13 @@ export function Dashboard({ summary, threshold }: DashboardProps) {
           mb: { xs: 2, sm: 3 },
         }}
       >
+        {/* `component="h3"` because MUI maps variant h5 to an <h5> element by
+            default, which skipped from the page's h2s straight to h5.
+            component-standards.md: heading LEVELS must nest correctly regardless of
+            visual size. This is a section heading beside the calendar's h3. */}
         <Typography
           variant="h5"
+          component="h3"
           sx={{ fontSize: { xs: "1.25rem", sm: "1.5rem" } }}
         >
           Monthly Progress - {monthDisplay}
