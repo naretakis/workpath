@@ -144,8 +144,13 @@ export function MonthNavigator({
               ? // Prompts for EVIDENCE, not for progress toward a threshold. "34
                 // hours to go" is a target and is meaningless for a month that has
                 // ended; "who can confirm it" is the thing that still helps.
-                "You can still add hours you worked this month, or find proof for hours you already logged."
-              : "You can log hours for this month as you go."}
+                //
+                // Names the month rather than saying "this month". Review caught
+                // that: "this month" colloquially means the wall-clock month, which
+                // is exactly the ambiguity this wave exists to remove, and it read
+                // especially oddly directly under a chip saying "Past month".
+                `You can still add hours you worked in ${formatMonthLong(month)}, or find proof for hours you already logged.`
+              : `You can log hours for ${formatMonthLong(month)} as you go.`}
           </Typography>
           <Button
             size="small"

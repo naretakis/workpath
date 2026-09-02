@@ -25,6 +25,15 @@ import { ExemptionHistory } from "@/components/exemptions/ExemptionHistory";
 import { IntroductionScreen } from "@/components/assessment/IntroductionScreen";
 import { ComplianceModeSelector } from "@/components/compliance/ComplianceModeSelector";
 import { RequirementFacts } from "@/components/help/RequirementFacts";
+import { Dashboard } from "@/components/Dashboard";
+import { CompletionMessage } from "@/components/tracking/CompletionMessage";
+import { MonthNavigator } from "@/components/tracking/MonthNavigator";
+import { ReviewPeriodPanel } from "@/components/tracking/ReviewPeriodPanel";
+import {
+  applicationReviewPeriod,
+  renewalReviewPeriodEndingAt,
+  FEDERAL_DEFAULT_REVIEW_PERIOD,
+} from "@/lib/reviewPeriod";
 
 import { requirementFacts } from "@/content/helpText";
 import type { AssessmentResult } from "@/types/assessment";
@@ -325,5 +334,295 @@ describe("guard-the-guard: the render assertion can actually fail", () => {
       </div>,
     );
     expect(verdictsInDom("fixture")).toEqual([]);
+  });
+});
+
+/**
+ * W5's tracking surfaces.
+ *
+ * ─────────────────────────────────────────────────────────────────────────────────
+ * ADDED AFTER THE W5 WAVE REVIEW, and this block is the structural fix rather than
+ * the cosmetic one.
+ *
+ * W5 rewrote or created five month-scoped components and put NONE of them in this
+ * file. Two verdicts got through as a direct result:
+ *
+ *   1. `Dashboard` rendered "Compliant" in green beside a tick, over "You've met the
+ *      80-hour requirement!". Found by opening the built app in a browser. The
+ *      source scan missed it because the banned list matched `COMPLIANT`
+ *      case-sensitively to spare the `isCompliant` identifier, which also spared
+ *      title case.
+ *   2. `CompletionMessage` rendered "Your record covers every month" — a quantifier
+ *      over the review period that nothing computed, and false under the federal
+ *      default, where a renewal period is six months long and requires one. Found by
+ *      an independent reviewer reading the render gate.
+ *
+ * The second one is the instructive failure. Its rendered branch was unreachable in
+ * EVERY suite: the e2e fixture sets `monthsRequired: 2` with one qualifying month, so
+ * the component returned `null` there, and the source scan cannot see a phrase it does
+ * not have. A component whose only output nobody renders is a component whose copy
+ * nobody checks.
+ *
+ * So the rule these tests encode: every branch that renders prose gets rendered here,
+ * including the celebratory one. The threshold-met branch is where verdicts live,
+ * because that is where the temptation is.
+ * ─────────────────────────────────────────────────────────────────────────────────
+ */
+describe("ADR-0003 no-verdict guard: W5 month-scoped surfaces", () => {
+  const summary = (totalHours: number) => ({
+    month: "2026-07",
+    totalHours,
+    workHours: totalHours,
+    volunteerHours: 0,
+    educationHours: 0,
+    isCompliant: totalHours >= 80,
+    hoursNeeded: Math.max(80 - totalHours, 0),
+  });
+
+  describe("Dashboard", () => {
+    it("renders no verdict when the month is OVER the threshold", () => {
+      // The branch that used to say "Compliant".
+      render(<Dashboard summary={summary(84)} threshold={80} />);
+      expectNoVerdict("Dashboard (over threshold)");
+    });
+
+    it("renders no verdict when the month is under the threshold", () => {
+      render(<Dashboard summary={summary(46)} threshold={80} />);
+      expectNoVerdict("Dashboard (under threshold)");
+    });
+
+    it("renders no verdict at exactly the threshold", () => {
+      render(<Dashboard summary={summary(80)} threshold={80} />);
+      expectNoVerdict("Dashboard (exactly at threshold)");
+    });
+  });
+
+  describe("CompletionMessage", () => {
+    it("renders no verdict on the branch that actually renders", () => {
+      // Reachable only when `monthsAtOrOverThreshold >= monthsRequired`, which is
+      // why no other suite had ever rendered it.
+      render(
+        <CompletionMessage
+          monthsAtOrOverThreshold={1}
+          monthsRequired={1}
+          monthsInPeriod={6}
+          monthlyThreshold={80}
+          reviewPeriodKind="renewal"
+          onExport={noop}
+          onContinueTracking={noop}
+        />,
+      );
+      expectNoVerdict("CompletionMessage (renewal, 1 of 6)");
+    });
+
+    it("does not claim completeness it has not computed", () => {
+      // The specific defect: one qualifying month out of a six-month period must not
+      // read as though the record covers the period. Asserted on the rendered text
+      // rather than on the phrase list, because "covers every month" is a bespoke
+      // overstatement that no generic banned phrase would catch.
+      render(
+        <CompletionMessage
+          monthsAtOrOverThreshold={1}
+          monthsRequired={1}
+          monthsInPeriod={6}
+          monthlyThreshold={80}
+          reviewPeriodKind="renewal"
+          onExport={noop}
+          onContinueTracking={noop}
+        />,
+      );
+
+      const text = document.body.textContent ?? "";
+      expect(text).not.toMatch(/every month/i);
+      expect(text).not.toMatch(/\ball (of )?(the )?months\b/i);
+      // And the honest form is present: both numbers, with the denominator named.
+      expect(text).toMatch(/1 of 6 months/);
+    });
+
+    it("renders no verdict for an application period", () => {
+      render(
+        <CompletionMessage
+          monthsAtOrOverThreshold={3}
+          monthsRequired={3}
+          monthsInPeriod={3}
+          monthlyThreshold={80}
+          reviewPeriodKind="application"
+          onExport={noop}
+          onContinueTracking={noop}
+        />,
+      );
+      expectNoVerdict("CompletionMessage (application, 3 of 3)");
+    });
+  });
+
+  describe("MonthNavigator", () => {
+    it.each([
+      ["past", "2026-06"],
+      ["current", "2026-07"],
+      ["future", "2026-08"],
+    ])("renders no verdict for a %s month", (label, month) => {
+      render(
+        <MonthNavigator
+          month={month}
+          today="2026-07"
+          onMonthChange={noop}
+          reviewPeriodMonths={["2026-06", "2026-07"]}
+        />,
+      );
+      expectNoVerdict(`MonthNavigator (${label})`);
+    });
+  });
+
+  describe("ReviewPeriodPanel", () => {
+    const hours = [
+      { month: "2026-05", totalHours: 0 },
+      { month: "2026-06", totalHours: 84 },
+    ];
+
+    it("renders no verdict when no anchor is known", () => {
+      render(
+        <ReviewPeriodPanel
+          monthHours={[]}
+          monthlyThreshold={80}
+          pathway="hours"
+          selectedMonth="2026-07"
+          todayMonth="2026-07"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+      expectNoVerdict("ReviewPeriodPanel (no anchor)");
+    });
+
+    it("renders no verdict for an application period", () => {
+      render(
+        <ReviewPeriodPanel
+          reviewPeriod={applicationReviewPeriod("2026-07", {
+            ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+            applicationLookbackMonths: 2,
+          })}
+          monthHours={hours}
+          monthlyThreshold={80}
+          pathway="hours"
+          selectedMonth="2026-06"
+          todayMonth="2026-07"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+      expectNoVerdict("ReviewPeriodPanel (application)");
+    });
+
+    it("renders no verdict for a renewal period", () => {
+      render(
+        <ReviewPeriodPanel
+          reviewPeriod={renewalReviewPeriodEndingAt("2026-06")}
+          monthHours={hours}
+          monthlyThreshold={80}
+          pathway="hours"
+          selectedMonth="2026-06"
+          todayMonth="2026-07"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+      expectNoVerdict("ReviewPeriodPanel (renewal)");
+    });
+
+    it("does not report an hours shortfall to someone tracking income", () => {
+      // The most harmful thing the W5 review found. This panel sits above the
+      // hours/income fork, so it rendered for everyone, and its rows are built from
+      // logged activities — so an income-pathway user saw "Difference: 80" for every
+      // month of their review period.
+      //
+      // ADR-0003 § Context names this harm in as many words: "HourKeep, seeing only
+      // their own pay stubs, would tell them they're failing and send them looking
+      // for 80 hours of volunteering." 42 CFR 435.552(a) makes all seven pathways
+      // equally available and § 435.552(e)(2) lets income and hours combine.
+      render(
+        <ReviewPeriodPanel
+          reviewPeriod={renewalReviewPeriodEndingAt("2026-06")}
+          monthHours={[
+            { month: "2026-05", totalHours: 0 },
+            { month: "2026-06", totalHours: 0 },
+          ]}
+          monthlyThreshold={80}
+          pathway="income"
+          selectedMonth="2026-06"
+          todayMonth="2026-07"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+
+      const text = document.body.textContent ?? "";
+      expect(text).not.toMatch(/Difference:/i);
+      expect(text).not.toMatch(/at or over 80 hours/i);
+      // And it says WHY the hours figure is not a target — 42 CFR 435.552(a)'s seven
+      // pathways and § 435.552(e)(2)'s combination rule.
+      //
+      // Asserted on the explanation's own distinctive wording, not on the phrase
+      // "tracking income". Mutation testing caught that: deleting the whole
+      // explanation left this test green, because the per-month rows also contain the
+      // words "tracking income". A test that can be satisfied by two different pieces
+      // of copy is not pinning either of them.
+      expect(text).toMatch(/one of several ways to meet this/i);
+      expect(text).toMatch(/aren't a target you're missing/i);
+      expectNoVerdict("ReviewPeriodPanel (income pathway)");
+    });
+
+    it("still reports the hours comparison to someone tracking hours", () => {
+      // The positive twin. Suppressing the shortfall for everyone would satisfy the
+      // test above by deletion, and the hours pathway genuinely needs the difference.
+      render(
+        <ReviewPeriodPanel
+          reviewPeriod={renewalReviewPeriodEndingAt("2026-06")}
+          monthHours={[{ month: "2026-06", totalHours: 46 }]}
+          monthlyThreshold={80}
+          pathway="hours"
+          selectedMonth="2026-06"
+          todayMonth="2026-07"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+
+      const text = document.body.textContent ?? "";
+      expect(text).toMatch(/Logged: 46 hours/);
+      expect(text).toMatch(/Difference: 34/);
+    });
+
+    it("says so when the app disagrees with the user's notice", () => {
+      // § 435.556(a)(1) caps an application at 3 months, so a notice naming more
+      // means a typo or a renewal. Silently showing the shorter period under-scoped
+      // the months in the direction that costs coverage.
+      render(
+        <ReviewPeriodPanel
+          reviewPeriod={applicationReviewPeriod("2026-07", {
+            ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+            applicationLookbackMonths: 3,
+          })}
+          monthHours={hours}
+          monthlyThreshold={80}
+          pathway="hours"
+          noticeExceedsApplicationBounds
+          selectedMonth="2026-06"
+          todayMonth="2026-07"
+          onSelectMonth={noop}
+          onAnchorChange={noop}
+          onClearAnchor={noop}
+        />,
+      );
+
+      const text = document.body.textContent ?? "";
+      expect(text).toMatch(/doesn't match your letter/i);
+      expect(text).toMatch(/Keep logging the extra months/i);
+      expectNoVerdict("ReviewPeriodPanel (notice mismatch)");
+    });
   });
 });

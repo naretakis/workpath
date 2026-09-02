@@ -150,26 +150,58 @@ export default function TrackingPage() {
   const monthsRequiredFromNotice =
     userProfile?.onboardingContext?.monthsRequired;
 
+  const bounds = FEDERAL_DEFAULT_REVIEW_PERIOD.applicationLookbackBounds;
+
+  /**
+   * Whether the notice figure exceeds what § 435.556(a)(1) allows at application.
+   *
+   * Surfaced to the user rather than clamped in silence. Review caught this: a
+   * notice saying 4, 5 or 6 months with "I'm applying" selected was quietly shown a
+   * 3-month period, and under-scoping is the direction that costs someone coverage —
+   * they gather no evidence for a month the state is assessing. It also contradicted
+   * the panel's own promise two components away, "We don't know yet, and we won't
+   * guess."
+   */
+  const noticeExceedsApplicationBounds =
+    anchor?.kind === "application" &&
+    monthsRequiredFromNotice !== undefined &&
+    monthsRequiredFromNotice > bounds.max;
+
   let reviewPeriod: ReviewPeriod | undefined;
-  if (anchor?.kind === "application") {
-    // § 435.556(a)(1) permits 1-3 months. A notice-derived `monthsRequired` can be
-    // up to 6, which is a renewal figure; clamping rather than throwing keeps a
-    // mismatched answer from blanking the page.
-    const bounds = FEDERAL_DEFAULT_REVIEW_PERIOD.applicationLookbackBounds;
-    reviewPeriod = applicationReviewPeriod(anchor.month, {
-      ...FEDERAL_DEFAULT_REVIEW_PERIOD,
-      applicationLookbackMonths: Math.min(
-        Math.max(monthsRequiredFromNotice ?? bounds.min, bounds.min),
-        bounds.max,
-      ),
-    });
-  } else if (anchor?.kind === "renewal") {
-    reviewPeriod = renewalReviewPeriodEndingAt(anchor.month, {
-      ...FEDERAL_DEFAULT_REVIEW_PERIOD,
-      renewalMonthsRequired:
-        monthsRequiredFromNotice ??
-        FEDERAL_DEFAULT_REVIEW_PERIOD.renewalMonthsRequired,
-    });
+  /**
+   * A stored anchor can be malformed — `<input type="month">` is a real widget in
+   * Chromium but falls back to a free-text field in Firefox, and the value is
+   * persisted before it is ever parsed. The constructors below throw on anything
+   * that is not strict `YYYY-MM`, and this runs in the RENDER BODY of a page with no
+   * error boundary anywhere in `src/`, so an unparseable value would blank the
+   * tracking page on every load — including the page holding the only control that
+   * could clear it.
+   *
+   * The write side now validates too (`ReviewPeriodPanel`), but both ends need it:
+   * validation stops bad values arriving, and this stops a value that arrived some
+   * other way from being unrecoverable. Degrading to "we don't know" is the same
+   * state as never having set an anchor, which the UI already handles well.
+   */
+  try {
+    if (anchor?.kind === "application") {
+      reviewPeriod = applicationReviewPeriod(anchor.month, {
+        ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+        applicationLookbackMonths: Math.min(
+          Math.max(monthsRequiredFromNotice ?? bounds.min, bounds.min),
+          bounds.max,
+        ),
+      });
+    } else if (anchor?.kind === "renewal") {
+      reviewPeriod = renewalReviewPeriodEndingAt(anchor.month, {
+        ...FEDERAL_DEFAULT_REVIEW_PERIOD,
+        renewalMonthsRequired:
+          monthsRequiredFromNotice ??
+          FEDERAL_DEFAULT_REVIEW_PERIOD.renewalMonthsRequired,
+      });
+    }
+  } catch (err) {
+    console.error("Stored review period is unusable, ignoring it:", err);
+    reviewPeriod = undefined;
   }
 
   const reviewPeriodMonths = reviewPeriod
@@ -757,6 +789,8 @@ export default function TrackingPage() {
             reviewPeriod={reviewPeriod}
             monthHours={reviewPeriodHours}
             monthlyThreshold={monthlyThreshold}
+            pathway={complianceMode}
+            noticeExceedsApplicationBounds={noticeExceedsApplicationBounds}
             selectedMonth={selectedMonth}
             todayMonth={todayMonth}
             onSelectMonth={handleMonthChange}
@@ -790,6 +824,7 @@ export default function TrackingPage() {
                     ).length
                   }
                   monthsRequired={monthsRequiredFor(reviewPeriod)}
+                  monthsInPeriod={reviewPeriodMonths.length}
                   monthlyThreshold={monthlyThreshold}
                   reviewPeriodKind={reviewPeriod.kind}
                   onExport={handleExport}

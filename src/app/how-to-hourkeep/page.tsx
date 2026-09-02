@@ -126,22 +126,43 @@ export default function HowToHourKeepPage() {
       // Update profile's onboarding context with notice details
       const profile = await getProfile(userId);
       if (profile) {
-        const updatedOnboardingContext: OnboardingContext =
-          noticeContext.hasNotice
+        // ─────────────────────────────────────────────────────────────────────
+        // THE SPREAD IS LOAD-BEARING. Do not replace it with a bare literal.
+        //
+        // `updateProfile` calls Dexie's `Table.update()`, which treats
+        // `onboardingContext` as a key path and REPLACES the nested object rather
+        // than merging into it. This code used to build a fresh literal listing
+        // exactly four fields, which was exhaustive at the time and therefore lost
+        // nothing.
+        //
+        // W5 added a fifth — `reviewPeriodAnchor` — and because it is optional,
+        // `tsc` cannot see the omission: an object literal missing an optional
+        // field still satisfies `OnboardingContext`. So retaking the assessment
+        // silently discarded the user's review-period dates, and the tracking page
+        // reverted to "we don't know which months your state will look at" with
+        // nothing explaining why.
+        //
+        // Found by the wave-review data-integrity reviewer, which is the reviewer
+        // role that had never once run independently on this project before now.
+        // `data-migration-standards.md` closes with exactly this instruction: "every
+        // reader of a changed field found and updated (grep for the field name, not
+        // just the type)."
+        //
+        // Spreading first means any field a later wave adds survives by default.
+        // ─────────────────────────────────────────────────────────────────────
+        const updatedOnboardingContext: OnboardingContext = {
+          ...profile.onboardingContext,
+          ...(noticeContext.hasNotice
             ? {
-                hasNotice: noticeContext.hasNotice,
+                hasNotice: true,
                 monthsRequired: noticeContext.monthsRequired,
                 deadline: noticeContext.deadline
                   ? new Date(noticeContext.deadline)
                   : undefined,
-                completedAt: new Date(),
               }
-            : {
-                hasNotice: false,
-                monthsRequired: profile.onboardingContext?.monthsRequired,
-                deadline: profile.onboardingContext?.deadline,
-                completedAt: new Date(),
-              };
+            : { hasNotice: false }),
+          completedAt: new Date(),
+        };
 
         await updateProfile(userId, {
           onboardingContext: updatedOnboardingContext,

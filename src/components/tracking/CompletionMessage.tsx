@@ -65,6 +65,18 @@ interface CompletionMessageProps {
   monthsAtOrOverThreshold: number;
   /** How many months the review period requires — 42 CFR 435.556(a). */
   monthsRequired: number;
+  /**
+   * How many months the review period CONTAINS.
+   *
+   * Added after review, and it exists to stop this component overstating. The
+   * headline used to read "Your record covers every month", which is a quantifier
+   * over the period that nothing computed — and under the federal default a renewal
+   * period is six months long while requiring one, so a user with one month logged
+   * and five empty read that their record was complete. `engineering-standards.md`:
+   * do not state a count you did not compute. Now the denominator is passed in and
+   * the copy states both numbers.
+   */
+  monthsInPeriod: number;
   /** The monthly hours total, so the copy can state it without a literal. */
   monthlyThreshold: number;
   /**
@@ -85,6 +97,7 @@ interface CompletionMessageProps {
 export function CompletionMessage({
   monthsAtOrOverThreshold,
   monthsRequired,
+  monthsInPeriod,
   monthlyThreshold,
   reviewPeriodKind,
   onExport,
@@ -120,26 +133,51 @@ export function CompletionMessage({
       >
         <FactCheckIcon sx={{ fontSize: 48, color: "success.main" }} />
         <Box>
+          {/*
+            REWRITTEN AFTER REVIEW. Was "Your record covers every month", which
+            overstated in the one direction that costs someone coverage.
+
+            Under the federal default a renewal period is six months long and
+            requires one (`renewalPeriodMonths: 6`, `renewalMonthsRequired: 1`), so
+            a user with one month at 80 hours and five at zero satisfied the render
+            gate and was told their record covered every month. It covered one of
+            six. Worse, `monthsRequired` is a state election we do not know, so a
+            user who stopped logging on the strength of that headline could lose
+            months they still had time to document.
+
+            Now the headline is arithmetic with both numbers in it, and it names
+            the denominator rather than quantifying over it.
+          */}
           <Typography variant="h5" component="h2" fontWeight={600}>
-            Your record covers every month
+            {monthsAtOrOverThreshold} of {monthsInPeriod} month
+            {monthsInPeriod === 1 ? "" : "s"} at or over {monthlyThreshold}{" "}
+            hours
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {monthsAtOrOverThreshold} month
-            {monthsAtOrOverThreshold === 1 ? "" : "s"} at or over{" "}
-            {monthlyThreshold} hours. Your state asks for {monthsRequired}.
+            Your state asks for {monthsRequired} of the {monthsInPeriod} month
+            {monthsInPeriod === 1 ? "" : "s"} it may review.
           </Typography>
         </Box>
       </Box>
 
       {/* The thing that is genuinely still uncertain, said plainly, with the actor
           named. compliance-copy-standards.md: "Name the actor. 'Your state decides,'
-          not 'it is determined.'" */}
+          not 'it is determined.'"
+
+          The three duties named here were stated without citations until review
+          caught it. 42 CFR 435.557(a) defines the data a state must use and (b)
+          imposes the obligation to use it before asking the individual — the pair is
+          cited together because the June 29, 2026 correction shifted paragraph
+          designations inside § 435.557. The written-notice duty is § 435.556(d) with
+          § 435.917. Appeal rights are § 431.220(a)(1). */}
       <Alert severity="info" sx={{ mb: 3 }}>
         <AlertTitle>Your state still makes the decision</AlertTitle>
         This means your records are in order, not that your state has agreed.
-        They check your hours against their own information first, and they have
+        They check their own information first — payroll records, Medicaid
+        claims, other programmes — before asking you for anything, and they have
         to tell you what they decided in writing. If they ask for proof,
-        everything you&apos;ve logged is here.
+        everything you&apos;ve logged is here. If you disagree with what they
+        decide, you can appeal.
         {!isApplication &&
           " They also can't insist on particular months — any months in your review period count."}
       </Alert>

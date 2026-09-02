@@ -15,7 +15,7 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import { formatMonthLong } from "@/lib/month";
+import { formatMonthLong, isValidMonth } from "@/lib/month";
 import type { ReviewPeriod } from "@/lib/reviewPeriod";
 
 interface ReviewPeriodPanelProps {
@@ -25,6 +25,41 @@ interface ReviewPeriodPanelProps {
   monthHours: Array<{ month: string; totalHours: number }>;
   /** The monthly hours total, derived from the calculation module, never a literal. */
   monthlyThreshold: number;
+  /**
+   * Which pathway the user is tracking for the selected month.
+   *
+   * ───────────────────────────────────────────────────────────────────────────
+   * ADDED AFTER REVIEW, and it fixes the most harmful thing in this wave.
+   *
+   * This panel sits above the hours/income fork, so it rendered for everyone —
+   * and its per-month rows are built from logged ACTIVITIES only. An income-pathway
+   * user therefore saw, for every month of their review period:
+   *
+   *     Logged: 0 hours. Threshold: 80 hours. Difference: 80.
+   *
+   * with nothing saying those rows measure one of the seven pathways at
+   * 42 CFR 435.552(a). That is the harm ADR-0003 § Context names in as many words:
+   * "HourKeep, seeing only their own pay stubs, would tell them they're failing and
+   * send them looking for 80 hours of volunteering." Systematic, not incidental —
+   * every income-mode user with an anchor set got it by construction.
+   *
+   * Moving the panel inside the hours fork would have been worse: income users need
+   * to know which months their state may review just as much. So the months stay
+   * visible for everyone and only the hours arithmetic is scoped to the pathway
+   * being tracked.
+   * ───────────────────────────────────────────────────────────────────────────
+   */
+  pathway: "hours" | "income";
+  /**
+   * Whether the user's notice named more months than § 435.556(a)(1) permits at
+   * application, so the period on screen is shorter than the letter says.
+   *
+   * Surfaced rather than silently clamped. Review caught the silent version: a notice
+   * saying 6 months with "I'm applying" selected showed a 3-month period with nothing
+   * on screen admitting the disagreement, and under-scoping is the direction that
+   * costs someone coverage.
+   */
+  noticeExceedsApplicationBounds?: boolean;
   /** The month currently on screen, so the panel can offer to jump to a month. */
   selectedMonth: string;
   /**
@@ -67,6 +102,8 @@ export function ReviewPeriodPanel({
   reviewPeriod,
   monthHours,
   monthlyThreshold,
+  pathway,
+  noticeExceedsApplicationBounds,
   selectedMonth,
   todayMonth,
   onSelectMonth,
@@ -80,7 +117,12 @@ export function ReviewPeriodPanel({
   const [draftMonth, setDraftMonth] = useState<string>(todayMonth);
 
   const save = () => {
-    if (!draftMonth) return;
+    // `isValidMonth`, not just a truthiness check. Review found that a malformed
+    // value could be persisted and would then throw inside the tracking page's render
+    // body on every subsequent load — and the control to clear it lives on the page
+    // that crashes. `<input type="month">` is a real widget in Chromium but degrades
+    // to a free-text field in Firefox, so free text is reachable.
+    if (!isValidMonth(draftMonth)) return;
     onAnchorChange(draftKind, draftMonth);
     setEditing(false);
   };
@@ -176,9 +218,17 @@ export function ReviewPeriodPanel({
                   {formatMonthLong(month)}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  Logged: {totalHours} hours. Threshold: {monthlyThreshold}{" "}
-                  hours.
-                  {difference > 0 ? ` Difference: ${difference}.` : ""}
+                  {pathway === "hours"
+                    ? // Neutral arithmetic. A difference is not a verdict.
+                      `Logged: ${totalHours} hours. Threshold: ${monthlyThreshold} hours.` +
+                      (difference > 0 ? ` Difference: ${difference}.` : "")
+                    : // Income pathway. Showing "Difference: 80" to someone tracking
+                      // income under 42 CFR 435.552(f) would tell them they are
+                      // failing a pathway they are not using. The hours figure is
+                      // still true and still shown, without a shortfall attached to
+                      // it, because hours and income COMBINE — § 435.552(e)(2)'s
+                      // income-to-hours proxy means they were never either/or.
+                      `${totalHours} hours logged. You're tracking income for this month — see below.`}
                 </Typography>
               </Box>
               <Button
@@ -203,12 +253,30 @@ export function ReviewPeriodPanel({
           size="small"
           label={`${monthsRequired} month${monthsRequired === 1 ? "" : "s"} required`}
         />
-        <Chip
-          size="small"
-          variant="outlined"
-          label={`${monthsAtOrOverThreshold} at or over ${monthlyThreshold} hours`}
-        />
+        {/* Only meaningful on the hours pathway. "0 at or over 80 hours" is a true
+            but useless statement to someone tracking income, and it reads as a
+            failure. */}
+        {pathway === "hours" && (
+          <Chip
+            size="small"
+            variant="outlined"
+            label={`${monthsAtOrOverThreshold} at or over ${monthlyThreshold} hours`}
+          />
+        )}
       </Box>
+
+      {pathway === "income" && (
+        // 42 CFR 435.552(a) makes all seven pathways equally available, and
+        // § 435.552(e)(2) lets income and hours combine rather than compete. Neither
+        // fact is obvious from a screen that shows hours totals.
+        <Alert severity="info" sx={{ mb: 2 }}>
+          <AlertTitle>You&apos;re tracking income for this month</AlertTitle>
+          Hours are one of several ways to meet this — income is another, and
+          they can be added together. The hours above are just what you&apos;ve
+          recorded; they aren&apos;t a target you&apos;re missing. Your income
+          is below.
+        </Alert>
+      )}
 
       {!isApplication && (
         // The user-favourable rule, and the one nobody tells people. CMS: the clause
@@ -235,10 +303,27 @@ export function ReviewPeriodPanel({
         </Alert>
       )}
 
+      {noticeExceedsApplicationBounds && (
+        // "Uncertainty is content", and so is a disagreement between the app and the
+        // user's own paperwork. § 435.556(a)(1) caps a new application at 3 months,
+        // so a higher figure means either a typo or that this is really a renewal —
+        // and the user is the only one who can tell which.
+        <Alert severity="warning" sx={{ mb: 2 }}>
+          <AlertTitle>This doesn&apos;t match your letter</AlertTitle>
+          You told us your letter asks for more months than we&apos;re showing.
+          For a new application, states can only look at the 3 months before you
+          apply. If your letter says more than that, you may be renewing rather
+          than applying — switch to &ldquo;I&apos;m renewing&rdquo; below, or
+          ask your state which months they mean. Keep logging the extra months
+          either way.
+        </Alert>
+      )}
+
       <Alert severity="info" sx={{ mb: 2 }}>
         <AlertTitle>Check this with your state</AlertTitle>
-        How many months your state asks for is up to them, within limits, and we
-        don&apos;t know what yours chose. Ask them which months they&apos;re
+        How many months your state asks for is up to them, and we don&apos;t
+        know what yours chose. States can ask for 1 to 3 months when you apply,
+        and at least 1 month when you renew. Ask them which months they&apos;re
         checking and how many they need. If you got a letter, it should say.
       </Alert>
 
@@ -289,11 +374,18 @@ function describePeriod(period: ReviewPeriod): string {
       );
     case "renewal":
       // § 435.556(a)(2)(i). The SPAN is an assumption, not a finding — say so out
-      // loud. See `renewalPeriodMonthsSource` for why six is uncertain.
+      // loud. See `renewalPeriodMonthsSource` for why the number is uncertain.
+      //
+      // The span is INTERPOLATED from the period, not spelled as a word. A first
+      // version wrote "We've assumed six", which review caught: it is the contested
+      // policy value hardcoded in a string, invisible to every numeric literal scan,
+      // and it would keep saying "six" after W2b changed the value. The same figure
+      // was deleted from CompletionMessage in this very wave for that reason.
       return (
         `You told us your renewal is due in ${formatMonthLong(period.periodEnd)}. ` +
-        `States look at the months since your last renewal. We've assumed six, but ` +
-        `yours may count a different stretch.`
+        `States look at the months since your last renewal. We've assumed ` +
+        `${period.months.length}, but yours may count a different stretch — some ` +
+        `states renew every 12 months rather than every 6.`
       );
     case "verification":
       // § 435.556(a)(2)(ii). Only reachable in a state that checks between renewals.
@@ -380,7 +472,7 @@ function AnchorForm({
         <Button
           variant="contained"
           onClick={onSave}
-          disabled={!draftMonth}
+          disabled={!isValidMonth(draftMonth)}
           sx={{ minHeight: 44 }}
         >
           Save

@@ -1,4 +1,9 @@
 import { test, expect, type Page } from "@playwright/test";
+import {
+  VERDICT_PHRASES,
+  normaliseForGuard,
+  phraseMatcher,
+} from "../src/__tests__/support/verdictPhrases";
 
 /**
  * Month scoping, in a real browser at phone size — W5 (ADR-0005).
@@ -291,7 +296,21 @@ test.describe("month scoping on a phone", () => {
     const fixture = await seed(page);
     await page.goto("/tracking", { waitUntil: "networkidle" });
 
-    const banned = [/\bCompliant\b/, /You've met/i, /Goal Complete/i];
+    /**
+     * The CANONICAL banned-phrase list, imported rather than retyped.
+     *
+     * A first version hardcoded three patterns. Review counted the real list at 29
+     * entries and pointed out the obvious consequence: a guard justified by "the
+     * Vitest suite cannot see the assembled page" was checking a tenth of the
+     * vocabulary, and would not have caught the overstatement the same review found
+     * in `CompletionMessage`. `verdictPhrases.ts` exports `phraseMatcher` and
+     * `normaliseForGuard` precisely so every suite can share one list.
+     */
+    const banned = VERDICT_PHRASES.map((entry) => ({
+      pattern: phraseMatcher(entry),
+      why: entry.why,
+      phrase: entry.phrase,
+    }));
 
     /**
      * Read the text and match it here, rather than using
@@ -307,16 +326,21 @@ test.describe("month scoping on a phone", () => {
      * offending phrase in the failure rather than dumping the whole document.
      */
     const assertNoVerdict = async (context: string) => {
-      const text = (await page.locator("body").innerText()).replace(
-        /\s+/g,
-        " ",
-      );
-      for (const pattern of banned) {
+      const text = normaliseForGuard(await page.locator("body").innerText());
+      for (const { pattern, phrase, why } of banned) {
         expect(
           text,
-          `${context}: rendered a banned verdict matching ${pattern}`,
+          `${context}: the assembled page renders the banned phrase "${phrase}".\n  ${why}`,
         ).not.toMatch(pattern);
       }
+      // And the specific overstatement review found in CompletionMessage, which no
+      // generic banned phrase would catch: a completeness claim over the review
+      // period. Kept alongside the phrase list because it is a claim shape rather
+      // than a phrase.
+      expect(
+        text,
+        `${context}: claims the record covers the whole period`,
+      ).not.toMatch(/covers every month/i);
     };
 
     // Both branches matter, and the threshold-met branch is the one the verdicts lived

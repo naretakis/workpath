@@ -158,7 +158,15 @@ export function monthOfDate(date: string): string {
  */
 export function monthToDate(month: string): Date {
   const { year, month: m } = parseMonth(month);
-  return new Date(year, m - 1, 1);
+  const date = new Date(year, m - 1, 1);
+  // `new Date(50, 2, 1)` is the year 1950, not 50: the numeric constructor maps
+  // years 0-99 into 1900-1999. `setFullYear` is the documented escape, and without
+  // it `calendarGridDays("0050-03")` built a grid where every cell failed `inMonth`
+  // and no day was clickable. Reachable, because `<input type="month">` accepts a
+  // two-digit year and the value is persisted. Found by the wave-review semantic
+  // reviewer.
+  date.setFullYear(year);
+  return date;
 }
 
 /** `"2026-07"` to `"July 2026"`. */

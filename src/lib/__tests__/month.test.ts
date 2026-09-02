@@ -438,4 +438,24 @@ describe("calendarGridDays", () => {
   it("rejects a malformed month", () => {
     expect(() => calendarGridDays("2026", new Date(2026, 6, 15))).toThrow();
   });
+
+  it("handles a two-digit year without silently landing in the 1900s", () => {
+    // Found by the W5 wave review, and it needed this test: the fix shipped before
+    // the test did, and mutation testing then showed nothing noticed when the fix was
+    // removed.
+    //
+    // `new Date(50, 2, 1)` is the year 1950 — the numeric Date constructor maps years
+    // 0-99 into 1900-1999. So `monthToDate("0050-03")` returned March 1950, every
+    // grid cell's date carried the prefix "1950-03", and `inMonth` (which compares
+    // that prefix to the requested month) was FALSE for all 28-42 cells. A calendar
+    // where no day is clickable and every cell is dimmed to 30% opacity.
+    //
+    // Reachable rather than theoretical: `<input type="month">` accepts a two-digit
+    // year, and W5 persists whatever it produces.
+    const days = calendarGridDays("0050-03", new Date(2026, 6, 15));
+
+    expect(monthToDate("0050-03").getFullYear()).toBe(50);
+    expect(days.filter((d) => d.inMonth)).toHaveLength(31); // March
+    expect(days.filter((d) => d.inMonth)[0].date).toBe("0050-03-01");
+  });
 });

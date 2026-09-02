@@ -110,13 +110,42 @@ export function IncomeStatusIndicator({ summary }: IncomeStatusIndicatorProps) {
               <Typography variant="body2" color="text.secondary">
                 Keep logging to reach {formatCurrency(INCOME_THRESHOLD)}
               </Typography>
+              {/*
+                THE HOUSEHOLD DISCLOSURE BELONGS HERE MOST OF ALL, and until review
+                it appeared only on the at-or-over branch.
+
+                42 CFR 435.552(f)(2) measures MAGI-based income for the MAGI-BASED
+                HOUSEHOLD, and HourKeep stores one person's records — so the figure
+                above is not the figure the state compares. On the at-or-over branch
+                that fact is a caution. On THIS branch it is the single most valuable
+                thing the app can say: compliance-copy-standards.md names the married
+                user whose spouse works as "the case that matters", because telling
+                them they are failing "sends them looking for 80 hours of
+                volunteering they don't need."
+
+                Stated so it cannot be read as a spouse's income being a problem —
+                more household income helps this pathway, and the point at which it
+                stops helping is a different conversation about eligibility limits,
+                not a community-engagement failure.
+              */}
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ mt: 0.5 }}
+              >
+                This is only your own income. Your state counts your whole
+                household&apos;s income here, which is often more — so you may
+                already be over this without doing anything else. Ask them what
+                they have on file.
+              </Typography>
               {isCloseToThreshold && (
                 <Typography
                   variant="caption"
                   color="warning.main"
                   sx={{ display: "block", mt: 0.5 }}
                 >
-                  You&apos;re close! Just a bit more to go.
+                  {formatCurrency(INCOME_THRESHOLD - effectiveIncome)} to go on
+                  your own income alone.
                 </Typography>
               )}
             </Box>
